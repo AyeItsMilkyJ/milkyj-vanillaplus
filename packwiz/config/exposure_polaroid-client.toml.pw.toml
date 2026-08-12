@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/exposure_polaroid-client.toml"
 hash-format = "sha256"
-hash = "e0c59418446049b8ff1226a38ee817d05fea08a4f444b9aeb0677d5286ef1765"
+hash = "b4660c461873a4c409fb9619d5d9418ab6e233ce648e87391db773442f2a0c05"

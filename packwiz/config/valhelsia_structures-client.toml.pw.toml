@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/valhelsia_structures-client.toml"
 hash-format = "sha256"
-hash = "8ab414b34601e3023481f85777bc831a1b3cc78478103b71645b503792c7e6e7"
+hash = "54cd19f69340f655ae0d59facdef22fde150c74f78c89a5fc28764ff89d77e8e"

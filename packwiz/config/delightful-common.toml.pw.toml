@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/delightful-common.toml"
 hash-format = "sha256"
-hash = "93b0e68cb42e4a5e518546d2ed79a06b2c3cf8a2dee5dc9e53d93823828a1d31"
+hash = "90f3e03b52480b3f1b1949c62d3e01b96dd1c5fd28c1c9db41bf53c5b7236160"

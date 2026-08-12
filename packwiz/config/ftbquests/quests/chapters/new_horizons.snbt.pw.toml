@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/new_horizons.snbt"
 hash-format = "sha256"
-hash = "4729b9bfb9dc59c25cf50c816af245ca4bd95ed986cc1b3a7f1408fe478b8708"
+hash = "df4f5c751a95f75814d3bce1975b8b7b8df2a0667a5e1888925eea4a788a1d97"

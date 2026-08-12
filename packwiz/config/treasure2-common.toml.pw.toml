@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/treasure2-common.toml"
 hash-format = "sha256"
-hash = "393da3fbbac99101a227445f0ec58b883dfe99f0a7f803dd37ffcd55e943076a"
+hash = "c02704ceb689173cd460347f21ed1f3da0dd782618cabe78f0e1af7e40e143dc"

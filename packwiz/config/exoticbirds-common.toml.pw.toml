@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/exoticbirds-common.toml"
 hash-format = "sha256"
-hash = "16f0e21912c233fcf526b9f0bc285db9890a804d852c7c930a3645090e7688fa"
+hash = "1906dbe9d337b0c41b992692ac228a536c65fc93b4deb3809a9dcd569842f2e9"

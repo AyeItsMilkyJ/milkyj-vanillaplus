@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/storagedrawers-common.v2.toml"
 hash-format = "sha256"
-hash = "e42ed583bb9541c6b7241248b238b71c25db5ba691d5e62ce40e1675932a674a"
+hash = "c23016e1d05b4094af9f199bfaaf392fddd252cc88e73839b7eeb20876fd923e"

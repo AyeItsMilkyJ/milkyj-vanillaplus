@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/sea_pancake.animation.json"
 hash-format = "sha256"
-hash = "0c93554a95f2933866f20ebe56cf34c9142511316f1bf61b0137dd82dc7b2b07"
+hash = "cb08c9a4501d90885895c77a45b4781df29c211f9afe549f9821a6ad6ba05ec6"

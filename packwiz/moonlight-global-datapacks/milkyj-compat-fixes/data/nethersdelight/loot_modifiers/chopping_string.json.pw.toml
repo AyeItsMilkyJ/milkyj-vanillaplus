@@ -1,0 +1,8 @@
+name = "Managed moonlight-global-datapacks: milkyj-compat-fixes/data/nethersdelight/loot_modifiers/chopping_string.json"
+filename = "chopping_string.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/nethersdelight/loot_modifiers/chopping_string.json"
+hash-format = "sha256"
+hash = "aa08932d7e997a595bf0dcfc285a3768e5d94e562bd9445c97b7d041e9fda586"

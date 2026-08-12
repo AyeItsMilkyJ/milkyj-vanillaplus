@@ -73,6 +73,9 @@ try {
     if ($serverExit -ne 0) { throw "Server Packwiz installation failed with exit code $serverExit" }
     $serverJars = @(Get-ChildItem -LiteralPath (Join-Path $serverRoot 'mods') -File -Filter *.jar)
     if ($serverJars.Count -ne 203) { throw "Expected 203 server JARs; installed $($serverJars.Count)." }
+    $compatibilityStatic = & $python (Join-Path $PSScriptRoot 'validate_integrated_compatibility.py') --project-root $projectRootResolved --mods-dir (Join-Path $serverRoot 'mods')
+    if ($LASTEXITCODE -ne 0) { throw 'Integrated compatibility static validation failed.' }
+    [IO.File]::WriteAllText((Join-Path $testRoot 'compatibility-static.json'), (($compatibilityStatic -join "`n") + "`n"), [Text.UTF8Encoding]::new($false))
 
     if (-not $SkipServerLaunch) {
         $forgeLibrariesResolved = [IO.Path]::GetFullPath($ForgeLibrariesPath)
@@ -82,7 +85,12 @@ try {
         Copy-Item -LiteralPath $forgeLibrariesResolved -Destination (Join-Path $serverRoot 'libraries') -Recurse
         [IO.File]::WriteAllText((Join-Path $serverRoot 'eula.txt'), "eula=true`r`n", [Text.UTF8Encoding]::new($false))
         [IO.File]::WriteAllText((Join-Path $serverRoot 'user_jvm_args.txt'), "-Xms1G`r`n-Xmx4G`r`n", [Text.UTF8Encoding]::new($false))
-        $validationPort = $port + 1
+        $validationListener = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, 0)
+        do {
+            $validationListener.Start()
+            $validationPort = ([Net.IPEndPoint]$validationListener.LocalEndpoint).Port
+            $validationListener.Stop()
+        } while ($validationPort -eq 25565)
         $serverProperties = @(
             'allow-flight=true',
             'difficulty=normal',
@@ -128,20 +136,64 @@ try {
             [IO.File]::WriteAllText((Join-Path $testRoot 'server.stderr.log'), $stderrTask.Result)
             throw 'Disposable Forge server did not reach Done. Logs were retained in build/end-to-end.'
         }
+        $process.StandardInput.WriteLine('datapack list enabled')
+        $process.StandardInput.WriteLine('give @a beautify:lamp_candelabra 1')
+        $process.StandardInput.WriteLine('advancement grant @a only beautify:progression/candelabra')
+        $process.StandardInput.WriteLine('reload')
+        $process.StandardInput.Flush()
+        $reloadDeadline = (Get-Date).AddMinutes(4)
+        $reloadCompleted = $false
+        do {
+            Start-Sleep -Seconds 2
+            if (Test-Path -LiteralPath $latestLog) {
+                $reloadLog = Get-Content -LiteralPath $latestLog -Raw
+                $reloadCompleted = ([regex]::Matches($reloadLog, 'Loaded \d+ advancements')).Count -ge 2
+            }
+            if ($process.HasExited -and -not $reloadCompleted) { break }
+        } while (-not $reloadCompleted -and (Get-Date) -lt $reloadDeadline)
+        if (-not $reloadCompleted) { throw 'Disposable Forge server datapack reload did not complete.' }
+        $process.StandardInput.WriteLine('datapack list enabled')
+        $process.StandardInput.Flush()
+        Start-Sleep -Seconds 2
         $process.StandardInput.WriteLine('stop'); $process.StandardInput.Flush()
-        $serverProcessExited = $process.WaitForExit(180000)
+        $serverProcessExited = $process.WaitForExit(300000)
         $savedAllDimensions = [bool](Select-String -LiteralPath $latestLog -SimpleMatch 'ThreadedAnvilChunkStorage: All dimensions are saved' -Quiet)
         $questParserLoaded = [bool](Select-String -LiteralPath $latestLog -Pattern 'Loaded 4 chapter groups, 9 chapters, 118 quests, 0 reward tables' -Quiet)
         if (-not $serverProcessExited) {
             $process.Kill()
-            if (-not $savedAllDimensions) { throw 'Disposable Forge server neither exited nor confirmed that all dimensions were saved.' }
-            Write-Warning 'Disposable server saved all dimensions, but a lingering mod thread kept the validation JVM alive. The process was cleaned up after the save completed.'
+            $process.WaitForExit()
+            throw 'Disposable server did not exit normally within five minutes after stop.'
         }
         [IO.File]::WriteAllText((Join-Path $testRoot 'server.stdout.log'), $stdoutTask.Result)
         [IO.File]::WriteAllText((Join-Path $testRoot 'server.stderr.log'), $stderrTask.Result)
         if ($serverProcessExited -and $process.ExitCode -ne 0) { throw "Disposable Forge server exited with code $($process.ExitCode)." }
         if (-not $questParserLoaded) { throw 'FTB Quests did not report the expected 9 chapters and 118 quests.' }
         if (-not $savedAllDimensions) { throw 'Disposable server did not confirm that all loaded dimensions were saved.' }
+        $finalLog = Get-Content -LiteralPath $latestLog -Raw
+        $candidateAutomaticallyEnabled = $finalLog.Contains('Found new data pack file/milkyj-compat-fixes, loading it automatically')
+        $enabledPackLines = @(Select-String -LiteralPath $latestLog -Pattern 'There are \d+ data pack\(s\) enabled:' | ForEach-Object { $_.Line })
+        $candidateHasFinalPriority = ($enabledPackLines.Count -ge 2 -and (@($enabledPackLines | Where-Object { $_ -match '\[file/milkyj-compat-fixes\]\s*$' })).Count -eq $enabledPackLines.Count)
+        $advancementCounts = @([regex]::Matches($finalLog, 'Loaded (\d+) advancements') | ForEach-Object { [int]$_.Groups[1].Value })
+        $beautifyAdvancementLoaded = ($advancementCounts.Count -ge 2 -and ($advancementCounts | Measure-Object -Minimum).Minimum -ge 1258)
+        $targetedErrors = [ordered]@{
+            domesticationInnovation = $finalLog.Contains('domesticationinnovation:blazing_enchanted_book - error:') -or $finalLog.Contains('Not a JSON object: null')
+            nethersDelightLeather = $finalLog.Contains("nethersdelight:chopping_leather - error: Unknown type 'minecraft:alternatives'")
+            nethersDelightString = $finalLog.Contains("nethersdelight:chopping_string - error: Unknown type 'minecraft:alternative'")
+            tfDnvShroomPath = $finalLog.Contains('Unknown loot table called tf_dnv:dungeon_shroom')
+            beautifyCandelabra = $finalLog.Contains("unknown string 'beautify:lamp_candleabra'")
+        }
+        $globalLootModifierDecodeErrors = @([regex]::Matches($finalLog, 'Could not decode GlobalLootModifier')).Count
+        $advancementParseErrors = @([regex]::Matches($finalLog, 'Parsing error loading custom advancement')).Count
+        $datapackLoadFailures = @([regex]::Matches($finalLog, '(?i)failed to load data ?packs|errors in currently selected datapacks')).Count
+        $lootDataWarnings = @(Select-String -LiteralPath $latestLog -Pattern 'LootDataManager/.+Unknown loot table called' | ForEach-Object { $_.Line })
+        $onlyKnownLootWarnings = ($lootDataWarnings.Count -eq 2 -and (@($lootDataWarnings | Where-Object { $_ -notmatch 'twilightforest:chests/casket_loot' })).Count -eq 0)
+        if (-not $candidateAutomaticallyEnabled -or -not $candidateHasFinalPriority) { throw 'The integrated compatibility datapack was not automatically enabled at final effective priority.' }
+        if (-not $beautifyAdvancementLoaded) { throw "Beautify advancement did not load on startup and reload: $($advancementCounts -join ', ')." }
+        if ($targetedErrors.Values -contains $true) { throw 'At least one targeted compatibility error remains.' }
+        if ($globalLootModifierDecodeErrors -ne 0) { throw "Found $globalLootModifierDecodeErrors global loot modifier decode error(s)." }
+        if ($advancementParseErrors -ne 0) { throw "Found $advancementParseErrors advancement parse error(s)." }
+        if ($datapackLoadFailures -ne 0) { throw "Found $datapackLoadFailures datapack load failure(s)." }
+        if (-not $onlyKnownLootWarnings) { throw 'Loot data warnings differ from the one intentionally unresolved tf_dnv casket finding.' }
     }
 
     $report = [ordered]@{
@@ -155,10 +207,22 @@ try {
         personalScreenshotsPreserved = $true
         personalSavesPreserved = $true
         personalShaderSettingsPreserved = $true
+        packwizDestinationCount = 689
         serverReachedDone = (-not $SkipServerLaunch)
         questParserLoaded = if ($SkipServerLaunch) { $null } else { $questParserLoaded }
+        compatibilityStaticValidation = $true
+        compatibilityDatapackReloaded = if ($SkipServerLaunch) { $null } else { $reloadCompleted }
+        compatibilityDatapackAutomaticallyEnabled = if ($SkipServerLaunch) { $null } else { $candidateAutomaticallyEnabled }
+        compatibilityDatapackFinalPriority = if ($SkipServerLaunch) { $null } else { $candidateHasFinalPriority }
+        beautifyAdvancementLoaded = if ($SkipServerLaunch) { $null } else { $beautifyAdvancementLoaded }
+        targetedCompatibilityErrorsPresent = if ($SkipServerLaunch) { $null } else { $targetedErrors }
+        newGlobalLootModifierDecodeErrors = if ($SkipServerLaunch) { $null } else { $globalLootModifierDecodeErrors }
+        newAdvancementParseErrors = if ($SkipServerLaunch) { $null } else { $advancementParseErrors }
+        newDatapackLoadFailures = if ($SkipServerLaunch) { $null } else { $datapackLoadFailures }
+        onlyKnownTfDnvCasketWarningRemains = if ($SkipServerLaunch) { $null } else { $onlyKnownLootWarnings }
         allLoadedDimensionsSaved = if ($SkipServerLaunch) { $null } else { $savedAllDimensions }
         serverProcessExited = if ($SkipServerLaunch) { $null } else { $serverProcessExited }
+        serverExitCode = if ($SkipServerLaunch) { $null } else { $process.ExitCode }
     }
     $report | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $testRoot 'result.json') -Encoding utf8
     Write-Host "End-to-end Packwiz validation passed. Report: $(Join-Path $testRoot 'result.json')"

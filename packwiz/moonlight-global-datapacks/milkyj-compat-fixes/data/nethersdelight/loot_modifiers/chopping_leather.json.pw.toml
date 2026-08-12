@@ -1,0 +1,8 @@
+name = "Managed moonlight-global-datapacks: milkyj-compat-fixes/data/nethersdelight/loot_modifiers/chopping_leather.json"
+filename = "chopping_leather.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/nethersdelight/loot_modifiers/chopping_leather.json"
+hash-format = "sha256"
+hash = "81d79fdfc511e80aba3ab984025d67623998397fa7f43edc2f15db46801f036c"

@@ -24,6 +24,12 @@ server-runtime/
 **/playerdata/
 **/stats/
 **/advancements/
+!payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/beautify/advancements/
+!payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/beautify/advancements/progression/
+!payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/beautify/advancements/progression/candelabra.json
+!packwiz/moonlight-global-datapacks/milkyj-compat-fixes/data/beautify/advancements/
+!packwiz/moonlight-global-datapacks/milkyj-compat-fixes/data/beautify/advancements/progression/
+!packwiz/moonlight-global-datapacks/milkyj-compat-fixes/data/beautify/advancements/progression/candelabra.json.pw.toml
 *.mca
 *.dat_old
 *.session.lock

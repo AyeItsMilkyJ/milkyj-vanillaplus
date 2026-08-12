@@ -1,0 +1,17 @@
+{
+  "candidate": "1.9.0-rc1",
+  "zip": "dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-r3-Prism.zip",
+  "sha256": "725b1562e116cd505d993432d784012822c01de378165240aae9ba1f6bcb30c3",
+  "bytes": 91704,
+  "packUrl": "http://192.168.0.159:8765/packwiz/pack.toml",
+  "preLaunchCommand": "\\\"$INST_JAVA\\\" -jar packwiz-installer-bootstrap.jar http://192.168.0.159:8765/packwiz/pack.toml",
+  "forbiddenConcatenationFound": false,
+  "placeholderUrlFound": false,
+  "generatedByCorrectedProductionGenerator": true,
+  "staticArchiveInspection": "PASS",
+  "processLevelCommandRegression": "PASS",
+  "r2Overwritten": false,
+  "lanHostStarted": false,
+  "manualPrismImportTest": "NOT RUN",
+  "livePrismTouched": false
+}

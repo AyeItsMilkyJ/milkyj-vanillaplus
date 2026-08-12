@@ -5,4 +5,4 @@ side = "server"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/config/easymagic-server.toml"
 hash-format = "sha256"
-hash = "7dbf42819b121001c76e06c07994c363d316ce110f7b06dd032687f4099d5687"
+hash = "e0c2189f0351191e8115dfa988b29ab0c3f5601ccf62e9072aad811aecf596e3"

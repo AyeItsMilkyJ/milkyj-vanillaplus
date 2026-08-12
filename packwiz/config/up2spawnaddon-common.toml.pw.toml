@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/up2spawnaddon-common.toml"
 hash-format = "sha256"
-hash = "59c8a7cafdf93526875debea2469d8098c599d5ea32d4f9b6eb08d41127cfc58"
+hash = "47896d0f272ab1a2b66edfbd72cdcb391aa4c89a48b6bc250152057fd96d47f2"

@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/fallingleaves-client.toml"
 hash-format = "sha256"
-hash = "2cd017af6632239398b694fadf8191d6073cf39585549876cc682843f521ecb3"
+hash = "0096abbbce63bc6ee6c7aa8befcdebc10bfff639b9e4d7e7b7ef7a7cabc871d4"

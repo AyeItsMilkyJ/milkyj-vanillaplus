@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/pickupnotifier/pickupnotifier-client.toml"
 hash-format = "sha256"
-hash = "242a0f58407ecc71ff5e2c6cd2910001c089ee4e6130454c377115e8a8f3c83a"
+hash = "ec64b886d9d024c0494829bd3f545f7b518f65382e07a66dbbb71640572cf5b6"

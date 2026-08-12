@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/everycomp-hazardous.toml"
 hash-format = "sha256"
-hash = "2b5beca7a3a37c49da647492c62c5e6452da3214f70170f4543d314825aeb385"
+hash = "0e8c3ae8e308dfbabcc58b5595d4192c1241b91f7974b0fbcc12f865c9e6e08c"

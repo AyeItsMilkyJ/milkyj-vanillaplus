@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/archaeology.snbt"
 hash-format = "sha256"
-hash = "91298078d09b027166ea3c4a4d50acf7915f38d18d6c67d8c5da836b88a268c0"
+hash = "181e9fc4c9c51907f5754aac9ff6b856db6968dc8249294c698473f5c8de05bf"

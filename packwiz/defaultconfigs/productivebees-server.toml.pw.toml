@@ -5,4 +5,4 @@ side = "server"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/defaultconfigs/productivebees-server.toml"
 hash-format = "sha256"
-hash = "3a05feb3bfb72a6bcceef1b4c67ea2041119be21925a39cc047859aed5f56647"
+hash = "cedc86c4d47144fae31decedcaa3593768b6d6ff3f11d8cbad64d38af0691f3f"

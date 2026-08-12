@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/chalk-client.toml"
 hash-format = "sha256"
-hash = "ce3f311460e4198f74c6a9f8bb8ad0ddcb12f00d20760f3edff929d666815392"
+hash = "3d4881597929609e6264de0561cab4264efb18efd3e466843af5a30d3b64f5d2"

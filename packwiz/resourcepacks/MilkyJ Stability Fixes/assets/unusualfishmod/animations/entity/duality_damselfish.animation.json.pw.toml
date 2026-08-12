@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/duality_damselfish.animation.json"
 hash-format = "sha256"
-hash = "5b6f3fa8dc3f2d0ba43c32800c57d91d623ee13f6bf2fe33a7204ab28be1a7b8"
+hash = "caa645bdedcfc425f219e47173939a81566a1424a6f69d6f0f385cc4bf9390a0"

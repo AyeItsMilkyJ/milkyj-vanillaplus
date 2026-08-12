@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/freshwater_mantis.animation.json"
 hash-format = "sha256"
-hash = "0d338acadebf657b2d6fbfd57d5240b1790fcc45b004b164888630af76676089"
+hash = "8297c4b54a31ed3f8c3f8d955bed035aaa5eb97e0674564c4d4bb0fc354d38e3"

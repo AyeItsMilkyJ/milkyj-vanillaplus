@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/RelicsOfGaming.toml"
 hash-format = "sha256"
-hash = "eb147b5fe8767fc0e6ce75a12986b7cac3d384a6240d15c42a4ea2fc395e2388"
+hash = "1c455b76a785fef208f36de06b21fede4362ab00e1ba6d295f99e0fecc7b2382"

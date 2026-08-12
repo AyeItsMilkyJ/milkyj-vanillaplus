@@ -7,5 +7,5 @@
     "forbiddenConcatenationFound":  false,
     "productionBootstrapUsesSameGenerator":  true,
     "generatedZip":  "build/prism-command-regression/bootstrap.zip",
-    "checkedAt":  "2026-08-12T17:53:25.8018783+10:00"
+    "checkedAt":  "2026-08-13T01:24:15.8135424+10:00"
 }

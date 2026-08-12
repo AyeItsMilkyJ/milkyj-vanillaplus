@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/zawa/main.toml"
 hash-format = "sha256"
-hash = "bf5531f8427c5c01542becfbb0838c0d68262645d667a748b67beec97cb54eb7"
+hash = "277313b0cdcec727b71b87ff2d1f5d2d30b0f3700d1d3817313924b440035c70"

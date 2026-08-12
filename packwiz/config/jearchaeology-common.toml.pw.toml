@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/jearchaeology-common.toml"
 hash-format = "sha256"
-hash = "78d2710249a6e256f422c208b80378db2d1d1afef5bf5d2b052dc5396a8bf7f0"
+hash = "a02cc7f90ec74653c413df43edcd199ee758bf8428b294cf2bb0e7866ab5d3d3"

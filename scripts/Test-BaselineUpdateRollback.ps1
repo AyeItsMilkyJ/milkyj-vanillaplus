@@ -110,6 +110,18 @@ try {
     if ($rcInstalledHash -ne $rcExpectedHash -or $rcInstalledHash -eq $baselineInstalledHash) { throw 'The RC quest payload was not applied over v1.0.0.' }
     $obsoleteInstalled = Test-Path -LiteralPath (Join-Path $clientRoot 'config\ftbquests\quests\rc-obsolete-validation-sentinel.txt')
     if (-not $obsoleteInstalled) { throw 'Host-only RC managed sentinel was not installed.' }
+    $compatibilityFiles = @(
+        'moonlight-global-datapacks\milkyj-compat-fixes\data\domesticationinnovation\loot_modifiers\blazing_enchanted_book.json',
+        'moonlight-global-datapacks\milkyj-compat-fixes\data\nethersdelight\loot_modifiers\chopping_leather.json',
+        'moonlight-global-datapacks\milkyj-compat-fixes\data\nethersdelight\loot_modifiers\chopping_string.json',
+        'moonlight-global-datapacks\milkyj-compat-fixes\data\beautify\advancements\progression\candelabra.json',
+        'moonlight-global-datapacks\milkyj-compat-fixes\data\tf_dnv\loot_tables\chests\dungeon_shroom_barrel.json'
+    )
+    foreach ($relative in $compatibilityFiles) {
+        if (-not (Test-Path -LiteralPath (Join-Path $clientRoot $relative) -PathType Leaf)) {
+            throw "Integrated compatibility file was not installed by the candidate: $relative"
+        }
+    }
 
     Invoke-Install $baselineUrl
     Assert-PersonalFiles
@@ -117,6 +129,11 @@ try {
     $obsoleteRemoved = -not (Test-Path -LiteralPath (Join-Path $clientRoot 'config\ftbquests\quests\rc-obsolete-validation-sentinel.txt'))
     if ($rollbackHash -ne $baselineExpectedHash) { throw 'Rollback did not restore the v1.0.0 managed quest payload.' }
     if (-not $obsoleteRemoved) { throw 'Rollback did not remove an obsolete Packwiz-managed file.' }
+    $compatibilityFilesRemoved = $true
+    foreach ($relative in $compatibilityFiles) {
+        if (Test-Path -LiteralPath (Join-Path $clientRoot $relative)) { $compatibilityFilesRemoved = $false }
+    }
+    if (-not $compatibilityFilesRemoved) { throw 'Rollback did not remove all candidate-only compatibility resources.' }
 
     $clientJarCount = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter '*.jar').Count
     if ($clientJarCount -ne 236) { throw "Expected 236 client JARs after rollback; found $clientJarCount." }
@@ -128,7 +145,9 @@ try {
         baselineQuestHash = $baselineExpectedHash
         releaseCandidateQuestHash = $rcExpectedHash
         releaseCandidateApplied = $true
+        compatibilityFilesInstalledByCandidate = $true
         rollbackRestoredBaseline = $true
+        compatibilityFilesRemovedByRollback = $compatibilityFilesRemoved
         obsoleteManagedFileInstalledForTest = $obsoleteInstalled
         obsoleteManagedFileRemovedOnRollback = $obsoleteRemoved
         personalOptionsAndKeybindingsPreserved = $true

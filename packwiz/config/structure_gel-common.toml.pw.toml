@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/structure_gel-common.toml"
 hash-format = "sha256"
-hash = "888d2904bd7dd577f72d901603912a440540eba21212b004cf6abe41f1cde23b"
+hash = "357e6bcb1f6ec5d726a625c1ecfe7aeb2eda12970456c1ead9ff0448cccea068"

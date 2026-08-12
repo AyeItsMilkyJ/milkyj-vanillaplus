@@ -5,4 +5,4 @@ side = "server"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/defaultconfigs/ftbultimine/ftbultimine-server.snbt"
 hash-format = "sha256"
-hash = "1d994ec1854c1e96944a38d059593e7a78efa2d7b161ab4712d1bda47b73937a"
+hash = "44cff95331fd5bd31465402bc71c606fadd2cc16f7d5ab3a8650a3cf0cacb403"

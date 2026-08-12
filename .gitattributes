@@ -1,0 +1,3 @@
+packwiz/** text eol=lf
+payload/** text eol=lf
+payload/**/*.png -text

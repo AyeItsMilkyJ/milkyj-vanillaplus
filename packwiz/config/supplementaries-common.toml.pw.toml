@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/supplementaries-common.toml"
 hash-format = "sha256"
-hash = "d529e2c43f74f4c7404bf224d611e18332c53cad327a5433f773681ea8991cd9"
+hash = "fa8b18b30afeb1105aa6dc5c5f2ebae4218e9631fb3c4b33487fcd4ba71f6e70"

@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/labels-client.toml"
 hash-format = "sha256"
-hash = "ff4d49e8887003f08adb512551c17ad62cbc8734fe20103da590a92e5675c9e9"
+hash = "15e4087474ce3e81b8bd4d3330f80aa2edae598db1eb301c9d0134a4300e828d"

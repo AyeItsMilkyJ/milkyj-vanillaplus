@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterfishtanks-common.toml"
 hash-format = "sha256"
-hash = "9dda0dd6ed39d73c7160f46c1b1c91712a10f4f06e6d277480dfb17b5b1cf149"
+hash = "4eeca1a9bd5ef9c13503eb9b95408e1a67bfe68bd93c16cb99b83f266f644b13"

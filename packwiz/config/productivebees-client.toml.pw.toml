@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/productivebees-client.toml"
 hash-format = "sha256"
-hash = "3cc5a0f6959691ae103f123e9b7f1c3bdf0014261f86fce9d6eed06d1c909fdf"
+hash = "1606620842afcf1d1cf6520ab6deb31ac61c35764680751b945755acc477e407"

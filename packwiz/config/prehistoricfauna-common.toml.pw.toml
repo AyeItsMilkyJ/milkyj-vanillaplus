@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/prehistoricfauna-common.toml"
 hash-format = "sha256"
-hash = "45c1ff8f07f0a783a6ddc14fa24001c169e5b7472f90eb6b6d6547a9964c03b1"
+hash = "1dd6c557fa624649b5c7e234095a55b7ec1e088dc0dcd2323c8e219e1a7488dc"

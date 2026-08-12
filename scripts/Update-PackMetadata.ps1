@@ -37,6 +37,38 @@ function Get-FileDigest([string]$Path, [string]$Algorithm) {
     return (Get-FileHash -LiteralPath $Path -Algorithm $native).Hash.ToLowerInvariant()
 }
 
+function Convert-TextFileToLf([string]$Path) {
+    if ([IO.Path]::GetExtension($Path).Equals('.png', [StringComparison]::OrdinalIgnoreCase)) { return }
+    $bytes = [IO.File]::ReadAllBytes($Path)
+    if ($bytes -contains 0) { return }
+    $stream = [IO.MemoryStream]::new($bytes.Length)
+    try {
+        for ($index = 0; $index -lt $bytes.Length; $index++) {
+            if ($bytes[$index] -eq 13 -and ($index + 1) -lt $bytes.Length -and $bytes[$index + 1] -eq 10) {
+                continue
+            }
+            $stream.WriteByte($bytes[$index])
+        }
+        $normalised = $stream.ToArray()
+    } finally {
+        $stream.Dispose()
+    }
+    if ($normalised.Length -ne $bytes.Length) {
+        [IO.File]::WriteAllBytes($Path, $normalised)
+    }
+}
+
+# GitHub raw serves the LF-normalised Git blobs. Normalise the local host copy
+# before hashing so Windows LAN tests, committed metadata, and repository
+# downloads all use the same bytes. NUL-containing binary payloads are left as-is.
+foreach ($payloadFile in Get-ChildItem -LiteralPath (Join-Path $projectRootResolved 'payload') -Recurse -File) {
+    Convert-TextFileToLf $payloadFile.FullName
+}
+foreach ($metadataFile in Get-ChildItem -LiteralPath $packRoot -Recurse -File) {
+    if ($metadataFile.FullName -like '*\.packwiz-cache\*' -or $metadataFile.Extension -in @('.exe', '.jar')) { continue }
+    Convert-TextFileToLf $metadataFile.FullName
+}
+
 # A config/script/resource file hosted from this repository has two hashes:
 # its payload hash in the metafile, and the metafile hash in index.toml. Refresh
 # the payload hash first so one command safely updates both layers.

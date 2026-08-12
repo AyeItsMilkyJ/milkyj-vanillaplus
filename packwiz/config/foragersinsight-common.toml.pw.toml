@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/foragersinsight-common.toml"
 hash-format = "sha256"
-hash = "616ce82d348d7cdb6c40343d0fa2e66eed1f6561024d1f2559f0d8b361f2a3a7"
+hash = "0bd610de7c662ff04104c77f1964fe4c8385b44803e2fc332dfa93b1603df909"

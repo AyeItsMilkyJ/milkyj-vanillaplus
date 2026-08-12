@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/chalk-common.toml"
 hash-format = "sha256"
-hash = "6ffa7b7f4eec297ab23cc93690ee1824f3d8dca80e0bb46cfe6091d03870773c"
+hash = "539af37a36faf43f147891d67cce90f5462a42ed798dca7c453d8307dd696c2a"

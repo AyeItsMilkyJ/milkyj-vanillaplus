@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-08-13T01:24:15.8135424+10:00",
+  "branch": "integration/v1.9.0-rc1-final",
+  "scope": "read-only live configuration inspection plus disposable clean-world benchmark",
+  "liveServerWorldOrPrismTouched": false,
+  "productionPortTouched": false,
+  "performanceConfigurationChanged": false,
+  "environment": {
+    "os": "Microsoft Windows 11 Pro 10.0.26200",
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700KF",
+    "physicalCores": 12,
+    "logicalProcessors": 20,
+    "usableMemoryGiB": 31.8,
+    "freeMemoryGiBAtInspection": 19.2,
+    "java": "Temurin OpenJDK 17.0.19+10",
+    "minecraft": "1.20.1",
+    "forge": "47.4.10",
+    "serverJarCount": 203
+  },
+  "currentJVM": {
+    "arguments": [
+      "-Xmx8G",
+      "-Xms2G",
+      "-XX:+UseG1GC",
+      "-XX:+ParallelRefProcEnabled",
+      "-XX:MaxGCPauseMillis=150",
+      "-XX:+DisableExplicitGC"
+    ],
+    "assessment": "Healthy heap sizing and collector; Distant Horizons explicitly warns about DisableExplicitGC.",
+    "candidateNotApplied": "Replace -XX:+DisableExplicitGC with -XX:+ExplicitGCInvokesConcurrent and compare on a performance branch.",
+    "rollback": "Restore -XX:+DisableExplicitGC."
+  },
+  "serverProperties": {
+    "viewDistance": 12,
+    "simulationDistance": 6,
+    "entityBroadcastRangePercentage": 80,
+    "syncChunkWrites": false,
+    "maxTickTimeMilliseconds": 60000,
+    "maxPlayers": 10,
+    "productionPort": 25565
+  },
+  "benchmark": {
+    "source": "audit/performance-benchmark.json",
+    "testPort": 25579,
+    "status": "PASS",
+    "startupSecondsProcessToDone": 98.77,
+    "startupSecondsMinecraftDonePhase": 56.829,
+    "freshChunkyChunks": 289,
+    "freshChunkySeconds": 21,
+    "freshChunkyApproxChunksPerSecond": 13.8,
+    "saveSeconds": 0.51,
+    "shutdownSeconds": 1.46,
+    "fullGcCountAcrossMeasuredScenarios": 0,
+    "maximumSampledHeapUsedMiB": 3616.9,
+    "maximumSampledWorkingSetMiB": 4955.8,
+    "allScenariosHeld20Tps": true,
+    "allSevenLoadedDimensionsSaved": true,
+    "distantHorizonsClosed": true,
+    "jvmExitCode": 0,
+    "loadedChunkCount": null,
+    "loadedChunkCountReason": "No reliable total was exposed through the available Forge console commands."
+  },
+  "stressBoundary": {
+    "status": "FAIL_AS_DESIGNED_AND_REPLACED",
+    "workload": "Eight back-to-back far-region 4x4 chunk forceload commands during modded world generation.",
+    "result": "A single tick exceeded 60 seconds and the disposable server watchdog stopped the JVM.",
+    "authoritativeHarnessChange": "Spaced eight single-chunk requests; final run passed.",
+    "productionImpact": "None; disposable world and port only."
+  },
+  "optimizationMods": [
+    {"name": "ModernFix", "side": "both", "assessment": "KEEP; broad fixes, no harmful overlap observed"},
+    {"name": "FerriteCore", "side": "both", "assessment": "KEEP; memory deduplication complementary to ModernFix"},
+    {"name": "Alternate Current", "side": "server", "assessment": "KEEP; correctly server-only"},
+    {"name": "AI Improvements", "side": "both", "assessment": "KEEP; cached look controller enabled, AI removals disabled"},
+    {"name": "FastSuite", "side": "both", "assessment": "KEEP; unsafe options disabled"},
+    {"name": "Clumps", "side": "both", "assessment": "KEEP"},
+    {"name": "Let Me Despawn", "side": "both", "assessment": "KEEP; no broad persistence enablers"},
+    {"name": "Chunky", "side": "server", "assessment": "KEEP; use only during maintenance"},
+    {"name": "Embeddium", "side": "client", "assessment": "KEEP; correctly client-only JAR"},
+    {"name": "Entity Culling", "side": "client", "assessment": "KEEP; correctly client-only JAR"},
+    {"name": "ImmediatelyFast", "side": "client", "assessment": "KEEP; correctly client-only JAR"},
+    {"name": "Distant Horizons", "side": "both", "assessment": "KEEP FOR RC1; active server LOD value, TEST FIRST tuning"}
+  ],
+  "unnecessaryServerConfigs": [
+    "config/embeddium-fingerprint.json",
+    "config/embeddium-mixins.properties",
+    "config/entityculling.json"
+  ],
+  "harmfulOptimizationOverlapFound": false,
+  "serverOptimizationIncorrectlyClientOnlyFound": false,
+  "risks": [
+    {"rank": "HIGH", "risk": "Concurrent fresh terrain/structure/dimension generation plus Distant Horizons"},
+    {"rank": "MEDIUM", "risk": "Persistent mobs, bees, pets, villagers and developed Create bases/trains"},
+    {"rank": "MEDIUM", "risk": "Distant Horizons 10 full-duty workers and unlimited global LOD bandwidth"},
+    {"rank": "LOW", "risk": "Current heap/GC capacity and optimization-mod overlap"}
+  ],
+  "recommendations": {
+    "SAFE NOW": [
+      "Disable Distant Horizons self-update checks so Packwiz remains authoritative.",
+      "Reduce routine Distant Horizons file logging from INFO to WARN.",
+      "Run one bounded Chunky task only during maintenance."
+    ],
+    "TEST FIRST": [
+      "Test ExplicitGCInvokesConcurrent under G1 in place of DisableExplicitGC.",
+      "Test Distant Horizons at 6 threads and a 0.5-0.75 run-time ratio, one variable at a time.",
+      "Test lower Distant Horizons request and bandwidth ceilings.",
+      "Compare view 10/simulation 6 only if copied-world exploration shows lag.",
+      "Benchmark a stopped copied world with real bases, trains, contraptions, bees and multiple players."
+    ],
+    "DO NOT CHANGE": [
+      "Do not alter mod/content selection, recipes, spawning, structures, dimensions, quests or progression for benchmark gains.",
+      "Do not add Fabric Lithium/Sodium, Starlight, random memory mods or unproven concurrent chunk engines.",
+      "Keep simulation distance 6, the watchdog, Forge 47.4.10 and the 8 GiB maximum heap for this RC."
+    ],
+    "CLIENT ONLY": [
+      "Keep Embeddium, Entity Culling and ImmediatelyFast JARs client-only.",
+      "Later reclassify the three inert Embeddium/Entity Culling configs from both to client after update/rollback testing."
+    ],
+    "FUTURE OPTION": [
+      "Use a temporary server profiler when a copied-world test produces a specific lag symptom.",
+      "Evaluate a concurrent chunk engine only with an exact Forge 1.20.1 build and full copied-world rollback validation."
+    ]
+  }
+}

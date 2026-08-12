@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/advancementplaques-common.toml"
 hash-format = "sha256"
-hash = "b7812dd0a3535dea9871f2695b363727bb0abde965d365ca41e8c63b8bd67884"
+hash = "44e9102364babb9c34c82dd26b38ba26f6ab938112134d5891aa1c940ed06b06"

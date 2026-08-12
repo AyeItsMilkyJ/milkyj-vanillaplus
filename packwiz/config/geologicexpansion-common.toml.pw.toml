@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/geologicexpansion-common.toml"
 hash-format = "sha256"
-hash = "f7428aa0c0df52dedda16fc2eda51509d55e1be3812f813ab0a89aa0f87d4e60"
+hash = "0dd4f00c462a3fe8501eff1a359e8486e0657315ab8deb2ead098c4302e96b70"

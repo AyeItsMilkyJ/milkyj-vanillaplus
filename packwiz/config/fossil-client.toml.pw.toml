@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/fossil-client.toml"
 hash-format = "sha256"
-hash = "3f40422a98b59594d8e66e11a0777815c96ef89897a52690cc4d58683acf5616"
+hash = "c915c047b029938fee2a990a45f8b7c5f16a99e95f5ddc0c073430402cedb5ca"

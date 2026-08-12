@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ecologics-common.toml"
 hash-format = "sha256"
-hash = "ae240f92ae82e771f3390b37f404e632fb409270128f9ae1d1e9d283480e383d"
+hash = "b6df63e1035657e07f4b8ef5b7fae10ff03239f62c1393fab6cfdac0e8f70339"

@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/cookingforblockheads-common.toml"
 hash-format = "sha256"
-hash = "e47daa4f9c1d08b1401767e1f5b44cf2ed1284d737338a1133dfde43ded8a9af"
+hash = "475551e41751c665a70640c206f613093b5bc53e273a27d60ee32bb79e165b2f"

@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterarcheology-common.toml"
 hash-format = "sha256"
-hash = "b2729a5916c5aac214f67337d1d38ee7767e1e14b7f2dcb7b7371a9509829a96"
+hash = "ad9e40f11ad0196f04edb97ed058148a207992d768137266d7279502d5186bf2"

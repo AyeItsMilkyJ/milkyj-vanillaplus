@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 2,
+  "validatedAt": "2026-08-13T00:58:29.2322434+10:00",
+  "branch": "integration/v1.9.0-rc1-final",
+  "baseCommit": "8a15a8c40df21f4d9e975a27591156f368b55c5d",
+  "sourceCompatibilityCommit": "bb62f885457e37c20b45bd52717f498aa0859b86",
+  "minecraft": "1.20.1",
+  "forge": "47.4.10",
+  "modDefinitions": 238,
+  "packwizDestinations": 689,
+  "cleanClientJarCount": 236,
+  "cleanServerJarCount": 203,
+  "questCount": 118,
+  "modVersionsChanged": false,
+  "questDefinitionsChanged": false,
+  "payloadDeliveredTo": ["client", "server"],
+  "resources": {
+    "data/beautify/advancements/progression/candelabra.json": "f105986614064ded8142f528a33bfcc79d329dfd99363a76d9b8f8f64cd5717a",
+    "data/domesticationinnovation/loot_modifiers/blazing_enchanted_book.json": "733ea7be48dc5bffe499a704bfa196ddef034790ce2ade94abc7e04bf3f6198b",
+    "data/nethersdelight/loot_modifiers/chopping_leather.json": "81d79fdfc511e80aba3ab984025d67623998397fa7f43edc2f15db46801f036c",
+    "data/nethersdelight/loot_modifiers/chopping_string.json": "aa08932d7e997a595bf0dcfc285a3768e5d94e562bd9445c97b7d041e9fda586",
+    "data/tf_dnv/loot_tables/chests/dungeon_shroom_barrel.json": "aed53ece9f961c5c86e859739ba0feb44e1ebee65a507a23b1005fd41af1ba56"
+  },
+  "staticValidation": {
+    "status": "PASS",
+    "exactInstalledJarHashesPinned": true,
+    "allJsonParsed": true,
+    "domesticationAliasExact": true,
+    "nethersDelightOnlyConditionIdsChanged": true,
+    "nethersDelightAnyOfSupportedByInstalledAetherEvidence": true,
+    "beautifyOnlyTwoTypoValuesChanged": true,
+    "beautifyCorrectItemExists": true,
+    "tfDnvShroomOnlyPathChanged": true,
+    "tfDnvCorrectedTargetExists": true,
+    "ignoredFindingsIntegrated": false
+  },
+  "runtime": {
+    "status": "PASS",
+    "disposableRoot": "build/end-to-end",
+    "serverReachedDone": true,
+    "datapackAutomaticallyEnabled": true,
+    "datapackFinalEffectivePriority": true,
+    "explicitReloadCompleted": true,
+    "advancementCounts": [1258, 1258],
+    "ftbQuestCount": 118,
+    "targetedErrorsPresent": {
+      "domesticationInnovation": false,
+      "nethersDelightLeather": false,
+      "nethersDelightString": false,
+      "beautifyCandelabra": false,
+      "tfDnvShroomPath": false
+    },
+    "globalLootModifierDecodeErrors": 0,
+    "advancementParseErrors": 0,
+    "datapackLoadFailures": 0,
+    "remainingTfDnvCasketWarnings": 2,
+    "remainingTfDnvCasketWarningsExplanation": "One identical warning on initial load and one after explicit reload.",
+    "allLoadedDimensionsSaved": true,
+    "jvmExited": true,
+    "jvmExitCode": 0
+  },
+  "rollback": {
+    "status": "PASS",
+    "baselineToCandidate": true,
+    "candidateToBaseline": true,
+    "candidateCompatibilityFilesInstalled": true,
+    "candidateCompatibilityFilesRemoved": true,
+    "obsoleteManagedFileRemoved": true,
+    "personalFilesPreserved": true
+  },
+  "remainingCompatibilityWarnings": {
+    "tf_dnv:chests/dungeon_barrel -> twilightforest:chests/casket_loot": "FIX LATER",
+    "create_central_kitchen vegan recipe": "IGNORE SAFELY",
+    "aether delight shield overrides": "IGNORE SAFELY",
+    "relics talisman slot": "IGNORE SAFELY"
+  },
+  "liveFilesTouched": false
+}

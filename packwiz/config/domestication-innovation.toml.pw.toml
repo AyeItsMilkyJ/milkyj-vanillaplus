@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/domestication-innovation.toml"
 hash-format = "sha256"
-hash = "8df5ed720b6f4e65dde564ca501ac9a4ba095684361ea90aff6110a905561d00"
+hash = "d89c81c60a150bf7a07f2800ce82581c5ec079e526261ef698674f65ec6e88f2"

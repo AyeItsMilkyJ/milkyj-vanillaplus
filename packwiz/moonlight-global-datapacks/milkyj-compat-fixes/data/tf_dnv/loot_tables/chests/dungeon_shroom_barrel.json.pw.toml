@@ -1,0 +1,8 @@
+name = "Managed moonlight-global-datapacks: milkyj-compat-fixes/data/tf_dnv/loot_tables/chests/dungeon_shroom_barrel.json"
+filename = "dungeon_shroom_barrel.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/tf_dnv/loot_tables/chests/dungeon_shroom_barrel.json"
+hash-format = "sha256"
+hash = "aed53ece9f961c5c86e859739ba0feb44e1ebee65a507a23b1005fd41af1ba56"

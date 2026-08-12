@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/aether-client.toml"
 hash-format = "sha256"
-hash = "5d77208c61e491c59af930b42783cb36ce38ca9adb27aa685f57ef4cb445bed9"
+hash = "84ed44230b1ed4a7513cf058b5cab163cff61a3257b0dd20e0b37495898c83c0"

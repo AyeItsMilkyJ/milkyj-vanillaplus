@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/galosphere-common.toml"
 hash-format = "sha256"
-hash = "91b8a2dcf9c7f91d694cec42f218ffd77fb971b129d9772cdf8242c59f93c1c9"
+hash = "c2dec648a058478998920a077e7fd6624b31281f711e4c2df315599c73d8171e"

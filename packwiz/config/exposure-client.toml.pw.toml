@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/exposure-client.toml"
 hash-format = "sha256"
-hash = "7b3b5d1a47c1a2b7ff94aac218e5a38850558105ef55d11a8841930b2aa791ba"
+hash = "179c590fd6e981fb4d0d6db83b5cb828b826b66a8da028ce2deefc308554e1da"

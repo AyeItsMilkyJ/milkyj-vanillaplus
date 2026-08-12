@@ -5,4 +5,4 @@ side = "server"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/config/moblassos-server.toml"
 hash-format = "sha256"
-hash = "16d78d1840e3bd1adc79292bef90856015155057f38d9cd7cce968d59124493a"
+hash = "15eaae1646ea8f2bd16c67095b716fe253d275a6e77894f653f053ec06bc7c77"

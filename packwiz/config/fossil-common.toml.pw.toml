@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/fossil-common.toml"
 hash-format = "sha256"
-hash = "230eecc36c73698cf4b0b8c2afd405244fb382beef76ddd03f6b73738d8b2ba6"
+hash = "4234cd6889671307eaafc48509b7d4017be1149b799052e8282d29a54fb0fba5"

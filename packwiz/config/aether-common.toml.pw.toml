@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/aether-common.toml"
 hash-format = "sha256"
-hash = "c48fcf909782f15a5e7da5b1adf223bb23b19d335b03dbc20eafaf6fdc33e763"
+hash = "4555c376b82ad87b6870b425422dfe53fd38857fc951a0048ad87311c3f3edf0"

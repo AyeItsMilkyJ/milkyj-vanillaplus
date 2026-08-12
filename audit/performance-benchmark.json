@@ -1,0 +1,910 @@
+{
+    "schemaVersion":  1,
+    "measuredAt":  "2026-08-13T01:22:56.1075650+10:00",
+    "status":  "PASS",
+    "disposableRoot":  "build/performance-audit",
+    "productionPortTouched":  false,
+    "testPort":  25579,
+    "minecraft":  "1.20.1",
+    "forge":  "47.4.10",
+    "serverJarCount":  203,
+    "java":  {
+                 "executable":  "java.exe (absolute host path intentionally omitted)",
+                 "versionOutput":  "openjdk version \"17.0.19\" 2026-04-21\nOpenJDK Runtime Environment Temurin-17.0.19+10 (build 17.0.19+10)\nOpenJDK 64-Bit Server VM Temurin-17.0.19+10 (build 17.0.19+10, mixed mode, sharing)"
+             },
+    "jvmArguments":  [
+                         "-Xmx8G",
+                         "-Xms2G",
+                         "-XX:+UseG1GC",
+                         "-XX:+ParallelRefProcEnabled",
+                         "-XX:MaxGCPauseMillis=150",
+                         "-XX:+DisableExplicitGC"
+                     ],
+    "serverSettings":  {
+                           "viewDistance":  12,
+                           "simulationDistance":  6,
+                           "entityBroadcastRangePercentage":  80,
+                           "syncChunkWrites":  false
+                       },
+    "startupSeconds":  98.77,
+    "scenarios":  {
+                      "cleanIdle":  {
+                                        "durationSeconds":  31.32,
+                                        "completionPatternMatched":  null,
+                                        "sampleCount":  6,
+                                        "workingSetMiB":  {
+                                                              "average":  4912.4,
+                                                              "maximum":  4955.5
+                                                          },
+                                        "privateMiB":  {
+                                                           "average":  5066.4,
+                                                           "maximum":  5110.4
+                                                       },
+                                        "heapUsedMiB":  {
+                                                            "average":  3169.5,
+                                                            "maximum":  3514.6
+                                                        },
+                                        "gcDelta":  {
+                                                        "youngCollections":  6,
+                                                        "fullCollections":  0,
+                                                        "concurrentCollections":  0,
+                                                        "totalGcSeconds":  0.093
+                                                    },
+                                        "samples":  [
+                                                        {
+                                                            "at":  "2026-08-13T01:19:22.3811397+10:00",
+                                                            "workingSetMiB":  4955.5,
+                                                            "privateMiB":  5110.4,
+                                                            "cpuSeconds":  332.969,
+                                                            "gc":  {
+                                                                       "heapUsedMiB":  3514.6,
+                                                                       "heapCommittedMiB":  4084,
+                                                                       "youngCollections":  67,
+                                                                       "youngGcSeconds":  1.064,
+                                                                       "fullCollections":  0,
+                                                                       "fullGcSeconds":  0,
+                                                                       "concurrentCollections":  12,
+                                                                       "concurrentGcSeconds":  0.021,
+                                                                       "totalGcSeconds":  1.086
+                                                                   }
+                                                        },
+                                                        {
+                                                            "at":  "2026-08-13T01:19:28.0028338+10:00",
+                                                            "workingSetMiB":  4936.7,
+                                                            "privateMiB":  5088.7,
+                                                            "cpuSeconds":  357.125,
+                                                            "gc":  {
+                                                                       "heapUsedMiB":  3407.6,
+                                                                       "heapCommittedMiB":  4084,
+                                                                       "youngCollections":  70,
+                                                                       "youngGcSeconds":  1.111,
+                                                                       "fullCollections":  0,
+                                                                       "fullGcSeconds":  0,
+                                                                       "concurrentCollections":  12,
+                                                                       "concurrentGcSeconds":  0.021,
+                                                                       "totalGcSeconds":  1.132
+                                                                   }
+                                                        },
+                                                        {
+                                                            "at":  "2026-08-13T01:19:33.1344699+10:00",
+                                                            "workingSetMiB":  4907.3,
+                                                            "privateMiB":  5062.8,
+                                                            "cpuSeconds":  364.094,
+                                                            "gc":  {
+                                                                       "heapUsedMiB":  3441,
+                                                                       "heapCommittedMiB":  4084,
+                                                                       "youngCollections":  71,
+                                                                       "youngGcSeconds":  1.127,
+                                                                       "fullCollections":  0,
+                                                                       "fullGcSeconds":  0,
+                                                                       "concurrentCollections":  12,
+                                                                       "concurrentGcSeconds":  0.021,
+                                                                       "totalGcSeconds":  1.149
+                                                                   }
+                                                        },
+                                                        {
+                                                            "at":  "2026-08-13T01:19:38.2652074+10:00",
+                                                            "workingSetMiB":  4890.2,
+                                                            "privateMiB":  5046.4,
+                                                            "cpuSeconds":  366.766,
+                                                            "gc":  {
+                                                                       "heapUsedMiB":  2948.5,
+                                                                       "heapCommittedMiB":  4084,
+                                                                       "youngCollections":  72,
+                                                                       "youngGcSeconds":  1.151,
+                                                                       "fullCollections":  0,
+                                                                       "fullGcSeconds":  0,
+                                                                       "concurrentCollections":  12,
+                                                                       "concurrentGcSeconds":  0.021,
+                                                                       "totalGcSeconds":  1.172
+                                                                   }
+                                                        },
+                                                        {
+                                                            "at":  "2026-08-13T01:19:43.3987271+10:00",
+                                                            "workingSetMiB":  4881.6,
+                                                            "privateMiB":  5034.1,
+                                                            "cpuSeconds":  369.969,
+                                                            "gc":  {
+                                                                       "heapUsedMiB":  3256.5,
+                                                                       "heapCommittedMiB":  4084,
+                                                                       "youngCollections":  72,
+                                                                       "youngGcSeconds":  1.151,
+                                                                       "fullCollections":  0,
+                                                                       "fullGcSeconds":  0,
+                                                                       "concurrentCollections":  12,
+                                                                       "concurrentGcSeconds":  0.021,
+                                                                       "totalGcSeconds":  1.172
+                                                                   }
+                                                        },
+                                                        {
+                                                            "at":  "2026-08-13T01:19:48.5316841+10:00",
+                                                            "workingSetMiB":  4902.9,
+                                                            "privateMiB":  5056.1,
+                                                            "cpuSeconds":  371.984,
+                                                            "gc":  {
+                                                                       "heapUsedMiB":  2448.5,
+                                                                       "heapCommittedMiB":  4084,
+                                                                       "youngCollections":  73,
+                                                                       "youngGcSeconds":  1.157,
+                                                                       "fullCollections":  0,
+                                                                       "fullGcSeconds":  0,
+                                                                       "concurrentCollections":  12,
+                                                                       "concurrentGcSeconds":  0.021,
+                                                                       "totalGcSeconds":  1.179
+                                                                   }
+                                                        }
+                                                    ],
+                                        "tick":  {
+                                                     "overallMeanTickMilliseconds":  4.47,
+                                                     "overallMeanTps":  20,
+                                                     "dimensionTicks":  [
+                                                                            {
+                                                                                "scope":  "[13Aug2026 01:19:53.749] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:overworld (minecraft:overworld)",
+                                                                                "meanTickMilliseconds":  4.162,
+                                                                                "meanTps":  20
+                                                                            },
+                                                                            {
+                                                                                "scope":  "[13Aug2026 01:19:53.749] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim twilightforest:twilight_forest (twilightforest:twilight_forest_type)",
+                                                                                "meanTickMilliseconds":  0.025,
+                                                                                "meanTps":  20
+                                                                            },
+                                                                            {
+                                                                                "scope":  "[13Aug2026 01:19:53.749] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim deeperdarker:otherside (deeperdarker:otherside)",
+                                                                                "meanTickMilliseconds":  0.006,
+                                                                                "meanTps":  20
+                                                                            },
+                                                                            {
+                                                                                "scope":  "[13Aug2026 01:19:53.749] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:the_end (minecraft:the_end)",
+                                                                                "meanTickMilliseconds":  0.007,
+                                                                                "meanTps":  20
+                                                                            },
+                                                                            {
+                                                                                "scope":  "[13Aug2026 01:19:53.749] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim aether:the_aether (aether:the_aether)",
+                                                                                "meanTickMilliseconds":  0.012,
+                                                                                "meanTps":  20
+                                                                            },
+                                                                            {
+                                                                                "scope":  "[13Aug2026 01:19:53.749] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:the_nether (minecraft:the_nether)",
+                                                                                "meanTickMilliseconds":  0.005,
+                                                                                "meanTps":  20
+                                                                            },
+                                                                            {
+                                                                                "scope":  "[13Aug2026 01:19:53.749] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim graveyard:past (graveyard:past)",
+                                                                                "meanTickMilliseconds":  0.006,
+                                                                                "meanTps":  20
+                                                                            },
+                                                                            {
+                                                                                "scope":  "[13Aug2026 01:19:53.750] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Overall",
+                                                                                "meanTickMilliseconds":  4.47,
+                                                                                "meanTps":  20
+                                                                            }
+                                                                        ],
+                                                     "entityCommandOutput":  [
+                                                                                 "[13Aug2026 01:19:53.758] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Total: 182"
+                                                                             ],
+                                                     "totalEntityCount":  182,
+                                                     "loadedChunkCount":  null,
+                                                     "loadedChunkCountNote":  "Forge 1.20.1 exposes tick timing but no reliable loaded-chunk total through the available console commands."
+                                                 }
+                                    },
+                      "controlledChunkGeneration":  {
+                                                        "durationSeconds":  25.8,
+                                                        "completionPatternMatched":  true,
+                                                        "sampleCount":  6,
+                                                        "workingSetMiB":  {
+                                                                              "average":  4921.3,
+                                                                              "maximum":  4943
+                                                                          },
+                                                        "privateMiB":  {
+                                                                           "average":  5073.2,
+                                                                           "maximum":  5093.7
+                                                                       },
+                                                        "heapUsedMiB":  {
+                                                                            "average":  3076.1,
+                                                                            "maximum":  3401.4
+                                                                        },
+                                                        "gcDelta":  {
+                                                                        "youngCollections":  16,
+                                                                        "fullCollections":  0,
+                                                                        "concurrentCollections":  0,
+                                                                        "totalGcSeconds":  0.207
+                                                                    },
+                                                        "samples":  [
+                                                                        {
+                                                                            "at":  "2026-08-13T01:19:56.7845121+10:00",
+                                                                            "workingSetMiB":  4906.1,
+                                                                            "privateMiB":  5058.5,
+                                                                            "cpuSeconds":  374.156,
+                                                                            "gc":  {
+                                                                                       "heapUsedMiB":  2868.5,
+                                                                                       "heapCommittedMiB":  4084,
+                                                                                       "youngCollections":  73,
+                                                                                       "youngGcSeconds":  1.157,
+                                                                                       "fullCollections":  0,
+                                                                                       "fullGcSeconds":  0,
+                                                                                       "concurrentCollections":  12,
+                                                                                       "concurrentGcSeconds":  0.021,
+                                                                                       "totalGcSeconds":  1.179
+                                                                                   }
+                                                                        },
+                                                                        {
+                                                                            "at":  "2026-08-13T01:20:01.9235507+10:00",
+                                                                            "workingSetMiB":  4929.1,
+                                                                            "privateMiB":  5080.4,
+                                                                            "cpuSeconds":  383.797,
+                                                                            "gc":  {
+                                                                                       "heapUsedMiB":  3401.4,
+                                                                                       "heapCommittedMiB":  4084,
+                                                                                       "youngCollections":  75,
+                                                                                       "youngGcSeconds":  1.176,
+                                                                                       "fullCollections":  0,
+                                                                                       "fullGcSeconds":  0,
+                                                                                       "concurrentCollections":  12,
+                                                                                       "concurrentGcSeconds":  0.021,
+                                                                                       "totalGcSeconds":  1.197
+                                                                                   }
+                                                                        },
+                                                                        {
+                                                                            "at":  "2026-08-13T01:20:07.0839532+10:00",
+                                                                            "workingSetMiB":  4940.2,
+                                                                            "privateMiB":  5091.2,
+                                                                            "cpuSeconds":  397.375,
+                                                                            "gc":  {
+                                                                                       "heapUsedMiB":  2812.3,
+                                                                                       "heapCommittedMiB":  4084,
+                                                                                       "youngCollections":  79,
+                                                                                       "youngGcSeconds":  1.243,
+                                                                                       "fullCollections":  0,
+                                                                                       "fullGcSeconds":  0,
+                                                                                       "concurrentCollections":  12,
+                                                                                       "concurrentGcSeconds":  0.021,
+                                                                                       "totalGcSeconds":  1.264
+                                                                                   }
+                                                                        },
+                                                                        {
+                                                                            "at":  "2026-08-13T01:20:12.2146532+10:00",
+                                                                            "workingSetMiB":  4943,
+                                                                            "privateMiB":  5093.7,
+                                                                            "cpuSeconds":  413.625,
+                                                                            "gc":  {
+                                                                                       "heapUsedMiB":  3086.1,
+                                                                                       "heapCommittedMiB":  4084,
+                                                                                       "youngCollections":  83,
+                                                                                       "youngGcSeconds":  1.296,
+                                                                                       "fullCollections":  0,
+                                                                                       "fullGcSeconds":  0,
+                                                                                       "concurrentCollections":  12,
+                                                                                       "concurrentGcSeconds":  0.021,
+                                                                                       "totalGcSeconds":  1.318
+                                                                                   }
+                                                                        },
+                                                                        {
+                                                                            "at":  "2026-08-13T01:20:17.3449098+10:00",
+                                                                            "workingSetMiB":  4897.9,
+                                                                            "privateMiB":  5050.9,
+                                                                            "cpuSeconds":  429.469,
+                                                                            "gc":  {
+                                                                                       "heapUsedMiB":  2899.4,
+                                                                                       "heapCommittedMiB":  4084,
+                                                                                       "youngCollections":  88,
+                                                                                       "youngGcSeconds":  1.358,
+                                                                                       "fullCollections":  0,
+                                                                                       "fullGcSeconds":  0,
+                                                                                       "concurrentCollections":  12,
+                                                                                       "concurrentGcSeconds":  0.021,
+                                                                                       "totalGcSeconds":  1.379
+                                                                                   }
+                                                                        },
+                                                                        {
+                                                                            "at":  "2026-08-13T01:20:22.4576934+10:00",
+                                                                            "workingSetMiB":  4911.6,
+                                                                            "privateMiB":  5064.7,
+                                                                            "cpuSeconds":  433.891,
+                                                                            "gc":  {
+                                                                                       "heapUsedMiB":  3388.7,
+                                                                                       "heapCommittedMiB":  4084,
+                                                                                       "youngCollections":  89,
+                                                                                       "youngGcSeconds":  1.364,
+                                                                                       "fullCollections":  0,
+                                                                                       "fullGcSeconds":  0,
+                                                                                       "concurrentCollections":  12,
+                                                                                       "concurrentGcSeconds":  0.021,
+                                                                                       "totalGcSeconds":  1.386
+                                                                                   }
+                                                                        }
+                                                                    ],
+                                                        "tick":  {
+                                                                     "overallMeanTickMilliseconds":  5.811,
+                                                                     "overallMeanTps":  20,
+                                                                     "dimensionTicks":  [
+                                                                                            {
+                                                                                                "scope":  "[13Aug2026 01:20:22.643] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:overworld (minecraft:overworld)",
+                                                                                                "meanTickMilliseconds":  5.478,
+                                                                                                "meanTps":  20
+                                                                                            },
+                                                                                            {
+                                                                                                "scope":  "[13Aug2026 01:20:22.644] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim twilightforest:twilight_forest (twilightforest:twilight_forest_type)",
+                                                                                                "meanTickMilliseconds":  0.015,
+                                                                                                "meanTps":  20
+                                                                                            },
+                                                                                            {
+                                                                                                "scope":  "[13Aug2026 01:20:22.644] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim deeperdarker:otherside (deeperdarker:otherside)",
+                                                                                                "meanTickMilliseconds":  0.006,
+                                                                                                "meanTps":  20
+                                                                                            },
+                                                                                            {
+                                                                                                "scope":  "[13Aug2026 01:20:22.644] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:the_end (minecraft:the_end)",
+                                                                                                "meanTickMilliseconds":  0.004,
+                                                                                                "meanTps":  20
+                                                                                            },
+                                                                                            {
+                                                                                                "scope":  "[13Aug2026 01:20:22.644] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim aether:the_aether (aether:the_aether)",
+                                                                                                "meanTickMilliseconds":  0.008,
+                                                                                                "meanTps":  20
+                                                                                            },
+                                                                                            {
+                                                                                                "scope":  "[13Aug2026 01:20:22.644] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:the_nether (minecraft:the_nether)",
+                                                                                                "meanTickMilliseconds":  0.003,
+                                                                                                "meanTps":  20
+                                                                                            },
+                                                                                            {
+                                                                                                "scope":  "[13Aug2026 01:20:22.644] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim graveyard:past (graveyard:past)",
+                                                                                                "meanTickMilliseconds":  0.003,
+                                                                                                "meanTps":  20
+                                                                                            },
+                                                                                            {
+                                                                                                "scope":  "[13Aug2026 01:20:22.644] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Overall",
+                                                                                                "meanTickMilliseconds":  5.811,
+                                                                                                "meanTps":  20
+                                                                                            }
+                                                                                        ],
+                                                                     "entityCommandOutput":  [
+                                                                                                 "[13Aug2026 01:20:22.645] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Total: 178"
+                                                                                             ],
+                                                                     "totalEntityCount":  178,
+                                                                     "loadedChunkCount":  null,
+                                                                     "loadedChunkCountNote":  "Forge 1.20.1 exposes tick timing but no reliable loaded-chunk total through the available console commands."
+                                                                 },
+                                                        "commandOutput":  [
+                                                                              "[13Aug2026 01:19:56.797] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] World changed to minecraft:overworld.",
+                                                                              "[13Aug2026 01:19:56.798] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Center changed to 16384, 16384.",
+                                                                              "[13Aug2026 01:19:56.798] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Radius changed to 128.",
+                                                                              "[13Aug2026 01:19:56.803] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task started in minecraft:overworld for the square region centered at 16384, 16384 with radius 128.",
+                                                                              "[13Aug2026 01:20:03.159] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 6 chunks (2.08%), ETA: 0:00:09, Rate: 30.0 cps, Current: 1027, 1026",
+                                                                              "[13Aug2026 01:20:04.227] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 24 chunks (8.30%), ETA: 0:00:14, Rate: 18.9 cps, Current: 1029, 1029",
+                                                                              "[13Aug2026 01:20:08.025] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 43 chunks (14.88%), ETA: 0:00:28, Rate: 8.5 cps, Current: 1031, 1025",
+                                                                              "[13Aug2026 01:20:09.047] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 64 chunks (22.15%), ETA: 0:00:21, Rate: 10.5 cps, Current: 1026, 1024",
+                                                                              "[13Aug2026 01:20:10.067] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 112 chunks (38.75%), ETA: 0:00:11, Rate: 15.8 cps, Current: 1031, 1032",
+                                                                              "[13Aug2026 01:20:11.348] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 117 chunks (40.48%), ETA: 0:00:12, Rate: 13.9 cps, Current: 1024, 1020",
+                                                                              "[13Aug2026 01:20:12.479] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 120 chunks (41.52%), ETA: 0:00:13, Rate: 12.6 cps, Current: 1030, 1017",
+                                                                              "[13Aug2026 01:20:13.493] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 153 chunks (52.94%), ETA: 0:00:09, Rate: 14.5 cps, Current: 1017, 1021",
+                                                                              "[13Aug2026 01:20:15.178] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 180 chunks (62.28%), ETA: 0:00:07, Rate: 14.7 cps, Current: 1023, 1023",
+                                                                              "[13Aug2026 01:20:16.183] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 216 chunks (74.74%), ETA: 0:00:04, Rate: 16.3 cps, Current: 1021, 1024",
+                                                                              "[13Aug2026 01:20:17.343] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task running for minecraft:overworld. Processed: 266 chunks (92.04%), ETA: 0:00:01, Rate: 18.5 cps, Current: 1016, 1018",
+                                                                              "[13Aug2026 01:20:17.810] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Chunky] Task finished for minecraft:overworld. Processed: 289 chunks (100.00%), Total time: 0:00:21"
+                                                                          ]
+                                                    },
+                      "controlledExplorationWorldgen":  {
+                                                            "durationSeconds":  46.19,
+                                                            "completionPatternMatched":  null,
+                                                            "sampleCount":  9,
+                                                            "workingSetMiB":  {
+                                                                                  "average":  4930.8,
+                                                                                  "maximum":  4947
+                                                                              },
+                                                            "privateMiB":  {
+                                                                               "average":  5082.5,
+                                                                               "maximum":  5097.8
+                                                                           },
+                                                            "heapUsedMiB":  {
+                                                                                "average":  3103.8,
+                                                                                "maximum":  3477.7
+                                                                            },
+                                                            "gcDelta":  {
+                                                                            "youngCollections":  24,
+                                                                            "fullCollections":  0,
+                                                                            "concurrentCollections":  0,
+                                                                            "totalGcSeconds":  0.237
+                                                                        },
+                                                            "samples":  [
+                                                                            {
+                                                                                "at":  "2026-08-13T01:21:05.6711672+10:00",
+                                                                                "workingSetMiB":  4947,
+                                                                                "privateMiB":  5097.8,
+                                                                                "cpuSeconds":  496.359,
+                                                                                "gc":  {
+                                                                                           "heapUsedMiB":  2844.5,
+                                                                                           "heapCommittedMiB":  4084,
+                                                                                           "youngCollections":  117,
+                                                                                           "youngGcSeconds":  1.729,
+                                                                                           "fullCollections":  0,
+                                                                                           "fullGcSeconds":  0,
+                                                                                           "concurrentCollections":  12,
+                                                                                           "concurrentGcSeconds":  0.021,
+                                                                                           "totalGcSeconds":  1.75
+                                                                                       }
+                                                                            },
+                                                                            {
+                                                                                "at":  "2026-08-13T01:21:10.8165045+10:00",
+                                                                                "workingSetMiB":  4900.9,
+                                                                                "privateMiB":  5054.9,
+                                                                                "cpuSeconds":  504.891,
+                                                                                "gc":  {
+                                                                                           "heapUsedMiB":  2852.7,
+                                                                                           "heapCommittedMiB":  4084,
+                                                                                           "youngCollections":  121,
+                                                                                           "youngGcSeconds":  1.77,
+                                                                                           "fullCollections":  0,
+                                                                                           "fullGcSeconds":  0,
+                                                                                           "concurrentCollections":  12,
+                                                                                           "concurrentGcSeconds":  0.021,
+                                                                                           "totalGcSeconds":  1.792
+                                                                                       }
+                                                                            },
+                                                                            {
+                                                                                "at":  "2026-08-13T01:21:15.9467237+10:00",
+                                                                                "workingSetMiB":  4910.4,
+                                                                                "privateMiB":  5063.8,
+                                                                                "cpuSeconds":  513.719,
+                                                                                "gc":  {
+                                                                                           "heapUsedMiB":  3271.1,
+                                                                                           "heapCommittedMiB":  4084,
+                                                                                           "youngCollections":  125,
+                                                                                           "youngGcSeconds":  1.805,
+                                                                                           "fullCollections":  0,
+                                                                                           "fullGcSeconds":  0,
+                                                                                           "concurrentCollections":  12,
+                                                                                           "concurrentGcSeconds":  0.021,
+                                                                                           "totalGcSeconds":  1.827
+                                                                                       }
+                                                                            },
+                                                                            {
+                                                                                "at":  "2026-08-13T01:21:21.0768419+10:00",
+                                                                                "workingSetMiB":  4923.6,
+                                                                                "privateMiB":  5075.5,
+                                                                                "cpuSeconds":  520.375,
+                                                                                "gc":  {
+                                                                                           "heapUsedMiB":  3185,
+                                                                                           "heapCommittedMiB":  4084,
+                                                                                           "youngCollections":  129,
+                                                                                           "youngGcSeconds":  1.864,
+                                                                                           "fullCollections":  0,
+                                                                                           "fullGcSeconds":  0,
+                                                                                           "concurrentCollections":  12,
+                                                                                           "concurrentGcSeconds":  0.021,
+                                                                                           "totalGcSeconds":  1.885
+                                                                                       }
+                                                                            },
+                                                                            {
+                                                                                "at":  "2026-08-13T01:21:26.2075856+10:00",
+                                                                                "workingSetMiB":  4939,
+                                                                                "privateMiB":  5090.1,
+                                                                                "cpuSeconds":  534.594,
+                                                                                "gc":  {
+                                                                                           "heapUsedMiB":  3222.5,
+                                                                                           "heapCommittedMiB":  4084,
+                                                                                           "youngCollections":  137,
+                                                                                           "youngGcSeconds":  1.929,
+                                                                                           "fullCollections":  0,
+                                                                                           "fullGcSeconds":  0,
+                                                                                           "concurrentCollections":  12,
+                                                                                           "concurrentGcSeconds":  0.021,
+                                                                                           "totalGcSeconds":  1.95
+                                                                                       }
+                                                                            },
+                                                                            {
+                                                                                "at":  "2026-08-13T01:21:31.3402045+10:00",
+                                                                                "workingSetMiB":  4938.7,
+                                                                                "privateMiB":  5089.8,
+                                                                                "cpuSeconds":  539.25,
+                                                                                "gc":  {
+                                                                                           "heapUsedMiB":  2985.7,
+                                                                                           "heapCommittedMiB":  4084,
+                                                                                           "youngCollections":  140,
+                                                                                           "youngGcSeconds":  1.95,
+                                                                                           "fullCollections":  0,
+                                                                                           "fullGcSeconds":  0,
+                                                                                           "concurrentCollections":  12,
+                                                                                           "concurrentGcSeconds":  0.021,
+                                                                                           "totalGcSeconds":  1.971
+                                                                                       }
+                                                                            },
+                                                                            {
+                                                                                "at":  "2026-08-13T01:21:36.4826766+10:00",
+                                                                                "workingSetMiB":  4938.8,
+                                                                                "privateMiB":  5089.9,
+                                                                                "cpuSeconds":  540.109,
+                                                                                "gc":  {
+                                                                                           "heapUsedMiB":  3149.7,
+                                                                                           "heapCommittedMiB":  4084,
+                                                                                           "youngCollections":  140,
+                                                                                           "youngGcSeconds":  1.95,
+                                                                                           "fullCollections":  0,
+                                                                                           "fullGcSeconds":  0,
+                                                                                           "concurrentCollections":  12,
+                                                                                           "concurrentGcSeconds":  0.021,
+                                                                                           "totalGcSeconds":  1.971
+                                                                                       }
+                                                                            },
+                                                                            {
+                                                                                "at":  "2026-08-13T01:21:41.6127622+10:00",
+                                                                                "workingSetMiB":  4939.1,
+                                                                                "privateMiB":  5090.1,
+                                                                                "cpuSeconds":  541.812,
+                                                                                "gc":  {
+                                                                                           "heapUsedMiB":  3477.7,
+                                                                                           "heapCommittedMiB":  4084,
+                                                                                           "youngCollections":  140,
+                                                                                           "youngGcSeconds":  1.95,
+                                                                                           "fullCollections":  0,
+                                                                                           "fullGcSeconds":  0,
+                                                                                           "concurrentCollections":  12,
+                                                                                           "concurrentGcSeconds":  0.021,
+                                                                                           "totalGcSeconds":  1.971
+                                                                                       }
+                                                                            },
+                                                                            {
+                                                                                "at":  "2026-08-13T01:21:46.7205898+10:00",
+                                                                                "workingSetMiB":  4939.6,
+                                                                                "privateMiB":  5090.6,
+                                                                                "cpuSeconds":  542.625,
+                                                                                "gc":  {
+                                                                                           "heapUsedMiB":  2945.6,
+                                                                                           "heapCommittedMiB":  4084,
+                                                                                           "youngCollections":  141,
+                                                                                           "youngGcSeconds":  1.966,
+                                                                                           "fullCollections":  0,
+                                                                                           "fullGcSeconds":  0,
+                                                                                           "concurrentCollections":  12,
+                                                                                           "concurrentGcSeconds":  0.021,
+                                                                                           "totalGcSeconds":  1.987
+                                                                                       }
+                                                                            }
+                                                                        ],
+                                                            "tick":  {
+                                                                         "overallMeanTickMilliseconds":  5.239,
+                                                                         "overallMeanTps":  20,
+                                                                         "dimensionTicks":  [
+                                                                                                {
+                                                                                                    "scope":  "[13Aug2026 01:21:51.889] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:overworld (minecraft:overworld)",
+                                                                                                    "meanTickMilliseconds":  4.916,
+                                                                                                    "meanTps":  20
+                                                                                                },
+                                                                                                {
+                                                                                                    "scope":  "[13Aug2026 01:21:51.889] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim twilightforest:twilight_forest (twilightforest:twilight_forest_type)",
+                                                                                                    "meanTickMilliseconds":  0.016,
+                                                                                                    "meanTps":  20
+                                                                                                },
+                                                                                                {
+                                                                                                    "scope":  "[13Aug2026 01:21:51.889] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim deeperdarker:otherside (deeperdarker:otherside)",
+                                                                                                    "meanTickMilliseconds":  0.005,
+                                                                                                    "meanTps":  20
+                                                                                                },
+                                                                                                {
+                                                                                                    "scope":  "[13Aug2026 01:21:51.889] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:the_end (minecraft:the_end)",
+                                                                                                    "meanTickMilliseconds":  0.005,
+                                                                                                    "meanTps":  20
+                                                                                                },
+                                                                                                {
+                                                                                                    "scope":  "[13Aug2026 01:21:51.889] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim aether:the_aether (aether:the_aether)",
+                                                                                                    "meanTickMilliseconds":  0.008,
+                                                                                                    "meanTps":  20
+                                                                                                },
+                                                                                                {
+                                                                                                    "scope":  "[13Aug2026 01:21:51.889] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:the_nether (minecraft:the_nether)",
+                                                                                                    "meanTickMilliseconds":  0.004,
+                                                                                                    "meanTps":  20
+                                                                                                },
+                                                                                                {
+                                                                                                    "scope":  "[13Aug2026 01:21:51.889] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim graveyard:past (graveyard:past)",
+                                                                                                    "meanTickMilliseconds":  0.003,
+                                                                                                    "meanTps":  20
+                                                                                                },
+                                                                                                {
+                                                                                                    "scope":  "[13Aug2026 01:21:51.889] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Overall",
+                                                                                                    "meanTickMilliseconds":  5.239,
+                                                                                                    "meanTps":  20
+                                                                                                }
+                                                                                            ],
+                                                                         "entityCommandOutput":  [
+                                                                                                     "[13Aug2026 01:21:51.890] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Total: 278"
+                                                                                                 ],
+                                                                         "totalEntityCount":  278,
+                                                                         "loadedChunkCount":  null,
+                                                                         "loadedChunkCountNote":  "Forge 1.20.1 exposes tick timing but no reliable loaded-chunk total through the available console commands."
+                                                                     },
+                                                            "forceloadCommandOutput":  [
+                                                                                           "[13Aug2026 01:20:29.825] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Marked chunk [256, 256] in minecraft:overworld to be force loaded",
+                                                                                           "[13Aug2026 01:20:37.341] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Marked chunk [-256, 256] in minecraft:overworld to be force loaded",
+                                                                                           "[13Aug2026 01:20:43.596] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Marked chunk [256, -256] in minecraft:overworld to be force loaded",
+                                                                                           "[13Aug2026 01:20:54.963] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Marked chunk [-256, -256] in minecraft:overworld to be force loaded",
+                                                                                           "[13Aug2026 01:21:02.997] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Marked chunk [512, 0] in minecraft:overworld to be force loaded",
+                                                                                           "[13Aug2026 01:21:09.201] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Marked chunk [-512, 0] in minecraft:overworld to be force loaded",
+                                                                                           "[13Aug2026 01:21:14.820] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Marked chunk [0, 512] in minecraft:overworld to be force loaded",
+                                                                                           "[13Aug2026 01:21:24.542] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Marked chunk [0, -512] in minecraft:overworld to be force loaded"
+                                                                                       ]
+                                                        },
+                      "simulatedLoadedBase":  {
+                                                  "durationSeconds":  46.2,
+                                                  "completionPatternMatched":  null,
+                                                  "sampleCount":  9,
+                                                  "workingSetMiB":  {
+                                                                        "average":  4954.7,
+                                                                        "maximum":  4955.8
+                                                                    },
+                                                  "privateMiB":  {
+                                                                     "average":  5105.6,
+                                                                     "maximum":  5106.8
+                                                                 },
+                                                  "heapUsedMiB":  {
+                                                                      "average":  3253.4,
+                                                                      "maximum":  3616.9
+                                                                  },
+                                                  "gcDelta":  {
+                                                                  "youngCollections":  5,
+                                                                  "fullCollections":  0,
+                                                                  "concurrentCollections":  0,
+                                                                  "totalGcSeconds":  0.064
+                                                              },
+                                                  "samples":  [
+                                                                  {
+                                                                      "at":  "2026-08-13T01:22:04.9109274+10:00",
+                                                                      "workingSetMiB":  4953.1,
+                                                                      "privateMiB":  5104.4,
+                                                                      "cpuSeconds":  552,
+                                                                      "gc":  {
+                                                                                 "heapUsedMiB":  3168.9,
+                                                                                 "heapCommittedMiB":  4084,
+                                                                                 "youngCollections":  143,
+                                                                                 "youngGcSeconds":  1.981,
+                                                                                 "fullCollections":  0,
+                                                                                 "fullGcSeconds":  0,
+                                                                                 "concurrentCollections":  12,
+                                                                                 "concurrentGcSeconds":  0.021,
+                                                                                 "totalGcSeconds":  2.002
+                                                                             }
+                                                                  },
+                                                                  {
+                                                                      "at":  "2026-08-13T01:22:10.0458343+10:00",
+                                                                      "workingSetMiB":  4954.1,
+                                                                      "privateMiB":  5105.1,
+                                                                      "cpuSeconds":  553.828,
+                                                                      "gc":  {
+                                                                                 "heapUsedMiB":  3616.9,
+                                                                                 "heapCommittedMiB":  4084,
+                                                                                 "youngCollections":  143,
+                                                                                 "youngGcSeconds":  1.981,
+                                                                                 "fullCollections":  0,
+                                                                                 "fullGcSeconds":  0,
+                                                                                 "concurrentCollections":  12,
+                                                                                 "concurrentGcSeconds":  0.021,
+                                                                                 "totalGcSeconds":  2.002
+                                                                             }
+                                                                  },
+                                                                  {
+                                                                      "at":  "2026-08-13T01:22:15.1737888+10:00",
+                                                                      "workingSetMiB":  4954.7,
+                                                                      "privateMiB":  5105.6,
+                                                                      "cpuSeconds":  555.469,
+                                                                      "gc":  {
+                                                                                 "heapUsedMiB":  3335.8,
+                                                                                 "heapCommittedMiB":  4084,
+                                                                                 "youngCollections":  144,
+                                                                                 "youngGcSeconds":  1.998,
+                                                                                 "fullCollections":  0,
+                                                                                 "fullGcSeconds":  0,
+                                                                                 "concurrentCollections":  12,
+                                                                                 "concurrentGcSeconds":  0.021,
+                                                                                 "totalGcSeconds":  2.019
+                                                                             }
+                                                                  },
+                                                                  {
+                                                                      "at":  "2026-08-13T01:22:20.3054275+10:00",
+                                                                      "workingSetMiB":  4954.6,
+                                                                      "privateMiB":  5105.5,
+                                                                      "cpuSeconds":  557.156,
+                                                                      "gc":  {
+                                                                                 "heapUsedMiB":  3068.8,
+                                                                                 "heapCommittedMiB":  4084,
+                                                                                 "youngCollections":  145,
+                                                                                 "youngGcSeconds":  2.018,
+                                                                                 "fullCollections":  0,
+                                                                                 "fullGcSeconds":  0,
+                                                                                 "concurrentCollections":  12,
+                                                                                 "concurrentGcSeconds":  0.021,
+                                                                                 "totalGcSeconds":  2.04
+                                                                             }
+                                                                  },
+                                                                  {
+                                                                      "at":  "2026-08-13T01:22:25.4483333+10:00",
+                                                                      "workingSetMiB":  4954.8,
+                                                                      "privateMiB":  5105.7,
+                                                                      "cpuSeconds":  558.875,
+                                                                      "gc":  {
+                                                                                 "heapUsedMiB":  3492.8,
+                                                                                 "heapCommittedMiB":  4084,
+                                                                                 "youngCollections":  145,
+                                                                                 "youngGcSeconds":  2.018,
+                                                                                 "fullCollections":  0,
+                                                                                 "fullGcSeconds":  0,
+                                                                                 "concurrentCollections":  12,
+                                                                                 "concurrentGcSeconds":  0.021,
+                                                                                 "totalGcSeconds":  2.04
+                                                                             }
+                                                                  },
+                                                                  {
+                                                                      "at":  "2026-08-13T01:22:30.5784255+10:00",
+                                                                      "workingSetMiB":  4955.8,
+                                                                      "privateMiB":  5106.8,
+                                                                      "cpuSeconds":  560.609,
+                                                                      "gc":  {
+                                                                                 "heapUsedMiB":  3224.8,
+                                                                                 "heapCommittedMiB":  4084,
+                                                                                 "youngCollections":  146,
+                                                                                 "youngGcSeconds":  2.031,
+                                                                                 "fullCollections":  0,
+                                                                                 "fullGcSeconds":  0,
+                                                                                 "concurrentCollections":  12,
+                                                                                 "concurrentGcSeconds":  0.021,
+                                                                                 "totalGcSeconds":  2.052
+                                                                             }
+                                                                  },
+                                                                  {
+                                                                      "at":  "2026-08-13T01:22:35.7201251+10:00",
+                                                                      "workingSetMiB":  4955.8,
+                                                                      "privateMiB":  5106.8,
+                                                                      "cpuSeconds":  562.453,
+                                                                      "gc":  {
+                                                                                 "heapUsedMiB":  2940.9,
+                                                                                 "heapCommittedMiB":  4084,
+                                                                                 "youngCollections":  147,
+                                                                                 "youngGcSeconds":  2.039,
+                                                                                 "fullCollections":  0,
+                                                                                 "fullGcSeconds":  0,
+                                                                                 "concurrentCollections":  12,
+                                                                                 "concurrentGcSeconds":  0.021,
+                                                                                 "totalGcSeconds":  2.06
+                                                                             }
+                                                                  },
+                                                                  {
+                                                                      "at":  "2026-08-13T01:22:40.8324735+10:00",
+                                                                      "workingSetMiB":  4955,
+                                                                      "privateMiB":  5105.8,
+                                                                      "cpuSeconds":  564.141,
+                                                                      "gc":  {
+                                                                                 "heapUsedMiB":  3356.9,
+                                                                                 "heapCommittedMiB":  4084,
+                                                                                 "youngCollections":  147,
+                                                                                 "youngGcSeconds":  2.039,
+                                                                                 "fullCollections":  0,
+                                                                                 "fullGcSeconds":  0,
+                                                                                 "concurrentCollections":  12,
+                                                                                 "concurrentGcSeconds":  0.021,
+                                                                                 "totalGcSeconds":  2.06
+                                                                             }
+                                                                  },
+                                                                  {
+                                                                      "at":  "2026-08-13T01:22:45.9649437+10:00",
+                                                                      "workingSetMiB":  4954.3,
+                                                                      "privateMiB":  5104.8,
+                                                                      "cpuSeconds":  565.766,
+                                                                      "gc":  {
+                                                                                 "heapUsedMiB":  3074.8,
+                                                                                 "heapCommittedMiB":  4084,
+                                                                                 "youngCollections":  148,
+                                                                                 "youngGcSeconds":  2.045,
+                                                                                 "fullCollections":  0,
+                                                                                 "fullGcSeconds":  0,
+                                                                                 "concurrentCollections":  12,
+                                                                                 "concurrentGcSeconds":  0.021,
+                                                                                 "totalGcSeconds":  2.066
+                                                                             }
+                                                                  }
+                                                              ],
+                                                  "tick":  {
+                                                               "overallMeanTickMilliseconds":  11.513,
+                                                               "overallMeanTps":  20,
+                                                               "dimensionTicks":  [
+                                                                                      {
+                                                                                          "scope":  "[13Aug2026 01:22:51.161] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:overworld (minecraft:overworld)",
+                                                                                          "meanTickMilliseconds":  11.491,
+                                                                                          "meanTps":  20
+                                                                                      },
+                                                                                      {
+                                                                                          "scope":  "[13Aug2026 01:22:51.161] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim twilightforest:twilight_forest (twilightforest:twilight_forest_type)",
+                                                                                          "meanTickMilliseconds":  0.016,
+                                                                                          "meanTps":  20
+                                                                                      },
+                                                                                      {
+                                                                                          "scope":  "[13Aug2026 01:22:51.161] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim deeperdarker:otherside (deeperdarker:otherside)",
+                                                                                          "meanTickMilliseconds":  0.005,
+                                                                                          "meanTps":  20
+                                                                                      },
+                                                                                      {
+                                                                                          "scope":  "[13Aug2026 01:22:51.161] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:the_end (minecraft:the_end)",
+                                                                                          "meanTickMilliseconds":  0.004,
+                                                                                          "meanTps":  20
+                                                                                      },
+                                                                                      {
+                                                                                          "scope":  "[13Aug2026 01:22:51.161] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim aether:the_aether (aether:the_aether)",
+                                                                                          "meanTickMilliseconds":  0.007,
+                                                                                          "meanTps":  20
+                                                                                      },
+                                                                                      {
+                                                                                          "scope":  "[13Aug2026 01:22:51.162] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim minecraft:the_nether (minecraft:the_nether)",
+                                                                                          "meanTickMilliseconds":  0.003,
+                                                                                          "meanTps":  20
+                                                                                      },
+                                                                                      {
+                                                                                          "scope":  "[13Aug2026 01:22:51.162] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dim graveyard:past (graveyard:past)",
+                                                                                          "meanTickMilliseconds":  0.004,
+                                                                                          "meanTps":  20
+                                                                                      },
+                                                                                      {
+                                                                                          "scope":  "[13Aug2026 01:22:51.162] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Overall",
+                                                                                          "meanTickMilliseconds":  11.513,
+                                                                                          "meanTps":  20
+                                                                                      }
+                                                                                  ],
+                                                               "entityCommandOutput":  [
+                                                                                           "[13Aug2026 01:22:51.162] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Total: 251"
+                                                                                       ],
+                                                               "totalEntityCount":  251,
+                                                               "loadedChunkCount":  null,
+                                                               "loadedChunkCountNote":  "Forge 1.20.1 exposes tick timing but no reliable loaded-chunk total through the available console commands."
+                                                           },
+                                                  "syntheticEntitiesRequested":  {
+                                                                                     "villagers":  24,
+                                                                                     "cows":  32,
+                                                                                     "bees":  16,
+                                                                                     "total":  72
+                                                                                 },
+                                                  "syntheticLoadedArea":  "12x12 chunks around spawn (forceload -64,-64 through 127,127)"
+                                              }
+                  },
+    "save":  {
+                 "explicitSaveCompletionObserved":  true,
+                 "durationSeconds":  0.51,
+                 "note":  "Measured from save-all flush command until a completion marker in latest.log."
+             },
+    "shutdownSeconds":  1.46,
+    "allLoadedDimensionsSaved":  true,
+    "savedDimensions":  [
+                            "aether:the_aether",
+                            "deeperdarker:otherside",
+                            "graveyard:past",
+                            "minecraft:overworld",
+                            "minecraft:the_end",
+                            "minecraft:the_nether",
+                            "twilightforest:twilight_forest"
+                        ],
+    "jvmExited":  true,
+    "jvmExitCode":  0,
+    "distantHorizonsShutdownCompleted":  true,
+    "limitations":  [
+                        "The benchmark uses a newly generated disposable world, not a snapshot of the production world.",
+                        "The simulated base uses forced chunks and 72 vanilla entities; it does not fabricate Create contraption or train results.",
+                        "No real players or client Distant Horizons LOD requests were connected.",
+                        "Loaded chunk count was unavailable from reliable built-in Forge console output."
+                    ]
+}

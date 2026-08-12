@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/idas.toml"
 hash-format = "sha256"
-hash = "e183689f333c024b2afe504dcff455faa214bd05b62d14ca21216fd916c5099b"
+hash = "8677779c5ff0c7e749272c348e7c3de476204efb20b88aca2bcc9c4dba1c0fd1"
