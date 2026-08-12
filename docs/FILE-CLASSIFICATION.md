@@ -75,7 +75,7 @@ The Packwiz index contains 687 unique destinations in total:
 | Moonlight global datapacks | 2 |
 | Resource packs | 33 |
 
-Across all destinations, 510 are `both`, 162 are `client`, and 15 are `server`. Internal files are represented by side-aware `.pw.toml` metadata and repository-hosted payloads, rather than unconditionally copied internal files. The count dropped because the old 29-chapter quest guide was consolidated into 10 chapters; no mod JAR was removed.
+Across all 684 destinations, 507 are `both`, 162 are `client`, and 15 are `server`. Internal files are represented by side-aware `.pw.toml` metadata and repository-hosted payloads, rather than unconditionally copied internal files. The count reflects the 9-chapter repaired guide plus removal of the two generated private/cache files; no mod JAR was removed.
 
 The migration left 38 observed files unmanaged. These are itemised in `audit/excluded-files.csv`; they include JEI bookmarks/history, renderer/Distant Horizons/Oculus/shader choices, generated Chunky state, sound settings, stale Bumblezone/Connector/Continuity configs, and config conflicts for which no safe canonical value was inferred.
 

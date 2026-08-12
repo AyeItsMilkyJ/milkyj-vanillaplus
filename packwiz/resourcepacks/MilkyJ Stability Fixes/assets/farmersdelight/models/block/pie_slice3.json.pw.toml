@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/farmersdelight/models/block/pie_slice3.json"
 hash-format = "sha256"
-hash = "e16fcc1b90d65cdc058cd60f9d183c93c9d756a9df405e286a25046b478d7077"
+hash = "13d98c5281973cd7f88e040909abc3461ec1d798d4b9e2eceb81867448a4d01c"

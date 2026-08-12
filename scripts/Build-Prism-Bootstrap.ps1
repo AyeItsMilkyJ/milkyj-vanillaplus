@@ -3,15 +3,26 @@ param(
     [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
     [string]$PackUrl,
     [string]$OutputPath,
-    [switch]$AllowPlaceholder
+    [switch]$AllowPlaceholder,
+    [switch]$AllowPrivateLan
 )
 
 $ErrorActionPreference = 'Stop'
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 $settings = Get-Content -LiteralPath (Join-Path $projectRootResolved 'project-settings.json') -Raw | ConvertFrom-Json
 if (-not $PackUrl) { $PackUrl = $settings.packUrl }
-if (-not $PackUrl.StartsWith('https://') -and -not $PackUrl.StartsWith('http://127.0.0.1')) {
-    throw 'PackUrl must be HTTPS (or local loopback for validation).'
+$packUri = [Uri]$PackUrl
+$isLoopback = $packUri.Scheme -eq 'http' -and $packUri.Host -eq '127.0.0.1'
+$isPrivateLan = $false
+if ($AllowPrivateLan -and $packUri.Scheme -eq 'http') {
+    $address = $null
+    if ([Net.IPAddress]::TryParse($packUri.Host, [ref]$address) -and $address.AddressFamily -eq [Net.Sockets.AddressFamily]::InterNetwork) {
+        $bytes = $address.GetAddressBytes()
+        $isPrivateLan = ($bytes[0] -eq 10) -or ($bytes[0] -eq 172 -and $bytes[1] -ge 16 -and $bytes[1] -le 31) -or ($bytes[0] -eq 192 -and $bytes[1] -eq 168)
+    }
+}
+if ($packUri.Scheme -ne 'https' -and -not $isLoopback -and -not $isPrivateLan) {
+    throw 'PackUrl must be HTTPS, loopback HTTP, or explicitly allowed RFC1918 LAN HTTP.'
 }
 if (-not $AllowPlaceholder -and $PackUrl -match 'REPLACE_WITH_') {
     throw 'Set the real repository URL with Set-PackUrl.ps1 before building the player bootstrap.'

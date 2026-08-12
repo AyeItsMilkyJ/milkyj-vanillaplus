@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/pack.mcmeta"
 hash-format = "sha256"
-hash = "056fca485f489123a81db679806392fa8b5f7a25fe3dc5f46c4c80e2939a2d92"
+hash = "027791f87d3b5aa7515843c31d6e1f7554a46d8b9e279015cf371a2bdfc37a7a"

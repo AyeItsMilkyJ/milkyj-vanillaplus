@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/seal_spawns.json"
 hash-format = "sha256"
-hash = "f00363564ed260b76c6132845d6301d23ea6207185f7b5ccfab0249d36c2f1ed"
+hash = "ef706c1e2ba0b9356523f8aeb3679303ab98d85c9b761d0e55962e930be4d8e6"

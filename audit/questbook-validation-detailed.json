@@ -1,0 +1,77 @@
+{
+  "validatedAt": "2026-08-12T13:25:41.807946+10:00",
+  "questRoot": "payload/both/config/ftbquests/quests",
+  "modsDirectory": "build/baseline-update-rollback/client/mods",
+  "jarCountScanned": 236,
+  "chapterCount": 9,
+  "questCount": 118,
+  "taskIdCount": 165,
+  "rewardIdCount": 134,
+  "uniqueQuestIds": 118,
+  "uniqueTaskIds": 165,
+  "uniqueRewardIds": 134,
+  "graphVisitedQuests": 118,
+  "referencedItemAndIconIds": 100,
+  "unresolvedItems": [],
+  "referencedTags": [],
+  "unresolvedTags": [],
+  "createBeginnerFormatFailures": [],
+  "chapters": [
+    {
+      "file": "archaeology.snbt",
+      "title": "Fossils, Archaeology and Dinosaurs",
+      "icon": "betterarcheology:archeology_table",
+      "questCount": 10
+    },
+    {
+      "file": "create_basics.snbt",
+      "title": "Create Without Having a Brain Aneurysm",
+      "icon": "create:large_cogwheel",
+      "questCount": 22
+    },
+    {
+      "file": "endgame.snbt",
+      "title": "Dangerous Shit and Endgame",
+      "icon": "minecraft:dragon_egg",
+      "questCount": 14
+    },
+    {
+      "file": "first_days.snbt",
+      "title": "Surviving the First Night",
+      "icon": "minecraft:campfire",
+      "questCount": 10
+    },
+    {
+      "file": "homestead.snbt",
+      "title": "Food That Isn't Raw Chicken",
+      "icon": "farmersdelight:cooking_pot",
+      "questCount": 13
+    },
+    {
+      "file": "new_horizons.snbt",
+      "title": "Exploration Without Getting Completely Lost",
+      "icon": "explorerscompass:explorerscompass",
+      "questCount": 15
+    },
+    {
+      "file": "travel_storage.snbt",
+      "title": "Stop Living Out of 46 Chests",
+      "icon": "toms_storage:ts.storage_terminal",
+      "questCount": 11
+    },
+    {
+      "file": "vehicles.snbt",
+      "title": "Vehicles and Transport",
+      "icon": "immersive_aircraft:biplane",
+      "questCount": 9
+    },
+    {
+      "file": "welcome.snbt",
+      "title": "WHERE THE FUCK DO I START?",
+      "icon": "minecraft:writable_book",
+      "questCount": 14
+    }
+  ],
+  "warnings": [],
+  "errors": []
+}

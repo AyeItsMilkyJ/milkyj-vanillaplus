@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/xaero/minimap/default_radar_categories_server.json"
 hash-format = "sha256"
-hash = "f5176a99108b651f5aa463387217805e86820c4d9998866b9490f0cb0529399e"
+hash = "a4c652cafa7dea324e5f5cf3b1df46a84e54b6d4f877195857bce55a559c1cfd"

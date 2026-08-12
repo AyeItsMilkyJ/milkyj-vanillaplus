@@ -1,5 +1,6 @@
 import argparse
 import hashlib
+import ipaddress
 import json
 import sys
 import tomllib
@@ -47,6 +48,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("project_root", type=Path)
     parser.add_argument("--allow-placeholder", action="store_true")
+    parser.add_argument("--allow-private-lan", action="store_true")
     args = parser.parse_args()
 
     project = args.project_root.resolve()
@@ -111,9 +113,16 @@ def main() -> int:
             download = metadata.get("download", {})
             url = str(download.get("url", ""))
             parsed = urlparse(url)
+            private_lan = False
+            if args.allow_private_lan and parsed.scheme == "http" and parsed.hostname:
+                try:
+                    address = ipaddress.ip_address(parsed.hostname)
+                    private_lan = address.version == 4 and address.is_private and not address.is_loopback
+                except ValueError:
+                    private_lan = False
             if parsed.scheme != "https" and not (
                 parsed.scheme == "http" and parsed.hostname in {"127.0.0.1", "localhost"}
-            ):
+            ) and not private_lan:
                 errors.append(f"non-HTTPS or invalid download URL: {relative}: {url}")
             if "REPLACE_WITH_" in url and not args.allow_placeholder:
                 errors.append(f"repository URL placeholder remains: {relative}")
@@ -167,4 +176,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-

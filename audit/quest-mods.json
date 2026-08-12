@@ -1,0 +1,314 @@
+{
+  "auditedAt": "2026-08-12T10:10:28.402421+10:00",
+  "minecraft": "1.20.1",
+  "forge": "47.4.10",
+  "classification": "all six files are required on both client and dedicated server",
+  "sourceOfTruth": "Packwiz download records plus META-INF/mods.toml embedded in each exact downloaded JAR",
+  "mods": [
+    {
+      "packwizMetadata": "architectury-api.pw.toml",
+      "filename": "architectury-9.2.14-forge.jar",
+      "side": "both",
+      "downloadUrl": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1MKTLiiG/architectury-9.2.14-forge.jar",
+      "hashFormat": "sha512",
+      "expectedSha512": "cf67f2050cafa00f0bee42e6d7bef77fdb808ac4f71742f7b4d6d5c1e6ffb49561a5a252f332d2b78a9767bdb5faa284611790dba303fbdc736ae36d794f61c7",
+      "actualSha512": "cf67f2050cafa00f0bee42e6d7bef77fdb808ac4f71742f7b4d6d5c1e6ffb49561a5a252f332d2b78a9767bdb5faa284611790dba303fbdc736ae36d794f61c7",
+      "hashVerified": true,
+      "embeddedAuthoritativeMetadata": {
+        "modId": "architectury",
+        "version": "9.2.14",
+        "displayName": "Architectury",
+        "loaderVersion": "[46,)",
+        "dependencies": [
+          {
+            "modId": "minecraft",
+            "mandatory": "true",
+            "versionRange": "[1.20,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "forge",
+            "mandatory": "true",
+            "versionRange": "[46,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      }
+    },
+    {
+      "packwizMetadata": "ftb-library-forge.pw.toml",
+      "filename": "ftb-library-forge-2001.2.13.jar",
+      "side": "both",
+      "downloadUrl": "https://edge.forgecdn.net/files/8226/927/ftb-library-forge-2001.2.13.jar",
+      "hashFormat": "sha512",
+      "expectedSha512": "433c890fc64b31f140cdb92c6f03f78400bcc105229d1026dbbecb027ff75a8e2f94af5b1eef083d7cf3d37a9afa176731bc59cfeb771d01738353f9f1c113bf",
+      "actualSha512": "433c890fc64b31f140cdb92c6f03f78400bcc105229d1026dbbecb027ff75a8e2f94af5b1eef083d7cf3d37a9afa176731bc59cfeb771d01738353f9f1c113bf",
+      "hashVerified": true,
+      "embeddedAuthoritativeMetadata": {
+        "modId": "ftblibrary",
+        "version": "2001.2.13",
+        "displayName": "FTB Library",
+        "loaderVersion": "[47,)",
+        "dependencies": [
+          {
+            "modId": "forge",
+            "mandatory": "true",
+            "versionRange": "[47.3,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "mandatory": "true",
+            "versionRange": "[1.20,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "architectury",
+            "mandatory": "true",
+            "versionRange": "[9.0.8,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftbquests",
+            "mandatory": "false",
+            "versionRange": "[2001.4.8,)",
+            "ordering": "BEFORE",
+            "side": "BOTH"
+          }
+        ]
+      }
+    },
+    {
+      "packwizMetadata": "ftb-quests-forge-2001-4-22.pw.toml",
+      "filename": "ftb-quests-forge-2001.4.22.jar",
+      "side": "both",
+      "downloadUrl": "https://edge.forgecdn.net/files/8078/538/ftb-quests-forge-2001.4.22.jar",
+      "hashFormat": "sha512",
+      "expectedSha512": "7ffec667d4bb73e33e1815655361c93a7564d9040af937b26035bfa3cc26f6125962f173c623eb71cf949b0b0a49181a0459648007b3054e97150bd72fcc0bf8",
+      "actualSha512": "7ffec667d4bb73e33e1815655361c93a7564d9040af937b26035bfa3cc26f6125962f173c623eb71cf949b0b0a49181a0459648007b3054e97150bd72fcc0bf8",
+      "hashVerified": true,
+      "embeddedAuthoritativeMetadata": {
+        "modId": "ftbquests",
+        "version": "2001.4.22",
+        "displayName": "FTB Quests",
+        "loaderVersion": "[39,)",
+        "dependencies": [
+          {
+            "modId": "minecraft",
+            "mandatory": "true",
+            "versionRange": "[1.20.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "architectury",
+            "mandatory": "true",
+            "versionRange": "[9.0.8,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftblibrary",
+            "mandatory": "true",
+            "versionRange": "[2001.2.1,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftbteams",
+            "mandatory": "true",
+            "versionRange": "[2001.1.4,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "itemfilters",
+            "mandatory": "false",
+            "versionRange": "[2001.1.0-build.55,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      }
+    },
+    {
+      "packwizMetadata": "ftb-teams-forge-2001-3-2.pw.toml",
+      "filename": "ftb-teams-forge-2001.3.2.jar",
+      "side": "both",
+      "downloadUrl": "https://edge.forgecdn.net/files/7499/810/ftb-teams-forge-2001.3.2.jar",
+      "hashFormat": "sha512",
+      "expectedSha512": "45f8980fa1cfcb7cd772f6a03abb0ac680f7c502dc569839e325553dcaa9105148a2c27a214cd1f1131f6b06bca957f8dd01dfb4a1ccb8e13d49502513480cae",
+      "actualSha512": "45f8980fa1cfcb7cd772f6a03abb0ac680f7c502dc569839e325553dcaa9105148a2c27a214cd1f1131f6b06bca957f8dd01dfb4a1ccb8e13d49502513480cae",
+      "hashVerified": true,
+      "embeddedAuthoritativeMetadata": {
+        "modId": "ftbteams",
+        "version": "2001.3.2",
+        "displayName": "FTB Teams",
+        "loaderVersion": "[47,)",
+        "dependencies": [
+          {
+            "modId": "forge",
+            "mandatory": "true",
+            "versionRange": "[47.1.47,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "mandatory": "true",
+            "versionRange": "[1.20.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "architectury",
+            "mandatory": "true",
+            "versionRange": "[9.1.12,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftblibrary",
+            "mandatory": "true",
+            "versionRange": "[2001.2.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      }
+    },
+    {
+      "packwizMetadata": "ftb-xmod-compat-forge-2-1-3.pw.toml",
+      "filename": "ftb-xmod-compat-forge-2.1.3.jar",
+      "side": "both",
+      "downloadUrl": "https://edge.forgecdn.net/files/6402/486/ftb-xmod-compat-forge-2.1.3.jar",
+      "hashFormat": "sha512",
+      "expectedSha512": "4eb5aba1aff66721d19e54ceb40863684d0caab0735a9dcc04df86804ffcc19454f88ff89eb000db166aae2c1ef53ddbdadf61a62814db227638a8e86d37f2b9",
+      "actualSha512": "4eb5aba1aff66721d19e54ceb40863684d0caab0735a9dcc04df86804ffcc19454f88ff89eb000db166aae2c1ef53ddbdadf61a62814db227638a8e86d37f2b9",
+      "hashVerified": true,
+      "embeddedAuthoritativeMetadata": {
+        "modId": "ftbxmodcompat",
+        "version": "2.1.3",
+        "displayName": "FTB XMod Compat",
+        "loaderVersion": "[43,)",
+        "dependencies": [
+          {
+            "modId": "forge",
+            "mandatory": "true",
+            "versionRange": "[47,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "mandatory": "true",
+            "versionRange": "[1.20.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "architectury",
+            "mandatory": "true",
+            "versionRange": "[9.0.8,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftblibrary",
+            "mandatory": "true",
+            "versionRange": "[2001.1.3,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftbquests",
+            "mandatory": "false",
+            "versionRange": "[2001.3.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftbchunks",
+            "mandatory": "false",
+            "versionRange": "[2001.2.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "jei",
+            "mandatory": "false",
+            "versionRange": "[15.2,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftbranks",
+            "mandatory": "false",
+            "versionRange": "[2001.1.3,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "kubejs",
+            "mandatory": "false",
+            "versionRange": "[2001.6.3,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "luckperms",
+            "mandatory": "false",
+            "versionRange": "[5.4.83,)",
+            "ordering": "AFTER",
+            "side": "SERVER"
+          }
+        ]
+      }
+    },
+    {
+      "packwizMetadata": "ftb-filter-system-forge-20-0-1.pw.toml",
+      "filename": "ftb-filter-system-forge-20.0.1.jar",
+      "side": "both",
+      "downloadUrl": "https://edge.forgecdn.net/files/6466/153/ftb-filter-system-forge-20.0.1.jar",
+      "hashFormat": "sha512",
+      "expectedSha512": "4344015842a0bec06ad25751d2dd7f63bf0c2d9346b1dee272fd3183a8bf2a6c30c9e3c0141bf586fe1b0f2add34c918e46119b8f9ef0a1d0ba127785c026211",
+      "actualSha512": "4344015842a0bec06ad25751d2dd7f63bf0c2d9346b1dee272fd3183a8bf2a6c30c9e3c0141bf586fe1b0f2add34c918e46119b8f9ef0a1d0ba127785c026211",
+      "hashVerified": true,
+      "embeddedAuthoritativeMetadata": {
+        "modId": "ftbfiltersystem",
+        "version": "20.0.1",
+        "displayName": "FTB Filter System",
+        "loaderVersion": "[47,)",
+        "dependencies": [
+          {
+            "modId": "forge",
+            "mandatory": "true",
+            "versionRange": "[47,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "mandatory": "true",
+            "versionRange": "[1.20.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "architectury",
+            "mandatory": "true",
+            "versionRange": "[9.1.12,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

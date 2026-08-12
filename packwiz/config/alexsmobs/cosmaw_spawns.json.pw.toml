@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/cosmaw_spawns.json"
 hash-format = "sha256"
-hash = "372df87ed49c27775f68bebd7351059f490ab0ee9d68c40aa1699b6c8c94df3d"
+hash = "8e1d05a9b4ab8b923ff4951ef391665f3bdd218d943152f6f1f57509786bc0f7"

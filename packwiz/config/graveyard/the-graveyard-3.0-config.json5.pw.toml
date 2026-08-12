@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/graveyard/the-graveyard-3.0-config.json5"
 hash-format = "sha256"
-hash = "071c09ff47e92cf611767bbc7444f7eddd91ac3492d67d543585c767a75e6d78"
+hash = "d3c4b80ecc098946480ef5186657c671520a2d0592d30ad4b49a4ec2ae40aada"

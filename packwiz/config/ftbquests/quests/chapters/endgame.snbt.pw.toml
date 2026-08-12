@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/endgame.snbt"
 hash-format = "sha256"
-hash = "d1e39cfd27d7053bb509010515961241d0fecfe28f7308d8f6652685d4c4e6f1"
+hash = "ddb6f858cbf988ca0bafe53cc85bf1cb48d349178f4d2a7d99a0789d5a4f5016"

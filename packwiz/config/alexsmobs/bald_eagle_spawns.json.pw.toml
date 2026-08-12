@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/bald_eagle_spawns.json"
 hash-format = "sha256"
-hash = "79706d807dc242d5c6388729bee7f1efda4b1a489a20d6a9f43612210ac3636c"
+hash = "f8b51a798bfa4b51e0ee8fb78c860ca5b2677583db10584792a0e1548f17d396"

@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/guster_spawns.json"
 hash-format = "sha256"
-hash = "e28128fcc9567030803a2274fa109f7985bc2f26e59ccc18db64353c93a56765"
+hash = "263974f58a4b48df633648246820681745da9f9e16f30fefe6e07f576251dfb1"

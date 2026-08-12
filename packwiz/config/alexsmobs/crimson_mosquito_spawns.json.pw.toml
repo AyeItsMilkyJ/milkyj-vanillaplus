@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/crimson_mosquito_spawns.json"
 hash-format = "sha256"
-hash = "801f78257d0be4526fe254be06a6d90dbb2cb15a85f2dd676c34a56f00a9d69c"
+hash = "104fa9ce71421c5023abba88ce382957828b22341b44c2d03b3300b760482c9d"

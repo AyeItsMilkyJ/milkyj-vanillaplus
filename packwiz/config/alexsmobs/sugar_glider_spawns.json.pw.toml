@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/sugar_glider_spawns.json"
 hash-format = "sha256"
-hash = "2463a918178f2b963ace75e9c07201d4caf42bb31a825658ea79c61f118f6bc7"
+hash = "cec5208e2e9f12aa8ce13d0f6d34a18500a77d143441c9b511df21c623fe368f"

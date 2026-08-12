@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/forge-1_20/ores.json"
 hash-format = "sha256"
-hash = "0684909fe1aec69e667fa41b62a2cd41b98fa6af00c51cbc6cc4219ce40fdeaa"
+hash = "c9b6bad0b5043cb4bc9569b8185df95f1f11eaa335e746d1cc4b28a6749a3c4a"

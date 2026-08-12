@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/particlerain/config.json"
 hash-format = "sha256"
-hash = "372728956f1955c56209e8664583351e63c644dd0cf080690776a9ddf706d4b8"
+hash = "bd8abf7000e1cd681b090d8425b808f196297b6af473826405321d037e6fdd3a"

@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexscaves_biome_generation/primordial_caves.json"
 hash-format = "sha256"
-hash = "7c03f321d1bb2dc22cc988189c01c2dca370d38ef5a8ccf3034c4886f43b97eb"
+hash = "f0e2da7cf5d77abef1bd270cb7c288e3f57c001005fe41e11d545d948b06474d"

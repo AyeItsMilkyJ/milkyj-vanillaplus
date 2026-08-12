@@ -10,7 +10,6 @@ $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 $sourceRoot = Join-Path $projectRootResolved 'audit\questbook-legacy-1.8.0'
 $stageRoot = Join-Path $projectRootResolved 'build\beginner-questbook'
 $chapterRoot = Join-Path $stageRoot 'chapters'
-$liveProgressRoot = 'C:\Users\MilkyJ\Desktop\Minecraft Server\world\ftbquests'
 
 if (-not (Test-Path -LiteralPath $sourceRoot -PathType Container)) {
     throw "Missing preserved quest source: $sourceRoot"
@@ -41,6 +40,12 @@ function NewLesson([string]$Key, [string]$Title, [string[]]$Description, [bool]$
     }
 }
 
+function ReplacementLesson([string]$Key, [string]$SourceId, [bool]$Optional = $false) {
+    return [pscustomobject]@{
+        Kind = 'replacement'; Key = $Key; SourceId = $SourceId; Optional = $Optional
+    }
+}
+
 function Chapter([string]$Key, [string]$Title, [string]$Icon, [string]$Group, [string]$SourceChapter, [object[]]$Entries) {
     return [pscustomobject]@{
         Key = $Key; Title = $Title; Icon = $Icon; Group = $Group; SourceChapter = $SourceChapter; Entries = @($Entries)
@@ -53,8 +58,9 @@ $groups = @(
     [pscustomobject]@{ Key = 'adventure'; Title = 'Explore and Survive' }
 )
 
-# These are the 120 useful quests shown to players. Existing blocks retain their
-# quest/task/reward IDs so every saved individual quest completion still matches.
+# These are the useful quests shown to players. Existing blocks retain their
+# quest/task/reward IDs. The generator also compares every generated ID with the
+# local v1.0.0 Git tag, so it never needs to read the production world.
 $chapters = @(
     (Chapter 'welcome' 'WHERE THE FUCK DO I START?' 'minecraft:writable_book' 'start' 'welcome' @(
         (Existing '7DA1925406767A08'),
@@ -70,7 +76,7 @@ $chapters = @(
         (Existing '34B44EE7DDB53F36'),
         (Existing '6352A5D038F9A58D'),
         (Existing '3522AB4192F75013'),
-        (Existing '1885CF9658AB663D')
+        (Existing '1885CF9658AB663D' $true)
     )),
     (Chapter 'first_days' 'Surviving the First Night' 'minecraft:campfire' 'start' 'first_days' @(
         (Existing '3BC686C3FBF1D35F'),
@@ -97,44 +103,20 @@ $chapters = @(
         (Existing '64AC9DE8013767BD' $true),
         (Existing '71BB70B3127ECE00' $true),
         (Existing '519A57FD0FD737F9' $true),
-        (Existing '22B69CA315389C48'),
-        (NewLesson 'botany_deferred' 'Botany Pots and Botany Trees: Not Installed Yet' @(
-            'What this is: Botany Pots and Botany Trees are separate content mods that can grow crops or trees inside special pots. They are not installed in this release, even though an old config or online video may mention them.',
-            'Why it matters: JEI cannot show recipes for a mod that is not present. Do not waste time searching for a missing pot, hopping bonsai, soil tier, or tree pot.',
-            'How to begin now: use ordinary fields, Farmer''s Delight crops, bees, and the Serene Seasons guidance in this chapter. Search JEI with an at-sign followed by the mod name to confirm what is really loaded.',
-            'What comes next: this branch remains optional until the group deliberately approves and tests those mods in a later content update.'
-        ) $true 0)
-    )),
-    (Chapter 'tinkers_deferred' "Tinkers' Construct for Absolute Idiots" 'minecraft:lava_bucket' 'systems' '' @(
-        (NewLesson 'not_installed' "Tinkers' Construct Is Not Installed" @(
-            'What this is: Tinkers'' Construct is a modular tool and foundry mod. Mantle is installed as a library for other content, but the Tinkers'' Construct mod jar itself is not in this pack.',
-            'Why it matters: leftover tconstruct config files do not create tool stations, grout, melters, smelteries, casts, modifiers, or recipes. A tutorial for another pack will therefore lead to items that do not exist here.',
-            'How to check: clear JEI, search for at-tconstruct, and confirm that no Tinkers item group appears. Do not build a multiblock from an old video and assume the server is broken.',
-            'What comes next: use the ordinary tool, enchanting, relic, and Create paths until a future update explicitly adds and validates Tinkers.'
-        ) $false 0),
-        (NewLesson 'old_configs' 'Old Configs Are Not a Mod' @(
-            'What this is: configuration files can remain after a mod is removed. They are harmless text until the matching mod is loaded.',
-            'Why it matters: this pack preserves uncertain files instead of deleting them automatically, so a tconstruct config is evidence of history, not evidence of current gameplay.',
-            'How to begin troubleshooting: trust the Mods screen and JEI first, then the mods folder. A missing jar means there are no valid Tinkers item IDs or recipes to put into automatic quests.',
-            'What comes next: this chapter intentionally uses checkmarks and zero rewards so nobody is sent hunting for impossible materials.'
-        ) $false 0),
-        (NewLesson 'future_validation' 'What Must Be Tested Before Tinkers Returns' @(
-            'What this is: a release checklist for any later Tinkers proposal: a Forge 1.20.1 build, its matching Mantle dependency, server and client startup, JEI recipes, world-safe ore generation, and multiplayer casting.',
-            'Why it matters: grout, fuel, faucets, casting tables, smeltery controllers, tool parts, repairs, and modifiers change between versions. A quest must describe the installed recipes, not a remembered version.',
-            'How to begin later: test the melter first, then a minimum smeltery, one cast, one metal tool, repairs, and one modifier in a disposable world before the live server receives anything.',
-            'What comes next: only after those checks pass should this parked chapter become real progression.'
-        ) $false 0)
+        (Existing '22B69CA315389C48' $true)
     )),
     (Chapter 'create_basics' 'Create Without Having a Brain Aneurysm' 'create:large_cogwheel' 'systems' 'create_basics' @(
         (Existing '4201CE5BFBBC062D'),
         (Existing '1AC77EEB81F556DC'),
         (Existing '09CB7E54442B5B87'),
         (Existing '2250D40C885B51F2'),
+        (ReplacementLesson 'power_after_water_wheel' '1885CF9658AB663D'),
         (Existing '0D9196F06BAA6EB5'),
         (Existing '653A5307BAFA7BE8'),
         (Existing '4164748FA85EDE6A'),
         (Existing '3119C51ADD982ABF'),
         (Existing '449599EDF06A1DB9'),
+        (ReplacementLesson 'create_food_addons' '22B69CA315389C48'),
         (NewLesson 'crushing_wheels' 'Crushing Wheels: Make Them Face Each Other' @(
             'What this is: two Crushing Wheels grind items more effectively than the early Millstone. Both wheels must spin inward toward the gap.',
             'Why it matters: the pair unlocks higher-throughput crushing recipes and useful secondary outputs shown in JEI.',
@@ -253,12 +235,149 @@ $chapters = @(
     ))
 )
 
+$titleOverrides = @{
+    '1885CF9658AB663D' = 'Power Beyond the First Water Wheel'
+    '22B69CA315389C48' = 'Create Food Addons: Kitchen to Factory'
+}
+
 $descriptionOverrides = @{
     '18C0AF7F5C17CAB7' = @(
         'What this is: the Field Guide explains progression, JEI explains recipes, Jade identifies the block in front of you, and Patchouli manuals provide the deep reference written by a mod author.',
         'Why it matters: hover an item and read the mod name in its tooltip before searching. In JEI, type an at-sign followed by that mod name to isolate its items and avoid mixing similarly named systems.',
         'How to begin: open a Patchouli manual like the Aether Book of Lore or Alex''s Caves Cave Book from your inventory and use its contents or search page. Manuals are ordinary items, not another keybind-only screen.',
         'What comes next: use the quest book for order, JEI for exact recipes, Patchouli for reference, Jade for live state, and Create Ponder for animated machinery.'
+    )
+    '4201CE5BFBBC062D' = @(
+        'WHAT IS THIS? Ponder is Create''s animated in-game manual. Hover a supported Create item in JEI or an inventory and hold W; scroll through the scenes instead of guessing from a video made for another version.',
+        'DO THIS: Ponder a Water Wheel, Mechanical Press and Encased Fan. Pause on each scene and identify its power connection, input, processing position and output before building anything expensive.',
+        'WHY DO I CARE? Create 6 machines communicate through visible motion. Ponder teaches the exact arrangement installed here and makes the later machine quests much less painful.',
+        'COMMON FUCK-UP: W does nothing when the cursor is not actually over a supported item, W is bound twice, or a search box owns the keyboard. Check Controls, resolve the conflict and hover the item again.'
+    )
+    '1AC77EEB81F556DC' = @(
+        'WHAT IS THIS? Andesite Alloy is the common construction material for early Create shafts, cogs, casings and machines. JEI shows every installed recipe; pin the cheapest one your current resources support.',
+        'DO THIS: Make a small batch, label a drawer or chest for it, and keep zinc, copper, iron and andesite nearby rather than scattering components across the base.',
+        'WHY DO I CARE? A stocked component shelf turns Create from repeated scavenger hunts into a system you can actually learn and repair.',
+        'COMMON FUCK-UP: Searching only for "alloy" can mix several mods. Use JEI''s at-sign Create filter and confirm the tooltip says Create before crafting a look-alike.'
+    )
+    '09CB7E54442B5B87' = @(
+        'WHAT IS THIS? Engineer''s Goggles reveal rotational speed and stress information. The Wrench rotates, configures and safely removes most Create blocks without smashing the layout.',
+        'DO THIS: Wear the goggles, look at a powered shaft, then practise rotating and wrench-removing a cheap cogwheel. Use sneak-use when an ordinary click opens a machine interface.',
+        'WHY DO I CARE? These are diagnostic tools, not decoration. They tell you whether power reaches a machine and let you correct a backwards face without rebuilding the room.',
+        'COMMON FUCK-UP: A Wrench is not a power source and goggles do not fix overstress. If the machine is still silent, trace the network from its actual source.'
+    )
+    '2250D40C885B51F2' = @(
+        'WHAT IS THIS? A Water Wheel converts flowing water into rotational power. Rotation is Create''s equivalent of mechanical power: shafts carry it and machines consume its capacity.',
+        'DO THIS: Ponder the wheel, place it where flowing water contacts its paddles, connect a visible shaft and verify movement with goggles before attaching a machine.',
+        'WHY DO I CARE? It is a safe, dependable first source for presses, fans, mixers and small processing lines. The next lessons teach how to route and measure that power.',
+        'COMMON FUCK-UP: Still water, blocked paddles or a shaft connected on the wrong axis produces no useful rotation. Copy the Ponder orientation exactly for the first test.'
+    )
+    '1885CF9658AB663D' = @(
+        'WHAT IS THIS? Water Wheels are only the beginning. Windmills provide scalable passive rotation, while a Create steam engine can provide much more capacity after you understand boilers, heat and water supply.',
+        'DO THIS: Ponder Windmill Bearings and Steam Engines. Build a small windmill before attempting steam, and treat a boiler as a later system with a dependable water feed, heat source, tank volume and readable gauges.',
+        'WHY DO I CARE? Different sources trade cost, size and capacity. A larger source lets several machines share one network without every workshop owning a separate wheel.',
+        'COMMON FUCK-UP: More revolutions per minute does not magically create more capacity. A badly supplied boiler or undersized source will stop a network even when part of it visibly spins.'
+    )
+    '0D9196F06BAA6EB5' = @(
+        'WHAT IS THIS? Shafts carry rotation straight. Meshed Cogwheels transfer it sideways and reverse direction; a large cog meshed with a small one changes the gear ratio, meaning the relationship between input and output speed.',
+        'DO THIS: Build an exposed line with a shaft, two same-size cogs, one large-to-small pair and a gearbox. Use goggles to compare direction and RPM (revolutions per minute) at each stage.',
+        'WHY DO I CARE? Direction and speed determine whether a machine works and how quickly. This unlocks deliberate routing instead of a wall full of mystery cogs.',
+        'COMMON FUCK-UP: Cogs only mesh at valid positions, and every mesh reverses direction. If one axis is motionless, inspect the teeth and connection rather than adding random gearboxes.'
+    )
+    '653A5307BAFA7BE8' = @(
+        'WHAT IS THIS? RPM means rotational speed. Stress capacity is how much machinery a source can support; stress impact is how much each attached machine consumes. An overstressed network stops completely.',
+        'DO THIS: Read a working network with goggles, add one cheap machine, then compare its speed and remaining capacity. Learn the difference before installing a speed controller or a large factory line.',
+        'WHY DO I CARE? Speed controls throughput, while capacity controls how many machines can run. Diagnosing the correct number prevents a faster but weaker disaster.',
+        'COMMON FUCK-UP: Raising RPM often raises stress use. When the goggles say overstressed, add or improve power capacity, disconnect load, or slow the network; do not just gear it faster.'
+    )
+    '4164748FA85EDE6A' = @(
+        'WHAT IS THIS? A Mechanical Press uses rotation from a shaft. It presses an item placed on a Depot or moving Belt; with a Basin below it, it performs compacting recipes instead.',
+        'DO THIS: Ponder the Press, power its shaft, place one JEI-confirmed input on a Depot and watch for the downward stroke. Test Basin compacting separately before connecting bulk input.',
+        'WHY DO I CARE? Pressing unlocks plates, compacted materials and several later Create recipes. A Depot test becomes the foundation of an automated belt line.',
+        'COMMON FUCK-UP: A Press above empty floor has nowhere to work, and a Basin recipe is not a Depot recipe. Check the JEI category, vertical spacing and output room.'
+    )
+    '3119C51ADD982ABF' = @(
+        'WHAT IS THIS? An Encased Fan receives rotation through its shaft and pushes or pulls an air stream. Air passing through water, fire, soul fire or lava performs washing, smoking, haunting or blasting recipes where JEI says it is supported.',
+        'DO THIS: Ponder the Fan, aim it across a Depot or Belt, add exactly one processing medium and test one cheap item. Keep the output side open and collected before feeding stacks.',
+        'WHY DO I CARE? One powered fan processes many loose items at once and becomes the pack''s first useful bulk ore or food step.',
+        'COMMON FUCK-UP: The Fan can spin while blowing the wrong direction, the medium can block the air stream, or the item can sit outside the stream. Use goggles and visible particles before rebuilding.'
+    )
+    '449599EDF06A1DB9' = @(
+        'WHAT IS THIS? A Mechanical Mixer receives rotation from above and works in the Basin directly beneath it. JEI marks recipes that need no heat, normal heat or stronger heated Blaze Burner conditions.',
+        'DO THIS: Ponder the Mixer, place a Basin at the shown height, insert one complete JEI recipe and power the Mixer. Add a Blaze Burner only when the recipe page explicitly requests heat.',
+        'WHY DO I CARE? Mixing unlocks alloys, dough, fluids and ingredients used by Create, Farmer''s Delight integrations and later brass progression.',
+        'COMMON FUCK-UP: Missing one ingredient, wrong Basin spacing, insufficient heat or blocked output leaves the Mixer hovering uselessly. Check the Basin contents and JEI heat label first.'
+    )
+    '22B69CA315389C48' = @(
+        'WHAT IS THIS? Slice & Dice adds Create-powered food tools, and Create Central Kitchen connects Create processing with installed cooking recipes. They extend Farmer''s Delight; they do not replace knives, boards or Cooking Pots.',
+        'DO THIS: Search JEI separately with the Slice & Dice and Central Kitchen mod filters. Ponder supported slicers or food machines, then automate one cheap ingredient from input chest to finished food.',
+        'WHY DO I CARE? The same belts, funnels, depots, basins and rotation used for ore can prepare kitchen ingredients without inventing a second logistics system.',
+        'COMMON FUCK-UP: Similar foods from different namespaces are not automatically interchangeable. Confirm the exact input, tool and container on the installed JEI recipe before blaming the machine.'
+    )
+    '1F2F7FDA97C0DC94' = @(
+        'WHAT IS THIS? Two Crushing Wheels grind items that fall between them. Both receive rotational power and must spin inward toward the gap; JEI lists outputs and possible secondary drops.',
+        'DO THIS: Ponder a Crushing Wheel, build the open pair, power both sides and drop one cheap test item through the top. Collect underneath before adding chutes or a belt.',
+        'WHY DO I CARE? Crushing Wheels provide high-throughput ore and material processing and feed directly into fan washing or filtered storage.',
+        'COMMON FUCK-UP: Wheels spinning the same way throw or jam items instead of crushing them. Reverse one side and make sure the output has somewhere to land.'
+    )
+    '0868E133B828D769' = @(
+        'WHAT IS THIS? A Mechanical Saw cuts recipes and trees; a Mechanical Drill breaks blocks in front of its working face. Both require rotational power and can be stationary or attached to a moving contraption.',
+        'DO THIS: Ponder each block. Test a guarded stationary Saw over its correct input and a Drill against ordinary stone, with a collection chest and obvious shutdown nearby.',
+        'WHY DO I CARE? They unlock renewable wood processing, farms, tunnels and controlled block harvesting when combined with movement and item collection.',
+        'COMMON FUCK-UP: The cutting face can point the wrong way, or a moving machine can chew through the build that carries it. Test one block at low speed before trusting a contraption.'
+    )
+    '7B0C1910CB444EA6' = @(
+        'WHAT IS THIS? Belts carry items, Depots hold one processing position, Funnels insert or extract, Chutes move vertically, and Filters restrict what may pass. Mechanical Arms move selected items between marked points.',
+        'DO THIS: Build a short powered Belt from a labelled input chest to a labelled output. Add one Funnel at a time, set a cheap Filter, then Ponder Mechanical Arms before marking their inputs and outputs.',
+        'WHY DO I CARE? Predictable movement connects every machine in this chapter. Brass Funnels, Brass Tunnels and smarter components later add counting, splitting and routing.',
+        'COMMON FUCK-UP: A Funnel''s arrow faces the wrong way, a Filter is set opposite to your intention, or an Arm was never taught valid points. Test with cobblestone before valuable items.'
+    )
+    '1A354ABA1BE5171F' = @(
+        'WHAT IS THIS? This is your first complete automation: power source, visible transport, one processing step, filtered output, overflow storage and an obvious shutdown. A crop farm or ore-crushing line both count.',
+        'DO THIS: Choose one cheap JEI recipe. For crops, use a guarded Saw or Harvester arrangement; for ore, use crushing then fan washing. Run a full stack and show another player how to stop it.',
+        'WHY DO I CARE? A complete small line teaches more than a chest of disconnected machines and unlocks the confidence to scale safely.',
+        'COMMON FUCK-UP: Building without overflow makes items despawn or jam the Belt. Fill the output deliberately during testing and make sure the machine fails safely.'
+    )
+    '4EAA9A43A9020901' = @(
+        'WHAT IS THIS? A silent Create machine is usually disconnected, reversed, under-speed, overstressed, missing a supporting block, blocked at its output or holding the wrong recipe.',
+        'DO THIS: Start at the power source and follow every visible shaft with goggles. Verify direction, RPM, stress, machine face, Depot or Basin position, exact JEI input and free output, in that order.',
+        'WHY DO I CARE? A repeatable diagnostic order repairs factories faster than tearing down random components and preserves machines built by teammates.',
+        'COMMON FUCK-UP: Testing five changes at once hides the real cause. Disconnect the factory, prove one machine operation in the open, then reconnect stages one by one.'
+    )
+    '3C8A246AFBC5BCB3' = @(
+        'WHAT IS THIS? Brass is made from heated copper and zinc in a powered Mixer and Basin. It unlocks precision components plus Brass Funnels and Tunnels that can count, split and route items more intelligently.',
+        'DO THIS: Confirm the brass recipe and heat level in JEI, prepare a safely captured Blaze Burner, mix a small batch and Ponder one Brass Funnel and Brass Tunnel before replacing basic logistics.',
+        'WHY DO I CARE? Brass is the bridge from simple motion to controlled factories, train parts and sequenced assembly.',
+        'COMMON FUCK-UP: An empty, unheated or incorrectly positioned Blaze Burner cannot satisfy the recipe. Also check that the Basin contains copper and zinc from compatible tags, not look-alike mod items.'
+    )
+    '6C2795B621514EE3' = @(
+        'WHAT IS THIS? Mechanical Crafters reproduce a shaped crafting grid at machine scale. Sequenced Assembly is different: one item must pass through specified Deployer, Press, Saw or other operations in order, often several times.',
+        'DO THIS: Ponder Mechanical Crafters and a Precision Mechanism recipe. Build the crafting grid against a visible back wall, then make a separate Belt loop for one sequenced item with ordered operations and a safe return path.',
+        'WHY DO I CARE? These systems unlock large shaped components, Precision Mechanisms and much of later Create and train progression.',
+        'COMMON FUCK-UP: Crafters face or connect incorrectly, while sequenced items leave the line before every step. Read the JEI sequence and chance display; do not replace it with a normal crafting assumption.'
+    )
+    '40B5E1218A0226CD' = @(
+        'WHAT IS THIS? Create train tracks define the route, a Train Station marks an assembly point, and glued blocks on bogeys become carriages. Steam ''n'' Rails extends the rail system with additional track and train parts already installed.',
+        'DO THIS: Ponder Train Tracks and Stations. Build a gentle test loop, place a Station on the track, enter assembly mode, align bogeys and carriage blocks, glue the carriage, assemble it and drive one empty lap.',
+        'WHY DO I CARE? A proven train moves groups and cargo between permanent bases more safely than everyone flying alone.',
+        'COMMON FUCK-UP: A Station that is not correctly bound to track cannot assemble, and unglued carriage blocks stay behind. Test the bare minimum train before decorating it.'
+    )
+    '579F2C00A9B13FE7' = @(
+        'WHAT IS THIS? A Schedule tells an assembled train which named Stations to visit and what conditions allow departure. Signals divide busy railways into protected sections so trains do not enter the same space.',
+        'DO THIS: Name two Stations clearly, drive the route manually, then create a simple two-stop Schedule and give it to the train driver. Add cargo conditions and Steam ''n'' Rails features only after the loop succeeds.',
+        'WHY DO I CARE? Schedules turn a cool vehicle into shared infrastructure for passengers, building supplies and remote outposts.',
+        'COMMON FUCK-UP: A schedule references a station name that does not match, waits on an impossible condition, or has no valid driver. Simplify to two unconditional stops when debugging.'
+    )
+    '5A53AAEC0E3B4B96' = @(
+        'WHAT IS THIS? Create: Enchantment Industry turns experience into a fluid that can be collected, stored and used by its installed machines. The Disenchanter can separate unwanted enchantment work from gear.',
+        'DO THIS: Inspect every machine recipe in JEI, build a tiny labelled experience line, and test with disposable low-value gear. Provide an Experience Hatch or other documented player access point.',
+        'WHY DO I CARE? Stored experience makes enchanting and salvage a shared workshop service instead of levels stranded on one player.',
+        'COMMON FUCK-UP: Feeding named, borrowed or irreplaceable gear into an untested machine can destroy the wrong item. Lock and label inputs before automation.'
+    )
+    '71CEDD5D336CCB38' = @(
+        'WHAT IS THIS? The installed Create family is core Create 6.0.8 plus Steam ''n'' Rails, Enchantment Industry, Slice & Dice, Central Kitchen, Create Connected, Create Deco, Rechiseled Create and Create Ultimine. Each addon serves a different job.',
+        'DO THIS: Use JEI''s at-sign mod filter to inspect one addon at a time. Use Connected and Deco for factory building, the food addons in a kitchen line, Enchantment Industry for experience and Steam ''n'' Rails for rail work.',
+        'WHY DO I CARE? Knowing the owner mod tells you which manual, Ponder scene, recipe namespace and troubleshooting path applies.',
+        'COMMON FUCK-UP: Tutorials for Crafts & Additions, Diesel Generators, Bells & Whistles, Contraption Terminals or Immersive Engineering describe mods not installed here. If JEI cannot find the item, stop following that tutorial.'
     )
     '702A4062FE9B512F' = @(
         'What this is: Better Archeology is the only installed mod in this pack that provides a fossil and archaeology crafting progression. It adds brushes, fossiliferous dirt, artifact shards, unidentified artifacts, and the Archeology Table.',
@@ -294,6 +413,55 @@ function Set-Description([string]$Block, [string[]]$Paragraphs) {
     $lines.Add("`t`t`t]")
     $replacement = ($lines -join "`r`n") + "`r`n"
     return [regex]::Replace($Block, '(?ms)^\t\t\tdescription:\s*\[\r?\n.*?^\t\t\t\]\r?\n', $replacement, 1)
+}
+
+function Set-Title([string]$Block, [string]$Title) {
+    return [regex]::Replace(
+        $Block,
+        '(?m)^\t\t\ttitle:\s*"(?:\\.|[^"])*"\s*$',
+        "`t`t`ttitle: `"$(Escape-Snbt $Title)`"",
+        1
+    )
+}
+
+function Normalize-RewardItems([string]$Block) {
+    $rewardSection = [regex]::Match($Block, '(?ms)^\t\t\trewards:\s*(.*?)(?=^\t\t\t(?:subtitle|tasks):)')
+    if (-not $rewardSection.Success) { return $Block }
+    $rewardText = [regex]::Replace(
+        $rewardSection.Value,
+        '(?ms)^(\t\t\trewards:\s*)\[\{\r?\n.*?^\t\t\t\}\]\r?\n',
+        {
+            param($match)
+            if ($match.Value -notmatch '(?m)^\s*type:\s*"item"') { return $match.Value }
+            $id = [regex]::Match($match.Value, '(?m)^\s*id:\s*"([0-9A-F]{16})"').Groups[1].Value
+            return @(
+                "$($match.Groups[1].Value)[{",
+                "`t`t`t`tid: `"$id`"",
+                "`t`t`t`ttype: `"xp`"",
+                "`t`t`t`txp: 2",
+                "`t`t`t}]",
+                ''
+            ) -join "`r`n"
+        }
+    )
+    $body = [regex]::Replace(
+        $rewardText,
+        '(?ms)^([^\S\r\n]*)\{\r?\n.*?^\1\}',
+        {
+            param($match)
+            if ($match.Value -notmatch '(?m)^\s*type:\s*"item"') { return $match.Value }
+            $id = [regex]::Match($match.Value, '(?m)^\s*id:\s*"([0-9A-F]{16})"').Groups[1].Value
+            $indent = $match.Groups[1].Value
+            return @(
+                "${indent}{",
+                "${indent}`tid: `"$id`"",
+                "${indent}`ttype: `"xp`"",
+                "${indent}`txp: 2",
+                "${indent}}"
+            ) -join "`r`n"
+        }
+    )
+    return $Block.Substring(0, $rewardSection.Index) + $body + $Block.Substring($rewardSection.Index + $rewardSection.Length)
 }
 
 function Set-QuestLayout([string]$Block, [string[]]$Dependencies, [double]$X, [double]$Y, [bool]$Optional) {
@@ -347,6 +515,35 @@ function New-LessonBlock([string]$ChapterKey, [object]$Lesson, [string[]]$Depend
     return [pscustomobject]@{ Id = $questId; Block = ($lines -join "`r`n") }
 }
 
+function New-ReplacementBlock([string]$ChapterKey, [object]$Lesson, [string[]]$Dependencies, [double]$X, [double]$Y) {
+    if (-not $legacyBlocks.ContainsKey($Lesson.SourceId)) {
+        throw "Missing replacement source quest block: $($Lesson.SourceId)"
+    }
+    $questId = Get-StableId "$ChapterKey|$($Lesson.Key)|quest"
+    $block = Set-QuestLayout $legacyBlocks[$Lesson.SourceId] $Dependencies $X $Y $Lesson.Optional
+    $block = [regex]::Replace(
+        $block,
+        '(?m)^(\s*)id:\s*"([0-9A-F]{16})"\s*$',
+        {
+            param($match)
+            $replacementId = if ($match.Groups[1].Value -eq "`t`t`t") {
+                $questId
+            }
+            else {
+                Get-StableId "$ChapterKey|$($Lesson.Key)|definition|$($match.Groups[2].Value)"
+            }
+            return "$($match.Groups[1].Value)id: `"$replacementId`""
+        }
+    )
+    if ($descriptionOverrides.ContainsKey($Lesson.SourceId)) {
+        $block = Set-Description $block $descriptionOverrides[$Lesson.SourceId]
+    }
+    if ($titleOverrides.ContainsKey($Lesson.SourceId)) {
+        $block = Set-Title $block $titleOverrides[$Lesson.SourceId]
+    }
+    return [pscustomobject]@{ Id = $questId; Block = $block }
+}
+
 if (Test-Path -LiteralPath $stageRoot) {
     $resolvedStage = [IO.Path]::GetFullPath($stageRoot)
     $expectedStage = [IO.Path]::GetFullPath((Join-Path $projectRootResolved 'build\beginner-questbook'))
@@ -398,6 +595,17 @@ $groupLines.Add('}')
 $selectedExistingIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
 $chapterCounts = [Collections.Generic.List[object]]::new()
 $allSelectedQuestIds = [Collections.Generic.List[string]]::new()
+$chapterUnlockDependencies = @{
+    first_days       = @('18C0AF7F5C17CAB7')
+    homestead        = @('18C0AF7F5C17CAB7')
+    create_basics    = @('18C0AF7F5C17CAB7')
+    travel_storage   = @('18C0AF7F5C17CAB7')
+    new_horizons     = @('18C0AF7F5C17CAB7')
+    archaeology      = @('18C0AF7F5C17CAB7')
+    vehicles         = @('18C0AF7F5C17CAB7')
+    endgame          = @('18C0AF7F5C17CAB7')
+}
+$compatibilityQuestIds = @('1885CF9658AB663D', '22B69CA315389C48')
 
 for ($chapterIndex = 0; $chapterIndex -lt $chapters.Count; $chapterIndex++) {
     $chapter = $chapters[$chapterIndex]
@@ -415,6 +623,7 @@ for ($chapterIndex = 0; $chapterIndex -lt $chapters.Count; $chapterIndex++) {
     $lines.Add("`torder_index: $($chapterIndex + 1)")
     $lines.Add("`tprogression_mode: `"flexible`"")
     $lines.Add("`tquest_links: [ ]")
+    $lines.Add("`ttitle: `"$(Escape-Snbt $chapter.Title)`"")
     $lines.Add("`tquests: [")
 
     $previousRequired = ''
@@ -425,20 +634,34 @@ for ($chapterIndex = 0; $chapterIndex -lt $chapters.Count; $chapterIndex++) {
         $xColumn = if (($row % 2) -eq 0) { $column } else { 5 - $column }
         $x = [double]($xColumn * 2)
         $y = [double]($row * 2)
-        $dependencies = if ($previousRequired) { @($previousRequired) } else { @() }
+        $dependencies = if ($previousRequired) {
+            @($previousRequired)
+        }
+        elseif ($chapterUnlockDependencies.ContainsKey($chapter.Key)) {
+            @($chapterUnlockDependencies[$chapter.Key])
+        }
+        else { @() }
 
         if ($entry.Kind -eq 'existing') {
             if (-not $legacyBlocks.ContainsKey($entry.Id)) { throw "Missing legacy quest block: $($entry.Id)" }
             if (-not $selectedExistingIds.Add($entry.Id)) { throw "Quest selected twice: $($entry.Id)" }
             $block = $legacyBlocks[$entry.Id]
-            if ($descriptionOverrides.ContainsKey($entry.Id)) { $block = Set-Description $block $descriptionOverrides[$entry.Id] }
             $block = Set-QuestLayout $block $dependencies $x $y $entry.Optional
             $questId = $entry.Id
+        }
+        elseif ($entry.Kind -eq 'replacement') {
+            $created = New-ReplacementBlock $chapter.Key $entry $dependencies $x $y
+            $block = $created.Block
+            $questId = $created.Id
         }
         else {
             $created = New-LessonBlock $chapter.Key $entry $dependencies $x $y
             $block = $created.Block
             $questId = $created.Id
+        }
+        if ($questId -notin $compatibilityQuestIds) {
+            if ($descriptionOverrides.ContainsKey($questId)) { $block = Set-Description $block $descriptionOverrides[$questId] }
+            if ($titleOverrides.ContainsKey($questId)) { $block = Set-Title $block $titleOverrides[$questId] }
         }
         $lines.Add($block)
         $allSelectedQuestIds.Add($questId)
@@ -450,11 +673,14 @@ for ($chapterIndex = 0; $chapterIndex -lt $chapters.Count; $chapterIndex++) {
     $chapterCounts.Add([pscustomobject]@{ Chapter = $chapter.Title; File = "$($chapter.Key).snbt"; Quests = $chapter.Entries.Count })
 }
 
-# Validate IDs, dependencies, descriptions, count, and preservation of all saved
-# progress IDs that belonged to individual legacy quest blocks.
+# Validate IDs, dependencies, descriptions, count, graph shape, and preservation
+# of every definition ID in the local v1.0.0 baseline.
 $questIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
 $allIds = [Collections.Generic.List[string]]::new()
 $dependencies = [Collections.Generic.List[string]]::new()
+$taskIds = [Collections.Generic.List[string]]::new()
+$rewardIds = [Collections.Generic.List[string]]::new()
+$questDependencyMap = @{}
 $manualQuests = 0
 $automaticQuests = 0
 $itemIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
@@ -468,42 +694,113 @@ foreach ($file in Get-ChildItem -LiteralPath $stageRoot -Recurse -File -Filter '
     foreach ($match in [regex]::Matches($text, '(?m)^\s*item:\s*"([a-z0-9_.-]+:[a-z0-9_./-]+)"')) { [void]$itemIds.Add($match.Groups[1].Value) }
     if ($file.Directory.Name -eq 'chapters') {
         foreach ($block in [regex]::Matches($text, '(?ms)^\t\t\{\r?\n.*?^\t\t\}')) {
-            $taskArea = [regex]::Match($block.Value, '(?ms)^\t\t\ttasks:\s*\[(.*?)^\t\t\t\]')
-            if (-not $taskArea.Success) { $taskArea = [regex]::Match($block.Value, '(?ms)^\t\t\ttasks:\s*\[(.*?)\]\s*$') }
+            $questIdMatch = [regex]::Match($block.Value, '(?m)^\t\t\tid:\s*"([0-9A-F]{16})"')
+            $blockDependencies = @(
+                [regex]::Matches($block.Value, '(?m)^\t\t\tdependencies:\s*\[([^\]]*)\]') |
+                    ForEach-Object { [regex]::Matches($_.Groups[1].Value, '"([0-9A-F]{16})"') } |
+                    ForEach-Object { $_.Groups[1].Value }
+            )
+            if ($questIdMatch.Success) { $questDependencyMap[$questIdMatch.Groups[1].Value] = $blockDependencies }
+
+            $taskArea = [regex]::Match($block.Value, '(?ms)^\t\t\ttasks:\s*(.*?)(?=^\t\t\ttitle:)')
+            foreach ($match in [regex]::Matches($taskArea.Value, '(?m)^\s*id:\s*"([0-9A-F]{16})"')) {
+                $taskIds.Add($match.Groups[1].Value)
+            }
+            $rewardArea = [regex]::Match($block.Value, '(?ms)^\t\t\trewards:\s*(.*?)(?=^\t\t\t(?:subtitle|tasks):)')
+            foreach ($match in [regex]::Matches($rewardArea.Value, '(?m)^\s*id:\s*"([0-9A-F]{16})"')) {
+                $rewardIds.Add($match.Groups[1].Value)
+            }
             if ($taskArea.Value -match 'type:\s*"checkmark"') { $manualQuests++ } else { $automaticQuests++ }
         }
     }
 }
 
 $duplicateIds = @($allIds | Group-Object | Where-Object Count -gt 1)
+$duplicateQuestIds = @($questIds | Group-Object | Where-Object Count -gt 1)
+$duplicateTaskIds = @($taskIds | Group-Object | Where-Object Count -gt 1)
+$duplicateRewardIds = @($rewardIds | Group-Object | Where-Object Count -gt 1)
 $unsafeIds = @($allIds | Where-Object { $_ -match '^[89A-F]' })
 $missingDependencies = @($dependencies | Where-Object { -not $questIds.Contains($_) } | Select-Object -Unique)
 $chapterFiles = @(Get-ChildItem -LiteralPath $chapterRoot -File -Filter '*.snbt')
-if ($chapterFiles.Count -ne 10) { throw "Expected 10 chapters, found $($chapterFiles.Count)." }
-if ($questIds.Count -ne 120) { throw "Expected 120 quests, found $($questIds.Count)." }
+if ($chapterFiles.Count -ne 9) { throw "Expected 9 chapters, found $($chapterFiles.Count)." }
+if ($questIds.Count -ne 118) { throw "Expected 118 quests, found $($questIds.Count)." }
 if ($duplicateIds.Count -gt 0) { throw "Duplicate IDs: $($duplicateIds.Name -join ', ')" }
+if ($duplicateQuestIds.Count -gt 0) { throw "Duplicate quest IDs: $($duplicateQuestIds.Name -join ', ')" }
+if ($duplicateTaskIds.Count -gt 0) { throw "Duplicate task IDs: $($duplicateTaskIds.Name -join ', ')" }
+if ($duplicateRewardIds.Count -gt 0) { throw "Duplicate reward IDs: $($duplicateRewardIds.Name -join ', ')" }
 if ($unsafeIds.Count -gt 0) { throw "FTB-unsafe signed IDs: $($unsafeIds -join ', ')" }
 if ($missingDependencies.Count -gt 0) { throw "Unresolved dependencies: $($missingDependencies -join ', ')" }
 
-$progressIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
-if (Test-Path -LiteralPath $liveProgressRoot -PathType Container) {
-    foreach ($file in Get-ChildItem -LiteralPath $liveProgressRoot -File -Filter '*.snbt') {
-        foreach ($match in [regex]::Matches([IO.File]::ReadAllText($file.FullName), '(?m)^\s*([0-9A-F]{16}):')) {
-            [void]$progressIds.Add($match.Groups[1].Value)
+# Kahn's algorithm: if every quest is visited, the dependency graph is acyclic
+# and every quest is reachable from at least one visible root.
+$inDegree = @{}
+$dependents = @{}
+foreach ($questId in $questIds) { $inDegree[$questId] = 0; $dependents[$questId] = [Collections.Generic.List[string]]::new() }
+foreach ($questId in $questIds) {
+    foreach ($dependency in @($questDependencyMap[$questId])) {
+        if (-not $questIds.Contains($dependency)) { continue }
+        $inDegree[$questId]++
+        $dependents[$dependency].Add($questId)
+    }
+}
+$queue = [Collections.Generic.Queue[string]]::new()
+foreach ($questId in $questIds) { if ($inDegree[$questId] -eq 0) { $queue.Enqueue($questId) } }
+$visitedQuestIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+while ($queue.Count -gt 0) {
+    $questId = $queue.Dequeue()
+    if (-not $visitedQuestIds.Add($questId)) { continue }
+    foreach ($dependent in $dependents[$questId]) {
+        $inDegree[$dependent]--
+        if ($inDegree[$dependent] -eq 0) { $queue.Enqueue($dependent) }
+    }
+}
+$cyclicOrUnreachable = @($questIds | Where-Object { -not $visitedQuestIds.Contains($_) })
+if ($cyclicOrUnreachable.Count -gt 0) { throw "Cyclic or unreachable quests: $($cyclicOrUnreachable -join ', ')" }
+
+$newDefinitionIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+foreach ($id in $allIds) { [void]$newDefinitionIds.Add($id) }
+
+# Preserve every quest/chapter/group/task/reward ID from the local v1.0.0 tag.
+# This is deliberately Git-based: validation never opens the production world or
+# reads live FTB Quests team/player progress.
+$baselineDefinitionIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+$baselineComparison = 'v1.0.0 tag not available'
+$tag = @(& git -C $projectRootResolved tag --list 'v1.0.0' 2>$null)
+if ($tag.Count -gt 0) {
+    $baselinePaths = @(& git -C $projectRootResolved ls-tree -r --name-only 'v1.0.0' -- 'payload/both/config/ftbquests/quests' 2>$null)
+    foreach ($path in $baselinePaths) {
+        if ($path -notlike '*.snbt') { continue }
+        $baselineText = (@(& git -C $projectRootResolved show "v1.0.0:$path" 2>$null) -join "`n")
+        foreach ($match in [regex]::Matches($baselineText, '(?m)^\s*id:\s*"([0-9A-F]{16})"')) {
+            [void]$baselineDefinitionIds.Add($match.Groups[1].Value)
+        }
+    }
+    $baselineComparison = 'compared with local v1.0.0 tag'
+}
+$missingBaselineIds = @($baselineDefinitionIds | Where-Object { -not $newDefinitionIds.Contains($_) })
+$intentionallyRemovedBaselineIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+if ($tag.Count -gt 0) {
+    $removedPaths = @('payload/both/config/ftbquests/quests/chapters/tinkers_deferred.snbt')
+    foreach ($removedPath in $removedPaths) {
+        $removedText = (@(& git -C $projectRootResolved show "v1.0.0:$removedPath" 2>$null) -join "`n")
+        foreach ($match in [regex]::Matches($removedText, '(?m)^\s*id:\s*"([0-9A-F]{16})"')) {
+            [void]$intentionallyRemovedBaselineIds.Add($match.Groups[1].Value)
+        }
+    }
+    $homesteadText = (@(& git -C $projectRootResolved show 'v1.0.0:payload/both/config/ftbquests/quests/chapters/homestead.snbt' 2>$null) -join "`n")
+    $botanyBlock = [regex]::Match($homesteadText, '(?ms)^\t\t\{\r?\n.*?^\t\t\}')
+    foreach ($candidateBlock in [regex]::Matches($homesteadText, '(?ms)^\t\t\{\r?\n.*?^\t\t\}')) {
+        if ($candidateBlock.Value -notmatch 'id:\s*"4DC3990D720C9351"') { continue }
+        $botanyBlock = $candidateBlock
+        foreach ($match in [regex]::Matches($botanyBlock.Value, '(?m)^\s*id:\s*"([0-9A-F]{16})"')) {
+            [void]$intentionallyRemovedBaselineIds.Add($match.Groups[1].Value)
         }
     }
 }
-$legacyQuestBlockIdsWithProgress = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
-foreach ($legacyBlock in $legacyBlocks.Values) {
-    $blockIds = @([regex]::Matches($legacyBlock, '(?m)^\s*id:\s*"([0-9A-F]{16})"') | ForEach-Object { $_.Groups[1].Value })
-    if (@($blockIds | Where-Object { $progressIds.Contains($_) }).Count -gt 0) {
-        foreach ($id in $blockIds) { if ($progressIds.Contains($id)) { [void]$legacyQuestBlockIdsWithProgress.Add($id) } }
-    }
+$unexpectedMissingBaselineIds = @($missingBaselineIds | Where-Object { -not $intentionallyRemovedBaselineIds.Contains($_) })
+if ($unexpectedMissingBaselineIds.Count -gt 0) {
+    throw "Unexpected v1.0.0 quest definition IDs would be lost: $($unexpectedMissingBaselineIds -join ', ')"
 }
-$newDefinitionIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
-foreach ($id in $allIds) { [void]$newDefinitionIds.Add($id) }
-$missingProgressIds = @($legacyQuestBlockIdsWithProgress | Where-Object { -not $newDefinitionIds.Contains($_) })
-if ($missingProgressIds.Count -gt 0) { throw "Saved quest/task progress IDs would be lost: $($missingProgressIds -join ', ')" }
 
 $existingQuestIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
 foreach ($id in $legacyBlocks.Keys) { [void]$existingQuestIds.Add($id) }
@@ -511,25 +808,96 @@ $removedLegacyQuestIds = @($existingQuestIds | Where-Object { -not $selectedExis
 
 $report = [ordered]@{
     generatedAt = (Get-Date).ToString('o')
-    source = $sourceRoot
+    source = 'audit/questbook-legacy-1.8.0'
     chapterCount = $chapterFiles.Count
     questCount = $questIds.Count
+    taskIdCount = @($taskIds | Select-Object -Unique).Count
+    rewardIdCount = @($rewardIds | Select-Object -Unique).Count
     manualCheckmarkQuests = $manualQuests
     automaticDetectionQuests = $automaticQuests
     existingQuestBlocksRetained = $selectedExistingIds.Count
     legacyQuestBlocksRemovedFromVisibleGuide = $removedLegacyQuestIds.Count
-    savedQuestAndTaskProgressIdsFound = $legacyQuestBlockIdsWithProgress.Count
-    savedQuestAndTaskProgressIdsPreserved = $legacyQuestBlockIdsWithProgress.Count - $missingProgressIds.Count
+    baselineIdComparison = $baselineComparison
+    baselineDefinitionIdsFound = $baselineDefinitionIds.Count
+    baselineDefinitionIdsPreserved = $baselineDefinitionIds.Count - $missingBaselineIds.Count
+    intentionallyRemovedBaselineIds = $missingBaselineIds.Count
+    unexpectedMissingBaselineIds = $unexpectedMissingBaselineIds.Count
     duplicateIds = $duplicateIds.Count
+    duplicateQuestIds = $duplicateQuestIds.Count
+    duplicateTaskIds = $duplicateTaskIds.Count
+    duplicateRewardIds = $duplicateRewardIds.Count
     unsafeSignedIds = $unsafeIds.Count
     unresolvedDependencies = $missingDependencies.Count
+    cyclicOrUnreachableQuests = $cyclicOrUnreachable.Count
     referencedItemIds = $itemIds.Count
     chapters = @($chapterCounts)
-    deferredBecauseNotInstalled = @('Botany Pots', 'Botany Trees', "Tinkers' Construct")
-    explicitlyNotAdded = @('Immersive Engineering', 'Create Crafts & Additions')
+    absentModTutorialContentRemoved = @('Botany Pots', 'Botany Trees', "Tinkers' Construct")
+    explicitlyNotAdded = @(
+        'Immersive Engineering',
+        'Create Crafts & Additions',
+        'Create Diesel Generators',
+        "Create Tinkers' Compat",
+        'Create Contraption Terminals',
+        'Bells & Whistles'
+    )
 }
 [IO.File]::WriteAllText((Join-Path $projectRootResolved 'audit\questbook-validation.json'), (($report | ConvertTo-Json -Depth 8) + "`r`n"), $utf8)
 [IO.File]::WriteAllLines((Join-Path $projectRootResolved 'audit\questbook-item-ids.txt'), @($itemIds | Sort-Object), $utf8)
+
+$chapterDefaultMods = @{
+    welcome = 'guide'; first_days = 'minecraft'; homestead = 'farmersdelight + integrations'
+    create_basics = 'create + installed addons'
+    travel_storage = 'mixed storage'; new_horizons = 'mixed exploration'
+    archaeology = 'betterarcheology + separate optional systems'; vehicles = 'mixed transport'
+    endgame = 'mixed adventure'
+}
+$questAuditRows = [Collections.Generic.List[object]]::new()
+foreach ($chapter in $chapters) {
+    $chapterPath = Join-Path $chapterRoot "$($chapter.Key).snbt"
+    $chapterText = [IO.File]::ReadAllText($chapterPath)
+    foreach ($block in [regex]::Matches($chapterText, '(?ms)^\t\t\{\r?\n.*?^\t\t\}')) {
+        $questId = [regex]::Match($block.Value, '(?m)^\t\t\tid:\s*"([0-9A-F]{16})"').Groups[1].Value
+        $title = [regex]::Match($block.Value, '(?m)^\t\t\ttitle:\s*"((?:\\.|[^"])*)"').Groups[1].Value
+        $dependencyText = [regex]::Match($block.Value, '(?m)^\t\t\tdependencies:\s*\[([^\]]*)\]').Groups[1].Value
+        $dependencyIds = @([regex]::Matches($dependencyText, '"([0-9A-F]{16})"') | ForEach-Object { $_.Groups[1].Value })
+        $taskArea = [regex]::Match($block.Value, '(?ms)^\t\t\ttasks:\s*(.*?)(?=^\t\t\ttitle:)').Value
+        $taskTypes = @([regex]::Matches($taskArea, '(?m)^\s*type:\s*"([a-z0-9_.-]+)"') | ForEach-Object { $_.Groups[1].Value } | Select-Object -Unique)
+        $taskTargets = @([regex]::Matches($taskArea, '(?m)^\s*(?:item|advancement|dimension|entity|tag):\s*"([^"]+)"') | ForEach-Object { $_.Groups[1].Value } | Select-Object -Unique)
+        $targetNamespaces = @($taskTargets | Where-Object { $_ -match ':' } | ForEach-Object { ($_ -split ':', 2)[0] } | Select-Object -Unique)
+        $rewardArea = [regex]::Match($block.Value, '(?ms)^\t\t\trewards:\s*(.*?)(?=^\t\t\t(?:subtitle|tasks):)').Value
+        $rewardTypes = @([regex]::Matches($rewardArea, '(?m)^\s*type:\s*"([a-z0-9_.-]+)"') | ForEach-Object { $_.Groups[1].Value } | Select-Object -Unique)
+        $rewardItems = @([regex]::Matches($rewardArea, '(?m)^\s*item:\s*"([^"]+)"') | ForEach-Object { $_.Groups[1].Value } | Select-Object -Unique)
+        $verification = if ($chapter.Key -eq 'tinkers_deferred') {
+            'deferred_not_installed'
+        }
+        elseif ($taskTypes -contains 'checkmark') {
+            'definition_valid; manual_client_completion_required'
+        }
+        else {
+            'definition_valid; automated_task_target_pending_runtime_client_test'
+        }
+        $notes = if ($chapter.Key -eq 'archaeology' -and $taskTypes -contains 'checkmark') {
+            'Keep namespaces separate; manual recipe/progression confirmation retained.'
+        }
+        elseif ($block.Value -match '\[OPTIONAL SIDE QUEST\]') { 'Optional side quest.' }
+        else { 'Core guidance quest; recipes are not gated.' }
+        $questAuditRows.Add([pscustomobject][ordered]@{
+            chapter = $chapter.Title
+            quest_id = $questId
+            title = $title.Replace('\"', '"')
+            mod_id = if ($targetNamespaces.Count -gt 0) { $targetNamespaces -join ' + ' } else { $chapterDefaultMods[$chapter.Key] }
+            task_type = if ($taskTypes.Count -gt 0) { $taskTypes -join ' + ' } else { 'none' }
+            task_target = $taskTargets -join ' + '
+            dependencies = $dependencyIds -join ' + '
+            optional = [bool]($block.Value -match '\[OPTIONAL SIDE QUEST\]')
+            reward = (@($rewardTypes) + @($rewardItems) | Where-Object { $_ }) -join ' + '
+            verification_status = $verification
+            notes = $notes
+        })
+    }
+}
+$questAuditCsv = @($questAuditRows | ConvertTo-Csv -NoTypeInformation)
+[IO.File]::WriteAllLines((Join-Path $projectRootResolved 'audit\quests.csv'), $questAuditCsv, $utf8)
 
 if ($Deploy) {
     $payloadQuestRoot = [IO.Path]::GetFullPath((Join-Path $projectRootResolved 'payload\both\config\ftbquests\quests'))

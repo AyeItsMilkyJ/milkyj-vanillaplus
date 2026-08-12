@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/entity_texture_features.json"
 hash-format = "sha256"
-hash = "889d75199999348872acd61feafb1b8ae3dbdb0230f33c6ad3bd48104bace621"
+hash = "d8d72a9ac49bbe45921f1ace5a22c30b65802c5e70829343cf7acfd25f79b8dc"

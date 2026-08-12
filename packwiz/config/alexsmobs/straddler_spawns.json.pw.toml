@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/straddler_spawns.json"
 hash-format = "sha256"
-hash = "23051f654fc4e973ac2bdfb4bfbcde6b5fb8172b9fb13e35436003f0a106fd1e"
+hash = "5ee746cf50b358048a0243e4c45997285cf4a9b736758d388ad730d4ed493900"

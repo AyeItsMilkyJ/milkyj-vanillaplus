@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/fetzis_displays/fetzis-displays-config.json"
 hash-format = "sha256"
-hash = "f53f547fcca728f8b595cff66e72a91f9564da46697fc21f62a2c589fdb5bba7"
+hash = "5fca370c40433596c2417f4fa0a02c4d1e438d808c92a43f583b169f732563e0"

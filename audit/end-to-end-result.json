@@ -1,9 +1,23 @@
-﻿{
-    "testedAt":  "2026-08-12T09:36:57.8281726+10:00",
-    "packUrl":  "http://127.0.0.1:61769/packwiz/pack.toml",
-    "clientJarCount":  236,
-    "serverJarCount":  203,
-    "personalFilesPreserved":  true,
-    "serverReachedDone":  true,
-    "serverProcessExited":  true
+{
+  "testedAt": "2026-08-12T13:28:10.7489101+10:00",
+  "packUrl": "local disposable loopback host",
+  "clientJarCount": 236,
+  "serverJarCount": 203,
+  "personalFilesPreserved": true,
+  "personalOptionsAndKeybindingsPreserved": true,
+  "personalScreenshotsPreserved": true,
+  "personalSavesPreserved": true,
+  "personalShaderSettingsPreserved": true,
+  "serverReachedDone": true,
+  "serverStartupSeconds": 46.672,
+  "questParserLoaded": true,
+  "questParserResult": "Loaded 4 chapter groups, 9 chapters, 118 quests, 0 reward tables",
+  "allLoadedDimensionsSaved": true,
+  "serverProcessExited": true,
+  "resourcefulConfigManagedFileOmitted": true,
+  "resourcefulConfigRegeneratedLocally": true,
+  "resourcefulConfigWebEnabledAfterRegeneration": false,
+  "patronCacheManagedFileOmitted": true,
+  "patronCacheGeneratedDuringServerTest": false,
+  "liveFilesReadOrWritten": false
 }

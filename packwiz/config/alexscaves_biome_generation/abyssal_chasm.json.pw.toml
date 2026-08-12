@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexscaves_biome_generation/abyssal_chasm.json"
 hash-format = "sha256"
-hash = "ae29e2305f1b01790f28332d51f49e4e389cb021343b45627a3b35f512c10865"
+hash = "d286a521c5fd852ef189e15f02952d3e6f529efbb67fe769d88d45183279c3b9"

@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/pack.mcmeta"
 hash-format = "sha256"
-hash = "22c3406449a4debce803b50497d82eb7c33e72163e6002b69edd888ecfde82e4"
+hash = "d0ecc11236368a78905cc8457fada14345529a9b0aecfa8497d140838d5991cf"

@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/xaero/minimap/profiles/info_display_config/default.cfg.txt"
 hash-format = "sha256"
-hash = "d1e613cc3cb6813ad2c89a3b0291f8dc4a1fb851fc6ad914fa6db3b3a824cbbc"
+hash = "184e654fa1fc8ad09943c97c4e65ab78acb5b3cfca22417a831513d1b6d9bbc6"

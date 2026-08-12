@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/naturalist.json"
 hash-format = "sha256"
-hash = "2ab566221bf3d12767b052da74204bd1a2258380c61b6d719f33155f8edd6dff"
+hash = "022aeb6c92073255d6ad01f0f47eecf574bcb19aa9bc9d8d11eeae1479079226"

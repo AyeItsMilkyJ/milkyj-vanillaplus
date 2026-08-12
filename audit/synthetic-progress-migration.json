@@ -1,0 +1,51 @@
+{
+  "testedAt": "2026-08-12T13:36:26.026486+10:00",
+  "syntheticMigrationResult": "PASS",
+  "fixture": "tests/fixtures/synthetic-progress-baseline.json",
+  "fixtureScope": "Synthetic logical ID/team compatibility model; not a production FTB Quests file-format fixture.",
+  "checks": [
+    {
+      "name": "baseline quest completion preserved",
+      "status": "PASS",
+      "evidence": "7DA1925406767A08"
+    },
+    {
+      "name": "baseline task completion preserved",
+      "status": "PASS",
+      "evidence": "324C6E97D6CB2AA8"
+    },
+    {
+      "name": "claimed baseline reward remains the same claimed definition",
+      "status": "PASS",
+      "evidence": "37C462912CB4ED85"
+    },
+    {
+      "name": "unclaimed baseline reward retains its original definition",
+      "status": "PASS",
+      "evidence": "47348F50B1E09486"
+    },
+    {
+      "name": "new quest starts incomplete",
+      "status": "PASS",
+      "evidence": "2 new quest IDs"
+    },
+    {
+      "name": "new reward starts unclaimed",
+      "status": "PASS",
+      "evidence": "2 new reward IDs"
+    },
+    {
+      "name": "synthetic team progress representation retained",
+      "status": "PASS",
+      "evidence": "logical team-scoped fixture"
+    },
+    {
+      "name": "no baseline ID is repurposed",
+      "status": "PASS",
+      "evidence": "0 repurposed IDs"
+    }
+  ],
+  "realProductionFixtureResult": "NOT RUN",
+  "realProductionFixtureReason": "The unavailable 99-ID fixture was not found in safe repository test data, and the live world/playerdata was intentionally not accessed or hot-copied.",
+  "remainingManualGate": "Test a clean snapshot taken only after the production server is stopped."
+}

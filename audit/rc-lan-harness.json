@@ -1,0 +1,21 @@
+{
+    "testedAt":  "2026-08-12T13:32:30.9463237+10:00",
+    "candidate":  "1.9.0-rc1",
+    "lanAddress":  "192.168.0.159",
+    "packHttpPort":  8765,
+    "minecraftPort":  25566,
+    "productionPortTouched":  false,
+    "serverJarCount":  203,
+    "serverReachedDone":  true,
+    "questParserLoaded":  true,
+    "chapterCount":  9,
+    "questCount":  118,
+    "allLoadedDimensionsSaved":  true,
+    "supervisorStopped":  true,
+    "httpStopped":  true,
+    "zip":  "dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-Prism.zip",
+    "zipSha256":  "988553f8a88d420300811114d1cfa8461463b59607f956bfd91ce978e9533b4f",
+    "twoClientManualInteractionResult":  "NOT RUN",
+    "firewallOrRouterChanged":  false,
+    "liveServerWorldOrPrismTouched":  false
+}

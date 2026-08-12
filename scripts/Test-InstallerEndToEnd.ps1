@@ -1,11 +1,13 @@
 [CmdletBinding()]
 param(
     [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ForgeLibrariesPath,
     [switch]$SkipServerLaunch
 )
 
 $ErrorActionPreference = 'Stop'
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
+if (-not $ForgeLibrariesPath) { $ForgeLibrariesPath = Join-Path $projectRootResolved '.tools\forge-libraries' }
 $testRoot = Join-Path $projectRootResolved 'build\end-to-end'
 if (-not $testRoot.StartsWith(($projectRootResolved.TrimEnd('\') + '\'), [StringComparison]::OrdinalIgnoreCase)) {
     throw "Unsafe validation path: $testRoot"
@@ -48,14 +50,20 @@ try {
     $bootstrap = & (Join-Path $PSScriptRoot 'Get-PackwizInstaller.ps1') -ProjectRoot $projectRootResolved -PassThru
 
     [IO.File]::WriteAllText((Join-Path $clientRoot 'options.txt'), 'personal-sentinel=true', [Text.UTF8Encoding]::new($false))
-    New-Item -ItemType Directory -Path (Join-Path $clientRoot 'screenshots') -Force | Out-Null
+    [IO.File]::WriteAllText((Join-Path $clientRoot 'optionsshaders.txt'), 'shader-settings-sentinel=true', [Text.UTF8Encoding]::new($false))
+    New-Item -ItemType Directory -Path (Join-Path $clientRoot 'screenshots'), (Join-Path $clientRoot 'saves\personal-world'), (Join-Path $clientRoot 'shaderpacks') -Force | Out-Null
     [IO.File]::WriteAllText((Join-Path $clientRoot 'screenshots\personal-sentinel.txt'), 'keep me', [Text.UTF8Encoding]::new($false))
+    [IO.File]::WriteAllText((Join-Path $clientRoot 'saves\personal-world\level.dat'), 'save-sentinel', [Text.UTF8Encoding]::new($false))
+    [IO.File]::WriteAllText((Join-Path $clientRoot 'shaderpacks\personal-sentinel.txt'), 'shaderpack-sentinel', [Text.UTF8Encoding]::new($false))
     Copy-Item -LiteralPath $bootstrap -Destination (Join-Path $clientRoot 'packwiz-installer-bootstrap.jar')
     Push-Location $clientRoot
     try { & $java -jar 'packwiz-installer-bootstrap.jar' -g -s client $localPackUrl; $clientExit = $LASTEXITCODE } finally { Pop-Location }
     if ($clientExit -ne 0) { throw "Client Packwiz installation failed with exit code $clientExit" }
     if ((Get-Content -LiteralPath (Join-Path $clientRoot 'options.txt') -Raw) -ne 'personal-sentinel=true') { throw 'Packwiz overwrote options.txt.' }
+    if ((Get-Content -LiteralPath (Join-Path $clientRoot 'optionsshaders.txt') -Raw) -ne 'shader-settings-sentinel=true') { throw 'Packwiz overwrote shader settings.' }
     if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'screenshots\personal-sentinel.txt'))) { throw 'Packwiz removed a personal screenshot sentinel.' }
+    if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'saves\personal-world\level.dat'))) { throw 'Packwiz removed a personal save sentinel.' }
+    if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'shaderpacks\personal-sentinel.txt'))) { throw 'Packwiz removed a personal shaderpack sentinel.' }
     $clientJars = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter *.jar)
     if ($clientJars.Count -ne 236) { throw "Expected 236 client JARs; installed $($clientJars.Count)." }
 
@@ -67,8 +75,11 @@ try {
     if ($serverJars.Count -ne 203) { throw "Expected 203 server JARs; installed $($serverJars.Count)." }
 
     if (-not $SkipServerLaunch) {
-        $liveServer = Join-Path ([Environment]::GetFolderPath('Desktop')) 'Minecraft Server'
-        Copy-Item -LiteralPath (Join-Path $liveServer 'libraries') -Destination (Join-Path $serverRoot 'libraries') -Recurse
+        $forgeLibrariesResolved = [IO.Path]::GetFullPath($ForgeLibrariesPath)
+        if (-not (Test-Path -LiteralPath (Join-Path $forgeLibrariesResolved 'net\minecraftforge\forge\1.20.1-47.4.10\win_args.txt') -PathType Leaf)) {
+            throw "Disposable Forge libraries are missing. Populate the ignored test cache first: $forgeLibrariesResolved"
+        }
+        Copy-Item -LiteralPath $forgeLibrariesResolved -Destination (Join-Path $serverRoot 'libraries') -Recurse
         [IO.File]::WriteAllText((Join-Path $serverRoot 'eula.txt'), "eula=true`r`n", [Text.UTF8Encoding]::new($false))
         [IO.File]::WriteAllText((Join-Path $serverRoot 'user_jvm_args.txt'), "-Xms1G`r`n-Xmx4G`r`n", [Text.UTF8Encoding]::new($false))
         $validationPort = $port + 1
@@ -119,15 +130,18 @@ try {
         }
         $process.StandardInput.WriteLine('stop'); $process.StandardInput.Flush()
         $serverProcessExited = $process.WaitForExit(180000)
+        $savedAllDimensions = [bool](Select-String -LiteralPath $latestLog -SimpleMatch 'ThreadedAnvilChunkStorage: All dimensions are saved' -Quiet)
+        $questParserLoaded = [bool](Select-String -LiteralPath $latestLog -Pattern 'Loaded 4 chapter groups, 9 chapters, 118 quests, 0 reward tables' -Quiet)
         if (-not $serverProcessExited) {
-            $savedAll = [bool](Select-String -LiteralPath $latestLog -SimpleMatch 'ThreadedAnvilChunkStorage: All dimensions are saved' -Quiet)
             $process.Kill()
-            if (-not $savedAll) { throw 'Disposable Forge server neither exited nor confirmed that all dimensions were saved.' }
+            if (-not $savedAllDimensions) { throw 'Disposable Forge server neither exited nor confirmed that all dimensions were saved.' }
             Write-Warning 'Disposable server saved all dimensions, but a lingering mod thread kept the validation JVM alive. The process was cleaned up after the save completed.'
         }
         [IO.File]::WriteAllText((Join-Path $testRoot 'server.stdout.log'), $stdoutTask.Result)
         [IO.File]::WriteAllText((Join-Path $testRoot 'server.stderr.log'), $stderrTask.Result)
         if ($serverProcessExited -and $process.ExitCode -ne 0) { throw "Disposable Forge server exited with code $($process.ExitCode)." }
+        if (-not $questParserLoaded) { throw 'FTB Quests did not report the expected 9 chapters and 118 quests.' }
+        if (-not $savedAllDimensions) { throw 'Disposable server did not confirm that all loaded dimensions were saved.' }
     }
 
     $report = [ordered]@{
@@ -136,7 +150,14 @@ try {
         clientJarCount = $clientJars.Count
         serverJarCount = $serverJars.Count
         personalFilesPreserved = $true
+        personalOptionsPreserved = $true
+        personalKeybindContainerPreserved = $true
+        personalScreenshotsPreserved = $true
+        personalSavesPreserved = $true
+        personalShaderSettingsPreserved = $true
         serverReachedDone = (-not $SkipServerLaunch)
+        questParserLoaded = if ($SkipServerLaunch) { $null } else { $questParserLoaded }
+        allLoadedDimensionsSaved = if ($SkipServerLaunch) { $null } else { $savedAllDimensions }
         serverProcessExited = if ($SkipServerLaunch) { $null } else { $serverProcessExited }
     }
     $report | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $testRoot 'result.json') -Encoding utf8

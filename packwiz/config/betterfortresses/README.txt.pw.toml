@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterfortresses/README.txt"
 hash-format = "sha256"
-hash = "3e551016c121147eabbe77e0608ef65c559e9bbbb105254bf407fefc6039384f"
+hash = "70c4264947f42dd780d476f3d36966c2d01c23d6f089d98c317f8a820e4040ee"

@@ -5,11 +5,13 @@
 	group: "676547C5A87BA338"
 	icon: "immersive_aircraft:biplane"
 	id: "0F73D94269F5D8E4"
-	order_index: 9
+	order_index: 8
 	progression_mode: "flexible"
 	quest_links: [ ]
+	title: "Vehicles and Transport"
 	quests: [
 		{
+			dependencies: ["18C0AF7F5C17CAB7"]
 			description: [
 				"What this is: AstikorCarts Redux adds wood-specific Hand Carts that a player pulls and Supply Carts that attach to a mount and carry much more cargo."
 				"Why it matters: these are early overland storage vehicles with no fuel system. They are useful for building runs and farm hauling before aircraft or rail infrastructure exists."

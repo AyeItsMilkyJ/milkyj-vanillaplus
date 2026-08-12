@@ -6,7 +6,8 @@ Current locked platform:
 
 - Minecraft `1.20.1`
 - Forge `47.4.10`
-- Pack version `1.8.1-packwiz.1`
+- Established previous pack version `1.8.1-packwiz.1`
+- Repaired candidate `1.9.0-rc1` (unpublished; manual tests required)
 
 The live world is not part of this repository and no update script is allowed to touch it without first producing a timestamped backup.
 
@@ -20,6 +21,6 @@ The live world is not part of this repository and no update script is allowed to
 
 Detailed day-to-day publishing, player installation, server updating, backups, and rollback are in [docs/OPERATIONS.md](docs/OPERATIONS.md).
 
-The current beginner progression contains 120 pack-specific quests across 10 chapters. Its exact chapter counts, progress-preservation audit, deferred systems, and verification checklist are in [docs/QUESTBOOK.md](docs/QUESTBOOK.md).
+The current beginner progression contains 118 pack-specific quests across 9 chapters. Its exact chapter counts, progress-preservation audit, installed-system boundaries, and verification checklist are in [docs/QUEST-PROGRESSION.md](docs/QUEST-PROGRESSION.md).
 
 The generated audit reports in `audit/` are the source of truth for mod/file sides and exclusions.

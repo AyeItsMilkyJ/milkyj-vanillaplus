@@ -1,0 +1,20 @@
+record_type,id,old_title,new_title,old_definition,new_definition,impact
+objective_repurposed,1885CF9658AB663D,Foreword: A World of Many Ages,Power Beyond the First Water Wheel,world-lore manual checkmark,Create power-source manual checkmark,Existing completion can satisfy an unrelated Create lesson
+objective_repurposed,22B69CA315389C48,The Covenant of the Hearth,Create Food Addons: Kitchen to Factory,world-lore manual checkmark,Create food-automation manual checkmark,Existing completion can satisfy an unrelated Create lesson
+reward_changed,1725341D3243AFDD,A Cook's First Tool,A Cook's First Tool,minecraft:wheat_seeds plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,1A354ABA1BE5171F,Practical: Your First Production Line,Practical: Your First Production Line,minecraft:iron_ingot plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,1E4FFC70B08D7689,Leave Yourself Clues,Leave Yourself Clues,minecraft:torch,XP,Preserved reward ID has different claim result
+reward_changed,22F6D8A7A571B2DF,A Proper Expedition Ship,A Proper Expedition Ship,minecraft:lead plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,2AD044CDEA61410E,Cooking Pot Meals,Cooking Pot Meals,minecraft:bowl plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,2E34979BCE044BF5,Death Is Recoverable,Death Is Recoverable,minecraft:cooked_beef,XP,Preserved reward ID has different claim result
+reward_changed,31CF2E051B43098D,A Shared Waystone Network,A Shared Waystone Network,minecraft:ender_pearl plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,34B44EE7DDB53F36,Map Before You Roam,Map Before You Roam,minecraft:compass plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,3522AB4192F75013,Orientation Complete,Orientation Complete,minecraft:experience_bottle plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,36D9A2651A27AA32,Feed the Whole Team,Feed the Whole Team,minecraft:golden_carrot plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,3F4DB5EEDFFAC808,An End Outpost for Everyone,An End Outpost for Everyone,minecraft:dragon_breath plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,4201CE5BFBBC062D,Lesson 1: Ponder Before Building,Lesson 1: Ponder Before Building,create:wrench plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,54C781F3CD01DB25,An Iron Foundation,An Iron Foundation,minecraft:coal plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,576F3B9264ED1F4B,Build a Museum,Build a Museum,minecraft:item_frame plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,60435D16835B3DCE,A Proper Kitchen Garden,A Proper Kitchen Garden,minecraft:bone_meal plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,71BB70B3127ECE00,Begin with Vanilla Bees,Begin with Vanilla Bees,minecraft:campfire plus XP,XP plus XP,Preserved reward ID has different claim result
+reward_changed,7DA1925406767A08,Welcome Noobs (Affectionate),Welcome Noobs (Affectionate),minecraft:bread plus minecraft:torch plus XP,XP plus XP plus XP,Preserved reward IDs have different claim results

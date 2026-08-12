@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/hummingbird_spawns.json"
 hash-format = "sha256"
-hash = "16598aced8738ca73c3bf37c4c0170719a2a190c5e098bcfe0f4efdc13315726"
+hash = "6aa305d47ca32364d445c04c8a20da36a7ccef97955c27e834d4114604d2785d"

@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/snow_leopard_spawns.json"
 hash-format = "sha256"
-hash = "43796a6d9a7b4b18b0a0fbbd119ef6b651f1d25557e499d975ab56e3f163efa4"
+hash = "fdf546af7c7ff2307d0862c0802450eef1e99554af3a340e7a6af69fa5785ea5"

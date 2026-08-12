@@ -1,12 +1,12 @@
 name = "MilkyJ Vanilla+"
 author = "MilkyJ"
-version = "1.8.1-packwiz.1"
+version = "1.9.0-rc1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "ea2ebc0e90ec611eadd2a43c7c0b46ea7d785fdadebd80d96dc3b19ac027bf39"
+hash = "664ae3f33dd9a7b0e95c0fcbf014ce3c4e2a4afb472db451c17366b135d6e57e"
 
 [versions]
 minecraft = "1.20.1"

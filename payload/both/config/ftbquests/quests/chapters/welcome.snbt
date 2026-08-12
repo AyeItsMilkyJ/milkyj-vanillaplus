@@ -8,6 +8,7 @@
 	order_index: 1
 	progression_mode: "flexible"
 	quest_links: [ ]
+	title: "WHERE THE FUCK DO I START?"
 	quests: [
 		{
 			description: [
@@ -354,6 +355,7 @@
 				type: "xp"
 				xp: 5
 			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
 			tasks: [{
 				id: "17524EEC960B5C5A"
 				title: "I read and understood these field notes"

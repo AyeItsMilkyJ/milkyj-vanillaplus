@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/embeddium-mixins.properties"
 hash-format = "sha256"
-hash = "2d0bdca74548caee52c95faeb3ce90413938bad47a8967925fd309dd6014a22a"
+hash = "09ff183e061d93b79514bc171bf9118497578757e7a5c45946039487656e2619"

@@ -5,11 +5,13 @@
 	group: "676547C5A87BA338"
 	icon: "betterarcheology:archeology_table"
 	id: "3AADFB5A564F217F"
-	order_index: 8
+	order_index: 7
 	progression_mode: "flexible"
 	quest_links: [ ]
+	title: "Fossils, Archaeology and Dinosaurs"
 	quests: [
 		{
+			dependencies: ["18C0AF7F5C17CAB7"]
 			description: [
 				"Suspicious blocks are fragile. Carry a brush while exploring ruins and avoid breaking the block before its item is revealed."
 				"Brush suspicious blocks from a stable position and watch the emerging item. Falling blocks, water, hostile mobs, and careless mining can ruin the context even when the artifact itself survives."

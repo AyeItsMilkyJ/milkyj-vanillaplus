@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/dropbear_spawns.json"
 hash-format = "sha256"
-hash = "5619af980b5ee2ca5966f22afd51fa91051989aaff4fe95e7274c4c6133b7ff8"
+hash = "0fa8f72e4c73805727577a343758cfd39377cbdadebb88b6b2343183053e16cb"

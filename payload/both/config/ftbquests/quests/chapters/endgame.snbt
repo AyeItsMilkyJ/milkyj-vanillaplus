@@ -5,11 +5,13 @@
 	group: "676547C5A87BA338"
 	icon: "minecraft:dragon_egg"
 	id: "69DA49AB86E5AA58"
-	order_index: 10
+	order_index: 9
 	progression_mode: "flexible"
 	quest_links: [ ]
+	title: "Dangerous Shit and Endgame"
 	quests: [
 		{
+			dependencies: ["18C0AF7F5C17CAB7"]
 			description: [
 				"Identify the threat, choose a retreat route and clear loose hazards before committing. Food, blocks, water, a shield and a bow solve more problems than one extra damage enchantment."
 				"Agree whether the goal is loot, rescue, mapping or a boss kill. Different goals require different risks and different points at which to leave."

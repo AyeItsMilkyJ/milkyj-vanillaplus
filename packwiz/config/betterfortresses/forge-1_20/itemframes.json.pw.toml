@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterfortresses/forge-1_20/itemframes.json"
 hash-format = "sha256"
-hash = "fdaabceb5584c87c8733968c244940a043afc578a13516f95159a53c5b0f6a83"
+hash = "3f2df75989d24d8114eb12b322a1cf7a5cc275ccc126de3b1d071a86f511f158"

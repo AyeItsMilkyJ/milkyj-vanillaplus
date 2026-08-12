@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/farseer.json"
 hash-format = "sha256"
-hash = "73a60b77f3b67de5fe30e8253a18c3e65ed15d210419d93b85de3f8ed94d06ba"
+hash = "c245528d844458d8ac416572ee0df7575bb23d58beb07367d4cd55c66fec9000"

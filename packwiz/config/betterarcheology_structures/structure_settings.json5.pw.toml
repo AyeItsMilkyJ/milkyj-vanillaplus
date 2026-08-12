@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterarcheology_structures/structure_settings.json5"
 hash-format = "sha256"
-hash = "3faebe388e24e9266df950827de6ad2459f339344240a480420dd57770a8b05b"
+hash = "38d7ba223179d5c572ab2b545501505a75bfd32acd4d3b2f558f8d7d9134c269"

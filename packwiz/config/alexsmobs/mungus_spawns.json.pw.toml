@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/mungus_spawns.json"
 hash-format = "sha256"
-hash = "56a4c9b49eebc856232f0d5599ea879d3a5231c4d3b1a119a7c74684fdc5b655"
+hash = "5d5a9d2039b6df546b788f62cb376cc29312a7115a5553541652aad7259436a6"

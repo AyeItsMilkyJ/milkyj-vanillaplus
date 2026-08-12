@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/tusklin_spawns.json"
 hash-format = "sha256"
-hash = "8c977d267c177a73c2c39a4b0c3fa3cd7fa83ab16b6eca8f66c897ed4e7a85b6"
+hash = "9ab4772704660c679ea30dff2db2c1272843e00675e2a7e610adcc6486120c3c"

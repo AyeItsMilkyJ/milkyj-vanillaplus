@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/forge-1_20/itemframes.json"
 hash-format = "sha256"
-hash = "c6c7e0d217226259e971c12dd4c92bf5d1043c804289e9c9f4c5bb646b7a4b89"
+hash = "245e5f7ae62569f182a3335236e330991d56d587025eb88fa9f54997cb39558d"

@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/gelada_monkey_spawns.json"
 hash-format = "sha256"
-hash = "a49c35c91ce7f4f1c4a38bb52cae42f6208f43ad48d23403d5acd382a519c2b0"
+hash = "cdd0380bfa9b754856150966a042f807ac48d2f9409f4f2b543be19e87f4c41f"

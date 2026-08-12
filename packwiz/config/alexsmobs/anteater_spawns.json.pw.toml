@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/anteater_spawns.json"
 hash-format = "sha256"
-hash = "d4dffa77f0d98aaded4393c296b06d78a530e94ffb8900a607cd8de66f046c16"
+hash = "f65e31155b2f2e033bed66dc5ec2ce7f6962be3389369ff800b69dfdecb5d990"

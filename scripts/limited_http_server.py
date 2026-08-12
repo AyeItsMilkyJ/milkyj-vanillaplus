@@ -35,17 +35,17 @@ class LimitedThreadingHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPSe
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--bind", default="127.0.0.1")
     parser.add_argument("--port", type=int, required=True)
     parser.add_argument("--directory", required=True)
     parser.add_argument("--workers", type=int, default=32)
     args = parser.parse_args()
     handler = functools.partial(QuietHandler, directory=args.directory)
     server = LimitedThreadingHTTPServer(
-        ("127.0.0.1", args.port), handler, max_workers=args.workers
+        (args.bind, args.port), handler, max_workers=args.workers
     )
     server.serve_forever()
 
 
 if __name__ == "__main__":
     main()
-

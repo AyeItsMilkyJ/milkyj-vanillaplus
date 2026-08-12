@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/bison_spawns.json"
 hash-format = "sha256"
-hash = "27bc5467a75000471af0751f2aa62c783f5ae25d7a1eb943795b7c3af080bc83"
+hash = "78e726ed002a31f5084a7b49fcce467c5623a046981d6c59d9ed7c4eb6cdbb1e"

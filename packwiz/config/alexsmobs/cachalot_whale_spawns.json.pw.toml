@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/cachalot_whale_spawns.json"
 hash-format = "sha256"
-hash = "ab088004b0bd28bed0e101cf0ace166b8982610bd3c8a1214b6d3ec849f125c6"
+hash = "fb901f1ea0bce7b9fb51dfaeb565539a3c1a9ee86bafb49caddac7ca1002e296"

@@ -1,17 +1,26 @@
 {
-    "generatedAt":  "2026-08-12T09:30:21.5161302+10:00",
-    "source":  "C:\\Users\\MilkyJ\\Documents\\Codex\\2026-07-19\\ar\\MilkyJ-Packwiz\\audit\\questbook-legacy-1.8.0",
-    "chapterCount":  10,
-    "questCount":  120,
-    "manualCheckmarkQuests":  63,
+    "generatedAt":  "2026-08-12T13:15:57.4034592+10:00",
+    "source":  "audit/questbook-legacy-1.8.0",
+    "chapterCount":  9,
+    "questCount":  118,
+    "taskIdCount":  165,
+    "rewardIdCount":  134,
+    "manualCheckmarkQuests":  61,
     "automaticDetectionQuests":  57,
     "existingQuestBlocksRetained":  109,
     "legacyQuestBlocksRemovedFromVisibleGuide":  287,
-    "savedQuestAndTaskProgressIdsFound":  99,
-    "savedQuestAndTaskProgressIdsPreserved":  99,
+    "baselineIdComparison":  "compared with local v1.0.0 tag",
+    "baselineDefinitionIdsFound":  429,
+    "baselineDefinitionIdsPreserved":  420,
+    "intentionallyRemovedBaselineIds":  9,
+    "unexpectedMissingBaselineIds":  0,
     "duplicateIds":  0,
+    "duplicateQuestIds":  0,
+    "duplicateTaskIds":  0,
+    "duplicateRewardIds":  0,
     "unsafeSignedIds":  0,
     "unresolvedDependencies":  0,
+    "cyclicOrUnreachableQuests":  0,
     "referencedItemIds":  98,
     "chapters":  [
                      {
@@ -27,17 +36,12 @@
                      {
                          "Chapter":  "Food That Isn\u0027t Raw Chicken",
                          "File":  "homestead.snbt",
-                         "Quests":  14
-                     },
-                     {
-                         "Chapter":  "Tinkers\u0027 Construct for Absolute Idiots",
-                         "File":  "tinkers_deferred.snbt",
-                         "Quests":  3
+                         "Quests":  13
                      },
                      {
                          "Chapter":  "Create Without Having a Brain Aneurysm",
                          "File":  "create_basics.snbt",
-                         "Quests":  20
+                         "Quests":  22
                      },
                      {
                          "Chapter":  "Stop Living Out of 46 Chests",
@@ -65,13 +69,17 @@
                          "Quests":  14
                      }
                  ],
-    "deferredBecauseNotInstalled":  [
-                                        "Botany Pots",
-                                        "Botany Trees",
-                                        "Tinkers\u0027 Construct"
-                                    ],
+    "absentModTutorialContentRemoved":  [
+                                            "Botany Pots",
+                                            "Botany Trees",
+                                            "Tinkers\u0027 Construct"
+                                        ],
     "explicitlyNotAdded":  [
                                "Immersive Engineering",
-                               "Create Crafts \u0026 Additions"
+                               "Create Crafts \u0026 Additions",
+                               "Create Diesel Generators",
+                               "Create Tinkers\u0027 Compat",
+                               "Create Contraption Terminals",
+                               "Bells \u0026 Whistles"
                            ]
 }

@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/endermanoverhaul-client.jsonc"
 hash-format = "sha256"
-hash = "ede27cf3b27d912c0e5e2620b7a24fb87e83e5b4f3685764f5ab1b398e6d2bf7"
+hash = "5d9315a8ce308b193ca880f5a782879c0f117861b08ccb38baed6d049e29b26a"

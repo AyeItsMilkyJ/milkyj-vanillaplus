@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/dynamiclights.json"
 hash-format = "sha256"
-hash = "40194c1f04b988f378864e720cea0181bd09d4b07133bebaaae9ddaeaba1ec7f"
+hash = "d114fbd97132f5c899d3aff453c4683b02e4c2cf5e5fb23cf877745c001608aa"

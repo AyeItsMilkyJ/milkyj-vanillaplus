@@ -1,64 +1,68 @@
 {
-  "validatedAt": "2026-08-12T09:31:00+10:00",
-  "packVersion": "1.8.1-packwiz.1",
+  "validatedAt": "2026-08-12T13:32:30.9463237+10:00",
+  "overallAutomatedRepairResult": "PASS",
+  "overallReleaseGate": "NOT RELEASE-READY — MANUAL TESTS REQUIRED",
+  "packVersion": "1.9.0-rc1",
+  "establishedPreviousVersion": "1.8.1-packwiz.1",
   "minecraft": "1.20.1",
   "forge": "47.4.10",
   "manifest": {
-    "indexEntries": 687,
-    "uniqueDestinations": 687,
-    "hostedPayloads": 443,
+    "indexEntries": 684,
+    "uniqueDestinations": 684,
+    "hostedPayloads": 440,
     "externalDownloads": 244,
-    "strictTomlAndHashValidation": "passed with the repository URL placeholder explicitly allowed"
+    "strictTomlHashAndEncodingValidation": "PASS"
   },
   "installer": {
-    "packwizInstallerVersion": "v0.5.14",
     "clientJarCount": 236,
     "serverJarCount": 203,
-    "personalOptionsPreserved": true,
-    "personalScreenshotSentinelPreserved": true
+    "baselineToCandidateUpdate": "PASS",
+    "candidateToBaselineRollback": "PASS",
+    "obsoleteManagedFileRemovedOnRollback": true,
+    "personalOptionsKeybindingsScreenshotsSavesAndShaderDataPreserved": true
   },
   "questBook": {
-    "chapterCount": 10,
-    "questCount": 120,
-    "manualCheckmarkQuests": 63,
+    "chapterCount": 9,
+    "questCount": 118,
+    "taskIdCount": 165,
+    "rewardIdCount": 134,
+    "manualCheckmarkQuests": 61,
     "automaticDetectionQuests": 57,
-    "existingQuestBlocksRetained": 109,
-    "savedQuestAndTaskProgressIdsFound": 99,
-    "savedQuestAndTaskProgressIdsPreserved": 99,
+    "unchangedBaselineDefinitions": 420,
+    "intentionallyRemovedAbsentModDefinitions": 9,
+    "newDefinitions": 6,
+    "repurposedBaselineIds": 0,
+    "alteredBaselineRewardSemantics": 0,
     "duplicateIds": 0,
-    "unsafeSignedIds": 0,
     "unresolvedDependencies": 0,
-    "serverParserResult": "Loaded 4 chapter groups, 10 chapters, 120 quests, 0 reward tables",
-    "jeiRecipeHelper": "enabled by FTB XMod Compat",
-    "ftbFilterSystemIntegration": "enabled"
-  },
-  "client": {
-    "workingInstanceJarCount": 236,
-    "stagedJarHashesMatchWorkingInstance": true,
-    "latestWorkingLaunch": "2026-08-11T23:50:39+10:00",
-    "latestWorkingLaunchHadFatalOrCrashMarker": false,
-    "latestWorkingLaunchStoppedNormally": true,
-    "interactiveClientRelaunchedForQuestUpdate": false,
-    "note": "Quest definitions parsed on the dedicated server and synchronize to clients. No second interactive client was opened while the production server remained live."
+    "cyclicOrUnreachableQuests": 0,
+    "unresolvedItemOrIconIds": 0,
+    "unresolvedTags": 0,
+    "mojibakeFindings": 0
   },
   "dedicatedServer": {
-    "disposableServerReachedDone": true,
-    "startupSecondsAfterWorldPreparation": 48.182,
-    "allSevenLoadedDimensionsSavedAfterStop": true,
-    "disposableServerProcessExited": true,
-    "preExistingDataErrors": [
-      "Create Central Kitchen vegan_hamburger expects absent miners_delight:vegan_patty",
-      "Two Aether shield recipes are malformed",
-      "Beautify candelabra advancement references unknown beautify:lamp_candleabra",
-      "Bundled advancement JSON contains invalid minecraft:alternative(s) types"
-    ]
+    "reachedDone": true,
+    "startupSeconds": 46.672,
+    "questParserResult": "Loaded 4 chapter groups, 9 chapters, 118 quests, 0 reward tables",
+    "allLoadedDimensionsSaved": true,
+    "jvmExitedNormally": true,
+    "resourcefulGeneratedSecretConfigRegeneratedLocallyWithWebDisabled": true,
+    "patronCacheRemainedUnnecessary": true
+  },
+  "lanHarness": {
+    "serverReachedDone": true,
+    "ports": {"packwizHttp": 8765, "minecraft": 25566},
+    "gracefulStopAndSave": true,
+    "twoClientManualInteraction": "NOT RUN"
+  },
+  "manualGates": {
+    "twoClientQuestRewardAndTeamInteraction": "NOT RUN",
+    "stoppedProductionCopiedWorldAndRealProgress": "NOT RUN"
   },
   "productionSafety": {
-    "liveWorldModified": false,
-    "liveServerUpdatedOrStopped": false,
-    "liveServerPort": 25565,
-    "liveServerPidAfterValidation": 3452,
-    "liveUpdateRefusalTest": "passed in the Packwiz platform validation",
-    "stagedBackupAndManagedFileRollbackTest": "passed in the Packwiz platform validation"
+    "liveWorldReadOrModified": false,
+    "liveServerReadUpdatedOrStopped": false,
+    "livePrismReadOrModified": false,
+    "anythingPushedPublishedReleasedOrDeployed": false
   }
 }

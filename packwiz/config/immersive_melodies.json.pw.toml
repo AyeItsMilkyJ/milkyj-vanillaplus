@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/immersive_melodies.json"
 hash-format = "sha256"
-hash = "4de94e53d76cb125cf6ad65b8c70ca0042216a99c21bc8f6e63cf5b8017c4205"
+hash = "a3aeb8c0aa0225491e997139b3a1358824626c204918f2b7a09f102269e27d97"

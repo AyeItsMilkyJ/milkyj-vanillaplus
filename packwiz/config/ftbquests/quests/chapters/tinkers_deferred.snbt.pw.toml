@@ -1,8 +1,0 @@
-name = "Managed config: ftbquests/quests/chapters/tinkers_deferred.snbt"
-filename = "tinkers_deferred.snbt"
-side = "both"
-
-[download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/tinkers_deferred.snbt"
-hash-format = "sha256"
-hash = "67d1eb3c14eeb37836d1bd4ddd86ce13cf0890b5a5766e9b6536514aa949ead9"

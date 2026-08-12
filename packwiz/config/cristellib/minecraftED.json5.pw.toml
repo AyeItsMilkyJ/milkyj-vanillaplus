@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/cristellib/minecraftED.json5"
 hash-format = "sha256"
-hash = "9f901af696422dd78660343796c0f50dab0941f3cc0ea85a3f68e2422b4612bc"
+hash = "8e01cc9b7e46f74fd60ce36d3459628b8198cb988051ae52f14cda36ef0fd869"

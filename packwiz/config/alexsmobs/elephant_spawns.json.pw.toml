@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/elephant_spawns.json"
 hash-format = "sha256"
-hash = "aebb16920932459843c2c391d5942068f2eaea2043b1d07241b61b14c6e9ef09"
+hash = "cac271d780a6ed65db7b22e6944b6d456805d72b309865d6293ad6aa4f60c3e2"

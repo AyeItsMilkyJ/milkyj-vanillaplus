@@ -1,0 +1,12 @@
+{
+  "fixtureType": "synthetic-logical-ftb-quests-progress",
+  "productionData": false,
+  "team": {
+    "teamId": "synthetic-team-alpha",
+    "members": ["synthetic-player-one", "synthetic-player-two"]
+  },
+  "completedQuests": ["7DA1925406767A08"],
+  "completedTasks": ["324C6E97D6CB2AA8"],
+  "claimedRewards": ["37C462912CB4ED85"],
+  "unclaimedRewards": ["47348F50B1E09486"]
+}

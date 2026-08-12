@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/relics.yaml"
 hash-format = "sha256"
-hash = "0db2e1658ed99a9b70fd3fa872bede34fbcc1c5ee47b56bad753958c88af51ec"
+hash = "4411078ac8d2107482e0f717576b1d9e1fa6c0938d11135a2541f4d8c2518278"

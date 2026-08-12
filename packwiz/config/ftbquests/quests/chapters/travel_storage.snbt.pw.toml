@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/travel_storage.snbt"
 hash-format = "sha256"
-hash = "cc66b9c9f72d6473f07c822624bdc2ad2bf43acc31676de602e3f106ad98c950"
+hash = "7b93fb49dcc655eae49ee4ed5350d9b0c03e696238376dcf73b6e56e799c7731"

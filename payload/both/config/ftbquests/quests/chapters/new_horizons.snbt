@@ -5,11 +5,13 @@
 	group: "676547C5A87BA338"
 	icon: "explorerscompass:explorerscompass"
 	id: "1CDE54C53326DB2E"
-	order_index: 7
+	order_index: 6
 	progression_mode: "flexible"
 	quest_links: [ ]
+	title: "Exploration Without Getting Completely Lost"
 	quests: [
 		{
+			dependencies: ["18C0AF7F5C17CAB7"]
 			description: [
 				"Nature's Compass locates biomes; Explorer's Compass locates structures. Search ranges are limited, and exploration still generates chunks, so coordinate with the team."
 				"Nature's Compass searches for a selected biome while Explorer's Compass searches registered structures. Choose the exact target, allow the scan to finish, and remember that a missing result can mean the target is outside the configured search range."

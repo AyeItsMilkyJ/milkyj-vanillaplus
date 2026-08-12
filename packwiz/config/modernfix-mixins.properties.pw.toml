@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/modernfix-mixins.properties"
 hash-format = "sha256"
-hash = "995629049742c483e2a91ec1a3135f523bf958ed876160d2e29252666918ff96"
+hash = "cc9db08ca3f44714cf14117fb1772eed88c9cc3272fea6d17e657292c8799fe0"

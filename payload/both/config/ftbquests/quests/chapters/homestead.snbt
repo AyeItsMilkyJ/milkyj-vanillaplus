@@ -8,8 +8,10 @@
 	order_index: 3
 	progression_mode: "flexible"
 	quest_links: [ ]
+	title: "Food That Isn't Raw Chicken"
 	quests: [
 		{
+			dependencies: ["18C0AF7F5C17CAB7"]
 			description: [
 				"Farmer's Delight knives harvest straw and turn ingredients into useful cuts. JEI shows which foods can be processed on a cutting board."
 				"Farmer's Delight is a chain from soil to pantry to cutting board to heat. Use JEI's recipe category view to identify the workstation, tool, heat source, and serving container involved in each dish."
@@ -434,6 +436,7 @@
 				type: "xp"
 				xp: 5
 			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
 			tasks: [{
 				id: "796E0D069F7BE72A"
 				title: "I read and understood these field notes"
@@ -441,25 +444,6 @@
 			}]
 			title: "The Covenant of the Hearth"
 			x: 0.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["22B69CA315389C48"]
-			description: [
-				"What this is: Botany Pots and Botany Trees are separate content mods that can grow crops or trees inside special pots. They are not installed in this release, even though an old config or online video may mention them."
-				"Why it matters: JEI cannot show recipes for a mod that is not present. Do not waste time searching for a missing pot, hopping bonsai, soil tier, or tree pot."
-				"How to begin now: use ordinary fields, Farmer's Delight crops, bees, and the Serene Seasons guidance in this chapter. Search JEI with an at-sign followed by the mod name to confirm what is really loaded."
-				"What comes next: this branch remains optional until the group deliberately approves and tests those mods in a later content update."
-			]
-			id: "4DC3990D720C9351"
-			subtitle: "[OPTIONAL SIDE QUEST]"
-			tasks: [{
-				id: "075F58D77E954BC4"
-				title: "I read this lesson and checked the installed pack"
-				type: "checkmark"
-			}]
-			title: "Botany Pots and Botany Trees: Not Installed Yet"
-			x: 2.0d
 			y: 4.0d
 		}
 	]

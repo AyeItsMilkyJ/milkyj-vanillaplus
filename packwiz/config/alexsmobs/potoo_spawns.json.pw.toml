@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/potoo_spawns.json"
 hash-format = "sha256"
-hash = "e6f21da914007cb168c216619404e060ca89e3dc06eeebe53e9de5a5dd1ab88b"
+hash = "59c5832a40ef0e7212a4d499862f931a5dfcd3ff6d68598153f1274191b0939d"

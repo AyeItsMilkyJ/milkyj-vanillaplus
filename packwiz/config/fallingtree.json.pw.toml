@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/fallingtree.json"
 hash-format = "sha256"
-hash = "9da962a49459a3c60b8cf981cd16d167b39262714e39b800ae5df7d08a60a13d"
+hash = "922a0a06c316eb1f0aba285f5bc59f4421b51b6f861661f3cdab38bbd44e4927"

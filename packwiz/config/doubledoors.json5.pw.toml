@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/doubledoors.json5"
 hash-format = "sha256"
-hash = "5e41e7edaa1066e6ec499dfd3011aad9c8b241ffd3bc3f42223840290b0eec23"
+hash = "ed3b25678a185a7c560868e047b60ffd7d7bf9b13d3a45cc5c056f5cfd5b088e"

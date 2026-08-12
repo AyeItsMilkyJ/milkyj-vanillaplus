@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/shoebill_spawns.json"
 hash-format = "sha256"
-hash = "2ae357ebce2949b1d60db4da9ca2c6cc0e0e0b6ae153f5cb49c119dda1acbc23"
+hash = "0d8683c0a1b8176d4e89f88c4f3b1e6fbf6b269781497a190749904c7323eeec"

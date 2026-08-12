@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/letmedespawn.json"
 hash-format = "sha256"
-hash = "b95c8e528a2b040f3e3332634c7534a51ebadcf25c828657c1be6ebd8c3c69a4"
+hash = "6af411644e22ede34383135509cb96b2a636d8ed45494b28976514a95537105e"

@@ -5,16 +5,18 @@
 	group: "455989FDDDEB7EAA"
 	icon: "create:large_cogwheel"
 	id: "36119855CD15B1E0"
-	order_index: 5
+	order_index: 4
 	progression_mode: "flexible"
 	quest_links: [ ]
+	title: "Create Without Having a Brain Aneurysm"
 	quests: [
 		{
+			dependencies: ["18C0AF7F5C17CAB7"]
 			description: [
-				"Create teaches visually. Hover a component in JEI or your inventory and hold W to watch its animated Ponder scene. Use the mouse wheel to step through it slowly."
-				"When a machine is confusing, Ponder it before spending materials."
-				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
-				"Create's design language is motion you can read. The workshop guild values a slower machine that teaches its own operation more than a compact tangle that only its absent builder understands."
+				"WHAT IS THIS? Ponder is Create's animated in-game manual. Hover a supported Create item in JEI or an inventory and hold W; scroll through the scenes instead of guessing from a video made for another version."
+				"DO THIS: Ponder a Water Wheel, Mechanical Press and Encased Fan. Pause on each scene and identify its power connection, input, processing position and output before building anything expensive."
+				"WHY DO I CARE? Create 6 machines communicate through visible motion. Ponder teaches the exact arrangement installed here and makes the later machine quests much less painful."
+				"COMMON FUCK-UP: W does nothing when the cursor is not actually over a supported item, W is bound twice, or a search box owns the keyboard. Check Controls, resolve the conflict and hover the item again."
 			]
 			id: "4201CE5BFBBC062D"
 			rewards: [
@@ -41,10 +43,10 @@
 		{
 			dependencies: ["4201CE5BFBBC062D"]
 			description: [
-				"Andesite Alloy is Create's foundational material. Pin its recipe in JEI and keep a labelled supply beside the workshop."
-				"Create's design language is motion you can read. The workshop guild values a slower machine that teaches its own operation more than a compact tangle that only its absent builder understands."
-				"Create uses rotational power rather than electricity. Speed is RPM; capacity is the stress the source can support. A fast source can still be too weak, and raising speed often increases the network's stress use."
-				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
+				"WHAT IS THIS? Andesite Alloy is the common construction material for early Create shafts, cogs, casings and machines. JEI shows every installed recipe; pin the cheapest one your current resources support."
+				"DO THIS: Make a small batch, label a drawer or chest for it, and keep zinc, copper, iron and andesite nearby rather than scattering components across the base."
+				"WHY DO I CARE? A stocked component shelf turns Create from repeated scavenger hunts into a system you can actually learn and repair."
+				"COMMON FUCK-UP: Searching only for \"alloy\" can mix several mods. Use JEI's at-sign Create filter and confirm the tooltip says Create before crafting a look-alike."
 			]
 			id: "1AC77EEB81F556DC"
 			rewards: [{
@@ -65,9 +67,10 @@
 		{
 			dependencies: ["1AC77EEB81F556DC"]
 			description: [
-				"Wear Engineer's Goggles to read speed, stress and machine details. The wrench rotates and safely removes most Create blocks; sneak-use it when the normal click does something else."
-				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
-				"Create's design language is motion you can read. The workshop guild values a slower machine that teaches its own operation more than a compact tangle that only its absent builder understands."
+				"WHAT IS THIS? Engineer's Goggles reveal rotational speed and stress information. The Wrench rotates, configures and safely removes most Create blocks without smashing the layout."
+				"DO THIS: Wear the goggles, look at a powered shaft, then practise rotating and wrench-removing a cheap cogwheel. Use sneak-use when an ordinary click opens a machine interface."
+				"WHY DO I CARE? These are diagnostic tools, not decoration. They tell you whether power reaches a machine and let you correct a backwards face without rebuilding the room."
+				"COMMON FUCK-UP: A Wrench is not a power source and goggles do not fix overstress. If the machine is still silent, trace the network from its actual source."
 			]
 			id: "09CB7E54442B5B87"
 			rewards: [{
@@ -94,10 +97,10 @@
 		{
 			dependencies: ["09CB7E54442B5B87"]
 			description: [
-				"Water wheels provide dependable early rotational power. Ponder the wheel, place it in flowing water and use the goggles to confirm that it turns."
-				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
-				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
-				"Create uses rotational power rather than electricity. Speed is RPM; capacity is the stress the source can support. A fast source can still be too weak, and raising speed often increases the network's stress use."
+				"WHAT IS THIS? A Water Wheel converts flowing water into rotational power. Rotation is Create's equivalent of mechanical power: shafts carry it and machines consume its capacity."
+				"DO THIS: Ponder the wheel, place it where flowing water contacts its paddles, connect a visible shaft and verify movement with goggles before attaching a machine."
+				"WHY DO I CARE? It is a safe, dependable first source for presses, fans, mixers and small processing lines. The next lessons teach how to route and measure that power."
+				"COMMON FUCK-UP: Still water, blocked paddles or a shaft connected on the wrong axis produces no useful rotation. Copy the Ponder orientation exactly for the first test."
 			]
 			id: "2250D40C885B51F2"
 			rewards: [{
@@ -117,10 +120,33 @@
 		{
 			dependencies: ["2250D40C885B51F2"]
 			description: [
-				"Shafts carry rotation in a straight line. Cogwheels turn corners or change speed; gearboxes redirect shafts cleanly. Two meshed cog sizes change speed and reverse direction."
-				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
-				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
-				"Give every line a labelled input, a visible processing section, an overflow-safe output, and an obvious shutoff. These four pieces turn an experiment into a machine the whole server can maintain."
+				"WHAT IS THIS? Water Wheels are only the beginning. Windmills provide scalable passive rotation, while a Create steam engine can provide much more capacity after you understand boilers, heat and water supply."
+				"DO THIS: Ponder Windmill Bearings and Steam Engines. Build a small windmill before attempting steam, and treat a boiler as a later system with a dependable water feed, heat source, tank volume and readable gauges."
+				"WHY DO I CARE? Different sources trade cost, size and capacity. A larger source lets several machines share one network without every workshop owning a separate wheel."
+				"COMMON FUCK-UP: More revolutions per minute does not magically create more capacity. A badly supplied boiler or undersized source will stop a network even when part of it visibly spins."
+			]
+			id: "2990526585709C54"
+			rewards: [{
+				id: "2F306E70149D5856"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "11ED8A66BEDD2038"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Power Beyond the First Water Wheel"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2990526585709C54"]
+			description: [
+				"WHAT IS THIS? Shafts carry rotation straight. Meshed Cogwheels transfer it sideways and reverse direction; a large cog meshed with a small one changes the gear ratio, meaning the relationship between input and output speed."
+				"DO THIS: Build an exposed line with a shaft, two same-size cogs, one large-to-small pair and a gearbox. Use goggles to compare direction and RPM (revolutions per minute) at each stage."
+				"WHY DO I CARE? Direction and speed determine whether a machine works and how quickly. This unlocks deliberate routing instead of a wall full of mystery cogs."
+				"COMMON FUCK-UP: Cogs only mesh at valid positions, and every mesh reverses direction. If one axis is motionless, inspect the teeth and connection rather than adding random gearboxes."
 			]
 			id: "0D9196F06BAA6EB5"
 			rewards: [{
@@ -154,15 +180,16 @@
 				}
 			]
 			title: "Lesson 5: Shafts, Cogs and Gearboxes"
-			x: 8.0d
+			x: 10.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["0D9196F06BAA6EB5"]
 			description: [
-				"RPM is speed; stress capacity is the amount of machinery a source can drive. Adding machines consumes capacity, and overstressed networks stop completely. Read both values with goggles."
-				"Create uses rotational power rather than electricity. Speed is RPM; capacity is the stress the source can support. A fast source can still be too weak, and raising speed often increases the network's stress use."
-				"Create's design language is motion you can read. The workshop guild values a slower machine that teaches its own operation more than a compact tangle that only its absent builder understands."
+				"WHAT IS THIS? RPM means rotational speed. Stress capacity is how much machinery a source can support; stress impact is how much each attached machine consumes. An overstressed network stops completely."
+				"DO THIS: Read a working network with goggles, add one cheap machine, then compare its speed and remaining capacity. Learn the difference before installing a speed controller or a large factory line."
+				"WHY DO I CARE? Speed controls throughput, while capacity controls how many machines can run. Diagnosing the correct number prevents a faster but weaker disaster."
+				"COMMON FUCK-UP: Raising RPM often raises stress use. When the goggles say overstressed, add or improve power capacity, disconnect load, or slow the network; do not just gear it faster."
 			]
 			id: "653A5307BAFA7BE8"
 			rewards: [{
@@ -177,15 +204,15 @@
 			}]
 			title: "Lesson 6: Speed Is Not Power"
 			x: 10.0d
-			y: 0.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["653A5307BAFA7BE8"]
 			description: [
-				"A Mechanical Press works over a Depot or moving belt. Put a Basin below it only for compacting recipes; Ponder shows both arrangements."
-				"Test processing with one item before feeding a stack. Fans need the correct medium in their air stream, basin recipes may need heat, and presses behave differently over a Depot, Belt, or Basin."
-				"Create's design language is motion you can read. The workshop guild values a slower machine that teaches its own operation more than a compact tangle that only its absent builder understands."
-				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
+				"WHAT IS THIS? A Mechanical Press uses rotation from a shaft. It presses an item placed on a Depot or moving Belt; with a Basin below it, it performs compacting recipes instead."
+				"DO THIS: Ponder the Press, power its shaft, place one JEI-confirmed input on a Depot and watch for the downward stroke. Test Basin compacting separately before connecting bulk input."
+				"WHY DO I CARE? Pressing unlocks plates, compacted materials and several later Create recipes. A Depot test becomes the foundation of an automated belt line."
+				"COMMON FUCK-UP: A Press above empty floor has nowhere to work, and a Basin recipe is not a Depot recipe. Check the JEI category, vertical spacing and output room."
 			]
 			id: "4164748FA85EDE6A"
 			rewards: [{
@@ -206,15 +233,16 @@
 				}
 			]
 			title: "Lesson 8: The Mechanical Press"
-			x: 10.0d
+			x: 8.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["4164748FA85EDE6A"]
 			description: [
-				"Encased Fans push or pull entities and items. Air passing through water, lava, fire or soul fire performs different bulk processing recipes; JEI shows the safe arrangement."
-				"Test processing with one item before feeding a stack. Fans need the correct medium in their air stream, basin recipes may need heat, and presses behave differently over a Depot, Belt, or Basin."
-				"Give every line a labelled input, a visible processing section, an overflow-safe output, and an obvious shutoff. These four pieces turn an experiment into a machine the whole server can maintain."
+				"WHAT IS THIS? An Encased Fan receives rotation through its shaft and pushes or pulls an air stream. Air passing through water, fire, soul fire or lava performs washing, smoking, haunting or blasting recipes where JEI says it is supported."
+				"DO THIS: Ponder the Fan, aim it across a Depot or Belt, add exactly one processing medium and test one cheap item. Keep the output side open and collected before feeding stacks."
+				"WHY DO I CARE? One powered fan processes many loose items at once and becomes the pack's first useful bulk ore or food step."
+				"COMMON FUCK-UP: The Fan can spin while blowing the wrong direction, the medium can block the air stream, or the item can sit outside the stream. Use goggles and visible particles before rebuilding."
 			]
 			id: "3119C51ADD982ABF"
 			rewards: [{
@@ -228,16 +256,16 @@
 				type: "item"
 			}]
 			title: "Lesson 9: Process with Air"
-			x: 8.0d
+			x: 6.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["3119C51ADD982ABF"]
 			description: [
-				"A Mechanical Mixer above a Basin handles mixing recipes. Some recipes require heat from a Blaze Burner; JEI labels the required heat level."
-				"Test processing with one item before feeding a stack. Fans need the correct medium in their air stream, basin recipes may need heat, and presses behave differently over a Depot, Belt, or Basin."
-				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
-				"Give every line a labelled input, a visible processing section, an overflow-safe output, and an obvious shutoff. These four pieces turn an experiment into a machine the whole server can maintain."
+				"WHAT IS THIS? A Mechanical Mixer receives rotation from above and works in the Basin directly beneath it. JEI marks recipes that need no heat, normal heat or stronger heated Blaze Burner conditions."
+				"DO THIS: Ponder the Mixer, place a Basin at the shown height, insert one complete JEI recipe and power the Mixer. Add a Blaze Burner only when the recipe page explicitly requests heat."
+				"WHY DO I CARE? Mixing unlocks alloys, dough, fluids and ingredients used by Create, Farmer's Delight integrations and later brass progression."
+				"COMMON FUCK-UP: Missing one ingredient, wrong Basin spacing, insufficient heat or blocked output leaves the Mixer hovering uselessly. Check the Basin contents and JEI heat label first."
 			]
 			id: "449599EDF06A1DB9"
 			rewards: [{
@@ -258,16 +286,39 @@
 				}
 			]
 			title: "Lesson 10: Mixing in a Basin"
-			x: 6.0d
+			x: 4.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["449599EDF06A1DB9"]
 			description: [
-				"What this is: two Crushing Wheels grind items more effectively than the early Millstone. Both wheels must spin inward toward the gap."
-				"Why it matters: the pair unlocks higher-throughput crushing recipes and useful secondary outputs shown in JEI."
-				"How to begin: hover a Crushing Wheel and hold W. Build the Ponder layout openly, power both sides, and drop one test item through the top before adding chutes or belts."
-				"What comes next: once direction, output, and overflow are proven, connect it to the filtered logistics line."
+				"WHAT IS THIS? Slice & Dice adds Create-powered food tools, and Create Central Kitchen connects Create processing with installed cooking recipes. They extend Farmer's Delight; they do not replace knives, boards or Cooking Pots."
+				"DO THIS: Search JEI separately with the Slice & Dice and Central Kitchen mod filters. Ponder supported slicers or food machines, then automate one cheap ingredient from input chest to finished food."
+				"WHY DO I CARE? The same belts, funnels, depots, basins and rotation used for ore can prepare kitchen ingredients without inventing a second logistics system."
+				"COMMON FUCK-UP: Similar foods from different namespaces are not automatically interchangeable. Confirm the exact input, tool and container on the installed JEI recipe before blaming the machine."
+			]
+			id: "069DD3EFDF3EF83F"
+			rewards: [{
+				id: "4F8E7ADAA685C0A5"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "6CD534112A16F2A1"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Create Food Addons: Kitchen to Factory"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["069DD3EFDF3EF83F"]
+			description: [
+				"WHAT IS THIS? Two Crushing Wheels grind items that fall between them. Both receive rotational power and must spin inward toward the gap; JEI lists outputs and possible secondary drops."
+				"DO THIS: Ponder a Crushing Wheel, build the open pair, power both sides and drop one cheap test item through the top. Collect underneath before adding chutes or a belt."
+				"WHY DO I CARE? Crushing Wheels provide high-throughput ore and material processing and feed directly into fan washing or filtered storage."
+				"COMMON FUCK-UP: Wheels spinning the same way throw or jam items instead of crushing them. Reverse one side and make sure the output has somewhere to land."
 			]
 			id: "1F2F7FDA97C0DC94"
 			rewards: [{
@@ -281,16 +332,16 @@
 				type: "checkmark"
 			}]
 			title: "Crushing Wheels: Make Them Face Each Other"
-			x: 4.0d
+			x: 0.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["1F2F7FDA97C0DC94"]
 			description: [
-				"What this is: a Mechanical Saw processes recipes or cuts trees, while a Mechanical Drill breaks blocks directly in front of it. Rotation speed changes how quickly they work."
-				"Why it matters: these blocks turn a powered line or moving contraption into a wood processor, quarry head, tunnel machine, or automated harvest tool."
-				"How to begin: Ponder each block separately. Test a stationary upward-facing Saw recipe and a guarded Drill on ordinary stone before attaching either to a contraption."
-				"What comes next: add filters, collection, an obvious shutdown, and guards so the machine cannot eat a build or a teammate."
+				"WHAT IS THIS? A Mechanical Saw cuts recipes and trees; a Mechanical Drill breaks blocks in front of its working face. Both require rotational power and can be stationary or attached to a moving contraption."
+				"DO THIS: Ponder each block. Test a guarded stationary Saw over its correct input and a Drill against ordinary stone, with a collection chest and obvious shutdown nearby."
+				"WHY DO I CARE? They unlock renewable wood processing, farms, tunnels and controlled block harvesting when combined with movement and item collection."
+				"COMMON FUCK-UP: The cutting face can point the wrong way, or a moving machine can chew through the build that carries it. Test one block at low speed before trusting a contraption."
 			]
 			id: "0868E133B828D769"
 			rewards: [{
@@ -304,15 +355,16 @@
 				type: "checkmark"
 			}]
 			title: "Saws Cut; Drills Break"
-			x: 2.0d
-			y: 2.0d
+			x: 0.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["0868E133B828D769"]
 			description: [
-				"Belts carry items. Funnels insert or extract, Chutes move vertically, and filters decide what may pass. Build a short visible route and test it before hiding anything."
-				"Test processing with one item before feeding a stack. Fans need the correct medium in their air stream, basin recipes may need heat, and presses behave differently over a Depot, Belt, or Basin."
-				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
+				"WHAT IS THIS? Belts carry items, Depots hold one processing position, Funnels insert or extract, Chutes move vertically, and Filters restrict what may pass. Mechanical Arms move selected items between marked points."
+				"DO THIS: Build a short powered Belt from a labelled input chest to a labelled output. Add one Funnel at a time, set a cheap Filter, then Ponder Mechanical Arms before marking their inputs and outputs."
+				"WHY DO I CARE? Predictable movement connects every machine in this chapter. Brass Funnels, Brass Tunnels and smarter components later add counting, splitting and routing."
+				"COMMON FUCK-UP: A Funnel's arrow faces the wrong way, a Filter is set opposite to your intention, or an Arm was never taught valid points. Test with cobblestone before valuable items."
 			]
 			id: "7B0C1910CB444EA6"
 			rewards: [{
@@ -346,16 +398,16 @@
 				}
 			]
 			title: "Lesson 11: Move Items Deliberately"
-			x: 0.0d
-			y: 2.0d
+			x: 2.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7B0C1910CB444EA6"]
 			description: [
-				"Automate one useful loop such as ore crushing, dough ingredients or building blocks. Include a labelled input, processing step, filtered output and overflow-safe storage."
-				"Show another player how to stop and restart it."
-				"Give every line a labelled input, a visible processing section, an overflow-safe output, and an obvious shutoff. These four pieces turn an experiment into a machine the whole server can maintain."
-				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
+				"WHAT IS THIS? This is your first complete automation: power source, visible transport, one processing step, filtered output, overflow storage and an obvious shutdown. A crop farm or ore-crushing line both count."
+				"DO THIS: Choose one cheap JEI recipe. For crops, use a guarded Saw or Harvester arrangement; for ore, use crushing then fan washing. Run a full stack and show another player how to stop it."
+				"WHY DO I CARE? A complete small line teaches more than a chest of disconnected machines and unlocks the confidence to scale safely."
+				"COMMON FUCK-UP: Building without overflow makes items despawn or jam the Belt. Fill the output deliberately during testing and make sure the machine fails safely."
 			]
 			id: "1A354ABA1BE5171F"
 			rewards: [
@@ -377,16 +429,16 @@
 				type: "checkmark"
 			}]
 			title: "Practical: Your First Production Line"
-			x: 0.0d
+			x: 4.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["1A354ABA1BE5171F"]
 			description: [
-				"When a Create machine stops, begin at the power source. Use goggles to verify rotation, follow every shaft and gearbox, then check the network's stress capacity and RPM."
-				"A source can be spinning while the network is overstressed. Increasing speed may make the problem worse because many components consume more stress at higher RPM."
-				"Test machines one operation at a time. A visible temporary shaft is better than a beautiful hidden network nobody can debug."
-				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
+				"WHAT IS THIS? A silent Create machine is usually disconnected, reversed, under-speed, overstressed, missing a supporting block, blocked at its output or holding the wrong recipe."
+				"DO THIS: Start at the power source and follow every visible shaft with goggles. Verify direction, RPM, stress, machine face, Depot or Basin position, exact JEI input and free output, in that order."
+				"WHY DO I CARE? A repeatable diagnostic order repairs factories faster than tearing down random components and preserves machines built by teammates."
+				"COMMON FUCK-UP: Testing five changes at once hides the real cause. Disconnect the factory, prove one machine operation in the open, then reconnect stages one by one."
 			]
 			id: "4EAA9A43A9020901"
 			rewards: [{
@@ -400,16 +452,16 @@
 				type: "checkmark"
 			}]
 			title: "Diagnosing a Silent Machine"
-			x: 2.0d
+			x: 6.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["4EAA9A43A9020901"]
 			description: [
-				"Heat zinc and copper in a basin to make brass. Brass components enable smarter logistics and precision mechanisms."
-				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
-				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
-				"Steam power depends on a complete boiler: heat, water, enough tank volume, and correctly attached engines. Read every gauge before increasing size, and keep fuel and water failure modes accessible."
+				"WHAT IS THIS? Brass is made from heated copper and zinc in a powered Mixer and Basin. It unlocks precision components plus Brass Funnels and Tunnels that can count, split and route items more intelligently."
+				"DO THIS: Confirm the brass recipe and heat level in JEI, prepare a safely captured Blaze Burner, mix a small batch and Ponder one Brass Funnel and Brass Tunnel before replacing basic logistics."
+				"WHY DO I CARE? Brass is the bridge from simple motion to controlled factories, train parts and sequenced assembly."
+				"COMMON FUCK-UP: An empty, unheated or incorrectly positioned Blaze Burner cannot satisfy the recipe. Also check that the Basin contains copper and zinc from compatible tags, not look-alike mod items."
 			]
 			id: "3C8A246AFBC5BCB3"
 			rewards: [{
@@ -424,16 +476,16 @@
 				type: "item"
 			}]
 			title: "Enter the Brass Age"
-			x: 4.0d
+			x: 8.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["3C8A246AFBC5BCB3"]
 			description: [
-				"Mechanical Crafters reproduce shaped recipes at large scale. Arrange them as the recipe grid and give the network enough rotational power."
-				"Mechanical Crafters must face and connect correctly, receive ingredients in the recipe's shape, and point the finished output somewhere valid. Build a temporary back wall so orientation remains visible during setup."
-				"Steam power depends on a complete boiler: heat, water, enough tank volume, and correctly attached engines. Read every gauge before increasing size, and keep fuel and water failure modes accessible."
-				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+				"WHAT IS THIS? Mechanical Crafters reproduce a shaped crafting grid at machine scale. Sequenced Assembly is different: one item must pass through specified Deployer, Press, Saw or other operations in order, often several times."
+				"DO THIS: Ponder Mechanical Crafters and a Precision Mechanism recipe. Build the crafting grid against a visible back wall, then make a separate Belt loop for one sequenced item with ordered operations and a safe return path."
+				"WHY DO I CARE? These systems unlock large shaped components, Precision Mechanisms and much of later Create and train progression."
+				"COMMON FUCK-UP: Crafters face or connect incorrectly, while sequenced items leave the line before every step. Read the JEI sequence and chance display; do not replace it with a normal crafting assumption."
 			]
 			id: "6C2795B621514EE3"
 			rewards: [{
@@ -448,16 +500,16 @@
 				type: "item"
 			}]
 			title: "Mechanical Crafting"
-			x: 6.0d
+			x: 10.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["6C2795B621514EE3"]
 			description: [
-				"Create tracks curve naturally between endpoints. Keep main lines gentle, light tunnels and test routes before building decorative stations."
-				"Trains are public infrastructure. Name stations by destination, provide safe platforms and schedules or signs, and test a route with empty cargo before trusting it with the expedition's only rare materials."
-				"Speed controllers change RPM; they do not create extra stress capacity. Diagnose the source and load first, then tune speed for the slowest operation that still meets the factory's actual demand."
-				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
+				"WHAT IS THIS? Create train tracks define the route, a Train Station marks an assembly point, and glued blocks on bogeys become carriages. Steam 'n' Rails extends the rail system with additional track and train parts already installed."
+				"DO THIS: Ponder Train Tracks and Stations. Build a gentle test loop, place a Station on the track, enter assembly mode, align bogeys and carriage blocks, glue the carriage, assemble it and drive one empty lap."
+				"WHY DO I CARE? A proven train moves groups and cargo between permanent bases more safely than everyone flying alone."
+				"COMMON FUCK-UP: A Station that is not correctly bound to track cannot assemble, and unglued carriage blocks stay behind. Test the bare minimum train before decorating it."
 			]
 			id: "40B5E1218A0226CD"
 			rewards: [{
@@ -479,16 +531,16 @@
 				}
 			]
 			title: "Lay the Railway"
-			x: 8.0d
-			y: 4.0d
+			x: 10.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["40B5E1218A0226CD"]
 			description: [
-				"Schedules automate station routes and conditions. Start with a two-station loop, then add cargo conditions only after the basic route works."
-				"Trains are public infrastructure. Name stations by destination, provide safe platforms and schedules or signs, and test a route with empty cargo before trusting it with the expedition's only rare materials."
-				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
-				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+				"WHAT IS THIS? A Schedule tells an assembled train which named Stations to visit and what conditions allow departure. Signals divide busy railways into protected sections so trains do not enter the same space."
+				"DO THIS: Name two Stations clearly, drive the route manually, then create a simple two-stop Schedule and give it to the train driver. Add cargo conditions and Steam 'n' Rails features only after the loop succeeds."
+				"WHY DO I CARE? Schedules turn a cool vehicle into shared infrastructure for passengers, building supplies and remote outposts."
+				"COMMON FUCK-UP: A schedule references a station name that does not match, waits on an impossible condition, or has no valid driver. Simplify to two unconditional stops when debugging."
 			]
 			id: "579F2C00A9B13FE7"
 			rewards: [{
@@ -502,16 +554,16 @@
 				type: "item"
 			}]
 			title: "Make Trains Useful"
-			x: 10.0d
-			y: 4.0d
+			x: 8.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["579F2C00A9B13FE7"]
 			description: [
-				"Create: Enchantment Industry adds liquid experience, tanks and machines for moving enchantment work into a factory. The Disenchanter removes enchantments and captures experience instead of discarding the whole opportunity."
-				"Treat enchanted loot as a decision: keep the item, salvage the enchantment path or convert unwanted work into stored experience. Never feed named or borrowed gear into a line without checking it."
-				"Build an Experience Hatch near the tank so players can deliberately deposit or withdraw levels. Label input chests so ordinary repair gear cannot enter the system by accident."
-				"Enchantment Industry treats experience as a resource that can be collected, moved, and applied. Label fluid routes carefully and never test an unproven process on the team's only high-level enchanted tool."
+				"WHAT IS THIS? Create: Enchantment Industry turns experience into a fluid that can be collected, stored and used by its installed machines. The Disenchanter can separate unwanted enchantment work from gear."
+				"DO THIS: Inspect every machine recipe in JEI, build a tiny labelled experience line, and test with disposable low-value gear. Provide an Experience Hatch or other documented player access point."
+				"WHY DO I CARE? Stored experience makes enchanting and salvage a shared workshop service instead of levels stranded on one player."
+				"COMMON FUCK-UP: Feeding named, borrowed or irreplaceable gear into an untested machine can destroy the wrong item. Lock and label inputs before automation."
 			]
 			id: "5A53AAEC0E3B4B96"
 			rewards: [{
@@ -525,16 +577,16 @@
 				type: "checkmark"
 			}]
 			title: "Enchantment Industry: Liquid Experience"
-			x: 10.0d
+			x: 6.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["5A53AAEC0E3B4B96"]
 			description: [
-				"The first Create engineers did not discover magic power. They learned to make ordinary rotation visible, measurable and reusable. Shafts became grammar; cogs became punctuation; factories became arguments built from motion."
-				"Their best machines were understandable from a walkway. Their worst machines were sealed behind walls until one broken belt silenced an entire district."
-				"Modern engineers honour them by building systems that can stop safely, explain themselves and serve more than one player's private ambition."
-				"Write signs, books, map labels, and albums in plain practical language first. Lore becomes believable when another player can follow the road, reproduce the meal, repair the machine, or recognise the warning it preserves."
+				"WHAT IS THIS? The installed Create family is core Create 6.0.8 plus Steam 'n' Rails, Enchantment Industry, Slice & Dice, Central Kitchen, Create Connected, Create Deco, Rechiseled Create and Create Ultimine. Each addon serves a different job."
+				"DO THIS: Use JEI's at-sign mod filter to inspect one addon at a time. Use Connected and Deco for factory building, the food addons in a kitchen line, Enchantment Industry for experience and Steam 'n' Rails for rail work."
+				"WHY DO I CARE? Knowing the owner mod tells you which manual, Ponder scene, recipe namespace and troubleshooting path applies."
+				"COMMON FUCK-UP: Tutorials for Crafts & Additions, Diesel Generators, Bells & Whistles, Contraption Terminals or Immersive Engineering describe mods not installed here. If JEI cannot find the item, stop following that tutorial."
 			]
 			id: "71CEDD5D336CCB38"
 			rewards: [{
@@ -548,7 +600,7 @@
 				type: "checkmark"
 			}]
 			title: "The Andesite Tinkerers"
-			x: 8.0d
+			x: 4.0d
 			y: 6.0d
 		}
 	]

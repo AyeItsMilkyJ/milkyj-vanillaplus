@@ -1,0 +1,10 @@
+{
+    "preparedAt":  "2026-08-12T10:10:35.0588774+10:00",
+    "releaseCandidate":  "v1.1.0-rc1",
+    "hostDirectory":  "build/rc-local-host",
+    "packUrl":  "http://127.0.0.1:8765/packwiz/pack.toml",
+    "bootstrap":  "dist/MilkyJ-VanillaPlus-v1.1.0-rc1-LOCAL-TEST-Prism.zip",
+    "bootstrapSha256":  "a1c2d44a1cb1d5d9a2033985d751418c97fef7e2b40a7355f56ea2c2c9a39e6c",
+    "serverCommand":  "python scripts\\limited_http_server.py --port 8765 --directory build\\rc-local-host --workers 24",
+    "productionFilesTouched":  false
+}

@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/smallships_upgrades.json5"
 hash-format = "sha256"
-hash = "ad48fb77da8edd98c2c9a14ac201d84c9b02e1a1a1347cd90e2fb9e364d971dd"
+hash = "871011250e8a22cd587d01e17fc337f558d59d27c5715e2b18e51f6f8058a9e1"

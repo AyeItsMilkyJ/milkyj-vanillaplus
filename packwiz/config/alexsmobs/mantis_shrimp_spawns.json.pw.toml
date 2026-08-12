@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/mantis_shrimp_spawns.json"
 hash-format = "sha256"
-hash = "44869ab38ceb22d186edcfb5362a6eb80760e75f74191fdd5cb6abbdd8b59780"
+hash = "4f6099fe4d9f99530f9f0f9bae7e55c0713506efdc47da69d227ae62137647e4"

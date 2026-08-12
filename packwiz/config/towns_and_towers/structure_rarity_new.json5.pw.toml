@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/towns_and_towers/structure_rarity_new.json5"
 hash-format = "sha256"
-hash = "a0965fc9211eee61896671763086133dba1e760bbe6849f84772bf575c7d8ae3"
+hash = "1f6cddbcb2d89fbcc774d7bdae9987ccb031ba8fe024307357076ca617b17eeb"

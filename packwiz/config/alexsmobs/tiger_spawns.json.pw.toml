@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/tiger_spawns.json"
 hash-format = "sha256"
-hash = "800a83f2643f0851979cb84f6ac737b521fa4885b9f6dd7fa79a24e9b3ef667b"
+hash = "f88fc1b519759fe41347afca59030619365e173c577e8c1adfcb88777078d066"

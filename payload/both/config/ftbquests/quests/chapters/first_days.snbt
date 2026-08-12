@@ -8,8 +8,10 @@
 	order_index: 2
 	progression_mode: "flexible"
 	quest_links: [ ]
+	title: "Surviving the First Night"
 	quests: [
 		{
+			dependencies: ["18C0AF7F5C17CAB7"]
 			description: [
 				"Get dependable tools, food and shelter before chasing strange structures. The modded world rewards preparation."
 				"Build the first base around repeatable routines: a safe bed, cooked food, labelled storage, spare tools, and a visible mine entrance. Decoration can begin immediately, but survival infrastructure keeps every later project enjoyable."

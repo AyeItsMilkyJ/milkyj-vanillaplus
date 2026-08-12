@@ -5,11 +5,13 @@
 	group: "455989FDDDEB7EAA"
 	icon: "toms_storage:ts.storage_terminal"
 	id: "204FAE13146E5459"
-	order_index: 6
+	order_index: 5
 	progression_mode: "flexible"
 	quest_links: [ ]
+	title: "Stop Living Out of 46 Chests"
 	quests: [
 		{
+			dependencies: ["18C0AF7F5C17CAB7"]
 			description: [
 				"Backpacks upgrade through iron, gold and diamond tiers while retaining contents. Empty a pack before experimenting if you are unsure."
 				"Sophisticated Backpacks upgrades the same inventory through material tiers. Give each pack a role, open its upgrade tabs deliberately, and configure filters before enabling automatic pickup, magnet, refill, or void behaviour."
