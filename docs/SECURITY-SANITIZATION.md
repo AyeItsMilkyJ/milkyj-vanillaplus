@@ -1,6 +1,6 @@
 # Security and privacy sanitization
 
-Status: repaired locally; final reachable-ref scan is required after the repair commit is installed.
+Status: **PASS** for the sanitized implementation commit and its reachable publication refs. Final manual release gates remain separate.
 
 No secret value or full third-party identity record is reproduced in this document.
 
@@ -33,6 +33,6 @@ The original unpublished history was saved outside the publishable repository be
 - SHA-256: `593af57ca53dd4da5f072712f630921b454c6d0ecbc1f4b691f15f3bc82f59fa`
 - `git bundle verify`: complete history, verified OK
 
-This bundle is a private offline recovery artifact and must not be published. The local recovery baseline `main`/`v1.0.0` was replaced with a valid sanitized `1.8.1-packwiz.1` snapshot. The final repair procedure removes the old feature ref, attaches the repair commit to that sanitized baseline, expires reflogs, prunes unreachable objects, and runs `scripts/security_history_scan.py` over every reachable branch/tag and publishable worktree file.
+This bundle is a private offline recovery artifact and must not be published. The local recovery baseline `main`/`v1.0.0` was replaced with a valid sanitized `1.8.1-packwiz.1` snapshot. The old feature ref was removed, the repair commit attached to that sanitized baseline, reflogs expired, and unreachable objects pruned. `scripts/security_history_scan.py` then checked every reachable branch/tag and publishable worktree file.
 
-The machine-readable final result is `audit/security-history-scan.json`. It reports only paths/object IDs and never secret values or cached identity contents.
+The machine-readable result is `audit/security-history-scan.json`: 3 refs, 1,449 reachable blobs, zero findings. It reports only paths/object IDs and never secret values or cached identity contents.

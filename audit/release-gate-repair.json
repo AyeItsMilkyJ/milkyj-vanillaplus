@@ -1,0 +1,138 @@
+{
+  "reportedAt": "2026-08-12T13:38:00+10:00",
+  "overallGate": "NOT RELEASE-READY — MANUAL TESTS REQUIRED",
+  "repairBranch": "repair/v1.9.0-rc1-release-blockers",
+  "repairImplementationCommit": "3f73cd01f66d32dd36dc3b7bbca1a1f2a16f21c9",
+  "sanitizedRecoveryBaselineCommit": "04be5d83c92c7ea76a35968a8cfac69a4b6c1bb5",
+  "establishedPreviousVersion": "1.8.1-packwiz.1",
+  "candidateVersion": "1.9.0-rc1",
+  "gitBaselineLabel": "v1.0.0 is a recovery label, not the pack semantic version",
+  "security": {
+    "removedPaths": [
+      "payload/both/config/resourceful-config-web.json",
+      "packwiz/config/resourceful-config-web.json.pw.toml",
+      "payload/both/config/dawnoftimebuilder/patrons_cache.json",
+      "packwiz/config/dawnoftimebuilder/patrons_cache.json.pw.toml"
+    ],
+    "generatedSecretOwner": "Resourceful Config 2.1.3 (resourcefulconfig)",
+    "productionUseDetermined": false,
+    "productionValueChanged": false,
+    "rotationRequiredBeforePublication": "CONDITIONAL: regenerate/rotate during an authorized stopped-server window if production reused the removed repository value; never use a universal public password",
+    "omissionStartupResult": "PASS; local config regenerated with web server disabled",
+    "patronCacheOmissionResult": "PASS; remained unnecessary during clean server startup",
+    "historySanitization": "PASS",
+    "reachableRefsScanned": 3,
+    "reachableBlobsScanned": 1449,
+    "securityFindings": 0,
+    "privateOfflineBundleVerified": true,
+    "privateOfflineBundlePublished": false
+  },
+  "questIdMigration": {
+    "repurposedQuestRepairs": [
+      {
+        "oldId": "1885CF9658AB663D",
+        "restoredMeaning": "Foreword: A World of Many Ages",
+        "newQuestId": "2990526585709C54",
+        "newTaskId": "11ED8A66BEDD2038",
+        "newRewardId": "2F306E70149D5856",
+        "newMeaning": "Power Beyond the First Water Wheel"
+      },
+      {
+        "oldId": "22B69CA315389C48",
+        "restoredMeaning": "The Covenant of the Hearth",
+        "newQuestId": "069DD3EFDF3EF83F",
+        "newTaskId": "6CD534112A16F2A1",
+        "newRewardId": "4F8E7ADAA685C0A5",
+        "newMeaning": "Create Food Addons: Kitchen to Factory"
+      }
+    ],
+    "affectedQuestIdsFromEarlier17QuestSummary": [
+      "1725341D3243AFDD", "1A354ABA1BE5171F", "1E4FFC70B08D7689", "22F6D8A7A571B2DF",
+      "2AD044CDEA61410E", "2E34979BCE044BF5", "31CF2E051B43098D", "34B44EE7DDB53F36",
+      "3522AB4192F75013", "36D9A2651A27AA32", "3F4DB5EEDFFAC808", "4201CE5BFBBC062D",
+      "54C781F3CD01DB25", "576F3B9264ED1F4B", "60435D16835B3DCE", "71BB70B3127ECE00",
+      "7DA1925406767A08"
+    ],
+    "exactAlteredRewardIdsFoundAndRestored": [
+      "00A1BC229E245A15", "05902C78CA9A4EB5", "0FE7EE9D493A0A1D", "204890B0227A96D9",
+      "2118F4E2E4032CAB", "2297FDCA42E6B81D", "26950E0D69255D49", "3445D7161409CCDF",
+      "37C462912CB4ED85", "3A27AE16432C0F16", "47348F50B1E09486", "4EB68D63AE8A3A25",
+      "5F90D88A9406C845", "6F57BAD901B52DB3", "7253FC5D69D7838C", "739D94F2E58EEE97",
+      "73EE0892EA05E606", "7D96755589912CE6"
+    ],
+    "earlierSummaryCountWasAffectedQuests": 17,
+    "exactAlteredRewardDefinitionCount": 18,
+    "unchangedBaselineDefinitions": 420,
+    "intentionallyRemovedAbsentModDefinitions": 9,
+    "newDefinitions": 6,
+    "repurposedBaselineIds": 0,
+    "alteredRetainedBaselineRewardDefinitions": 0
+  },
+  "progressMigration": {
+    "syntheticResult": "PASS",
+    "realProductionFixtureResult": "NOT RUN",
+    "realProductionFixtureReason": "Unavailable in safe test data; live world/playerdata intentionally not accessed or hot-copied"
+  },
+  "absentModTutorials": {
+    "removed": ["Tinkers' Construct: 3 quests and chapter", "Botany Pots/Botany Trees: 1 quest"],
+    "visibleAbsentItemTasks": 0
+  },
+  "questBook": {
+    "chapterCount": 9,
+    "questCount": 118,
+    "manualTaskCount": 61,
+    "automaticTaskCount": 57,
+    "taskIdCount": 165,
+    "rewardIdCount": 134,
+    "duplicateDefinitionIds": 0,
+    "dependencyCycles": 0,
+    "unreachableRequiredQuests": 0,
+    "unresolvedItemsIconsOrTags": 0
+  },
+  "encoding": {"status": "PASS", "filesScanned": 1197, "findings": 0},
+  "packwiz": {
+    "destinationCount": 684,
+    "sides": {"both": 507, "client": 162, "server": 15},
+    "hostedPayloads": 440,
+    "externalDownloads": 244,
+    "indexSha256": "664ae3f33dd9a7b0e95c0fcbf014ce3c4e2a4afb472db451c17366b135d6e57e",
+    "packTomlSha256": "6d2891a445b630b345c64c224fa53c5080526bb92b665ece9e909f9ef69ddb9e"
+  },
+  "installerAndRuntime": {
+    "baselineToCandidateUpdate": "PASS",
+    "candidateToBaselineRollback": "PASS",
+    "personalFilesPreserved": true,
+    "cleanClientJarCount": 236,
+    "cleanServerJarCount": 203,
+    "serverReachedDone": true,
+    "serverStartupSeconds": 46.672,
+    "ftbParser": "Loaded 4 chapter groups, 9 chapters, 118 quests, 0 reward tables",
+    "allLoadedDimensionsSaved": true,
+    "jvmExitedNormally": true
+  },
+  "lanHarness": {
+    "automatedStartupAndStop": "PASS",
+    "zip": "dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-Prism.zip",
+    "zipSha256": "988553f8a88d420300811114d1cfa8461463b59607f956bfd91ce978e9533b4f",
+    "twoClientManualInteraction": "NOT RUN",
+    "productionPortTouched": false
+  },
+  "manualGates": {
+    "twoClientQuestRewardTeamAndLayoutTest": "NOT RUN",
+    "stoppedProductionCopiedWorldAndRealProgressTest": "NOT RUN"
+  },
+  "fileInventory": {"path": "audit/release-repair-files.csv", "rows": 286},
+  "publication": {
+    "remoteConfigured": false,
+    "pushed": false,
+    "published": false,
+    "deployed": false,
+    "publicBootstrapCreated": false,
+    "productionUrlConfigured": false
+  },
+  "liveSystems": {
+    "serverReadOrModified": false,
+    "worldReadOrModified": false,
+    "prismReadOrModified": false
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "scannedAt": "2026-08-12T13:41:52.779963+10:00",
+  "status": "PASS",
+  "reachableRefs": [
+    "refs/heads/main",
+    "refs/heads/repair/v1.9.0-rc1-release-blockers",
+    "refs/tags/v1.0.0"
+  ],
+  "publishableWorktreeFilesScanned": 1239,
+  "reachableBlobsScanned": 1449,
+  "findingCount": 0,
+  "findings": [],
+  "note": "Findings report paths and object IDs only; secret values and identity records are never emitted."
+}

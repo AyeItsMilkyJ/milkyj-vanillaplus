@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import subprocess
@@ -42,7 +43,11 @@ def contains_secret(data: bytes) -> bool:
 
 
 def main() -> int:
-    root = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]).resolve()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("project_root", nargs="?", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--no-write", action="store_true", help="verify without replacing the committed JSON report")
+    args = parser.parse_args()
+    root = args.project_root.resolve()
     findings: list[dict[str, str]] = []
 
     listed = git(root, "ls-files", "-co", "--exclude-standard").stdout.decode("utf-8", "replace").splitlines()
@@ -123,7 +128,8 @@ def main() -> int:
         "note": "Findings report paths and object IDs only; secret values and identity records are never emitted.",
     }
     report = root / "audit/security-history-scan.json"
-    report.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    if not args.no_write:
+        report.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))
     return 1 if unique else 0
 

@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-08-12T13:36:26.026486+10:00",
+  "testedAt": "2026-08-12T13:41:54.737097+10:00",
   "syntheticMigrationResult": "PASS",
   "fixture": "tests/fixtures/synthetic-progress-baseline.json",
   "fixtureScope": "Synthetic logical ID/team compatibility model; not a production FTB Quests file-format fixture.",
