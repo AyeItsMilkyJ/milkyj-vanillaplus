@@ -1,0 +1,8 @@
+name = "Managed config: biomesoplenty/biome_toggles.json"
+filename = "biome_toggles.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/biomesoplenty/biome_toggles.json"
+hash-format = "sha256"
+hash = "7b89be3a2b8d0a4c050a20d54f9e601930077cde08e27445d1687249fa147cd9"

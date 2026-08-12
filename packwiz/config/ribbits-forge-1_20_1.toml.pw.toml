@@ -1,0 +1,8 @@
+name = "Managed config: ribbits-forge-1_20_1.toml"
+filename = "ribbits-forge-1_20_1.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ribbits-forge-1_20_1.toml"
+hash-format = "sha256"
+hash = "a3a347104c669a4847fbcea06cabe3a5fb79c474164137b01074fde0c1e649be"

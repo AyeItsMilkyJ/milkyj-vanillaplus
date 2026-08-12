@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/unusualfishmod/animations/entity/freshwater_mantis.animation.json"
+filename = "freshwater_mantis.animation.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/freshwater_mantis.animation.json"
+hash-format = "sha256"
+hash = "174ad1f4d5059fd7e7aec8dc3c851d0cb8df4f64441b75d15d6bf8d382eeb49f"

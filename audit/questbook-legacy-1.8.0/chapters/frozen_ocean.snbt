@@ -1,0 +1,253 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "frozen_ocean"
+	group: "4A5CA40AA14EE19B"
+	icon: "minecraft:heart_of_the_sea"
+	id: "39B55B48D6AC9B13"
+	order_index: 10
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Aquamirae adds a frozen-ocean region called the Ice Maze and a haunted Ship Graveyard beneath it. Search newly generated cold ocean territory and treat unusual ice formations as an expedition boundary."
+				"Bring boats, doors, blocks, Water Breathing, Night Vision and a marked route back to open water. Ice makes surface travel fast until cracks, walls and enemies separate the group."
+				"Mark a shore camp before descending. The safest return from the graveyard is the one prepared while everyone can still see the sky."
+				"Aquamirae's Ice Maze and Ship Graveyard turn frozen oceans into a staged expedition of hostile sailors, deep water, ice corridors, and rare equipment. Scout the surface before committing to a descent."
+			]
+			id: "684F93A21FD9659A"
+			rewards: [{
+				id: "00D5BEEBDAA0A832"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Aquamirae begins where ordinary oceans become a maze"
+			tasks: [{
+				id: "7F2572D7E27CCF18"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Find the Frozen Sea"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["684F93A21FD9659A"]
+			description: [
+				"The Ice Maze contains its own plants, animals and points of interest. High walls and repeated shapes can hide how far the team has travelled."
+				"Use map markers and a consistent torch or banner language that remains visible against snow. Avoid placing hundreds of random lights that make every corridor look explored."
+				"Search for structures and clues rather than mining straight through every wall. Aquamirae's atmosphere is part of its progression."
+				"Aquamirae's Ice Maze and Ship Graveyard turn frozen oceans into a staged expedition of hostile sailors, deep water, ice corridors, and rare equipment. Scout the surface before committing to a descent."
+			]
+			id: "0E22A73B0A05D7FB"
+			rewards: [{
+				id: "5772778348129D65"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Read the surface before diving below it"
+			tasks: [{
+				id: "3EED108E53DE2644"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Ice Maze Above"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["684F93A21FD9659A"]
+			description: [
+				"Beneath the ice lies the Ship Graveyard, with wreckage, shelters and hostile life at different depths. Plan air, visibility and inventory space before leaving the surface camp."
+				"Search each wreck methodically and mark completed sections. Water currents, darkness and vertical distance can make a familiar coordinate difficult to reach twice."
+				"Keep lore items and unique equipment together for later study. The graveyard tells one connected story more clearly when its evidence is not scattered through personal backpacks."
+				"Aquamirae's Ice Maze and Ship Graveyard turn frozen oceans into a staged expedition of hostile sailors, deep water, ice corridors, and rare equipment. Scout the surface before committing to a descent."
+			]
+			id: "7CA4E10C185749F8"
+			rewards: [{
+				id: "17EBA7884D3D416C"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "The drowned fleet is a vertical dungeon"
+			tasks: [{
+				id: "3E27A94B3F7F6925"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Ship Graveyard Below"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["684F93A21FD9659A"]
+			description: [
+				"Aquamirae includes pillager constructions and ships around its frozen region. Scout ranged positions and boarding routes before approaching."
+				"Clear enemies without burning or dismantling the structure until the group understands what it contains. A surviving ship can become a route marker or restored outpost."
+				"Check ordinary containers and Lootr behaviour separately. Not every special reward in a modded structure is automatically instanced for each player."
+				"Aquamirae's Ice Maze and Ship Graveyard turn frozen oceans into a staged expedition of hostile sailors, deep water, ice corridors, and rare equipment. Scout the surface before committing to a descent."
+			]
+			id: "5ADFE613EF598838"
+			rewards: [{
+				id: "226FA25492CC1FE8"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Ships and constructions mean the surface is not neutral"
+			tasks: [{
+				id: "21DC1B0499573734"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Pillagers on the Ice"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0E22A73B0A05D7FB", "7CA4E10C185749F8"]
+			description: [
+				"Identify underwater creatures before closing distance. Glowing or slow movement can hide a lunge, status effect or nearby stronger creature."
+				"The Mother of the Maze is exceptionally rare and should be treated as a major sighting, not routine food. Announce unusual spawns before attacking."
+				"Build viewing points and safe air pockets instead of draining the entire habitat. The frozen ocean should remain an ecosystem after the expedition leaves."
+				"Aquamirae's Ice Maze and Ship Graveyard turn frozen oceans into a staged expedition of hostile sailors, deep water, ice corridors, and rare equipment. Scout the surface before committing to a descent."
+			]
+			id: "6B0EE51725728413"
+			rewards: [{
+				id: "5EE39C84E8436AB6"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Anglers, eels, tortured souls and rarer shapes have different threat roles"
+			tasks: [{
+				id: "1C1452DA7A063124"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Life Under the Ice"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["7CA4E10C185749F8", "5ADFE613EF598838"]
+			description: [
+				"Captain Cornelia is Aquamirae's central boss encounter. Gather the mod's clues and prepare underwater movement, recovery supplies and a group plan before triggering the fight."
+				"Watch the arena and attack pattern before committing every player to melee. Keep one clear route for regrouping and do not carry the entire expedition archive into the boss room."
+				"After victory, return the relevant trophy or lore to a public maritime exhibit. The reward should explain the graveyard, not disappear into an unlabelled chest."
+				"Aquamirae's Ice Maze and Ship Graveyard turn frozen oceans into a staged expedition of hostile sailors, deep water, ice corridors, and rare equipment. Scout the surface before committing to a descent."
+			]
+			id: "7796A8744BC2283B"
+			rewards: [{
+				id: "1D4943223768E3E4"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "The central boss belongs to the story of the fleet"
+			tasks: [{
+				id: "198A285489644BD1"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Ghost of Captain Cornelia"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5ADFE613EF598838"]
+			description: [
+				"Aquaculture expands fishing with modular rods, hooks, bait and many biome-dependent fish. Use JEI to inspect what each tackle component changes before crafting the most expensive option."
+				"Prepare a Tackle Box and keep spare line or hooks. Fish from several biomes and conditions rather than expecting one dock to reveal the whole mod."
+				"Cook common catches, display memorable ones and keep a written record of where rare species were found. Fishing becomes exploration when place matters."
+				"Abyssal and Aquaculture creatures may share the same waters while belonging to different systems. Use Jade to identify them, then consult JEI or the relevant guide before deciding what to catch, fight, or preserve."
+			]
+			id: "6BC751F9A7D64444"
+			rewards: [{
+				id: "00B1D57652AB4EE4"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Rod, hook, bait and line shape the catch"
+			tasks: [{
+				id: "5A133B64FB2ED214"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Aquaculture Is a Tackle System"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6BC751F9A7D64444"]
+			description: [
+				"Lockboxes and treasure chests add excitement to ordinary fishing. Open them safely and remember that Lootr-style individual structure chests are a different system."
+				"Neptune's Bounty leads to Neptunium, Aquaculture's rare material. Improve the fishing setup and keep fishing varied; do not assume ten empty casts mean the feature is broken."
+				"Before turning rare metal into gear, check every recipe and agree whether the first pieces serve the angler, museum or expedition team."
+				"Aquamirae's Ice Maze and Ship Graveyard turn frozen oceans into a staged expedition of hostile sailors, deep water, ice corridors, and rare equipment. Scout the surface before committing to a descent."
+			]
+			id: "61E3E7A66AFBEFEE"
+			rewards: [{
+				id: "5622D5AAC2906D80"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Rare fishing treasure is a long progression, not a guaranteed roll"
+			tasks: [{
+				id: "443F4E48E85404FA"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Lockboxes and Neptune's Bounty"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6B0EE51725728413", "61E3E7A66AFBEFEE"]
+			description: [
+				"Unusual Fish and DragN's Bettas expand aquatic variety, while Better Fish Tanks, fish plaques and display blocks provide ways to exhibit discoveries."
+				"Separate compatible species and follow each mod's capture or tank rules. A decorative glass box is not automatically a functioning habitat."
+				"Label each display with species, mod and discovery location. Leave room for future finds so the aquarium grows as a record rather than a storage overflow."
+				"Better Fish Tanks turns aquatic collection into husbandry and display. Build the enclosure first, verify water and space, and move one specimen at a time instead of carrying an entire expedition's living cargo loose."
+			]
+			id: "470D41A6375A1085"
+			rewards: [{
+				id: "2315ADFA8ACF1A08"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Unusual Fish, Bettas and display mods turn catches into a collection"
+			tasks: [{
+				id: "658F95DB13F7F946"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Build a Living Aquarium"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["7796A8744BC2283B", "470D41A6375A1085"]
+			description: [
+				"Use Ocean's Delight and the other food addons to turn renewable catches into an expedition meal. Preserve rare specimens and unique drops instead of cooking everything unfamiliar."
+				"Create an album containing the shore camp, Ice Maze, graveyard and one creature. Add a map and safety notes for the next group."
+				"The Chronicle says the drowned fleet was lost when every captain guarded a separate map. Complete this chapter by making one shared map that can bring everyone home."
+				"Aquamirae's Ice Maze and Ship Graveyard turn frozen oceans into a staged expedition of hostile sailors, deep water, ice corridors, and rare equipment. Scout the surface before committing to a descent."
+			]
+			id: "1AC52877598DA220"
+			rewards: [{
+				id: "7C49E1B0425015F4"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Food, photographs and relics complete the voyage"
+			tasks: [{
+				id: "75E49D57A29423D1"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Frozen Archive"
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+	title: "Aquamirae and the Frozen Ocean"
+}

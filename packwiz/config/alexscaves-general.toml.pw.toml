@@ -1,0 +1,8 @@
+name = "Managed config: alexscaves-general.toml"
+filename = "alexscaves-general.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexscaves-general.toml"
+hash-format = "sha256"
+hash = "232e6e03c16b2d664ffbca9014dc72da2ff952b514d514087288fda1237dbaed"

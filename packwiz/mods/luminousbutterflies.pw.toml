@@ -1,0 +1,12 @@
+name = "Luminous: Butterflies"
+filename = "Luminous Butterflies V1.2.1 - Forge 1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/yoTUVxcS/versions/y0a4N3Co/Luminous%20Butterflies%20V1.2.1%20-%20Forge%201.20.1.jar"
+hash-format = "sha512"
+hash = "ce991daaa5b34b643fa3e0ae4e6eb8c83d8180048a8023d745a1bb9708dd06973e6f9c3360ccda1ee53ad10bed0ce0e2fffc124f6ef53df5493079918251ec31"
+
+[update.modrinth]
+mod-id = "yoTUVxcS"
+version = "y0a4N3Co"

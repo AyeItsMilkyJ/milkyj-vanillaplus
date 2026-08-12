@@ -1,0 +1,422 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "creative_expeditions"
+	group: "4A5CA40AA14EE19B"
+	icon: "exposure:camera"
+	id: "0F73D94269F5D8E4"
+	order_index: 2
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"YUNG's Extras adds small, polished landmarks rather than giant empty dungeons. They appear only in newly generated chunks."
+				"Use Explorer's Compass carefully and give ordinary travel a chance to reveal them naturally."
+				"Lootr supports shared expeditions by giving each player individual contents in supported chests. Wait for teammates, do not break the container, and record landmarks that are worth revisiting with someone who missed the first trip."
+				"Immersive Aircraft vehicles differ in speed, handling, fuel, cargo, and landing needs. Train over familiar ground, establish named landing fields, and avoid maximum-speed flight into terrain the server is still generating."
+			]
+			id: "7E8736C71C4B0718"
+			rewards: [{
+				id: "4A2148DD21CFA744"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				id: "13544DCADD90BB7D"
+				title: "We discovered a new YUNG's Extras landmark"
+				type: "checkmark"
+			}]
+			title: "New Landmarks to Discover"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Selected dungeon and treasure tables now receive one restrained bonus roll. Lootr makes the result individual per player."
+				"There is still a large empty chance; exploration should feel exciting, not like a creative-mode dispenser."
+				"Lootr supports shared expeditions by giving each player individual contents in supported chests. Wait for teammates, do not break the container, and record landmarks that are worth revisiting with someone who missed the first trip."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+			]
+			id: "5EDA79A95A7A77B9"
+			rewards: [{
+				id: "7B6CB0B871A93D7C"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "190A7F6AA1AA90FA"
+				title: "I understand how the new individual loot works"
+				type: "checkmark"
+			}]
+			title: "Better, Individual Treasure"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5EDA79A95A7A77B9"]
+			description: [
+				"Exposure cameras use film and preserve in-world moments. Start with a camera and black-and-white film, then learn the viewfinder controls."
+				"Exposure follows a complete film workflow: load compatible film, take exposures, remove the exposed roll, develop it in the Lightroom, then organise or copy the resulting photographs. Practise every step at home first."
+				"Keep blank, exposed, and developed film in visibly separate storage. If the camera appears unresponsive, check loaded film, remaining frames, keybinds, and recipe compatibility before replacing the mod or resource pack."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+			]
+			id: "5A57FC5CEB08D333"
+			rewards: [{
+				id: "71BE6BED6206C799"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "6A75379C025E55CC"
+					item: "exposure:camera"
+					type: "item"
+				}
+				{
+					id: "48AECCE0F2DB5F37"
+					item: "exposure:black_and_white_film"
+					type: "item"
+				}
+			]
+			title: "Take a Real Photograph"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5A57FC5CEB08D333"]
+			description: [
+				"A Lightroom develops film into photographs. Keep materials near the station and make copies before risking a unique picture."
+				"Exposure follows a complete film workflow: load compatible film, take exposures, remove the exposed roll, develop it in the Lightroom, then organise or copy the resulting photographs. Practise every step at home first."
+				"Keep blank, exposed, and developed film in visibly separate storage. If the camera appears unresponsive, check loaded film, remaining frames, keybinds, and recipe compatibility before replacing the mod or resource pack."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+			]
+			id: "5343EDD05AACB023"
+			rewards: [{
+				id: "3E1C30463893B554"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "466BEF5C8CFCAA36"
+					item: "exposure:lightroom"
+					type: "item"
+				}
+				{
+					id: "5DB973B34E22C622"
+					item: "exposure:developed_black_and_white_film"
+					type: "item"
+				}
+			]
+			title: "Develop the Film"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5343EDD05AACB023"]
+			description: [
+				"Albums turn scattered images into a shared expedition record. Add captions or nearby signs so future players know what they are seeing."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+				"Lootr supports shared expeditions by giving each player individual contents in supported chests. Wait for teammates, do not break the container, and record landmarks that are worth revisiting with someone who missed the first trip."
+			]
+			id: "0D85596FB0EC4C33"
+			rewards: [{
+				id: "6C12A1678CC7FFE4"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				id: "0ED5246F5715E037"
+				item: "exposure:album"
+				type: "item"
+			}]
+			title: "Tell the Story in an Album"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"Photograph the pack's wildlife rather than only bosses and machines. Exposure has an advancement for becoming a serious wildlife archivist."
+				"Exposure follows a complete film workflow: load compatible film, take exposures, remove the exposed roll, develop it in the Lightroom, then organise or copy the resulting photographs. Practise every step at home first."
+				"Keep blank, exposed, and developed film in visibly separate storage. If the camera appears unresponsive, check loaded film, remaining frames, keybinds, and recipe compatibility before replacing the mod or resource pack."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+			]
+			id: "209ADF457030C3CA"
+			rewards: [{
+				id: "5C8EDA08090C084D"
+				type: "xp"
+				xp: 30
+			}]
+			tasks: [{
+				advancement: "exposure:adventure/wildlife_archivist"
+				criterion: ""
+				id: "1DD607BC4A632DAE"
+				type: "advancement"
+			}]
+			title: "Wildlife Archivist"
+			x: 10.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5EDA79A95A7A77B9"]
+			description: [
+				"Immersive Aircraft begins with slow, readable flying machines. An Airship is ideal for sightseeing; watch fuel and landing space."
+				"Immersive Aircraft vehicles differ in speed, handling, fuel, cargo, and landing needs. Train over familiar ground, establish named landing fields, and avoid maximum-speed flight into terrain the server is still generating."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+				"Before marking this lesson complete, identify every named block, item, creature, or interface in JEI and Jade. Inspect both recipes and uses, then perform one small manual test so the objective represents understood behaviour rather than a lucky craft."
+			]
+			id: "62E98CDAA6C60AB7"
+			rewards: [{
+				id: "16235962ECF86E11"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "2D844B1342790AFD"
+				item: "immersive_aircraft:airship"
+				type: "item"
+			}]
+			title: "Take to the Air"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"Biplanes and Gyrodynes travel faster but need more care. Practise away from builds, carry a recovery kit and never assume unloaded terrain is safe."
+				"Immersive Aircraft vehicles differ in speed, handling, fuel, cargo, and landing needs. Train over familiar ground, establish named landing fields, and avoid maximum-speed flight into terrain the server is still generating."
+				"Lootr supports shared expeditions by giving each player individual contents in supported chests. Wait for teammates, do not break the container, and record landmarks that are worth revisiting with someone who missed the first trip."
+			]
+			id: "46DC220D84558D7B"
+			rewards: [{
+				id: "43F028C16A038E76"
+				type: "xp"
+				xp: 30
+			}]
+			tasks: [
+				{
+					id: "34A8CE7892C8AC35"
+					item: "immersive_aircraft:biplane"
+					type: "item"
+				}
+				{
+					id: "612673C92938476B"
+					item: "immersive_aircraft:gyrodyne"
+					type: "item"
+				}
+			]
+			title: "Build an Expedition Aircraft"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"Immersive Melodies instruments can be played together. Craft different instruments and agree on a place where rehearsal will not drive everyone mad."
+				"Immersive Melodies instruments are social tools as well as collectibles. Practise away from danger, agree on a gathering place, and use performances to mark returns, openings, memorials, or festivals in the settlement's history."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+			]
+			id: "41E65C21F86B515E"
+			rewards: [{
+				id: "1B8837255D040B6A"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "09EB4F826E4D696F"
+					item: "immersive_melodies:flute"
+					type: "item"
+				}
+				{
+					id: "479F54569D929DD3"
+					item: "immersive_melodies:lute"
+					type: "item"
+				}
+				{
+					id: "140C490EE1017B11"
+					item: "immersive_melodies:tiny_drum"
+					type: "item"
+				}
+			]
+			title: "Form a Travelling Band"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"209ADF457030C3CA"
+				"41E65C21F86B515E"
+			]
+			description: [
+				"Visit a new landmark by aircraft, take photographs, bring home a useful treasure and perform music at the return celebration."
+				"Lootr supports shared expeditions by giving each player individual contents in supported chests. Wait for teammates, do not break the container, and record landmarks that are worth revisiting with someone who missed the first trip."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+			]
+			id: "0D99D54224E7E25C"
+			rewards: [
+				{
+					count: 16
+					id: "39F834090EDD0CCD"
+					item: "minecraft:firework_rocket"
+					type: "item"
+				}
+				{
+					id: "47338B4EA5B9EF08"
+					type: "xp"
+					xp: 45
+				}
+			]
+			tasks: [{
+				id: "3B32901F6B6F6754"
+				title: "We completed and documented a creative expedition"
+				type: "checkmark"
+			}]
+			title: "Document an Expedition"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Exposure cameras, maps and written books let the group preserve discoveries beyond a waypoint name. Photograph rare creatures, dramatic terrain and completed builds from deliberate angles."
+				"Create a museum or archive with dates, locations and short captions. Future players should understand why an ordinary-looking object mattered to the original expedition."
+				"A world becomes a shared story when evidence of earlier journeys survives the players who made them."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+			]
+			id: "40EB096E6DDF5D21"
+			rewards: [{
+				id: "23A25F152D3AF15E"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A photograph turns coordinates into memory"
+			tasks: [{
+				id: "7055A680C2B5F225"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Document the Discovery"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["40EB096E6DDF5D21"]
+			description: [
+				"Choose themes for displays: local wildlife, archaeological periods, biome materials, meals, relics or engineering milestones. A labelled collection teaches; an unsorted chest merely stores."
+				"Leave duplicates for crafting and other players. Rare objects should not disappear into one private backpack when they could inspire a public exhibit."
+				"Design museums with expansion space. The most interesting collection is never truly finished."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+			]
+			id: "2C629C4CF897FA2E"
+			rewards: [{
+				id: "191CC81363DCE62D"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A collection needs a question"
+			tasks: [{
+				id: "19B82ABF1AFC77B9"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Curate, Do Not Hoard"
+			x: 1.5d
+			y: 5.0d
+		}
+		{
+			description: [
+				"Load blank compatible film, compose and expose frames in the camera, remove the exposed roll, then develop it in the Lightroom with the recipe shown by JEI."
+				"Keep blank, exposed and developed film in different labelled slots. The most common photography failure is losing track of which stage a roll has reached."
+				"Run this complete loop at home before taking the only camera into another dimension. A practised workflow leaves more attention for the expedition."
+				"Exposure follows a complete film workflow: load compatible film, take exposures, remove the exposed roll, develop it in the Lightroom, then organise or copy the resulting photographs. Practise every step at home first."
+			]
+			id: "7BEDAB7D9096CB7F"
+			rewards: [{
+				id: "1209E76FFFDC5E4A"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Blank film, camera, exposed roll, Lightroom, photograph"
+			tasks: [{
+				id: "5C569D2D9D8EBEF5"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Exposure Workflow in One Line"
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["7BEDAB7D9096CB7F"]
+			description: [
+				"Immersive Aircraft offers slower airships and faster or more specialised aircraft. Fuel, landing space, visibility and recovery matter more than top speed."
+				"Practise over familiar terrain and carry a ground kit. Do not fly at maximum speed into ungenerated terrain when the server is already building distant chunks for several players."
+				"Name landing fields and keep spare fuel there. An aircraft network is safer when every destination includes a way to leave again."
+				"Immersive Aircraft vehicles differ in speed, handling, fuel, cargo, and landing needs. Train over familiar ground, establish named landing fields, and avoid maximum-speed flight into terrain the server is still generating."
+			]
+			id: "554A5FE4B4E51ACC"
+			rewards: [{
+				id: "107DDAA36BAA683D"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Sightseeing, speed and cargo ask for different machines"
+			tasks: [{
+				id: "65251610A210F516"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Choose the Aircraft for the Journey"
+			x: 2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["554A5FE4B4E51ACC"]
+			description: [
+				"Keep original negatives or master photographs in the archive, use a display copy in public builds and carry a field copy when an image must travel."
+				"Albums work best when arranged by story. Name them before every expedition produces another anonymous volume."
+				"Photograph machine layouts and dungeon markers as well as landscapes. A practical picture can be the fastest repair manual on the server."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+			]
+			id: "39B23C140C287857"
+			rewards: [{
+				id: "29093B2EC60EDE82"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "One photograph should not have to survive every risk"
+			tasks: [{
+				id: "14AD37BE2639C26C"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Original, Display Copy, Field Copy"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["39B23C140C287857"]
+			description: [
+				"After a major expedition, display one object, develop one photograph and perform or play one piece with Immersive Melodies. Invite the players who stayed home."
+				"Explain what was discovered, what nearly went wrong and what route is now safe. Celebration is also a debrief."
+				"The Chronicle says a road is not complete when explorers arrive; it is complete when their story returns."
+				"Immersive Melodies instruments are social tools as well as collectibles. Practise away from danger, agree on a gathering place, and use performances to mark returns, openings, memorials, or festivals in the settlement's history."
+			]
+			id: "0EA4387B6B85DC7A"
+			rewards: [{
+				id: "1C1B3ECC4C2AE6AE"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "A journey becomes community memory through art"
+			tasks: [{
+				id: "41B445C1FC02E321"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Return Festival"
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+	title: "Creative Expeditions"
+}

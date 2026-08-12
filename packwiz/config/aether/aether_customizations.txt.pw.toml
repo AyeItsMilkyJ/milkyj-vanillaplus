@@ -1,0 +1,8 @@
+name = "Managed config: aether/aether_customizations.txt"
+filename = "aether_customizations.txt"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/aether/aether_customizations.txt"
+hash-format = "sha256"
+hash = "ea1fa1cd06a0c092552541b31d960236355ee7944396b9fe8f9222840f74f540"

@@ -1,0 +1,8 @@
+name = "Managed config: immersive_aircraft.json"
+filename = "immersive_aircraft.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/immersive_aircraft.json"
+hash-format = "sha256"
+hash = "051af5c0b0b814e36a1a3f72b9fcb6163bf14beb1470adf8beb13ea7a6f8899a"

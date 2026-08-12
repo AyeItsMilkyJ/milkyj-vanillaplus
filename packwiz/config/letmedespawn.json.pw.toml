@@ -1,0 +1,8 @@
+name = "Managed config: letmedespawn.json"
+filename = "letmedespawn.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/letmedespawn.json"
+hash-format = "sha256"
+hash = "b95c8e528a2b040f3e3332634c7534a51ebadcf25c828657c1be6ebd8c3c69a4"

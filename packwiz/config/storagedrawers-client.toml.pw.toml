@@ -1,0 +1,8 @@
+name = "Managed config: storagedrawers-client.toml"
+filename = "storagedrawers-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/storagedrawers-client.toml"
+hash-format = "sha256"
+hash = "4c4880cbb9c0cd43cba00ce28519867e27468afaea353312d9af1a1a68d2b2c8"

@@ -1,0 +1,66 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "tinkers_deferred"
+	group: "455989FDDDEB7EAA"
+	icon: "minecraft:lava_bucket"
+	id: "341E1453B17A1806"
+	order_index: 4
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"What this is: Tinkers' Construct is a modular tool and foundry mod. Mantle is installed as a library for other content, but the Tinkers' Construct mod jar itself is not in this pack."
+				"Why it matters: leftover tconstruct config files do not create tool stations, grout, melters, smelteries, casts, modifiers, or recipes. A tutorial for another pack will therefore lead to items that do not exist here."
+				"How to check: clear JEI, search for at-tconstruct, and confirm that no Tinkers item group appears. Do not build a multiblock from an old video and assume the server is broken."
+				"What comes next: use the ordinary tool, enchanting, relic, and Create paths until a future update explicitly adds and validates Tinkers."
+			]
+			id: "7527B8F4C044703F"
+			tasks: [{
+				id: "0024C2CC9150D154"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Tinkers' Construct Is Not Installed"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7527B8F4C044703F"]
+			description: [
+				"What this is: configuration files can remain after a mod is removed. They are harmless text until the matching mod is loaded."
+				"Why it matters: this pack preserves uncertain files instead of deleting them automatically, so a tconstruct config is evidence of history, not evidence of current gameplay."
+				"How to begin troubleshooting: trust the Mods screen and JEI first, then the mods folder. A missing jar means there are no valid Tinkers item IDs or recipes to put into automatic quests."
+				"What comes next: this chapter intentionally uses checkmarks and zero rewards so nobody is sent hunting for impossible materials."
+			]
+			id: "6DE3B73D0A1B5F00"
+			tasks: [{
+				id: "0F900AFADF6700AF"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Old Configs Are Not a Mod"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6DE3B73D0A1B5F00"]
+			description: [
+				"What this is: a release checklist for any later Tinkers proposal: a Forge 1.20.1 build, its matching Mantle dependency, server and client startup, JEI recipes, world-safe ore generation, and multiplayer casting."
+				"Why it matters: grout, fuel, faucets, casting tables, smeltery controllers, tool parts, repairs, and modifiers change between versions. A quest must describe the installed recipes, not a remembered version."
+				"How to begin later: test the melter first, then a minimum smeltery, one cast, one metal tool, repairs, and one modifier in a disposable world before the live server receives anything."
+				"What comes next: only after those checks pass should this parked chapter become real progression."
+			]
+			id: "7F9807E5C66C1532"
+			tasks: [{
+				id: "57105636F15634AE"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "What Must Be Tested Before Tinkers Returns"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+}

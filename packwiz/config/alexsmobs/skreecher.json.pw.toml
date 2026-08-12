@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/skreecher.json"
+filename = "skreecher.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/skreecher.json"
+hash-format = "sha256"
+hash = "7437c0e259dad0e1e3c6cf7b24b856e4b1efc5f2ade4ea5c1bb32b360d6e2404"

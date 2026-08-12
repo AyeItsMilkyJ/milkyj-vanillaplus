@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/guster_spawns.json"
+filename = "guster_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/guster_spawns.json"
+hash-format = "sha256"
+hash = "e28128fcc9567030803a2274fa109f7985bc2f26e59ccc18db64353c93a56765"

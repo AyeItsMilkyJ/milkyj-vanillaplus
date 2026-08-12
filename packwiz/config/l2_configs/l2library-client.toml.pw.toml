@@ -1,0 +1,8 @@
+name = "Managed config: l2_configs/l2library-client.toml"
+filename = "l2library-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/l2_configs/l2library-client.toml"
+hash-format = "sha256"
+hash = "bee1c76cbc66e917babe40a1fc94132bc9c227aa69e17d27417cd77dab532e74"

@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/farmersdelight/models/block/pie.json"
+filename = "pie.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/farmersdelight/models/block/pie.json"
+hash-format = "sha256"
+hash = "5b76385cdac9d535d6107df6b12abc4c944ec5ef0a2d50dd85eb63db3e16f1e3"

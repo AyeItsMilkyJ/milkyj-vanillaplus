@@ -1,0 +1,12 @@
+name = "Storage Labels"
+filename = "labels-1.20-2.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/x6r7yhfi/versions/euTZP75U/labels-1.20-2.0.0.jar"
+hash-format = "sha512"
+hash = "a069d8670bc6747b446bf2de1b917145112b33ab0734983bcb6810a984d026a5edb28f75a3424dbccc3299d2ffe08513c5668aa5c3658ee7a696f692ad30f3fd"
+
+[update.modrinth]
+mod-id = "x6r7yhfi"
+version = "euTZP75U"

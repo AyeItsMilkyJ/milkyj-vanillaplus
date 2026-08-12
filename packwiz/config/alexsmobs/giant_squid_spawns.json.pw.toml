@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/giant_squid_spawns.json"
+filename = "giant_squid_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/giant_squid_spawns.json"
+hash-format = "sha256"
+hash = "598a33aa535fa5edae67b8b4f83df3bf978e52963c0f5cd379a822c86d8ad9fc"

@@ -1,0 +1,8 @@
+name = "Managed config: suppsquared-common.toml"
+filename = "suppsquared-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/suppsquared-common.toml"
+hash-format = "sha256"
+hash = "2c20ac633c33b24a105115888730e73444ea6d11a291318de3cf5fa157f83685"

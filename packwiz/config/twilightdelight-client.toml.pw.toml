@@ -1,0 +1,8 @@
+name = "Managed config: twilightdelight-client.toml"
+filename = "twilightdelight-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/twilightdelight-client.toml"
+hash-format = "sha256"
+hash = "8c145f814d98a7a9465efb9496c5ebe703b89c92c6f5f43bb18a65e36a2d7f17"

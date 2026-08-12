@@ -1,0 +1,298 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "first_days"
+	group: "6427D16BBC5EB81E"
+	icon: "minecraft:campfire"
+	id: "5EBE63337CA92B96"
+	order_index: 3
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Get dependable tools, food and shelter before chasing strange structures. The modded world rewards preparation."
+				"Build the first base around repeatable routines: a safe bed, cooked food, labelled storage, spare tools, and a visible mine entrance. Decoration can begin immediately, but survival infrastructure keeps every later project enjoyable."
+				"The first chapter of the Chronicle calls this the Hearth Test: could a new player arrive at night, understand the room, eat, sleep, replace a tool, and learn where everyone went without asking for rescue?"
+				"Once the method works, label its inputs, outputs, controls, route, or habitat in plain language and show one teammate. Shared documentation turns a completed quest into knowledge that remains useful when the original player is offline."
+			]
+			id: "3BC686C3FBF1D35F"
+			rewards: [{
+				id: "1E200504031E8CED"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [
+				{
+					id: "70EA9C758EA3F358"
+					item: {
+						Count: 1
+						id: "minecraft:stone_pickaxe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3D2875EB692C9AC9"
+					item: {
+						Count: 1
+						id: "minecraft:shield"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Stone and Steel"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3BC686C3FBF1D35F"]
+			description: [
+				"Iron unlocks shields, buckets, shears, Create parts, knives and many utility recipes. Keep a healthy reserve."
+				"The first chapter of the Chronicle calls this the Hearth Test: could a new player arrive at night, understand the room, eat, sleep, replace a tool, and learn where everyone went without asking for rescue?"
+				"Build the first base around repeatable routines: a safe bed, cooked food, labelled storage, spare tools, and a visible mine entrance. Decoration can begin immediately, but survival infrastructure keeps every later project enjoyable."
+				"Before marking this lesson complete, identify every named block, item, creature, or interface in JEI and Jade. Inspect both recipes and uses, then perform one small manual test so the objective represents understood behaviour rather than a lucky craft."
+			]
+			id: "54C781F3CD01DB25"
+			rewards: [
+				{
+					count: 16
+					id: "204890B0227A96D9"
+					item: "minecraft:coal"
+					type: "item"
+				}
+				{
+					id: "3F73840E2B53CB49"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [{
+				count: 16L
+				id: "1079D15D8ADC3FBE"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
+			title: "An Iron Foundation"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["54C781F3CD01DB25"]
+			description: [
+				"Comforts adds sleeping bags and hammocks for travel. A normal bed still sets spawn, so keep home safe before using portable options."
+				"The first chapter of the Chronicle calls this the Hearth Test: could a new player arrive at night, understand the room, eat, sleep, replace a tool, and learn where everyone went without asking for rescue?"
+				"Build the first base around repeatable routines: a safe bed, cooked food, labelled storage, spare tools, and a visible mine entrance. Decoration can begin immediately, but survival infrastructure keeps every later project enjoyable."
+			]
+			id: "472E57FDA26EA8F4"
+			rewards: [{
+				id: "1C18F0E4F746EEB2"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "691076856ED76FCC"
+				item: "comforts:sleeping_bag_white"
+				type: "item"
+			}]
+			title: "A Portable Rest"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["54C781F3CD01DB25"]
+			description: [
+				"Chalk marks help label caves, dangerous routes and explored branches. Combine them with map waypoints for long expeditions."
+				"Leave signs, chalk marks, or map pins at junctions. A route that only makes sense to its builder is not yet shared infrastructure, especially after caves, structures, and portals begin branching in several dimensions."
+				"The first chapter of the Chronicle calls this the Hearth Test: could a new player arrive at night, understand the room, eat, sleep, replace a tool, and learn where everyone went without asking for rescue?"
+				"Build the first base around repeatable routines: a safe bed, cooked food, labelled storage, spare tools, and a visible mine entrance. Decoration can begin immediately, but survival infrastructure keeps every later project enjoyable."
+			]
+			id: "1E4FFC70B08D7689"
+			rewards: [{
+				count: 16
+				id: "7D96755589912CE6"
+				item: "minecraft:torch"
+				type: "item"
+			}]
+			tasks: [{
+				id: "41CA705364E827C6"
+				item: {
+					Count: 1
+					id: "chalk:white_chalk"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Leave Yourself Clues"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["472E57FDA26EA8F4"]
+			description: [
+				"Carry On lets you move many chests, barrels and creatures. Check its keybind, use both hands where required, and do not relocate another player's things without asking."
+				"Carry On moves many containers and small entities when you sneak and use the configured interaction. Empty or secure anything irreplaceable before experimenting, because a useful shortcut is still capable of moving the wrong block."
+				"The first chapter of the Chronicle calls this the Hearth Test: could a new player arrive at night, understand the room, eat, sleep, replace a tool, and learn where everyone went without asking for rescue?"
+			]
+			id: "71F06FC804030460"
+			rewards: [{
+				id: "7B29F9ED39F857C8"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "7E0DC91776A82D60"
+				title: "I found the Carry On keybind"
+				type: "checkmark"
+			}]
+			title: "Carry On"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["1E4FFC70B08D7689"]
+			description: [
+				"FallingTree speeds up logging. Larger trees consume more durability, so bring a healthy axe and avoid dropping a canopy onto your friends."
+				"Falling Tree accelerates timber work, but one tree can drop many entities at once. Replant as you harvest and avoid felling giant trees beside detailed builds, pets, or other players."
+				"Build the first base around repeatable routines: a safe bed, cooked food, labelled storage, spare tools, and a visible mine entrance. Decoration can begin immediately, but survival infrastructure keeps every later project enjoyable."
+				"The first chapter of the Chronicle calls this the Hearth Test: could a new player arrive at night, understand the room, eat, sleep, replace a tool, and learn where everyone went without asking for rescue?"
+			]
+			id: "2C1F26BCE19B7C54"
+			rewards: [{
+				id: "30E8B9F6D76FF991"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "254D7A37888A8423"
+				item: {
+					Count: 1
+					id: "minecraft:iron_axe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Timber!"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["2C1F26BCE19B7C54"]
+			description: [
+				"Easy Magic keeps enchanting-table contents in place and makes the interface friendlier. Build the vanilla setup with fifteen bookshelves for maximum choices."
+				"Easy Anvils and Easy Magic remove interface friction, not material costs. Read the preview, keep lapis and experience organised, and test valuable combinations on ordinary equipment before committing a rare enchanted item."
+				"Build the first base around repeatable routines: a safe bed, cooked food, labelled storage, spare tools, and a visible mine entrance. Decoration can begin immediately, but survival infrastructure keeps every later project enjoyable."
+				"The first chapter of the Chronicle calls this the Hearth Test: could a new player arrive at night, understand the room, eat, sleep, replace a tool, and learn where everyone went without asking for rescue?"
+			]
+			id: "56791EFEB7941CF8"
+			rewards: [
+				{
+					count: 16
+					id: "1FB9A4059EDAE144"
+					item: "minecraft:lapis_lazuli"
+					type: "item"
+				}
+				{
+					id: "2F08A2E49A48D8E7"
+					type: "xp"
+					xp: 15
+				}
+			]
+			tasks: [
+				{
+					id: "1DBC59A690093407"
+					item: "minecraft:enchanting_table"
+					type: "item"
+				}
+				{
+					count: 15L
+					id: "0AF00CF2DC082AFA"
+					item: "minecraft:bookshelf"
+					type: "item"
+				}
+			]
+			title: "Better Enchanting"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Easy Anvils improves the anvil experience, but costs still matter. Combine carefully and preserve valuable enchanted gear with Mending when possible."
+				"Easy Anvils and Easy Magic remove interface friction, not material costs. Read the preview, keep lapis and experience organised, and test valuable combinations on ordinary equipment before committing a rare enchanted item."
+				"The first chapter of the Chronicle calls this the Hearth Test: could a new player arrive at night, understand the room, eat, sleep, replace a tool, and learn where everyone went without asking for rescue?"
+				"Build the first base around repeatable routines: a safe bed, cooked food, labelled storage, spare tools, and a visible mine entrance. Decoration can begin immediately, but survival infrastructure keeps every later project enjoyable."
+			]
+			id: "063A59CCA4DD3620"
+			rewards: [{
+				id: "466C111B409ED7DF"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "25216B4213043E60"
+				item: "minecraft:anvil"
+				type: "item"
+			}]
+			title: "Repair and Rename"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"A lasting camp needs five things: beds, dependable food, labelled storage, a marked water source, and a waypoint. Build those before filling the base with decorations or machines."
+				"Keep spare food, blocks, tools and a shield in an obvious expedition chest. A player returning from a corpse run should not have to search through twenty containers."
+				"Light routes as well as rooms. Most early deaths happen between safe places, not inside them."
+				"Build the first base around repeatable routines: a safe bed, cooked food, labelled storage, spare tools, and a visible mine entrance. Decoration can begin immediately, but survival infrastructure keeps every later project enjoyable."
+			]
+			id: "6A4A0BB2F9D111AB"
+			rewards: [{
+				id: "00003AF571675F78"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "The five anchors of a safe beginning"
+			tasks: [{
+				id: "092CAE14A995134A"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "From Spawn to Settlement"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6A4A0BB2F9D111AB"]
+			description: [
+				"The server handles ordinary exploration well, but thousands of loose items, animals, hoppers or always-running machines still create work every tick. Prefer controlled farms and storage over giant piles of entities."
+				"Switch machines off when they are not producing anything. Avoid permanently loading distant areas unless they perform a useful job, and clean up abandoned boats, minecarts and dropped items."
+				"Good engineering is not only fast. It is observable, repairable and quiet when idle."
+				"Build the first base around repeatable routines: a safe bed, cooked food, labelled storage, spare tools, and a visible mine entrance. Decoration can begin immediately, but survival infrastructure keeps every later project enjoyable."
+			]
+			id: "341C28816B831FA9"
+			rewards: [{
+				id: "00DF54A82EE4F4EC"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Performance is another shared resource"
+			tasks: [{
+				id: "007F1F07EEC904B0"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Build for a Healthy World"
+			x: 1.5d
+			y: 5.0d
+		}
+	]
+	title: "First Days and Vanilla Foundations"
+}

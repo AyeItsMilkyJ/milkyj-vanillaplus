@@ -1,0 +1,244 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "vehicles"
+	group: "676547C5A87BA338"
+	icon: "immersive_aircraft:biplane"
+	id: "0F73D94269F5D8E4"
+	order_index: 9
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"What this is: AstikorCarts Redux adds wood-specific Hand Carts that a player pulls and Supply Carts that attach to a mount and carry much more cargo."
+				"Why it matters: these are early overland storage vehicles with no fuel system. They are useful for building runs and farm hauling before aircraft or rail infrastructure exists."
+				"How to begin: inspect the oak_hand_cart and oak_supply_cart recipes in JEI, then find the Attach/Detach Cart keybind. Test steering and unloading on flat ground beside home."
+				"What comes next: add roads and a labelled parking area, or move to specialist farm carts when hauling alone is no longer enough."
+			]
+			id: "6740A213AA035F39"
+			rewards: [{
+				id: "4EF9C6F2B3472C47"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "16F7BBF563EC4D01"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Hand Carts and Supply Carts"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6740A213AA035F39"]
+			description: [
+				"What this is: Animal Carts carry riders, while Plows, Reapers, and Seed Drills perform different farm jobs. Each wood family has its own item, but the behaviour is shared."
+				"Why it matters: a cart can make a large farm pleasant without becoming an unexplained machine. Tool, seed, mount, and rider requirements still matter."
+				"How to begin: choose one job, read its tooltip and JEI recipe, and test a short row. Learn the slow-mode and attach controls before entering crops, pens, or narrow village streets."
+				"What comes next: keep spare tools or seeds nearby and document which cart is safe for passengers, harvest, planting, or path work."
+			]
+			id: "23BD29330147D352"
+			rewards: [{
+				id: "4C3950821098CB58"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "5ECC74BA16F1C3F0"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Animal and Farm Carts"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["23BD29330147D352"]
+			description: [
+				"Small Ships gives exploration boats real cargo and character. Begin with a cog, then build a larger sailing ship when the group can afford it."
+				"Small Ships are mobile expedition infrastructure rather than disposable boats. Learn boarding, cargo, sail, and recovery controls near home, then stock the vessel with beds, food, leads, spare boats, and a marked harbour."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "46592A2E4AB8D605"
+			rewards: [{
+				id: "1AB60B38F61E857B"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "290E4B8E6B5C7CC6"
+				item: "smallships:oak_cog"
+				type: "item"
+			}]
+			title: "Take to the Water"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["23BD29330147D352"]
+			description: [
+				"Galleys carry the team and supplies across long coasts. Bring beds, food, spare boats and marked return routes."
+				"Small Ships are mobile expedition infrastructure rather than disposable boats. Learn boarding, cargo, sail, and recovery controls near home, then stock the vessel with beds, food, leads, spare boats, and a marked harbour."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "22F6D8A7A571B2DF"
+			rewards: [
+				{
+					count: 2
+					id: "7253FC5D69D7838C"
+					item: "minecraft:lead"
+					type: "item"
+				}
+				{
+					id: "727923D80AE9BE2C"
+					type: "xp"
+					xp: 20
+				}
+			]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [
+				{
+					id: "5EADE09C196EA20A"
+					item: "smallships:oak_galley"
+					type: "item"
+				}
+				{
+					id: "14CBE4C438A83F50"
+					item: "smallships:sail"
+					type: "item"
+				}
+			]
+			title: "A Proper Expedition Ship"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["23BD29330147D352"]
+			description: [
+				"Launch the first vessel in sheltered water and learn boarding, seats, cargo, sail handling, turning, and dismounting before carrying valuables. Different hulls trade capacity and handling rather than simply replacing vanilla boats."
+				"Build a lit harbour with clear water, a named berth, spare leads or boats, food, beds, and a visible route to storage. Load an expedition chest by category instead of filling every slot with unplanned loot."
+				"Avoid beaching the only ship on an unknown coast. Carry a shore boat and mark the anchorage so a death, disconnect, or hurried return cannot strand the rest of the crew with no way home."
+			]
+			id: "1C6ED7E70D63D294"
+			rewards: [{
+				id: "59D47D9656C4BC66"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "7699061D84DA8060"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Travel Lab: Commission a Small Ship"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["23BD29330147D352"]
+			description: [
+				"Immersive Aircraft begins with slow, readable flying machines. An Airship is ideal for sightseeing; watch fuel and landing space."
+				"Immersive Aircraft vehicles differ in speed, handling, fuel, cargo, and landing needs. Train over familiar ground, establish named landing fields, and avoid maximum-speed flight into terrain the server is still generating."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+				"Before marking this lesson complete, identify every named block, item, creature, or interface in JEI and Jade. Inspect both recipes and uses, then perform one small manual test so the objective represents understood behaviour rather than a lucky craft."
+			]
+			id: "62E98CDAA6C60AB7"
+			rewards: [{
+				id: "16235962ECF86E11"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "2D844B1342790AFD"
+				item: "immersive_aircraft:airship"
+				type: "item"
+			}]
+			title: "Take to the Air"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["23BD29330147D352"]
+			description: [
+				"Biplanes and Gyrodynes travel faster but need more care. Practise away from builds, carry a recovery kit and never assume unloaded terrain is safe."
+				"Immersive Aircraft vehicles differ in speed, handling, fuel, cargo, and landing needs. Train over familiar ground, establish named landing fields, and avoid maximum-speed flight into terrain the server is still generating."
+				"Lootr supports shared expeditions by giving each player individual contents in supported chests. Wait for teammates, do not break the container, and record landmarks that are worth revisiting with someone who missed the first trip."
+			]
+			id: "46DC220D84558D7B"
+			rewards: [{
+				id: "43F028C16A038E76"
+				type: "xp"
+				xp: 30
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [
+				{
+					id: "34A8CE7892C8AC35"
+					item: "immersive_aircraft:biplane"
+					type: "item"
+				}
+				{
+					id: "612673C92938476B"
+					item: "immersive_aircraft:gyrodyne"
+					type: "item"
+				}
+			]
+			title: "Build an Expedition Aircraft"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["23BD29330147D352"]
+			description: [
+				"Immersive Aircraft offers slower airships and faster or more specialised aircraft. Fuel, landing space, visibility and recovery matter more than top speed."
+				"Practise over familiar terrain and carry a ground kit. Do not fly at maximum speed into ungenerated terrain when the server is already building distant chunks for several players."
+				"Name landing fields and keep spare fuel there. An aircraft network is safer when every destination includes a way to leave again."
+				"Immersive Aircraft vehicles differ in speed, handling, fuel, cargo, and landing needs. Train over familiar ground, establish named landing fields, and avoid maximum-speed flight into terrain the server is still generating."
+			]
+			id: "554A5FE4B4E51ACC"
+			rewards: [{
+				id: "107DDAA36BAA683D"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "65251610A210F516"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Choose the Aircraft for the Journey"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["23BD29330147D352"]
+			description: [
+				"What this is: Create trains join tracks, stations, schedules, signals, carriages, and cargo into a persistent transport network."
+				"Why it matters: trains move groups and bulk cargo safely between known places, while ships and aircraft are better for flexible exploration."
+				"How to begin: finish the track and schedule lessons in the Create chapter, then build two clearly named stations with safe platforms and an empty test train."
+				"What comes next: add signals, cargo loading, maps, and written schedules only after the basic round trip works without manual rescue."
+			]
+			id: "3E3DCA918BEC88E7"
+			rewards: [{
+				id: "1558C75F413774E0"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "1CF94F75F207CE46"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Create Trains Are Shared Infrastructure"
+			x: 6.0d
+			y: 2.0d
+		}
+	]
+}

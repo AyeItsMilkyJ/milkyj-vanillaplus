@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/kangaroo_spawns.json"
+filename = "kangaroo_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/kangaroo_spawns.json"
+hash-format = "sha256"
+hash = "9d0ece037ecbf535d4678461c1e0c4ab3d6877d2469641ac633f3d674d8f5717"

@@ -1,0 +1,9 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "minecraft:fish_tank_frame",
+      "sprite": "minecraft:fish_tank_frame"
+    }
+  ]
+}

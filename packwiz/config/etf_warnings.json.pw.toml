@@ -1,0 +1,8 @@
+name = "Managed config: etf_warnings.json"
+filename = "etf_warnings.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/etf_warnings.json"
+hash-format = "sha256"
+hash = "368c428c9edaddb490c2e7339642e79ceddcb0a6fd8fd434c4bd8e1af34c26f8"

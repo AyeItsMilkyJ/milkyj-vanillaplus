@@ -1,0 +1,8 @@
+name = "Managed config: fallingleaves-client.toml"
+filename = "fallingleaves-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/fallingleaves-client.toml"
+hash-format = "sha256"
+hash = "2cd017af6632239398b694fadf8191d6073cf39585549876cc682843f521ecb3"

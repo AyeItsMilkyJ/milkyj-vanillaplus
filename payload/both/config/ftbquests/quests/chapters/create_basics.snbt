@@ -1,0 +1,555 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "create_basics"
+	group: "455989FDDDEB7EAA"
+	icon: "create:large_cogwheel"
+	id: "36119855CD15B1E0"
+	order_index: 5
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Create teaches visually. Hover a component in JEI or your inventory and hold W to watch its animated Ponder scene. Use the mouse wheel to step through it slowly."
+				"When a machine is confusing, Ponder it before spending materials."
+				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
+				"Create's design language is motion you can read. The workshop guild values a slower machine that teaches its own operation more than a compact tangle that only its absent builder understands."
+			]
+			id: "4201CE5BFBBC062D"
+			rewards: [
+				{
+					id: "73EE0892EA05E606"
+					item: "create:wrench"
+					type: "item"
+				}
+				{
+					id: "74C16A1F83544972"
+					type: "xp"
+					xp: 5
+				}
+			]
+			tasks: [{
+				id: "791BDDF8D51F2707"
+				title: "I opened and stepped through a Create Ponder scene"
+				type: "checkmark"
+			}]
+			title: "Lesson 1: Ponder Before Building"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4201CE5BFBBC062D"]
+			description: [
+				"Andesite Alloy is Create's foundational material. Pin its recipe in JEI and keep a labelled supply beside the workshop."
+				"Create's design language is motion you can read. The workshop guild values a slower machine that teaches its own operation more than a compact tangle that only its absent builder understands."
+				"Create uses rotational power rather than electricity. Speed is RPM; capacity is the stress the source can support. A fast source can still be too weak, and raising speed often increases the network's stress use."
+				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
+			]
+			id: "1AC77EEB81F556DC"
+			rewards: [{
+				id: "3F5C240C69E9A29A"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				count: 8L
+				id: "1A99AD36FC72DC2C"
+				item: "create:andesite_alloy"
+				type: "item"
+			}]
+			title: "Lesson 2: Andesite Alloy"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1AC77EEB81F556DC"]
+			description: [
+				"Wear Engineer's Goggles to read speed, stress and machine details. The wrench rotates and safely removes most Create blocks; sneak-use it when the normal click does something else."
+				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
+				"Create's design language is motion you can read. The workshop guild values a slower machine that teaches its own operation more than a compact tangle that only its absent builder understands."
+			]
+			id: "09CB7E54442B5B87"
+			rewards: [{
+				id: "05CC913346FB21AB"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					id: "222410049ACA8FAF"
+					item: "create:goggles"
+					type: "item"
+				}
+				{
+					id: "6798439DB9292C20"
+					item: "create:wrench"
+					type: "item"
+				}
+			]
+			title: "Lesson 3: Wrench and Goggles"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["09CB7E54442B5B87"]
+			description: [
+				"Water wheels provide dependable early rotational power. Ponder the wheel, place it in flowing water and use the goggles to confirm that it turns."
+				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
+				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
+				"Create uses rotational power rather than electricity. Speed is RPM; capacity is the stress the source can support. A fast source can still be too weak, and raising speed often increases the network's stress use."
+			]
+			id: "2250D40C885B51F2"
+			rewards: [{
+				id: "3EDCC96D8169F6DD"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				id: "650E38A78D40120E"
+				item: "create:water_wheel"
+				type: "item"
+			}]
+			title: "Lesson 4: Generate Rotation"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2250D40C885B51F2"]
+			description: [
+				"Shafts carry rotation in a straight line. Cogwheels turn corners or change speed; gearboxes redirect shafts cleanly. Two meshed cog sizes change speed and reverse direction."
+				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
+				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
+				"Give every line a labelled input, a visible processing section, an overflow-safe output, and an obvious shutoff. These four pieces turn an experiment into a machine the whole server can maintain."
+			]
+			id: "0D9196F06BAA6EB5"
+			rewards: [{
+				id: "45515EE63CB0376B"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					count: 8L
+					id: "40454898A130D0BC"
+					item: "create:shaft"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "0C7C3B7F89B42211"
+					item: "create:cogwheel"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "7D71B3A14C62C70A"
+					item: "create:large_cogwheel"
+					type: "item"
+				}
+				{
+					id: "6C05A6E001DCAC51"
+					item: "create:gearbox"
+					type: "item"
+				}
+			]
+			title: "Lesson 5: Shafts, Cogs and Gearboxes"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0D9196F06BAA6EB5"]
+			description: [
+				"RPM is speed; stress capacity is the amount of machinery a source can drive. Adding machines consumes capacity, and overstressed networks stop completely. Read both values with goggles."
+				"Create uses rotational power rather than electricity. Speed is RPM; capacity is the stress the source can support. A fast source can still be too weak, and raising speed often increases the network's stress use."
+				"Create's design language is motion you can read. The workshop guild values a slower machine that teaches its own operation more than a compact tangle that only its absent builder understands."
+			]
+			id: "653A5307BAFA7BE8"
+			rewards: [{
+				id: "448A1E2A7DEAE33F"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "6157AAE5CE25CC17"
+				title: "I inspected a running network's speed and stress"
+				type: "checkmark"
+			}]
+			title: "Lesson 6: Speed Is Not Power"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["653A5307BAFA7BE8"]
+			description: [
+				"A Mechanical Press works over a Depot or moving belt. Put a Basin below it only for compacting recipes; Ponder shows both arrangements."
+				"Test processing with one item before feeding a stack. Fans need the correct medium in their air stream, basin recipes may need heat, and presses behave differently over a Depot, Belt, or Basin."
+				"Create's design language is motion you can read. The workshop guild values a slower machine that teaches its own operation more than a compact tangle that only its absent builder understands."
+				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
+			]
+			id: "4164748FA85EDE6A"
+			rewards: [{
+				id: "055CD88017A9CF7D"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					id: "088C158B9E91064B"
+					item: "create:mechanical_press"
+					type: "item"
+				}
+				{
+					id: "54AB98B49F53BB51"
+					item: "create:depot"
+					type: "item"
+				}
+			]
+			title: "Lesson 8: The Mechanical Press"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4164748FA85EDE6A"]
+			description: [
+				"Encased Fans push or pull entities and items. Air passing through water, lava, fire or soul fire performs different bulk processing recipes; JEI shows the safe arrangement."
+				"Test processing with one item before feeding a stack. Fans need the correct medium in their air stream, basin recipes may need heat, and presses behave differently over a Depot, Belt, or Basin."
+				"Give every line a labelled input, a visible processing section, an overflow-safe output, and an obvious shutoff. These four pieces turn an experiment into a machine the whole server can maintain."
+			]
+			id: "3119C51ADD982ABF"
+			rewards: [{
+				id: "230DDB35317506A1"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				id: "34A6C0D785309E7A"
+				item: "create:encased_fan"
+				type: "item"
+			}]
+			title: "Lesson 9: Process with Air"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3119C51ADD982ABF"]
+			description: [
+				"A Mechanical Mixer above a Basin handles mixing recipes. Some recipes require heat from a Blaze Burner; JEI labels the required heat level."
+				"Test processing with one item before feeding a stack. Fans need the correct medium in their air stream, basin recipes may need heat, and presses behave differently over a Depot, Belt, or Basin."
+				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
+				"Give every line a labelled input, a visible processing section, an overflow-safe output, and an obvious shutoff. These four pieces turn an experiment into a machine the whole server can maintain."
+			]
+			id: "449599EDF06A1DB9"
+			rewards: [{
+				id: "7C9162FF51A4A764"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "50C885E554954002"
+					item: "create:mechanical_mixer"
+					type: "item"
+				}
+				{
+					id: "58E70A176F74A8DA"
+					item: "create:basin"
+					type: "item"
+				}
+			]
+			title: "Lesson 10: Mixing in a Basin"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["449599EDF06A1DB9"]
+			description: [
+				"What this is: two Crushing Wheels grind items more effectively than the early Millstone. Both wheels must spin inward toward the gap."
+				"Why it matters: the pair unlocks higher-throughput crushing recipes and useful secondary outputs shown in JEI."
+				"How to begin: hover a Crushing Wheel and hold W. Build the Ponder layout openly, power both sides, and drop one test item through the top before adding chutes or belts."
+				"What comes next: once direction, output, and overflow are proven, connect it to the filtered logistics line."
+			]
+			id: "1F2F7FDA97C0DC94"
+			rewards: [{
+				id: "60467A9D309284B5"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "02E9581D7974EAE9"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Crushing Wheels: Make Them Face Each Other"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1F2F7FDA97C0DC94"]
+			description: [
+				"What this is: a Mechanical Saw processes recipes or cuts trees, while a Mechanical Drill breaks blocks directly in front of it. Rotation speed changes how quickly they work."
+				"Why it matters: these blocks turn a powered line or moving contraption into a wood processor, quarry head, tunnel machine, or automated harvest tool."
+				"How to begin: Ponder each block separately. Test a stationary upward-facing Saw recipe and a guarded Drill on ordinary stone before attaching either to a contraption."
+				"What comes next: add filters, collection, an obvious shutdown, and guards so the machine cannot eat a build or a teammate."
+			]
+			id: "0868E133B828D769"
+			rewards: [{
+				id: "5DEDE9267D0B9C07"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "17349F6E066CE7C1"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Saws Cut; Drills Break"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0868E133B828D769"]
+			description: [
+				"Belts carry items. Funnels insert or extract, Chutes move vertically, and filters decide what may pass. Build a short visible route and test it before hiding anything."
+				"Test processing with one item before feeding a stack. Fans need the correct medium in their air stream, basin recipes may need heat, and presses behave differently over a Depot, Belt, or Basin."
+				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
+			]
+			id: "7B0C1910CB444EA6"
+			rewards: [{
+				id: "0B872C549C99F6E2"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					count: 2L
+					id: "38AF9C556C7F3DBB"
+					item: "create:belt_connector"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "1222866D05B34536"
+					item: "create:andesite_funnel"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "448ED9AFE6B6ACD8"
+					item: "create:chute"
+					type: "item"
+				}
+				{
+					id: "35D3BE541B5A99EF"
+					item: "create:filter"
+					type: "item"
+				}
+			]
+			title: "Lesson 11: Move Items Deliberately"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7B0C1910CB444EA6"]
+			description: [
+				"Automate one useful loop such as ore crushing, dough ingredients or building blocks. Include a labelled input, processing step, filtered output and overflow-safe storage."
+				"Show another player how to stop and restart it."
+				"Give every line a labelled input, a visible processing section, an overflow-safe output, and an obvious shutoff. These four pieces turn an experiment into a machine the whole server can maintain."
+				"Ponder the component, then build a tiny exposed test rig. Confirm direction, RPM, stress capacity, input face, and output face before hiding shafts or committing the machine to a decorated workshop."
+			]
+			id: "1A354ABA1BE5171F"
+			rewards: [
+				{
+					count: 8
+					id: "00A1BC229E245A15"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
+				{
+					id: "45F7E7E2ECDE872C"
+					type: "xp"
+					xp: 30
+				}
+			]
+			tasks: [{
+				id: "6A1726FE2716F17A"
+				title: "A documented Create line is producing useful items"
+				type: "checkmark"
+			}]
+			title: "Practical: Your First Production Line"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["1A354ABA1BE5171F"]
+			description: [
+				"When a Create machine stops, begin at the power source. Use goggles to verify rotation, follow every shaft and gearbox, then check the network's stress capacity and RPM."
+				"A source can be spinning while the network is overstressed. Increasing speed may make the problem worse because many components consume more stress at higher RPM."
+				"Test machines one operation at a time. A visible temporary shaft is better than a beautiful hidden network nobody can debug."
+				"When a device is silent, trace rotation from the source one block at a time with Engineer's Goggles. Check reversed gearboxes, disconnected shafts, incorrect faces, overstress, and recipe requirements in that order."
+			]
+			id: "4EAA9A43A9020901"
+			rewards: [{
+				id: "36C6E00E1A980E65"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "729D436B8DA20974"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Diagnosing a Silent Machine"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4EAA9A43A9020901"]
+			description: [
+				"Heat zinc and copper in a basin to make brass. Brass components enable smarter logistics and precision mechanisms."
+				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
+				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+				"Steam power depends on a complete boiler: heat, water, enough tank volume, and correctly attached engines. Read every gauge before increasing size, and keep fuel and water failure modes accessible."
+			]
+			id: "3C8A246AFBC5BCB3"
+			rewards: [{
+				id: "46AF62DA56D1E971"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				count: 8L
+				id: "137DD683C9AA06F9"
+				item: "create:brass_ingot"
+				type: "item"
+			}]
+			title: "Enter the Brass Age"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["3C8A246AFBC5BCB3"]
+			description: [
+				"Mechanical Crafters reproduce shaped recipes at large scale. Arrange them as the recipe grid and give the network enough rotational power."
+				"Mechanical Crafters must face and connect correctly, receive ingredients in the recipe's shape, and point the finished output somewhere valid. Build a temporary back wall so orientation remains visible during setup."
+				"Steam power depends on a complete boiler: heat, water, enough tank volume, and correctly attached engines. Read every gauge before increasing size, and keep fuel and water failure modes accessible."
+				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+			]
+			id: "6C2795B621514EE3"
+			rewards: [{
+				id: "353E19785E462023"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				count: 9L
+				id: "4C25881B98D5D80B"
+				item: "create:mechanical_crafter"
+				type: "item"
+			}]
+			title: "Mechanical Crafting"
+			x: 6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6C2795B621514EE3"]
+			description: [
+				"Create tracks curve naturally between endpoints. Keep main lines gentle, light tunnels and test routes before building decorative stations."
+				"Trains are public infrastructure. Name stations by destination, provide safe platforms and schedules or signs, and test a route with empty cargo before trusting it with the expedition's only rare materials."
+				"Speed controllers change RPM; they do not create extra stress capacity. Diagnose the source and load first, then tune speed for the slowest operation that still meets the factory's actual demand."
+				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
+			]
+			id: "40B5E1218A0226CD"
+			rewards: [{
+				id: "3859E67E589A2420"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					count: 32L
+					id: "5A7D860E821070EE"
+					item: "create:track"
+					type: "item"
+				}
+				{
+					id: "6C5ED55D77AC28F4"
+					item: "create:railway_casing"
+					type: "item"
+				}
+			]
+			title: "Lay the Railway"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["40B5E1218A0226CD"]
+			description: [
+				"Schedules automate station routes and conditions. Start with a two-station loop, then add cargo conditions only after the basic route works."
+				"Trains are public infrastructure. Name stations by destination, provide safe platforms and schedules or signs, and test a route with empty cargo before trusting it with the expedition's only rare materials."
+				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
+				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+			]
+			id: "579F2C00A9B13FE7"
+			rewards: [{
+				id: "5CF81601A5619C32"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "57E697CE5318CC22"
+				item: "create:schedule"
+				type: "item"
+			}]
+			title: "Make Trains Useful"
+			x: 10.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["579F2C00A9B13FE7"]
+			description: [
+				"Create: Enchantment Industry adds liquid experience, tanks and machines for moving enchantment work into a factory. The Disenchanter removes enchantments and captures experience instead of discarding the whole opportunity."
+				"Treat enchanted loot as a decision: keep the item, salvage the enchantment path or convert unwanted work into stored experience. Never feed named or borrowed gear into a line without checking it."
+				"Build an Experience Hatch near the tank so players can deliberately deposit or withdraw levels. Label input chests so ordinary repair gear cannot enter the system by accident."
+				"Enchantment Industry treats experience as a resource that can be collected, moved, and applied. Label fluid routes carefully and never test an unproven process on the team's only high-level enchanted tool."
+			]
+			id: "5A53AAEC0E3B4B96"
+			rewards: [{
+				id: "4F404B3AC8369ADE"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "60ECED289908D9A0"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Enchantment Industry: Liquid Experience"
+			x: 10.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5A53AAEC0E3B4B96"]
+			description: [
+				"The first Create engineers did not discover magic power. They learned to make ordinary rotation visible, measurable and reusable. Shafts became grammar; cogs became punctuation; factories became arguments built from motion."
+				"Their best machines were understandable from a walkway. Their worst machines were sealed behind walls until one broken belt silenced an entire district."
+				"Modern engineers honour them by building systems that can stop safely, explain themselves and serve more than one player's private ambition."
+				"Write signs, books, map labels, and albums in plain practical language first. Lore becomes believable when another player can follow the road, reproduce the meal, repair the machine, or recognise the warning it preserves."
+			]
+			id: "71CEDD5D336CCB38"
+			rewards: [{
+				id: "2395F678DAE90D19"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "6D339E7853017809"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Andesite Tinkerers"
+			x: 8.0d
+			y: 6.0d
+		}
+	]
+}

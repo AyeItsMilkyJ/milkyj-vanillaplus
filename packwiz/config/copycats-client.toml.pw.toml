@@ -1,0 +1,8 @@
+name = "Managed config: copycats-client.toml"
+filename = "copycats-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/copycats-client.toml"
+hash-format = "sha256"
+hash = "9c4e1c84d2cd936b850b7d69ab97e4b617e464551cc3ce44aeb0aaed4eb6c6c5"

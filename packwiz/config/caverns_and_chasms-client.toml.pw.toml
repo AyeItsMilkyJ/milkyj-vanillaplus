@@ -1,0 +1,8 @@
+name = "Managed config: caverns_and_chasms-client.toml"
+filename = "caverns_and_chasms-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/caverns_and_chasms-client.toml"
+hash-format = "sha256"
+hash = "ac4fad73b20151ee9f0de09dcc137310e5dcb44b68164c1d739eb562de848992"

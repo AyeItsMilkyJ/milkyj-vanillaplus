@@ -1,0 +1,8 @@
+name = "Managed config: astikorcartsredux-client.toml"
+filename = "astikorcartsredux-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/astikorcartsredux-client.toml"
+hash-format = "sha256"
+hash = "157229abeff72272f3d9e40904f1b5b780672c21361d3052d24f9853f0a85366"

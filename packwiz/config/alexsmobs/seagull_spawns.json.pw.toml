@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/seagull_spawns.json"
+filename = "seagull_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/seagull_spawns.json"
+hash-format = "sha256"
+hash = "93a1ea47739d9505210503c2ba904d8219cc476f46fa98292562e39cc14a455a"

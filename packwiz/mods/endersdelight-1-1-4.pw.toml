@@ -1,0 +1,12 @@
+name = "endersdelight-1.1.4"
+filename = "endersdelight-1.1.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/2uEhdGKt/versions/Jaf9wxnO/endersdelight-1.1.4.jar"
+hash-format = "sha512"
+hash = "554a74f9db3b4496fbb98bee3f456495cecdd9e9471d1f8a0de031dfff928f3903e0a76d9e3cbbc785b315833f23bf8593419d11207eb082c8a195e8fe65ad90"
+
+[update.modrinth]
+mod-id = "2uEhdGKt"
+version = "Jaf9wxnO"

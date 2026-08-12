@@ -1,0 +1,8 @@
+name = "Managed config: betterdeserttemples/README.txt"
+filename = "README.txt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterdeserttemples/README.txt"
+hash-format = "sha256"
+hash = "732367c7bc3aae8e34796077a586a5207ff349da424d1e43fa3443a38791d2d4"

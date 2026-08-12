@@ -1,0 +1,8 @@
+name = "Managed config: bountiful/bountiful.json"
+filename = "bountiful.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/bountiful/bountiful.json"
+hash-format = "sha256"
+hash = "342cadf22b0b686efde080ea3bea8cf7773c5c1f5c975aa46742a2a84175080f"

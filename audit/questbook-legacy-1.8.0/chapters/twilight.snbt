@@ -1,0 +1,419 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "twilight"
+	group: "4A5CA40AA14EE19B"
+	icon: "twilightforest:magic_map"
+	id: "03B20E9770FFEFFF"
+	order_index: 3
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Bring a map, food and an empty loot bag. Mark the portal immediately; the forest's progression protects later regions until bosses are defeated."
+				"Twilight Forest progression is advancement-gated. If an area inflicts a strange effect or blocks interaction, open the Twilight advancements and defeat the required earlier encounter rather than trying to bypass the biome."
+				"The Twilight Road is a sequence, not a checklist race. The Chronicle asks the team to name each lodge and record one lesson from every boss so the forest becomes a travelled country."
+				"Enter each boss region with a bed or return point outside, spare food, blocks, ranged options, and room for loot. Secure the retreat before crossing the arena boundary."
+			]
+			id: "671F69D7D0ACA1E3"
+			rewards: [{
+				id: "744E2AA47E5BDAB4"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				dimension: "twilightforest:twilight_forest"
+				id: "2D89140F5F3F0A2F"
+				type: "dimension"
+			}]
+			title: "Enter the Twilight Forest"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Magic Maps reveal major landmarks. Craft a Magic Map Focus, then the map, and explore methodically instead of wandering into locked biomes."
+				"Craft and use the Magic Map to read major landmarks. Build a labelled portal lodge, mark cleared structures, and keep trophies because progression and later objectives may depend on proof of earlier victories."
+				"Twilight Forest progression is advancement-gated. If an area inflicts a strange effect or blocks interaction, open the Twilight advancements and defeat the required earlier encounter rather than trying to bypass the biome."
+				"Boss structures teach their own combat grammar through layout: hedge walls, tower stairs, swamp fire, maze levels, fortress doors, and frozen terrain are part of the encounter rather than scenery around it."
+			]
+			id: "53A711A23A5429D6"
+			rewards: [{
+				id: "5C8089B49E708B94"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "47C5F395AC1C8E8A"
+					item: "twilightforest:magic_map_focus"
+					type: "item"
+				}
+				{
+					id: "652134D4811D9AF0"
+					item: "twilightforest:magic_map"
+					type: "item"
+				}
+			]
+			title: "Craft a Magic Map"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["53A711A23A5429D6"]
+			description: [
+				"The Naga is the intended first boss. Fight in its courtyard, keep moving and collect scales for useful equipment."
+				"Boss structures teach their own combat grammar through layout: hedge walls, tower stairs, swamp fire, maze levels, fortress doors, and frozen terrain are part of the encounter rather than scenery around it."
+				"Enter each boss region with a bed or return point outside, spare food, blocks, ranged options, and room for loot. Secure the retreat before crossing the arena boundary."
+				"Many structures contain unique blocks, plants, food, and materials beyond the boss reward. Survey after victory, take renewable samples, and preserve enough of the site that later players can understand what happened there."
+			]
+			id: "74F7EC7A7EC36E90"
+			rewards: [{
+				id: "19C15BBEBA3855AC"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				advancement: "twilightforest:progress_naga"
+				criterion: ""
+				id: "1254712D7CC0B787"
+				type: "advancement"
+			}]
+			title: "The Naga"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Reflect projectiles during the shield phase, then adapt as the fight changes. The tower contains valuable loot but many vertical hazards."
+				"The Twilight Road is a sequence, not a checklist race. The Chronicle asks the team to name each lodge and record one lesson from every boss so the forest becomes a travelled country."
+				"Twilight Forest progression is advancement-gated. If an area inflicts a strange effect or blocks interaction, open the Twilight advancements and defeat the required earlier encounter rather than trying to bypass the biome."
+				"Many structures contain unique blocks, plants, food, and materials beyond the boss reward. Survey after victory, take renewable samples, and preserve enough of the site that later players can understand what happened there."
+			]
+			id: "7EE98C0D78F5C28C"
+			rewards: [{
+				id: "57E20203C6082D7E"
+				type: "xp"
+				xp: 30
+			}]
+			tasks: [{
+				advancement: "twilightforest:progress_lich"
+				criterion: ""
+				id: "5ED08775D6214713"
+				type: "advancement"
+			}]
+			title: "The Twilight Lich"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7EE98C0D78F5C28C"]
+			description: [
+				"The swamp labyrinth is intentionally confusing. Bring spare maps, food, blocks and a clear marking system before hunting the Minoshroom."
+				"Enter each boss region with a bed or return point outside, spare food, blocks, ranged options, and room for loot. Secure the retreat before crossing the arena boundary."
+				"Craft and use the Magic Map to read major landmarks. Build a labelled portal lodge, mark cleared structures, and keep trophies because progression and later objectives may depend on proof of earlier victories."
+				"Boss structures teach their own combat grammar through layout: hedge walls, tower stairs, swamp fire, maze levels, fortress doors, and frozen terrain are part of the encounter rather than scenery around it."
+			]
+			id: "00475615546177C2"
+			rewards: [{
+				id: "6793EF873D788349"
+				type: "xp"
+				xp: 30
+			}]
+			tasks: [{
+				advancement: "twilightforest:progress_labyrinth"
+				criterion: ""
+				id: "585AC41D7E35A498"
+				type: "advancement"
+			}]
+			title: "The Labyrinth"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"After the labyrinth, face the Hydra. Use cover, watch its heads and prepare fire resistance if the pack's brewing supplies allow it."
+				"Boss structures teach their own combat grammar through layout: hedge walls, tower stairs, swamp fire, maze levels, fortress doors, and frozen terrain are part of the encounter rather than scenery around it."
+				"Enter each boss region with a bed or return point outside, spare food, blocks, ranged options, and room for loot. Secure the retreat before crossing the arena boundary."
+				"Many structures contain unique blocks, plants, food, and materials beyond the boss reward. Survey after victory, take renewable samples, and preserve enough of the site that later players can understand what happened there."
+			]
+			id: "155778A7C7E50FA2"
+			rewards: [{
+				id: "3666F3004A0CA3E6"
+				type: "xp"
+				xp: 35
+			}]
+			tasks: [{
+				advancement: "twilightforest:progress_hydra"
+				criterion: ""
+				id: "52A37D7DA4947AC3"
+				type: "advancement"
+			}]
+			title: "Fire Swamp: Hydra"
+			x: 10.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["7EE98C0D78F5C28C"]
+			description: [
+				"Break into the stronghold and defeat the Knight Phantoms. Stay together in the maze-like halls."
+				"Boss structures teach their own combat grammar through layout: hedge walls, tower stairs, swamp fire, maze levels, fortress doors, and frozen terrain are part of the encounter rather than scenery around it."
+				"Twilight Forest progression is advancement-gated. If an area inflicts a strange effect or blocks interaction, open the Twilight advancements and defeat the required earlier encounter rather than trying to bypass the biome."
+				"Enter each boss region with a bed or return point outside, spare food, blocks, ranged options, and room for loot. Secure the retreat before crossing the arena boundary."
+			]
+			id: "03371BF0A008F68A"
+			rewards: [{
+				id: "28B8E680F27AF62F"
+				type: "xp"
+				xp: 30
+			}]
+			tasks: [{
+				advancement: "twilightforest:progress_knights"
+				criterion: ""
+				id: "15F4E7AD74A50500"
+				type: "advancement"
+			}]
+			title: "Knightly Stronghold"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["03371BF0A008F68A"]
+			description: [
+				"Climb the Dark Tower, understand its devices and use the arena traps during the Ur-Ghast fight."
+				"Boss structures teach their own combat grammar through layout: hedge walls, tower stairs, swamp fire, maze levels, fortress doors, and frozen terrain are part of the encounter rather than scenery around it."
+				"Enter each boss region with a bed or return point outside, spare food, blocks, ranged options, and room for loot. Secure the retreat before crossing the arena boundary."
+				"Many structures contain unique blocks, plants, food, and materials beyond the boss reward. Survey after victory, take renewable samples, and preserve enough of the site that later players can understand what happened there."
+			]
+			id: "3541D5E6B4B02060"
+			rewards: [{
+				id: "4CA04F1BCF976DE1"
+				type: "xp"
+				xp: 35
+			}]
+			tasks: [{
+				advancement: "twilightforest:progress_ur_ghast"
+				criterion: ""
+				id: "463A07EBA4405E42"
+				type: "advancement"
+			}]
+			title: "Dark Tower: Ur-Ghast"
+			x: 10.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["155778A7C7E50FA2"]
+			description: [
+				"The snowy progression leads through the Alpha Yeti to the Aurora Palace. Prepare for slippery terrain and a long vertical dungeon."
+				"Boss structures teach their own combat grammar through layout: hedge walls, tower stairs, swamp fire, maze levels, fortress doors, and frozen terrain are part of the encounter rather than scenery around it."
+				"Craft and use the Magic Map to read major landmarks. Build a labelled portal lodge, mark cleared structures, and keep trophies because progression and later objectives may depend on proof of earlier victories."
+				"Twilight Forest progression is advancement-gated. If an area inflicts a strange effect or blocks interaction, open the Twilight advancements and defeat the required earlier encounter rather than trying to bypass the biome."
+			]
+			id: "3F7D34B175815A13"
+			rewards: [{
+				id: "146A75D2E90E23EB"
+				type: "xp"
+				xp: 45
+			}]
+			tasks: [
+				{
+					advancement: "twilightforest:progress_yeti"
+					criterion: ""
+					id: "4E1E5027B2480266"
+					type: "advancement"
+				}
+				{
+					advancement: "twilightforest:progress_glacier"
+					criterion: ""
+					id: "0DE1EF3BC5EA8129"
+					type: "advancement"
+				}
+			]
+			title: "Yeti and Snow Queen"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Complete the troll and highlands progression, then reach the final plateau. The journey itself is the current culmination of the dimension."
+				"Twilight Forest progression is advancement-gated. If an area inflicts a strange effect or blocks interaction, open the Twilight advancements and defeat the required earlier encounter rather than trying to bypass the biome."
+				"Craft and use the Magic Map to read major landmarks. Build a labelled portal lodge, mark cleared structures, and keep trophies because progression and later objectives may depend on proof of earlier victories."
+				"Boss structures teach their own combat grammar through layout: hedge walls, tower stairs, swamp fire, maze levels, fortress doors, and frozen terrain are part of the encounter rather than scenery around it."
+			]
+			id: "144DB7060DE2B290"
+			rewards: [
+				{
+					id: "4906C92493710D98"
+					item: "minecraft:nether_star"
+					type: "item"
+				}
+				{
+					id: "5A67060D28D312DC"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [
+				{
+					advancement: "twilightforest:progress_troll"
+					criterion: ""
+					id: "2F17EEECDB9A81A0"
+					type: "advancement"
+				}
+				{
+					advancement: "twilightforest:progression_end"
+					criterion: ""
+					id: "303CC35B0ADA4C58"
+					type: "advancement"
+				}
+			]
+			title: "To the Final Plateau"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Twilight Forest uses ordered progression. Acid rain, darkness, barriers or other hostile effects usually mean the previous boss or achievement has not been completed."
+				"Use the Magic Map, read advancements and clear lairs deliberately instead of forcing entry into a protected biome. Keep trophies and unique drops until their purpose is known."
+				"The forest is less a maze than an argument: prove you understand one region before the next accepts you."
+				"Twilight Forest progression is advancement-gated. If an area inflicts a strange effect or blocks interaction, open the Twilight advancements and defeat the required earlier encounter rather than trying to bypass the biome."
+			]
+			id: "667A4E8069400A5F"
+			rewards: [{
+				id: "51AA54D03D400BFA"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Strange weather is a progression clue"
+			tasks: [{
+				id: "180EE6D09A7E7F92"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "When the Forest Rejects You"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["667A4E8069400A5F"]
+			description: [
+				"Secure both sides of the portal, mark them clearly and store spare food, tools and blocks nearby. The safest portal is one a naked player can reach after a disaster."
+				"Map boss arenas and completed structures rather than relying on memory. The forest repeats shapes and colours specifically to confuse careless travellers."
+				"Bring trophies home for a shared hall, but leave signs at cleared sites so later explorers know what happened there."
+				"Many structures contain unique blocks, plants, food, and materials beyond the boss reward. Survey after victory, take renewable samples, and preserve enough of the site that later players can understand what happened there."
+			]
+			id: "709157DA0DA51FE4"
+			rewards: [{
+				id: "798CE1711D885F72"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Every strange world needs a safe return"
+			tasks: [{
+				id: "0F548B57CACD057D"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Build a Twilight Trailhead"
+			x: 1.5d
+			y: 5.0d
+		}
+		{
+			description: [
+				"Twilight Forest tracks progress through advancements and protects later biomes or dungeons. Strange weather, damage, blindness, locked blocks or green barrier particles usually mean a prerequisite is missing."
+				"Open the Twilight Forest advancement page and trace the parent objective. Picking up trophies and boss drops can matter because possession often triggers the progression step."
+				"Do not tunnel around protection or assume the region is broken. The warning is the dimension telling you which story branch to finish first."
+				"Twilight Forest progression is advancement-gated. If an area inflicts a strange effect or blocks interaction, open the Twilight advancements and defeat the required earlier encounter rather than trying to bypass the biome."
+			]
+			id: "1FBEE5F24611BE52"
+			rewards: [{
+				id: "17B46B81488840DC"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Acid rain, blindness and barriers are progression messages"
+			tasks: [{
+				id: "34102511C56844BE"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Forest's Warning Effects"
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["1FBEE5F24611BE52"]
+			description: [
+				"Hedge Mazes, Hollow Hills, Quest Groves and several smaller structures can be explored without advancing the main bosses. They provide loot, creatures and breathing room between major dungeons."
+				"Hollow Hills vary in size and danger. Hedge Mazes reward route marking. The Questing Ram asks for a collection rather than a fight."
+				"Use side content to restock and learn the dimension, but do not confuse clearing it with unlocking a protected boss biome."
+				"Boss structures teach their own combat grammar through layout: hedge walls, tower stairs, swamp fire, maze levels, fortress doors, and frozen terrain are part of the encounter rather than scenery around it."
+			]
+			id: "0BBE00E205F4C8A7"
+			rewards: [{
+				id: "44EA0F2C90DE06A0"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Not every landmark is part of the boss chain"
+			tasks: [{
+				id: "552ADE6C777E6430"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Hollow Hills, Hedge Mazes and the Questing Ram"
+			x: 2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["0BBE00E205F4C8A7"]
+			description: [
+				"The swamp branch runs through Labyrinth and Minoshroom to the Hydra. The dark forest branch runs through the Knightly Stronghold to the Ur-Ghast. The snowy branch runs through Alpha Yeti to Snow Queen."
+				"These branches can be divided among prepared teams, but progression items and trophies should return to the shared archive."
+				"The Highlands expects the important victories from all three branches. If the final region rejects you, compare advancements before repeating bosses at random."
+				"Twilight Forest progression is advancement-gated. If an area inflicts a strange effect or blocks interaction, open the Twilight advancements and defeat the required earlier encounter rather than trying to bypass the biome."
+			]
+			id: "354FDC9D29BACA34"
+			rewards: [{
+				id: "1344038BCE942D9F"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Swamp, dark forest and snow each lead to a required victory"
+			tasks: [{
+				id: "6D132594427EEA2C"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "After the Lich, the Path Branches"
+			x: 4.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["354FDC9D29BACA34"]
+			description: [
+				"In the Highlands, Troll Caves lead to magic beans and giant-scale resources. The Lamp of Cinders clears the thorn barrier toward the final plateau."
+				"Prepare vertical travel and storage before climbing to cloud cottages or carrying giant materials. Mark the route back through the cave and thornlands."
+				"The Final Castle remains an atmospheric culmination rather than a conventional finished final boss. Treat reaching it, documenting it and returning together as the victory."
+				"Craft and use the Magic Map to read major landmarks. Build a labelled portal lodge, mark cleared structures, and keep trophies because progression and later objectives may depend on proof of earlier victories."
+			]
+			id: "64B3817FA2B1B020"
+			rewards: [{
+				id: "3E5B55D6277AED15"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "The current ending is a journey through beans, giants and thorns"
+			tasks: [{
+				id: "5B63AC1B77E2EC9E"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Troll Caves to the Final Castle"
+			x: 6.0d
+			y: 8.0d
+		}
+	]
+	title: "Twilight Forest Progression"
+}

@@ -1,0 +1,8 @@
+name = "Managed config: betterstrongholds/forge-1_20/rareblocks.json"
+filename = "rareblocks.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/forge-1_20/rareblocks.json"
+hash-format = "sha256"
+hash = "65d7bbe700019b47cb5563643d2c0ecb15d1d54c8e9217505ea9d0e1a34c1f37"

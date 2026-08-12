@@ -1,0 +1,414 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "settlements_bounties"
+	group: "49E1A5C0DCAC0DDB"
+	icon: "minecraft:bell"
+	id: "00DDD1547B85AE77"
+	order_index: 0
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Walk the whole village before changing it. Locate beds, job blocks, food, wells, entrances and nearby hazards; then mark the settlement on the shared map."
+				"Villagers need safe paths between workstations and beds. Decorative clutter, trapdoors and complicated stairs can look excellent while making daily routines fail."
+				"In the field-guide lore, a village survives because many small routines overlap. Repair those routines before replacing the buildings that express them."
+				"Guard Villagers need clear routes, lighting, equipment, and a raid plan. Decorative walls are not protection if gates remain open, roofs spawn enemies, or villagers cannot retreat from the bell to safe beds."
+			]
+			id: "024141EA5AB0B169"
+			rewards: [{
+				id: "6A38A8B60A3DD629"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A settlement is a system, not a box of free beds"
+			tasks: [{
+				id: "121140413D5D5690"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Read the Village Before Rebuilding"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["024141EA5AB0B169"]
+			description: [
+				"Light streets and roofs, close dangerous drops, and build a readable perimeter. Guard Villagers can help defend a town, but walls and sight lines still matter."
+				"Avoid cramming every villager into a permanent trading cell. A compact trade hall can be useful, but the pack is at its best when settlements remain believable and navigable."
+				"Keep raids away from unfinished villages. Bad Omen is a group decision when other players' villagers are at risk."
+				"Guard Villagers need clear routes, lighting, equipment, and a raid plan. Decorative walls are not protection if gates remain open, roofs spawn enemies, or villagers cannot retreat from the bell to safe beds."
+			]
+			id: "54F5458D64A67BBB"
+			rewards: [{
+				id: "13FDEF1C7A9CC18E"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Safety should still look like a place people live"
+			tasks: [{
+				id: "27A0AF20EB647B2C"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Secure, Do Not Imprison"
+			x: 2.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["024141EA5AB0B169"]
+			description: [
+				"A villager claims a nearby workstation to gain a profession. Trade during working hours, leave the workstation reachable, and confirm that valuable villagers can restock."
+				"Prices react to demand, reputation and curing. Buy what the settlement can sustainably produce instead of repeatedly exhausting one trade."
+				"Label specialist buildings so everyone knows where librarians, farmers, smiths and cartographers belong."
+				"Villagers restock only when they can reach and use the correct job site under valid conditions. If a trade locks up, inspect pathfinding, workstation ownership, time of day, and safety before adding more villagers."
+			]
+			id: "44DA62AABA3492AB"
+			rewards: [{
+				id: "0C326E512DDE8A0C"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A workstation is both profession and schedule"
+			tasks: [{
+				id: "43B6DB5A75EB1D7E"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Jobs, Trades and Restocks"
+			x: 2.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["54F5458D64A67BBB", "44DA62AABA3492AB"]
+			description: [
+				"Bountiful boards offer requests with listed rewards. Read both sides carefully, check JEI for the requested item, and avoid spending unique progression materials on a weak payout."
+				"Choose bounties that fit work the group already wants to do: harvest surplus, clear known threats or deliver materials from an upcoming expedition."
+				"A good bounty creates direction without becoming compulsory homework. Let expired or unreasonable offers go."
+				"Bountiful boards generate jobs that request items and offer rewards. Read the entire bounty, reserve shared essentials, and accept work that fits current plans rather than draining the pantry for a shiny but unhelpful prize."
+			]
+			id: "1BF2742EDAD74DF2"
+			rewards: [{
+				id: "26E3AF0FFE503E14"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Turn ordinary work into a shared expedition fund"
+			tasks: [{
+				id: "4981C267C5DF447C"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "The Bounty Board"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["44DA62AABA3492AB"]
+			description: [
+				"Build several honest sources of emeralds rather than one exploitative loop. Farmers, fletchers, masons and shepherds can reward different parts of a healthy homestead."
+				"Keep a public emergency reserve for maps, name tags, rare books and group projects. Personal wealth is useful; shared liquidity saves expeditions."
+				"Never reroll a friend's named or levelled villager without asking. Their trade history is part of the settlement."
+				"A living settlement has public food, readable storage, professions, transport, defence, and room to grow. The Steward's Charter judges success by whether residents and new players can use the town without constant rescue."
+			]
+			id: "35046621C94B6A6D"
+			rewards: [{
+				id: "55E2F2E4BB797F4D"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Value comes from repeatable work"
+			tasks: [{
+				id: "110891E50DF12062"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Emeralds Are an Economy"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["54F5458D64A67BBB"]
+			description: [
+				"Give defenders clear routes, protected ranged positions and a rally point near the bell. Store shields, food, arrows and spare beds where new players can find them."
+				"During a raid, stay together and search methodically for the final attackers. Do not sprint alone into caves or forest cover while the village remains exposed."
+				"Afterwards, repair doors, lighting and terrain. Victory without reconstruction only postpones the next disaster."
+				"Guard Villagers need clear routes, lighting, equipment, and a raid plan. Decorative walls are not protection if gates remain open, roofs spawn enemies, or villagers cannot retreat from the bell to safe beds."
+			]
+			id: "46911437BC86E339"
+			rewards: [{
+				id: "3C48DA68C3B0DCD7"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Prepare the defence before the horn"
+			tasks: [{
+				id: "3C83387D55FF17DA"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Guards, Bells and Raid Plans"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["35046621C94B6A6D", "46911437BC86E339"]
+			description: [
+				"Zombie curing requires Weakness and a golden apple. Build a controlled clinic before attempting it, separate the patient from guards, and prevent sunlight or other mobs from ending the process."
+				"Use curing to recover endangered villagers and improve a functioning community, not as an excuse to create uncontrolled infection beside everyone's home."
+				"Name irreplaceable villagers and record their important trades so accidents can be understood and repaired."
+				"Curing improves trade economics but requires controlled containment and safe handling. Prepare the weakness effect, golden apple, lighting, and exit before exposing a villager to infection."
+			]
+			id: "2B98C6D95CFCF5C0"
+			rewards: [{
+				id: "6D7D7FE8A994A10D"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Powerful discounts should have a safe process"
+			tasks: [{
+				id: "4C6A1AA5C1002AFC"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Curing and Care"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["1BF2742EDAD74DF2", "35046621C94B6A6D"]
+			description: [
+				"Group related professions around a visible purpose: farmers near produce stalls, smiths by the forge, librarians around records and maps."
+				"Use signs, item frames and colour sparingly so visitors can identify trades without inspecting every villager. Leave enough room for multiplayer crowds."
+				"Markets are where homesteading, exploration and building meet. The best one tells newcomers what the settlement can make."
+				"A living settlement has public food, readable storage, professions, transport, defence, and room to grow. The Steward's Charter judges success by whether residents and new players can use the town without constant rescue."
+			]
+			id: "5EF9AC708BE10640"
+			rewards: [{
+				id: "2691603B924CE413"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Trading works better when the architecture teaches"
+			tasks: [{
+				id: "5F2412140193508F"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Build a Market That Explains Itself"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5EF9AC708BE10640"]
+			description: [
+				"Keep a modest public room with a bed, food, starter tools, a map and written directions. Do not fill it with overpowered gear that skips the pack's early lessons."
+				"Place the quest-book instructions and server rules somewhere visible. A player should be able to recover from a bad first night without needing the host online."
+				"The Chronicle calls this the Open Door: a settlement proves its strength by making arrival gentle."
+				"A living settlement has public food, readable storage, professions, transport, defence, and room to grow. The Steward's Charter judges success by whether residents and new players can use the town without constant rescue."
+			]
+			id: "0AB8C4DC0B9EEDCD"
+			rewards: [{
+				id: "057E8DC08A1FD71A"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Hospitality is progression infrastructure"
+			tasks: [{
+				id: "72C089A93761E07E"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "The New Explorer's House"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5EF9AC708BE10640"]
+			description: [
+				"Build a safe, marked route using terrain-friendly bridges, lights and rest points. If the distance is large, plan a waystone or Create rail station without erasing the journey entirely."
+				"Name the route at both ends and update the map. Infrastructure only becomes shared when other players can understand it without an escort."
+				"Leave nearby wild areas intact. A village connected to the world should not require flattening the world around it."
+				"Guard Villagers need clear routes, lighting, equipment, and a raid plan. Decorative walls are not protection if gates remain open, roofs spawn enemies, or villagers cannot retreat from the bell to safe beds."
+			]
+			id: "34638857E896ECB5"
+			rewards: [{
+				id: "6694EE1B126FE7F7"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "A road is a promise to return"
+			tasks: [{
+				id: "4575B07DDCCA223C"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Connect Home and Village"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["2B98C6D95CFCF5C0", "0AB8C4DC0B9EEDCD", "34638857E896ECB5"]
+			description: [
+				"Confirm that villagers sleep, restock and survive the night; that guards can move; and that visitors can find food, trades and exits."
+				"Choose one public improvement based on a real problem: clinic, market, wall, rail stop, farm, inn or archive. Finish it before beginning three replacements."
+				"A steward does not own the village. They make it easier for the next person to care for it."
+				"A living settlement has public food, readable storage, professions, transport, defence, and room to grow. The Steward's Charter judges success by whether residents and new players can use the town without constant rescue."
+			]
+			id: "372861338594A3F6"
+			rewards: [{
+				id: "62EAC8EA2B826CCD"
+				type: "xp"
+				xp: 30
+			}]
+			subtitle: "Measure success by what works when nobody is watching"
+			tasks: [{
+				id: "3AB5CE6624B47ACA"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Become a Settlement Steward"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Walk the village in daylight and record beds, workstations, farms, bells, paths, lighting, entrances, nearby caves, and the professions already present. Repair immediate danger before redesigning houses."
+				"Do not break every job site at once. Villagers remember claims and schedules, so move one profession deliberately, confirm access and restocking, then continue after the settlement stabilises."
+				"Preserve one local material, landmark, farm, or street pattern so the place remains recognisable to returning players. Stewardship improves a living system; it is not an excuse to flatten every village into the same trading hall."
+			]
+			id: "680215445DA0C27F"
+			rewards: [{
+				id: "7E93359B52B6D0E5"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Beds, jobs, paths, threats, and identity"
+			tasks: [{
+				id: "00270F3A10DE592D"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Steward's Lesson: Audit Before Rebuilding"
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["680215445DA0C27F"]
+			description: [
+				"More Villagers adds professions and job sites that extend familiar trade logic. Search at-more_villargers in JEI, craft one workstation, and place it where an unemployed adult can safely path to it."
+				"Observe the profession change and early trade table before locking trades. A villager must reach the claimed station to restock, and another villager may take the block if ownership becomes ambiguous."
+				"Create a public profession school with one labelled example of each useful station instead of scattering unexplained blocks through houses. The room becomes both an economy and a tutorial."
+			]
+			id: "0BA84AFD5BCEC392"
+			rewards: [{
+				id: "292C00DE11D8DB9C"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Learn workstations through recipes and observed trades"
+			tasks: [{
+				id: "7D18D0E6F4BC68B2"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Steward's Lesson: More Villager Professions"
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["0BA84AFD5BCEC392"]
+			description: [
+				"Bountiful boards appear in villages and generate bounties that request items in exchange for rewards. Read every objective, reward, quantity, and time condition before accepting or taking a bounty."
+				"Choose work that overlaps farming, fishing, building, or exploration already planned. Do not empty public food, rare breeding stock, museum pieces, or machine reserves merely because a board assigned them a value."
+				"Maintain an accepted-work chest, a completed-contract record, and a clear rule for communal ingredients. The board becomes interesting when it creates stories and circulation, not when one player silently strips every profitable offer."
+			]
+			id: "22CC2FF8449941A3"
+			rewards: [{
+				id: "0685C660C2A9B47F"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Jobs should support the town, not consume it"
+			tasks: [{
+				id: "294284C15C33998B"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Steward's Lesson: Read a Bounty Board"
+			x: 4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["22CC2FF8449941A3"]
+			description: [
+				"Guard Villagers can protect settlements, but they still depend on readable space. Clear doors and paths, light roofs and caves, secure the bell area, and give civilians a route to beds before adding more defenders."
+				"Equip guards deliberately and keep replacement supplies in an armoury. Test gates and sightlines during an ordinary night rather than discovering during a raid that defenders cannot reach the wall."
+				"Assign rally points for players, recovery food, spare bows, milk, blocks, and a safe place for valuable villagers. A raid plan should continue working when its original builder is offline."
+			]
+			id: "16DF4C52E4BAAD49"
+			rewards: [{
+				id: "2C6F85720CF0C05D"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Defence is routes and readiness, not just armour"
+			tasks: [{
+				id: "47BBCE9F4AE2B37A"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Steward's Lesson: Equip the Guard"
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["16DF4C52E4BAAD49"]
+			description: [
+				"Use the Trading Post to inspect accessible nearby trades without turning villagers into a hidden wall of identical cells. Confirm its range and keep the relevant villagers loaded, safe, and able to use their job sites."
+				"Label valuable trades and the materials that sustain them. Farmers, librarians, tool workers, and added professions form an economy only when players understand what to bring and villagers can restock."
+				"Keep cure discounts and rare offers public knowledge. The settlement's economy is strongest when a new player can participate rather than being told all useful trades belong to someone else's private basement."
+			]
+			id: "48BE4DDF821FDBCB"
+			rewards: [{
+				id: "3465DEB64255944C"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "One interface, transparent prices, protected villagers"
+			tasks: [{
+				id: "7E745FB36291AA47"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Steward's Lesson: A Public Trading Post"
+			x: 2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["48BE4DDF821FDBCB"]
+			description: [
+				"Complete a public kitchen, profession area, trading point, guarded route, map or notice board, guest beds, and transport connection. Each space must be usable without opening a private storage room."
+				"Write who maintains farms, how raids are announced, where recovered gear goes, and which materials are communal. Rules should protect cooperation without turning ordinary play into bureaucracy."
+				"Invite a player who did not build the town to spend one Minecraft day using it. Their confusion becomes the final repair list; the charter is complete when the settlement teaches hospitality through its layout."
+			]
+			id: "669789AD48E53DE1"
+			rewards: [{
+				id: "0C69247DEC56C082"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Food, work, defence, travel, and welcome"
+			tasks: [{
+				id: "56AD16D7144EA90E"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Field Exercise: Ratify the Settlement Charter"
+			x: 4.0d
+			y: 9.0d
+		}
+	]
+	title: "Settlements, Trading and Bounties"
+}

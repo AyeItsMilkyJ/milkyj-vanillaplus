@@ -1,0 +1,8 @@
+name = "Managed config: brewinandchewin-client.toml"
+filename = "brewinandchewin-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/brewinandchewin-client.toml"
+hash-format = "sha256"
+hash = "0aa704651b261b27ffa35c8b16adbf0edc74d34f51004bb157f2618c0f1154fb"

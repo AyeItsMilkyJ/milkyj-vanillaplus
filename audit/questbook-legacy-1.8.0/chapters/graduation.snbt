@@ -1,0 +1,218 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "graduation"
+	group: "4A5CA40AA14EE19B"
+	icon: "minecraft:dragon_egg"
+	id: "20553D1CB40EBB3E"
+	order_index: 8
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Maintain a shared base with food, labelled storage, safe transport, guest beds and room for future projects."
+				"Graduation measures independence and contribution rather than total completion. Choose evidence from the way you actually played: a safe route, useful room, working system, researched collection, or lesson taught to someone else."
+				"Record a legacy project with a sign, book, photograph, or map marker. Include who built it, what it does, where inputs belong, and what must never be changed while it is running."
+				"A project is ready for the community when it has a purpose, instructions, maintenance access, and a recovery plan. Beauty and complexity are welcome, but neither replaces the ability of another player to use it safely."
+			]
+			id: "58F841A08749EB89"
+			rewards: [{
+				id: "19533FB4E7936ED8"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "3A47D07441C6657B"
+				title: "Our settlement supports new players"
+				type: "checkmark"
+			}]
+			title: "A Living Settlement"
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			description: [
+				"Build a Create machine that saves the team time, document how it works and teach another player to maintain it."
+				"Graduation measures independence and contribution rather than total completion. Choose evidence from the way you actually played: a safe route, useful room, working system, researched collection, or lesson taught to someone else."
+				"A project is ready for the community when it has a purpose, instructions, maintenance access, and a recovery plan. Beauty and complexity are welcome, but neither replaces the ability of another player to use it safely."
+				"Teach by demonstration: show the interface, perform one operation slowly, let the learner repeat it, then explain the common failure. Dropping advanced equipment at their feet skips the knowledge the chapter was meant to preserve."
+			]
+			id: "7DB3C16A70A88791"
+			rewards: [{
+				id: "0FF0BDDC2A70EE2B"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "0F7679A7E4761759"
+				title: "I taught someone our Create machine"
+				type: "checkmark"
+			}]
+			title: "A Helpful Engineer"
+			x: 0.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"Display meaningful finds from archaeology, bosses and distant biomes with labels explaining where they came from."
+				"Teach by demonstration: show the interface, perform one operation slowly, let the learner repeat it, then explain the common failure. Dropping advanced equipment at their feet skips the knowledge the chapter was meant to preserve."
+				"Record a legacy project with a sign, book, photograph, or map marker. Include who built it, what it does, where inputs belong, and what must never be changed while it is running."
+				"The final Chronicle title is Steward, not Conqueror. A graduate leaves the server easier to join, richer to explore, safer to recover, and more interesting for people whose favourite mods are different from their own."
+			]
+			id: "08B20DB43DC97D36"
+			rewards: [{
+				id: "54E42794077CE24E"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "448544773CF08568"
+				title: "Our collection tells the story of the world"
+				type: "checkmark"
+			}]
+			title: "A Curious Curator"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Connect major destinations with waystones, rails, ships or marked roads and keep emergency supplies at travel hubs."
+				"Review unfinished chapters for ignorance that still causes problems, not for empty percentages. The quest book is a learning map rather than a demand that every player personally master every hobby."
+				"Teach by demonstration: show the interface, perform one operation slowly, let the learner repeat it, then explain the common failure. Dropping advanced equipment at their feet skips the knowledge the chapter was meant to preserve."
+				"Record a legacy project with a sign, book, photograph, or map marker. Include who built it, what it does, where inputs belong, and what must never be changed while it is running."
+			]
+			id: "2E9EA82DD6B1CF0D"
+			rewards: [{
+				id: "1A4223B203B40F74"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "4DB6003A4EE59F47"
+				title: "Our major destinations are connected"
+				type: "checkmark"
+			}]
+			title: "A Reliable Navigator"
+			x: 0.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"Help a newer player learn JEI, Ponder, backpacks and the quest book. Teaching the tools is the real graduation test."
+				"Review unfinished chapters for ignorance that still causes problems, not for empty percentages. The quest book is a learning map rather than a demand that every player personally master every hobby."
+				"Teach by demonstration: show the interface, perform one operation slowly, let the learner repeat it, then explain the common failure. Dropping advanced equipment at their feet skips the knowledge the chapter was meant to preserve."
+				"Record a legacy project with a sign, book, photograph, or map marker. Include who built it, what it does, where inputs belong, and what must never be changed while it is running."
+			]
+			id: "63F421645F397AED"
+			rewards: [{
+				id: "5A35A587A7DF0D74"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "0A0AA8818D51F329"
+				title: "I helped another player get started"
+				type: "checkmark"
+			}]
+			title: "No Longer the Noob"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"58F841A08749EB89"
+				"7DB3C16A70A88791"
+				"63F421645F397AED"
+				"063A59CCA4DD3620"
+				"5630715FB28AA469"
+				"0BEE6DF97C75B8EC"
+				"3680E5CFD594F78F"
+				"289CA9D9C5FE2F9F"
+				"6BB9B48B2F4D4636"
+				"78811FFBEE03EC7B"
+			]
+			description: [
+				"You have learned the pack's core systems and turned exploration into a shared world. Keep building, updating the museum and adding your own team goals."
+				"The final Chronicle title is Steward, not Conqueror. A graduate leaves the server easier to join, richer to explore, safer to recover, and more interesting for people whose favourite mods are different from their own."
+				"Graduation measures independence and contribution rather than total completion. Choose evidence from the way you actually played: a safe route, useful room, working system, researched collection, or lesson taught to someone else."
+			]
+			id: "51DFE4C61E798F50"
+			rewards: [
+				{
+					id: "260CE6E50B22CCF2"
+					item: "minecraft:dragon_head"
+					type: "item"
+				}
+				{
+					count: 32
+					id: "690E89F56A9731EB"
+					item: "minecraft:firework_rocket"
+					type: "item"
+				}
+				{
+					id: "19D9DC91F9F5CC6E"
+					type: "xp"
+					xp: 100
+				}
+			]
+			subtitle: "Quest Book Complete"
+			tasks: [{
+				id: "3DBCFFDB8FCAC4F9"
+				title: "We are ready to write our own adventures"
+				type: "checkmark"
+			}]
+			title: "MilkyJ Vanilla+ Graduate"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"After the major progression paths open, choose a project larger than personal equipment: a rail network, museum, restored ruin, wildlife sanctuary, grand apiary or automated public kitchen."
+				"Write its purpose on signs or in a book, divide it into achievable stages, and leave maintenance access for future players."
+				"The field guide ends when the settlement begins writing guides of its own."
+				"Record a legacy project with a sign, book, photograph, or map marker. Include who built it, what it does, where inputs belong, and what must never be changed while it is running."
+			]
+			id: "59B285EE74657AC6"
+			rewards: [{
+				id: "6690BC6DEC4D5DA0"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Endgame is what the group leaves behind"
+			tasks: [{
+				id: "69BB0966D5E45825"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Choose a Legacy Project"
+			x: -1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["59B285EE74657AC6"]
+			description: [
+				"Invite a newer player into one system you understand and let them operate it. Explain the reason behind each step instead of completing the task for them."
+				"Update signs, maps and storage labels whenever the world changes. Documentation is part of the build, not an optional chore after it."
+				"A completed quest proves one player learned something. A clear world proves the whole group did."
+				"Teach by demonstration: show the interface, perform one operation slowly, let the learner repeat it, then explain the common failure. Dropping advanced equipment at their feet skips the knowledge the chapter was meant to preserve."
+			]
+			id: "6E3A3DC0766E7800"
+			rewards: [{
+				id: "22332FC862E1ECA5"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Knowledge is the final renewable resource"
+			tasks: [{
+				id: "045983C382B81B23"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Teach the Next Explorer"
+			x: 1.5d
+			y: 6.0d
+		}
+	]
+	title: "Adventurer's Graduation"
+}

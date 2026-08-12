@@ -1,0 +1,8 @@
+name = "Managed config: galosphere-common.toml"
+filename = "galosphere-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/galosphere-common.toml"
+hash-format = "sha256"
+hash = "91b8a2dcf9c7f91d694cec42f218ffd77fb971b129d9772cdf8242c59f93c1c9"

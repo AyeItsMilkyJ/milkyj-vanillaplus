@@ -1,0 +1,8 @@
+name = "Managed config: ftbquests/quests/chapters/welcome.snbt"
+filename = "welcome.snbt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/welcome.snbt"
+hash-format = "sha256"
+hash = "35b0e95e8819ca6f8a85ad02bb4447662a3591a7cd8901a64427037940d3c992"

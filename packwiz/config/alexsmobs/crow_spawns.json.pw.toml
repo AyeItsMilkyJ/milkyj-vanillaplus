@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/crow_spawns.json"
+filename = "crow_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/crow_spawns.json"
+hash-format = "sha256"
+hash = "d6efac8863ba7351eb0c0d94ed16d77aa0b6a1f6f9103e9135e449d452eddb17"

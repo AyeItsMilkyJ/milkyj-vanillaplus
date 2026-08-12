@@ -1,0 +1,441 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "new_horizons"
+	group: "676547C5A87BA338"
+	icon: "explorerscompass:explorerscompass"
+	id: "1CDE54C53326DB2E"
+	order_index: 7
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Nature's Compass locates biomes; Explorer's Compass locates structures. Search ranges are limited, and exploration still generates chunks, so coordinate with the team."
+				"Nature's Compass searches for a selected biome while Explorer's Compass searches registered structures. Choose the exact target, allow the scan to finish, and remember that a missing result can mean the target is outside the configured search range."
+				"A compass points toward a destination but does not make the intervening chunks free to generate. Coordinate searches, travel one route together where possible, mark the successful location, and avoid repeated wide scans for places the team already knows."
+			]
+			id: "6851604085D9D68D"
+			rewards: [{
+				id: "2EDB301AC6BB0863"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "7275225EBCC8844E"
+					item: "naturescompass:naturescompass"
+					type: "item"
+				}
+				{
+					id: "430A05CAF1BE8772"
+					item: "explorerscompass:explorerscompass"
+					type: "item"
+				}
+			]
+			title: "Find Biomes and Structures"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6851604085D9D68D"]
+			description: [
+				"Warp Stones are reusable with cooldowns; scrolls are consumable. Keep one escape option in your backpack before entering a new dimension."
+				"Waystones must be activated before they become reliable destinations. Name them by place and dimension, keep the arrival area safe, and carry a scroll or Warp Stone when an expedition cannot assume the destination chunk is convenient."
+				"Storage should have layers: backpack for the road, drawers for bulk, ordinary labelled containers for unique objects, and a searchable terminal across the room. One giant unsorted network only hides disorder behind a search bar."
+			]
+			id: "133E40031AC9FB97"
+			rewards: [{
+				id: "37FC1962BA591161"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					id: "3518C9697533920E"
+					item: {
+						Count: 1
+						id: "waystones:warp_stone"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "642A91B660A9EE41"
+					item: "waystones:return_scroll"
+					type: "item"
+				}
+			]
+			title: "Emergency Return Options"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["133E40031AC9FB97"]
+			description: [
+				"Search the compass for biomesoplenty entries. Pick a bright grassland, wetland, highland or colourful forest rather than accepting another dark oak forest."
+				"Nature's Compass locates biomes but does not remove travel cost or chunk generation. Search deliberately, coordinate with other explorers, and stop once the team has a useful route rather than generating an enormous empty frontier."
+				"The Cartographers call distant terrain a promise, not a consumable. Roads, ships, rails, and named outposts make exploration cumulative instead of turning each trip into another disconnected sprint."
+				"Terralith shapes the large landforms; Biomes O' Plenty and smaller biome mods supply distinct plants, woods, and palettes. Several systems can influence one view, so identify the exact biome before guessing which mod made it."
+			]
+			id: "41EBD1EB56456B34"
+			rewards: [{
+				id: "116EC4D37A11B141"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "0869ACEE00E15B2A"
+					item: "naturescompass:naturescompass"
+					type: "item"
+				}
+				{
+					id: "110D66F965153B85"
+					title: "I selected a Biomes O' Plenty biome in the compass"
+					type: "checkmark"
+				}
+			]
+			title: "Use Nature's Compass"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["41EBD1EB56456B34"]
+			description: [
+				"Lavender fields and other flower-rich regions add colour without changing survival progression. Collect a small sample and leave the landscape recognisable."
+				"Bring saplings and a small renewable sample home, but leave the original ecosystem recognisable. A palette library is more useful than stripping every rare grove around its first waypoint."
+				"Record biome name, coordinates, season, useful resources, hazards, and a screenshot or photograph. The same wood colour can come from different ecological stories and may have different nearby ingredients."
+				"Nature's Compass locates biomes but does not remove travel cost or chunk generation. Search deliberately, coordinate with other explorers, and stop once the team has a useful route rather than generating an enormous empty frontier."
+			]
+			id: "44731C0D67C0988E"
+			rewards: [{
+				id: "0E9D49FC1B89EDF4"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [
+				{
+					count: 8L
+					id: "45588D21DBBDBA52"
+					item: "biomesoplenty:lavender"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "4AAF1FA8459213D6"
+					item: "biomesoplenty:glowflower"
+					type: "item"
+				}
+			]
+			title: "Bring Home New Colour"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["41EBD1EB56456B34"]
+			description: [
+				"Jacaranda, mahogany and palm palettes suit gardens, docks and relaxed homesteads. Bring saplings home so builders do not repeatedly generate distant chunks."
+				"Terralith shapes the large landforms; Biomes O' Plenty and smaller biome mods supply distinct plants, woods, and palettes. Several systems can influence one view, so identify the exact biome before guessing which mod made it."
+				"Bring saplings and a small renewable sample home, but leave the original ecosystem recognisable. A palette library is more useful than stripping every rare grove around its first waypoint."
+				"Record biome name, coordinates, season, useful resources, hazards, and a screenshot or photograph. The same wood colour can come from different ecological stories and may have different nearby ingredients."
+			]
+			id: "6D639F2689D82CE0"
+			rewards: [{
+				id: "1242174AD2D1CA38"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [
+				{
+					id: "18CC47BA4F06A668"
+					item: "biomesoplenty:jacaranda_sapling"
+					type: "item"
+				}
+				{
+					id: "63F6BE05E77A19A0"
+					item: "biomesoplenty:mahogany_sapling"
+					type: "item"
+				}
+				{
+					id: "36D1EDA54887B38B"
+					item: "biomesoplenty:palm_sapling"
+					type: "item"
+				}
+			]
+			title: "Warm-Climate Woods"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["41EBD1EB56456B34"]
+			description: [
+				"Fir, redwood and maple create brighter alternatives to the dark forests near home. Establish a shared tree farm before using them in large builds."
+				"Terralith shapes the large landforms; Biomes O' Plenty and smaller biome mods supply distinct plants, woods, and palettes. Several systems can influence one view, so identify the exact biome before guessing which mod made it."
+				"Record biome name, coordinates, season, useful resources, hazards, and a screenshot or photograph. The same wood colour can come from different ecological stories and may have different nearby ingredients."
+				"Bring saplings and a small renewable sample home, but leave the original ecosystem recognisable. A palette library is more useful than stripping every rare grove around its first waypoint."
+			]
+			id: "76F0EC09B27BCF82"
+			rewards: [{
+				id: "2AF223F17E5BDD27"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [
+				{
+					id: "1FE199CE8080723D"
+					item: "biomesoplenty:fir_sapling"
+					type: "item"
+				}
+				{
+					id: "2FD71835149CCED5"
+					item: "biomesoplenty:redwood_sapling"
+					type: "item"
+				}
+				{
+					id: "2EE20B55821B3302"
+					item: "biomesoplenty:orange_maple_sapling"
+					type: "item"
+				}
+			]
+			title: "Cool-Climate Woods"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["41EBD1EB56456B34"]
+			description: [
+				"Observe the silhouette, entrance, nearby terrain and mob sounds before entering. Large structures often contain vertical routes, traps or sealed encounters that are invisible from the doorway."
+				"Mark the entrance on the map and place a physical trail marker. Record whether the site is unexplored, active, cleared or reserved for the group."
+				"The Chronicle treats structures as evidence. Loot is useful, but architecture tells you what kind of danger was expected here."
+				"Dungeons and Taverns, Dungeons Plus, the Graveyard, Towns and Towers, and Repurposed Structures add destinations with different scales. Observe from outside and choose an objective before entering every doorway you see."
+			]
+			id: "08B4FE3DADF6D411"
+			rewards: [{
+				id: "146CD2EE6C640B2C"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "7427F5993060FEC5"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "A Structure Is a Signal"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["08B4FE3DADF6D411"]
+			description: [
+				"Carry food, light, blocks, water and a way home. Then add environment-specific tools: milk for effects, fire resistance, ladders, doors, boats or slow falling."
+				"Leave one inventory section empty and place valuables into a backpack before entry. Full pockets make good loot feel like a logistics problem."
+				"Set a return time. Tired groups take worse risks and communicate less clearly."
+				"Mark entrances, cleared routes, dangerous branches, and exits differently. Bring spare blocks and a water bucket, retreat to a secured room when inventory fills, and never let loot pressure erase the return path."
+			]
+			id: "14EC247DD954A406"
+			rewards: [{
+				id: "35AC61048A924FE3"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "65FC87B118651835"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Pack for the Unknown"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["14EC247DD954A406"]
+			description: [
+				"Lootr gives each player their own chest inventory in supported structures. Let everyone open the chest rather than breaking it or assuming one person's result is all that exists."
+				"Unique boss drops, decorations and items outside Lootr may still be shared. Announce them and decide ownership before leaving the room."
+				"Do not dismantle containers until the group confirms everyone has looted and the structure no longer needs them."
+				"Lootr gives supported containers a separate inventory for each player. Leave the container intact and let each teammate open it; breaking or moving it can discard the very multiplayer benefit the mod provides."
+			]
+			id: "4F7A5E294B48D343"
+			rewards: [{
+				id: "47813EE7B3F57E67"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "3962D60C6566DF8C"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Lootr and Shared Treasure"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4F7A5E294B48D343"]
+			description: [
+				"A locked arena, unusual altar, trophy display or dramatic health bar is a threshold. Stop, regroup and research the mod before crossing it."
+				"Prepare spare equipment and decide whether defeat can damage the world or strand players. Never assume a new boss behaves like a stronger zombie."
+				"Activate the encounter only when everyone who wants to participate is present and ready."
+				"Mark entrances, cleared routes, dangerous branches, and exits differently. Bring spare blocks and a water bucket, retreat to a secured room when inventory fills, and never let loot pressure erase the return path."
+			]
+			id: "3A8709849D637D3D"
+			rewards: [{
+				id: "777D8553A2548A6D"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "006D587BD4716C8D"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "The Boss Threshold"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3A8709849D637D3D"]
+			description: [
+				"Open the Curios interface and learn its slots. Artifacts and Relics may require a specific slot, activation input, charge, cooldown or condition before their effect appears."
+				"Test one item at a time in a safe place. Overlapping movement, vision or defensive effects can hide which relic is helping or causing trouble."
+				"Build loadouts around a task instead of wearing every rare object because it is rare."
+				"Curios adds equipment slots outside normal armour. Open its interface, read each item's slot tooltip, and compare effects in a safe place; an unequipped treasure provides no benefit and a bad combination can obscure its own cause."
+			]
+			id: "6416430518B427C3"
+			rewards: [{
+				id: "58EABC225CCE402A"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "4ED938C90757C0A6"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Curios, Artifacts and Relics"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3A8709849D637D3D"]
+			description: [
+				"Exposure cameras use film and preserve in-world moments. Start with a camera and black-and-white film, then learn the viewfinder controls."
+				"Exposure follows a complete film workflow: load compatible film, take exposures, remove the exposed roll, develop it in the Lightroom, then organise or copy the resulting photographs. Practise every step at home first."
+				"Keep blank, exposed, and developed film in visibly separate storage. If the camera appears unresponsive, check loaded film, remaining frames, keybinds, and recipe compatibility before replacing the mod or resource pack."
+				"A creative expedition should return with more than screenshots: develop an album, label an object, write the route, and explain one mechanic. Art becomes field knowledge when it helps the next player understand the place."
+			]
+			id: "5A57FC5CEB08D333"
+			rewards: [{
+				id: "71BE6BED6206C799"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [
+				{
+					id: "6A75379C025E55CC"
+					item: "exposure:camera"
+					type: "item"
+				}
+				{
+					id: "48AECCE0F2DB5F37"
+					item: "exposure:black_and_white_film"
+					type: "item"
+				}
+			]
+			title: "Take a Real Photograph"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3A8709849D637D3D"]
+			description: [
+				"Naturalist animals have behaviours worth observing. Use a Bug Net and camera rather than killing unfamiliar creatures for no reason."
+				"Naturalist, Alex's Mobs, Critters and Companions, aquatic mods, and Friends and Foes reward observation. Watch movement and sound, consult an animal dictionary when available, and avoid killing an unfamiliar creature merely to identify it."
+				"Once the method works, label its inputs, outputs, controls, route, or habitat in plain language and show one teammate. Shared documentation turns a completed quest into knowledge that remains useful when the original player is offline."
+			]
+			id: "1CA7ED993BDE8D70"
+			rewards: [{
+				id: "241E2AAB85650BA3"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [
+				{
+					id: "38EB569022867E3C"
+					item: {
+						Count: 1
+						id: "naturalist:bug_net"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5BF4AE43FBA88EAE"
+					item: "naturalist:butterfly"
+					type: "item"
+				}
+			]
+			title: "Observe Wildlife"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["3A8709849D637D3D"]
+			description: [
+				"Towers, taverns, mines, temples and buried chambers are not random interruptions. Together they imply generations that mapped routes, guarded resources and failed in different ways."
+				"Loot is only the most obvious thing a structure contains. Architecture reveals local materials, traps reveal feared enemies, and abandoned workspaces reveal what earlier people considered valuable."
+				"Mark useful sites, restore what deserves a second life, and leave signs at cleared dangers. An explored world should become more legible."
+				"Write signs, books, map labels, and albums in plain practical language first. Lore becomes believable when another player can follow the road, reproduce the meal, repair the machine, or recognise the warning it preserves."
+			]
+			id: "5FCB22913E016C22"
+			rewards: [{
+				id: "495497C1AE538DD8"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "390527F2DEF7DE05"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Roads of the Lost"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["5FCB22913E016C22"]
+			description: [
+				"The expanded wildlife belongs to ecosystems rather than a universal list of targets. Predators, scavengers, pollinators and strange cave species communicate through movement and sound long before they drop an item."
+				"A naturalist asks where a creature lives, what it eats and what threatens it. A careless hunter asks only what it drops and eventually discovers an empty habitat."
+				"Sanctuaries, aquariums and careful breeding are another form of progression: proof that the settlement can understand life without immediately consuming it."
+				"The Chronicle links mechanics to memory: every portal changes the rules, every structure records a purpose, and every recovered object asks what the settlement will do with its knowledge."
+			]
+			id: "53986E1D3385AA38"
+			rewards: [{
+				id: "7B7F524FCCFFC546"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "35277E58F3F8D340"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Wild Concord"
+			x: 4.0d
+			y: 4.0d
+		}
+	]
+}

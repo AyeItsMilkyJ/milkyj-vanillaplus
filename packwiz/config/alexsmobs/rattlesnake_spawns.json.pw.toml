@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/rattlesnake_spawns.json"
+filename = "rattlesnake_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/rattlesnake_spawns.json"
+hash-format = "sha256"
+hash = "db297004bd46b2506a5b53dfcbaa8ff9110b8c69f9a9a487d25f077c4dbaa16f"

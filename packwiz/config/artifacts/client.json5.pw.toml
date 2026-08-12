@@ -1,0 +1,8 @@
+name = "Managed config: artifacts/client.json5"
+filename = "client.json5"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/artifacts/client.json5"
+hash-format = "sha256"
+hash = "d3f4d57475eb31c19b79fb5d6f2c3787fbdeccbeb2e9133c2fd95ff4c477afa4"

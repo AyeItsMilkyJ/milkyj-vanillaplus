@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/flutter_spawns.json"
+filename = "flutter_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/flutter_spawns.json"
+hash-format = "sha256"
+hash = "0407bbf9b7a554d70d71e0b0a076332ab5577cf2bb08b17add4040caedade241"

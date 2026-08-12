@@ -1,0 +1,8 @@
+name = "Managed config: everycomp-common.toml"
+filename = "everycomp-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/everycomp-common.toml"
+hash-format = "sha256"
+hash = "662ecbc927ea1b7936eddef9fc99e9fa222a31f7394e71e2e4115e3fdeb3b4a7"

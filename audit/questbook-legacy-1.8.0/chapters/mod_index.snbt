@@ -1,0 +1,251 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "mod_index"
+	group: "6427D16BBC5EB81E"
+	icon: "minecraft:knowledge_book"
+	id: "45DFCDD945387AF5"
+	order_index: 0
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Use JEI for recipes and uses: hover an item and press R for recipes or U for uses. Search with an at-sign followed by a mod name when you only want one mod's items."
+				"Use Jade to identify the block, creature or machine in front of you. Hold Create's Ponder key over Create components to watch animated explanations that are often clearer than a wall of text."
+				"Use this field guide for progression, hazards and group plans. A checkmark lesson means read it, try the idea, then mark it complete; it is not pretending the game can detect good judgement."
+			]
+			id: "20245EF322046A0F"
+			rewards: [{
+				id: "08697AF894CEFF4A"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "JEI, Jade, Ponder and the quest book answer different questions"
+			tasks: [{
+				id: "0C4C093B50D8C6EB"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Your Four Ways to Learn"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["20245EF322046A0F"]
+			description: [
+				"Terralith reshapes large-scale terrain while Biomes O' Plenty adds its own plants, woods and biome palettes. TerraBlender helps biome mods cooperate, and Serene Seasons changes colour and crop behaviour over time."
+				"YUNG's structures, Dungeons and Taverns, Repurposed Structures, Better Archeology and smaller landmark mods then place destinations into that terrain. Their content appears only in chunks generated with the mod installed."
+				"If something seems absent, travel beyond the explored map and use Nature's Compass or Explorer's Compass selectively. A compass is a search tool, not a reason to skip every journey between discoveries."
+			]
+			id: "237EC65649665A03"
+			rewards: [{
+				id: "3415427EAFCEFF48"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Terrain, biomes, seasons and structures are several systems working together"
+			tasks: [{
+				id: "765903CC8DEE2BCB"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The World Layer"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["20245EF322046A0F"]
+			description: [
+				"Farmer's Delight adds crops, knives, cutting boards, rich soil, stoves and multi-ingredient meals. Its Delight addons extend that pantry into the Nether, End, Aether, Twilight Forest, caves and oceans."
+				"Brewin' and Chewin' handles fermentation and drinks, Herbal Brews handles tea and coffee, and Cooking for Blockheads helps arrange a practical kitchen. Serene Seasons makes crop planning matter."
+				"This part of the pack is progression even when no boss bar appears. A stocked public kitchen, readable farm and guest bed can change the whole server for a new player."
+				"Return here after major discoveries. The same mod may participate in several chapters: a cave ingredient can become food, a relic can change travel, and a decorative block can become the language of a whole settlement."
+			]
+			id: "25171C2FD0FDA588"
+			rewards: [{
+				id: "6594B52599EFCB36"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Farming becomes cooking, hospitality and settlement design"
+			tasks: [{
+				id: "08523CD051A3118F"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Hearth Layer"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["20245EF322046A0F"]
+			description: [
+				"Create is the main technology mod. Shafts move rotation, cogs change layout, gearboxes redirect it, belts move items, and machines consume stress capacity rather than electrical power."
+				"Central Kitchen and Slice and Dice connect Create to food; Enchantment Industry handles experience and enchantments; Steam 'n' Rails expands trains; Copycats, Connected and Deco make machinery fit a build."
+				"Build one process at a time and leave space around it. A machine that can be explained, stopped and repaired by a friend is more advanced than a faster machine nobody understands."
+				"The index separates world generation, homesteading, engineering, creatures, treasure, and optimisation so a new player can choose a direction without reading hundreds of pages in order."
+			]
+			id: "0762C4053BFAD78C"
+			rewards: [{
+				id: "33C3C905B97648D4"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Create turns motion into visible, understandable automation"
+			tasks: [{
+				id: "5388F8737F324232"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Engineering Layer"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["237EC65649665A03"]
+			description: [
+				"The Twilight Forest uses advancement-gated boss progression. The Aether restarts material progression in floating islands and three dungeon tiers. Deeper and Darker makes the Warden the key to the Otherside."
+				"Alex's Caves hides six rare cave biomes behind tablets, a compendium and cave maps. Aquamirae places a frozen Ice Maze and drowned Ship Graveyard into cold oceans."
+				"Do not enter these as ordinary mining trips. Read their chapter, establish a return point and decide what would make the expedition complete before crossing the threshold."
+				"Library, compatibility, and performance mods may appear in the installed list without their own adventure chapter. They support the experience; they are not missing content that players need to craft or conquer."
+			]
+			id: "4287525D5D13FC1B"
+			rewards: [{
+				id: "24E6CECD719BCFD1"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Each major destination has its own rules"
+			tasks: [{
+				id: "37EF1D81F7B19718"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Adventure Layer"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["25171C2FD0FDA588", "4287525D5D13FC1B"]
+			description: [
+				"Alex's Mobs, Naturalist, Critters and Companions, Friends and Foes, biome mob overhauls and aquatic mods make ecosystems more varied. Many creatures are neutral, territorial, tameable or useful without being killed."
+				"Doggy Talents Next and Domestication Innovation turn pets into long-term companions with needs, modes and equipment. Mowzie's Mobs adds encounter-driven creatures whose animations teach their combat rules."
+				"Identify first, watch second and interact third. The pack rewards a field naturalist more often than it rewards someone swinging at every unfamiliar silhouette."
+				"The index separates world generation, homesteading, engineering, creatures, treasure, and optimisation so a new player can choose a direction without reading hundreds of pages in order."
+			]
+			id: "652F7ADFB3FFC029"
+			rewards: [{
+				id: "285060F139B7D8D5"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Animals, companions and bosses are not interchangeable mobs"
+			tasks: [{
+				id: "1960A784E768B36A"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Creature Layer"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["25171C2FD0FDA588"]
+			description: [
+				"Lootr gives supported chests an individual inventory for each player. Artifacts adds curios found through exploration and mimics, while Relics gives unusual equipment a research and progression system."
+				"Better Archeology adds suspicious blocks, fossils, artifact shards and an analysis table. Display mods, labels, photographs and albums turn isolated finds into a public record."
+				"Before salvaging or equipping something rare, identify its mod with Jade or the tooltip, read its uses in JEI and ask whether it belongs in a loadout, workshop or museum."
+				"The index separates world generation, homesteading, engineering, creatures, treasure, and optimisation so a new player can choose a direction without reading hundreds of pages in order."
+			]
+			id: "5D8FE8F2CB87C6DA"
+			rewards: [{
+				id: "53E5A7ADC2378FDD"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Loot, artifacts and relics need context"
+			tasks: [{
+				id: "0CF29CF712A91A05"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Treasure Layer"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0762C4053BFAD78C", "5D8FE8F2CB87C6DA"]
+			description: [
+				"Waystones, Sophisticated Backpacks, Tom's Simple Storage, Storage Drawers, Carry On, Comforts, FallingTree, right-click harvesting and the crafting helpers reduce repetitive work."
+				"Performance mods such as ModernFix, FerriteCore, AI Improvements, Alternate Current and Clumps protect memory or tick time. Distant Horizons draws far terrain without asking the server to fully simulate it."
+				"Utility does not mean free power. Label shared storage, agree before moving another player's blocks and use long-distance tools to support roads and expeditions rather than erase them."
+				"Library, compatibility, and performance mods may appear in the installed list without their own adventure chapter. They support the experience; they are not missing content that players need to craft or conquer."
+			]
+			id: "78EB0B22EC380E61"
+			rewards: [{
+				id: "10D75BA86B3D06E7"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Some of the best mods remove friction instead of adding a new world"
+			tasks: [{
+				id: "11BC9EFAA1842961"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Quiet Utility Layer"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["652F7ADFB3FFC029", "78EB0B22EC380E61"]
+			description: [
+				"If you want a home, follow Homestead. If you want machines, follow Create. If you want a destination, choose one dimension or the structure chapter. If you want collecting, begin with wildlife, archaeology or photography."
+				"Do not attempt every chapter at once. Bring one branch to a satisfying milestone, then let what you discovered suggest the next branch."
+				"The guide is flexible because the server is a shared world, not a solo campaign with one correct build order. Your path can cross your friends' paths without replacing them."
+				"The index separates world generation, homesteading, engineering, creatures, treasure, and optimisation so a new player can choose a direction without reading hundreds of pages in order."
+			]
+			id: "33454B8363C2C12A"
+			rewards: [{
+				id: "26D7153B11C6C5CD"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A beginner only needs one next question"
+			tasks: [{
+				id: "4899FDEB334FA275"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Choose One Thread"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["33454B8363C2C12A"]
+			description: [
+				"When a mod surprises you, record the useful part: the block name, creature behaviour, structure entrance, machine failure or recipe category that finally made sense."
+				"Put that knowledge into signs, books, maps, albums and builds. A quest book can introduce the world, but only the players can keep its field notes alive."
+				"In the Chronicle, knowledge becomes a horizon when it is shared. Mark this complete when you have chosen your first thread and told the group what you hope to learn."
+				"Use this index to decide which chapter answers the current question. Recipe viewers explain inputs, guidebooks explain a single mod, and the Field Guide connects those facts to this server's shared progression."
+			]
+			id: "6372F0702CB1687B"
+			rewards: [{
+				id: "4FAAA726961A969E"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Learn enough to leave useful clues for the next explorer"
+			tasks: [{
+				id: "6D8E3A508C6FB346"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Reader's Oath"
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+	title: "Start Here: What Every Mod Does"
+}

@@ -1,0 +1,8 @@
+name = "Managed defaultconfigs: productivebees-server.toml"
+filename = "productivebees-server.toml"
+side = "server"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/defaultconfigs/productivebees-server.toml"
+hash-format = "sha256"
+hash = "907080edcd84a96fc0671366fd7b430e9a996e9cac047909b45dc32d73df72ed"

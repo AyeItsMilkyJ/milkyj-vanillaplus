@@ -1,0 +1,8 @@
+name = "Managed config: skinlayers.json"
+filename = "skinlayers.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/skinlayers.json"
+hash-format = "sha256"
+hash = "d7f1049d145e5e74b29c9079c70a2e14c27125e20ffaadfed9b7364ad887e3a0"

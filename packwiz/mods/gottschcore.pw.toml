@@ -1,0 +1,12 @@
+name = "GottschCore"
+filename = "gottschcore-1.20.1-2.8.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Pww2zMWB/versions/RD1E4KwS/gottschcore-1.20.1-2.8.0.jar"
+hash-format = "sha512"
+hash = "a39252c7ef216346abfeebd53a35347977fed945a314c5c069891788be114add2748840b49980d03393c500a5e6478390c8eb30bd2e04b06c2befca148817dd6"
+
+[update.modrinth]
+mod-id = "Pww2zMWB"
+version = "RD1E4KwS"

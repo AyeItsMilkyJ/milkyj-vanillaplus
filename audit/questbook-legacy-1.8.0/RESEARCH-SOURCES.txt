@@ -1,0 +1,29 @@
+MilkyJ Vanilla+ Field Guide 1.8.0 research ledger
+
+Cross-checked against the installed 1.20.1 mod files, in-game task/item namespaces,
+official project pages or wikis, and current long-form showcases. Key sources:
+
+Sophisticated Backpacks: https://modrinth.com/mod/sophisticated-backpacks
+Tom's Simple Storage creator spotlight: https://www.youtube.com/watch?v=UoIi5q8kyo8
+Storage Drawers: https://www.curseforge.com/minecraft/mc-mods/storage-drawers
+Waystones: https://modrinth.com/mod/waystones
+Supplementaries wiki: https://github.com/MehVahdJukaar/Supplementaries/wiki
+Amendments wiki: https://github.com/MehVahdJukaar/Supplementaries/wiki/Amendments
+Quark feature site: https://quarkmod.net/
+FramedBlocks: https://www.curseforge.com/minecraft/mc-mods/framedblocks
+Rechiseled: https://modrinth.com/mod/rechiseled
+YUNG's Better Dungeons: https://modrinth.com/mod/yungs-better-dungeons
+Dungeons and Taverns: https://modrinth.com/datapack/dungeons-and-taverns
+Repurposed Structures: https://www.curseforge.com/minecraft/mc-mods/repurposed-structures
+Bountiful: https://www.curseforge.com/minecraft/mc-mods/bountiful
+Doggy Talents Next: https://doggytalentsnext.wiki.gg/wiki/Getting_Started
+Doggy Talents list: https://doggytalentsnext.wiki.gg/wiki/Talents
+Artifacts: https://modrinth.com/mod/artifacts
+Relics: https://www.curseforge.com/minecraft/mc-mods/relics-mod
+Create overview: https://www.youtube.com/watch?v=rR8W-f9YhYA
+Farmer's Delight: https://www.curseforge.com/minecraft/mc-mods/farmers-delight
+Alex's Caves wiki: https://alexscaves.wiki.gg/
+Productive Bees docs: https://productive-bees.readthedocs.io/
+The Aether wiki: https://aether.wiki.gg/
+The Twilight Forest showcase: https://www.youtube.com/watch?v=R3_gCNQCwh0
+Aquamirae wiki: https://aquamirae.wiki.gg/

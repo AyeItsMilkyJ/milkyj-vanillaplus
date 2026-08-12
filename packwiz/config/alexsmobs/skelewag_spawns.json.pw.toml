@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/skelewag_spawns.json"
+filename = "skelewag_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/skelewag_spawns.json"
+hash-format = "sha256"
+hash = "d15be6f2b405871fc630b642c43d74010e99d9cfa596fce55ad8f09b45ab1dcb"

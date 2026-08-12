@@ -1,0 +1,8 @@
+name = "Managed config: presencefootsteps/userconfig.json"
+filename = "userconfig.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/presencefootsteps/userconfig.json"
+hash-format = "sha256"
+hash = "c6e6d8c70c4cc4064e55d486f32e74d44c7bb5ae26301d650b286d44531baa56"

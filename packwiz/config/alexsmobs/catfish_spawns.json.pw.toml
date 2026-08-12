@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/catfish_spawns.json"
+filename = "catfish_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/catfish_spawns.json"
+hash-format = "sha256"
+hash = "37aa7dfdf28e2e9a133d7715ea4f90f6f6cf8dda1e4bc037fa3f37bd92d89257"

@@ -1,0 +1,21 @@
+# Packwiz control files are not installed into Minecraft.
+pack.toml
+index.toml
+.packwizignore
+
+# Never package player/runtime data if it is accidentally copied here.
+options.txt
+optionsof.txt
+servers.dat
+saves/
+screenshots/
+logs/
+crash-reports/
+shaderpacks/
+shaderpacks-disabled/
+XaeroWaypoints/
+XaeroWorldMap/
+Distant_Horizons_server_data/
+world/
+backups/
+

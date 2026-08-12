@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/moose_spawns.json"
+filename = "moose_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/moose_spawns.json"
+hash-format = "sha256"
+hash = "9234166d0f01e5bcc198493493ec677c140af12e8300b00e4b893f8f856c7c1f"

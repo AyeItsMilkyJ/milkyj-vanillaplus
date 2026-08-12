@@ -1,0 +1,12 @@
+name = "jei-1.20.1-forge-15.49.0.188"
+filename = "jei-1.20.1-forge-15.49.0.188.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/u6dRKJwZ/versions/hVXQAD0D/jei-1.20.1-forge-15.49.0.188.jar"
+hash-format = "sha512"
+hash = "7e7b26379f43a76c091697be92ba4ebd059be4c5fc8a60f1e93a2092002097ce47ad5245ef35fb37b123bb61a0e6d3a96ba4aac9ef3b013fc7a6954577d9a2e5"
+
+[update.modrinth]
+mod-id = "u6dRKJwZ"
+version = "hVXQAD0D"

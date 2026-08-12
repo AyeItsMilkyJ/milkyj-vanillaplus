@@ -1,0 +1,8 @@
+name = "Managed defaultconfigs: createultimine/createultimine-server.snbt"
+filename = "createultimine-server.snbt"
+side = "server"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/defaultconfigs/createultimine/createultimine-server.snbt"
+hash-format = "sha256"
+hash = "53a79f6b96eae53f51a2c9a981fa4335d8d1bab3ca61a0891da3dfc5ab2cceb1"

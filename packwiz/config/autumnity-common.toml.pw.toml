@@ -1,0 +1,8 @@
+name = "Managed config: autumnity-common.toml"
+filename = "autumnity-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/autumnity-common.toml"
+hash-format = "sha256"
+hash = "190b4f1cb084117df61fa76012f5c8405dddaf849aa0293728c16e36f9e8d8d4"

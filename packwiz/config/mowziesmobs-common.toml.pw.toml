@@ -1,0 +1,8 @@
+name = "Managed config: mowziesmobs-common.toml"
+filename = "mowziesmobs-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/mowziesmobs-common.toml"
+hash-format = "sha256"
+hash = "e1add6dce3cbd2d1b49536ccc3309e00a09455bd12d85a9dd6717529cdbdfcc7"

@@ -1,0 +1,12 @@
+name = "Better Fishtanks"
+filename = "betterfishtanks-1.3.0-1.20.1-Forge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Aokk3vZE/versions/NIoJ7cmV/betterfishtanks-1.3.0-1.20.1-Forge.jar"
+hash-format = "sha512"
+hash = "332c29470f2944191e1f261f725ea244f28d5905cc4a56a5fae964ac54e6e18d936467ff74f20faa41a08148e080db2c9d3414ffd26818089c5478c0fc83d33b"
+
+[update.modrinth]
+mod-id = "Aokk3vZE"
+version = "NIoJ7cmV"

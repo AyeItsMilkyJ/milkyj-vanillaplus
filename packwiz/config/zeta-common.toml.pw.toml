@@ -1,0 +1,8 @@
+name = "Managed config: zeta-common.toml"
+filename = "zeta-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/zeta-common.toml"
+hash-format = "sha256"
+hash = "684816927033626b990f8e277a43c0e24f6ef650cb38f9fee935f974fffd7392"

@@ -1,0 +1,8 @@
+name = "Managed config: xaero/minimap/profiles/entity_radar_categories/default.cfg.json"
+filename = "default.cfg.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/xaero/minimap/profiles/entity_radar_categories/default.cfg.json"
+hash-format = "sha256"
+hash = "87284754f0321256e122ec1ab2832674d5a79471ab668931b00a3bf34bc4b17a"

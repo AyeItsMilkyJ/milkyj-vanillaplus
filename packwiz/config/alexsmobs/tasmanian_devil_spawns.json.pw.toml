@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/tasmanian_devil_spawns.json"
+filename = "tasmanian_devil_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/tasmanian_devil_spawns.json"
+hash-format = "sha256"
+hash = "2de9b79ddc0a39e537c2ae62486305e48bd568e56a0e69e0d636c1f19317bbef"

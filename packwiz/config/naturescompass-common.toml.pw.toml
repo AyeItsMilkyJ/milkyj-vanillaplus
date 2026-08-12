@@ -1,0 +1,8 @@
+name = "Managed config: naturescompass-common.toml"
+filename = "naturescompass-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/naturescompass-common.toml"
+hash-format = "sha256"
+hash = "538aae74ea0b2f15762899e6ee36bb9df856c2a60ca6266b74d0b2008394fc2b"

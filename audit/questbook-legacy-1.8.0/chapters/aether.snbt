@@ -1,0 +1,430 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "aether"
+	group: "4A5CA40AA14EE19B"
+	icon: "aether:ambrosium_shard"
+	id: "73274F51AEF15912"
+	order_index: 4
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Bring food, blocks, a ranged weapon, a marked portal and a spare return route. Falling into the void is not a plan."
+				"Build the portal area as a safe sky outpost with walls, lighting, storage, food, spare blocks, and a protected landing. Falling into the void is an environmental failure that armour alone cannot solve."
+				"The Skyward Accord says every bridge needs a return rail, every island route needs spare blocks, and every rare material needs one researched sample before the rest becomes building stock."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+			]
+			id: "399BCD079E976F6D"
+			rewards: [
+				{
+					count: 32
+					id: "037D0A12B32DB61A"
+					item: "minecraft:arrow"
+					type: "item"
+				}
+				{
+					id: "4EE9D7CE06EA8AA4"
+					type: "xp"
+					xp: 5
+				}
+			]
+			tasks: [{
+				id: "750597C2F1A021F4"
+				title: "The team is equipped for the Aether"
+				type: "checkmark"
+			}]
+			title: "Prepare for the Sky"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Build the portal, mark both sides and enter together. The Aether has its own materials, creatures and dungeon progression."
+				"The Book of Lore identifies Aether objects; JEI explains recipes; dungeon blocks and messages explain progression locks. Use all three before assuming a door, chest, or machine is bugged."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+				"Bronze, Silver, and Gold dungeons have different structures, bosses, and access rules. Dungeons are generally personal progression spaces, so agree on ownership and regroup outside rather than forcing everyone through one doorway."
+			]
+			id: "28F112BB70D0DE20"
+			rewards: [{
+				id: "46074FC60532BAC6"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				dimension: "aether:the_aether"
+				id: "1E31AAEDB06311A2"
+				type: "dimension"
+			}]
+			title: "Step into the Aether"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Skyroot is the Aether's foundational wood. Some tools have special yield effects, so check the Book of Lore and JEI."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+				"The Book of Lore identifies Aether objects; JEI explains recipes; dungeon blocks and messages explain progression locks. Use all three before assuming a door, chest, or machine is bugged."
+				"The Skyward Accord says every bridge needs a return rail, every island route needs spare blocks, and every rare material needs one researched sample before the rest becomes building stock."
+			]
+			id: "73348DE6F7BEA563"
+			rewards: [{
+				id: "43E6A9FB5F796853"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					count: 8L
+					id: "511E6E240207A24A"
+					item: "aether:skyroot_log"
+					type: "item"
+				}
+				{
+					count: 16L
+					id: "14F28036826C89BE"
+					item: "aether:holystone"
+					type: "item"
+				}
+			]
+			title: "Begin Again in Skyroot"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"Place Aether items into the Book of Lore to learn about them. It is the dimension's built-in field guide."
+				"The Book of Lore identifies Aether objects; JEI explains recipes; dungeon blocks and messages explain progression locks. Use all three before assuming a door, chest, or machine is bugged."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+				"Bronze, Silver, and Gold dungeons have different structures, bosses, and access rules. Dungeons are generally personal progression spaces, so agree on ownership and regroup outside rather than forcing everyone through one doorway."
+			]
+			id: "30D36C90FF60BA88"
+			rewards: [{
+				id: "6AB8BC903834DF95"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "317AD030808D3423"
+				item: "aether:book_of_lore"
+				type: "item"
+			}]
+			title: "The Book of Lore"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"These stations enchant, transform and hatch Aether materials. Each uses different fuel or inputs, so inspect their recipes before loading valuables."
+				"Ambrosium fuels the Altar, the Freezer transforms through cold processing, and the Incubator handles Moa development. Keep each station's inputs labelled because their visual logic differs from furnaces."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+				"The Book of Lore identifies Aether objects; JEI explains recipes; dungeon blocks and messages explain progression locks. Use all three before assuming a door, chest, or machine is bugged."
+			]
+			id: "6A9FB72421A6AF24"
+			rewards: [{
+				id: "59A803DD56909CF8"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "5635064A78316E83"
+					item: "aether:altar"
+					type: "item"
+				}
+				{
+					id: "619BC52B50A6D6E4"
+					item: "aether:freezer"
+					type: "item"
+				}
+				{
+					id: "7F93DEA644C5A4E0"
+					item: "aether:incubator"
+					type: "item"
+				}
+			]
+			title: "Altar, Freezer and Incubator"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6A9FB72421A6AF24"]
+			description: [
+				"Ambrosium fuels Aether devices; Zanite makes useful early gear. Carry both, but leave a reserve at the portal outpost."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+				"Ambrosium fuels the Altar, the Freezer transforms through cold processing, and the Incubator handles Moa development. Keep each station's inputs labelled because their visual logic differs from furnaces."
+				"Build the portal area as a safe sky outpost with walls, lighting, storage, food, spare blocks, and a protected landing. Falling into the void is an environmental failure that armour alone cannot solve."
+			]
+			id: "55D07714388E14AF"
+			rewards: [{
+				id: "43F9989FD73AC974"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					count: 16L
+					id: "7A53B17F206A06D4"
+					item: "aether:ambrosium_shard"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "40886AD1CC3F6183"
+					item: "aether:zanite_gemstone"
+					type: "item"
+				}
+			]
+			title: "Zanite and Ambrosium"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6A9FB72421A6AF24"]
+			description: [
+				"Bronze dungeons teach the Aether's boss rules. Read the arena, keep exits clear and do not scatter before the fight."
+				"Bronze, Silver, and Gold dungeons have different structures, bosses, and access rules. Dungeons are generally personal progression spaces, so agree on ownership and regroup outside rather than forcing everyone through one doorway."
+				"The Book of Lore identifies Aether objects; JEI explains recipes; dungeon blocks and messages explain progression locks. Use all three before assuming a door, chest, or machine is bugged."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+			]
+			id: "70C115FC6845B485"
+			rewards: [{
+				id: "0BFA87F5FA510E41"
+				type: "xp"
+				xp: 30
+			}]
+			tasks: [{
+				advancement: "aether:bronze_dungeon"
+				criterion: ""
+				id: "7705D370AE5E625C"
+				type: "advancement"
+			}]
+			title: "Conquer a Bronze Dungeon"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"Process Gravitite through the Altar to unlock the Aether's iconic high-tier material."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+				"Ambrosium fuels the Altar, the Freezer transforms through cold processing, and the Incubator handles Moa development. Keep each station's inputs labelled because their visual logic differs from furnaces."
+				"Bronze, Silver, and Gold dungeons have different structures, bosses, and access rules. Dungeons are generally personal progression spaces, so agree on ownership and regroup outside rather than forcing everyone through one doorway."
+			]
+			id: "21AD09FC2FDD9C6B"
+			rewards: [{
+				id: "7340E197593396CA"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "3E0A26A1359A940C"
+				item: "aether:enchanted_gravitite"
+				type: "item"
+			}]
+			title: "Enchanted Gravitite"
+			x: 10.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"The Sun Spirit is a late Aether challenge with unusual rules. Bring strong supplies and pay attention instead of brute-forcing it."
+				"Bronze, Silver, and Gold dungeons have different structures, bosses, and access rules. Dungeons are generally personal progression spaces, so agree on ownership and regroup outside rather than forcing everyone through one doorway."
+				"The Book of Lore identifies Aether objects; JEI explains recipes; dungeon blocks and messages explain progression locks. Use all three before assuming a door, chest, or machine is bugged."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+			]
+			id: "6562355FD21E38B5"
+			rewards: [{
+				id: "586B5F055AEE45F0"
+				type: "xp"
+				xp: 40
+			}]
+			tasks: [{
+				advancement: "aether:gold_dungeon"
+				criterion: ""
+				id: "0CEA462712DE880E"
+				type: "advancement"
+			}]
+			title: "The Gold Dungeon"
+			x: 10.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"21AD09FC2FDD9C6B"
+				"6562355FD21E38B5"
+			]
+			description: [
+				"Build a lit, enclosed outpost with portal protection, food, beds or spawn planning, and labelled expedition storage."
+				"Build the portal area as a safe sky outpost with walls, lighting, storage, food, spare blocks, and a protected landing. Falling into the void is an environmental failure that armour alone cannot solve."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+				"Ambrosium fuels the Altar, the Freezer transforms through cold processing, and the Incubator handles Moa development. Keep each station's inputs labelled because their visual logic differs from furnaces."
+			]
+			id: "289CA9D9C5FE2F9F"
+			rewards: [
+				{
+					count: 2
+					id: "478A14A5D21ECB1F"
+					item: "minecraft:diamond"
+					type: "item"
+				}
+				{
+					id: "452442E6E370A4A9"
+					type: "xp"
+					xp: 35
+				}
+			]
+			tasks: [{
+				id: "2626260D2D3BA38D"
+				title: "Our Aether outpost is safe and supplied"
+				type: "checkmark"
+			}]
+			title: "A Safe Sky Outpost"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"The Aether changes movement, equipment and terrain expectations. Carry blocks, food and a recovery plan, and assume every cliff edge is more dangerous than it appears."
+				"Learn Aether equipment slots and materials rather than judging everything by Overworld armour habits. JEI and tooltips explain bonuses that ordinary comparisons miss."
+				"Build bridges with rails or walls where the group will travel repeatedly. Courage is not a substitute for infrastructure."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+			]
+			id: "680B1B64274D9FCC"
+			rewards: [{
+				id: "350BD513C9281188"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Falling is the oldest enemy"
+			tasks: [{
+				id: "5B9D0A80EC89B7E6"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Rules of the Skylands"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["680B1B64274D9FCC"]
+			description: [
+				"Aether dungeons have distinct keys, bosses and reward structures. Read the room before using rare items, and keep space available for unique loot."
+				"Do not split the party across sealed encounters without agreeing first. Mark cleared sites and share equipment that specifically helps the next dungeon tier."
+				"The sky temples were built above ordinary weather, but not above pride. Most failed expeditions arrive overconfident and under-supplied."
+				"Bronze, Silver, and Gold dungeons have different structures, bosses, and access rules. Dungeons are generally personal progression spaces, so agree on ownership and regroup outside rather than forcing everyone through one doorway."
+			]
+			id: "1690A4D3F5B99940"
+			rewards: [{
+				id: "092D2F8C60163836"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Prepare for rules, not only enemies"
+			tasks: [{
+				id: "0F8A59AB9395AA34"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Customs of Aether Dungeons"
+			x: 1.5d
+			y: 5.0d
+		}
+		{
+			description: [
+				"Skyroot tools can improve yields from appropriate Aether materials, while Holystone tools can occasionally uncover Ambrosium as they work. Zanite equipment becomes stronger as its durability falls."
+				"Gravitite is found deep in islands and becomes Enchanted Gravitite through the Altar. Its tools, armour and block behaviour are the late material lesson of the dimension."
+				"Check the Book of Lore and JEI before replacing every Overworld tool. The Aether is designed to make its own material ladder useful, not merely decorative."
+				"The Aether restarts progression with Skyroot, Holystone, Ambrosium, Zanite, Gravitite, and its own utility stations. Treat Overworld equipment as expedition support while learning what the dimension expects locally."
+			]
+			id: "6FAC4DAFFCFE73DB"
+			rewards: [{
+				id: "3F39408B03AA266D"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Skyroot, Holystone, Zanite and Gravitite reward experimentation"
+			tasks: [{
+				id: "16CB88C1064DDA50"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Aether Materials Have Rules"
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["6FAC4DAFFCFE73DB"]
+			description: [
+				"Moas are Aether birds whose eggs can be hatched in an Incubator. Different colours provide different riding characteristics, so the first egg is not automatically the final mount."
+				"Use the Book of Lore and installed recipes for incubation and taming materials. Prepare a sealed, spacious nursery before hatching anything beside the void."
+				"Practise jumps above a safe island and give the mount a named home. Flight is transportation only when landing and recovery are planned."
+				"The Book of Lore identifies Aether objects; JEI explains recipes; dungeon blocks and messages explain progression locks. Use all three before assuming a door, chest, or machine is bugged."
+			]
+			id: "36207C89BD176A3E"
+			rewards: [{
+				id: "1614653B5B52AD86"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "The sky mount begins as a creature-care project"
+			tasks: [{
+				id: "42CE89DF4DEA1A33"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Moa Eggs and the Incubator"
+			x: 2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["36207C89BD176A3E"]
+			description: [
+				"Bronze Dungeons are buried labyrinths with the Slider; Silver Dungeons are cloud temples with Valkyries and their Queen; Gold Dungeons house the Sun Spirit."
+				"Each boss has an interaction or damage rule. Bring the appropriate tool, gather the Queen's required proof and watch what the Sun Spirit's arena provides instead of assuming immunity is a bug."
+				"Boss keys open their protected treasure. Let every participant finish looting before leaving, and never lose the only key in an unlabelled backpack."
+				"The Book of Lore identifies Aether objects; JEI explains recipes; dungeon blocks and messages explain progression locks. Use all three before assuming a door, chest, or machine is bugged."
+			]
+			id: "5D5EB63DF1F9EF24"
+			rewards: [{
+				id: "2CFA0737BE64AFB9"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Slider, Valkyrie Queen and Sun Spirit are not ordinary damage races"
+			tasks: [{
+				id: "61AC19BCF4E5176F"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Three Dungeons, Three Lessons"
+			x: 4.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["5D5EB63DF1F9EF24"]
+			description: [
+				"The Aether adds gloves, rings, pendants, capes and shields with movement, mining or environmental effects. Some use dedicated Aether or Curios-style slots rather than the ordinary armour grid."
+				"Equip one new item at a time and test it at the outpost. Movement effects are especially dangerous when the nearest mistake is a fall into the void."
+				"Keep situational accessories in labelled expedition storage so the next dungeon team can select a purpose-built loadout instead of wearing every relic at once."
+				"Build the portal area as a safe sky outpost with walls, lighting, storage, food, spare blocks, and a protected landing. Falling into the void is an environmental failure that armour alone cannot solve."
+			]
+			id: "48BD621D30652592"
+			rewards: [{
+				id: "25AE9BEA07419F1B"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Dungeon treasure often belongs in a special equipment slot"
+			tasks: [{
+				id: "14D65D5C078F6B11"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Build an Aether Accessory Loadout"
+			x: 6.0d
+			y: 8.0d
+		}
+	]
+	title: "The Aether"
+}

@@ -1,0 +1,8 @@
+name = "Managed config: xaerohud.txt"
+filename = "xaerohud.txt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/xaerohud.txt"
+hash-format = "sha256"
+hash = "58c9270f258d0b224bb7d0f7c927544d5fbe5f1b8027c820e1e14ecbf48fb88c"

@@ -1,0 +1,8 @@
+name = "Managed config: konkrete/locals/de_de.local"
+filename = "de_de.local"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/konkrete/locals/de_de.local"
+hash-format = "sha256"
+hash = "9cf580b889772edd244b5ea7cf42439bbae7bf2834bd759b819052d8f147e5fd"

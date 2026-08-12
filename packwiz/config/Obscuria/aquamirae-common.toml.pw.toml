@@ -1,0 +1,8 @@
+name = "Managed config: Obscuria/aquamirae-common.toml"
+filename = "aquamirae-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/Obscuria/aquamirae-common.toml"
+hash-format = "sha256"
+hash = "605fcfc142b5932110449fba08631b06a039cceaa787c518a0a2d727af3b78a3"

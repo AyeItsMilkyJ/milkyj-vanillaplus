@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/pack.mcmeta"
+filename = "pack.mcmeta"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/pack.mcmeta"
+hash-format = "sha256"
+hash = "22c3406449a4debce803b50497d82eb7c33e72163e6002b69edd888ecfde82e4"

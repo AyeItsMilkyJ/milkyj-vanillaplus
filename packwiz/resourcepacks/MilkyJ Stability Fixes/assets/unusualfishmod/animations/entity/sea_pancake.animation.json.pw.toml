@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/unusualfishmod/animations/entity/sea_pancake.animation.json"
+filename = "sea_pancake.animation.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/sea_pancake.animation.json"
+hash-format = "sha256"
+hash = "de86d86a529089acc49f88d066c60034d99675fceaf21884d470f98770eaba29"

@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/cave_centipede_spawns.json"
+filename = "cave_centipede_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/cave_centipede_spawns.json"
+hash-format = "sha256"
+hash = "a46da0f8d88297017f065f68c40f5cbcb4febc5ee35bb878bb0cef0f468225aa"

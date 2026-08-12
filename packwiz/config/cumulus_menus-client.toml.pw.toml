@@ -1,0 +1,8 @@
+name = "Managed config: cumulus_menus-client.toml"
+filename = "cumulus_menus-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/cumulus_menus-client.toml"
+hash-format = "sha256"
+hash = "ccd9f7f7a0539175dbdba77592e96667977a569c3ec506ac6a457bfad4223c93"

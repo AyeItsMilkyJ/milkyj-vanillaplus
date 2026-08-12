@@ -1,0 +1,8 @@
+name = "Managed config: fastsuite.cfg"
+filename = "fastsuite.cfg"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/fastsuite.cfg"
+hash-format = "sha256"
+hash = "44198ad591572d87a9f71b0b636229d91508a8c971f9dca907bed3c6d6754193"

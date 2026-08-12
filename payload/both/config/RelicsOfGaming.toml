@@ -1,0 +1,5 @@
+
+[itemdrops]
+	#Enable items drops default: true
+	value = true
+

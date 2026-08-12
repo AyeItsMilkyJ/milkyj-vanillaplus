@@ -1,0 +1,253 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "seasons_ecology"
+	group: "6427D16BBC5EB81E"
+	icon: "minecraft:oak_sapling"
+	id: "40BD2ED003871995"
+	order_index: 8
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Terralith contributes dramatic terrain and many vanilla-block biomes. Biomes O' Plenty contributes additional biome families, plants and woods. TerraBlender helps biome providers participate in one world."
+				"Serene Seasons then changes foliage colour, temperature and crop fertility through time. A biome looking different in a later visit may be seasonal change rather than a new generation bug."
+				"Major terrain or structure discoveries require new chunks. Protect server performance by travelling with purpose instead of flying in several directions at maximum speed."
+				"Serene Seasons changes colour, temperature, and crop fertility over time. Consult the season indicator and crop information before blaming a field layout that worked earlier in the year."
+			]
+			id: "18F17FA689C05B93"
+			rewards: [{
+				id: "2237B8AD7A576092"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Terrain shape, biome palette and season are different layers"
+			tasks: [{
+				id: "2CD80668B92F9030"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "How This Overworld Is Built"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["18F17FA689C05B93"]
+			description: [
+				"Nature's Compass searches registered biomes; Explorer's Compass searches registered structures. A missing result can mean the target is disabled, not registered, too distant or unavailable in existing chunks."
+				"Search one destination at a time and write down the result before changing targets. The compass points toward a candidate; it does not promise an easy route or an untouched structure."
+				"For ordinary palette hunting, explore naturally first. Save compass searches for a material, boss or project that genuinely needs a particular place."
+				"Biome mods overlap by design: terrain shape, biome identity, foliage, animals, and ambient details can come from different projects. Use Jade, F3 biome information, and JEI rather than identifying only by colour."
+			]
+			id: "19C183EB737C11C0"
+			rewards: [{
+				id: "2EF03483FC54E29A"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Biomes and structures are two different searches"
+			tasks: [{
+				id: "4E7A27EED5A04215"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Use the Right Compass"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["18F17FA689C05B93"]
+			description: [
+				"Serene Seasons divides spring, summer, autumn and winter into early, mid and late sub-seasons. With default timing that produces twelve visible phases rather than four instant switches."
+				"Temperate regions show the full cycle, while tropical regions can behave more like wet and dry seasons. Snowy and very hot areas follow their climate instead of copying a plains biome."
+				"Craft the seasonal calendar or use the season display available in the pack, then record planting dates. Planning is easier when the farm has a clock."
+				"The Almanac of Turning Leaves asks settlements to adapt rather than erase seasons: diversified crops, preserved food, indoor work, planned expeditions, and festivals make environmental change part of play."
+			]
+			id: "2BA6DCD040FF394C"
+			rewards: [{
+				id: "75A9A72CACD0D7B6"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Early, mid and late phases make four seasons"
+			tasks: [{
+				id: "70C456E2CE7A14F5"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Twelve Parts of a Year"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2BA6DCD040FF394C"]
+			description: [
+				"Hover seeds and crops to see which seasons support them. In-season crops grow normally; out-of-season crops are much slower and consume more bonemeal for the same progress."
+				"Group fields by season and label them. Maintain a small reserve of every seed so one missed harvest does not erase a crop until next year."
+				"Use crop rotation as a reason to diversify meals. A server pantry is more resilient when it is not waiting on one summer ingredient."
+				"Serene Seasons changes colour, temperature, and crop fertility over time. Consult the season indicator and crop information before blaming a field layout that worked earlier in the year."
+			]
+			id: "4F3635C500264A8B"
+			rewards: [{
+				id: "791357C448D9CBD3"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "The tooltip is a planting guide"
+			tasks: [{
+				id: "6794D388F5DA9F2C"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Read Seed Fertility"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["4F3635C500264A8B"]
+			description: [
+				"Serene Seasons supports protected growing. Glass within roughly sixteen blocks above crops can provide greenhouse protection; sufficiently deep underground farms also escape ordinary surface seasons."
+				"Bee pollination can help crops regardless of season. This makes a responsible apiary part of the food system rather than a separate resource factory."
+				"Do not put every field underground just to defeat the mechanic. Keep seasonal outdoor farms for variety and reserve protected space for essential ingredients."
+				"Protected growing can reduce seasonal disruption when configured conditions are met. Test a small greenhouse, compare it with an outdoor plot, and keep reserve seed before converting the entire food supply."
+			]
+			id: "0DB97AA1B4FFF13C"
+			rewards: [{
+				id: "4C251483507E0EB3"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Three ways around the outdoor season"
+			tasks: [{
+				id: "37020D2DE05407A1"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Greenhouse, Cellar and Bees"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["19C183EB737C11C0", "0DB97AA1B4FFF13C"]
+			description: [
+				"Biomes O' Plenty adds woods, flowers, grasses, stones and atmosphere across distinct biome families. Many of its best rewards are renewable building palettes rather than treasure chests."
+				"Collect saplings and small samples, photograph the original biome and establish a nursery at home. Confirm sapling requirements before assuming every tree grows like oak."
+				"A palette wall should record the biome name and coordinates. Materials become useful when builders know where they came from and how to renew them."
+				"Bring renewable samples home, but keep wild populations and distinctive landscapes intact. A botanical garden should teach where plants came from instead of replacing the place that made them interesting."
+			]
+			id: "6A507C6B66A619AF"
+			rewards: [{
+				id: "0A0B21D41BFC58D2"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Bring saplings and cuttings home, not the whole landscape"
+			tasks: [{
+				id: "6E419539D991C347"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Biomes O' Plenty Is a Palette Library"
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6A507C6B66A619AF"]
+			description: [
+				"Terralith uses vanilla blocks to create terrain with stronger silhouettes and biome transitions. Look across the land before choosing a road, base or railway grade."
+				"Follow valleys, passes and rivers instead of flattening every obstacle. Distant Horizons is especially useful here because the shape of far terrain can guide a route without loading it all at full detail."
+				"When a dramatic formation becomes a landmark, name it and preserve its outline. The terrain is part of the build palette."
+				"Biome mods overlap by design: terrain shape, biome identity, foliage, animals, and ambient details can come from different projects. Use Jade, F3 biome information, and JEI rather than identifying only by colour."
+			]
+			id: "0049FA32C35487D9"
+			rewards: [{
+				id: "5821C2F5E1C90C5F"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Ridges, valleys and coastlines are navigation information"
+			tasks: [{
+				id: "54CFFCF42FE6D209"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Read Terralith at Landscape Scale"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6A507C6B66A619AF"]
+			description: [
+				"Ecologics enriches selected vanilla biomes with plants, animals and materials. Autumnity gives autumn forests their own life and palette. Upgrade Aquatic expands aquatic and wetland detail."
+				"These mods reward looking closely at an ordinary beach, forest or marsh instead of treating only enormous modded biomes as content."
+				"Use Jade to identify the mod behind a new plant or creature, then check JEI before collecting it. Some small features are habitat, food or decoration rather than progression loot."
+				"Biome mods overlap by design: terrain shape, biome identity, foliage, animals, and ambient details can come from different projects. Use Jade, F3 biome information, and JEI rather than identifying only by colour."
+			]
+			id: "448B7E869179E500"
+			rewards: [{
+				id: "20AF0A0831BA7BE0"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Ecologics, Autumnity and Upgrade Aquatic deepen familiar places"
+			tasks: [{
+				id: "1E518DA53F8C8E29"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Smaller Biome Mods"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0049FA32C35487D9", "448B7E869179E500"]
+			description: [
+				"Immersive Weathering adds environmental change to blocks and landscapes. Surfaces can age, moss, crack or accumulate natural detail depending on material and surroundings."
+				"Prototype a wall outside before using a weather-sensitive palette across a whole town. JEI and the mod configuration reveal methods for encouraging, preventing or reversing changes."
+				"Weathering is storytelling when it is intentional. Use it to distinguish a maintained home, working yard and abandoned ruin instead of letting every surface become visual noise."
+				"Immersive Weathering and seasonal colour make the world visibly change. Photograph the same landmark across time and use material ageing deliberately when maintaining public builds."
+			]
+			id: "5F4797613D215365"
+			rewards: [{
+				id: "793B66EF27715C26"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Materials record exposure and care"
+			tasks: [{
+				id: "43E6970403834A62"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Immersive Weathering"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5F4797613D215365"]
+			description: [
+				"Choose one biome near a travelled route and document its season, useful renewable materials, wildlife, hazards and a build palette that suits it."
+				"Improve access without stripping the site: a marked trail, bridge, shelter or sample nursery is enough. Leave large trees and distinctive formations where they make the place recognisable."
+				"The Chronicle names this work the Living Map. It remembers not only where a place is, but how explorers agreed to return without destroying it."
+				"Bring renewable samples home, but keep wild populations and distinctive landscapes intact. A botanical garden should teach where plants came from instead of replacing the place that made them interesting."
+			]
+			id: "02A2B460F9DAA155"
+			rewards: [{
+				id: "0A6838D66337D8C6"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "A world stays beautiful when discovery creates responsibility"
+			tasks: [{
+				id: "52D17CB8E55F9CEB"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Living Map"
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+	title: "Biomes, Seasons and Living Landscapes"
+}

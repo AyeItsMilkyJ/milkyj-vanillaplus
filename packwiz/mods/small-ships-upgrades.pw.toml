@@ -1,0 +1,12 @@
+name = "Small Ships Upgrades"
+filename = "smallships_upgrades-forge-1.20.1-1.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/HRWfY2Uh/versions/RMV1s428/smallships_upgrades-forge-1.20.1-1.0.1.jar"
+hash-format = "sha512"
+hash = "7ab76c80e4b4abd81717d527e928b4c52d1004ae3d5795d8dccab24ac521cd9074e676c185b564e69122c0a32574992aae7fc18518254e9cbc3f1b63fe37e0ab"
+
+[update.modrinth]
+mod-id = "HRWfY2Uh"
+version = "RMV1s428"

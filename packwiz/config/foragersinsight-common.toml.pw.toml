@@ -1,0 +1,8 @@
+name = "Managed config: foragersinsight-common.toml"
+filename = "foragersinsight-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/foragersinsight-common.toml"
+hash-format = "sha256"
+hash = "616ce82d348d7cdb6c40343d0fa2e66eed1f6561024d1f2559f0d8b361f2a3a7"

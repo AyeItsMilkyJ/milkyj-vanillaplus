@@ -1,0 +1,8 @@
+name = "Managed config: enchdesc.json"
+filename = "enchdesc.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/enchdesc.json"
+hash-format = "sha256"
+hash = "9157e59134bc74ba4db355aa68e7137f34349e80133f93cd72c5c091671335f8"

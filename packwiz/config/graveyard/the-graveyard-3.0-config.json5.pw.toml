@@ -1,0 +1,8 @@
+name = "Managed config: graveyard/the-graveyard-3.0-config.json5"
+filename = "the-graveyard-3.0-config.json5"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/graveyard/the-graveyard-3.0-config.json5"
+hash-format = "sha256"
+hash = "071c09ff47e92cf611767bbc7444f7eddd91ac3492d67d543585c767a75e6d78"

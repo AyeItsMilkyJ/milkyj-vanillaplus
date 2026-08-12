@@ -1,0 +1,8 @@
+name = "Managed config: everycomp-hazardous.toml"
+filename = "everycomp-hazardous.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/everycomp-hazardous.toml"
+hash-format = "sha256"
+hash = "2b5beca7a3a37c49da647492c62c5e6452da3214f70170f4543d314825aeb385"

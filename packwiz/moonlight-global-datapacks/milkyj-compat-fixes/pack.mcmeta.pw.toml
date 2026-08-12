@@ -1,0 +1,8 @@
+name = "Managed moonlight-global-datapacks: milkyj-compat-fixes/pack.mcmeta"
+filename = "pack.mcmeta"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/pack.mcmeta"
+hash-format = "sha256"
+hash = "056fca485f489123a81db679806392fa8b5f7a25fe3dc5f46c4c80e2939a2d92"

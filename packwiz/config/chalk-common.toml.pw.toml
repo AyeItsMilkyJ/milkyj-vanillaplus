@@ -1,0 +1,8 @@
+name = "Managed config: chalk-common.toml"
+filename = "chalk-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/chalk-common.toml"
+hash-format = "sha256"
+hash = "6ffa7b7f4eec297ab23cc93690ee1824f3d8dca80e0bb46cfe6091d03870773c"

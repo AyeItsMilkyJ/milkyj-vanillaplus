@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/gazelle_spawns.json"
+filename = "gazelle_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/gazelle_spawns.json"
+hash-format = "sha256"
+hash = "9d9e6126ee723371520eace5ece367ffc2aa977b695e5f5581905b0acd4d7e44"

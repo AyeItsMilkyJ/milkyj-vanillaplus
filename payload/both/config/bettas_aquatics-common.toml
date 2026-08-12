@@ -1,0 +1,11 @@
+
+["Configs for Bettas & Aquatics!"]
+	#How long should algae stages take to grow? Default is 3 days.
+	"Algae Growth Rate" = 3
+	#Should Bettas have different chances of getting certain colors?
+	"Some Betta Colors Are Rare" = true
+	#Should male bettas fight other male bettas?
+	"Bettas Fight Eachother" = true
+	#Should the gender of a betta affect if it can breed or not?
+	"Genders Affect Breeding" = true
+

@@ -1,0 +1,8 @@
+name = "Managed config: alexscaves_biome_generation/primordial_caves.json"
+filename = "primordial_caves.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexscaves_biome_generation/primordial_caves.json"
+hash-format = "sha256"
+hash = "7c03f321d1bb2dc22cc988189c01c2dca370d38ef5a8ccf3034c4886f43b97eb"

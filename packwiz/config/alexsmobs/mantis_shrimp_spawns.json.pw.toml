@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/mantis_shrimp_spawns.json"
+filename = "mantis_shrimp_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/mantis_shrimp_spawns.json"
+hash-format = "sha256"
+hash = "44869ab38ceb22d186edcfb5362a6eb80760e75f74191fdd5cb6abbdd8b59780"

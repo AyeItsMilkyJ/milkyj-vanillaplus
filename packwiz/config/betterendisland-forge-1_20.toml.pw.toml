@@ -1,0 +1,8 @@
+name = "Managed config: betterendisland-forge-1_20.toml"
+filename = "betterendisland-forge-1_20.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterendisland-forge-1_20.toml"
+hash-format = "sha256"
+hash = "705bd38f35f830cdee96cda5e3b3e31bc2992b6b5962bb08820dc24fef5d0846"

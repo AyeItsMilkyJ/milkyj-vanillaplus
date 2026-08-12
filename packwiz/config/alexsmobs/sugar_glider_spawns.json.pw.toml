@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/sugar_glider_spawns.json"
+filename = "sugar_glider_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/sugar_glider_spawns.json"
+hash-format = "sha256"
+hash = "2463a918178f2b963ace75e9c07201d4caf42bb31a825658ea79c61f118f6bc7"

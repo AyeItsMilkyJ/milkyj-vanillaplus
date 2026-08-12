@@ -1,0 +1,12 @@
+name = "cozy-1.1.1-forge"
+filename = "cozy-1.1.1-forge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Bg6Ed4OL/versions/D6K9NNUr/cozy-1.1.1-forge.jar"
+hash-format = "sha512"
+hash = "712975301eff1e070374572d35cf94474aa8d85b0f76ddeb132e020bfbb5539654ae60c0f52eeb5b75ced567dc7bcdefc1d3d1c28734bdf1178ef37a382cc2cf"
+
+[update.modrinth]
+mod-id = "Bg6Ed4OL"
+version = "D6K9NNUr"

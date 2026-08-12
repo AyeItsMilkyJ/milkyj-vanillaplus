@@ -1,0 +1,8 @@
+name = "Managed config: herbalbrews.toml"
+filename = "herbalbrews.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/herbalbrews.toml"
+hash-format = "sha256"
+hash = "7c4ba324bf4778cd520d4b5ac36a1d475b45265e27f17ff70f8a1d7f53bbebcd"

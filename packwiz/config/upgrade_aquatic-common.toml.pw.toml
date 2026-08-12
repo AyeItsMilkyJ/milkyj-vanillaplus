@@ -1,0 +1,8 @@
+name = "Managed config: upgrade_aquatic-common.toml"
+filename = "upgrade_aquatic-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/upgrade_aquatic-common.toml"
+hash-format = "sha256"
+hash = "eabb6e702c40c5a74b92d06844be74d59da40d926f452e6cdfa6d21c704a4928"

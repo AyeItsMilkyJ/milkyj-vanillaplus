@@ -1,0 +1,12 @@
+name = "Deimos Lib"
+filename = "deimos-1.20.1-forge-2.7.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WQaxNzFg/versions/kvQsIOHl/deimos-1.20.1-forge-2.7.jar"
+hash-format = "sha512"
+hash = "5f133c28fe0fec5d9b851a02f2686cf50f14fe5112b76d89b6012bbf9b83c8a6d1d7d177b42aec260f37b366c00dc872f828035d101892a5b648fd5f9f74e355"
+
+[update.modrinth]
+mod-id = "WQaxNzFg"
+version = "kvQsIOHl"

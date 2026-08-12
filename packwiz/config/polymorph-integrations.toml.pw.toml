@@ -1,0 +1,8 @@
+name = "Managed config: polymorph-integrations.toml"
+filename = "polymorph-integrations.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/polymorph-integrations.toml"
+hash-format = "sha256"
+hash = "43a7425a314be7d78c2e31d44ab8f46c5ee824ab10906ab8909923d23646b6ad"

@@ -1,0 +1,12 @@
+name = "Inventory Essentials"
+filename = "inventoryessentials-forge-1.20.1-8.2.18.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Boon8xwi/versions/lymlfcUI/inventoryessentials-forge-1.20.1-8.2.18.jar"
+hash-format = "sha512"
+hash = "e2f96fe07bed3576aced533487f0c88dfe5b24b2f22841caff558cb69d7b5a0da1f1fe61da382fa49daf8ce8d098a440328f2e5cb7c1ffab1871bb0b949cf030"
+
+[update.modrinth]
+mod-id = "Boon8xwi"
+version = "lymlfcUI"

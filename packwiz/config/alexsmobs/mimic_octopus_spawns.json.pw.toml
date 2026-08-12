@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/mimic_octopus_spawns.json"
+filename = "mimic_octopus_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/mimic_octopus_spawns.json"
+hash-format = "sha256"
+hash = "4472a386633f31b2bad0dcfab807cb08c3ec2a90ecb1b1fa227336ff1690713e"

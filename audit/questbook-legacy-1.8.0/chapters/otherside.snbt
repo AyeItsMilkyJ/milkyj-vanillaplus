@@ -1,0 +1,360 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "otherside"
+	group: "4A5CA40AA14EE19B"
+	icon: "deeperdarker:heart_of_the_deep"
+	id: "122EA4F577EF6DC1"
+	order_index: 6
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Ancient Cities are stealth challenges. Bring wool, night vision and an escape route. Sound, not armour, is your first concern."
+				"Deeper and Darker extends Ancient City mystery through the Warden and the reinforced-deepslate portal. The Heart of the Deep is a late key, so ordinary city exploration should focus on silence and survival first."
+				"The Warden is designed as a boundary more than a normal combat target. Fight only for a deliberate objective, prepare an exit, and never trap teammates in a city while trying to prove damage numbers."
+				"Sculk sensors react to vibration and shriekers can escalate toward a Warden. Wool, careful movement, distraction, route planning, and knowing when to stop opening chests are the real early tools."
+			]
+			id: "4CEF684671ED8239"
+			rewards: [{
+				id: "4CC5902DDF1ED5EE"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				advancement: "deeperdarker:main/find_ancient_city"
+				criterion: ""
+				id: "38357FFAF3856061"
+				type: "advancement"
+			}]
+			title: "Find an Ancient City"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4CEF684671ED8239"]
+			description: [
+				"The Warden is designed to be avoided. If the team deliberately fights one, prepare the arena and accept that this is a dangerous late-game objective."
+				"The Warden is designed as a boundary more than a normal combat target. Fight only for a deliberate objective, prepare an exit, and never trap teammates in a city while trying to prove damage numbers."
+				"Deeper and Darker extends Ancient City mystery through the Warden and the reinforced-deepslate portal. The Heart of the Deep is a late key, so ordinary city exploration should focus on silence and survival first."
+			]
+			id: "7DAD438E3B2D561D"
+			rewards: [{
+				id: "55E1272B8788F619"
+				type: "xp"
+				xp: 40
+			}]
+			tasks: [{
+				advancement: "deeperdarker:main/kill_warden"
+				criterion: ""
+				id: "55FACC243F7F7875"
+				type: "advancement"
+			}]
+			title: "Face the Warden -- Only When Ready"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"This rare component is central to opening the Otherside. Consult JEI and the mod's progression clues before committing it."
+				"Deeper and Darker extends Ancient City mystery through the Warden and the reinforced-deepslate portal. The Heart of the Deep is a late key, so ordinary city exploration should focus on silence and survival first."
+				"Resonarium and Warden equipment are advanced rewards with recipe and material chains. Use JEI to map the full cost before spending the first rare component, and keep a museum sample where possible."
+				"Sculk sensors react to vibration and shriekers can escalate toward a Warden. Wool, careful movement, distraction, route planning, and knowing when to stop opening chests are the real early tools."
+			]
+			id: "7634A0E0A219BE8D"
+			rewards: [{
+				id: "35686AEEA0AE8F57"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "256767EC0C44426A"
+				item: "deeperdarker:heart_of_the_deep"
+				type: "item"
+			}]
+			title: "Heart of the Deep"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7634A0E0A219BE8D"]
+			description: [
+				"Activate the portal, mark the arrival point and establish a protected return route before exploring farther."
+				"The Otherside has its own flora, fauna, materials, and low-visibility navigation. Build a protected portal station immediately and mark paths with a consistent block or light language that remains visible in the biome."
+				"Deeper and Darker extends Ancient City mystery through the Warden and the reinforced-deepslate portal. The Heart of the Deep is a late key, so ordinary city exploration should focus on silence and survival first."
+				"Sculk sensors react to vibration and shriekers can escalate toward a Warden. Wool, careful movement, distraction, route planning, and knowing when to stop opening chests are the real early tools."
+			]
+			id: "13A5E375B864C1EA"
+			rewards: [{
+				id: "6E9688918EEAA67C"
+				type: "xp"
+				xp: 30
+			}]
+			tasks: [{
+				dimension: "deeperdarker:otherside"
+				id: "7BC7D12E27B98BFD"
+				type: "dimension"
+			}]
+			title: "Enter the Otherside"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13A5E375B864C1EA"]
+			description: [
+				"The Otherside has its own eerie wood family. Gather renewable samples and use them for a themed outpost rather than stripping one area bare."
+				"The Deepest Echo in the Chronicle warns that sound is a resource. Announce mining, combat, and contraption plans near sculk so one player's noise does not become another player's unavoidable encounter."
+				"The Otherside has its own flora, fauna, materials, and low-visibility navigation. Build a protected portal station immediately and mark paths with a consistent block or light language that remains visible in the biome."
+				"Resonarium and Warden equipment are advanced rewards with recipe and material chains. Use JEI to map the full cost before spending the first rare component, and keep a museum sample where possible."
+			]
+			id: "71E39EDCD0BDD427"
+			rewards: [{
+				id: "092AEA588BE79C94"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				count: 8L
+				id: "6820DE85765263F7"
+				item: "deeperdarker:echo_log"
+				type: "item"
+			}]
+			title: "Echo Wood"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13A5E375B864C1EA"]
+			description: [
+				"Resonarium and its plates unlock higher-tier recipes. Use JEI to trace each ingredient backwards before an expedition."
+				"Resonarium and Warden equipment are advanced rewards with recipe and material chains. Use JEI to map the full cost before spending the first rare component, and keep a museum sample where possible."
+				"The Deepest Echo in the Chronicle warns that sound is a resource. Announce mining, combat, and contraption plans near sculk so one player's noise does not become another player's unavoidable encounter."
+				"Deeper and Darker extends Ancient City mystery through the Warden and the reinforced-deepslate portal. The Heart of the Deep is a late key, so ordinary city exploration should focus on silence and survival first."
+			]
+			id: "3531B7F3F239B4BD"
+			rewards: [{
+				id: "4B32E8E99C319360"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "624CB9EED03190F7"
+					item: "deeperdarker:resonarium"
+					type: "item"
+				}
+				{
+					id: "6CC72A26DEEA40DA"
+					item: "deeperdarker:resonarium_plate"
+					type: "item"
+				}
+			]
+			title: "Resonarium Technology"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"71E39EDCD0BDD427"
+				"3531B7F3F239B4BD"
+			]
+			description: [
+				"Observe the Otherside's sculk ecosystem, then defeat its hostile creatures as a coordinated group."
+				"The Deepest Echo in the Chronicle warns that sound is a resource. Announce mining, combat, and contraption plans near sculk so one player's noise does not become another player's unavoidable encounter."
+				"Sculk sensors react to vibration and shriekers can escalate toward a Warden. Wool, careful movement, distraction, route planning, and knowing when to stop opening chests are the real early tools."
+				"The Otherside has its own flora, fauna, materials, and low-visibility navigation. Build a protected portal station immediately and mark paths with a consistent block or light language that remains visible in the biome."
+			]
+			id: "300B0D7A55D27EEA"
+			rewards: [{
+				id: "17E8654B4C2AB548"
+				type: "xp"
+				xp: 35
+			}]
+			tasks: [{
+				advancement: "deeperdarker:main/kill_all_sculk_mobs"
+				criterion: ""
+				id: "2FAD8C898735EBCE"
+				type: "advancement"
+			}]
+			title: "Understand Sculk Creatures"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["300B0D7A55D27EEA"]
+			description: [
+				"The Warden upgrade path is expensive late-game equipment. Make it only after the team understands the cost and has spare materials."
+				"Resonarium and Warden equipment are advanced rewards with recipe and material chains. Use JEI to map the full cost before spending the first rare component, and keep a museum sample where possible."
+				"Deeper and Darker extends Ancient City mystery through the Warden and the reinforced-deepslate portal. The Heart of the Deep is a late key, so ordinary city exploration should focus on silence and survival first."
+				"Sculk sensors react to vibration and shriekers can escalate toward a Warden. Wool, careful movement, distraction, route planning, and knowing when to stop opening chests are the real early tools."
+			]
+			id: "398F34EFD6B79DFF"
+			rewards: [
+				{
+					count: 4
+					id: "56E33CE7100794ED"
+					item: "minecraft:echo_shard"
+					type: "item"
+				}
+				{
+					id: "17663D87A25D1EA3"
+					type: "xp"
+					xp: 45
+				}
+			]
+			tasks: [{
+				advancement: "deeperdarker:main/warden_armor"
+				criterion: ""
+				id: "2318A2939E3B7D52"
+				type: "advancement"
+			}]
+			title: "Warden Equipment"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Deep Dark exploration is governed by vibration. Wool, careful movement and awareness of sensors matter more than ordinary armour once shriekers are involved."
+				"Plan a retreat before opening containers or mining unfamiliar blocks. Darkness and panic turn a manageable route into a lethal one."
+				"The Otherside is presented in the chronicle as a place that remembers noise. Enter as a listener before acting as a conqueror."
+				"Sculk sensors react to vibration and shriekers can escalate toward a Warden. Wool, careful movement, distraction, route planning, and knowing when to stop opening chests are the real early tools."
+			]
+			id: "4AC0DA2710643CB6"
+			rewards: [{
+				id: "02A6CB5947D5E2F3"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Sound is both danger and information"
+			tasks: [{
+				id: "6EFB96B15C7D4BCA"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Listen to the Sculk"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["4AC0DA2710643CB6"]
+			description: [
+				"The Warden is designed as an environmental threat, not a normal loot boss. Distract, hide and escape unless the entire group has deliberately prepared for a dangerous experiment."
+				"Never lead it toward another player's route or base. Communicate shrieker activations and wait for danger to settle before regrouping."
+				"Some victories are measured by what everyone brought home, not by what they managed to kill."
+				"The Warden is designed as a boundary more than a normal combat target. Fight only for a deliberate objective, prepare an exit, and never trap teammates in a city while trying to prove damage numbers."
+			]
+			id: "18531907C80F9DA7"
+			rewards: [{
+				id: "4816A705209B3D34"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Survival can mean refusing the fight"
+			tasks: [{
+				id: "62D9BA62B85112E0"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Warden Is a Boundary"
+			x: 1.5d
+			y: 5.0d
+		}
+		{
+			description: [
+				"Deeper and Darker makes the Warden drop a Heart of the Deep. Use it inside the Ancient City's reinforced deepslate frame to open the Otherside portal."
+				"The installed 1.20.1 line does not consume the heart when the portal is ignited, but protect it until the portal is confirmed stable. Mark both sides and keep wool at the city entrance."
+				"Killing a Warden is an intentional group escalation. The portal reward does not turn every later Warden into mandatory combat."
+				"Deeper and Darker extends Ancient City mystery through the Warden and the reinforced-deepslate portal. The Heart of the Deep is a late key, so ordinary city exploration should focus on silence and survival first."
+			]
+			id: "35BBB9CD0D12975D"
+			rewards: [{
+				id: "64B878B4CCC50115"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A Warden's Heart opens what vanilla leaves silent"
+			tasks: [{
+				id: "526278711A68DBE2"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Reinforced Deepslate Portal"
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["35BBB9CD0D12975D"]
+			description: [
+				"The Otherside contains distinct biomes, vegetation, echo wood, sculk materials and generated points of interest. Map transitions and collect renewable samples before mining rare blocks."
+				"Darkness and unfamiliar terrain make route markers essential. Use contrasting blocks that cannot be mistaken for natural sculk growth."
+				"Build the outpost around a protected portal chamber, then expand outward with mapped loops. A straight panic tunnel is not an exploration network."
+				"The Otherside has its own flora, fauna, materials, and low-visibility navigation. Build a protected portal station immediately and mark paths with a consistent block or light language that remains visible in the biome."
+			]
+			id: "1C5DC9BD4D612A1F"
+			rewards: [{
+				id: "2F84533D65BEFF84"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "It is more than one sculk forest"
+			tasks: [{
+				id: "3F939193BBCD760A"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Read the Otherside as a World"
+			x: 2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["1C5DC9BD4D612A1F"]
+			description: [
+				"The Otherside adds sculk creatures with different movement, ranged and ambush behaviours. Overcast Pots and their Gloomsherd variants can hold clues and risk rather than ordinary pottery loot."
+				"Observe from cover and use Jade to identify each creature. Bring ranged control, wool and escape blocks instead of treating the whole biome as a sword corridor."
+				"Record which creatures guard temples, open terrain or resources. Location is often the first hint about what a modded mob is designed to protect."
+				"Sculk sensors react to vibration and shriekers can escalate toward a Warden. Wool, careful movement, distraction, route planning, and knowing when to stop opening chests are the real early tools."
+			]
+			id: "55AA9F7AFA63083D"
+			rewards: [{
+				id: "65F602E34CEAF1A4"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Movement and sound reveal roles"
+			tasks: [{
+				id: "069ECBDF347D574C"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Sculk Creatures and Pots"
+			x: 4.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["55AA9F7AFA63083D"]
+			description: [
+				"Resonarium and its plates support the dimension's equipment progression. Warden gear is expensive, while the Sonorous Staff uses Heart of the Deep materials to harness a sonic-style attack."
+				"Trace every recipe in JEI before converting unique drops. Build one tool, test range and collateral effects safely, then decide whether the next resource belongs in armour or the archive."
+				"The Chronicle warns that an echo repeats the intention of its maker. Powerful sculk equipment should make the team more deliberate, not noisier."
+				"Resonarium and Warden equipment are advanced rewards with recipe and material chains. Use JEI to map the full cost before spending the first rare component, and keep a museum sample where possible."
+			]
+			id: "50B206AEE62C53C0"
+			rewards: [{
+				id: "61B77AA2180030E8"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Late equipment turns Deep Dark mechanics into tools"
+			tasks: [{
+				id: "4A0F3C5AC2B352F8"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Resonarium, Warden Gear and the Sonorous Staff"
+			x: 6.0d
+			y: 8.0d
+		}
+	]
+	title: "Deeper and Darker: The Otherside"
+}

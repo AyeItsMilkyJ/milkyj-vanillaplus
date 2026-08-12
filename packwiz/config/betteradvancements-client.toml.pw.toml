@@ -1,0 +1,8 @@
+name = "Managed config: betteradvancements-client.toml"
+filename = "betteradvancements-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/betteradvancements-client.toml"
+hash-format = "sha256"
+hash = "2c5eba79cde20bd1658a43dc0527e5d45b2e462d2f065e228527eee8513446be"

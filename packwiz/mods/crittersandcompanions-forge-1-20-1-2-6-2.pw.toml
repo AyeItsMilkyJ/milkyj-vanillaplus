@@ -1,0 +1,12 @@
+name = "crittersandcompanions-forge-1.20.1-2.6.2"
+filename = "crittersandcompanions-forge-1.20.1-2.6.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Yd4wb5wZ/versions/RKEWLFE4/crittersandcompanions-forge-1.20.1-2.6.2.jar"
+hash-format = "sha512"
+hash = "e8582730b81615e244969311f192942e7aa4153f2799614720d252ef7a386668e263027bfdc31492d55de683c7eebbfc1e5791f300687ac7d542a746626a66d4"
+
+[update.modrinth]
+mod-id = "Yd4wb5wZ"
+version = "RKEWLFE4"

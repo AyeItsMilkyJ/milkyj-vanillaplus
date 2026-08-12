@@ -1,0 +1,8 @@
+name = "Managed config: betterfortresses/README.txt"
+filename = "README.txt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterfortresses/README.txt"
+hash-format = "sha256"
+hash = "3e551016c121147eabbe77e0608ef65c559e9bbbb105254bf407fefc6039384f"

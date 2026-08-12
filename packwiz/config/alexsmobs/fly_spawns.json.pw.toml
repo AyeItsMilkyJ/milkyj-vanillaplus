@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/fly_spawns.json"
+filename = "fly_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/fly_spawns.json"
+hash-format = "sha256"
+hash = "3d5fd3f45bff47cc86ad6baaddea4c482db43d4982e9aa9bd6d14f3c295c6e98"

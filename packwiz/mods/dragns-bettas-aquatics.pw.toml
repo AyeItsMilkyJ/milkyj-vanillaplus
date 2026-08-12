@@ -1,0 +1,12 @@
+name = "DragN's Bettas & Aquatics!"
+filename = "DragN_Bettas-1.20.1-1.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/YHaYBCno/versions/5hBmyjZL/DragN_Bettas-1.20.1-1.3.jar"
+hash-format = "sha512"
+hash = "a244cdb0ddd4df6b1d97e727c5cf54785d704c7edf81d784755c9cbc3344598725e2870109450e4e1c7a14bcac9088ba048cbcbe0d86ea35c774a030e213f66c"
+
+[update.modrinth]
+mod-id = "YHaYBCno"
+version = "5hBmyjZL"

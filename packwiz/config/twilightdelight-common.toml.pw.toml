@@ -1,0 +1,8 @@
+name = "Managed config: twilightdelight-common.toml"
+filename = "twilightdelight-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/twilightdelight-common.toml"
+hash-format = "sha256"
+hash = "478995f0277c0bd0745a91ab6914be37acafa0075a5f9ba876b018850481c08c"

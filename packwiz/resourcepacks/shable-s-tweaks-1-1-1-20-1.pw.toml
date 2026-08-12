@@ -1,0 +1,12 @@
+name = "Shable's Tweaks 1.1 1.20.1"
+filename = "Shable's Tweaks 1.1 1.20.1.zip"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/2eqneqeK/versions/s8jXQw36/Shable%27s%20Tweaks%201.1%201.20.1.zip"
+hash-format = "sha512"
+hash = "c59e24d12349b6a31345ed8ec596a9921e62bd910db7b89816d6fbe252b8c919e819ca1b8649cda60d6e6a7b7d332cfa1cc76e0202505e35ae7f0194d3d0e64b"
+
+[update.modrinth]
+mod-id = "2eqneqeK"
+version = "s8jXQw36"

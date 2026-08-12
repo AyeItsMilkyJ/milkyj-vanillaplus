@@ -1,0 +1,311 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "create_factory"
+	group: "459A83736128F244"
+	icon: "create:railway_casing"
+	id: "3AAD4E6B4ECE2446"
+	order_index: 2
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Use an Empty Blaze Burner on a blaze. A heated burner unlocks advanced basin recipes; feed it suitable fuel when heat is required."
+				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
+				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+				"Steam power depends on a complete boiler: heat, water, enough tank volume, and correctly attached engines. Read every gauge before increasing size, and keep fuel and water failure modes accessible."
+			]
+			id: "24EEA52E60D4E01D"
+			rewards: [{
+				id: "1F32E54EB8646B02"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "05E2E95B1C982737"
+					item: "create:empty_blaze_burner"
+					type: "item"
+				}
+				{
+					id: "6884D2B56531954B"
+					item: "create:blaze_burner"
+					type: "item"
+				}
+			]
+			title: "Capture a Blaze Burner"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["24EEA52E60D4E01D"]
+			description: [
+				"Heat zinc and copper in a basin to make brass. Brass components enable smarter logistics and precision mechanisms."
+				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
+				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+				"Steam power depends on a complete boiler: heat, water, enough tank volume, and correctly attached engines. Read every gauge before increasing size, and keep fuel and water failure modes accessible."
+			]
+			id: "3C8A246AFBC5BCB3"
+			rewards: [{
+				id: "46AF62DA56D1E971"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				count: 8L
+				id: "137DD683C9AA06F9"
+				item: "create:brass_ingot"
+				type: "item"
+			}]
+			title: "Enter the Brass Age"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Deployers and sequenced assembly create precision mechanisms. Read the JEI sequence carefully: intermediate items must pass through the listed steps repeatedly."
+				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+				"Speed controllers change RPM; they do not create extra stress capacity. Diagnose the source and load first, then tune speed for the slowest operation that still meets the factory's actual demand."
+				"Mechanical Crafters must face and connect correctly, receive ingredients in the recipe's shape, and point the finished output somewhere valid. Build a temporary back wall so orientation remains visible during setup."
+			]
+			id: "4292B6E9919EC131"
+			rewards: [{
+				id: "70AB28195E0F0FF9"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "5F9ECD30B1D1C2E1"
+					item: "create:precision_mechanism"
+					type: "item"
+				}
+				{
+					id: "2AB401F7C8887E3D"
+					item: "create:deployer"
+					type: "item"
+				}
+			]
+			title: "Precision Mechanisms"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Mechanical Crafters reproduce shaped recipes at large scale. Arrange them as the recipe grid and give the network enough rotational power."
+				"Mechanical Crafters must face and connect correctly, receive ingredients in the recipe's shape, and point the finished output somewhere valid. Build a temporary back wall so orientation remains visible during setup."
+				"Steam power depends on a complete boiler: heat, water, enough tank volume, and correctly attached engines. Read every gauge before increasing size, and keep fuel and water failure modes accessible."
+				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+			]
+			id: "6C2795B621514EE3"
+			rewards: [{
+				id: "353E19785E462023"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				count: 9L
+				id: "4C25881B98D5D80B"
+				item: "create:mechanical_crafter"
+				type: "item"
+			}]
+			title: "Mechanical Crafting"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"Speed is not free: faster networks consume more stress capacity. Use a Rotation Speed Controller and inspect the system before it overstresses."
+				"Speed controllers change RPM; they do not create extra stress capacity. Diagnose the source and load first, then tune speed for the slowest operation that still meets the factory's actual demand."
+				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
+				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+			]
+			id: "49C97F83E26B85CB"
+			rewards: [{
+				id: "0E4D572202DC7D67"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "3A811FFA06F777FA"
+					item: "create:rotation_speed_controller"
+					type: "item"
+				}
+				{
+					id: "3986C39C1386C8E8"
+					item: "create:goggles"
+					type: "item"
+				}
+			]
+			title: "Control Speed and Stress"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"A boiler needs water, heat and fluid tanks; Steam Engines convert it into rotational force. Ponder the complete multiblock before construction."
+				"Steam power depends on a complete boiler: heat, water, enough tank volume, and correctly attached engines. Read every gauge before increasing size, and keep fuel and water failure modes accessible."
+				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
+			]
+			id: "7BD6B4ED40AF6223"
+			rewards: [{
+				id: "5796496A8C0EDC6F"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [
+				{
+					id: "3DC8CC76D463077B"
+					item: "create:steam_engine"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "141181B3CF21A1C6"
+					item: "create:fluid_tank"
+					type: "item"
+				}
+			]
+			title: "Steam Power"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"Create tracks curve naturally between endpoints. Keep main lines gentle, light tunnels and test routes before building decorative stations."
+				"Trains are public infrastructure. Name stations by destination, provide safe platforms and schedules or signs, and test a route with empty cargo before trusting it with the expedition's only rare materials."
+				"Speed controllers change RPM; they do not create extra stress capacity. Diagnose the source and load first, then tune speed for the slowest operation that still meets the factory's actual demand."
+				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
+			]
+			id: "40B5E1218A0226CD"
+			rewards: [{
+				id: "3859E67E589A2420"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					count: 32L
+					id: "5A7D860E821070EE"
+					item: "create:track"
+					type: "item"
+				}
+				{
+					id: "6C5ED55D77AC28F4"
+					item: "create:railway_casing"
+					type: "item"
+				}
+			]
+			title: "Lay the Railway"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"7BD6B4ED40AF6223"
+				"40B5E1218A0226CD"
+			]
+			description: [
+				"Schedules automate station routes and conditions. Start with a two-station loop, then add cargo conditions only after the basic route works."
+				"Trains are public infrastructure. Name stations by destination, provide safe platforms and schedules or signs, and test a route with empty cargo before trusting it with the expedition's only rare materials."
+				"Brass is the boundary between basic motion and precise logistics. Secure a safe Blaze Burner workflow, check heating requirements in JEI, and keep zinc, copper, and andesite components stocked before scaling production."
+				"Precision Mechanisms are sequenced-assembly products: the item must pass through the required operations in order, often several times. Ponder the recipe and provide a safe return loop rather than relying on loose items."
+			]
+			id: "579F2C00A9B13FE7"
+			rewards: [{
+				id: "5CF81601A5619C32"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "57E697CE5318CC22"
+				item: "create:schedule"
+				type: "item"
+			}]
+			title: "Make Trains Useful"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Build one documented factory with signs, safe walkways, accessible shafts and a manual shutoff. Clever machines are better when friends can maintain them."
+				"Speed controllers change RPM; they do not create extra stress capacity. Diagnose the source and load first, then tune speed for the slowest operation that still meets the factory's actual demand."
+				"Trains are public infrastructure. Name stations by destination, provide safe platforms and schedules or signs, and test a route with empty cargo before trusting it with the expedition's only rare materials."
+				"Steam power depends on a complete boiler: heat, water, enough tank volume, and correctly attached engines. Read every gauge before increasing size, and keep fuel and water failure modes accessible."
+			]
+			id: "765D729539E3425A"
+			rewards: [
+				{
+					count: 2
+					id: "5C68DC9305CE0F9B"
+					item: "minecraft:diamond"
+					type: "item"
+				}
+				{
+					id: "0C90A4A3DC980713"
+					type: "xp"
+					xp: 35
+				}
+			]
+			tasks: [{
+				id: "0D6147D05F1B6C05"
+				title: "Our factory is safe and understandable"
+				type: "checkmark"
+			}]
+			title: "A Factory the Team Understands"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Separate raw input, processing stages and finished output. Give every line an overflow plan so a full chest does not cover the floor in entities or jam an unrelated machine."
+				"Use filters and labels at boundaries between zones. If a belt carries five unrelated products through the entire factory, a single mistake becomes difficult to trace."
+				"Build walkways and sight lines before walls. A factory that can be inspected while running is much easier on both players and the server."
+				"Speed controllers change RPM; they do not create extra stress capacity. Diagnose the source and load first, then tune speed for the slowest operation that still meets the factory's actual demand."
+			]
+			id: "18A03944705D2CAF"
+			rewards: [{
+				id: "26E8D64B8DA31527"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Input, processing, output and maintenance"
+			tasks: [{
+				id: "367311626511B7C2"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Design the Factory in Zones"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["18A03944705D2CAF"]
+			description: [
+				"Steam power and trains are expensive because they connect systems at settlement scale. Plan stations, loading rules and safe track clearances before decorating the locomotive."
+				"Test routes with one carriage and one cargo type. Add schedules and automation only after manual journeys work reliably in both directions."
+				"In the chronicle, the first railways ended the age of isolated camps. A station is not merely a machine; it is a promise that two places will remain connected."
+				"Trains are public infrastructure. Name stations by destination, provide safe platforms and schedules or signs, and test a route with empty cargo before trusting it with the expedition's only rare materials."
+			]
+			id: "5A9E798210393745"
+			rewards: [{
+				id: "4CACAB316F1E4C4E"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Build the route before the spectacle"
+			tasks: [{
+				id: "2FF5F1C1B81A9E5B"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Steam and Rail Are Infrastructure"
+			x: 1.5d
+			y: 5.0d
+		}
+	]
+	title: "Create: Factory, Steam and Trains"
+}

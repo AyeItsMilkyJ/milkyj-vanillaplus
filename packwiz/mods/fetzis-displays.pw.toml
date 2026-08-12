@@ -1,0 +1,12 @@
+name = "Fetzi"
+filename = "fetzisdisplays-forge-1.1.0-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/NeiloyHm/versions/SC7n8RVn/fetzisdisplays-forge-1.1.0-1.20.1.jar"
+hash-format = "sha512"
+hash = "56324a733b18830f551429e1e6aedb51efa4d71abac8598dfa254d0119242e81cf21a3ac626c3a77d115499571ec30785a75f89fca68c15bc16c576ba17b0332"
+
+[update.modrinth]
+mod-id = "NeiloyHm"
+version = "SC7n8RVn"

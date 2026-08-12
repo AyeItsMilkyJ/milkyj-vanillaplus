@@ -1,0 +1,8 @@
+name = "Managed config: betterarcheology_structures/structure_settings.json5"
+filename = "structure_settings.json5"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterarcheology_structures/structure_settings.json5"
+hash-format = "sha256"
+hash = "3faebe388e24e9266df950827de6ad2459f339344240a480420dd57770a8b05b"

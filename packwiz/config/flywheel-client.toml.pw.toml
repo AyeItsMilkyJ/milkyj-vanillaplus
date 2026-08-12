@@ -1,0 +1,8 @@
+name = "Managed config: flywheel-client.toml"
+filename = "flywheel-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/flywheel-client.toml"
+hash-format = "sha256"
+hash = "77b5b58e59686f9b15018cff229cd49946a2120f39acc9573a73704ab50d5366"

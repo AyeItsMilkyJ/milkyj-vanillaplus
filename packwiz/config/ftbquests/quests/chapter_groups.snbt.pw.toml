@@ -1,0 +1,8 @@
+name = "Managed config: ftbquests/quests/chapter_groups.snbt"
+filename = "chapter_groups.snbt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapter_groups.snbt"
+hash-format = "sha256"
+hash = "b7da2cffbd510112fa9ad023f6ed24ca1963bcea02e03e7b362190767af4c1c3"

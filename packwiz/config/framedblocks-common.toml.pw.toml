@@ -1,0 +1,8 @@
+name = "Managed config: framedblocks-common.toml"
+filename = "framedblocks-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/framedblocks-common.toml"
+hash-format = "sha256"
+hash = "3df7937868159c8c2570d09c9ef9e0a1127dfbab70c3404c8fd069c7390d39ff"

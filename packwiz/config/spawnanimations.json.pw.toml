@@ -1,0 +1,8 @@
+name = "Managed config: spawnanimations.json"
+filename = "spawnanimations.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/spawnanimations.json"
+hash-format = "sha256"
+hash = "a518af3a2ab8fcac506aabe7426e4417abf5c0665a7bc4f8b0772529791773ff"

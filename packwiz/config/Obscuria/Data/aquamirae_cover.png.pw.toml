@@ -1,0 +1,8 @@
+name = "Managed config: Obscuria/Data/aquamirae_cover.png"
+filename = "aquamirae_cover.png"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/Obscuria/Data/aquamirae_cover.png"
+hash-format = "sha256"
+hash = "86bec2df159c61ba721a71c7c951450332e3581ce3c8268611c140558989d5b9"

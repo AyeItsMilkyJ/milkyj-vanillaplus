@@ -1,0 +1,330 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "archaeology"
+	group: "4A5CA40AA14EE19B"
+	icon: "betterarcheology:archeology_table"
+	id: "3AADFB5A564F217F"
+	order_index: 0
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Suspicious blocks are fragile. Carry a brush while exploring ruins and avoid breaking the block before its item is revealed."
+				"Brush suspicious blocks from a stable position and watch the emerging item. Falling blocks, water, hostile mobs, and careless mining can ruin the context even when the artifact itself survives."
+				"Better Archeology expands suspicious sand and gravel into a broader field practice with fossils, ruins, artifact shards, and analysis. Bring several brushes, light, scaffolding blocks, and empty protected inventory slots."
+				"The Curators' Compact keeps an original, a display example, and a replaceable field copy when possible. Rare knowledge belongs to the settlement even when the person who found it is offline."
+			]
+			id: "03AC335757DE4153"
+			rewards: [{
+				id: "006FF1F29BD7B1AA"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "3B8A17619C1356C9"
+				item: {
+					Count: 1
+					id: "minecraft:brush"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Brush Carefully"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Better Archaeology's Archaeology Table identifies discoveries and gives your collection a proper research loop."
+				"The Archaeology Table and related research blocks turn fragments into knowledge and displayable finds. Check every shard's uses in JEI before treating it as ordinary loot or combining away the only museum copy."
+				"Better Archeology expands suspicious sand and gravel into a broader field practice with fossils, ruins, artifact shards, and analysis. Bring several brushes, light, scaffolding blocks, and empty protected inventory slots."
+				"The Curators' Compact keeps an original, a display example, and a replaceable field copy when possible. Rare knowledge belongs to the settlement even when the person who found it is offline."
+			]
+			id: "702A4062FE9B512F"
+			rewards: [{
+				id: "10D9FDD7B022F14C"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "29A081BEE849C4D9"
+					item: "betterarcheology:archeology_table"
+					type: "item"
+				}
+				{
+					id: "6B436A6D2C9958AD"
+					item: "betterarcheology:unidentified_artifact"
+					type: "item"
+				}
+			]
+			title: "Study the Past"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["702A4062FE9B512F"]
+			description: [
+				"Iron and diamond brushes last longer on serious expeditions. Keep a spare in your backpack so one discovery does not end the trip."
+				"Better Archeology expands suspicious sand and gravel into a broader field practice with fossils, ruins, artifact shards, and analysis. Bring several brushes, light, scaffolding blocks, and empty protected inventory slots."
+				"Record coordinates, biome, depth, structure, and nearby blocks before removing an important find. A museum label with provenance tells a richer story than a valuable object whose origin everyone forgot."
+				"The Curators' Compact keeps an original, a display example, and a replaceable field copy when possible. Rare knowledge belongs to the settlement even when the person who found it is offline."
+			]
+			id: "2ECFF275EF74DA42"
+			rewards: [{
+				id: "7DFD288AF118FAF2"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					id: "28EB9A8A8E61D685"
+					item: {
+						Count: 1
+						id: "betterarcheology:iron_brush"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "15682F96681F57EE"
+					item: {
+						Count: 1
+						id: "betterarcheology:diamond_brush"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Tools of the Trade"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["702A4062FE9B512F"]
+			description: [
+				"Display fossils, pottery and artifacts instead of burying them in storage. Labels and display cases turn exploration into a shared history."
+				"The Archaeology Table and related research blocks turn fragments into knowledge and displayable finds. Check every shard's uses in JEI before treating it as ordinary loot or combining away the only museum copy."
+				"Record coordinates, biome, depth, structure, and nearby blocks before removing an important find. A museum label with provenance tells a richer story than a valuable object whose origin everyone forgot."
+				"Better Archeology expands suspicious sand and gravel into a broader field practice with fossils, ruins, artifact shards, and analysis. Bring several brushes, light, scaffolding blocks, and empty protected inventory slots."
+			]
+			id: "576F3B9264ED1F4B"
+			rewards: [
+				{
+					count: 8
+					id: "739D94F2E58EEE97"
+					item: "minecraft:item_frame"
+					type: "item"
+				}
+				{
+					id: "4FD028BE5BC39840"
+					type: "xp"
+					xp: 15
+				}
+			]
+			tasks: [{
+				id: "74895CDB1F3AE0E7"
+				title: "We displayed an archaeological discovery"
+				type: "checkmark"
+			}]
+			title: "Build a Museum"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"Bountiful boards offer rotating tasks and rewards. Read requirements before accepting, and let ordinary play satisfy the bounty when possible."
+				"The Archaeology Table and related research blocks turn fragments into knowledge and displayable finds. Check every shard's uses in JEI before treating it as ordinary loot or combining away the only museum copy."
+				"The Curators' Compact keeps an original, a display example, and a replaceable field copy when possible. Rare knowledge belongs to the settlement even when the person who found it is offline."
+				"Record coordinates, biome, depth, structure, and nearby blocks before removing an important find. A museum label with provenance tells a richer story than a valuable object whose origin everyone forgot."
+			]
+			id: "498034AF9E844D56"
+			rewards: [{
+				id: "2658D99CF6C2F72C"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					id: "60C77244D430081D"
+					item: "bountiful:bountyboard"
+					type: "item"
+				}
+				{
+					id: "294CB2FD9D35ACB4"
+					item: "bountiful:bounty"
+					type: "item"
+				}
+			]
+			title: "The Bounty Board"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["498034AF9E844D56"]
+			description: [
+				"Decrees influence which bounty objectives a board can offer. Treat them as settlement upgrades and organise boards by theme."
+				"The Archaeology Table and related research blocks turn fragments into knowledge and displayable finds. Check every shard's uses in JEI before treating it as ordinary loot or combining away the only museum copy."
+				"The Curators' Compact keeps an original, a display example, and a replaceable field copy when possible. Rare knowledge belongs to the settlement even when the person who found it is offline."
+				"Record coordinates, biome, depth, structure, and nearby blocks before removing an important find. A museum label with provenance tells a richer story than a valuable object whose origin everyone forgot."
+			]
+			id: "09EA6AFB9F264A48"
+			rewards: [
+				{
+					count: 3
+					id: "7D1C7904E80FB9FA"
+					item: "minecraft:emerald"
+					type: "item"
+				}
+				{
+					id: "450871DF2F96B2B4"
+					type: "xp"
+					xp: 15
+				}
+			]
+			tasks: [{
+				id: "6CB121FE1062DC48"
+				item: "bountiful:decree"
+				type: "item"
+			}]
+			title: "Shape Future Bounties"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["576F3B9264ED1F4B"]
+			description: [
+				"Artifacts can appear in dangerous loot and from mimics. Approach suspicious chests ready for a fight; Curios slots equip many artifact items."
+				"Artifacts can also come from structure chests, archaeology, rare equipped mobs, and Mimics. Identify a chest before standing beside it; a Mimic is an encounter, not evidence that the loot system is broken."
+				"Better Archeology expands suspicious sand and gravel into a broader field practice with fossils, ruins, artifact shards, and analysis. Bring several brushes, light, scaffolding blocks, and empty protected inventory slots."
+				"Brush suspicious blocks from a stable position and watch the emerging item. Falling blocks, water, hostile mobs, and careless mining can ruin the context even when the artifact itself survives."
+			]
+			id: "25F3FCF01504F899"
+			rewards: [{
+				id: "468EA2799FA69A54"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				entity: "artifacts:mimic"
+				id: "53580B6234D0A4B7"
+				title: "Defeat a Mimic"
+				type: "kill"
+				value: 1L
+			}]
+			title: "That Chest Has Teeth"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["25F3FCF01504F899"]
+			description: [
+				"Relics uses a research system and Curios equipment. Start at a Researching Table and consult JEI before spending rare materials."
+				"The Archaeology Table and related research blocks turn fragments into knowledge and displayable finds. Check every shard's uses in JEI before treating it as ordinary loot or combining away the only museum copy."
+				"Artifacts can also come from structure chests, archaeology, rare equipped mobs, and Mimics. Identify a chest before standing beside it; a Mimic is an encounter, not evidence that the loot system is broken."
+				"The Curators' Compact keeps an original, a display example, and a replaceable field copy when possible. Rare knowledge belongs to the settlement even when the person who found it is offline."
+			]
+			id: "776257DFD6C8B0B7"
+			rewards: [{
+				id: "042BA034D081086C"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "1D8772B91E258E13"
+				item: "relics:researching_table"
+				type: "item"
+			}]
+			title: "Research Relics"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["776257DFD6C8B0B7"]
+			description: [
+				"Complete a bounty, identify an artifact and display a relic-worthy find. The goal is a story-rich collection, not a chest of unexplained loot."
+				"The Curators' Compact keeps an original, a display example, and a replaceable field copy when possible. Rare knowledge belongs to the settlement even when the person who found it is offline."
+				"Artifacts can also come from structure chests, archaeology, rare equipped mobs, and Mimics. Identify a chest before standing beside it; a Mimic is an encounter, not evidence that the loot system is broken."
+				"The Archaeology Table and related research blocks turn fragments into knowledge and displayable finds. Check every shard's uses in JEI before treating it as ordinary loot or combining away the only museum copy."
+			]
+			id: "3680E5CFD594F78F"
+			rewards: [
+				{
+					count: 8
+					id: "08A4BBEB77783638"
+					item: "minecraft:experience_bottle"
+					type: "item"
+				}
+				{
+					id: "4ACDAD3AA26797AB"
+					type: "xp"
+					xp: 30
+				}
+			]
+			tasks: [{
+				id: "09FE5BC063834716"
+				title: "Our museum has a bounty, artifact and relic display"
+				type: "checkmark"
+			}]
+			title: "Curator of Strange Things"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Approach ruins slowly, photograph or mark the site, and search for suspicious blocks before flattening the area. Brushes recover information that a pickaxe destroys."
+				"Keep pottery, relics and written clues together until their purpose is understood. An apparently useless fragment may identify a structure, collection or later crafting path."
+				"Restore one section of a ruin instead of stripping every block. The world feels richer when discoveries leave a visible history behind."
+				"Better Archeology expands suspicious sand and gravel into a broader field practice with fossils, ruins, artifact shards, and analysis. Bring several brushes, light, scaffolding blocks, and empty protected inventory slots."
+			]
+			id: "6D04014F7539F025"
+			rewards: [{
+				id: "642AC26447FA82D2"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Context is part of the treasure"
+			tasks: [{
+				id: "181D2C1D0E4B2593"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Excavate Like an Archaeologist"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6D04014F7539F025"]
+			description: [
+				"Bountiful boards turn ordinary work into directed goals. Read the requested item and reward carefully before accepting, and avoid consuming rare progression materials for a weak payout."
+				"Artifacts and relics often have slots, cooldowns or unusual activation rules. Read their tooltip, test them somewhere safe and compare overlapping effects before judging them."
+				"The chronicle calls relics memories with weight. Carrying one should change how you prepare, not merely raise a number."
+				"Better Archeology expands suspicious sand and gravel into a broader field practice with fossils, ruins, artifact shards, and analysis. Bring several brushes, light, scaffolding blocks, and empty protected inventory slots."
+			]
+			id: "196B3D194E777B25"
+			rewards: [{
+				id: "78C26799682F071C"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Power usually arrives with conditions"
+			tasks: [{
+				id: "49D0FCF793614F17"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Bounties, Artifacts and Relics"
+			x: 1.5d
+			y: 5.0d
+		}
+	]
+	title: "Archaeology, Bounties and Relics"
+}

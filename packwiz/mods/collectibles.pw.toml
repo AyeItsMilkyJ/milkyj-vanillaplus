@@ -1,0 +1,12 @@
+name = "Collectibles"
+filename = "Collectibles-1.20.x-(v.1.4.10).jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/YndbKiX8/versions/18h2at75/Collectibles-1.20.x-%28v.1.4.10%29.jar"
+hash-format = "sha512"
+hash = "2887d880c38332ab3abccc47c43afdd2d37ccb63681f4d8f7e383508835856c58957b1d368a13a98179fb7f48c6025c0e9e0132ddd6f342015c5ed54d819abd0"
+
+[update.modrinth]
+mod-id = "YndbKiX8"
+version = "18h2at75"

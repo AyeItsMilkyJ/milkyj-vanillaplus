@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/skunk_spawns.json"
+filename = "skunk_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/skunk_spawns.json"
+hash-format = "sha256"
+hash = "504216d2e564d3a4df5c9bc5d723cfadeb645ac447c153686797698389421e80"

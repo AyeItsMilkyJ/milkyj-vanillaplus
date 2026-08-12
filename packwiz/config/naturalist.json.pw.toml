@@ -1,0 +1,8 @@
+name = "Managed config: naturalist.json"
+filename = "naturalist.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/naturalist.json"
+hash-format = "sha256"
+hash = "2ab566221bf3d12767b052da74204bd1a2258380c61b6d719f33155f8edd6dff"

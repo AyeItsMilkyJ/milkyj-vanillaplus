@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/netherdepthsupgrade/textures/block/tall_crimson_seagrass_top.png"
+filename = "tall_crimson_seagrass_top.png"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/netherdepthsupgrade/textures/block/tall_crimson_seagrass_top.png"
+hash-format = "sha256"
+hash = "cb80e06814966a0a15766e7f953d0e610e8031a7c2611db16c32a5bd828c6a49"

@@ -1,0 +1,8 @@
+name = "Managed config: labels-client.toml"
+filename = "labels-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/labels-client.toml"
+hash-format = "sha256"
+hash = "ff4d49e8887003f08adb512551c17ad62cbc8734fe20103da590a92e5675c9e9"

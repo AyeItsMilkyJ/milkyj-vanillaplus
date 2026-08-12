@@ -1,0 +1,8 @@
+name = "Managed defaultconfigs: ftbultimine/ftbultimine-client.snbt"
+filename = "ftbultimine-client.snbt"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/defaultconfigs/ftbultimine/ftbultimine-client.snbt"
+hash-format = "sha256"
+hash = "0af4a5c9c743c56273b8594f9bf1f57a4adab850c4ac1356b615750b8bb649c6"

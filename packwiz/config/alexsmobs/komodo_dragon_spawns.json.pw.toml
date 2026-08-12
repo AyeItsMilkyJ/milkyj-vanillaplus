@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/komodo_dragon_spawns.json"
+filename = "komodo_dragon_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/komodo_dragon_spawns.json"
+hash-format = "sha256"
+hash = "dd9cacc34fa8e89708f686d2f66f9b1159fb9fef30f908b399e013c0a24e9766"

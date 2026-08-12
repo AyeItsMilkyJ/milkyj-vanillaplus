@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/crocodile_spawns.json"
+filename = "crocodile_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/crocodile_spawns.json"
+hash-format = "sha256"
+hash = "5ea014a69257967097e0be01da171558f8ecf437316572c80f90362009f55dee"

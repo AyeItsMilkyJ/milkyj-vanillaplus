@@ -1,0 +1,8 @@
+name = "Managed config: fairylights-common.toml"
+filename = "fairylights-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/fairylights-common.toml"
+hash-format = "sha256"
+hash = "61078cc778b4049c259a0bc2e1ba809306e39cc90dffd59c6f9855aabacd52e0"

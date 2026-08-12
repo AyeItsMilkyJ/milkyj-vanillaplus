@@ -1,0 +1,8 @@
+name = "Managed config: twilightforest-client.toml"
+filename = "twilightforest-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/twilightforest-client.toml"
+hash-format = "sha256"
+hash = "7df74722394aa6f9b662317ad4840fc9b0a2e11c394ef6da2b3d9eabb62808d3"

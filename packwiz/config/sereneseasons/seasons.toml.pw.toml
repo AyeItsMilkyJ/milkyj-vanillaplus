@@ -1,0 +1,8 @@
+name = "Managed config: sereneseasons/seasons.toml"
+filename = "seasons.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/sereneseasons/seasons.toml"
+hash-format = "sha256"
+hash = "ac574f8602cbd34104f87143ef2622b80ee91793d7f19a4ec23fe7280fad4efa"

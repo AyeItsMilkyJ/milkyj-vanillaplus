@@ -1,0 +1,8 @@
+name = "Managed config: entityculling.json"
+filename = "entityculling.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/entityculling.json"
+hash-format = "sha256"
+hash = "309b72a99438ad96d6282aa6b23de7dfde2ab5cad1297fd6c80f8d4766d09109"

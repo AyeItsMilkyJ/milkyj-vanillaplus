@@ -1,0 +1,8 @@
+name = "Managed config: amendments-client.toml"
+filename = "amendments-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/amendments-client.toml"
+hash-format = "sha256"
+hash = "8eab3ba39b22456ffd9d28281d4cff6a56bd8732d354190d8445c99ad2c02851"

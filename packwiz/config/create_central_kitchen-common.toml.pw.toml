@@ -1,0 +1,8 @@
+name = "Managed config: create_central_kitchen-common.toml"
+filename = "create_central_kitchen-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/create_central_kitchen-common.toml"
+hash-format = "sha256"
+hash = "d769909a3c4ab55be032c8a07904bd870477dc443cdadb3464c8e30aedf3441c"

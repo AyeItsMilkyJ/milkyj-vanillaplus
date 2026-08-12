@@ -1,0 +1,8 @@
+name = "Managed config: aethersdelight-common.toml"
+filename = "aethersdelight-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/aethersdelight-common.toml"
+hash-format = "sha256"
+hash = "3d29f1312d2c893a7938e977f3ca03ddeffd1c787e7405459601f252dc2c6f24"

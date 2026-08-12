@@ -1,0 +1,8 @@
+name = "Managed config: towns_and_towers/structure_enable_or_disable_new.json5"
+filename = "structure_enable_or_disable_new.json5"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/towns_and_towers/structure_enable_or_disable_new.json5"
+hash-format = "sha256"
+hash = "7c51375a50f38aa23fd697d9e260f02ac4f2ff941b16c73b405ae59fed33a15a"

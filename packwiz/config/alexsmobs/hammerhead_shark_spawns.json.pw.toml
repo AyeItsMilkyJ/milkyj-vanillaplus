@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/hammerhead_shark_spawns.json"
+filename = "hammerhead_shark_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/hammerhead_shark_spawns.json"
+hash-format = "sha256"
+hash = "cdde58f5de5958b895bda3f8834cac0c1e539040274b9aa2d5896fd676726ca8"

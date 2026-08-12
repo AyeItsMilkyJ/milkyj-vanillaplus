@@ -1,0 +1,8 @@
+{
+  "packName": "MilkyJ Vanilla+",
+  "packVersion": "1.8.1-packwiz.1",
+  "minecraftVersion": "1.20.1",
+  "forgeVersion": "47.4.10",
+  "rawRepositoryBaseUrl": "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main",
+  "packUrl": "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/packwiz/pack.toml"
+}

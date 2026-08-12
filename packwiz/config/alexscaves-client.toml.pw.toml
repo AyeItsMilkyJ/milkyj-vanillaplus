@@ -1,0 +1,8 @@
+name = "Managed config: alexscaves-client.toml"
+filename = "alexscaves-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/alexscaves-client.toml"
+hash-format = "sha256"
+hash = "d8d376f82da7c77338dfeaa19c4f395e9c6cf6be4a9d3e1217dd4b0aca3233f9"

@@ -1,0 +1,12 @@
+name = "MINT Lib"
+filename = "mint-lib-0.4.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/dNaBx7Ep/versions/KcvMTH2U/mint-lib-0.4.0.jar"
+hash-format = "sha512"
+hash = "8741da0123cd4bd89ecfa35e167d9ec34d0469212985d712a6e4156424d8155f2206a77ce1300d4f51f84b3bcf2c17d66824344650abbe98a00b486271df1f5c"
+
+[update.modrinth]
+mod-id = "dNaBx7Ep"
+version = "KcvMTH2U"

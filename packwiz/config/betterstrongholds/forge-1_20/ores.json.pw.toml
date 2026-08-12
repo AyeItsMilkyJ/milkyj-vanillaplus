@@ -1,0 +1,8 @@
+name = "Managed config: betterstrongholds/forge-1_20/ores.json"
+filename = "ores.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/forge-1_20/ores.json"
+hash-format = "sha256"
+hash = "0684909fe1aec69e667fa41b62a2cd41b98fa6af00c51cbc6cc4219ce40fdeaa"

@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/unusualfishmod/animations/entity/duality_damselfish.animation.json"
+filename = "duality_damselfish.animation.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/duality_damselfish.animation.json"
+hash-format = "sha256"
+hash = "4f0c96f30416da9c7c818dca3b418b66b3f3f8f419edc03c2dcee5170edbd915"

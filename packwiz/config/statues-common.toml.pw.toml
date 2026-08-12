@@ -1,0 +1,8 @@
+name = "Managed config: statues-common.toml"
+filename = "statues-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/statues-common.toml"
+hash-format = "sha256"
+hash = "f6d5fb57a6e4ef6f479fedb346290fa0a7e48361704ae80b9c6070d85d252f02"

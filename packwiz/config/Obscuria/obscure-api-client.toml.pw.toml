@@ -1,0 +1,8 @@
+name = "Managed config: Obscuria/obscure-api-client.toml"
+filename = "obscure-api-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/Obscuria/obscure-api-client.toml"
+hash-format = "sha256"
+hash = "90b60c01677fe0899e1b1fbf0deb8aba975f3540a0abb979a1c9aa7760930fe2"

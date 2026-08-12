@@ -1,0 +1,8 @@
+name = "Managed config: explorerscompass-client.toml"
+filename = "explorerscompass-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/explorerscompass-client.toml"
+hash-format = "sha256"
+hash = "eaaa7a0af68a2b00a557d5df97191c80c996042cc33cc53eccd14e78431bff28"

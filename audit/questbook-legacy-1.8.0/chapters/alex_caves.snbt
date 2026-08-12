@@ -1,0 +1,459 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "alex_caves"
+	group: "4A5CA40AA14EE19B"
+	icon: "alexscaves:cave_book"
+	id: "2C1E8AA16042A8A5"
+	order_index: 7
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Alex's Caves hides enormous rare underground biomes. The Cave Book begins the discovery chain and helps explain what you are looking for."
+				"Alex's Caves hides six rare cave biomes behind the Cave Compendium, coded tablets, and cave maps. Finding the information chain is part of progression; ordinary strip mining is not an efficient substitute."
+				"A cave map leads toward a rare biome but does not build the route home. Mark the surface, secure vertical travel, carry breathing or protection tools where appropriate, and establish a cache before exploring sideways."
+				"Creatures and materials inside these caves often interact with the biome's mechanics. Observe, consult the Compendium and JEI, and keep the first unfamiliar drop until its uses and renewability are understood."
+			]
+			id: "7153EA2D324B7943"
+			rewards: [{
+				id: "4E52C8353D120464"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "6442DE18C9217C37"
+				item: "alexscaves:cave_book"
+				type: "item"
+			}]
+			title: "The Cave Book"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7153EA2D324B7943"]
+			description: [
+				"Progress from the Cave Book to the Cave Codex, then use it with the appropriate materials to create cave maps."
+				"A cave map leads toward a rare biome but does not build the route home. Mark the surface, secure vertical travel, carry breathing or protection tools where appropriate, and establish a cache before exploring sideways."
+				"Creatures and materials inside these caves often interact with the biome's mechanics. Observe, consult the Compendium and JEI, and keep the first unfamiliar drop until its uses and renewability are understood."
+				"Alex's Caves hides six rare cave biomes behind the Cave Compendium, coded tablets, and cave maps. Finding the information chain is part of progression; ordinary strip mining is not an efficient substitute."
+			]
+			id: "522515BBF43BDD81"
+			rewards: [{
+				id: "201F660BD1A129E3"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				id: "38B9804EE4D9A41E"
+				item: "alexscaves:cave_codex"
+				type: "item"
+			}]
+			title: "Decode the Caves"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Cave Maps point toward a rare cave biome. Treat each map as an expedition project and fully supply the group before travelling."
+				"A cave map leads toward a rare biome but does not build the route home. Mark the surface, secure vertical travel, carry breathing or protection tools where appropriate, and establish a cache before exploring sideways."
+				"Alex's Caves hides six rare cave biomes behind the Cave Compendium, coded tablets, and cave maps. Finding the information chain is part of progression; ordinary strip mining is not an efficient substitute."
+				"Creatures and materials inside these caves often interact with the biome's mechanics. Observe, consult the Compendium and JEI, and keep the first unfamiliar drop until its uses and renewability are understood."
+			]
+			id: "66CCA2A6C6C15D93"
+			rewards: [{
+				id: "7802C7920285E0B6"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "63B24345914E3EA0"
+				item: "alexscaves:cave_map"
+				type: "item"
+			}]
+			title: "Make a Cave Map"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["66CCA2A6C6C15D93"]
+			description: [
+				"A lost prehistoric ecosystem with dangerous megafauna. Observe first, avoid destroying habitats and bring a strong shield."
+				"Each cave has a strong environmental identity and hazard set: radiation, magnetism, deep water, darkness, ancient life, or confectionery physics. Prepare for the named environment instead of taking one universal mining kit."
+				"Creatures and materials inside these caves often interact with the biome's mechanics. Observe, consult the Compendium and JEI, and keep the first unfamiliar drop until its uses and renewability are understood."
+				"The Five Impossible Strata are scientific expeditions in the Chronicle. Every visit should return with coordinates, hazards, one photographed ecosystem, and a sample labelled by cave rather than dumped into general storage."
+			]
+			id: "2CE9EE13D1D9F383"
+			rewards: [{
+				id: "6037A5A7ED3D1407"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				advancement: "alexscaves:alexscaves/discover_primordial_caves"
+				criterion: ""
+				id: "33D06198EAE1159D"
+				type: "advancement"
+			}]
+			title: "Primordial Caves"
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["66CCA2A6C6C15D93"]
+			description: [
+				"Radiation and toxic hazards demand proper protection. Assemble a full hazmat suit before handling uranium-rich materials."
+				"Each cave has a strong environmental identity and hazard set: radiation, magnetism, deep water, darkness, ancient life, or confectionery physics. Prepare for the named environment instead of taking one universal mining kit."
+				"A cave map leads toward a rare biome but does not build the route home. Mark the surface, secure vertical travel, carry breathing or protection tools where appropriate, and establish a cache before exploring sideways."
+				"Creatures and materials inside these caves often interact with the biome's mechanics. Observe, consult the Compendium and JEI, and keep the first unfamiliar drop until its uses and renewability are understood."
+			]
+			id: "1500D8E1C9555F66"
+			rewards: [{
+				id: "6009D1C0BAE94216"
+				type: "xp"
+				xp: 30
+			}]
+			tasks: [
+				{
+					advancement: "alexscaves:alexscaves/discover_toxic_caves"
+					criterion: ""
+					id: "56E8BF22353EE10F"
+					type: "advancement"
+				}
+				{
+					id: "70643426D06B533B"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_mask"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "77D9E0BEB7EAD58A"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7B22705618DDDC8E"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5129F01DA2D59A5A"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Toxic Caves"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["66CCA2A6C6C15D93"]
+			description: [
+				"The ocean depths combine darkness, pressure-like danger and powerful creatures. Bring water breathing and a reliable return route."
+				"Each cave has a strong environmental identity and hazard set: radiation, magnetism, deep water, darkness, ancient life, or confectionery physics. Prepare for the named environment instead of taking one universal mining kit."
+				"A cave map leads toward a rare biome but does not build the route home. Mark the surface, secure vertical travel, carry breathing or protection tools where appropriate, and establish a cache before exploring sideways."
+				"Creatures and materials inside these caves often interact with the biome's mechanics. Observe, consult the Compendium and JEI, and keep the first unfamiliar drop until its uses and renewability are understood."
+			]
+			id: "1FDD5DD90EEEB0B9"
+			rewards: [{
+				id: "5EE8421E44A43210"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				advancement: "alexscaves:alexscaves/discover_abyssal_chasm"
+				criterion: ""
+				id: "544B1C028F31455F"
+				type: "advancement"
+			}]
+			title: "Abyssal Chasm"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["66CCA2A6C6C15D93"]
+			description: [
+				"Bright colours do not mean harmless terrain. Explore the confectionery ecosystem and try its strange materials without underestimating its mobs."
+				"The Five Impossible Strata are scientific expeditions in the Chronicle. Every visit should return with coordinates, hazards, one photographed ecosystem, and a sample labelled by cave rather than dumped into general storage."
+				"Each cave has a strong environmental identity and hazard set: radiation, magnetism, deep water, darkness, ancient life, or confectionery physics. Prepare for the named environment instead of taking one universal mining kit."
+				"Creatures and materials inside these caves often interact with the biome's mechanics. Observe, consult the Compendium and JEI, and keep the first unfamiliar drop until its uses and renewability are understood."
+			]
+			id: "4072C5B8BFC449C5"
+			rewards: [{
+				id: "4E920886F4316D94"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [
+				{
+					advancement: "alexscaves:alexscaves/discover_candy_cavity"
+					criterion: ""
+					id: "718F60FB07DDC2E1"
+					type: "advancement"
+				}
+				{
+					id: "70CB629B51F23159"
+					item: {
+						Count: 1
+						id: "alexscaves:candy_cane_hook"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Candy Cavity"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["66CCA2A6C6C15D93"]
+			description: [
+				"Dark subterranean ruins and necromantic threats make this a serious expedition. Stay together and light the retreat path."
+				"The Five Impossible Strata are scientific expeditions in the Chronicle. Every visit should return with coordinates, hazards, one photographed ecosystem, and a sample labelled by cave rather than dumped into general storage."
+				"Alex's Caves hides six rare cave biomes behind the Cave Compendium, coded tablets, and cave maps. Finding the information chain is part of progression; ordinary strip mining is not an efficient substitute."
+				"Tablet fragments become useful through translation and the Compendium. Preserve fragments, read the resulting entry, and craft the correct cave map before generating huge underground areas blindly."
+			]
+			id: "4A764B8803227166"
+			rewards: [{
+				id: "1FA2C8471A873DE1"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				advancement: "alexscaves:alexscaves/discover_forlorn_hollows"
+				criterion: ""
+				id: "79269A9AC25B8921"
+				type: "advancement"
+			}]
+			title: "Forlorn Hollows"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"1500D8E1C9555F66"
+				"1FDD5DD90EEEB0B9"
+			]
+			description: [
+				"Magnetic forces alter movement and machinery in this biome. Experiment carefully before committing rare components to a build."
+				"Alex's Caves hides six rare cave biomes behind the Cave Compendium, coded tablets, and cave maps. Finding the information chain is part of progression; ordinary strip mining is not an efficient substitute."
+				"A cave map leads toward a rare biome but does not build the route home. Mark the surface, secure vertical travel, carry breathing or protection tools where appropriate, and establish a cache before exploring sideways."
+				"Creatures and materials inside these caves often interact with the biome's mechanics. Observe, consult the Compendium and JEI, and keep the first unfamiliar drop until its uses and renewability are understood."
+			]
+			id: "00A9BAA0EDCFCD9A"
+			rewards: [{
+				id: "46C2B16A22466BBF"
+				type: "xp"
+				xp: 35
+			}]
+			tasks: [{
+				advancement: "alexscaves:alexscaves/discover_magnetic_caves"
+				criterion: ""
+				id: "1E19D4FE987F0B12"
+				type: "advancement"
+			}]
+			title: "Magnetic Caves"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Return samples and stories from every major cave biome, then build an organised exhibit or expedition archive at home."
+				"The Five Impossible Strata are scientific expeditions in the Chronicle. Every visit should return with coordinates, hazards, one photographed ecosystem, and a sample labelled by cave rather than dumped into general storage."
+				"A cave map leads toward a rare biome but does not build the route home. Mark the surface, secure vertical travel, carry breathing or protection tools where appropriate, and establish a cache before exploring sideways."
+				"Creatures and materials inside these caves often interact with the biome's mechanics. Observe, consult the Compendium and JEI, and keep the first unfamiliar drop until its uses and renewability are understood."
+			]
+			id: "7EB56F03F43F4F20"
+			rewards: [
+				{
+					count: 3
+					id: "66F80438B5754E67"
+					item: "minecraft:diamond"
+					type: "item"
+				}
+				{
+					id: "4027C206987D5663"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "3BA2A0D92531D899"
+				title: "Our cave atlas and exhibit are complete"
+				type: "checkmark"
+			}]
+			title: "Complete the Cave Atlas"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Alex's Caves is a collection of specialised underground ecosystems. Read the Cave Book and learn the hazards, resources and creatures of one biome before applying habits from another."
+				"Carry general expedition supplies plus one empty section of inventory for biome-specific tools. Unfamiliar blocks may be machinery, hazards or living parts of the environment."
+				"The five great strata are not simply deeper caves; they are worlds compressed beneath the same surface."
+				"The Five Impossible Strata are scientific expeditions in the Chronicle. Every visit should return with coordinates, hazards, one photographed ecosystem, and a sample labelled by cave rather than dumped into general storage."
+			]
+			id: "3FA29C6849A7329D"
+			rewards: [{
+				id: "37F012FC1A61C4CE"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Each biome has its own physical rules"
+			tasks: [{
+				id: "43F61D694A8CDA54"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Treat the Cave Book as a Codex"
+			x: -1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3FA29C6849A7329D"]
+			description: [
+				"Secure oxygen, radiation, darkness, hostile terrain or aggressive wildlife before focusing on valuable blocks. If the environment is killing you, better tools will not solve the route home."
+				"Establish a marked staging point outside each cave biome and unload discoveries regularly. Long underground trips become safer when failure loses minutes instead of an entire evening."
+				"Bring samples home for research, but resist dismantling the landscape before understanding what depends on it."
+				"Each cave has a strong environmental identity and hazard set: radiation, magnetism, deep water, darkness, ancient life, or confectionery physics. Prepare for the named environment instead of taking one universal mining kit."
+			]
+			id: "7F0D8744A1213C7A"
+			rewards: [{
+				id: "0BEA7680516D1C73"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Rare ore is never the first problem"
+			tasks: [{
+				id: "6E65CD864365523E"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Control the Hazard Before Mining"
+			x: 1.5d
+			y: 6.0d
+		}
+		{
+			description: [
+				"Alex's Caves biomes are deliberately rare. Search ordinary Overworld caves for an Underground Cabin, whose loot can include Cave Tablets and a Cave Compendium."
+				"The Compendium contains a section for each cave but begins partly locked. Keep every tablet; its hidden subject is revealed through research rather than by guessing from the texture."
+				"Mark the cabin and turn it into a small research station. It is the front door to the mod even though no portal appears there."
+				"Tablet fragments become useful through translation and the Compendium. Preserve fragments, read the resulting entry, and craft the correct cave map before generating huge underground areas blindly."
+			]
+			id: "690649EC82809531"
+			rewards: [{
+				id: "4E923FB59F0D89DB"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Tablets and the Compendium are the intended discovery trail"
+			tasks: [{
+				id: "2B5572F2D0AE9F8E"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Start with an Underground Cabin"
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["690649EC82809531"]
+			description: [
+				"Use a Spelunkery Table to translate a Cave Tablet. The resulting Cave Codex unlocks the matching Compendium section and participates in the map-making trail."
+				"Read the new section before crafting the Cave Map. It explains mobs, materials and hazards that ordinary coordinates cannot."
+				"Store translated codices and spare maps in the archive. A rare clue should support several expeditions rather than vanish with the first player who found it."
+				"Alex's Caves hides six rare cave biomes behind the Cave Compendium, coded tablets, and cave maps. Finding the information chain is part of progression; ordinary strip mining is not an efficient substitute."
+			]
+			id: "6B11A9BA9E505A7B"
+			rewards: [{
+				id: "544F885C267DA1AA"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Spelunkery turns a clue into a Cave Codex"
+			tasks: [{
+				id: "1F8C6390C24CCDB5"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Translate the Tablet"
+			x: 2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["6B11A9BA9E505A7B"]
+			description: [
+				"Magnetic Caves revolve around polarity and unusual machinery. Primordial Caves contain megafauna and ancient plants. Toxic Caves make radiation protection a requirement rather than flavour."
+				"Abyssal Chasm turns deep water into an industrial and creature expedition. Forlorn Hollows combine darkness, ruins and necromantic danger. Candy Cavity uses playful materials without becoming harmless."
+				"Prepare six specialised kits instead of one universal backpack. The Compendium and JEI should decide the equipment, not the colour of the cave map."
+				"Each cave has a strong environmental identity and hazard set: radiation, magnetism, deep water, darkness, ancient life, or confectionery physics. Prepare for the named environment instead of taking one universal mining kit."
+			]
+			id: "4673E2C8AC509575"
+			rewards: [{
+				id: "6FBBD566476A852D"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Magnetism, prehistory, radiation, abyss, darkness and confectionery are different rulesets"
+			tasks: [{
+				id: "613BB7DA6E08E3C6"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Six Caves, Six Ecosystems"
+			x: 4.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["4673E2C8AC509575"]
+			description: [
+				"Luxtructosaurus, Hullbreaker, Tremorzilla, Gum Worm and other apex encounters belong to different caves and are not equivalent milestones. Some require deliberate summoning or unusual conditions."
+				"Do not activate a ritual, feed a suspicious catalyst or attack the largest silhouette until the group has read that Compendium section and stored spare gear."
+				"Document the arena and result, but preserve the ecosystem around it. Completing a cave means understanding what made it unique, not deleting every creature inside."
+				"Alex's Caves hides six rare cave biomes behind the Cave Compendium, coded tablets, and cave maps. Finding the information chain is part of progression; ordinary strip mining is not an efficient substitute."
+			]
+			id: "0B6FB993C2EE045D"
+			rewards: [{
+				id: "7FC875E011C75991"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Summons and apex creatures can change the whole expedition"
+			tasks: [{
+				id: "64746A5D3E2C6EEC"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Recognise Alex's Caves Boss Thresholds"
+			x: 6.0d
+			y: 8.0d
+		}
+	]
+	title: "Alex's Caves Expeditions"
+}

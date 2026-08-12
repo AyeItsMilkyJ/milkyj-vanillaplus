@@ -1,0 +1,367 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "welcome"
+	group: "1C7D7A0940131874"
+	icon: "minecraft:writable_book"
+	id: "34DE56B26240E40B"
+	order_index: 1
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"This book is your guided tour through the pack. It explains useful tools first, then opens into farming, building, Create engineering, archaeology and full adventure dimensions."
+				"Most chapters are flexible. Split up with friends, compare discoveries, and use the quest lines as suggestions rather than homework."
+				"Jade answers what is directly in front of you, while the quest book explains why it matters. Read the block or creature name before interacting; unfamiliar content is often useful, neutral, or part of a later progression chain."
+				"A checkmark lesson records that you understood an idea; item tasks verify a concrete milestone. Team progress is shared, so explain discoveries in chat or signs instead of silently completing a branch for everyone."
+			]
+			id: "7DA1925406767A08"
+			rewards: [
+				{
+					count: 8
+					id: "37C462912CB4ED85"
+					item: "minecraft:bread"
+					type: "item"
+				}
+				{
+					count: 16
+					id: "47348F50B1E09486"
+					item: "minecraft:torch"
+					type: "item"
+				}
+				{
+					id: "0A58A3CD217990A4"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [{
+				id: "324C6E97D6CB2AA8"
+				title: "I am ready to learn the pack"
+				type: "checkmark"
+			}]
+			title: "Welcome, Noobs (Affectionate)"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7DA1925406767A08"]
+			description: [
+				"Open your inventory and use the item list on the right. Click an item to view its recipe; press U while hovering to see what it can make."
+				"If several mods make the same recipe, Polymorph adds a small selector to the crafting result so you can choose the output."
+				"Treat JEI as the pack's recipe index: R shows recipes, U shows uses, and an at-sign search narrows the list to one mod. If two recipes overlap, use the recipe-selection button instead of assuming one is broken."
+				"If an interface or recipe appears missing, clear the search box, confirm the item's mod in its tooltip, and inspect both recipes and uses. Restarting is the last step, not the first diagnostic."
+			]
+			id: "381BFADC40CC9BDC"
+			rewards: [{
+				id: "4DE250BFE0400D48"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "66437E27A9D70BAC"
+				title: "I can look up a recipe in JEI"
+				type: "checkmark"
+			}]
+			title: "JEI: Your Recipe Dictionary"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["381BFADC40CC9BDC"]
+			description: [
+				"Look at blocks and creatures to see their name, mod and useful state. Jade is excellent for diagnosing machines, crops and storage without breaking them."
+				"Jade answers what is directly in front of you, while the quest book explains why it matters. Read the block or creature name before interacting; unfamiliar content is often useful, neutral, or part of a later progression chain."
+				"The Field Guide is written as the Chronicle kept by your settlement: practical instructions first, warnings second, and lore last. Complete it in whatever order matches the story your group is actually creating."
+			]
+			id: "4B260074BFD1BB0C"
+			rewards: [{
+				id: "178BBDE3403B8BA6"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "5B799C1468EF0D26"
+				title: "I noticed the Jade panel while looking at a block"
+				type: "checkmark"
+			}]
+			title: "Read the World with Jade"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4B260074BFD1BB0C"]
+			description: [
+				"FTB Ultimine can break connected blocks while its key is held. It costs hunger and tool durability. Check the preview before mining near builds or lava."
+				"Treat JEI as the pack's recipe index: R shows recipes, U shows uses, and an at-sign search narrows the list to one mod. If two recipes overlap, use the recipe-selection button instead of assuming one is broken."
+				"Jade answers what is directly in front of you, while the quest book explains why it matters. Read the block or creature name before interacting; unfamiliar content is often useful, neutral, or part of a later progression chain."
+			]
+			id: "72BE3B6573EDF96E"
+			rewards: [{
+				id: "425287FC7E317656"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "29F2EBE84A94D073"
+				title: "I found the Ultimine keybind"
+				type: "checkmark"
+			}]
+			title: "Mine Smarter, Not Recklessly"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["72BE3B6573EDF96E"]
+			description: [
+				"The Corpse mod stores your inventory when you die. Mark the death location, return prepared, and recover the body instead of panic-quitting."
+				"Before leaving home, mark the entrance, carry ordinary blocks, food, a bed or sleeping bag, and a return plan. Most early disasters come from losing the route rather than losing a fight."
+				"A checkmark lesson records that you understood an idea; item tasks verify a concrete milestone. Team progress is shared, so explain discoveries in chat or signs instead of silently completing a branch for everyone."
+				"If an interface or recipe appears missing, clear the search box, confirm the item's mod in its tooltip, and inspect both recipes and uses. Restarting is the last step, not the first diagnostic."
+			]
+			id: "2E34979BCE044BF5"
+			rewards: [{
+				count: 4
+				id: "0FE7EE9D493A0A1D"
+				item: "minecraft:cooked_beef"
+				type: "item"
+			}]
+			tasks: [{
+				id: "64C51E8DA72CE377"
+				title: "I know how corpse recovery works"
+				type: "checkmark"
+			}]
+			title: "Death Is Recoverable"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2E34979BCE044BF5"]
+			description: [
+				"Sophisticated Backpacks adds upgradeable personal storage. Put one in its Curios slot if available, then learn the open-backpack keybind."
+				"Sophisticated Backpacks upgrades the same inventory through material tiers. Give each pack a role, open its upgrade tabs deliberately, and configure filters before enabling automatic pickup, magnet, refill, or void behaviour."
+				"Storage should have layers: backpack for the road, drawers for bulk, ordinary labelled containers for unique objects, and a searchable terminal across the room. One giant unsorted network only hides disorder behind a search bar."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "044BBAC4BEC5CA7F"
+			rewards: [{
+				id: "6364292EA86DCB9E"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "44458A420CA44D2C"
+				item: "sophisticatedbackpacks:backpack"
+				type: "item"
+			}]
+			title: "Your First Backpack"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["044BBAC4BEC5CA7F"]
+			description: [
+				"Waystones connect important settlements and portals. Name them clearly. Public travel infrastructure prevents everyone from making duplicate routes."
+				"Waystones must be activated before they become reliable destinations. Name them by place and dimension, keep the arrival area safe, and carry a scroll or Warp Stone when an expedition cannot assume the destination chunk is convenient."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "31CF2E051B43098D"
+			rewards: [
+				{
+					count: 2
+					id: "05902C78CA9A4EB5"
+					item: "minecraft:ender_pearl"
+					type: "item"
+				}
+				{
+					id: "47FC1A96C03DDB68"
+					type: "xp"
+					xp: 15
+				}
+			]
+			tasks: [{
+				id: "5E4A606C24D28BB9"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			title: "A Shared Waystone Network"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["31CF2E051B43098D"]
+			description: [
+				"What this is: the Field Guide explains progression, JEI explains recipes, Jade identifies the block in front of you, and Patchouli manuals provide the deep reference written by a mod author."
+				"Why it matters: hover an item and read the mod name in its tooltip before searching. In JEI, type an at-sign followed by that mod name to isolate its items and avoid mixing similarly named systems."
+				"How to begin: open a Patchouli manual like the Aether Book of Lore or Alex's Caves Cave Book from your inventory and use its contents or search page. Manuals are ordinary items, not another keybind-only screen."
+				"What comes next: use the quest book for order, JEI for exact recipes, Patchouli for reference, Jade for live state, and Create Ponder for animated machinery."
+			]
+			id: "18C0AF7F5C17CAB7"
+			rewards: [{
+				id: "6591CA00ED66CA94"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "5D7F3480331AF688"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "How to Read the Field Guide"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["18C0AF7F5C17CAB7"]
+			description: [
+				"Create teaches machinery visually. Hover a Create component in JEI or your inventory and hold W to open its animated Ponder scene."
+				"When a machine is confusing, Ponder is usually better than guessing."
+				"Jade answers what is directly in front of you, while the quest book explains why it matters. Read the block or creature name before interacting; unfamiliar content is often useful, neutral, or part of a later progression chain."
+				"A checkmark lesson records that you understood an idea; item tasks verify a concrete milestone. Team progress is shared, so explain discoveries in chat or signs instead of silently completing a branch for everyone."
+			]
+			id: "5466319B4BC86D8B"
+			rewards: [{
+				id: "3B3A9DE05861E89D"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "4BDB119AF817BDB1"
+				title: "I tried holding W on a Create item"
+				type: "checkmark"
+			}]
+			title: "Create Ponder"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5466319B4BC86D8B"]
+			description: [
+				"FTB Quests works with FTB Teams. Create or join the same team so discoveries and quest progress are shared."
+				"Open the FTB Teams screen from its keybind or use /ftbteams party create <name>, then invite your friends."
+				"A checkmark lesson records that you understood an idea; item tasks verify a concrete milestone. Team progress is shared, so explain discoveries in chat or signs instead of silently completing a branch for everyone."
+				"Jade answers what is directly in front of you, while the quest book explains why it matters. Read the block or creature name before interacting; unfamiliar content is often useful, neutral, or part of a later progression chain."
+			]
+			id: "11A22EDB82B37413"
+			rewards: [{
+				id: "7C1F0DED1A8C6D57"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "22A7B10105B17F00"
+				title: "We are in the same FTB Team"
+				type: "checkmark"
+			}]
+			title: "One Team, Shared Progress"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["11A22EDB82B37413"]
+			description: [
+				"Use the minimap and world map to mark home, portals and interesting structures. Waypoints save enormous amounts of confused wandering."
+				"Distant Horizons shows far terrain as lightweight LODs; it does not increase the server's active simulation distance."
+				"Before leaving home, mark the entrance, carry ordinary blocks, food, a bed or sleeping bag, and a return plan. Most early disasters come from losing the route rather than losing a fight."
+				"Treat JEI as the pack's recipe index: R shows recipes, U shows uses, and an at-sign search narrows the list to one mod. If two recipes overlap, use the recipe-selection button instead of assuming one is broken."
+			]
+			id: "34B44EE7DDB53F36"
+			rewards: [
+				{
+					id: "2297FDCA42E6B81D"
+					item: "minecraft:compass"
+					type: "item"
+				}
+				{
+					id: "07F0F0A53473CA15"
+					type: "xp"
+					xp: 5
+				}
+			]
+			tasks: [{
+				id: "317E19FB4C0F40DF"
+				title: "I made a waypoint for home"
+				type: "checkmark"
+			}]
+			title: "Map Before You Roam"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["34B44EE7DDB53F36"]
+			description: [
+				"Join the same FTB Team before pushing deeply into the guide. Quest progress can be shared, but discoveries are more memorable when everyone understands what was found and why it matters."
+				"Split useful roles without locking anyone into a job: one person can map, another cook, another build, and another learn Create. Rotate whenever somebody wants to try something new."
+				"Before activating a boss, portal, large contraption, or dangerous structure, tell the group and mark the location. A thirty-second warning prevents an hour of corpse recovery."
+				"A checkmark lesson records that you understood an idea; item tasks verify a concrete milestone. Team progress is shared, so explain discoveries in chat or signs instead of silently completing a branch for everyone."
+			]
+			id: "6352A5D038F9A58D"
+			rewards: [{
+				id: "7422FBD0D53C62F4"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "5A8C61EC7383ED46"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Fellowship Rule"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6352A5D038F9A58D"]
+			description: [
+				"You now know the interfaces that make the rest of the pack approachable. Pick any chapter that sounds fun and come back here if someone new joins."
+				"The Field Guide is written as the Chronicle kept by your settlement: practical instructions first, warnings second, and lore last. Complete it in whatever order matches the story your group is actually creating."
+				"Before leaving home, mark the entrance, carry ordinary blocks, food, a bed or sleeping bag, and a return plan. Most early disasters come from losing the route rather than losing a fight."
+			]
+			id: "3522AB4192F75013"
+			rewards: [
+				{
+					count: 4
+					id: "5F90D88A9406C845"
+					item: "minecraft:experience_bottle"
+					type: "item"
+				}
+				{
+					id: "75014A4595233E47"
+					type: "xp"
+					xp: 20
+				}
+			]
+			tasks: [{
+				id: "4B76B7B57AE8375E"
+				title: "Show me the rest of the pack"
+				type: "checkmark"
+			}]
+			title: "Orientation Complete"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["3522AB4192F75013"]
+			description: [
+				"This chronicle connects the pack's dimensions, ruins, machines and ecosystems into one shared story. It is our world's field-guide lore, not a replacement for the official canon of each mod."
+				"Long ago, separate ages left traces in the same world: old roads, buried halls, impossible caves and gateways to places with different rules. The group has inherited those traces without inheriting their explanations."
+				"Your task is not to conquer everything. It is to learn what each place asks of you, bring that knowledge home, and leave the world more understandable than you found it."
+			]
+			id: "1885CF9658AB663D"
+			rewards: [{
+				id: "70EA4736B4DFA356"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "17524EEC960B5C5A"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Foreword: A World of Many Ages"
+			x: 2.0d
+			y: 4.0d
+		}
+	]
+}

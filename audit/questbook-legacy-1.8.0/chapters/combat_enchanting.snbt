@@ -1,0 +1,441 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "combat_enchanting"
+	group: "49E1A5C0DCAC0DDB"
+	icon: "minecraft:shield"
+	id: "5C5FD57F37AA6E7A"
+	order_index: 1
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Identify the threat, choose a retreat route and clear loose hazards before committing. Food, blocks, water, a shield and a bow solve more problems than one extra damage enchantment."
+				"Agree whether the goal is loot, rescue, mapping or a boss kill. Different goals require different risks and different points at which to leave."
+				"If someone says they are not ready, pause. Multiplayer confidence should be shared, not averaged."
+				"Prepare for an encounter by identifying damage types, terrain, escape routes, food, healing, and equipment durability. A spare shield and blocks often matter more than a marginally stronger weapon."
+			]
+			id: "731E73362B4E623D"
+			rewards: [{
+				id: "2CB50A6B20A9314D"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Preparation is stronger than panic"
+			tasks: [{
+				id: "5F782CA78E548B0C"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Win Before the Fight Starts"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["731E73362B4E623D"]
+			description: [
+				"Raise a shield for telegraphed attacks, then move. Axes can disable shields, explosions can reach around bad cover, and enemies can trap a player who only walks backward."
+				"Fight from stable ground with an escape lane. Doorways and narrow bridges are powerful until a teammate needs to pass through them."
+				"Carry a spare shield on long expeditions; durability tends to fail at the least cinematic moment."
+				"Prepare for an encounter by identifying damage types, terrain, escape routes, food, healing, and equipment durability. A spare shield and blocks often matter more than a marginally stronger weapon."
+			]
+			id: "0EA291FB12A81BF8"
+			rewards: [{
+				id: "087B74DBC0058571"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Blocking is positioning, not invincibility"
+			tasks: [{
+				id: "00BB68B4F1D8CE8A"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Shield Timing and Space"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["731E73362B4E623D"]
+			description: [
+				"A bow is for more than damage. Use range to remove creepers, interrupt ranged mobs and pull one enemy away from a dangerous group."
+				"Mark allies before firing into a melee and keep lanes clear. Friendly confusion causes more corpse runs than low arrow damage."
+				"Spectral information, terrain and patience can be more valuable than firing as quickly as possible."
+				"Use Corpse recovery as a second expedition: mark the death, take replacement food and gear, clear threats, and recover methodically. Do not feed repeated deaths into an unrecovered inventory out of frustration."
+			]
+			id: "62C5BCF193D3D64F"
+			rewards: [{
+				id: "12C99AFD59CC4F1C"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Create time and choose targets"
+			tasks: [{
+				id: "360F6B542BD3DDC2"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Ranged Control"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["731E73362B4E623D"]
+			description: [
+				"Bring food with strong saturation and reserve special meals for encounters where their effects matter. Heal before the next room, not after entering it."
+				"Use JEI and Enchantment Descriptions to understand effects. Fire Resistance, Slow Falling, Water Breathing and Night Vision can turn environmental threats into manageable routes."
+				"Keep emergency supplies in a consistent backpack slot so they remain usable under pressure."
+				"Use Corpse recovery as a second expedition: mark the death, take replacement food and gear, clear threats, and recover methodically. Do not feed repeated deaths into an unrecovered inventory out of frustration."
+			]
+			id: "64E05672B46A93FC"
+			rewards: [{
+				id: "3CD38470258E0A4C"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Sustain determines how long skill matters"
+			tasks: [{
+				id: "3C301C37F63D6FEE"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Food, Potions and Recovery"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0EA291FB12A81BF8", "62C5BCF193D3D64F"]
+			description: [
+				"A full enchanting setup uses fifteen accessible bookshelves with one block of air between shelf and table. Easy Magic keeps items in place while you compare options."
+				"Enchantment Descriptions explains unfamiliar effects. Read conflicts and intended use before spending levels on the highest-looking number."
+				"Keep lapis, books and grindstone access together so the enchanting room supports a complete decision loop."
+				"Prepare for an encounter by identifying damage types, terrain, escape routes, food, healing, and equipment durability. A spare shield and blocks often matter more than a marginally stronger weapon."
+				"Once the method works, label its inputs, outputs, controls, route, or habitat in plain language and show one teammate. Shared documentation turns a completed quest into knowledge that remains useful when the original player is offline."
+			]
+			id: "14B4AF82F4F94860"
+			rewards: [{
+				id: "11984E47A3CC1D07"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Build the library, then read the choices"
+			tasks: [{
+				id: "12A7E3D822DD9A47"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Enchanting Without Guesswork"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["64E05672B46A93FC", "14B4AF82F4F94860"]
+			description: [
+				"Anvil work accumulates prior-work penalties. Plan the final set, combine smaller books intelligently, and avoid repeatedly repairing valuable gear when Mending is available."
+				"Easy Anvils improves the interface but does not make every order equally cheap. Compare the result and cost before confirming."
+				"Name important equipment. A named tool is easier to discuss, return and record in a shared armoury."
+				"Prepare for an encounter by identifying damage types, terrain, escape routes, food, healing, and equipment durability. A spare shield and blocks often matter more than a marginally stronger weapon."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "0F5172DEB8AF7C69"
+			rewards: [{
+				id: "05716473812E6929"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Combine deliberately before costs climb"
+			tasks: [{
+				id: "5CE125A18908A68F"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Anvil Discipline"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["14B4AF82F4F94860"]
+			description: [
+				"Open the Curios interface and learn its slots. Artifacts and Relics may require a specific slot, activation input, charge, cooldown or condition before their effect appears."
+				"Test one item at a time in a safe place. Overlapping movement, vision or defensive effects can hide which relic is helping or causing trouble."
+				"Build loadouts around a task instead of wearing every rare object because it is rare."
+				"Curios adds equipment slots outside normal armour. Open its interface, read each item's slot tooltip, and compare effects in a safe place; an unequipped treasure provides no benefit and a bad combination can obscure its own cause."
+			]
+			id: "6416430518B427C3"
+			rewards: [{
+				id: "58EABC225CCE402A"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "A powerful item still needs the correct slot"
+			tasks: [{
+				id: "4ED938C90757C0A6"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Curios, Artifacts and Relics"
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0F5172DEB8AF7C69"]
+			description: [
+				"When someone dies, stop generating new danger. Mark the location, identify the cause and assemble food, blocks, light and expendable equipment before returning."
+				"One prepared escort is usually better than the whole team arriving separately. Secure the area before sorting the recovered inventory."
+				"After recovery, repair the route or change the plan. Repeating the same death at higher speed is not persistence."
+				"Use Corpse recovery as a second expedition: mark the death, take replacement food and gear, clear threats, and recover methodically. Do not feed repeated deaths into an unrecovered inventory out of frustration."
+			]
+			id: "79A388CAEFD02CF8"
+			rewards: [{
+				id: "2D77DA32F92A10AE"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Recovery begins at the spare-gear chest"
+			tasks: [{
+				id: "7C3D3124F45818AE"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "The Corpse-Run Protocol"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["62C5BCF193D3D64F", "64E05672B46A93FC"]
+			description: [
+				"Prioritise enemies that alter the fight: summoners, ranged attackers, crowd-control effects, explosive mobs and anything blocking retreat."
+				"Watch animations, sounds and particles before assuming a modded creature follows vanilla timing. Jade can identify the mod; field observation identifies the rule."
+				"Leave neutral or territorial creatures alone when combat provides no useful goal. Not every health bar is a quest invitation."
+				"Mowzie's encounters telegraph attacks through animation, sound, and arena behaviour. Spend the first moments observing range and recovery windows instead of trading hits until one health bar disappears."
+				"Prepare for an encounter by identifying damage types, terrain, escape routes, food, healing, and equipment durability. A spare shield and blocks often matter more than a marginally stronger weapon."
+			]
+			id: "69706C072B6ACA07"
+			rewards: [{
+				id: "353A01E7942253AE"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Threat is about behaviour, not health alone"
+			tasks: [{
+				id: "144BECA2C832D396"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Read Enemy Roles"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6416430518B427C3", "79A388CAEFD02CF8", "69706C072B6ACA07"]
+			description: [
+				"Call targets, hazards and retreats in short language. One player can hold attention, another control range, another carry recovery supplies, but everyone should understand every role."
+				"Do not activate bosses, portals or sealed arenas while teammates are looting or reading. Announce the trigger and count readiness."
+				"Share specialised gear when it fits the encounter. The strongest item is wasted if it sits in storage while the group needs its effect."
+				"Mowzie's encounters telegraph attacks through animation, sound, and arena behaviour. Spend the first moments observing range and recovery windows instead of trading hits until one health bar disappears."
+			]
+			id: "003DB0959789CCC3"
+			rewards: [{
+				id: "293312D265AE2CC5"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Communication turns equipment into a party"
+			tasks: [{
+				id: "049D6133FAA20671"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Fight as a Fellowship"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["003DB0959789CCC3"]
+			description: [
+				"Stock labelled sets for corpse recovery, Nether fire, underwater work and ordinary cave rescue. Use replaceable equipment and write what each kit is for."
+				"Keep rare personal gear elsewhere so emergency supplies remain safe to borrow. Restock after every use rather than discovering empty chests during the next crisis."
+				"The field keepers called an armoury a room full of second chances. Make yours easy to understand at a sprint."
+				"Use Corpse recovery as a second expedition: mark the death, take replacement food and gear, clear threats, and recover methodically. Do not feed repeated deaths into an unrecovered inventory out of frustration."
+			]
+			id: "2E7DA81BED4CB811"
+			rewards: [{
+				id: "0F047903349CF3EA"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Preparedness should survive the person who prepared it"
+			tasks: [{
+				id: "56B36F6C6B85607C"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Build a Public Armoury"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["2E7DA81BED4CB811"]
+			description: [
+				"Complete a dangerous expedition in which the team prepares a loadout, communicates the trigger, retreats when needed and returns together."
+				"Write one sign or book entry explaining the enemy or hazard for future players. Knowledge turns a one-time victory into permanent safety."
+				"The guide does not graduate you for killing everything. It does so when you can choose which fights are worth beginning."
+				"Prepare for an encounter by identifying damage types, terrain, escape routes, food, healing, and equipment durability. A spare shield and blocks often matter more than a marginally stronger weapon."
+			]
+			id: "63DD0CFC9108094C"
+			rewards: [{
+				id: "52C1E3EB4F739E94"
+				type: "xp"
+				xp: 30
+			}]
+			subtitle: "Return with everyone and with the lesson"
+			tasks: [{
+				id: "50B643B58EAF076F"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Combat Mastery Is Restraint"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Open the Curios interface from the inventory and identify the slots enabled by this pack. Hover each artifact or relic to confirm its valid slot, active effect, trigger, cooldown, and any keybind."
+				"Equip one item at a time and test movement, combat, mining, or recovery in a safe area. Combining several unknown passives makes it difficult to tell which item caused a benefit, conflict, or visual effect."
+				"Store alternatives by role rather than rarity: travel, building, underwater, cave, boss, and recovery kits. A situational curio is valuable when the team can find it before the situation begins."
+			]
+			id: "34627A5E51594599"
+			rewards: [{
+				id: "22D4214561690701"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Slots outside armour still need deliberate choices"
+			tasks: [{
+				id: "459AA7379C9C64C4"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Loadout Lab: Open and Read Curios"
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["34627A5E51594599"]
+			description: [
+				"Artifacts are powerful uncraftable finds placed in particular structure chests, archaeology, rare equipped mobs, and underground campsite encounters. A Mimic can replace a campsite chest and always rewards an artifact when defeated."
+				"Approach unfamiliar underground chests with space to retreat. Record where each artifact was found because different loot sources encourage varied exploration rather than one universal farming route."
+				"Read the effect and equip it in the correct Curios slot before judging it. Trade duplicates so different players can develop distinctive field roles instead of locking every discovery in one private collection."
+			]
+			id: "0EBAC814DB0A1DA5"
+			rewards: [{
+				id: "076CEBFD6ABB7FE6"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Structures, archaeology, rare mobs, campsites, and Mimics"
+			tasks: [{
+				id: "13CF3ACEECF63E11"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Loadout Lab: How Artifacts Enter the World"
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["0EBAC814DB0A1DA5"]
+			description: [
+				"Relics have more complex behaviours and randomised qualities than ordinary equipment. Read the entire tooltip and identify the action the item is designed to perform before spending upgrades or comparing raw numbers."
+				"Use the relic in controlled, repeatable situations and watch its progression. If experience does not move, verify that it is equipped, the trigger condition is met, and the action is not on cooldown."
+				"Choose upgrades after learning the base behaviour, then document the resulting role. Two copies may not feel identical, so another player's recommendation is a clue rather than a guaranteed build."
+			]
+			id: "46C187D4CD38B0C4"
+			rewards: [{
+				id: "2721595C6216AEE3"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Random qualities and progression reward practice"
+			tasks: [{
+				id: "0396932B5B4CB23C"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Loadout Lab: Let a Relic Teach Its Use"
+			x: 4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["46C187D4CD38B0C4"]
+			description: [
+				"Before engaging a Mowzie's Mobs encounter, clear ordinary enemies, study the arena, and watch the creature move. Windups, projectiles, area control, and recovery animations reveal the intended openings."
+				"Carry a shield or ranged option where appropriate, but do not assume every attack can be blocked or face-tanked. Preserve stamina, space, food, and an escape route while learning one pattern at a time."
+				"After victory, identify the reward in JEI and record the location or summoning conditions. Encounter knowledge is the real reusable drop; the item only proves the lesson was survived once."
+			]
+			id: "51F9F47AB21426BA"
+			rewards: [{
+				id: "682A7B1845856581"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Animation is information"
+			tasks: [{
+				id: "0223B95DA836D44E"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Encounter Lab: Read a Mowzie Fight"
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["51F9F47AB21426BA"]
+			description: [
+				"When someone dies, record coordinates and dimension, identify the remaining threat, and wait long enough to assemble ordinary replacement gear. The corpse preserves items; it does not make the route safe."
+				"Send one prepared recovery group with food, blocks, light, a spare way home, and empty storage. Clear enemies and secure the area before opening the corpse so recovered items do not spill into another death."
+				"Return borrowed recovery gear and restock the kit immediately. Write down what caused the loss, because repeated unexamined deaths are a systems problem rather than proof that the pack is unfair."
+			]
+			id: "24163048752A605F"
+			rewards: [{
+				id: "22643ECA9D385C77"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A corpse run is planning, not panic"
+			tasks: [{
+				id: "320046D85363F66C"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Recovery Lab: Stop the Death Spiral"
+			x: 2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["24163048752A605F"]
+			description: [
+				"Build labelled sections for basic armour, shields and bows, food and potions, Curios, recovery supplies, and encounter-specific equipment. Keep museum originals separate from items intended for borrowing."
+				"Add written loadout suggestions for a dungeon, underwater trip, Ancient City, boss, and corpse recovery. Explain purpose and return location instead of declaring one universal best set."
+				"Ask another player to prepare for a chosen expedition without voice instructions or private storage access. The armoury is complete when they can assemble, understand, and later return a safe loadout from the information in the room."
+			]
+			id: "10F9DAFFB700A832"
+			rewards: [{
+				id: "76D939C1EB8295FF"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Loadouts, labels, recovery, and restraint"
+			tasks: [{
+				id: "5162768FA6223147"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Field Exercise: Commission the Public Armoury"
+			x: 4.0d
+			y: 9.0d
+		}
+	]
+	title: "Combat, Enchanting and Recovery"
+}

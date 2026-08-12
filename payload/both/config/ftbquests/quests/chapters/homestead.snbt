@@ -1,0 +1,466 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "homestead"
+	group: "1C7D7A0940131874"
+	icon: "farmersdelight:cooking_pot"
+	id: "7D7B970A3302D699"
+	order_index: 3
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Farmer's Delight knives harvest straw and turn ingredients into useful cuts. JEI shows which foods can be processed on a cutting board."
+				"Farmer's Delight is a chain from soil to pantry to cutting board to heat. Use JEI's recipe category view to identify the workstation, tool, heat source, and serving container involved in each dish."
+				"The knife gathers some ingredients more efficiently and the cutting board transforms inputs placed upon it. Hold the shown tool, interact with the board, and inspect JEI if an apparently correct ingredient does nothing."
+				"A Cooking Pot needs valid heat, ingredients in its cooking slots, and sometimes a bowl or bottle on the output side. Check the animated progress and each requirement before assuming the recipe conflicts with an addon."
+			]
+			id: "1725341D3243AFDD"
+			rewards: [
+				{
+					count: 8
+					id: "3A27AE16432C0F16"
+					item: "minecraft:wheat_seeds"
+					type: "item"
+				}
+				{
+					id: "605DC9041C4FCD99"
+					type: "xp"
+					xp: 5
+				}
+			]
+			tasks: [{
+				id: "47F0A1934DFD4C40"
+				item: {
+					Count: 1
+					id: "farmersdelight:flint_knife"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "A Cook's First Tool"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1725341D3243AFDD"]
+			description: [
+				"Place food or materials on the board, then use the listed tool on them. This is a processing station, not just decoration."
+				"Farmer's Delight is a chain from soil to pantry to cutting board to heat. Use JEI's recipe category view to identify the workstation, tool, heat source, and serving container involved in each dish."
+				"The knife gathers some ingredients more efficiently and the cutting board transforms inputs placed upon it. Hold the shown tool, interact with the board, and inspect JEI if an apparently correct ingredient does nothing."
+				"Cooking for Blockheads links compatible kitchen inventories when arranged correctly. Place a small test kitchen first, confirm which cabinets the workstation can see, then build the decorative room around the working layout."
+			]
+			id: "4CE08428A26650E2"
+			rewards: [{
+				id: "0AA54A992B0085ED"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					id: "7D3B9AC69CCA966E"
+					item: "farmersdelight:cutting_board"
+					type: "item"
+				}
+				{
+					id: "6B945BBD59C43CE9"
+					item: {
+						Count: 1
+						id: "farmersdelight:iron_knife"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Use the Cutting Board"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4CE08428A26650E2"]
+			description: [
+				"Plant cabbage, onion, tomato and rice alongside vanilla crops. Right Click Harvest lets mature crops be collected and replanted quickly."
+				"Cooking for Blockheads links compatible kitchen inventories when arranged correctly. Place a small test kitchen first, confirm which cabinets the workstation can see, then build the decorative room around the working layout."
+				"Serene Seasons can affect outdoor crop fertility. Diversify fields, keep reserve seed, use protected growing where appropriate, and let JEI plus the season indicator explain a slow harvest before expanding the farm."
+				"The Covenant of the Hearth treats food as multiplayer infrastructure. Maintain a public staple meal, reserve rare ingredients for deliberate recipes, and write down which foods travel well into dangerous dimensions."
+			]
+			id: "60435D16835B3DCE"
+			rewards: [
+				{
+					count: 16
+					id: "26950E0D69255D49"
+					item: "minecraft:bone_meal"
+					type: "item"
+				}
+				{
+					id: "0BFB36BD71BF5934"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "30D3FE17EC2DE387"
+					item: "farmersdelight:cabbage"
+					type: "item"
+				}
+				{
+					id: "31D15A6B4B97D0F1"
+					item: "farmersdelight:onion"
+					type: "item"
+				}
+				{
+					id: "2029308A45448B2D"
+					item: "farmersdelight:tomato"
+					type: "item"
+				}
+				{
+					id: "168FCEE1978A12E2"
+					item: "farmersdelight:rice"
+					type: "item"
+				}
+			]
+			title: "A Proper Kitchen Garden"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["60435D16835B3DCE"]
+			description: [
+				"The Cooking Pot turns basic ingredients into filling meals. Put it over heat, supply a bowl when needed, and use JEI for combinations."
+				"A Cooking Pot needs valid heat, ingredients in its cooking slots, and sometimes a bowl or bottle on the output side. Check the animated progress and each requirement before assuming the recipe conflicts with an addon."
+				"The Covenant of the Hearth treats food as multiplayer infrastructure. Maintain a public staple meal, reserve rare ingredients for deliberate recipes, and write down which foods travel well into dangerous dimensions."
+			]
+			id: "2AD044CDEA61410E"
+			rewards: [
+				{
+					count: 8
+					id: "3445D7161409CCDF"
+					item: "minecraft:bowl"
+					type: "item"
+				}
+				{
+					id: "125D3B7349E7C9EC"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "24D611C6EE7DB056"
+					item: "farmersdelight:cooking_pot"
+					type: "item"
+				}
+				{
+					id: "2AD404763FEDCE70"
+					item: "farmersdelight:stove"
+					type: "item"
+				}
+			]
+			title: "Cooking Pot Meals"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2AD044CDEA61410E"]
+			description: [
+				"Cooking for Blockheads links nearby kitchen blocks. A cooking table can access ingredients in connected fridges and counters."
+				"Cooking for Blockheads links compatible kitchen inventories when arranged correctly. Place a small test kitchen first, confirm which cabinets the workstation can see, then build the decorative room around the working layout."
+				"A Cooking Pot needs valid heat, ingredients in its cooking slots, and sometimes a bowl or bottle on the output side. Check the animated progress and each requirement before assuming the recipe conflicts with an addon."
+				"The knife gathers some ingredients more efficiently and the cutting board transforms inputs placed upon it. Hold the shown tool, interact with the board, and inspect JEI if an apparently correct ingredient does nothing."
+			]
+			id: "3C9A949E21E73BD7"
+			rewards: [{
+				id: "270181D652D7CF81"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "3ACF9FFF1731AB54"
+					item: "cookingforblockheads:cooking_table"
+					type: "item"
+				}
+				{
+					id: "1DCBB1714E94679E"
+					item: "cookingforblockheads:oven"
+					type: "item"
+				}
+				{
+					id: "2D4B1B9F444EE8E5"
+					item: "cookingforblockheads:fridge"
+					type: "item"
+				}
+			]
+			title: "Build a Working Kitchen"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3C9A949E21E73BD7"]
+			description: [
+				"Cook a spread of real meals before a long expedition. Good food variety is both practical and one of the nicest parts of a homestead."
+				"The Covenant of the Hearth treats food as multiplayer infrastructure. Maintain a public staple meal, reserve rare ingredients for deliberate recipes, and write down which foods travel well into dangerous dimensions."
+				"A Cooking Pot needs valid heat, ingredients in its cooking slots, and sometimes a bowl or bottle on the output side. Check the animated progress and each requirement before assuming the recipe conflicts with an addon."
+			]
+			id: "36D9A2651A27AA32"
+			rewards: [
+				{
+					count: 4
+					id: "6F57BAD901B52DB3"
+					item: "minecraft:golden_carrot"
+					type: "item"
+				}
+				{
+					id: "1A574818F78E0CE7"
+					type: "xp"
+					xp: 20
+				}
+			]
+			tasks: [
+				{
+					count: 2L
+					id: "2C7CC22B7AC49A48"
+					item: "farmersdelight:hamburger"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "2E616777FC8C236E"
+					item: "farmersdelight:beef_stew"
+					type: "item"
+				}
+				{
+					id: "147A9A243565AB0C"
+					item: "farmersdelight:apple_pie"
+					type: "item"
+				}
+			]
+			title: "Feed the Whole Team"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["36D9A2651A27AA32"]
+			description: [
+				"Serene Seasons changes when many crops grow efficiently. Watch foliage and crop behaviour, diversify what you plant, and keep seed reserves instead of using the last harvest."
+				"Store one season of food before expanding livestock. Mixed fields, orchards, fishing and preserved meals are safer than depending on a single enormous crop."
+				"In the field-guide lore, a full pantry is a promise: the settlement can welcome a lost traveller without becoming poor itself."
+				"Serene Seasons can affect outdoor crop fertility. Diversify fields, keep reserve seed, use protected growing where appropriate, and let JEI plus the season indicator explain a slow harvest before expanding the farm."
+			]
+			id: "000927068CCE0DB0"
+			rewards: [{
+				id: "28805F6B7FEECC1A"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "1289BA180AF135E6"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Seasons, Soil and Surplus"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["000927068CCE0DB0"]
+			description: [
+				"Central Kitchen provides Create-compatible methods for food processing and storage integrations, especially around Farmer's Delight. It is the bridge between a working kitchen and a visible food factory."
+				"Choose one meal with a repeatable ingredient chain. Automate washing, cutting, mixing or packing only where JEI shows an integration recipe; ordinary Cooking Pot recipes may still need the correct containers."
+				"Keep a manual kitchen beside the line. Automation should supply the community, not make it impossible to cook when a belt jams."
+				"Central Kitchen and Slice and Dice automate Farmer's Delight by moving ingredients through familiar Create logistics. Stabilise the manual recipe first so the machine has a known correct result to reproduce."
+			]
+			id: "0D4B75EF5618911F"
+			rewards: [{
+				id: "372E60A287419E8A"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "2F1D773CED8DB3EB"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Create: Central Kitchen"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0D4B75EF5618911F"]
+			description: [
+				"Slice and Dice focuses on Create automation for Farmer's Delight processes. Its machines reproduce preparation steps that normally use knives, cutting boards and kitchen handling."
+				"Ponder its components, then verify the exact recipe in JEI. Pay attention to held tools, basin positions and output sides; a correct ingredient in the wrong process is still the wrong recipe."
+				"Start with a high-volume staple such as vegetables or dough. A tiny line that reliably feeds everyone is a better lesson than an unfinished wall of every food in JEI."
+				"Central Kitchen and Slice and Dice automate Farmer's Delight by moving ingredients through familiar Create logistics. Stabilise the manual recipe first so the machine has a known correct result to reproduce."
+			]
+			id: "7F45F36FB147AD0A"
+			rewards: [{
+				id: "7B51CEA3AF7207D0"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "649752EB46E902E9"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Slice and Dice"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7F45F36FB147AD0A"]
+			description: [
+				"HerbalBrews adds tea plants to suitable biomes. Gather leaves and blossoms responsibly, then replant near the homestead."
+				"JEI shows which leaves become each drink and which blocks are used for drying."
+				"Herbal Brews has several preparation stages, so search the ingredient in JEI and follow its uses from fresh plant to dried material to finished drink. Keep each stage in a separately labelled drawer or shelf."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+			]
+			id: "64AC9DE8013767BD"
+			rewards: [{
+				id: "193C72AC784F9CE7"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [
+				{
+					id: "1C8F0092FC395229"
+					item: "herbalbrews:green_tea_leaf"
+					type: "item"
+				}
+				{
+					id: "3C8A7D09F10BFCA6"
+					item: "herbalbrews:tea_blossom"
+					type: "item"
+				}
+			]
+			title: "Find Tea in the Wild"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7F45F36FB147AD0A"]
+			description: [
+				"Plant flowers near a normal hive and learn to harvest safely. A lit campfire beneath the hive calms its residents; leave space so smoke can reach it."
+				"Productive Bees distinguishes vanilla hive bees from solitary bees that live in nests. Use the in-game bee guide and JEI to identify housing, food, breeding parents, and product processing for the species you want."
+				"Catch bees with the intended cages instead of killing or dragging them blindly. Keep cages labelled, move one species at a time, and prepare the correct nest, hive, or flower before releasing it."
+			]
+			id: "71BB70B3127ECE00"
+			rewards: [
+				{
+					id: "2118F4E2E4032CAB"
+					item: "minecraft:campfire"
+					type: "item"
+				}
+				{
+					id: "3C9F71383134E8D9"
+					type: "xp"
+					xp: 10
+				}
+			]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [
+				{
+					id: "7B51EA6FC2264582"
+					item: "minecraft:beehive"
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "5D5D201B8EEB7DE2"
+					item: "minecraft:honeycomb"
+					type: "item"
+				}
+				{
+					count: 3L
+					id: "56FFB4B056D7F721"
+					item: "minecraft:honey_bottle"
+					type: "item"
+				}
+			]
+			title: "Begin with Vanilla Bees"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7F45F36FB147AD0A"]
+			description: [
+				"Bee Cages move bees without leads or boats. Use one on a bee and release it inside a prepared enclosure. Sturdy cages are reusable."
+				"Catch bees with the intended cages instead of killing or dragging them blindly. Keep cages labelled, move one species at a time, and prepare the correct nest, hive, or flower before releasing it."
+				"The Apiarists' Oath values continuity over maximum output. Maintain spare breeding stock, protect rare lineages from accidental release, and teach one other player how to recover the apiary if its builder is absent."
+			]
+			id: "519A57FD0FD737F9"
+			rewards: [{
+				id: "7B10147C4FAD9A48"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [
+				{
+					count: 2L
+					id: "010E2610BE84EC11"
+					item: "productivebees:bee_cage"
+					type: "item"
+				}
+				{
+					id: "581FA2C4614F7ACA"
+					item: "productivebees:sturdy_bee_cage"
+					type: "item"
+				}
+			]
+			title: "Catch, Don't Kill"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7F45F36FB147AD0A"]
+			description: [
+				"After the wandering ages, communities measured wealth in full pantries, safe beds and the ability to feed a stranger. Farmer's Delight, seasonal crops, fishing and animal keeping represent different answers to the same question: can this place survive winter?"
+				"Kitchens and apiaries are therefore civic buildings, not background decoration. A shared meal turns distant discoveries into effects, recovery and preparation for the next expedition."
+				"The covenant is simple: take from the wild with care, preserve a surplus, and ensure the newest player can find food without asking permission."
+				"Write signs, books, map labels, and albums in plain practical language first. Lore becomes believable when another player can follow the road, reproduce the meal, repair the machine, or recognise the warning it preserves."
+			]
+			id: "22B69CA315389C48"
+			rewards: [{
+				id: "411AEF2488ADE8A5"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "796E0D069F7BE72A"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Covenant of the Hearth"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["22B69CA315389C48"]
+			description: [
+				"What this is: Botany Pots and Botany Trees are separate content mods that can grow crops or trees inside special pots. They are not installed in this release, even though an old config or online video may mention them."
+				"Why it matters: JEI cannot show recipes for a mod that is not present. Do not waste time searching for a missing pot, hopping bonsai, soil tier, or tree pot."
+				"How to begin now: use ordinary fields, Farmer's Delight crops, bees, and the Serene Seasons guidance in this chapter. Search JEI with an at-sign followed by the mod name to confirm what is really loaded."
+				"What comes next: this branch remains optional until the group deliberately approves and tests those mods in a later content update."
+			]
+			id: "4DC3990D720C9351"
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "075F58D77E954BC4"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Botany Pots and Botany Trees: Not Installed Yet"
+			x: 2.0d
+			y: 4.0d
+		}
+	]
+}

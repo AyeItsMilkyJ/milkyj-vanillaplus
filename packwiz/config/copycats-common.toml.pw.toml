@@ -1,0 +1,8 @@
+name = "Managed config: copycats-common.toml"
+filename = "copycats-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/copycats-common.toml"
+hash-format = "sha256"
+hash = "6eae5e6f03453087e9493c578bce1f1a8d33d13191a8827651e52d37797555af"

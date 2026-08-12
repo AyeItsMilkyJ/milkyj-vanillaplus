@@ -1,0 +1,12 @@
+name = "alexs caves Delight ( Farmer"
+filename = "alexs_caves_delight-1.0.0-forge-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/xAxyIEYU/versions/dK6AGAz9/alexs_caves_delight-1.0.0-forge-1.20.1.jar"
+hash-format = "sha512"
+hash = "72959764c431fb68d2bcd8db17af6c889571f3d138c52632a2fc23c1bdfc8f28fbc20f8b9768bb4ab1c434009093bab10695d3cda8a436779e3c7f6184b271db"
+
+[update.modrinth]
+mod-id = "xAxyIEYU"
+version = "dK6AGAz9"

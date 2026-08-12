@@ -1,0 +1,8 @@
+name = "Managed config: creeperoverhaul.jsonc"
+filename = "creeperoverhaul.jsonc"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/creeperoverhaul.jsonc"
+hash-format = "sha256"
+hash = "14700d5a7150d81c56066c52132b15ca52ebdcf8d22c9b9b1d7bf55f59e1736e"

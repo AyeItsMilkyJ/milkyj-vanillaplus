@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/underminer.json"
+filename = "underminer.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/underminer.json"
+hash-format = "sha256"
+hash = "1fb9d9cc0833f50b12c0e8db11580d31bda37e4e4974b0503e54b3eaac4235e9"

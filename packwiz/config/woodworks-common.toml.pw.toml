@@ -1,0 +1,8 @@
+name = "Managed config: woodworks-common.toml"
+filename = "woodworks-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/woodworks-common.toml"
+hash-format = "sha256"
+hash = "0e1cb35644059d9ff6f1e438b8a1d5a80bb4c2ea3c967adb8a4008a75673aef5"

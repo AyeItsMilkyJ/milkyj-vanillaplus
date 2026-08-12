@@ -1,0 +1,8 @@
+name = "Managed config: exposure-common.toml"
+filename = "exposure-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/exposure-common.toml"
+hash-format = "sha256"
+hash = "1344a5f2292b2805368a6ee5fc53d661febb1f0a13bd27bf9a3d65fafa7f837b"

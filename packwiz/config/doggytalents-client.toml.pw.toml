@@ -1,0 +1,8 @@
+name = "Managed config: doggytalents-client.toml"
+filename = "doggytalents-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/doggytalents-client.toml"
+hash-format = "sha256"
+hash = "14fc91989f506b8ec766907812ec2e8b2d1460808d4064d9835deb99cc803f59"

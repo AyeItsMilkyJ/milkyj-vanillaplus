@@ -1,0 +1,8 @@
+name = "Managed config: ponder-client.toml"
+filename = "ponder-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/ponder-client.toml"
+hash-format = "sha256"
+hash = "56291af4bc3506692c79f5c0155c47cce8577d0aae6ed5930c9074d5cb9bc5c8"

@@ -1,0 +1,8 @@
+name = "Managed config: appleskin-client.toml"
+filename = "appleskin-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/appleskin-client.toml"
+hash-format = "sha256"
+hash = "e6609ffbea927ee6390b1317bb6f3abb3f31ee591ca5c1d5e748f5e625fefea1"

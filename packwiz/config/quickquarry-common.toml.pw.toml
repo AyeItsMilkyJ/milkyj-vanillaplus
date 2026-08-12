@@ -1,0 +1,8 @@
+name = "Managed config: quickquarry-common.toml"
+filename = "quickquarry-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/quickquarry-common.toml"
+hash-format = "sha256"
+hash = "d2fcc29406b0ac95bfff47b37f1d2ff99b173aaf52ee73f33eece95d2ca39b98"

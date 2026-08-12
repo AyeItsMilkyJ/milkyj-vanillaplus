@@ -1,0 +1,8 @@
+name = "Managed config: domestication-innovation.toml"
+filename = "domestication-innovation.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/domestication-innovation.toml"
+hash-format = "sha256"
+hash = "8df5ed720b6f4e65dde564ca501ac9a4ba095684361ea90aff6110a905561d00"

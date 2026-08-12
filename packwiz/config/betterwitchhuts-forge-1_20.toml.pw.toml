@@ -1,0 +1,8 @@
+name = "Managed config: betterwitchhuts-forge-1_20.toml"
+filename = "betterwitchhuts-forge-1_20.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterwitchhuts-forge-1_20.toml"
+hash-format = "sha256"
+hash = "a053c7647937df86a050d1d2d5e2e42dae07b96af4a1e799c5c917e28456b15d"

@@ -1,0 +1,8 @@
+name = "Managed config: betterdeserttemples/forge-1_20/itemframes.json"
+filename = "itemframes.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterdeserttemples/forge-1_20/itemframes.json"
+hash-format = "sha256"
+hash = "cbbd15fa127b17c55697a17e145c98ff1879f9b4fa687dda5f110177b11829e8"

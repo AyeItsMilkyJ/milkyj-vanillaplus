@@ -1,0 +1,267 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "new_horizons"
+	group: "4A5CA40AA14EE19B"
+	icon: "biomesoplenty:jacaranda_sapling"
+	id: "1CDE54C53326DB2E"
+	order_index: 1
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Biomes O' Plenty adds more than fifty biome types, while Terralith continues shaping the terrain. Existing land is preserved; the new selection appears only in chunks nobody has generated before."
+				"Travel from a distant waystone or in one agreed direction so the server does not generate wasteful strips everywhere."
+				"Nature's Compass locates biomes but does not remove travel cost or chunk generation. Search deliberately, coordinate with other explorers, and stop once the team has a useful route rather than generating an enormous empty frontier."
+				"New world-generation content appears only in chunks that have never existed before. Old mapped land remains valid; cross its border and watch for abrupt discovery changes instead of deleting the world."
+			]
+			id: "78D1163EEBD92C65"
+			rewards: [{
+				id: "1B9B840B8303F704"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "596C6510FB914B2D"
+				title: "We travelled beyond our previously explored map"
+				type: "checkmark"
+			}]
+			title: "Travel Beyond the Old Map"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Search the compass for biomesoplenty entries. Pick a bright grassland, wetland, highland or colourful forest rather than accepting another dark oak forest."
+				"Nature's Compass locates biomes but does not remove travel cost or chunk generation. Search deliberately, coordinate with other explorers, and stop once the team has a useful route rather than generating an enormous empty frontier."
+				"The Cartographers call distant terrain a promise, not a consumable. Roads, ships, rails, and named outposts make exploration cumulative instead of turning each trip into another disconnected sprint."
+				"Terralith shapes the large landforms; Biomes O' Plenty and smaller biome mods supply distinct plants, woods, and palettes. Several systems can influence one view, so identify the exact biome before guessing which mod made it."
+			]
+			id: "41EBD1EB56456B34"
+			rewards: [{
+				id: "116EC4D37A11B141"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "0869ACEE00E15B2A"
+					item: "naturescompass:naturescompass"
+					type: "item"
+				}
+				{
+					id: "110D66F965153B85"
+					title: "I selected a Biomes O' Plenty biome in the compass"
+					type: "checkmark"
+				}
+			]
+			title: "Use Nature's Compass"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["41EBD1EB56456B34"]
+			description: [
+				"Lavender fields and other flower-rich regions add colour without changing survival progression. Collect a small sample and leave the landscape recognisable."
+				"Bring saplings and a small renewable sample home, but leave the original ecosystem recognisable. A palette library is more useful than stripping every rare grove around its first waypoint."
+				"Record biome name, coordinates, season, useful resources, hazards, and a screenshot or photograph. The same wood colour can come from different ecological stories and may have different nearby ingredients."
+				"Nature's Compass locates biomes but does not remove travel cost or chunk generation. Search deliberately, coordinate with other explorers, and stop once the team has a useful route rather than generating an enormous empty frontier."
+			]
+			id: "44731C0D67C0988E"
+			rewards: [{
+				id: "0E9D49FC1B89EDF4"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					count: 8L
+					id: "45588D21DBBDBA52"
+					item: "biomesoplenty:lavender"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "4AAF1FA8459213D6"
+					item: "biomesoplenty:glowflower"
+					type: "item"
+				}
+			]
+			title: "Bring Home New Colour"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["41EBD1EB56456B34"]
+			description: [
+				"Jacaranda, mahogany and palm palettes suit gardens, docks and relaxed homesteads. Bring saplings home so builders do not repeatedly generate distant chunks."
+				"Terralith shapes the large landforms; Biomes O' Plenty and smaller biome mods supply distinct plants, woods, and palettes. Several systems can influence one view, so identify the exact biome before guessing which mod made it."
+				"Bring saplings and a small renewable sample home, but leave the original ecosystem recognisable. A palette library is more useful than stripping every rare grove around its first waypoint."
+				"Record biome name, coordinates, season, useful resources, hazards, and a screenshot or photograph. The same wood colour can come from different ecological stories and may have different nearby ingredients."
+			]
+			id: "6D639F2689D82CE0"
+			rewards: [{
+				id: "1242174AD2D1CA38"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "18CC47BA4F06A668"
+					item: "biomesoplenty:jacaranda_sapling"
+					type: "item"
+				}
+				{
+					id: "63F6BE05E77A19A0"
+					item: "biomesoplenty:mahogany_sapling"
+					type: "item"
+				}
+				{
+					id: "36D1EDA54887B38B"
+					item: "biomesoplenty:palm_sapling"
+					type: "item"
+				}
+			]
+			title: "Warm-Climate Woods"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["6D639F2689D82CE0"]
+			description: [
+				"Fir, redwood and maple create brighter alternatives to the dark forests near home. Establish a shared tree farm before using them in large builds."
+				"Terralith shapes the large landforms; Biomes O' Plenty and smaller biome mods supply distinct plants, woods, and palettes. Several systems can influence one view, so identify the exact biome before guessing which mod made it."
+				"Record biome name, coordinates, season, useful resources, hazards, and a screenshot or photograph. The same wood colour can come from different ecological stories and may have different nearby ingredients."
+				"Bring saplings and a small renewable sample home, but leave the original ecosystem recognisable. A palette library is more useful than stripping every rare grove around its first waypoint."
+			]
+			id: "76F0EC09B27BCF82"
+			rewards: [{
+				id: "2AF223F17E5BDD27"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "1FE199CE8080723D"
+					item: "biomesoplenty:fir_sapling"
+					type: "item"
+				}
+				{
+					id: "2FD71835149CCED5"
+					item: "biomesoplenty:redwood_sapling"
+					type: "item"
+				}
+				{
+					id: "2EE20B55821B3302"
+					item: "biomesoplenty:orange_maple_sapling"
+					type: "item"
+				}
+			]
+			title: "Cool-Climate Woods"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"Make a labelled sample wall using several new logs, planks, leaves and flowers. This lets everyone choose palettes without searching JEI for every block."
+				"Terralith shapes the large landforms; Biomes O' Plenty and smaller biome mods supply distinct plants, woods, and palettes. Several systems can influence one view, so identify the exact biome before guessing which mod made it."
+				"Bring saplings and a small renewable sample home, but leave the original ecosystem recognisable. A palette library is more useful than stripping every rare grove around its first waypoint."
+				"Nature's Compass locates biomes but does not remove travel cost or chunk generation. Search deliberately, coordinate with other explorers, and stop once the team has a useful route rather than generating an enormous empty frontier."
+			]
+			id: "7C2070AD974102CB"
+			rewards: [{
+				id: "276992346B4B60AE"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "5E4652E959BBCDAA"
+				title: "Our new-biome palette wall is labelled and stocked"
+				type: "checkmark"
+			}]
+			title: "Build a Biome Sample Wall"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7C2070AD974102CB"]
+			description: [
+				"Choose a genuinely different biome and build a small shared outpost with a waystone, beds, food and sapling storage. Preserve the biome instead of flattening it."
+				"The Cartographers call distant terrain a promise, not a consumable. Roads, ships, rails, and named outposts make exploration cumulative instead of turning each trip into another disconnected sprint."
+				"Record biome name, coordinates, season, useful resources, hazards, and a screenshot or photograph. The same wood colour can come from different ecological stories and may have different nearby ingredients."
+				"Terralith shapes the large landforms; Biomes O' Plenty and smaller biome mods supply distinct plants, woods, and palettes. Several systems can influence one view, so identify the exact biome before guessing which mod made it."
+			]
+			id: "78811FFBEE03EC7B"
+			rewards: [
+				{
+					count: 4
+					id: "10655F9F887AE9A0"
+					item: "minecraft:emerald"
+					type: "item"
+				}
+				{
+					id: "2A2C44151067B8F2"
+					type: "xp"
+					xp: 35
+				}
+			]
+			tasks: [{
+				id: "662F14AD5F4BDAA8"
+				title: "We built and linked an outpost in a new bright biome"
+				type: "checkmark"
+			}]
+			title: "A Bright New Outpost"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Terralith and Biomes O' Plenty generate broad climate regions. Several nearby dark forests can belong to one large band; travel farther before deciding the world lacks variety."
+				"Existing chunks do not reroll when settings change. New terrain appears only beyond explored borders, so use the world map to choose a direction the group has not already travelled."
+				"Collect saplings and stone samples from each region. A distant biome can become part of home without replacing the landscape that made it special."
+				"Terralith shapes the large landforms; Biomes O' Plenty and smaller biome mods supply distinct plants, woods, and palettes. Several systems can influence one view, so identify the exact biome before guessing which mod made it."
+			]
+			id: "69DC763824CA3313"
+			rewards: [{
+				id: "5B3D6C67C8618F48"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A crowded forest is a region, not the whole map"
+			tasks: [{
+				id: "66039AE289F3EB1B"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Read Biomes at World Scale"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["69DC763824CA3313"]
+			description: [
+				"When a biome looks good, record its dominant wood, stone, foliage and accent colour. Screenshots and map labels make those observations useful months later."
+				"Build small sample walls at home before committing to a huge structure. Some blocks change colour by biome or season, and shaders can alter contrast dramatically."
+				"Exploration becomes more meaningful when every region teaches the settlement a new architectural language."
+				"Bring saplings and a small renewable sample home, but leave the original ecosystem recognisable. A palette library is more useful than stripping every rare grove around its first waypoint."
+			]
+			id: "161739F52AC76EBE"
+			rewards: [{
+				id: "28521CFC07FE0777"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Bring home ideas, not only loot"
+			tasks: [{
+				id: "17DF9752406AF76C"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Keep a Palette Journal"
+			x: 1.5d
+			y: 5.0d
+		}
+	]
+	title: "New Biomes and Building Palettes"
+}

@@ -1,0 +1,8 @@
+name = "Managed config: betteroceanmonuments-forge-1_20.toml"
+filename = "betteroceanmonuments-forge-1_20.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betteroceanmonuments-forge-1_20.toml"
+hash-format = "sha256"
+hash = "a3789bfdf19c068ae046d382d7fd627f31ecda4a91ecadef888ff91ea6b8ceb6"

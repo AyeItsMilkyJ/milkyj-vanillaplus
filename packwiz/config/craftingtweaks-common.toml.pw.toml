@@ -1,0 +1,8 @@
+name = "Managed config: craftingtweaks-common.toml"
+filename = "craftingtweaks-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/craftingtweaks-common.toml"
+hash-format = "sha256"
+hash = "7ac94e5c0a1bfbe7611666c05491a2da0009940cfa6e7886d6a4f6051f672c09"

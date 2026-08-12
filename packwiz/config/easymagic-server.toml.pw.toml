@@ -1,0 +1,8 @@
+name = "Managed config: easymagic-server.toml"
+filename = "easymagic-server.toml"
+side = "server"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/config/easymagic-server.toml"
+hash-format = "sha256"
+hash = "7dbf42819b121001c76e06c07994c363d316ce110f7b06dd032687f4099d5687"

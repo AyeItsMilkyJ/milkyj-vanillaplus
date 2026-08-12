@@ -1,0 +1,8 @@
+name = "Managed config: quark-common.toml"
+filename = "quark-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/quark-common.toml"
+hash-format = "sha256"
+hash = "24ab039e09e541bf1652d31aaaab7ba1aa841084001eb726e821dc69846f02bb"

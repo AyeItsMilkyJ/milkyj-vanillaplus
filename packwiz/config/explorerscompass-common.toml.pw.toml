@@ -1,0 +1,8 @@
+name = "Managed config: explorerscompass-common.toml"
+filename = "explorerscompass-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/explorerscompass-common.toml"
+hash-format = "sha256"
+hash = "7e619a586ca7feedee96e47e5de7bea5d4f5d10239ca0111edc044ea0c65a448"

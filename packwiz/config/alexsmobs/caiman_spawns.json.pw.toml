@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/caiman_spawns.json"
+filename = "caiman_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/caiman_spawns.json"
+hash-format = "sha256"
+hash = "9fcf42542a9fc8d248516f2572bef05c319975e4e86000cf0dff7f5b15baf159"

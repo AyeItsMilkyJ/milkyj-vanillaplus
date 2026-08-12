@@ -1,0 +1,8 @@
+name = "Managed config: artifacts/common.json5"
+filename = "common.json5"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/artifacts/common.json5"
+hash-format = "sha256"
+hash = "678ae08b43dfb9fd419d22e645ba31227b5f193aa674ea2d58d85b2e7b3bc65a"

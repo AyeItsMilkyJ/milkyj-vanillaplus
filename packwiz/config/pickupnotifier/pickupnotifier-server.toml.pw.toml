@@ -1,0 +1,8 @@
+name = "Managed config: pickupnotifier/pickupnotifier-server.toml"
+filename = "pickupnotifier-server.toml"
+side = "server"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/config/pickupnotifier/pickupnotifier-server.toml"
+hash-format = "sha256"
+hash = "6e18bfa2ec02629937474e436f3f44fb67d54fd6e6b47a7c9b4c5b3a3bd83916"

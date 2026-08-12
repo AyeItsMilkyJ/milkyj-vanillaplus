@@ -1,0 +1,8 @@
+name = "Managed config: aquaculture-common.toml"
+filename = "aquaculture-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/aquaculture-common.toml"
+hash-format = "sha256"
+hash = "aff201054383adfd67347e968dd6aeaccd339454d51dd50983654b2c732acc31"

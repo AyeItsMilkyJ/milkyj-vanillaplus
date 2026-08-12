@@ -1,0 +1,12 @@
+name = "Statistics Plus"
+filename = "statisticsplus-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://edge.forgecdn.net/files/8049/929/statisticsplus-1.0.0.jar"
+hash-format = "sha512"
+hash = "544206d657026d12bb4d8f4d53830ebad8000c788454771cd471e10a52115298146256f213f9e83311891fde1a4f9a793ef4eda43bb84403e3b25c5863ed7e48"
+
+[update.curseforge]
+project-id = 1535784
+file-id = 8049929

@@ -1,0 +1,77 @@
+{
+    "generatedAt":  "2026-08-12T09:30:21.5161302+10:00",
+    "source":  "C:\\Users\\MilkyJ\\Documents\\Codex\\2026-07-19\\ar\\MilkyJ-Packwiz\\audit\\questbook-legacy-1.8.0",
+    "chapterCount":  10,
+    "questCount":  120,
+    "manualCheckmarkQuests":  63,
+    "automaticDetectionQuests":  57,
+    "existingQuestBlocksRetained":  109,
+    "legacyQuestBlocksRemovedFromVisibleGuide":  287,
+    "savedQuestAndTaskProgressIdsFound":  99,
+    "savedQuestAndTaskProgressIdsPreserved":  99,
+    "duplicateIds":  0,
+    "unsafeSignedIds":  0,
+    "unresolvedDependencies":  0,
+    "referencedItemIds":  98,
+    "chapters":  [
+                     {
+                         "Chapter":  "WHERE THE FUCK DO I START?",
+                         "File":  "welcome.snbt",
+                         "Quests":  14
+                     },
+                     {
+                         "Chapter":  "Surviving the First Night",
+                         "File":  "first_days.snbt",
+                         "Quests":  10
+                     },
+                     {
+                         "Chapter":  "Food That Isn\u0027t Raw Chicken",
+                         "File":  "homestead.snbt",
+                         "Quests":  14
+                     },
+                     {
+                         "Chapter":  "Tinkers\u0027 Construct for Absolute Idiots",
+                         "File":  "tinkers_deferred.snbt",
+                         "Quests":  3
+                     },
+                     {
+                         "Chapter":  "Create Without Having a Brain Aneurysm",
+                         "File":  "create_basics.snbt",
+                         "Quests":  20
+                     },
+                     {
+                         "Chapter":  "Stop Living Out of 46 Chests",
+                         "File":  "travel_storage.snbt",
+                         "Quests":  11
+                     },
+                     {
+                         "Chapter":  "Exploration Without Getting Completely Lost",
+                         "File":  "new_horizons.snbt",
+                         "Quests":  15
+                     },
+                     {
+                         "Chapter":  "Fossils, Archaeology and Dinosaurs",
+                         "File":  "archaeology.snbt",
+                         "Quests":  10
+                     },
+                     {
+                         "Chapter":  "Vehicles and Transport",
+                         "File":  "vehicles.snbt",
+                         "Quests":  9
+                     },
+                     {
+                         "Chapter":  "Dangerous Shit and Endgame",
+                         "File":  "endgame.snbt",
+                         "Quests":  14
+                     }
+                 ],
+    "deferredBecauseNotInstalled":  [
+                                        "Botany Pots",
+                                        "Botany Trees",
+                                        "Tinkers\u0027 Construct"
+                                    ],
+    "explicitlyNotAdded":  [
+                               "Immersive Engineering",
+                               "Create Crafts \u0026 Additions"
+                           ]
+}

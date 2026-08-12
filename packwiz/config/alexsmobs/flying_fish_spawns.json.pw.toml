@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/flying_fish_spawns.json"
+filename = "flying_fish_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/flying_fish_spawns.json"
+hash-format = "sha256"
+hash = "cf9c9731888d219b546eba75cc3b1b957eaf6b15352577e3df2258217770c2a7"

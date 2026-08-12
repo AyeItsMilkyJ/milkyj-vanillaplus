@@ -1,0 +1,8 @@
+name = "Managed config: immersive_weathering-common.toml"
+filename = "immersive_weathering-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/immersive_weathering-common.toml"
+hash-format = "sha256"
+hash = "d00a81060c710cc000c280e1be813e4712198e0643f0308e6adfae28eb242ec6"

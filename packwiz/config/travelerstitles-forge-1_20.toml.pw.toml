@@ -1,0 +1,8 @@
+name = "Managed config: travelerstitles-forge-1_20.toml"
+filename = "travelerstitles-forge-1_20.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/travelerstitles-forge-1_20.toml"
+hash-format = "sha256"
+hash = "c339ffec047e7faa8471f9c36ab83434db0262476194da70f4691575a6a1cea5"

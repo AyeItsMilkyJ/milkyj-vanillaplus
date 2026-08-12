@@ -1,0 +1,8 @@
+name = "Managed config: justzoom/config.txt"
+filename = "config.txt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/justzoom/config.txt"
+hash-format = "sha256"
+hash = "5704654bd304e62bda326ee7e3129eebddb4dfc67e279b895cd8a531a8a31c8a"

@@ -1,0 +1,8 @@
+name = "Managed config: curios-common.toml"
+filename = "curios-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/curios-common.toml"
+hash-format = "sha256"
+hash = "5fe808869d46a4b80e1191fbe40f40a4d63987beda0eaeb2d89b909a990ea2ea"

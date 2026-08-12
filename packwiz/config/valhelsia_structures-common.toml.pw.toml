@@ -1,0 +1,8 @@
+name = "Managed config: valhelsia_structures-common.toml"
+filename = "valhelsia_structures-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/valhelsia_structures-common.toml"
+hash-format = "sha256"
+hash = "b867176a5df54ccc38411903baf8a5ad4129f66ffad4594fc292601cc3cb9eeb"

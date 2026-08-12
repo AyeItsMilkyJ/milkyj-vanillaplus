@@ -1,0 +1,8 @@
+name = "Managed config: inventoryessentials-common.toml"
+filename = "inventoryessentials-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/inventoryessentials-common.toml"
+hash-format = "sha256"
+hash = "4ce24147be991d8010e9b22d2469f4a5a0ac38ae1946fbc72e2dc6e0061c6a07"

@@ -1,0 +1,8 @@
+name = "Managed config: jeresources-common.toml"
+filename = "jeresources-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/jeresources-common.toml"
+hash-format = "sha256"
+hash = "9dbe8c6973dc932be6dd20cb63381276740b23c75349dbe870fc8098c8529989"

@@ -1,0 +1,8 @@
+name = "Managed config: trashslot-common.toml"
+filename = "trashslot-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/trashslot-common.toml"
+hash-format = "sha256"
+hash = "21493e0c7d7e821cdd69f2e58647eb22f39a0f5dd6045db3bb65a9250bc0cbd7"

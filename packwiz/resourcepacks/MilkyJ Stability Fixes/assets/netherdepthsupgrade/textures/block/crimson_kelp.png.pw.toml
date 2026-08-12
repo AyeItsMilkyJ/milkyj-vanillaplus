@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/netherdepthsupgrade/textures/block/crimson_kelp.png"
+filename = "crimson_kelp.png"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/netherdepthsupgrade/textures/block/crimson_kelp.png"
+hash-format = "sha256"
+hash = "33dae79b2f5881a0ef44bfa2e4d1cac9cd636549a6c09be5ee376dba7ebe1ca9"

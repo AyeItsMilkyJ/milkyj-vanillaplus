@@ -1,0 +1,8 @@
+name = "Managed config: xaero/world-map/client.cfg"
+filename = "client.cfg"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/xaero/world-map/client.cfg"
+hash-format = "sha256"
+hash = "83b675a32486e9550cbfe923124de89d168eef657796afdaeaa563a8ace51de7"

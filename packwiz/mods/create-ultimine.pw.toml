@@ -1,0 +1,12 @@
+name = "Create Ultimine"
+filename = "createultimine-1.20.1-forge-1.3.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/vUE54e5E/versions/v1WWGazc/createultimine-1.20.1-forge-1.3.1.jar"
+hash-format = "sha512"
+hash = "a15117e6ff74661325aaa611e7385434b67376fef0663edd249f1efb56b1342dfbac97cd369b4bcb6be98e92596dfd8f8194d53f704bbc13615e2b09a99bce72"
+
+[update.modrinth]
+mod-id = "vUE54e5E"
+version = "v1WWGazc"

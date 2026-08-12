@@ -1,0 +1,8 @@
+name = "Managed config: explorations.json"
+filename = "explorations.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/explorations.json"
+hash-format = "sha256"
+hash = "214d5d43b5d81565fd45f263bf7dd6d812fd73c31f05376a3da25c7eaaaaf8f6"

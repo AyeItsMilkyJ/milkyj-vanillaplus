@@ -1,0 +1,8 @@
+name = "Managed config: comforts-server.toml"
+filename = "comforts-server.toml"
+side = "server"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/config/comforts-server.toml"
+hash-format = "sha256"
+hash = "24702276d0b1d6f7b5e94b4b34cbc5bd426c524a31bc005231324fc1b7976438"

@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/seal_spawns.json"
+filename = "seal_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/seal_spawns.json"
+hash-format = "sha256"
+hash = "f00363564ed260b76c6132845d6301d23ea6207185f7b5ccfab0249d36c2f1ed"

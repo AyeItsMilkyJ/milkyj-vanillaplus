@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/mowziesmobs/models/block/black_pink_grottol.json"
+filename = "black_pink_grottol.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/mowziesmobs/models/block/black_pink_grottol.json"
+hash-format = "sha256"
+hash = "fd59d97dd33bfead186739a0b8b4f4cd21d55e654ef7618fbbc5378d4bb1659d"

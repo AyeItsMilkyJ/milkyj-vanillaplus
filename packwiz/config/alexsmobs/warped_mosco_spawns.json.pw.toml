@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/warped_mosco_spawns.json"
+filename = "warped_mosco_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/warped_mosco_spawns.json"
+hash-format = "sha256"
+hash = "b0849eb96f4816a0c8ccbd346182d50cf300dbf002d392cbe90682c930e0f557"

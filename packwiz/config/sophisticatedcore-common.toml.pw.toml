@@ -1,0 +1,8 @@
+name = "Managed config: sophisticatedcore-common.toml"
+filename = "sophisticatedcore-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/sophisticatedcore-common.toml"
+hash-format = "sha256"
+hash = "30e766e71c4551af278247710a3b408538defd8adb97c374354d5bce6ba95a83"

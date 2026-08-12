@@ -1,0 +1,439 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "structures_dungeons"
+	group: "49E1A5C0DCAC0DDB"
+	icon: "explorerscompass:explorerscompass"
+	id: "2A3B804D05314214"
+	order_index: 2
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Observe the silhouette, entrance, nearby terrain and mob sounds before entering. Large structures often contain vertical routes, traps or sealed encounters that are invisible from the doorway."
+				"Mark the entrance on the map and place a physical trail marker. Record whether the site is unexplored, active, cleared or reserved for the group."
+				"The Chronicle treats structures as evidence. Loot is useful, but architecture tells you what kind of danger was expected here."
+				"Dungeons and Taverns, Dungeons Plus, the Graveyard, Towns and Towers, and Repurposed Structures add destinations with different scales. Observe from outside and choose an objective before entering every doorway you see."
+			]
+			id: "08B4FE3DADF6D411"
+			rewards: [{
+				id: "146CD2EE6C640B2C"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Pause before the front door"
+			tasks: [{
+				id: "7427F5993060FEC5"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "A Structure Is a Signal"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["08B4FE3DADF6D411"]
+			description: [
+				"Carry food, light, blocks, water and a way home. Then add environment-specific tools: milk for effects, fire resistance, ladders, doors, boats or slow falling."
+				"Leave one inventory section empty and place valuables into a backpack before entry. Full pockets make good loot feel like a logistics problem."
+				"Set a return time. Tired groups take worse risks and communicate less clearly."
+				"Mark entrances, cleared routes, dangerous branches, and exits differently. Bring spare blocks and a water bucket, retreat to a secured room when inventory fills, and never let loot pressure erase the return path."
+			]
+			id: "14EC247DD954A406"
+			rewards: [{
+				id: "35AC61048A924FE3"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Every dungeon asks the same five questions first"
+			tasks: [{
+				id: "65FC87B118651835"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Pack for the Unknown"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["08B4FE3DADF6D411"]
+			description: [
+				"Lootr gives each player their own chest inventory in supported structures. Let everyone open the chest rather than breaking it or assuming one person's result is all that exists."
+				"Unique boss drops, decorations and items outside Lootr may still be shared. Announce them and decide ownership before leaving the room."
+				"Do not dismantle containers until the group confirms everyone has looted and the structure no longer needs them."
+				"Lootr gives supported containers a separate inventory for each player. Leave the container intact and let each teammate open it; breaking or moving it can discard the very multiplayer benefit the mod provides."
+			]
+			id: "4F7A5E294B48D343"
+			rewards: [{
+				id: "47813EE7B3F57E67"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Individual chests remove races, not decisions"
+			tasks: [{
+				id: "3962D60C6566DF8C"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Lootr and Shared Treasure"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["08B4FE3DADF6D411"]
+			description: [
+				"Choose a consistent marker: torches on the exit side, chalk arrows or a distinctive block. Explain the convention before the first branch."
+				"Close or mark cleared dead ends and leave hazards visible enough to be understood. Random torch spam can make a route less readable."
+				"Mark stairs and level changes especially carefully. Most lost teams know their coordinates but not which floor contains the exit."
+				"Mark entrances, cleared routes, dangerous branches, and exits differently. Bring spare blocks and a water bucket, retreat to a secured room when inventory fills, and never let loot pressure erase the return path."
+			]
+			id: "4258CA348D075B32"
+			rewards: [{
+				id: "7FD8BE0A70C689DC"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Make retreat possible without a minimap"
+			tasks: [{
+				id: "7BAC769869EDC8AB"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "The Dungeon Route Language"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["14EC247DD954A406", "4258CA348D075B32"]
+			description: [
+				"Mineshafts, dungeons, temples, strongholds, fortresses and monuments may be much larger than their vanilla versions. Expect alternate rooms, longer routes and environmental storytelling."
+				"Old walkthroughs and remembered vanilla dimensions may be wrong. Explore the actual structure instead of digging directly toward where a room used to be."
+				"Preserve useful hubs and intersections. A rebuilt stronghold or mineshaft can become infrastructure after it stops being a threat."
+				"YUNG's Better Dungeons includes redesigned small dungeons plus Catacombs, Fortresses of the Undead, and Spider Caves. Read block palette, webs, vertical shafts, and repeated rooms as warnings about the encounter ahead."
+			]
+			id: "65E1DDB986D0FBBB"
+			rewards: [{
+				id: "13D8866817D14CEF"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Vanilla landmarks now have real internal logic"
+			tasks: [{
+				id: "74478EE28E48CA1F"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Read YUNG's Rebuilt Structures"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["4F7A5E294B48D343"]
+			description: [
+				"Dungeons and Taverns, Repurposed Structures and smaller structure mods add places with different purposes. Read the building before treating every room as a combat corridor."
+				"Some sites are excellent waystations, restoration projects or map landmarks. Check spawn safety and ownership before converting one into a base."
+				"Take distinctive blocks sparingly when their absence would destroy the reason the structure looked interesting."
+				"Dungeons and Taverns, Dungeons Plus, the Graveyard, Towns and Towers, and Repurposed Structures add destinations with different scales. Observe from outside and choose an objective before entering every doorway you see."
+			]
+			id: "39D0567AD068988F"
+			rewards: [{
+				id: "373F8270E8B9F137"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Not every structure is a boss arena"
+			tasks: [{
+				id: "67290B5A7A8F91EC"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Taverns, Ruins and Small Stories"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4258CA348D075B32"]
+			description: [
+				"Identify line of sight, floor hazards and reinforcement paths before rushing a spawner. Place safe light and cover while leaving the team's retreat open."
+				"Assume suspicious floors, tripwires and containers are deliberate until inspected. Shields and armour do not protect the blocks beneath your feet."
+				"If preserving a spawner for a project, secure and label it immediately so another player does not enter an active room unknowingly."
+				"Mark entrances, cleared routes, dangerous branches, and exits differently. Bring spare blocks and a water bucket, retreat to a secured room when inventory fills, and never let loot pressure erase the return path."
+			]
+			id: "256D9C584128753E"
+			rewards: [{
+				id: "0409E0C43C4994EB"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Control the room before collecting the reward"
+			tasks: [{
+				id: "3A7E5E71CA740497"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Spawners, Traps and Pressure"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["65E1DDB986D0FBBB", "256D9C584128753E"]
+			description: [
+				"Listen above and below, inspect balconies and shafts, and avoid mining load-bearing-looking blocks while teammates stand underneath."
+				"Build temporary safe landings before descending. Water, ladders and scaffolding are navigation tools, not signs that the intended route has failed."
+				"When a map marker seems correct but the room is absent, search by level before tunnelling through the structure."
+				"Mark entrances, cleared routes, dangerous branches, and exits differently. Bring spare blocks and a water bucket, retreat to a secured room when inventory fills, and never let loot pressure erase the return path."
+			]
+			id: "5751FFD9F9146D57"
+			rewards: [{
+				id: "6BAA1EE58B1BB493"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Ceilings and basements are part of the encounter"
+			tasks: [{
+				id: "690AB5EF8F2D4786"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Think Vertically"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["39D0567AD068988F", "256D9C584128753E"]
+			description: [
+				"A locked arena, unusual altar, trophy display or dramatic health bar is a threshold. Stop, regroup and research the mod before crossing it."
+				"Prepare spare equipment and decide whether defeat can damage the world or strand players. Never assume a new boss behaves like a stronger zombie."
+				"Activate the encounter only when everyone who wants to participate is present and ready."
+				"Mark entrances, cleared routes, dangerous branches, and exits differently. Bring spare blocks and a water bucket, retreat to a secured room when inventory fills, and never let loot pressure erase the return path."
+			]
+			id: "3A8709849D637D3D"
+			rewards: [{
+				id: "777D8553A2548A6D"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Recognise when exploration becomes an event"
+			tasks: [{
+				id: "006D587BD4716C8D"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "The Boss Threshold"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5751FFD9F9146D57"]
+			description: [
+				"Record the structure name, coordinates, state, entrances, special hazards and unfinished objectives. Screenshots and map labels are useful; a short written summary is better."
+				"Store keys, maps, trophies and unresolved clues together instead of losing them across personal backpacks."
+				"An archive prevents the fifth player from becoming the fifth person to trigger the same trap."
+				"Dungeons and Taverns, Dungeons Plus, the Graveyard, Towns and Towers, and Repurposed Structures add destinations with different scales. Observe from outside and choose an objective before entering every doorway you see."
+				"Mark entrances, cleared routes, dangerous branches, and exits differently. Bring spare blocks and a water bucket, retreat to a secured room when inventory fills, and never let loot pressure erase the return path."
+			]
+			id: "1C32576EE3145E7E"
+			rewards: [{
+				id: "708ABD8314535B85"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Turn discoveries into instructions"
+			tasks: [{
+				id: "1CDB99C69CA69E14"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Keep a Field Archive"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["3A8709849D637D3D", "1C32576EE3145E7E"]
+			description: [
+				"After clearing a structure, decide whether it should become a base, landmark, museum, farm, route hub or preserved ruin. Do not half-convert every interesting place."
+				"If reusing it, repair dangerous terrain and add signs without erasing its identity. If leaving it, mark the completion state and remove temporary clutter."
+				"The world becomes coherent when explored places receive intentional endings."
+				"Mark entrances, cleared routes, dangerous branches, and exits differently. Bring spare blocks and a water bucket, retreat to a secured room when inventory fills, and never let loot pressure erase the return path."
+			]
+			id: "1FDF5F10CA01AE32"
+			rewards: [{
+				id: "60FA8B76AAFFB1BA"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Choose a future for the site"
+			tasks: [{
+				id: "26F7BE1B6D4AB7F4"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Restore, Reuse or Leave"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["1FDF5F10CA01AE32"]
+			description: [
+				"Choose a new major structure, brief the group, prepare supplies, establish route markers and return with both loot and notes."
+				"Invite another player to make at least one decision about route, risk or treasure. Leadership is coordination, not walking through every doorway first."
+				"When the site is resolved, update the field archive and decide its future. That final decision completes the expedition."
+				"The expedition doctrine is survey, secure, solve, salvage, and report. A dungeon is complete when the team understands it and can leave safely, not merely when the first chest has been emptied."
+			]
+			id: "2A40C01FFECFB190"
+			rewards: [{
+				id: "7FC8B5D7C67F13BF"
+				type: "xp"
+				xp: 30
+			}]
+			subtitle: "A successful leader makes everyone useful"
+			tasks: [{
+				id: "317130A3CE72535B"
+				title: "I read this lesson and tried it in the world"
+				type: "checkmark"
+			}]
+			title: "Lead an Expedition"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"YUNG's Better Dungeons includes three major added families alongside redesigned small dungeons. Catacombs emphasise rooms and levels, Fortresses of the Undead signal sustained combat, and Spider Caves advertise webs and constrained movement."
+				"Read the entrance and surrounding terrain before descending. Carry tools for webs, vertical shafts, spawners, locked sightlines, and a retreat room rather than bringing one generic cave kit to every structure."
+				"Mark branches with a consistent language and clear each level methodically. A large dungeon becomes manageable when the team can state which floor, entrance, and safe room they mean."
+			]
+			id: "0035451CF4EC0CFE"
+			rewards: [{
+				id: "401BED92128D9293"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Catacomb, undead fortress, and spider cave"
+			tasks: [{
+				id: "01C47B22AA49AF32"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Dungeon School: Recognise the YUNG Families"
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["0035451CF4EC0CFE"]
+			description: [
+				"Mineshafts, strongholds, desert and jungle temples, ocean monuments, Nether fortresses, witch huts, the End island, bridges, and extras may preserve a vanilla purpose while changing scale and route."
+				"Do not rely on memorised vanilla coordinates for portal rooms, traps, treasure, or bosses. Survey, read repeated architecture, and keep the entrance marked before using shortcuts from another version or showcase."
+				"The reward is rediscovery: recognise the structure's role, then let the rebuilt layout teach the new route. Record confirmed paths for this world instead of treating a mismatch as broken generation."
+			]
+			id: "367294FE97FB5DAF"
+			rewards: [{
+				id: "421B6A6F810DDEB9"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "YUNG rebuilds the structures you thought you knew"
+			tasks: [{
+				id: "4BB9AF8F50A3D477"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Dungeon School: Familiar Name, New Layout"
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["367294FE97FB5DAF"]
+			description: [
+				"Repurposed Structures creates variations of familiar villages, temples, outposts, fortresses, dungeons, and other landmarks in biomes where their materials and hazards change."
+				"Use the structure's function plus its biome palette to identify it. A snowy, jungle, Nether, or End variant may contain recognisable logic without looking like the Overworld reference in a wiki image."
+				"These structures are evidence that the world's cultures adapted creatively rather than copied a single universal template everywhere. Photograph one architectural change and preserve it in the museum or builder's yard as a usable palette lesson."
+			]
+			id: "3D63A9B7D6224D3A"
+			rewards: [{
+				id: "3C84E63BABA2502E"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Vanilla ideas adapted to new biomes and dimensions"
+			tasks: [{
+				id: "65581047B4154344"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Dungeon School: Repurposed Structures"
+			x: 4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["3D63A9B7D6224D3A"]
+			description: [
+				"Dungeons and Taverns, Dungeons Plus, the Graveyard, Towns and Towers, and smaller structure mods range from safe flavour to extended combat. Observe size, sound, mobs, vertical reach, and number of entrances first."
+				"Set an objective appropriate to scale: shelter at a tavern, survey a ruin, clear one dungeon level, or establish a camp outside a regional landmark. Not every visible doorway requires immediate completion."
+				"If a structure is ugly, empty, or out of place, record coordinates and identify its mod before demolishing it. Diagnosis supports later configuration; frustration without attribution cannot improve the pack."
+			]
+			id: "7E71E1637E188F41"
+			rewards: [{
+				id: "0BF273838BF44AA0"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Tavern, ruin, dungeon, or regional expedition"
+			tasks: [{
+				id: "67AD8246680415CC"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Dungeon School: Judge Landmark Scale"
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7E71E1637E188F41"]
+			description: [
+				"A supported Lootr chest generates a personal inventory when each player opens it. The colours and appearance may change after use, but another player can still have their own unopened contents."
+				"Do not break, move, funnel, or automatically extract an unfamiliar dungeon chest until the whole team has checked it. Lootr solves shared-loot conflict only while the special container remains intact."
+				"Mark worthwhile sites and tell absent players what danger and unopened routes remain there. Individual treasure should reduce arguments without eliminating cooperation, rescue, or the story of exploring the structure together."
+			]
+			id: "19A4D61FDA9A4087"
+			rewards: [{
+				id: "387FBDD56B8CD1CD"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Every player gets a chest; everyone preserves the container"
+			tasks: [{
+				id: "151F0F3B120CA832"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Dungeon School: Lootr Etiquette"
+			x: 2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["19A4D61FDA9A4087"]
+			description: [
+				"Choose one uncleared structure and prepare a role-based team: navigation, light and blocks, food and recovery, ranged control, and empty storage. Establish a named camp outside before entry."
+				"During the run, mark the entrance, safe room, uncleared branches, spawners, vertical transitions, and exit. Open Lootr containers individually and stop when recovery capacity becomes more valuable than another room."
+				"Return with coordinates, structure identification, cleared status, hazards, photographs, and a note about remaining objectives and useful loot sources. The report completes the expedition by turning one group's risk into the next group's knowledge."
+			]
+			id: "275AF8576E34B2C3"
+			rewards: [{
+				id: "590D5721289583AA"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Route, danger, result, and reason to return"
+			tasks: [{
+				id: "5E56ABC37C36B522"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Field Exercise: File a Complete Expedition Report"
+			x: 4.0d
+			y: 9.0d
+		}
+	]
+	title: "Structures, Dungeons and Expeditions"
+}

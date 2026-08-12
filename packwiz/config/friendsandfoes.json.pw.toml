@@ -1,0 +1,8 @@
+name = "Managed config: friendsandfoes.json"
+filename = "friendsandfoes.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/friendsandfoes.json"
+hash-format = "sha256"
+hash = "df93dbd6994b265a3fdd13961dc58cb6c465d413b315e749520ecfcd590a5f45"

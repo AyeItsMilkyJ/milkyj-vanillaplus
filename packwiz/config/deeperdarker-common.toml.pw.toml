@@ -1,0 +1,8 @@
+name = "Managed config: deeperdarker-common.toml"
+filename = "deeperdarker-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/deeperdarker-common.toml"
+hash-format = "sha256"
+hash = "8cbd895ecaf34f553f3fc87b5009edcfad3f22fbc44c85d2364b3dd50b38d1b5"

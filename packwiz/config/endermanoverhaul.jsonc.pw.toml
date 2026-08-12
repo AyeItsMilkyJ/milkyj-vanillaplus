@@ -1,0 +1,8 @@
+name = "Managed config: endermanoverhaul.jsonc"
+filename = "endermanoverhaul.jsonc"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/endermanoverhaul.jsonc"
+hash-format = "sha256"
+hash = "805d40007ee49b667d1872690be7b071746f63409533b1be3838a2e9cf1ed05d"

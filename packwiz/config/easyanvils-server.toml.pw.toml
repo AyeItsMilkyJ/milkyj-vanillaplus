@@ -1,0 +1,8 @@
+name = "Managed config: easyanvils-server.toml"
+filename = "easyanvils-server.toml"
+side = "server"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/config/easyanvils-server.toml"
+hash-format = "sha256"
+hash = "5bf38784a30090fbe2d5bc1a65aa5bd5744b5c9ed8a3abdce37341e5637cb570"

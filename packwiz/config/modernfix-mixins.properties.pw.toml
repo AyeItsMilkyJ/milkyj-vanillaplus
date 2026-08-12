@@ -1,0 +1,8 @@
+name = "Managed config: modernfix-mixins.properties"
+filename = "modernfix-mixins.properties"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/modernfix-mixins.properties"
+hash-format = "sha256"
+hash = "995629049742c483e2a91ec1a3135f523bf958ed876160d2e29252666918ff96"

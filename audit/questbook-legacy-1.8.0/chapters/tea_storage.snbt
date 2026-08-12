@@ -1,0 +1,387 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "tea_storage"
+	group: "459A83736128F244"
+	icon: "herbalbrews:tea_kettle"
+	id: "07B24C79D028A2A7"
+	order_index: 3
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"HerbalBrews adds tea plants to suitable biomes. Gather leaves and blossoms responsibly, then replant near the homestead."
+				"JEI shows which leaves become each drink and which blocks are used for drying."
+				"Herbal Brews has several preparation stages, so search the ingredient in JEI and follow its uses from fresh plant to dried material to finished drink. Keep each stage in a separately labelled drawer or shelf."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+			]
+			id: "64AC9DE8013767BD"
+			rewards: [{
+				id: "193C72AC784F9CE7"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					id: "1C8F0092FC395229"
+					item: "herbalbrews:green_tea_leaf"
+					type: "item"
+				}
+				{
+					id: "3C8A7D09F10BFCA6"
+					item: "herbalbrews:tea_blossom"
+					type: "item"
+				}
+			]
+			title: "Find Tea in the Wild"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Tea processing starts with drying. Place the appropriate leaf blocks and let the mod's natural drying mechanic do the work instead of trying every furnace recipe."
+				"A kettle or cauldron recipe may require the correct heat, water, ingredient, and serving container. If it stalls, verify those four conditions individually instead of replacing the whole station."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "710F1DC8EED8DDD4"
+			rewards: [{
+				id: "1C854CC33D850467"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "42C8BDFB23CDD6CD"
+				item: "herbalbrews:dried_green_tea"
+				type: "item"
+			}]
+			title: "Let the Leaves Dry"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["710F1DC8EED8DDD4"]
+			description: [
+				"Place a stove and Tea Kettle together. Use JEI for the fluid and ingredient requirements, then keep cups and ingredients nearby."
+				"A kettle or cauldron recipe may require the correct heat, water, ingredient, and serving container. If it stalls, verify those four conditions individually instead of replacing the whole station."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+				"Herbal Brews has several preparation stages, so search the ingredient in JEI and follow its uses from fresh plant to dried material to finished drink. Keep each stage in a separately labelled drawer or shelf."
+			]
+			id: "14F177C622D229B0"
+			rewards: [{
+				id: "022B74E6B68B261D"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "226FF0DE7E74A9BF"
+					item: "herbalbrews:stove"
+					type: "item"
+				}
+				{
+					id: "41FEE93C276F2D97"
+					item: "herbalbrews:tea_kettle"
+					type: "item"
+				}
+			]
+			title: "A Proper Tea Station"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["14F177C622D229B0"]
+			description: [
+				"Different drinks provide different benefits. Brew for an expedition's needs instead of drinking every effect at once."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+				"Herbal Brews has several preparation stages, so search the ingredient in JEI and follow its uses from fresh plant to dried material to finished drink. Keep each stage in a separately labelled drawer or shelf."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "3CC446E9B9784905"
+			rewards: [{
+				id: "3BF702C94FA14F53"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "61E3051AEDDCF85D"
+					item: "herbalbrews:green_tea"
+					type: "item"
+				}
+				{
+					id: "5E5CA83349574F11"
+					item: "herbalbrews:coffee"
+					type: "item"
+				}
+				{
+					id: "15E91F151FE29769"
+					item: "herbalbrews:hibiscus_tea"
+					type: "item"
+				}
+			]
+			title: "Tea and Coffee for the Team"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"The Jug stores and serves brewed drinks. Put one in the kitchen or tavern so useful brews are not hidden in private inventories."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+				"Herbal Brews has several preparation stages, so search the ingredient in JEI and follow its uses from fresh plant to dried material to finished drink. Keep each stage in a separately labelled drawer or shelf."
+			]
+			id: "1AADD2685583A50C"
+			rewards: [{
+				id: "5BD4FED0D95C6616"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "33793BB14BFD3BEF"
+				item: {
+					Count: 1
+					id: "herbalbrews:jug"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Serve a Shared Table"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"The Brewing Cauldron and Flask move HerbalBrews into more advanced concoctions. Read each recipe before committing rare ingredients."
+				"Herbal Brews has several preparation stages, so search the ingredient in JEI and follow its uses from fresh plant to dried material to finished drink. Keep each stage in a separately labelled drawer or shelf."
+				"A kettle or cauldron recipe may require the correct heat, water, ingredient, and serving container. If it stalls, verify those four conditions individually instead of replacing the whole station."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+			]
+			id: "655FF3BDFB126DDE"
+			rewards: [{
+				id: "0E9959D78ED84C99"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "2D5E901888F2C3C7"
+					item: "herbalbrews:cauldron"
+					type: "item"
+				}
+				{
+					id: "4A11A310D27253AD"
+					item: "herbalbrews:flask"
+					type: "item"
+				}
+			]
+			title: "Advanced Herbal Brewing"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"Storage Drawers are ideal for one material in large quantities. Right-click to insert, left-click to extract, and use a double-click to deposit matching items."
+				"Storage Drawers are for repeated materials, not unique treasures. Lock a drawer's assignment before automation touches it, then add capacity only when real volume proves the upgrade is needed."
+				"Compacting Drawers share one quantity across valid nugget, ingot, and block forms. Check JEI for reversible conversions first; not every modded material should be trusted to compact automatically."
+				"A Drawer Controller exposes the connected drawer bank as one inventory to hoppers, pipes, Create, or Tom's Storage. Keep the controller accessible and avoid connecting the same storage through several competing paths."
+			]
+			id: "145EE14BCE66ADC0"
+			rewards: [{
+				id: "54C6FFDFD877FA80"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "4C32625B8C64A2EB"
+				item: "storagedrawers:oak_full_drawers_1"
+				type: "item"
+			}]
+			title: "Store Bulk Materials in Drawers"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["145EE14BCE66ADC0"]
+			description: [
+				"A Drawer Key locks a drawer's assigned item even when empty. This prevents an automation line from filling it with the wrong block."
+				"Storage Drawers are for repeated materials, not unique treasures. Lock a drawer's assignment before automation touches it, then add capacity only when real volume proves the upgrade is needed."
+				"A Drawer Controller exposes the connected drawer bank as one inventory to hoppers, pipes, Create, or Tom's Storage. Keep the controller accessible and avoid connecting the same storage through several competing paths."
+				"Compacting Drawers share one quantity across valid nugget, ingot, and block forms. Check JEI for reversible conversions first; not every modded material should be trusted to compact automatically."
+			]
+			id: "5D98FDCD75FDA054"
+			rewards: [{
+				id: "0287F05D5AD10F9D"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "7AB3E7E634649EF0"
+				item: "storagedrawers:drawer_key"
+				type: "item"
+			}]
+			title: "Lock the Labels"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5D98FDCD75FDA054"]
+			description: [
+				"Storage upgrades multiply capacity. Start with iron or gold; only spend diamonds or netherite where the stored volume actually needs it."
+				"Storage Drawers are for repeated materials, not unique treasures. Lock a drawer's assignment before automation touches it, then add capacity only when real volume proves the upgrade is needed."
+				"A Drawer Controller exposes the connected drawer bank as one inventory to hoppers, pipes, Create, or Tom's Storage. Keep the controller accessible and avoid connecting the same storage through several competing paths."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+			]
+			id: "3EF65030EFBEB847"
+			rewards: [{
+				id: "6A60FC35B19F2D45"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "5EEC38B525ABA8C0"
+					item: "storagedrawers:iron_storage_upgrade"
+					type: "item"
+				}
+				{
+					id: "7B48B6DFD0B3E034"
+					item: "storagedrawers:gold_storage_upgrade"
+					type: "item"
+				}
+			]
+			title: "Upgrade Capacity Gradually"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			description: [
+				"Compacting Drawers expose nuggets, ingots and blocks as one shared inventory. Confirm a material's conversions in JEI before trusting automation."
+				"Compacting Drawers share one quantity across valid nugget, ingot, and block forms. Check JEI for reversible conversions first; not every modded material should be trusted to compact automatically."
+				"Storage Drawers are for repeated materials, not unique treasures. Lock a drawer's assignment before automation touches it, then add capacity only when real volume proves the upgrade is needed."
+				"A Drawer Controller exposes the connected drawer bank as one inventory to hoppers, pipes, Create, or Tom's Storage. Keep the controller accessible and avoid connecting the same storage through several competing paths."
+			]
+			id: "2AE539565ACC0498"
+			rewards: [{
+				id: "0EA40A85C5ACD0D4"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				id: "5066F870D3940756"
+				item: "storagedrawers:compacting_drawers_3"
+				type: "item"
+			}]
+			title: "Compact Ingots Automatically"
+			x: 8.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2AE539565ACC0498"]
+			description: [
+				"A Drawer Controller connects nearby drawers into a network. Link it to Tom's Storage or Create only after the drawer wall is labelled and locked."
+				"A Drawer Controller exposes the connected drawer bank as one inventory to hoppers, pipes, Create, or Tom's Storage. Keep the controller accessible and avoid connecting the same storage through several competing paths."
+				"Storage Drawers are for repeated materials, not unique treasures. Lock a drawer's assignment before automation touches it, then add capacity only when real volume proves the upgrade is needed."
+				"Compacting Drawers share one quantity across valid nugget, ingot, and block forms. Check JEI for reversible conversions first; not every modded material should be trusted to compact automatically."
+			]
+			id: "0C85C6DB2C3B451D"
+			rewards: [{
+				id: "0FCD395DBEB51F66"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "5570C687BC0BD44C"
+				item: "storagedrawers:controller"
+				type: "item"
+			}]
+			title: "One Deposit Point"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"1AADD2685583A50C"
+				"655FF3BDFB126DDE"
+				"0C85C6DB2C3B451D"
+			]
+			description: [
+				"Build a welcoming tea room beside an organised bulk storeroom. It should be useful to a new player without requiring an explanation first."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+				"Before marking this lesson complete, identify every named block, item, creature, or interface in JEI and Jade. Inspect both recipes and uses, then perform one small manual test so the objective represents understood behaviour rather than a lucky craft."
+			]
+			id: "4C1DC8999145EFF1"
+			rewards: [
+				{
+					count: 4
+					id: "3680D43BE29287A0"
+					item: "minecraft:emerald"
+					type: "item"
+				}
+				{
+					id: "18CBF0F43CADBBB2"
+					type: "xp"
+					xp: 35
+				}
+			]
+			tasks: [{
+				id: "77F9BD780ED0C411"
+				title: "Our tea room and storeroom are ready"
+				type: "checkmark"
+			}]
+			title: "The Tea Room and Storeroom"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Tea and brewing mods add ingredients, preparation stages and effects that are easy to forget. Use JEI, label finished drinks, and record which beverages are useful for travel, combat or building."
+				"Prepare small batches first. A chest of the wrong drink is clutter; a labelled shelf of known effects is a tool."
+				"Keep decorative tavern stock separate from emergency supplies so a celebration does not consume the last expedition brew."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+			]
+			id: "24344A0FFDA3CE6B"
+			rewards: [{
+				id: "493E6BADB053E2EE"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Effects matter more than bottle colour"
+			tasks: [{
+				id: "59C2B3D96E23B631"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Keep a Brewer's Notebook"
+			x: -1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["24344A0FFDA3CE6B"]
+			description: [
+				"Storage Drawers excel at abundant blocks, while cabinets and shelves communicate visually. Use bulk storage for stone, wood, crops and machine parts rather than every unique object."
+				"Connect searchable storage only after assigning sensible categories. Networks make disorder faster to search, but they do not make it easier to maintain."
+				"Leave room for growth and an obvious place for returns. The best storage room is the one tired explorers actually use."
+				"The tea room is also a server interface: effects should be labelled, useful expedition drinks kept separate from celebration stock, and finished cups placed where a tired player can understand them without a lecture."
+			]
+			id: "5FD787D21CAE172B"
+			rewards: [{
+				id: "033E0EDFA6B59913"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Compress repetition, preserve meaning"
+			tasks: [{
+				id: "6A68E109C918848F"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Bulk Storage Without Chaos"
+			x: 1.5d
+			y: 7.0d
+		}
+	]
+	title: "Tea, Brews and Bulk Storage"
+}

@@ -1,0 +1,8 @@
+{
+	chapter_groups: [
+		{ id: "6427D16BBC5EB81E", title: "Start Here and Live Well" }
+		{ id: "459A83736128F244", title: "Build, Store and Engineer" }
+		{ id: "4A5CA40AA14EE19B", title: "Adventure Beyond Home" }
+		{ id: "49E1A5C0DCAC0DDB", title: "People, Peril and Mastery" }
+	]
+}

@@ -1,0 +1,8 @@
+name = "Managed config: betterdeserttemples-forge-1_20.toml"
+filename = "betterdeserttemples-forge-1_20.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterdeserttemples-forge-1_20.toml"
+hash-format = "sha256"
+hash = "ee648242e301a55004cf2796dbf7d31ba1e46765ad07dd45c12053bbb4f4d387"

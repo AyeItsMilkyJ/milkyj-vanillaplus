@@ -1,0 +1,8 @@
+name = "Managed config: structure_gel-client.toml"
+filename = "structure_gel-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/structure_gel-client.toml"
+hash-format = "sha256"
+hash = "8058ecb1b7e59f183db54b31fe49e2040bc222294a46ba5c7c82a172a7277354"

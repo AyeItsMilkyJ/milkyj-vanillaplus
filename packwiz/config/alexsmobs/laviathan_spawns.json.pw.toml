@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/laviathan_spawns.json"
+filename = "laviathan_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/laviathan_spawns.json"
+hash-format = "sha256"
+hash = "5e6e4b33b40a70bc8973e6f957bfc02a53d1626665d18fc1c88950b1633b39a3"

@@ -1,0 +1,8 @@
+name = "Managed config: jade/hide-entities.json"
+filename = "hide-entities.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/jade/hide-entities.json"
+hash-format = "sha256"
+hash = "4f11993be4c863e9e7162e2a8bcb301a2bed28b32b47bd39c595b73ad0bc90e7"

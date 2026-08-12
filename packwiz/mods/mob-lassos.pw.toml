@@ -1,0 +1,12 @@
+name = "Mob Lassos"
+filename = "MobLassos-v8.0.1-1.20.1-Forge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ftOBbnu8/versions/9ocXWaBc/MobLassos-v8.0.1-1.20.1-Forge.jar"
+hash-format = "sha512"
+hash = "4ff6bb79444e9188c6d93849b5082855a3f5a306e0b72fb6b39c5ada418de4d266b38a04a5b9613545792e1fc6b0040fd6398d9bb98a6529929395348f2d5db9"
+
+[update.modrinth]
+mod-id = "ftOBbnu8"
+version = "9ocXWaBc"

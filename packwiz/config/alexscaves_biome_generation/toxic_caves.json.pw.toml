@@ -1,0 +1,8 @@
+name = "Managed config: alexscaves_biome_generation/toxic_caves.json"
+filename = "toxic_caves.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexscaves_biome_generation/toxic_caves.json"
+hash-format = "sha256"
+hash = "481cd440d03f3fbf36994355da2c208ca6ef0a00de02b66c88193b9fb137794b"

@@ -1,0 +1,8 @@
+name = "Managed defaultconfigs: ftbquests/client-config.snbt"
+filename = "client-config.snbt"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/defaultconfigs/ftbquests/client-config.snbt"
+hash-format = "sha256"
+hash = "4ce84f0da35036f810959086ea1043062993bf34ae704fc9cd4f1a67810090a6"

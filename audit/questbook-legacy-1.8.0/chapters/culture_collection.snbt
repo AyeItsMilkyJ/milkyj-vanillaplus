@@ -1,0 +1,254 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "culture_collection"
+	group: "459A83736128F244"
+	icon: "exposure:camera"
+	id: "5540150836B3B578"
+	order_index: 5
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Exposure is a process-focused photography mod. Load compatible film into the camera, use the viewfinder and learn its controls before spending a rare moment on an accidental frame."
+				"Start in daylight with a still subject. Photograph the same build from several distances so you can see what framing changes without blaming every result on the film."
+				"Keep spare film and a written shot list in the expedition backpack. The camera is most useful when the group knows what story it hopes to bring home."
+				"Exposure albums tell stories in sequence. Name each volume, separate master photographs from travelling copies, and add written context when the image alone cannot explain location or danger."
+			]
+			id: "48734150D1E23719"
+			rewards: [{
+				id: "115877F719DB4D67"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A camera needs film and a deliberate subject"
+			tasks: [{
+				id: "73A70A13A112060A"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Exposure Camera Kit"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["48734150D1E23719"]
+			description: [
+				"Exposure models light-sensitive film and camera settings rather than producing a perfect screenshot every time. Brighter scenes tolerate easier settings; dark interiors require more care."
+				"Use a tripod or stable position for planned portraits and structures. Fast creatures and aircraft need a different approach from a still museum object."
+				"If an image fails, record the conditions and change one setting at a time. Photography becomes understandable when experiments are comparable."
+				"Photography records both beauty and procedure. Capture portals, machine layouts, dungeon entrances, crop tests, and rare creatures as well as scenic views so the archive becomes a practical manual."
+			]
+			id: "0132E975CB7EC479"
+			rewards: [{
+				id: "4EA1A7481E8AEEC9"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Darkness, motion and distance are photographic choices"
+			tasks: [{
+				id: "5911E07854B62E52"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Read the Light"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["48734150D1E23719"]
+			description: [
+				"Exposed film must be developed using Exposure's Lightroom and the materials shown by JEI. Keep undeveloped and developed rolls in separate labelled storage."
+				"Develop a test roll before a long journey so everyone understands the workflow. Make copies of irreplaceable pictures before placing them in risky builds."
+				"A public darkroom needs input, output and archive areas. Do not let unique negatives vanish into the same chest as blank film."
+				"Exposure albums tell stories in sequence. Name each volume, separate master photographs from travelling copies, and add written context when the image alone cannot explain location or danger."
+			]
+			id: "127F877D1BAD8DE2"
+			rewards: [{
+				id: "64471978F109D5DB"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Develop the negative before judging the photograph"
+			tasks: [{
+				id: "421F50EDA73503FC"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Lightroom"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["48734150D1E23719"]
+			description: [
+				"The Polaroid addon provides an instant-camera branch of Exposure. It is ideal for group portraits, construction milestones and quick field labels."
+				"Instant does not mean disposable. Name or display important images and keep the archive copy away from creepers, lava and boss arenas."
+				"Use ordinary Exposure film for planned expedition stories and instant photos for moments that would disappear while the darkroom is prepared."
+				"Exposure albums tell stories in sequence. Name each volume, separate master photographs from travelling copies, and add written context when the image alone cannot explain location or danger."
+			]
+			id: "5AA42D581850106D"
+			rewards: [{
+				id: "3E8CBFFFFC909C2A"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Instant photographs trade process for immediacy"
+			tasks: [{
+				id: "3D1C949400AC3E03"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Exposure Polaroid"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["127F877D1BAD8DE2", "5AA42D581850106D"]
+			description: [
+				"An album can show departure, route, discovery, danger and return. Arrange photographs so someone who was absent can understand what happened."
+				"Add captions through nearby signs, books or named displays. Coordinates alone are useful; a sentence about why the place mattered is memorable."
+				"Keep themed albums for dimensions, wildlife, factories and settlement history rather than one enormous pile of unrelated images."
+				"Exposure albums tell stories in sequence. Name each volume, separate master photographs from travelling copies, and add written context when the image alone cannot explain location or danger."
+				"The Archive Law says collection becomes culture only when others can understand it. Curate fewer objects with clearer stories, protect originals, and leave room for future players to add their own evidence."
+			]
+			id: "6A9FA5C21DC2E03D"
+			rewards: [{
+				id: "1C624142C7E58019"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Order creates meaning"
+			tasks: [{
+				id: "001A330D21FB64FC"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Albums Are Sequential Stories"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6A9FA5C21DC2E03D"]
+			description: [
+				"Immersive Paintings expands the ways images and art appear in builds. Use it for maps, signs, portraits and exhibits that serve the room's purpose."
+				"Test scale and placement in a private workshop before covering a public wall. Very large or numerous custom images can create visual clutter and extra client work."
+				"Credit the builder or photographer where appropriate. A shared gallery works when art remains connected to the people and places it records."
+				"Photography records both beauty and procedure. Capture portals, machine layouts, dungeon entrances, crop tests, and rare creatures as well as scenic views so the archive becomes a practical manual."
+			]
+			id: "09E5D00696C515A7"
+			rewards: [{
+				id: "10E5DB053050780B"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Player-made art can become architecture"
+			tasks: [{
+				id: "2372371CE5B97A29"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Immersive Paintings"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["6A9FA5C21DC2E03D"]
+			description: [
+				"Display Case, Statues, Fetzi's Displays, item frames, labels and fish plaques let you show armour, small artifacts, models, blocks and catches in different ways."
+				"Choose the display that makes the object readable without obstructing paths. Test moving or animated displays away from redstone and Create contraptions."
+				"Label the mod, location and story rather than only the item name. JEI can identify an object; the museum should explain why this particular one was kept."
+				"Display cases, fish displays, labels, paintings, and statues communicate best when each object has provenance. Include mod, location, finder, date, and whether the item is safe to borrow."
+			]
+			id: "5100C30241290B2D"
+			rewards: [{
+				id: "590BEBBF0754A675"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Every display block answers a different museum problem"
+			tasks: [{
+				id: "21AD41B88F6CB334"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Cases, Statues, Labels and Plaques"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["09E5D00696C515A7"]
+			description: [
+				"Immersive Melodies adds playable instruments for solo and group performance. Learn rhythm and range with one instrument before assembling the entire orchestra."
+				"Choose a rehearsal place away from bedrooms, trading halls and precision voice-chat moments. Agree when performances are welcome."
+				"Use music for departures, boss victories and festivals. A repeated tune can become part of the server's identity just like a flag or road style."
+				"Immersive Melodies makes music collaborative. Keep spare instruments in a public venue, practise controls, and use performances as server rituals rather than another set of objects hidden in storage."
+			]
+			id: "225156C3183EF6CE"
+			rewards: [{
+				id: "2D5D8BDACC3FD4DD"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A settlement can have a sound without becoming noise"
+			tasks: [{
+				id: "00CE4FA16559479D"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Immersive Melodies"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5100C30241290B2D", "225156C3183EF6CE"]
+			description: [
+				"Create sections for settlements, machines, dimensions, creatures and unresolved mysteries. Give each section space for objects and written notes."
+				"Keep irreplaceable originals protected and use copies or representative displays in public rooms. Store coordinates and access instructions beside the exhibit."
+				"Invite each player to contribute one item and its story. A museum built by one collector is a collection; an archive built by the group is history."
+				"The Archive Law says collection becomes culture only when others can understand it. Curate fewer objects with clearer stories, protect originals, and leave room for future players to add their own evidence."
+			]
+			id: "5D00E79F5B8D373D"
+			rewards: [{
+				id: "64FDAA94DD7B1082"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Maps, books, photographs and trophies need one index"
+			tasks: [{
+				id: "4FCA643B256EB530"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Build the Public Archive"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5D00E79F5B8D373D"]
+			description: [
+				"Choose a completed expedition or project and tell it with at least three media: an object, an image, and written or musical context."
+				"Explain the mistake as well as the victory. Future players learn more from the broken first machine or failed route than from a trophy with no caption."
+				"The Chronicle calls such objects memories with weight. Mark this complete when someone who was not there can understand the story from the exhibit alone."
+				"The Archive Law says collection becomes culture only when others can understand it. Curate fewer objects with clearer stories, protect originals, and leave room for future players to add their own evidence."
+			]
+			id: "75F3F3FF4E299AAE"
+			rewards: [{
+				id: "773D6CE785EB32B8"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Complete one exhibit that changes how the group sees the world"
+			tasks: [{
+				id: "6DD646D85B0B275C"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Memory with Weight"
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+	title: "Photography, Music and the Museum"
+}

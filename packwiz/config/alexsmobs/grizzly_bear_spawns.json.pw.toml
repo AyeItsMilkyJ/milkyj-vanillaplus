@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/grizzly_bear_spawns.json"
+filename = "grizzly_bear_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/grizzly_bear_spawns.json"
+hash-format = "sha256"
+hash = "142f5863bc68b30a4af78de89b6c929690ea85442e8bdb22ef38cc4c6d95494f"

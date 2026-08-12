@@ -1,0 +1,8 @@
+name = "Managed config: cookingforblockheads-common.toml"
+filename = "cookingforblockheads-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/cookingforblockheads-common.toml"
+hash-format = "sha256"
+hash = "e47daa4f9c1d08b1401767e1f5b44cf2ed1284d737338a1133dfde43ded8a9af"

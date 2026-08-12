@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/sunbird_spawns.json"
+filename = "sunbird_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/sunbird_spawns.json"
+hash-format = "sha256"
+hash = "cc539036c4065afe0eaeef628a0fd4a0e2b79a968542a0b51f09f117a06ce8c8"

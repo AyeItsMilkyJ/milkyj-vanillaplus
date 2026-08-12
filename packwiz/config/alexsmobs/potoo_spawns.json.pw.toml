@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/potoo_spawns.json"
+filename = "potoo_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/potoo_spawns.json"
+hash-format = "sha256"
+hash = "e6f21da914007cb168c216619404e060ca89e3dc06eeebe53e9de5a5dd1ab88b"

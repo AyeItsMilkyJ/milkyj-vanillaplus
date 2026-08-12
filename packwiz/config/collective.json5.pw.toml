@@ -1,0 +1,8 @@
+name = "Managed config: collective.json5"
+filename = "collective.json5"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/collective.json5"
+hash-format = "sha256"
+hash = "735e59a5ccec7a2af81e62298d57bff58487a4ebd3ae04937f247ab1aa7c46d4"

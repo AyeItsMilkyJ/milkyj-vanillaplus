@@ -1,0 +1,8 @@
+name = "Managed config: modernfix-common.toml"
+filename = "modernfix-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/modernfix-common.toml"
+hash-format = "sha256"
+hash = "fad9aea710ec3508eab562cd8f2b5f8e2dda6ee1c5fb1fe818f90ce253017f66"

@@ -1,0 +1,8 @@
+name = "Managed config: amendments-common.toml"
+filename = "amendments-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/amendments-common.toml"
+hash-format = "sha256"
+hash = "5a07da87f015a9a0f591638fce47614c9d2311eca7c267f8dcc0bb01409cc131"

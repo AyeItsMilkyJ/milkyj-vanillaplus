@@ -1,0 +1,8 @@
+name = "Managed config: farmersdelight-common.toml"
+filename = "farmersdelight-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/farmersdelight-common.toml"
+hash-format = "sha256"
+hash = "459c4d9fcf137f0533da3280349f2abe51510497632130cbc23507dd121b1bd8"

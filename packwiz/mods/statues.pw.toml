@@ -1,0 +1,12 @@
+name = "Statues"
+filename = "Statues-1.20.1-0.4.2.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7459/974/Statues-1.20.1-0.4.2.jar"
+hash-format = "sha512"
+hash = "e18829a1361a88a294c62c659f9ad2f8bc29133143c3fbfd313ccda45cd3272b60bda54c3f9dad095837969f5edd0e54218f8a611275d2f4aaef4fcf16eebc7d"
+
+[update.curseforge]
+project-id = 253172
+file-id = 7459974

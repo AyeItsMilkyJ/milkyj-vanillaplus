@@ -1,0 +1,13 @@
+MilkyJ Vanilla+ Field Guide 1.8.0 - COMPLETE FIELD MANUAL
+
+Built from the live 1.7.0 definitions without modifying the running server.
+All 354 existing quest IDs, tasks, rewards, dependencies, and progress remain intact.
+
+- Re-authored 348 existing quests that were short or under-explained.
+- Every quest now has at least 3 substantive paragraphs and 90 words.
+- Added 42 practical lessons across storage/travel, building, settlements,
+  structures, wildlife, combat, and Create.
+- 396 total quests across 29 chapters.
+- New lessons teach exact workflows, failure diagnosis, multiplayer etiquette,
+  server-friendly practices, and connected Chronicle lore.
+- No mods, world data, recipes, rewards, or progression requirements were changed.

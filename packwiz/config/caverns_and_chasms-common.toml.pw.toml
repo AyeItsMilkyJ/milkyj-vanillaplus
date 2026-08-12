@@ -1,0 +1,8 @@
+name = "Managed config: caverns_and_chasms-common.toml"
+filename = "caverns_and_chasms-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/caverns_and_chasms-common.toml"
+hash-format = "sha256"
+hash = "f5ee11f493a6411a0212872c477671dbebe9a2c9d6ce0cd271c7a70f38eb9e23"

@@ -1,0 +1,8 @@
+name = "Managed config: smarterfarmers-common.toml"
+filename = "smarterfarmers-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/smarterfarmers-common.toml"
+hash-format = "sha256"
+hash = "32722ba1b3094c0ae26fcb43cd15d35ed8d4a8333529e1350fc4db83c91c9153"

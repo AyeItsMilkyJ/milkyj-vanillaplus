@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/banana_slug_spawns.json"
+filename = "banana_slug_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/banana_slug_spawns.json"
+hash-format = "sha256"
+hash = "eafd26e756874909cdb87fe331bad84a3c12918a469a12763403ca3b0020a7cb"

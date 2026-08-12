@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs.toml"
+filename = "alexsmobs.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs.toml"
+hash-format = "sha256"
+hash = "7c01df704a66653df7793e4c6a856815be283106df03765f196c89bd962d463c"

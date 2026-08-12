@@ -1,0 +1,8 @@
+name = "Managed config: packetfixer.properties"
+filename = "packetfixer.properties"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/packetfixer.properties"
+hash-format = "sha256"
+hash = "49cc4190d78c552273afc98fddbaaf78489eb4e9174c4ffad90b960fb59099d4"

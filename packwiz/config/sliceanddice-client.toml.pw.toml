@@ -1,0 +1,8 @@
+name = "Managed config: sliceanddice-client.toml"
+filename = "sliceanddice-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/sliceanddice-client.toml"
+hash-format = "sha256"
+hash = "257fbdd7a536a41ce332c3416da84946c6825c88cb81a28ae96956f79f36e6e2"

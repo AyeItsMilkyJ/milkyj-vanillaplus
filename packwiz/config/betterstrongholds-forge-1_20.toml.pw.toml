@@ -1,0 +1,8 @@
+name = "Managed config: betterstrongholds-forge-1_20.toml"
+filename = "betterstrongholds-forge-1_20.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterstrongholds-forge-1_20.toml"
+hash-format = "sha256"
+hash = "2e9c9d71e1f2ebcc7065fa6bb09f9b3b97e4cf0bb78067182faf56d1fc14886d"

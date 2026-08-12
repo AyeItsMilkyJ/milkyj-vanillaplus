@@ -1,0 +1,8 @@
+name = "Managed config: geologicexpansion-common.toml"
+filename = "geologicexpansion-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/geologicexpansion-common.toml"
+hash-format = "sha256"
+hash = "f7428aa0c0df52dedda16fc2eda51509d55e1be3812f813ab0a89aa0f87d4e60"

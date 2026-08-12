@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/minecraft/atlases/blocks.json"
+filename = "blocks.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/minecraft/atlases/blocks.json"
+hash-format = "sha256"
+hash = "5c25356bd1b4b080e1b71fc58ce948fee2fc4d04e6700fb8f4baf4b73e91aba9"

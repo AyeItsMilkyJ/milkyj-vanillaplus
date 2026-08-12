@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/unusualfishmod/animations/entity/demon_herring.animation.json"
+filename = "demon_herring.animation.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/demon_herring.animation.json"
+hash-format = "sha256"
+hash = "16bf124dcee1bdfe97874b05aba6583018be9e7c8b2c96a365718a836002331d"

@@ -1,0 +1,143 @@
+
+[general]
+	#Enable wild spawning of revived creatures
+	enableWildSpawn = true
+	#Spawn check interval in ticks (400 = 20 sec)
+	#Range: 20 ~ 6000
+	spawnCheckInterval = 400
+
+[groupSize]
+	#Min group size
+	#Range: 1 ~ 10
+	groupMin = 1
+	#Max group size
+	#Range: 1 ~ 20
+	groupMax = 3
+
+[spawnDistance]
+	#Min spawn distance from player (blocks)
+	#Range: 8 ~ 128
+	minSpawnDistance = 24
+	#Max spawn distance from player (blocks)
+	#Range: 16 ~ 256
+	maxSpawnDistance = 64
+	#Max number of revived creatures allowed near a player at once (within spawn range + 32 blocks). New spawns are skipped above this limit.
+	#Range: 1 ~ 100
+	maxNearbyDinos = 8
+
+[weights_predators]
+	#Carnotaurus - savanna, desert (0=off)
+	#Range: 0 ~ 100
+	carnotaurus = 4
+	#Majungasaurus - jungle, savanna
+	#Range: 0 ~ 100
+	majungasaurus = 4
+	#Ulughbegsaurus - forest, plains
+	#Range: 0 ~ 100
+	ulughbegsaurus = 3
+	#Dromaeosaurus - forest, taiga
+	#Range: 0 ~ 100
+	dromaeosaurus = 7
+	#Telecrex - forest
+	#Range: 0 ~ 100
+	telecrex = 5
+
+[weights_land]
+	#Brachiosaurus - meadow, forest
+	#Range: 0 ~ 100
+	brachiosaurus = 5
+	#Kentrosaurus - plains, savanna
+	#Range: 0 ~ 100
+	kentrosaurus = 7
+	#Pachycephalosaurus - plains, meadow
+	#Range: 0 ~ 100
+	pachycephalosaurus = 7
+	#Lystrosaurus - plains, taiga
+	#Range: 0 ~ 100
+	lystrosaurus = 8
+	#Desmatosuchus - desert, swamp
+	#Range: 0 ~ 100
+	desmatosuchus = 6
+	#Leptictidium - forest, meadow
+	#Range: 0 ~ 100
+	leptictidium = 8
+	#Psilopterus - plains, beach
+	#Range: 0 ~ 100
+	psilopterus = 7
+	#Megalania - savanna, jungle
+	#Range: 0 ~ 100
+	megalania = 5
+	#Talpanas - swamp, river
+	#Range: 0 ~ 100
+	talpanas = 6
+	#Praepusa - beach, snowy
+	#Range: 0 ~ 100
+	praepusa = 6
+	#Therizinosaurus - forest, jungle
+	#Range: 0 ~ 100
+	therizinosaurus = 4
+	#Mammoth - snowy biomes
+	#Range: 0 ~ 100
+	mammoth = 5
+	#Unicorn - meadow, plains
+	#Range: 0 ~ 100
+	unicorn = 2
+	#Kaprosuchus - swamp, river
+	#Range: 0 ~ 100
+	kaprosuchus = 5
+	#Delitzschala - swamp, river
+	#Range: 0 ~ 100
+	delitzschala = 7
+
+[weights_flying]
+	#Pterodactylus - coast, plains
+	#Range: 0 ~ 100
+	pterodactylus = 6
+	#Dimorphodon - cliffs, coast
+	#Range: 0 ~ 100
+	dimorphodon = 6
+	#Kimmeridgebrachypteraeschnidium - forest, swamp
+	#Range: 0 ~ 100
+	kimmeridgebrachypteraeschnidium = 5
+
+[weights_aquatic]
+	#Mosasaurus - open ocean
+	#Range: 0 ~ 100
+	mosasaurus = 3
+	#Metriorhynchus - river, swamp
+	#Range: 0 ~ 100
+	metriorhynchus = 5
+	#Dunkleosteus - ocean
+	#Range: 0 ~ 100
+	dunkleosteus = 4
+	#Onchopristis - river, swamp
+	#Range: 0 ~ 100
+	onchopristis = 6
+	#Coelacanthus - deep ocean
+	#Range: 0 ~ 100
+	coelacanthus = 5
+	#Stethacanthus - warm ocean
+	#Range: 0 ~ 100
+	stethacanthus = 6
+	#Tartuosteus - river, ocean
+	#Range: 0 ~ 100
+	tartuosteus = 6
+	#Lobe Finned Fish - river, swamp
+	#Range: 0 ~ 100
+	lobe_finned_fish = 8
+	#Jawless Fish - river, ocean
+	#Range: 0 ~ 100
+	jawless_fish = 8
+	#Diplocaulus - swamp, river
+	#Range: 0 ~ 100
+	diplocaulus = 7
+	#Aegirocassis - warm ocean
+	#Range: 0 ~ 100
+	aegirocassis = 5
+	#Hibbertopterus - swamp, shore
+	#Range: 0 ~ 100
+	hibbertopterus = 6
+	#Zhangsolva - river, swamp
+	#Range: 0 ~ 100
+	zhangsolva = 7
+

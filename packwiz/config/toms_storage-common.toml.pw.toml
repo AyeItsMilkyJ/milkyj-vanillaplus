@@ -1,0 +1,8 @@
+name = "Managed config: toms_storage-common.toml"
+filename = "toms_storage-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/toms_storage-common.toml"
+hash-format = "sha256"
+hash = "cb2644a6bbca7895ef4ff9a7237a51302839493c7d7e9ffbea74e8bc93494b64"

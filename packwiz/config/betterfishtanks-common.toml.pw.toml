@@ -1,0 +1,8 @@
+name = "Managed config: betterfishtanks-common.toml"
+filename = "betterfishtanks-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterfishtanks-common.toml"
+hash-format = "sha256"
+hash = "9dda0dd6ed39d73c7160f46c1b1c91712a10f4f06e6d277480dfb17b5b1cf149"

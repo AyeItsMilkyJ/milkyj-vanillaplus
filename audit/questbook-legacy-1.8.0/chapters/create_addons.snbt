@@ -1,0 +1,253 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "create_addons"
+	group: "459A83736128F244"
+	icon: "create:precision_mechanism"
+	id: "691793BF13937809"
+	order_index: 4
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Learn rotation, stress, belts, funnels, basins, deployers and contraptions in the two main Create chapters before treating every addon block as a shortcut."
+				"Search JEI by mod name and Ponder every component that offers a scene. Check both the recipe and the uses of an unfamiliar machine so you understand what enters, what leaves and what powers it."
+				"Build addon experiments on a small test shaft. Connecting an unknown block directly to the town factory is how one confusing machine becomes six confusing machines."
+				"Create addons extend the same readable machine language into kitchens, railways, decoration, and experience processing. Ponder addon blocks when available and use JEI when their recipe type is unfamiliar."
+			]
+			id: "3CBF571C33BA4578"
+			rewards: [{
+				id: "44EDCDE10FC351AC"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Addons extend Create; they do not replace its basic grammar"
+			tasks: [{
+				id: "0E663135DD26D8D8"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Read the Create Addon Map"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3CBF571C33BA4578"]
+			description: [
+				"Central Kitchen provides Create-compatible methods for food processing and storage integrations, especially around Farmer's Delight. It is the bridge between a working kitchen and a visible food factory."
+				"Choose one meal with a repeatable ingredient chain. Automate washing, cutting, mixing or packing only where JEI shows an integration recipe; ordinary Cooking Pot recipes may still need the correct containers."
+				"Keep a manual kitchen beside the line. Automation should supply the community, not make it impossible to cook when a belt jams."
+				"Central Kitchen and Slice and Dice automate Farmer's Delight by moving ingredients through familiar Create logistics. Stabilise the manual recipe first so the machine has a known correct result to reproduce."
+			]
+			id: "0D4B75EF5618911F"
+			rewards: [{
+				id: "372E60A287419E8A"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Move prepared food through a real production line"
+			tasks: [{
+				id: "2F1D773CED8DB3EB"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Create: Central Kitchen"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3CBF571C33BA4578"]
+			description: [
+				"Slice and Dice focuses on Create automation for Farmer's Delight processes. Its machines reproduce preparation steps that normally use knives, cutting boards and kitchen handling."
+				"Ponder its components, then verify the exact recipe in JEI. Pay attention to held tools, basin positions and output sides; a correct ingredient in the wrong process is still the wrong recipe."
+				"Start with a high-volume staple such as vegetables or dough. A tiny line that reliably feeds everyone is a better lesson than an unfinished wall of every food in JEI."
+				"Central Kitchen and Slice and Dice automate Farmer's Delight by moving ingredients through familiar Create logistics. Stabilise the manual recipe first so the machine has a known correct result to reproduce."
+			]
+			id: "7F45F36FB147AD0A"
+			rewards: [{
+				id: "7B51CEA3AF7207D0"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Automate the cutting board without forgetting the tool"
+			tasks: [{
+				id: "649752EB46E902E9"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Slice and Dice"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3CBF571C33BA4578"]
+			description: [
+				"Create: Enchantment Industry adds liquid experience, tanks and machines for moving enchantment work into a factory. The Disenchanter removes enchantments and captures experience instead of discarding the whole opportunity."
+				"Treat enchanted loot as a decision: keep the item, salvage the enchantment path or convert unwanted work into stored experience. Never feed named or borrowed gear into a line without checking it."
+				"Build an Experience Hatch near the tank so players can deliberately deposit or withdraw levels. Label input chests so ordinary repair gear cannot enter the system by accident."
+				"Enchantment Industry treats experience as a resource that can be collected, moved, and applied. Label fluid routes carefully and never test an unproven process on the team's only high-level enchanted tool."
+			]
+			id: "5A53AAEC0E3B4B96"
+			rewards: [{
+				id: "4F404B3AC8369ADE"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Turn loose levels into a stored resource"
+			tasks: [{
+				id: "60ECED289908D9A0"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Enchantment Industry: Liquid Experience"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5A53AAEC0E3B4B96"]
+			description: [
+				"The Printer can copy written books, enchanted books, name tags and train schedules when supplied with the correct material or fluid. Blaze-powered stations handle enchanting and anvil-like combining."
+				"Use JEI and Ponder for the installed version before spending rare books. Hyper-enchanting is an advanced extension with extra experience costs and configured limits, not the beginner starting point."
+				"The first useful project is often copying a public instruction book or train schedule. Power is safer when the factory's first product is documentation."
+				"Enchantment Industry treats experience as a resource that can be collected, moved, and applied. Label fluid routes carefully and never test an unproven process on the team's only high-level enchanted tool."
+			]
+			id: "40F22C4CB919465D"
+			rewards: [{
+				id: "6E585EB3E60E603B"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Automate knowledge after you understand the original"
+			tasks: [{
+				id: "3E88EB1D5CABD989"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Printers, Enchanters and Forgers"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["0D4B75EF5618911F", "40F22C4CB919465D"]
+			description: [
+				"Steam 'n' Rails adds custom track materials and railway components while keeping Create's station and schedule foundation. Different gauges and decorative track are choices for a coherent network, not random loot."
+				"Select a standard for public routes before laying kilometres of rail. Test curves, slopes, portals and platform clearances with the actual carriage you plan to use."
+				"Use semaphores and signs to show what the signals are doing. A beautiful railway is only useful when a new driver can tell which line is safe."
+				"Steam 'n' Rails expands track and train options, but every junction increases operational complexity. Add signs, signals, and maintenance access before a second route turns the first into a collision puzzle."
+			]
+			id: "41BE0FF67B399896"
+			rewards: [{
+				id: "634CC21505D6BA3A"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Track types, semaphores and conductors expand the railway language"
+			tasks: [{
+				id: "7D88EA87A21F7FB9"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Steam 'n' Rails: More Than Decoration"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["41BE0FF67B399896"]
+			description: [
+				"Assemble trains on straight track at a station, name stations clearly and use schedules to describe destinations and conditions. Duplicate station names create ambiguous routing."
+				"Signals divide track into protected sections. Test a single passing loop with two trains before scaling up, and keep junctions visible enough to diagnose."
+				"Write the passenger route on signs and in a copied schedule book. Timetables do not need to be realistic; they need to be understandable."
+				"Steam 'n' Rails expands track and train options, but every junction increases operational complexity. Add signs, signals, and maintenance access before a second route turns the first into a collision puzzle."
+			]
+			id: "00BF4EDDD146CDD9"
+			rewards: [{
+				id: "0764D7B23EC4BAE8"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A train becomes infrastructure when it can run predictably"
+			tasks: [{
+				id: "3A1DEF119AD428AC"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Stations, Signals and Schedules"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["40F22C4CB919465D"]
+			description: [
+				"Copycat blocks mimic another block's appearance while keeping useful shapes. Create: Connected, Create Deco, Rechiseled Create and framed blocks add factory details, windows, panels and structural options."
+				"Use these to hide awkward gaps and repeat a palette, not to conceal every moving part. Leave inspection windows around belts, shafts and filters that players may need to repair."
+				"A Create workshop should look like it belongs in Minecraft and explain itself at a glance: power zone, processing zone, storage zone and safe walkway."
+				"Copycats, Connected, Deco, and Rechiseled Create help machinery belong in a build. Leave the functional blocks identifiable; camouflage should improve the workshop, not conceal the part that needs repair."
+			]
+			id: "560A026C808FC416"
+			rewards: [{
+				id: "7FB8EE516C1B6759"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Let machines inherit the language of the building"
+			tasks: [{
+				id: "4C1F46F5520C7799"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Copycats, Connected and Deco"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["00BF4EDDD146CDD9", "560A026C808FC416"]
+			description: [
+				"Stop belts and deployers when their output storage is full. Avoid loose item piles, permanently stalled contraptions and dozens of tiny farms all solving the same resource."
+				"Prefer batch processing and shared production. Observe server performance after adding a large line, especially if it moves mobs, fluids or many block entities."
+				"Mechanical beauty includes an off switch. Label it, test it and teach another player how to use it before calling the factory finished."
+				"Enchantment Industry treats experience as a resource that can be collected, moved, and applied. Label fluid routes carefully and never test an unproven process on the team's only high-level enchanted tool."
+			]
+			id: "4D4F9D8F293B3637"
+			rewards: [{
+				id: "51307361C0E81D74"
+				type: "xp"
+				xp: 15
+			}]
+			subtitle: "Efficient factories are calm factories"
+			tasks: [{
+				id: "20A7114473CC167E"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Build for the Server Tick"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["4D4F9D8F293B3637"]
+			description: [
+				"Complete one public system: a pantry supply line, experience archive, rail route, parcel depot or workshop that another player can use without you present."
+				"Add a diagram, Ponder reminder or short instruction book. Include the safe startup, safe shutdown and the one mistake most likely to jam it."
+				"The Chronicle calls this the Brass Road: motion made meaningful because it carries food, knowledge or travellers between homes."
+				"Create addons extend the same readable machine language into kitchens, railways, decoration, and experience processing. Ponder addon blocks when available and use JEI when their recipe type is unfamiliar."
+			]
+			id: "5509CB4B4E611F90"
+			rewards: [{
+				id: "1CB50DDF5A6562BB"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Engineering earns its place by connecting people"
+			tasks: [{
+				id: "09B79D0FBE02262E"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Brass Road"
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+	title: "Create Addons: Food, Experience and Rail"
+}

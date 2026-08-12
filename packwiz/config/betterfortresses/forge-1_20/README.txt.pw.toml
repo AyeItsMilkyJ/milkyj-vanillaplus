@@ -1,0 +1,8 @@
+name = "Managed config: betterfortresses/forge-1_20/README.txt"
+filename = "README.txt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterfortresses/forge-1_20/README.txt"
+hash-format = "sha256"
+hash = "050cf34b7d9f1568c55c250b23b1b233d5525a69ed6719ef6782ac64d6ee6be7"

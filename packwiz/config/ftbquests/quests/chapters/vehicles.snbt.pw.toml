@@ -1,0 +1,8 @@
+name = "Managed config: ftbquests/quests/chapters/vehicles.snbt"
+filename = "vehicles.snbt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/vehicles.snbt"
+hash-format = "sha256"
+hash = "a714f42aa325ab40410da5e880b78aa7152cd967c7114b3bd2fb3121ffa0626d"

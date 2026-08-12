@@ -1,0 +1,8 @@
+name = "Managed config: jei/jei-debug.ini"
+filename = "jei-debug.ini"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/jei/jei-debug.ini"
+hash-format = "sha256"
+hash = "ee9bb0f0f8465629951fe9a532f3ebe3327671a12d4cc6395860d7f7494b970b"

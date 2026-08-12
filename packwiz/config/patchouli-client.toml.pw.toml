@@ -1,0 +1,8 @@
+name = "Managed config: patchouli-client.toml"
+filename = "patchouli-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/patchouli-client.toml"
+hash-format = "sha256"
+hash = "d289f4c7540e3e24bcf6bbf3f5a2aaaf87ccf58027d2213e40497fc627422068"

@@ -1,0 +1,8 @@
+name = "Managed config: sophisticatedbackpacks-common.toml"
+filename = "sophisticatedbackpacks-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/sophisticatedbackpacks-common.toml"
+hash-format = "sha256"
+hash = "6674ec92f625296aa8accc93d71fdf1eecfc8050111c5ae7b6d9a94b4fe14506"

@@ -1,0 +1,8 @@
+name = "Managed config: betterdeserttemples/forge-1_20/armorstands.json"
+filename = "armorstands.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterdeserttemples/forge-1_20/armorstands.json"
+hash-format = "sha256"
+hash = "6924121c526cb14117f887eae6ecfbfa76b2a48aae1cd68fba834855da5fec76"

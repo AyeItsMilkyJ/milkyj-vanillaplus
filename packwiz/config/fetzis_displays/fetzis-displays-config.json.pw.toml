@@ -1,0 +1,8 @@
+name = "Managed config: fetzis_displays/fetzis-displays-config.json"
+filename = "fetzis-displays-config.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/fetzis_displays/fetzis-displays-config.json"
+hash-format = "sha256"
+hash = "f53f547fcca728f8b595cff66e72a91f9564da46697fc21f62a2c589fdb5bba7"

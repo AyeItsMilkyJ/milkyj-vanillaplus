@@ -1,0 +1,8 @@
+name = "Managed config: cristellib/minecraftP.json5"
+filename = "minecraftP.json5"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/cristellib/minecraftP.json5"
+hash-format = "sha256"
+hash = "23917b640cac2ebb147742c53fc592d2b0517c5ba5486a55d6555144f902baf9"

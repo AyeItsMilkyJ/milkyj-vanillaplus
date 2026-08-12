@@ -1,0 +1,8 @@
+name = "Managed config: betterstrongholds/forge-1_20/armorstands.json"
+filename = "armorstands.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/forge-1_20/armorstands.json"
+hash-format = "sha256"
+hash = "6aede2465fdc8a5340108687649af75386b41c1e9ae58ab429d6e524668fa69b"

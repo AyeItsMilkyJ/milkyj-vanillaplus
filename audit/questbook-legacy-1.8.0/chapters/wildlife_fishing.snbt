@@ -1,0 +1,555 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "wildlife_fishing"
+	group: "6427D16BBC5EB81E"
+	icon: "aquaculture:neptunes_bounty"
+	id: "39E74FC01FDF0730"
+	order_index: 6
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Aquaculture expands fish by biome and adds rods, hooks, bait and tackle. Start with a durable iron rod and compare upgrades in JEI."
+				"Aquaculture replaces one generic fishing loop with fish, hooks, tackle, treasure, and biome-aware catches. Use the Tackle Box to inspect equipment and change one component at a time so its effect is understandable."
+				"Hooks trade durability or specialised behaviour for different fishing goals. JEI shows their recipes, while actual catches reveal whether the chosen water, biome, weather, and patience match the species being sought."
+				"Before marking this lesson complete, identify every named block, item, creature, or interface in JEI and Jade. Inspect both recipes and uses, then perform one small manual test so the objective represents understood behaviour rather than a lucky craft."
+			]
+			id: "2DD89778C945E6D9"
+			rewards: [{
+				id: "38A016DC4520F49A"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "3140313707B8B591"
+				item: {
+					Count: 1
+					id: "aquaculture:iron_fishing_rod"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Become an Angler"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"The Tackle Box stores fishing gear. Hooks change how fishing behaves, while bait improves the experience without guaranteeing treasure."
+				"Aquaculture replaces one generic fishing loop with fish, hooks, tackle, treasure, and biome-aware catches. Use the Tackle Box to inspect equipment and change one component at a time so its effect is understandable."
+				"Hooks trade durability or specialised behaviour for different fishing goals. JEI shows their recipes, while actual catches reveal whether the chosen water, biome, weather, and patience match the species being sought."
+				"Neptune's Bounty is rare treasure rather than a normal crate. Open it somewhere safe, identify Neptunium equipment before spending it, and display or share duplicates instead of treating every catch as private clutter."
+			]
+			id: "7998A7C39E3F77AE"
+			rewards: [{
+				id: "296A76829ADD2238"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "5206322C581D8E60"
+					item: "aquaculture:tackle_box"
+					type: "item"
+				}
+				{
+					id: "2A73D4A732D94FCE"
+					item: {
+						Count: 1
+						id: "aquaculture:worm"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Build a Tackle Box"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7998A7C39E3F77AE"]
+			description: [
+				"Aquaculture hooks trade different advantages. Read each tooltip and carry only the one that fits the current fishing goal."
+				"Hooks trade durability or specialised behaviour for different fishing goals. JEI shows their recipes, while actual catches reveal whether the chosen water, biome, weather, and patience match the species being sought."
+				"Aquaculture replaces one generic fishing loop with fish, hooks, tackle, treasure, and biome-aware catches. Use the Tackle Box to inspect equipment and change one component at a time so its effect is understandable."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "5DA2F513B666E1FC"
+			rewards: [{
+				id: "2CA52823F74A7731"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "561DB435DCC36659"
+					item: "aquaculture:iron_hook"
+					type: "item"
+				}
+				{
+					id: "1224FD8F4D8CEB12"
+					item: "aquaculture:double_hook"
+					type: "item"
+				}
+			]
+			title: "Choose the Right Hook"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["7998A7C39E3F77AE"]
+			description: [
+				"Fishing can yield sealed treasure. Open it somewhere safe and let every player enjoy their own finds rather than claiming the whole dock's catch."
+				"Neptune's Bounty is rare treasure rather than a normal crate. Open it somewhere safe, identify Neptunium equipment before spending it, and display or share duplicates instead of treating every catch as private clutter."
+				"Aquaculture replaces one generic fishing loop with fish, hooks, tackle, treasure, and biome-aware catches. Use the Tackle Box to inspect equipment and change one component at a time so its effect is understandable."
+			]
+			id: "205A691457EA0B43"
+			rewards: [{
+				id: "6B58CF15735B667C"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "14155B8D633BE5F7"
+					item: "aquaculture:lockbox"
+					type: "item"
+				}
+				{
+					id: "4EC5FA37A8833C1E"
+					item: "aquaculture:treasure_chest"
+					type: "item"
+				}
+			]
+			title: "Lockboxes and Treasure Chests"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["205A691457EA0B43"]
+			description: [
+				"Neptunium is Aquaculture's rare material. Do not expect it immediately; improving the fishing setup and patience are the intended progression."
+				"Neptune's Bounty is rare treasure rather than a normal crate. Open it somewhere safe, identify Neptunium equipment before spending it, and display or share duplicates instead of treating every catch as private clutter."
+				"Aquaculture replaces one generic fishing loop with fish, hooks, tackle, treasure, and biome-aware catches. Use the Tackle Box to inspect equipment and change one component at a time so its effect is understandable."
+				"Hooks trade durability or specialised behaviour for different fishing goals. JEI shows their recipes, while actual catches reveal whether the chosen water, biome, weather, and patience match the species being sought."
+			]
+			id: "7A8176FF3ED47F8C"
+			rewards: [{
+				id: "47BCBC711371C91C"
+				type: "xp"
+				xp: 35
+			}]
+			tasks: [
+				{
+					id: "3C6AEE0CFB55BE20"
+					item: "aquaculture:neptunes_bounty"
+					type: "item"
+				}
+				{
+					id: "3BAF70E567F49495"
+					item: "aquaculture:neptunium_ingot"
+					type: "item"
+				}
+			]
+			title: "Neptune's Bounty"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Better Fish Tanks provides an Aquarist Table, guide and displayable tanks. Preserve interesting catches instead of treating every fish as food."
+				"Better Fish Tanks centres the Aquarist Table and supported display tanks. Prepare the filled enclosure and confirm the capture or transfer method before moving a valuable specimen away from its original water."
+				"Label every living display with species, mod, source biome, and keeper notes. Aquaculture, Unusual Fish, Upgrade Aquatic, Aquamirae, and smaller aquatic mods can place creatures with very different needs in similar-looking water."
+				"Before marking this lesson complete, identify every named block, item, creature, or interface in JEI and Jade. Inspect both recipes and uses, then perform one small manual test so the objective represents understood behaviour rather than a lucky craft."
+			]
+			id: "7600B0A9524674A7"
+			rewards: [{
+				id: "3A658103557FA677"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "035010ED19AE272D"
+					item: "betterfishtanks:guide_book"
+					type: "item"
+				}
+				{
+					id: "3FF2DF24628B571A"
+					item: "betterfishtanks:aquarist_table"
+					type: "item"
+				}
+				{
+					id: "6E0DF73C6038D0BE"
+					item: "betterfishtanks:fish_tank_block"
+					type: "item"
+				}
+			]
+			title: "Build a Living Aquarium"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"Fish Display plaques make good trophies for a fishing lodge. Display a memorable catch and label where it came from."
+				"Aquaculture replaces one generic fishing loop with fish, hooks, tackle, treasure, and biome-aware catches. Use the Tackle Box to inspect equipment and change one component at a time so its effect is understandable."
+				"Hooks trade durability or specialised behaviour for different fishing goals. JEI shows their recipes, while actual catches reveal whether the chosen water, biome, weather, and patience match the species being sought."
+				"Before marking this lesson complete, identify every named block, item, creature, or interface in JEI and Jade. Inspect both recipes and uses, then perform one small manual test so the objective represents understood behaviour rather than a lucky craft."
+			]
+			id: "5B3C5758F5B17D43"
+			rewards: [{
+				id: "39B7FE680CA1EAFD"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "61B62B843031D19E"
+				item: "fish_display:oak_fish_plaque"
+				type: "item"
+			}]
+			title: "The One That Got Displayed"
+			x: 10.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["205A691457EA0B43"]
+			description: [
+				"Use the Doggy Charm to begin, then train rather than simply collect dogs. Talents let a companion specialise without replacing your own gameplay."
+				"Doggy Talents begins by using a Training Treat on a wolf or dog, then opening the dog menu with the documented interaction. Trained dogs need nourishment, modes, and deliberate talent choices rather than ordinary wolf assumptions."
+				"Talents are a limited build budget. Choose a companion role such as travel, rescue, guarding, carrying, or fishing, provide a bed and bowl, and test modes at home before bringing the dog near a boss arena."
+			]
+			id: "68D480A48324EA7A"
+			rewards: [{
+				id: "333E61000804780E"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "4E322921AA57A149"
+					item: "doggytalents:doggy_charm"
+					type: "item"
+				}
+				{
+					id: "4F4FFE7170067A2E"
+					item: "doggytalents:training_treat"
+					type: "item"
+				}
+			]
+			title: "Train a Doggy Talents Companion"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			description: [
+				"Give a companion a proper home, food bowl and clear identity. Radio collars and locator tools help prevent losing a trained dog on expeditions."
+				"Talents are a limited build budget. Choose a companion role such as travel, rescue, guarding, carrying, or fishing, provide a bed and bowl, and test modes at home before bringing the dog near a boss arena."
+				"Doggy Talents begins by using a Training Treat on a wolf or dog, then opening the dog menu with the documented interaction. Trained dogs need nourishment, modes, and deliberate talent choices rather than ordinary wolf assumptions."
+			]
+			id: "636F86CDE4E94B5A"
+			rewards: [{
+				id: "2F361E827186452F"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "77CFE2C536130259"
+					item: "doggytalents:dog_bed"
+					type: "item"
+				}
+				{
+					id: "27E1A11D5DD10E5C"
+					item: "doggytalents:food_bowl"
+					type: "item"
+				}
+				{
+					id: "358E123785E27D55"
+					item: "doggytalents:radio_collar"
+					type: "item"
+				}
+			]
+			title: "A Bed, Bowl and Name"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			description: [
+				"Naturalist animals have behaviours worth observing. Use a Bug Net and camera rather than killing unfamiliar creatures for no reason."
+				"Naturalist, Alex's Mobs, Critters and Companions, aquatic mods, and Friends and Foes reward observation. Watch movement and sound, consult an animal dictionary when available, and avoid killing an unfamiliar creature merely to identify it."
+				"Once the method works, label its inputs, outputs, controls, route, or habitat in plain language and show one teammate. Shared documentation turns a completed quest into knowledge that remains useful when the original player is offline."
+			]
+			id: "1CA7ED993BDE8D70"
+			rewards: [{
+				id: "241E2AAB85650BA3"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "38EB569022867E3C"
+					item: {
+						Count: 1
+						id: "naturalist:bug_net"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5BF4AE43FBA88EAE"
+					item: "naturalist:butterfly"
+					type: "item"
+				}
+			]
+			title: "Observe Wildlife"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["1CA7ED993BDE8D70"]
+			description: [
+				"The Animal Feeding Trough keeps nearby livestock fed for supported breeding behaviour. Place it where it cannot accidentally grow the herd beyond the server's needs."
+				"Doggy Talents begins by using a Training Treat on a wolf or dog, then opening the dog menu with the documented interaction. Trained dogs need nourishment, modes, and deliberate talent choices rather than ordinary wolf assumptions."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "1119517E55ACEFD0"
+			rewards: [{
+				id: "1A2AD4DB4C7FD9A4"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				id: "28CD85B312A24641"
+				item: "animal_feeding_trough:feeding_trough"
+				type: "item"
+			}]
+			title: "Feed the Farm Automatically"
+			x: 10.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1119517E55ACEFD0"]
+			description: [
+				"Finish a fishing lodge, aquarium, pet area and sensibly sized livestock enclosure. Good animal builds are organised, humane and server-friendly."
+				"Naturalist, Alex's Mobs, Critters and Companions, aquatic mods, and Friends and Foes reward observation. Watch movement and sound, consult an animal dictionary when available, and avoid killing an unfamiliar creature merely to identify it."
+				"Better Fish Tanks centres the Aquarist Table and supported display tanks. Prepare the filled enclosure and confirm the capture or transfer method before moving a valuable specimen away from its original water."
+				"Label every living display with species, mod, source biome, and keeper notes. Aquaculture, Unusual Fish, Upgrade Aquatic, Aquamirae, and smaller aquatic mods can place creatures with very different needs in similar-looking water."
+			]
+			id: "6D62BCF509BC8712"
+			rewards: [
+				{
+					count: 4
+					id: "6907373878064E82"
+					item: "minecraft:name_tag"
+					type: "item"
+				}
+				{
+					id: "0E77398F6CB86CC4"
+					type: "xp"
+					xp: 40
+				}
+			]
+			tasks: [{
+				id: "2C5C1B2209A45EE9"
+				title: "Our animal sanctuary is complete"
+				type: "checkmark"
+			}]
+			title: "A Responsible Animal Sanctuary"
+			x: 12.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"The pack adds wildlife with very different temperaments. Read Jade, watch posture and sound, and avoid assuming that every unfamiliar creature is either harmless or meant to be killed."
+				"Carry a boat, leads, food and a few empty containers. Many useful encounters are opportunities to relocate, tame, photograph or study something rather than collect a drop."
+				"When a species seems rare, leave a breeding population behind. A living landmark is worth more than one extra item."
+				"Naturalist, Alex's Mobs, Critters and Companions, aquatic mods, and Friends and Foes reward observation. Watch movement and sound, consult an animal dictionary when available, and avoid killing an unfamiliar creature merely to identify it."
+			]
+			id: "26ED9510911C5F0E"
+			rewards: [{
+				id: "0A3302FD7FA569B0"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Observe before attacking"
+			tasks: [{
+				id: "36DBA6F20A899ACF"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Field Naturalist's Rule"
+			x: -1.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["26ED9510911C5F0E"]
+			description: [
+				"Aquaculture expands rods, tackle and catches, while the aquarium mods turn discoveries into living displays. Use JEI to compare hooks, lines and bait before spending rare materials."
+				"Fish different waters and weather rather than repeating one pond forever. Keep food catches separate from specimens intended for tanks."
+				"Build aquariums gradually and confirm every texture and behaviour before making a huge exhibit. Small tanks are much easier to troubleshoot."
+				"Label every living display with species, mod, source biome, and keeper notes. Aquaculture, Unusual Fish, Upgrade Aquatic, Aquamirae, and smaller aquatic mods can place creatures with very different needs in similar-looking water."
+			]
+			id: "4A93DC39C4EE8289"
+			rewards: [{
+				id: "39ECCDFB0796505B"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Tackle, bait, habitat and display"
+			tasks: [{
+				id: "042484FC9FAF8461"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Fishing Beyond the Wooden Rod"
+			x: 1.5d
+			y: 8.0d
+		}
+		{
+			description: [
+				"Craft or obtain the Animal Dictionary and use it to identify Alex's Mobs creatures, habitats, behaviours, and useful interactions. Search the named item in JEI when the entry references an unfamiliar food or tool."
+				"Observe one creature from a safe distance before approaching. Many are neutral, defensive, tameable, rideable, harvestable without death, or part of a longer item chain that random attacks interrupt."
+				"Record habitat and interaction at the sanctuary or museum. A correct field note is more useful than a chest of unexplained drops and helps the team distinguish Alex's Mobs from Naturalist or aquatic species."
+			]
+			id: "40EDDF80A8F2AFB4"
+			rewards: [{
+				id: "39A5AC8D0DF52A1E"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Alex's Mobs expects curiosity before combat"
+			tasks: [{
+				id: "629D14E931C0568C"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Naturalist's Lesson: Read the Animal Dictionary"
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["40EDDF80A8F2AFB4"]
+			description: [
+				"Use a Training Treat on a suitable wolf or dog to create a Doggy Talents companion, then use the documented stick or sneak interaction to open its menu. Name it and inspect mode before travelling."
+				"Trained dogs use nourishment and can be effectively immortal under the mod's system, but that does not make neglect harmless. Provide a food bowl, bed, home area, and safe recovery routine."
+				"Practise follow, stay, and any home or teleport behaviour near the base. A portal, aircraft, ship, or boss arena is the wrong place to discover which interaction changes modes."
+			]
+			id: "3CF111376280F59E"
+			rewards: [{
+				id: "134E0E7F4EEC589F"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Treat, menu, nourishment, mode, and home"
+			tasks: [{
+				id: "420C9C2374920E9D"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Companion Lesson: Train the First Dog"
+			x: 2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["3CF111376280F59E"]
+			description: [
+				"Doggy Talents offers many roles such as guarding, rescue, carrying, travel, fishing, healing, or utility, but talent points are limited. Read the menu descriptions and choose a coherent job."
+				"Pack Puppy, mobility, survival, and combat talents can change how a dog behaves around danger and inventory. Add a few levels, test them in controlled conditions, then continue only when the result is understood."
+				"Keep an Amnesia Bone or other respec method in mind before committing the whole build, and write the companion's role on a sign near its bed so teammates know what help it can safely provide."
+			]
+			id: "14CDA4BEF0DEE237"
+			rewards: [{
+				id: "63A416F8F88FDD80"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A limited build should match the journey"
+			tasks: [{
+				id: "78C1CD59868FAF85"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Companion Lesson: Spend Talent Points with a Role"
+			x: 4.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["14CDA4BEF0DEE237"]
+			description: [
+				"Aquaculture's Tackle Box is the place to assemble and inspect specialised fishing equipment. Build beside open water and keep hooks, bait, spare rods, fish storage, and a display of successful components nearby."
+				"Change one component at a time and fish long enough to notice its purpose. Some hooks improve durability, catch chances, or specialised outcomes; JEI explains crafting while field results explain when the trade is useful."
+				"Separate edible fish, display specimens, mod ingredients, and treasure immediately. A full mixed chest makes a rich fishing system feel like clutter and encourages rare catches to be cooked by accident."
+			]
+			id: "53DEEF911EBC06FA"
+			rewards: [{
+				id: "10BA984E7F329A86"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Rod, line, bobber, hook, bait, and storage"
+			tasks: [{
+				id: "1596138F838C04F1"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Angler's Lesson: Build a Tackle Workshop"
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["53DEEF911EBC06FA"]
+			description: [
+				"Use Better Fish Tanks and the relevant capture method to prepare a suitable filled enclosure before moving any fish. Check size, water, decoration, visibility, and whether the species is actually supported."
+				"Transport one specimen first and keep the origin coordinates. Aquamirae, Aquaculture, Unusual Fish, Upgrade Aquatic, and other mods can place very different creatures in apparently similar water."
+				"Label the tank with species, mod, biome, and finder. The goal is a living field exhibit, not a crowded glass box that erases every creature's habitat and makes failures impossible to diagnose."
+			]
+			id: "2C0BAEA6FFC6FCA1"
+			rewards: [{
+				id: "33B66158CBEEBA42"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Build habitat before capture"
+			tasks: [{
+				id: "7C5DCBE9495EBDAC"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Naturalist's Lesson: Move a Living Specimen"
+			x: 2.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["2C0BAEA6FFC6FCA1"]
+			description: [
+				"Create separate spaces for a trained dog, one aquatic display, and one safely observed wild or companion species. Provide food, access, lighting, barriers, and a keeper's path before adding inhabitants."
+				"Write each creature's temperament, diet or interaction, mod, and emergency handling. Do not place hostile showcase mobs beside public paths merely because a reinforced enclosure looked secure once."
+				"Invite another player to feed, view, or work with the animals using only the signs and guide. The sanctuary is complete when it teaches respect and remains safe when its founder is offline."
+			]
+			id: "62310F662D6724AC"
+			rewards: [{
+				id: "3D0681C5C11CFA59"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Observe, house, feed, and explain"
+			tasks: [{
+				id: "724E030ED0108296"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Field Exercise: Ratify the Sanctuary Code"
+			x: 4.0d
+			y: 10.0d
+		}
+	]
+	title: "Fishing, Pets and Wildlife"
+}

@@ -1,0 +1,8 @@
+name = "Managed config: exposure-client.toml"
+filename = "exposure-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/exposure-client.toml"
+hash-format = "sha256"
+hash = "7b3b5d1a47c1a2b7ff94aac218e5a38850558105ef55d11a8841930b2aa791ba"

@@ -1,0 +1,8 @@
+name = "Managed config: gml-script-mods.toml"
+filename = "gml-script-mods.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/gml-script-mods.toml"
+hash-format = "sha256"
+hash = "dc9b0f9c9c29949bcb91cebb2bcdc111a7d99bee1d2b2ea168f2edbc7b9a1ba6"

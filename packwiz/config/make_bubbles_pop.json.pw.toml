@@ -1,0 +1,8 @@
+name = "Managed config: make_bubbles_pop.json"
+filename = "make_bubbles_pop.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/make_bubbles_pop.json"
+hash-format = "sha256"
+hash = "45408224d1534b0f4372607e198a7b3b5c2e114aeba00a94594e77eef7a924c5"

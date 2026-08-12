@@ -1,0 +1,348 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "world_lore"
+	group: "6427D16BBC5EB81E"
+	icon: "minecraft:filled_map"
+	id: "76F6AE6E3C42F29F"
+	order_index: 2
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"This chronicle connects the pack's dimensions, ruins, machines and ecosystems into one shared story. It is our world's field-guide lore, not a replacement for the official canon of each mod."
+				"Long ago, separate ages left traces in the same world: old roads, buried halls, impossible caves and gateways to places with different rules. The group has inherited those traces without inheriting their explanations."
+				"Your task is not to conquer everything. It is to learn what each place asks of you, bring that knowledge home, and leave the world more understandable than you found it."
+			]
+			id: "1885CF9658AB663D"
+			rewards: [{
+				id: "70EA4736B4DFA356"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "Field-guide lore, written for this pack"
+			tasks: [{
+				id: "17524EEC960B5C5A"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Foreword: A World of Many Ages"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1885CF9658AB663D"]
+			description: [
+				"The Overworld is shaped by broad climate regions, ancient stone and migrating forests. Terralith, Biomes O' Plenty and the ecological mods make distance meaningful: nearby terrain belongs to a region, not a shuffled catalogue."
+				"The oldest settlements followed rivers, sheltered valleys and useful timber. Their ruins now appear as clues about safe routes, forgotten trades and disasters that ended ordinary lives."
+				"A cartographer learns patterns before chasing novelty. Record borders, resources and routes; the world becomes less random once it is read at the correct scale."
+				"Do not force every mystery into one canon. Record observations, separate confirmed mechanics from theories, and let later discoveries correct the settlement's oldest stories."
+			]
+			id: "6ECE72BD1001A433"
+			rewards: [{
+				id: "0C964C7182DF3498"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "When the Overworld grew beyond old maps"
+			tasks: [{
+				id: "74E00EF158DD66C6"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Age of Roots"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6ECE72BD1001A433"]
+			description: [
+				"After the wandering ages, communities measured wealth in full pantries, safe beds and the ability to feed a stranger. Farmer's Delight, seasonal crops, fishing and animal keeping represent different answers to the same question: can this place survive winter?"
+				"Kitchens and apiaries are therefore civic buildings, not background decoration. A shared meal turns distant discoveries into effects, recovery and preparation for the next expedition."
+				"The covenant is simple: take from the wild with care, preserve a surplus, and ensure the newest player can find food without asking permission."
+				"Write signs, books, map labels, and albums in plain practical language first. Lore becomes believable when another player can follow the road, reproduce the meal, repair the machine, or recognise the warning it preserves."
+			]
+			id: "22B69CA315389C48"
+			rewards: [{
+				id: "411AEF2488ADE8A5"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "Food, shelter and hospitality"
+			tasks: [{
+				id: "796E0D069F7BE72A"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Covenant of the Hearth"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["22B69CA315389C48"]
+			description: [
+				"The first Create engineers did not discover magic power. They learned to make ordinary rotation visible, measurable and reusable. Shafts became grammar; cogs became punctuation; factories became arguments built from motion."
+				"Their best machines were understandable from a walkway. Their worst machines were sealed behind walls until one broken belt silenced an entire district."
+				"Modern engineers honour them by building systems that can stop safely, explain themselves and serve more than one player's private ambition."
+				"Write signs, books, map labels, and albums in plain practical language first. Lore becomes believable when another player can follow the road, reproduce the meal, repair the machine, or recognise the warning it preserves."
+			]
+			id: "71CEDD5D336CCB38"
+			rewards: [{
+				id: "2395F678DAE90D19"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "Motion becomes industry"
+			tasks: [{
+				id: "6D339E7853017809"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Andesite Tinkerers"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["71CEDD5D336CCB38"]
+			description: [
+				"Towers, taverns, mines, temples and buried chambers are not random interruptions. Together they imply generations that mapped routes, guarded resources and failed in different ways."
+				"Loot is only the most obvious thing a structure contains. Architecture reveals local materials, traps reveal feared enemies, and abandoned workspaces reveal what earlier people considered valuable."
+				"Mark useful sites, restore what deserves a second life, and leave signs at cleared dangers. An explored world should become more legible."
+				"Write signs, books, map labels, and albums in plain practical language first. Lore becomes believable when another player can follow the road, reproduce the meal, repair the machine, or recognise the warning it preserves."
+			]
+			id: "5FCB22913E016C22"
+			rewards: [{
+				id: "495497C1AE538DD8"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "Structures are evidence"
+			tasks: [{
+				id: "390527F2DEF7DE05"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Roads of the Lost"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5FCB22913E016C22"]
+			description: [
+				"The expanded wildlife belongs to ecosystems rather than a universal list of targets. Predators, scavengers, pollinators and strange cave species communicate through movement and sound long before they drop an item."
+				"A naturalist asks where a creature lives, what it eats and what threatens it. A careless hunter asks only what it drops and eventually discovers an empty habitat."
+				"Sanctuaries, aquariums and careful breeding are another form of progression: proof that the settlement can understand life without immediately consuming it."
+				"The Chronicle links mechanics to memory: every portal changes the rules, every structure records a purpose, and every recovered object asks what the settlement will do with its knowledge."
+			]
+			id: "53986E1D3385AA38"
+			rewards: [{
+				id: "7B7F524FCCFFC546"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "Creatures fill roles before inventories"
+			tasks: [{
+				id: "35277E58F3F8D340"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Wild Concord"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["53986E1D3385AA38"]
+			description: [
+				"Artifacts, collectibles and archaeological fragments are called memories with weight because each carries a habit from its former owner. Their powers are conditional, specialised and sometimes awkward."
+				"Test relics deliberately and document their effects. A tool that seems weak in ordinary travel may be extraordinary in one biome, structure or machine room."
+				"A public museum prevents powerful history from vanishing into forgotten private storage."
+				"The Chronicle links mechanics to memory: every portal changes the rules, every structure records a purpose, and every recovered object asks what the settlement will do with its knowledge."
+			]
+			id: "668CB4B502BECE63"
+			rewards: [{
+				id: "0C610C18B8261550"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "Why relics choose strange rules"
+			tasks: [{
+				id: "6BA25C659A02269D"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Memories with Weight"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["668CB4B502BECE63"]
+			description: [
+				"Beyond the flower-ring portal lies a forest governed by proof. Its weather and barriers reject travellers who try to skip the lessons written into its bosses and biomes."
+				"The veil does not measure raw strength. It measures whether an explorer understood the previous region well enough to carry its trophy forward."
+				"Follow the Magic Map, preserve trophies and build trailheads. The forest opens like a book whose chapters can bite."
+				"Write signs, books, map labels, and albums in plain practical language first. Lore becomes believable when another player can follow the road, reproduce the meal, repair the machine, or recognise the warning it preserves."
+			]
+			id: "200260D3EF1A4901"
+			rewards: [{
+				id: "21E28C64FAD12C0C"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "A forest that demands sequence"
+			tasks: [{
+				id: "2FBD792520963346"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Twilight Veil"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["200260D3EF1A4901"]
+			description: [
+				"The Aether is described by old pilots as a sea with no water. Islands are harbours, clouds are weather, and the void is the depth beneath every journey."
+				"Its materials and equipment follow local laws that Overworld experience only partly explains. Travellers who refuse to learn those laws become falling debris."
+				"Build safe bridges, respect dungeon customs and secure every portal. In the sky, infrastructure is courage made permanent."
+				"Write signs, books, map labels, and albums in plain practical language first. Lore becomes believable when another player can follow the road, reproduce the meal, repair the machine, or recognise the warning it preserves."
+			]
+			id: "7277A92BC7F26A9B"
+			rewards: [{
+				id: "3E1A8184283B9C41"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "The Aether remembers falling"
+			tasks: [{
+				id: "48EC972936DAECDD"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Sky Sea"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7277A92BC7F26A9B"]
+			description: [
+				"The Nether folds distance through heat and danger, making it the natural place for protected roads. The End stretches distance across silence, making preparation and restraint more valuable than speed."
+				"Both dimensions punish the same mistake: treating a successful outward journey as proof that the return will be easy."
+				"Every portal shelter, marked gateway and emergency cache is a message sent forward to a future version of the group."
+				"A dimension expedition should return with a route, a material sample, a danger report, and one story. Returning only with loot leaves the next team almost as unprepared as the first."
+			]
+			id: "203318F32970CE6D"
+			rewards: [{
+				id: "1164573852522658"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "The Nether and End are roads with consequences"
+			tasks: [{
+				id: "7EBFC31F06CA850C"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Red Below, Black Beyond"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["203318F32970CE6D"]
+			description: [
+				"Sculk does not merely hear. In the field-guide telling, it records disturbance and repeats the world's fear back toward the source."
+				"The Otherside lies beyond that echo, a place approached through stealth, wool and deliberate silence rather than ordinary mining confidence."
+				"The Warden is the boundary made flesh. Escaping it with everyone alive is not cowardice; it is comprehension."
+				"The Unwritten Age is the part made by your group. The guide supplies a shared vocabulary, but the Chronicle is complete only when its advice has been tested, argued with, and improved through play."
+			]
+			id: "43A6D5152FB3BB2D"
+			rewards: [{
+				id: "66D3567386E63687"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "Where sound becomes memory"
+			tasks: [{
+				id: "069697AF54D65F99"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Deepest Echo"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["43A6D5152FB3BB2D"]
+			description: [
+				"Far below ordinary mines lie ecosystems so specialised that each behaves like a separate world: ancient, toxic, magnetic, abyssal or sweet beyond reason."
+				"Their resources are inseparable from their hazards. The correct question is never only what can be mined, but what must be understood before mining begins."
+				"Establish surface records and underground staging camps. The deeper the discovery, the more important a reliable route home becomes."
+				"Do not force every mystery into one canon. Record observations, separate confirmed mechanics from theories, and let later discoveries correct the settlement's oldest stories."
+			]
+			id: "1185AD91E6090439"
+			rewards: [{
+				id: "5FDD4BC577D9E1D2"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "Alex's Caves beneath the familiar world"
+			tasks: [{
+				id: "6ABB27A3D1A5E928"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Five Impossible Strata"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["1185AD91E6090439"]
+			description: [
+				"Mark home, portals, structures, hazards and routes using consistent names. A waypoint called cool place is a joke; a waypoint called West Twilight Lich Tower is shared knowledge."
+				"Maps should record entrances and safe approaches, not merely the centre of a destination. Update them when roads, stations or portals change."
+				"The oath has one line: I will not make the next explorer rediscover my confusion."
+				"The Chronicle links mechanics to memory: every portal changes the rules, every structure records a purpose, and every recovered object asks what the settlement will do with its knowledge."
+			]
+			id: "60DFB0DF6F08401C"
+			rewards: [{
+				id: "46C2CA41E43CA1EA"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "No discovery is finished until it can be found again"
+			tasks: [{
+				id: "19244DC8A345FE3C"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Cartographer's Oath"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["60DFB0DF6F08401C"]
+			description: [
+				"The old ages left ruins, gates and machines. Your group decides what the current age leaves behind."
+				"Choose works that make the world kinder or more understandable: railways, inns, museums, sanctuaries, farms, restored monuments and guideposts across dangerous ground."
+				"When a new player can arrive years later and understand what happened here, the world has become more than a save file."
+				"The Unwritten Age is the part made by your group. The guide supplies a shared vocabulary, but the Chronicle is complete only when its advice has been tested, argued with, and improved through play."
+			]
+			id: "144126E8D1D176CC"
+			rewards: [{
+				id: "6ED493A7C35C1E68"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "What the players add to the chronicle"
+			tasks: [{
+				id: "588830D8D027AB81"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Unwritten Age"
+			x: 6.0d
+			y: 4.0d
+		}
+	]
+	title: "Chronicle of the Four Horizons"
+}

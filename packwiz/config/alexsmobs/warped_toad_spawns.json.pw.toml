@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/warped_toad_spawns.json"
+filename = "warped_toad_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/warped_toad_spawns.json"
+hash-format = "sha256"
+hash = "a79f61400c2eeaf5f29ccc384638df588374cc794838c6e4529a61e2cc31412c"

@@ -1,0 +1,8 @@
+name = "Managed config: jei/jei-colors.ini"
+filename = "jei-colors.ini"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/jei/jei-colors.ini"
+hash-format = "sha256"
+hash = "5f37aacd70460fdc2631ff45e98e8a2ce4e52d3e9a50917edf40eeed1236952e"

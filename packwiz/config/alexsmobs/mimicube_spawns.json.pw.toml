@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/mimicube_spawns.json"
+filename = "mimicube_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/mimicube_spawns.json"
+hash-format = "sha256"
+hash = "e2545407995880359e692657ec62d5464f83255050cbabdc853bfdc0d591729e"

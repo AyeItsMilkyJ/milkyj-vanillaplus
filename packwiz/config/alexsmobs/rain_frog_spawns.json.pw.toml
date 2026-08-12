@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/rain_frog_spawns.json"
+filename = "rain_frog_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/rain_frog_spawns.json"
+hash-format = "sha256"
+hash = "a27201bc22f049a7730d28e77df4f2f21853fd7ade5e2a657160bae470f2ca11"

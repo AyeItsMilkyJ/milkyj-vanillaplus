@@ -1,0 +1,8 @@
+name = "Managed config: doggytalents-dog_custom_skins_client.toml"
+filename = "doggytalents-dog_custom_skins_client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/doggytalents-dog_custom_skins_client.toml"
+hash-format = "sha256"
+hash = "922d6ea872ad4087927cfc62351886ad6b7b74550f4e6cb213c9fd0f3408f984"

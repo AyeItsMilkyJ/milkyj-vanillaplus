@@ -1,0 +1,8 @@
+name = "Managed config: untamedwilds-common.toml"
+filename = "untamedwilds-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/untamedwilds-common.toml"
+hash-format = "sha256"
+hash = "14b83fc55a6eadf5b75a139ab317ce157db4d8f54cdd4d4dd202b55853136795"

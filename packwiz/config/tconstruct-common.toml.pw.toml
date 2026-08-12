@@ -1,0 +1,8 @@
+name = "Managed config: tconstruct-common.toml"
+filename = "tconstruct-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/tconstruct-common.toml"
+hash-format = "sha256"
+hash = "2f2d170508395a56ab6c83abe8feda4482638bec24bd971673e12efac584f9ac"

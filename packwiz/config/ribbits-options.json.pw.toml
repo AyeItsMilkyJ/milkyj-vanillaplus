@@ -1,0 +1,8 @@
+name = "Managed config: ribbits-options.json"
+filename = "ribbits-options.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ribbits-options.json"
+hash-format = "sha256"
+hash = "f3dbc2217233cdcbe0b158942b53bf53c32dae5e0d4a7fa0b3a2151b69fe96f8"

@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/froststalker_spawns.json"
+filename = "froststalker_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/froststalker_spawns.json"
+hash-format = "sha256"
+hash = "53915780cab68621ce7150d72219f93d8cccf6c084363ee91081abbf29dd4b08"

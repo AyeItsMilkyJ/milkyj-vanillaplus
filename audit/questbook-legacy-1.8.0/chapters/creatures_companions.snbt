@@ -1,0 +1,252 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "creatures_companions"
+	group: "4A5CA40AA14EE19B"
+	icon: "minecraft:name_tag"
+	id: "2F46D227F0452023"
+	order_index: 9
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Look at an unfamiliar creature with Jade to learn its name and mod. Alex's Mobs also provides an Animal Dictionary, while other creature mods expose information through advancements, tooltips or JEI."
+				"Observe distance, posture, sounds and nearby habitat before feeding or attacking. Passive-looking creatures may defend territory, flee permanently or need a particular interaction."
+				"Record one useful behaviour, not just a screenshot. A field note that says what made the animal approach, retreat or attack can save the next explorer."
+				"Alex's Mobs provides an Animal Dictionary that explains much of its roster. Use it with JEI and field observation; a creature's valuable interaction may be feeding, following, shedding, trading, or simply being left alive."
+			]
+			id: "613343E988B1A9D6"
+			rewards: [{
+				id: "4455A708148F6B3A"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Jade and guide books prevent avoidable disasters"
+			tasks: [{
+				id: "0F614709A1AA8B14"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Identify Before Interacting"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["613343E988B1A9D6"]
+			description: [
+				"Alex's Mobs spreads animals and fantastical species through particular biomes and conditions. Their drops, taming methods and utility usually reflect the creature's behaviour."
+				"Open the Animal Dictionary entry and check JEI before experimenting with rare food. Some animals are befriended indirectly, some are bred, and some are best left in their habitat."
+				"Do not build a zoo by dragging every creature into one pen. Recreate habitat, provide space and ask whether observation in the wild tells a better story."
+				"Creature mods add behaviours, drops, taming, utility, and ecological roles as well as models. Observe whether a mob is passive, neutral, territorial, or performing an encounter before choosing how to interact."
+			]
+			id: "36261303FC063C26"
+			rewards: [{
+				id: "313918903144FFB7"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Most creatures are systems, not reskinned livestock"
+			tasks: [{
+				id: "75854D5C88733EB3"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Alex's Mobs: Ecological Encounters"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["613343E988B1A9D6"]
+			description: [
+				"Naturalist adds recognisable wildlife with animated behaviour. Critters and Companions and the fish mods add smaller species that are easy to overlook."
+				"Watch how creatures move through water, trees and open ground. Build fences, roads and farms with those routes in mind rather than assuming every non-player entity is decoration."
+				"If a creature is common, learn it near home before planning a distant sanctuary. Good animal keeping begins with ordinary observation."
+				"The Wild Concord treats every new creature as a question before it becomes a target. Record habitat, temperament, food, useful interaction, and danger so the server's knowledge grows without emptying its ecosystems."
+			]
+			id: "156007E8F6D5F7E3"
+			rewards: [{
+				id: "421188596BDDF456"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Predators, prey and small life make familiar biomes feel occupied"
+			tasks: [{
+				id: "386F661856ED26BE"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Naturalist and the Everyday Wild"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["613343E988B1A9D6"]
+			description: [
+				"Friends and Foes reimagines creatures from past community votes and concepts. Their uses and spawning rules differ from fan memories, so let the installed version teach you."
+				"Identify each one with Jade, inspect its related items in JEI and read its advancement clues. Do not assume a familiar name means the same mechanic shown in an old snapshot video."
+				"These mobs are ideal beginner discoveries: small pieces of alternate Minecraft history that can inspire a workshop, garden or village exhibit."
+				"Friends and Foes brings unused mob-vote ideas into the world, while smaller companion mods add specialised creatures. Their Minecraft-like appearance does not mean they share vanilla taming or breeding rules."
+			]
+			id: "56474C125C46D7E5"
+			rewards: [{
+				id: "07B855531ED6CB1F"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Old mob-vote ideas return with finished behaviours"
+			tasks: [{
+				id: "2ECD853F220153FD"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Friends and Foes"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["36261303FC063C26"]
+			description: [
+				"Mowzie's Mobs is built around distinctive movement, atmosphere and attack animations. Foliaath, Nagas, Grottols and Lanterns teach that not every encounter should be handled with a forward sprint."
+				"Watch once from safety. Learn the wind-up, recovery window and arena shape before spending rare gear. A boss that ignores ordinary damage is communicating a mechanic, not asking for a stronger sword."
+				"Mark major encounter structures and wait for the group. These fights are at their best when nobody activates them while another player is reading a chest."
+				"Mowzie's Mobs is encounter design: animations announce attacks, arenas shape movement, and rewards reflect learning the pattern. Watch first, control the space, then attack during a real opening."
+			]
+			id: "6AD157FB825F3E4C"
+			rewards: [{
+				id: "239552FCFB3DEE97"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Combat tells are the real armour check"
+			tasks: [{
+				id: "6C83F16AAFFF8B2B"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Mowzie's Mobs: Read the Animation"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6AD157FB825F3E4C"]
+			description: [
+				"The Wroughtnaut waits in a Wrought Chamber and is protected against ordinary damage. Its heavy axe attacks create the opening the fight is built around."
+				"Keep enough space to read the slam, avoid trading hits and strike the exposed weakness during recovery. If no attack works, stop wasting durability and observe the pattern again."
+				"Its chamber is an encounter, not a quarry. Preserve enough of the arena that future players can understand where the story happened."
+				"Mowzie's Mobs is encounter design: animations announce attacks, arenas shape movement, and rewards reflect learning the pattern. Watch first, control the space, then attack during a real opening."
+			]
+			id: "1DF044A55C1F23BB"
+			rewards: [{
+				id: "18A59DDE6D3536A7"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Armour without a weak moment is a puzzle"
+			tasks: [{
+				id: "1B342FE8C4E82DBA"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Ferrous Wroughtnaut"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6AD157FB825F3E4C"]
+			description: [
+				"A Frostmaw's stillness is not permission to steal carelessly. Prepare for freezing attacks, wide movement and a fight that can punish anyone standing in the wrong lane."
+				"Umvuthi and its followers use a very different rhythm of ranged pressure, movement and magical reward. Research the encounter and clear a retreat route before provoking the settlement."
+				"Boss powers are trophies with mechanics. Test a new ability away from animals, villagers and fragile builds before adding it to an expedition loadout."
+				"Mowzie's Mobs is encounter design: animations announce attacks, arenas shape movement, and rewards reflect learning the pattern. Watch first, control the space, then attack during a real opening."
+			]
+			id: "315D139892728739"
+			rewards: [{
+				id: "3CA87F412FECFB88"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Sleeping ice and living sunlight are team-level encounters"
+			tasks: [{
+				id: "4248DBCE35557436"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Frostmaw and Umvuthi"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["156007E8F6D5F7E3", "315D139892728739"]
+			description: [
+				"Use a Training Treat to turn a wolf into a trained dog, then open its interface and learn the core stats. Talents specialise the companion; they are not all useful for every owner's play style."
+				"Dogs use nourishment and need suitable food. A Food Bowl can anchor wandering behaviour and provide a reliable home routine, while movement modes decide whether the dog follows, stays or patrols."
+				"Start with survivability and control before combat talents. A companion that reliably returns and eats is more valuable than one with damage points nobody can safely command."
+			]
+			id: "36972E6369FFABEA"
+			rewards: [{
+				id: "0B5D66E03FC6C4F9"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A trained dog has nourishment, modes and a job"
+			tasks: [{
+				id: "07FF853A6E6004CF"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Doggy Talents Next"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["36972E6369FFABEA"]
+			description: [
+				"Domestication Innovation expands pet equipment, control and protection. Use its beds, tags and command tools to make companions recoverable and recognisable."
+				"Keep dangerous pets out of public doorways and farms, and test interaction settings before bringing them into a boss fight. Multiplayer pets need names and owners everyone can identify."
+				"Create a safe home area with food, storage and written instructions. If another player cannot tell whether a pet should follow them, the setup is unfinished."
+				"Domestication Innovation supports safer long-term pets with equipment and behaviour improvements. Name important companions, provide home positions, and do not test teleportation or combat settings for the first time inside a dimension portal."
+			]
+			id: "67FACF25579F11E0"
+			rewards: [{
+				id: "56F8D73AF04B1272"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Ownership includes recovery and restraint"
+			tasks: [{
+				id: "329F543776521D00"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Domestication Innovation"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["67FACF25579F11E0"]
+			description: [
+				"Document five creatures from at least three mods. Record biome, behaviour, useful interaction and whether the species belongs in a sanctuary, working homestead or untouched habitat."
+				"Photograph them with Exposure where possible. If you collect a specimen, build appropriate space and keep a route for returning it safely."
+				"The Chronicle calls this agreement the Wild Concord: explorers may learn from living things without assuming discovery grants ownership."
+				"The Wild Concord treats every new creature as a question before it becomes a target. Record habitat, temperament, food, useful interaction, and danger so the server's knowledge grows without emptying its ecosystems."
+			]
+			id: "0867866AE736F276"
+			rewards: [{
+				id: "40FA96064BFC14FA"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Complete a field study without turning it into a hunt"
+			tasks: [{
+				id: "4539817891818EE2"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "The Wild Concord"
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+	title: "Creatures, Companions and Boss Encounters"
+}

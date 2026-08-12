@@ -1,0 +1,8 @@
+name = "Managed config: immersive_weathering-client.toml"
+filename = "immersive_weathering-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/immersive_weathering-client.toml"
+hash-format = "sha256"
+hash = "f36bb759ebb4493cd78a3f06dd47368d82effc78cbf3113b5dfe4d9093243cd9"

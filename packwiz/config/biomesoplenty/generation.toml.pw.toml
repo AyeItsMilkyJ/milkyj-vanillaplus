@@ -1,0 +1,8 @@
+name = "Managed config: biomesoplenty/generation.toml"
+filename = "generation.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/biomesoplenty/generation.toml"
+hash-format = "sha256"
+hash = "b949376d74ae4b3a82851202a1ce79e2995d85c1237a50285f81d85edf29a815"

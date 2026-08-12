@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/orca_spawns.json"
+filename = "orca_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/orca_spawns.json"
+hash-format = "sha256"
+hash = "19c60fb7ae61a72d34a1a172fc641c7ad9ee0ba0772ed7fad6d60298f039631d"

@@ -1,0 +1,8 @@
+name = "Managed config: mantle-client.toml"
+filename = "mantle-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/mantle-client.toml"
+hash-format = "sha256"
+hash = "fb2b6378aac5723f9bcb0fe195fefc42f675f59467c98ae65df13bd872949e95"

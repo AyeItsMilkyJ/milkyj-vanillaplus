@@ -1,0 +1,8 @@
+name = "Managed config: embeddium-mixins.properties"
+filename = "embeddium-mixins.properties"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/embeddium-mixins.properties"
+hash-format = "sha256"
+hash = "2d0bdca74548caee52c95faeb3ce90413938bad47a8967925fd309dd6014a22a"

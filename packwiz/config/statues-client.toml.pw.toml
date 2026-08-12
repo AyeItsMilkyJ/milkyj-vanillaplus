@@ -1,0 +1,8 @@
+name = "Managed config: statues-client.toml"
+filename = "statues-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/statues-client.toml"
+hash-format = "sha256"
+hash = "ca6f36df18cb7d221efd52d4a9ab342ee82fff349cc4b2f455fca078a2170622"

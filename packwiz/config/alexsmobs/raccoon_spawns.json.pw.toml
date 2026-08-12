@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/raccoon_spawns.json"
+filename = "raccoon_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/raccoon_spawns.json"
+hash-format = "sha256"
+hash = "d938e39018ada5c4b41438fc979acffde30ccf90a6cb847388517feb01a97efc"

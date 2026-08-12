@@ -1,0 +1,8 @@
+name = "Managed config: smallships-client.toml"
+filename = "smallships-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/smallships-client.toml"
+hash-format = "sha256"
+hash = "2055d621b5cb01a3a0cc7134bb97d8109f56152938131f7c31bf27b28c264f9b"

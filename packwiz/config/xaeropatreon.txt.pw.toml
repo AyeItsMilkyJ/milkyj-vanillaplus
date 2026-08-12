@@ -1,0 +1,8 @@
+name = "Managed config: xaeropatreon.txt"
+filename = "xaeropatreon.txt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/xaeropatreon.txt"
+hash-format = "sha256"
+hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"

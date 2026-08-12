@@ -1,0 +1,8 @@
+name = "Managed config: entity_texture_features.json"
+filename = "entity_texture_features.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/entity_texture_features.json"
+hash-format = "sha256"
+hash = "889d75199999348872acd61feafb1b8ae3dbdb0230f33c6ad3bd48104bace621"

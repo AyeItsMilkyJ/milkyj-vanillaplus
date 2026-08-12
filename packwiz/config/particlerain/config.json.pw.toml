@@ -1,0 +1,8 @@
+name = "Managed config: particlerain/config.json"
+filename = "config.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/particlerain/config.json"
+hash-format = "sha256"
+hash = "372728956f1955c56209e8664583351e63c644dd0cf080690776a9ddf706d4b8"

@@ -1,0 +1,8 @@
+name = "Managed config: MouseTweaks.cfg"
+filename = "MouseTweaks.cfg"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/MouseTweaks.cfg"
+hash-format = "sha256"
+hash = "611b9c06b577cb3cdc72c8b74a78b16b9a7b42832e1380a85107d086a8854fa8"

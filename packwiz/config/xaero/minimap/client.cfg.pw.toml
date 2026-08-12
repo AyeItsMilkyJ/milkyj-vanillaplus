@@ -1,0 +1,8 @@
+name = "Managed config: xaero/minimap/client.cfg"
+filename = "client.cfg"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/xaero/minimap/client.cfg"
+hash-format = "sha256"
+hash = "e353b4796c4c388e156f3478aed1a3f14b0b5741c35d8b63aac17fb5a129eaa4"

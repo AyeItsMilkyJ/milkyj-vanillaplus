@@ -1,0 +1,440 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "building"
+	group: "459A83736128F244"
+	icon: "handcrafted:oak_chair"
+	id: "68B9A865E421A5C3"
+	order_index: 0
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Good builds usually repeat a small material palette. Gather a wood, stone, roof and accent block before placing random modded blocks everywhere."
+				"Start with silhouette and purpose, then choose a small palette, then add depth. Furniture and detail blocks work best when they explain how a room is used instead of covering every empty surface."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "4547A035DFEF5FE9"
+			rewards: [
+				{
+					count: 16
+					id: "4D62361DE185CD7A"
+					item: "minecraft:scaffolding"
+					type: "item"
+				}
+				{
+					id: "5B6624665934880F"
+					type: "xp"
+					xp: 5
+				}
+			]
+			tasks: [{
+				id: "26B4FB9537232E64"
+				title: "I chose a build palette"
+				type: "checkmark"
+			}]
+			title: "Choose a Palette"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Handcrafted provides chairs, tables, couches, desks and shelves in familiar wood families. Use restraint and leave walking space."
+				"Start with silhouette and purpose, then choose a small palette, then add depth. Furniture and detail blocks work best when they explain how a room is used instead of covering every empty surface."
+				"Before marking this lesson complete, identify every named block, item, creature, or interface in JEI and Jade. Inspect both recipes and uses, then perform one small manual test so the objective represents understood behaviour rather than a lucky craft."
+			]
+			id: "054C0A0CF1B175E6"
+			rewards: [{
+				id: "19F817B006D8F4C4"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					id: "315826537F33D7EC"
+					item: "handcrafted:oak_chair"
+					type: "item"
+				}
+				{
+					id: "2F1144FBE68D53AE"
+					item: "handcrafted:oak_table"
+					type: "item"
+				}
+				{
+					id: "0B627BE93DF651E5"
+					item: "handcrafted:oak_couch"
+					type: "item"
+				}
+			]
+			title: "Furniture That Fits Minecraft"
+			x: 2.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"Beautify adds trellises, lamps, book stacks and workstations. Detail focal areas instead of filling every wall with clutter."
+				"Start with silhouette and purpose, then choose a small palette, then add depth. Furniture and detail blocks work best when they explain how a room is used instead of covering every empty surface."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "46CFCE08506A17DA"
+			rewards: [{
+				id: "5773726D8C53DC72"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					id: "21B31A8CAFACD4C3"
+					item: "beautify:botanist_workbench"
+					type: "item"
+				}
+				{
+					id: "66E3B4BBD8E47238"
+					item: "beautify:bookstack"
+					type: "item"
+				}
+				{
+					id: "79F8FE2D5F9D41CC"
+					item: "beautify:oak_trellis"
+					type: "item"
+				}
+			]
+			title: "Small Details, Big Difference"
+			x: 2.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"Supplementaries and Amendments improve familiar Minecraft blocks with useful interactions and decorative variants. JEI is the safest way to discover them."
+				"Amendments changes how familiar blocks can be placed: lanterns and other objects may hang, sit, or attach to walls according to the face clicked. Test orientation on a workshop wall before repeating it through a build."
+				"Supplementaries mixes decoration with utility. Notice boards communicate, jars display or hold supported contents, signposts mark routes, and redstone-aware objects can make a settlement feel physically connected to its systems."
+				"Start with silhouette and purpose, then choose a small palette, then add depth. Furniture and detail blocks work best when they explain how a room is used instead of covering every empty surface."
+			]
+			id: "02D6AD5207DB9BAB"
+			rewards: [{
+				id: "7816B27B34AC8D6D"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "2066123DF9AA384E"
+					item: "supplementaries:globe"
+					type: "item"
+				}
+				{
+					id: "0E2DD867C56EC8FD"
+					item: "supplementaries:notice_board"
+					type: "item"
+				}
+			]
+			title: "Supplement the Build"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["02D6AD5207DB9BAB"]
+			description: [
+				"Rechiseled turns one material into many coordinated textures. Use its chisel and keep strong patterns for trims, floors or feature walls."
+				"Rechiseled supplies coordinated texture families; FramedBlocks supplies unusual shapes that borrow another block's appearance. Decide texture first and geometry second so an accent does not turn into visual noise."
+				"Start with silhouette and purpose, then choose a small palette, then add depth. Furniture and detail blocks work best when they explain how a room is used instead of covering every empty surface."
+				"Once the method works, label its inputs, outputs, controls, route, or habitat in plain language and show one teammate. Shared documentation turns a completed quest into knowledge that remains useful when the original player is offline."
+			]
+			id: "213BA8647E82F355"
+			rewards: [{
+				id: "7A1915EA1A384ED0"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "409E50188687DAAF"
+				item: "rechiseled:chisel"
+				type: "item"
+			}]
+			title: "Block Families with Rechiseled"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["02D6AD5207DB9BAB"]
+			description: [
+				"FramedBlocks accepts another block's appearance, letting slopes and unusual shapes match your palette. Test pieces in a workshop before using them everywhere."
+				"Rechiseled supplies coordinated texture families; FramedBlocks supplies unusual shapes that borrow another block's appearance. Decide texture first and geometry second so an accent does not turn into visual noise."
+				"Start with silhouette and purpose, then choose a small palette, then add depth. Furniture and detail blocks work best when they explain how a room is used instead of covering every empty surface."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "112728DFB70972CF"
+			rewards: [{
+				id: "640A2406F1E677D1"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [
+				{
+					id: "48D088876EA08299"
+					item: "framedblocks:framed_cube"
+					type: "item"
+				}
+				{
+					id: "6E15C0F49DAB77C3"
+					item: "framedblocks:framed_slope"
+					type: "item"
+				}
+			]
+			title: "FramedBlocks for Awkward Shapes"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["112728DFB70972CF"]
+			description: [
+				"Macaw's families provide practical architectural shapes. Pick the pieces that solve a real silhouette problem instead of adding detail for its own sake."
+				"Rechiseled supplies coordinated texture families; FramedBlocks supplies unusual shapes that borrow another block's appearance. Decide texture first and geometry second so an accent does not turn into visual noise."
+				"Start with silhouette and purpose, then choose a small palette, then add depth. Furniture and detail blocks work best when they explain how a room is used instead of covering every empty surface."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "460B1103F0CBDBC3"
+			rewards: [{
+				id: "050214267C0F6949"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "53F08DF7B9DF6F51"
+					item: "mcwroofs:oak_roof"
+					type: "item"
+				}
+				{
+					id: "1DFBC830CE3E7EE7"
+					item: "mcwbridges:oak_bridge_pier"
+					type: "item"
+				}
+				{
+					id: "6F6559FE60767EB9"
+					item: "mcwwindows:oak_window"
+					type: "item"
+				}
+			]
+			title: "Roofs, Bridges and Windows"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Create a tavern, workshop, kitchen or map room that uses at least three decoration families while still looking like Minecraft."
+				"Start with silhouette and purpose, then choose a small palette, then add depth. Furniture and detail blocks work best when they explain how a room is used instead of covering every empty surface."
+				"Supplementaries mixes decoration with utility. Notice boards communicate, jars display or hold supported contents, signposts mark routes, and redstone-aware objects can make a settlement feel physically connected to its systems."
+				"If the expected result does not appear, preserve the failed setup and compare its recipe, tooltip, environment, orientation, required interaction, keybind, and available space with one known-good example. Change one variable at a time until the cause is proven."
+			]
+			id: "0BEE6DF97C75B8EC"
+			rewards: [
+				{
+					count: 4
+					id: "3BCB0B98FDEB419A"
+					item: "minecraft:painting"
+					type: "item"
+				}
+				{
+					id: "2AD2FF82876509C9"
+					type: "xp"
+					xp: 25
+				}
+			]
+			tasks: [{
+				id: "47384620D3D7B868"
+				title: "We finished a useful shared room"
+				type: "checkmark"
+			}]
+			title: "Build a Shared Room"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"First establish the silhouette, then choose a small block palette, then add depth with frames, roofs, windows and supports. Detail cannot rescue a shape that does not work from a distance."
+				"Repeat a few motifs so the settlement feels related: the same roof pitch, foundation material, lantern style or window rhythm can link very different buildings."
+				"Handcrafted, Another Furniture, Supplementaries and the decoration mods are strongest when they finish a room with a purpose instead of filling every empty block."
+				"Start with silhouette and purpose, then choose a small palette, then add depth. Furniture and detail blocks work best when they explain how a room is used instead of covering every empty surface."
+			]
+			id: "1FF3A7AE02B1761E"
+			rewards: [{
+				id: "6F7E26DAF0D5B855"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A useful building lesson in three passes"
+			tasks: [{
+				id: "54F30251A79FBC95"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Palette, Depth and Repetition"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["1FF3A7AE02B1761E"]
+			description: [
+				"Amendments and related decoration mods add contextual variants. A lantern, sign or small object may hang, sit or attach differently depending on the face and angle used for placement."
+				"Test unfamiliar decorative blocks in a workshop wall before using them across an entire build. If a variant looks wrong, break it and try another face or orientation rather than assuming the texture is broken."
+				"These tiny physical rules are part of the pack's visual language: objects should look supported by the world around them."
+				"Amendments changes how familiar blocks can be placed: lanterns and other objects may hang, sit, or attach to walls according to the face clicked. Test orientation on a workshop wall before repeating it through a build."
+			]
+			id: "26693C1DC7FB0C9C"
+			rewards: [{
+				id: "43EE0E8C137FB52F"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "The face you click can change the block"
+			tasks: [{
+				id: "402C0275BB9013B5"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Placement Variants and Moving Details"
+			x: 1.5d
+			y: 5.0d
+		}
+		{
+			description: [
+				"Construct a small workshop wall with floor, ceiling, fence, slab, stair, and full-block faces. Place vanilla and modded lanterns, signs, shelves, ropes, and similar objects against every sensible surface."
+				"Amendments and Supplementaries can supply contextual variants such as wall-mounted or hanging forms. The face clicked, support block, sneaking state, or interaction order may change the result even when the item name looks familiar."
+				"This is why a soul lantern can become a better-looking wall or hanging variant on this server. Preserve the behaviour, record the placement gesture, and use the wall as the settlement's permanent sample catalogue."
+			]
+			id: "1C89C8BFA7B44BF7"
+			rewards: [{
+				id: "37A799A6FADF0580"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Learn placement variants before they surprise the build"
+			tasks: [{
+				id: "52F05E792914E4E7"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Builder's Lab: The Orientation Wall"
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["1C89C8BFA7B44BF7"]
+			description: [
+				"Search at-supplementaries in JEI and select a notice board, signpost, jar, pedestal, clock, globe, and one redstone-aware block. Learn what each communicates or stores before choosing where it belongs."
+				"Use notice boards for written information, signposts for destinations, and display blocks for objects with context. Interactive pieces deserve access space and should not be buried inside a decorative wall."
+				"Build a small traveller's corner where at least three pieces have genuine jobs. The mod feels most vanilla when objects answer needs the base already has rather than appearing as random catalogue clutter."
+			]
+			id: "363AD2B472037687"
+			rewards: [{
+				id: "41DE503811B07C85"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Decoration that also communicates or operates"
+			tasks: [{
+				id: "2595B991001666E4"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Builder's Lab: Useful Supplementaries"
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["363AD2B472037687"]
+			description: [
+				"Search at-quark in JEI and browse by use rather than crafting everything. Quark deliberately groups many optional vanilla-style ideas across building, automation, management, and world details."
+				"Choose one block family, one storage or redstone convenience, and one decorative interaction. Test each in a sample area so later discoveries can be recognised as Quark rather than mistaken for a broken vanilla mechanic."
+				"Record only features that are actually enabled in this installed version and configuration. Online lists cover many Minecraft versions, so the in-game recipe index and observed behaviour remain the final authority."
+			]
+			id: "2F94DD73DC9FE4E0"
+			rewards: [{
+				id: "3588B2C0756D81FC"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "A toolbox of small features, not one tech tree"
+			tasks: [{
+				id: "357941A2059A0C89"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Builder's Lab: Survey Quark"
+			x: 4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["2F94DD73DC9FE4E0"]
+			description: [
+				"Use Rechiseled to exchange a base material for a coordinated decorative texture and preview whether the variant uses connected textures. Strong patterns usually belong on borders, floors, foundations, or one feature plane."
+				"Use FramedBlocks for slopes and unusual geometry, then apply the desired camouflage material. A Framed Hammer can remove a camouflage when the experiment goes wrong; learn recovery before building at roof height."
+				"Create Copycats perform a similar visual role around kinetic builds. Keep the outline readable and leave machine interfaces exposed, because texture continuity is not worth hiding the block another player must click."
+			]
+			id: "147D8611B8A5F18F"
+			rewards: [{
+				id: "7D66D31DECFCDB1E"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Rechiseled, FramedBlocks, and Copycats solve different layers"
+			tasks: [{
+				id: "67AAF2649DE1CCAD"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Builder's Lab: Texture and Shape"
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["147D8611B8A5F18F"]
+			description: [
+				"Place a sample strip of exposed and sheltered materials from Immersive Weathering and the vanilla copper family. Observe environmental change before selecting the final state for a large public build."
+				"Weathering can make foundations, paths, roofs, and abandoned corners tell time, but accidental change can also break a strict palette. Store reference blocks and learn the available preservation or reversal recipes in JEI."
+				"Mark truly ruined sites as history instead of automatically polishing everything. The settlement should show which places are maintained, which are old, and which were deliberately left for future explorers to interpret."
+			]
+			id: "2C81ECFD15A06163"
+			rewards: [{
+				id: "4F3DF44E0DE99171"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Let materials age on purpose"
+			tasks: [{
+				id: "5AA56699E052F629"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Builder's Lab: Design for Weathering"
+			x: 2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["2C81ECFD15A06163"]
+			description: [
+				"Choose a foundation, main wall, roof pitch, window rhythm, lantern style, path edge, and two accent materials for one district. Build a sample facade before spending the whole server's supply."
+				"Allow individual furniture and details while repeating the larger language. Handcrafted, Another Furniture, Beautify, Macaw's families, Twigs, Woodworks, and Decorative Blocks should support the room's purpose."
+				"Publish the palette and placement samples in a builder's yard with spare materials beside them. The exercise completes when another player can add a distinct building that still looks as if it belongs to the same settlement."
+			]
+			id: "739EB9D1F02121AC"
+			rewards: [{
+				id: "5A27C17AC4929563"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Repeat a language without making every house identical"
+			tasks: [{
+				id: "721FD5257E5B0EB1"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Field Exercise: Write a District Style Charter"
+			x: 4.0d
+			y: 9.0d
+		}
+	]
+	title: "Building and Decoration"
+}

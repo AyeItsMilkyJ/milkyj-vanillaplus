@@ -1,0 +1,67 @@
+# Local tools and generated release artefacts
+.tools/
+build/
+dist/
+/*.zip
+/*.mrpack
+*.log
+*.tmp
+
+# Packwiz/installer runtime state
+packwiz/.packwiz-cache/
+packwiz/packwiz.exe
+packwiz-installer-bootstrap.jar
+**/.packwiz-installer/
+**/packwiz-installer.jar
+
+# Server runtime and backups (never commit these)
+server-runtime/
+**/backups/
+**/world/
+**/world_*/
+**/playerdata/
+**/stats/
+**/advancements/
+*.mca
+*.dat_old
+*.session.lock
+**/usercache.json
+**/usernamecache.json
+**/whitelist.json
+**/ops.json
+**/banned-ips.json
+**/banned-players.json
+
+# Minecraft/player data and credentials
+**/options.txt
+**/optionsof.txt
+**/servers.dat
+**/launcher_accounts.json
+**/accounts.json
+**/*session*.json
+**/*auth*.json
+**/screenshots/
+**/saves/
+**/logs/
+**/crash-reports/
+**/server-resource-packs/
+**/downloads/
+**/webcache/
+**/shaderpacks/
+**/shaderpacks-disabled/
+**/XaeroWaypoints/
+**/XaeroWorldMap/
+**/Distant_Horizons_server_data/
+
+# Generated private values and third-party identity caches
+**/resourceful-config-web.json
+**/dawnoftimebuilder/patrons_cache.json
+
+# IDE/OS noise
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+desktop.ini

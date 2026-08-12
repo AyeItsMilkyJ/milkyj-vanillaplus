@@ -1,0 +1,8 @@
+name = "Managed config: sweety-archeo-config.toml"
+filename = "sweety-archeo-config.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/sweety-archeo-config.toml"
+hash-format = "sha256"
+hash = "e74d9be3e4b2da2455b72589234b981849f193a4a8ae5e2977d5881a1c9e4057"

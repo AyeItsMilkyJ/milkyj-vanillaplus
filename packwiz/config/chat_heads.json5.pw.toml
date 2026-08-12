@@ -1,0 +1,8 @@
+name = "Managed config: chat_heads.json5"
+filename = "chat_heads.json5"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/chat_heads.json5"
+hash-format = "sha256"
+hash = "6c33c13dd59338bed6c694acf4959315f2b67be4160e4b9c44e87c4966f77cad"

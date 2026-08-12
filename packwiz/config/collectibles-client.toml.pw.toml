@@ -1,0 +1,8 @@
+name = "Managed config: collectibles-client.toml"
+filename = "collectibles-client.toml"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/collectibles-client.toml"
+hash-format = "sha256"
+hash = "cba9f5227c506c4cf5c858fb5d94327c9fe683bcc39029602d5cbd2ac031b8cb"

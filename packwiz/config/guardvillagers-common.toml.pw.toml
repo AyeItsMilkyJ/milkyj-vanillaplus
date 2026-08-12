@@ -1,0 +1,8 @@
+name = "Managed config: guardvillagers-common.toml"
+filename = "guardvillagers-common.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/guardvillagers-common.toml"
+hash-format = "sha256"
+hash = "2c2ee0fcc95a2c6baebd0fcdc78737e2650382161969108a8dcc5f7cfab111f6"

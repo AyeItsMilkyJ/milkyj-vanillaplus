@@ -1,0 +1,8 @@
+name = "Managed config: alexsmobs/comb_jelly_spawns.json"
+filename = "comb_jelly_spawns.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/comb_jelly_spawns.json"
+hash-format = "sha256"
+hash = "2631bffa927799862071ee1061c24f4ab4142f15590791e33833b75742eca772"

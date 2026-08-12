@@ -1,0 +1,8 @@
+name = "Managed config: bettermineshafts-forge-1_20.toml"
+filename = "bettermineshafts-forge-1_20.toml"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/bettermineshafts-forge-1_20.toml"
+hash-format = "sha256"
+hash = "016afc8af06af822bdaa07681699b3c068ec26274116b30b359d5ff03ef9ce11"

@@ -1,0 +1,8 @@
+name = "Managed config: #STOP_MOD_REPOSTS.txt"
+filename = "#STOP_MOD_REPOSTS.txt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/%23STOP_MOD_REPOSTS.txt"
+hash-format = "sha256"
+hash = "f4d374f19061ce04b7b16e3a69350a0afb1d21232f23d321ab3eecaa47bf56f5"

@@ -1,0 +1,446 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "productivebees"
+	group: "6427D16BBC5EB81E"
+	icon: "productivebees:advanced_oak_beehive"
+	id: "05B159FBC0B6F556"
+	order_index: 5
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Plant flowers near a normal hive and learn to harvest safely. A lit campfire beneath the hive calms its residents; leave space so smoke can reach it."
+				"Productive Bees distinguishes vanilla hive bees from solitary bees that live in nests. Use the in-game bee guide and JEI to identify housing, food, breeding parents, and product processing for the species you want."
+				"Catch bees with the intended cages instead of killing or dragging them blindly. Keep cages labelled, move one species at a time, and prepare the correct nest, hive, or flower before releasing it."
+			]
+			id: "71BB70B3127ECE00"
+			rewards: [
+				{
+					id: "2118F4E2E4032CAB"
+					item: "minecraft:campfire"
+					type: "item"
+				}
+				{
+					id: "3C9F71383134E8D9"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "7B51EA6FC2264582"
+					item: "minecraft:beehive"
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "5D5D201B8EEB7DE2"
+					item: "minecraft:honeycomb"
+					type: "item"
+				}
+				{
+					count: 3L
+					id: "56FFB4B056D7F721"
+					item: "minecraft:honey_bottle"
+					type: "item"
+				}
+			]
+			title: "Begin with Vanilla Bees"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Bee Cages move bees without leads or boats. Use one on a bee and release it inside a prepared enclosure. Sturdy cages are reusable."
+				"Catch bees with the intended cages instead of killing or dragging them blindly. Keep cages labelled, move one species at a time, and prepare the correct nest, hive, or flower before releasing it."
+				"The Apiarists' Oath values continuity over maximum output. Maintain spare breeding stock, protect rare lineages from accidental release, and teach one other player how to recover the apiary if its builder is absent."
+			]
+			id: "519A57FD0FD737F9"
+			rewards: [{
+				id: "7B10147C4FAD9A48"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					count: 2L
+					id: "010E2610BE84EC11"
+					item: "productivebees:bee_cage"
+					type: "item"
+				}
+				{
+					id: "581FA2C4614F7ACA"
+					item: "productivebees:sturdy_bee_cage"
+					type: "item"
+				}
+			]
+			title: "Catch, Don't Kill"
+			x: 2.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"Productive Bees includes solitary wild bees and nests. The Nest Locator helps search; JEI and the bee's tooltip explain its preferred nest and flower."
+				"Productive Bees distinguishes vanilla hive bees from solitary bees that live in nests. Use the in-game bee guide and JEI to identify housing, food, breeding parents, and product processing for the species you want."
+				"Catch bees with the intended cages instead of killing or dragging them blindly. Keep cages labelled, move one species at a time, and prepare the correct nest, hive, or flower before releasing it."
+			]
+			id: "3D9193D0E01AD703"
+			rewards: [{
+				id: "779DD605F5D19761"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [
+				{
+					id: "5CCCB53E9B2921A4"
+					item: "productivebees:nest_locator"
+					type: "item"
+				}
+				{
+					id: "7D7D4DB5BBA194CF"
+					title: "I found a solitary bee or nest"
+					type: "checkmark"
+				}
+			]
+			title: "Find Solitary Nests"
+			x: 2.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"An Advanced Beehive is the clean starting point for managed production. Add an Expansion Box for more room and place flowers within reach."
+				"Advanced Hives accept upgrades and expansion boxes, but automation magnifies mistakes. Stabilise one occupied hive, verify output, and add upgrades gradually while watching space, flowers, weather exposure, and access."
+				"Catch bees with the intended cages instead of killing or dragging them blindly. Keep cages labelled, move one species at a time, and prepare the correct nest, hive, or flower before releasing it."
+				"Productive Bees distinguishes vanilla hive bees from solitary bees that live in nests. Use the in-game bee guide and JEI to identify housing, food, breeding parents, and product processing for the species you want."
+			]
+			id: "082F7DB87861798B"
+			rewards: [{
+				id: "5E1198BE58713EDF"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "4EC724EF553E94F3"
+					item: "productivebees:advanced_oak_beehive"
+					type: "item"
+				}
+				{
+					id: "051A5E2441C477E0"
+					item: "productivebees:expansion_box_oak"
+					type: "item"
+				}
+			]
+			title: "Build an Advanced Hive"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"A Feeding Slab keeps the correct pollination block beside the hive. Different bee species need different flowers or resource blocks, so check JEI instead of guessing."
+				"Catch bees with the intended cages instead of killing or dragging them blindly. Keep cages labelled, move one species at a time, and prepare the correct nest, hive, or flower before releasing it."
+				"Advanced Hives accept upgrades and expansion boxes, but automation magnifies mistakes. Stabilise one occupied hive, verify output, and add upgrades gradually while watching space, flowers, weather exposure, and access."
+				"Breeding recipes specify parents and often a flowering block. Use JEI's bee categories, isolate the pair, confirm both are adults and able to breed, and record the successful lineage for the community apiary."
+			]
+			id: "7E9449754C131814"
+			rewards: [{
+				id: "6DD05844B697898B"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "2118380B26172889"
+				item: "productivebees:feeder"
+				type: "item"
+			}]
+			title: "Feed the Right Flower"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"The Centrifuge extracts useful products from combs. Begin manually, then use hoppers or Create only after you know where every input and output belongs."
+				"Combs are usually an intermediate product processed through the mod's centrifuge or compatible automation. Reserve some wax and honey materials, filter outputs, and give overflow somewhere safe to go."
+				"The Apiarists' Oath values continuity over maximum output. Maintain spare breeding stock, protect rare lineages from accidental release, and teach one other player how to recover the apiary if its builder is absent."
+				"Productive Bees distinguishes vanilla hive bees from solitary bees that live in nests. Use the in-game bee guide and JEI to identify housing, food, breeding parents, and product processing for the species you want."
+			]
+			id: "038BBAAF4F296697"
+			rewards: [{
+				id: "733F3AB0D2C6B145"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "486EE4D251E4A9E4"
+				item: "productivebees:centrifuge"
+				type: "item"
+			}]
+			title: "Process Honeycombs"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			description: [
+				"The Breeding Chamber makes bee breeding predictable. JEI lists parent species and required food. Keep spare parents before attempting a long breeding chain."
+				"Productive Bees distinguishes vanilla hive bees from solitary bees that live in nests. Use the in-game bee guide and JEI to identify housing, food, breeding parents, and product processing for the species you want."
+				"The Apiarists' Oath values continuity over maximum output. Maintain spare breeding stock, protect rare lineages from accidental release, and teach one other player how to recover the apiary if its builder is absent."
+			]
+			id: "08839AD4F87F626B"
+			rewards: [{
+				id: "4DE0F4DCA9BFC3E1"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "497E8B1019EAEE4D"
+					item: "productivebees:breeding_chamber"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "648DD50E96860537"
+					item: "productivebees:honey_treat"
+					type: "item"
+				}
+			]
+			title: "Breed Deliberately"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"Hive upgrades improve production, filtering or behaviour. Use a Simulation Upgrade so bees work inside the hive instead of existing as constantly ticking and rendered entities."
+				"Simulation is the preferred setup on this server. Expand production with better hives, not crowds of loose bees."
+				"Catch bees with the intended cages instead of killing or dragging them blindly. Keep cages labelled, move one species at a time, and prepare the correct nest, hive, or flower before releasing it."
+				"Advanced Hives accept upgrades and expansion boxes, but automation magnifies mistakes. Stabilise one occupied hive, verify output, and add upgrades gradually while watching space, flowers, weather exposure, and access."
+			]
+			id: "329BE91EF0B8A168"
+			rewards: [{
+				id: "0AF91DE03177C814"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [
+				{
+					id: "421D76080F6DAE13"
+					item: "productivebees:upgrade_base"
+					type: "item"
+				}
+				{
+					id: "7F5E51447FC2BCBE"
+					item: "productivebees:upgrade_filter"
+					type: "item"
+				}
+				{
+					id: "2E427D0C228DD5D7"
+					item: "productivebees:upgrade_simulator"
+					type: "item"
+				}
+			]
+			title: "Upgrade One Hive at a Time"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"08839AD4F87F626B"
+				"329BE91EF0B8A168"
+			]
+			description: [
+				"Connect one hive to one centrifuge and organised storage. Use filters, label the products and prevent overflow before copying the design."
+				"Combs are usually an intermediate product processed through the mod's centrifuge or compatible automation. Reserve some wax and honey materials, filter outputs, and give overflow somewhere safe to go."
+				"Productive Bees distinguishes vanilla hive bees from solitary bees that live in nests. Use the in-game bee guide and JEI to identify housing, food, breeding parents, and product processing for the species you want."
+				"Catch bees with the intended cages instead of killing or dragging them blindly. Keep cages labelled, move one species at a time, and prepare the correct nest, hive, or flower before releasing it."
+			]
+			id: "3B1C8C7AE4C4A254"
+			rewards: [{
+				id: "214ABFE51D09A620"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "6E566A2E5CF64303"
+				title: "Our first bee-processing line runs without loose items"
+				type: "checkmark"
+			}]
+			title: "A Tidy Honey Line"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3B1C8C7AE4C4A254"]
+			description: [
+				"Build a safe enclosed apiary with flowers, access paths and no more live bees than the team actually needs. Expand slowly and watch server performance."
+				"Breeding recipes specify parents and often a flowering block. Use JEI's bee categories, isolate the pair, confirm both are adults and able to breed, and record the successful lineage for the community apiary."
+				"The Apiarists' Oath values continuity over maximum output. Maintain spare breeding stock, protect rare lineages from accidental release, and teach one other player how to recover the apiary if its builder is absent."
+			]
+			id: "6BB9B48B2F4D4636"
+			rewards: [
+				{
+					count: 4
+					id: "78C8D311E512CDE6"
+					item: "minecraft:emerald"
+					type: "item"
+				}
+				{
+					id: "48E2937E8C9C7CDC"
+					type: "xp"
+					xp: 35
+				}
+			]
+			tasks: [{
+				id: "003FE3EF6DD7BE78"
+				title: "Our community apiary is useful, tidy and performance-safe"
+				type: "checkmark"
+			}]
+			title: "A Responsible Community Apiary"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Productive Bees is a breeding and resource system, not merely a prettier vanilla hive. Use JEI to trace a desired bee backward through its parents, nest requirements and flower preferences."
+				"Label breeding enclosures and keep spare parents. Rebuilding a lost lineage from memory is far harder than keeping one safe pair."
+				"Treat rare bees like breeding stock rather than disposable machines. Their value is the lineage they unlock."
+				"The Apiarists' Oath values continuity over maximum output. Maintain spare breeding stock, protect rare lineages from accidental release, and teach one other player how to recover the apiary if its builder is absent."
+			]
+			id: "6DB0620C467D51A3"
+			rewards: [{
+				id: "63B040936932D44B"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "JEI is the beekeeper's family tree"
+			tasks: [{
+				id: "4080AB2C6F98859E"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Read the Bee Lineage"
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6DB0620C467D51A3"]
+			description: [
+				"Learn how a bee enters its hive, what flower it requires, and what angers it before scaling production. Wear protection when appropriate and provide enough enclosed space to prevent escapes."
+				"Upgrade one hive at a time and verify its output. Bottlenecks are easier to diagnose in a small working apiary than in a wall of identical boxes."
+				"The old field keepers believed bees judged a settlement by its patience. Whether or not that is true, patient apiaries certainly perform better."
+				"Advanced Hives accept upgrades and expansion boxes, but automation magnifies mistakes. Stabilise one occupied hive, verify output, and add upgrades gradually while watching space, flowers, weather exposure, and access."
+			]
+			id: "4DE1D7B402C86051"
+			rewards: [{
+				id: "67D450B6C7F10A0D"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Safe handling before high output"
+			tasks: [{
+				id: "6B6023FBBF2A1145"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "The Quiet Apiary"
+			x: 1.5d
+			y: 5.0d
+		}
+		{
+			description: [
+				"Solitary bees live in individual nests and generally serve as discoveries or breeding parents. Hive bees can live in managed hives and produce combs when their flowering requirement is met."
+				"Use JEI on the bee entry to inspect spawning nests, breeding parents, flowering blocks and comb outputs. The same flower does not satisfy every species."
+				"Keep at least one safe parent pair before beginning a long breeding tree. A rare bee should never exist only in the cage currently inside your backpack."
+				"Productive Bees distinguishes vanilla hive bees from solitary bees that live in nests. Use the in-game bee guide and JEI to identify housing, food, breeding parents, and product processing for the species you want."
+			]
+			id: "2496EF07B0024685"
+			rewards: [{
+				id: "0A9E20073C1A4C68"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "The nest is part of the species recipe"
+			tasks: [{
+				id: "0639A8A6C9BACE90"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Solitary Bees and Hive Bees"
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["2496EF07B0024685"]
+			description: [
+				"Find the resource bee you want in JEI, open its breeding recipe and trace each parent backward until you reach species you already own or can find."
+				"Write the chain on signs near the Breeding Chamber and prepare all flowering items first. Incubate or mature offspring before assuming the recipe failed."
+				"Breed a spare at each important branch. A lineage archive turns future bee projects from repeated exploration into planned husbandry."
+				"Breeding recipes specify parents and often a flowering block. Use JEI's bee categories, isolate the pair, confirm both are adults and able to breed, and record the successful lineage for the community apiary."
+			]
+			id: "3660C09F3A4CA58C"
+			rewards: [{
+				id: "4E6FBE11B8CD671A"
+				type: "xp"
+				xp: 10
+			}]
+			subtitle: "Start from the resource, then trace both parents"
+			tasks: [{
+				id: "025BFA3369B36173"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Read the Breeding Tree Backwards"
+			x: 2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["3660C09F3A4CA58C"]
+			description: [
+				"An Advanced Hive with an Expansion Box supports managed production and upgrades. A Simulator keeps bees inside, but the required flowering block must be presented correctly on a Feeding Slab."
+				"Productivity, speed, breeding, filtering and gene-related upgrades do different jobs. Verify the installed upgrade tooltip and compare output before filling every hive with the same expensive set."
+				"Use one labelled hive as the test case. When it works for a full cycle, copy the design; when it fails, diagnose flower, bee type, weather and output space in that order."
+				"Advanced Hives accept upgrades and expansion boxes, but automation magnifies mistakes. Stabilise one occupied hive, verify output, and add upgrades gradually while watching space, flowers, weather exposure, and access."
+			]
+			id: "1E6B88446082562E"
+			rewards: [{
+				id: "51F06EC29ECB9297"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "Every slot should solve a measured problem"
+			tasks: [{
+				id: "28BA34C70F83EDBD"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Advanced Hive Upgrade Logic"
+			x: 4.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["1E6B88446082562E"]
+			description: [
+				"Bee material can be collected through the bottler method or slowly through gene-sampling upgrades. The Centrifuge separates bottled material into genes such as productivity, tolerance, behaviour and type."
+				"Combine partial samples until they are useful, apply a gene to a Honey Treat, then feed the treat to the target bee. Keep a named breeding pair with desirable traits as the genetic foundation."
+				"Automate only after the manual loop works. Genetics is powerful because it removes bad luck from husbandry; it should not turn living bees into an unexplained disposal pipeline."
+			]
+			id: "0D6F0165547D6F55"
+			rewards: [{
+				id: "510953FC188EBC23"
+				type: "xp"
+				xp: 25
+			}]
+			subtitle: "Bottle, centrifuge, combine, treat"
+			tasks: [{
+				id: "54876ACC5B894C44"
+				title: "I read this field note and tested the idea"
+				type: "checkmark"
+			}]
+			title: "Genes Without Guessing"
+			x: 6.0d
+			y: 8.0d
+		}
+	]
+	title: "Practical Beekeeping"
+}

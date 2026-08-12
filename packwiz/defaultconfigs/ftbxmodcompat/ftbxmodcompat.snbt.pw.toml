@@ -1,0 +1,8 @@
+name = "Managed defaultconfigs: ftbxmodcompat/ftbxmodcompat.snbt"
+filename = "ftbxmodcompat.snbt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/defaultconfigs/ftbxmodcompat/ftbxmodcompat.snbt"
+hash-format = "sha256"
+hash = "9e5046ac0b9f6d27945b689657835bff24310aec7b11f7461c972b514d0e0658"

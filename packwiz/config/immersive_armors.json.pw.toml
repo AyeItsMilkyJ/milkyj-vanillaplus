@@ -1,0 +1,8 @@
+name = "Managed config: immersive_armors.json"
+filename = "immersive_armors.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/immersive_armors.json"
+hash-format = "sha256"
+hash = "014b4443b6517237e4fc8a75939157a65e47b60320fe5d8a478dba5c57d7f9a8"
