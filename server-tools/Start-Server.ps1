@@ -1,17 +1,30 @@
 [CmdletBinding()]
 param(
     [string]$ServerRoot,
-    [int]$StartupTimeoutSeconds = 90
+    [string]$SettingsPath,
+    [int]$StartupTimeoutSeconds = 0
 )
 
 . (Join-Path $PSScriptRoot 'Common.ps1')
 $serverRootResolved = Assert-ValidServerRoot (Resolve-ServerRoot $ServerRoot)
+$settings = Get-ServerSettings -ServerRoot $serverRootResolved -SettingsPath $SettingsPath
+if ($StartupTimeoutSeconds -le 0) { $StartupTimeoutSeconds = [int]$settings.startupTimeoutSeconds }
 Assert-ServerStopped $serverRootResolved
-$supervisor = Join-Path $serverRootResolved 'server-supervisor.ps1'
-if (-not (Test-Path -LiteralPath $supervisor -PathType Leaf)) { throw "Supervisor script not found: $supervisor" }
 
-$arguments = @('-NoProfile','-ExecutionPolicy','Bypass','-WindowStyle','Hidden','-File',('"' + $supervisor + '"'))
+$managementRoot = Get-ManagementRoot $serverRootResolved
+New-Item -ItemType Directory -Path $managementRoot -Force | Out-Null
+$stopRequest = Join-Path $managementRoot 'stop.request'
+if (Test-Path -LiteralPath $stopRequest) { Remove-Item -LiteralPath $stopRequest -Force }
+
+$supervisor = Join-Path $PSScriptRoot 'Server-Supervisor.ps1'
+if (-not (Test-Path -LiteralPath $supervisor -PathType Leaf)) { throw "Supervisor script not found: $supervisor" }
+$arguments = @(
+    '-NoProfile', '-ExecutionPolicy', 'Bypass', '-WindowStyle', 'Hidden',
+    '-File', ('"' + $supervisor + '"'), '-ServerRoot', ('"' + $serverRootResolved + '"')
+)
+if ($SettingsPath) { $arguments += @('-SettingsPath', ('"' + [IO.Path]::GetFullPath($SettingsPath) + '"')) }
 $process = Start-Process -FilePath 'powershell.exe' -ArgumentList $arguments -WorkingDirectory $serverRootResolved -WindowStyle Hidden -PassThru
+
 $deadline = (Get-Date).AddSeconds($StartupTimeoutSeconds)
 do {
     Start-Sleep -Seconds 1
@@ -20,7 +33,12 @@ do {
         Write-Host "Server is listening on port $($activity.Port). Supervisor PID: $($process.Id)"
         return
     }
-    if ($process.HasExited) { throw "Server supervisor exited early with code $($process.ExitCode)." }
+    if ($process.HasExited) {
+        $state = Get-ServerState $serverRootResolved
+        $detail = if ($state) { "$($state.status): $($state.latestCrashOrRestartEvent)" } else { 'no state was written' }
+        throw "Server supervisor exited before the server listened. $detail"
+    }
 } while ((Get-Date) -lt $deadline)
-throw "Server did not begin listening within $StartupTimeoutSeconds seconds. Check supervisor/latest logs."
 
+New-Item -ItemType File -Path $stopRequest -Force | Out-Null
+throw "Server did not begin listening within $StartupTimeoutSeconds seconds. A graceful stop was requested; check server-management logs."

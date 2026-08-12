@@ -41,7 +41,7 @@ $template = Get-Content -LiteralPath $templatePath -Raw
 $template = [regex]::Replace(
     $template,
     '(?m)^PreLaunchCommand=.*$',
-    ('PreLaunchCommand="$INST_JAVA" -jar packwiz-installer-bootstrap.jar ' + $packUrl)
+    ('PreLaunchCommand=\"$INST_JAVA\" -jar packwiz-installer-bootstrap.jar ' + $packUrl)
 )
 [IO.File]::WriteAllText($templatePath, $template, [Text.UTF8Encoding]::new($false))
 

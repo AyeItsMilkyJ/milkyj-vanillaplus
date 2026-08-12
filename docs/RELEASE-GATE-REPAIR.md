@@ -116,3 +116,11 @@ The server log still contains previously known non-fatal third-party recipe/adva
 `audit/release-repair-files.csv` is the exact 286-row file inventory: 277 candidate-vs-sanitized-baseline paths, the strengthened ignore file, four history-purged paths, and four final evidence files. It records every added, modified, deleted, or history-purged path without dumping sensitive contents.
 
 Final safety confirmation: no remote is configured; nothing was pushed/published/deployed; the live server, live world, production port, and working Prism instance remained untouched.
+
+## Deferred manual-test follow-up: Prism command repair
+
+The first real LAN bootstrap import exposed a generator bug after the server-side checks above: raw instance configuration used unescaped quotes around `$INST_JAVA`. Prism consumed those quotes and produced a malformed Java executable/`-jar` boundary. Editing the command through Prism's UI serialized the required form, after which Packwiz installed, Minecraft reached the title screen, the disposable server was discovered and joined, and the harness shut down with all loaded dimensions saved.
+
+The shared generator now emits `PreLaunchCommand=\"$INST_JAVA\" -jar ...`, and an automated process-level regression test proves the Java path may contain spaces and `-jar` remains a separate argument. The replacement bootstrap is `dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-r2-Prism.zip`, SHA-256 `3eac0a7fce9029d023182e276dea5da1695ad34b817c4f0582ea88d3fe34a907`. See `docs/PRISM-BOOTSTRAP-REPAIR.md`.
+
+This follow-up did not change quest definitions, quest IDs, rewards, mods, production Packwiz content, or the remaining manual gate status. R2 still requires a normal manual import/join check before release.

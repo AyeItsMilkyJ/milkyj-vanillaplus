@@ -17,6 +17,8 @@ packwiz-installer-bootstrap.jar
 # Server runtime and backups (never commit these)
 server-runtime/
 **/backups/
+**/server-management/
+*.invalid
 **/world/
 **/world_*/
 **/playerdata/

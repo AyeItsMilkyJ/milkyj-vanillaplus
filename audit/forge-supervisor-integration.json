@@ -1,0 +1,16 @@
+{
+    "testedAt":  "2026-08-12T18:03:00.5162506+10:00",
+    "testPort":  25578,
+    "productionPort":  25565,
+    "source":  "clean disposable RC installation",
+    "directJavaOwnership":  "PASS",
+    "serverReachedDone":  true,
+    "startupSeconds":  100.442,
+    "normalStopCommand":  "PASS",
+    "allLoadedDimensionsSaved":  true,
+    "jvmExited":  true,
+    "testPortReleased":  true,
+    "productionPortTouched":  false,
+    "liveServerWorldOrPrismTouched":  false,
+    "status":  "PASS"
+}

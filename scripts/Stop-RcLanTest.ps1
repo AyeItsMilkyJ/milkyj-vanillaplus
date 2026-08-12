@@ -37,7 +37,7 @@ $audit = [ordered]@{
     productionPortTouched = $false; serverJarCount = $state.serverJarCount
     serverReachedDone = $reachedDone; questParserLoaded = $questsLoaded; chapterCount = 9; questCount = 118
     allLoadedDimensionsSaved = $saved; supervisorStopped = $stopped.supervisorStopped; httpStopped = $stopped.httpStopped
-    zip = 'dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-Prism.zip'
+    zip = 'dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-r2-Prism.zip'
     zipSha256 = (Get-FileHash -LiteralPath $state.zip -Algorithm SHA256).Hash.ToLowerInvariant()
     twoClientManualInteractionResult = 'NOT RUN'
     firewallOrRouterChanged = $false; liveServerWorldOrPrismTouched = $false

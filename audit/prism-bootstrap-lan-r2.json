@@ -1,0 +1,10 @@
+{
+  "candidate": "1.9.0-rc1",
+  "zip": "dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-r2-Prism.zip",
+  "sha256": "3eac0a7fce9029d023182e276dea5da1695ad34b817c4f0582ea88d3fe34a907",
+  "preLaunchCommandShape": "\\\"$INST_JAVA\\\" -jar packwiz-installer-bootstrap.jar http://<LAN_ADDRESS>:8765/packwiz/pack.toml",
+  "forbiddenConcatenationFound": false,
+  "generatedByCorrectedProductionGenerator": true,
+  "serverLaunchTest": "NOT RUN FOR R2; prior disposable RC server evidence remains separate",
+  "manualImportTest": "NOT RUN FOR R2"
+}

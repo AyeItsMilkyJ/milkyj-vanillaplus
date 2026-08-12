@@ -65,7 +65,7 @@ foreach ($metadata in Get-ChildItem -LiteralPath (Join-Path $hostRoot 'packwiz')
 & (Join-Path $PSScriptRoot 'Update-PackMetadata.ps1') -ProjectRoot $hostRoot
 & (Join-Path $PSScriptRoot 'Validate-Pack.ps1') -ProjectRoot $hostRoot -AllowPlaceholder -AllowPrivateLan
 
-$zip = Join-Path $root 'dist\MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-Prism.zip'
+$zip = Join-Path $root 'dist\MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-r2-Prism.zip'
 & (Join-Path $PSScriptRoot 'Build-Prism-Bootstrap.ps1') -ProjectRoot $root -PackUrl $packUrl -OutputPath $zip -AllowPrivateLan
 
 . (Join-Path $root 'server-tools\Common.ps1')

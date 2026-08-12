@@ -14,7 +14,7 @@ From the project root, run:
 
 The command prints the exact LAN Packwiz URL and Minecraft address, starts the disposable server, and creates:
 
-`dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-Prism.zip`
+`dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-r2-Prism.zip`
 
 When the interaction checks are finished, stop only the disposable processes with:
 

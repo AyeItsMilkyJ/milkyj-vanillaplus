@@ -174,17 +174,11 @@ After setting the real URL, copy the tools into the dedicated server folder:
 .\server-tools\Install-ServerTools.ps1 -ServerRoot "$env:USERPROFILE\Desktop\Minecraft Server"
 ```
 
-The copy operation does not stop or modify the running server. It creates `Minecraft Server\packwiz-tools`.
+The copy operation creates `Minecraft Server\packwiz-tools`; it does not install scheduled tasks, run Packwiz, start a server, or replace a world. Deployment remains manual and was not performed for `1.9.0-rc1`.
 
-For an update:
+Use the double-click `START SERVER.bat`, `STOP SERVER.bat`, `RESTART SERVER.bat`, `SERVER STATUS.bat`, `BACKUP SERVER.bat`, and operator-controlled `UPDATE SERVER.bat` wrappers in that folder. The new supervisor launches Forge directly, gracefully stops through Minecraft stdin, restarts unexpected crashes with bounded backoff, and never applies an update by itself.
 
-1. Stop the server cleanly with the existing stop command.
-2. Wait until port 25565 and the supervisor are both stopped.
-3. Run `packwiz-tools\Update-And-Start-Server.bat`.
-
-`Update-Server.ps1` refuses to continue while the server port or supervisor is active. It finds Java 17, creates a timestamped backup under `backups\packwiz`, runs Packwiz with `-g -s server`, and restores the previous managed files if installation fails. Only after success does `Start-Server.ps1` launch the existing two-hour restart supervisor.
-
-`Start-Server.bat` starts without updating. `Backup-Server.bat` creates a manual backup without starting or updating.
+Cold backups are verified timestamped ZIPs under `backups\packwiz`. `UPDATE SERVER.bat` refuses active server processes, validates a backup before Packwiz, validates installation/startup afterward, and retains an explicit rollback path. Full architecture, scheduled-task install/remove commands, retention, status fields, and test evidence are in [SERVER-24-7-OPERATIONS.md](SERVER-24-7-OPERATIONS.md).
 
 ## Rollback
 
@@ -208,7 +202,7 @@ With the server stopped:
 
 ```powershell
 .\packwiz-tools\Restore-ServerBackup.ps1 `
-  -BackupPath ".\backups\packwiz\YYYYMMDD-HHMMSS" `
+  -BackupPath ".\backups\packwiz\YYYYMMDD-HHMMSS.zip" `
   -Confirm:$false
 ```
 
@@ -218,7 +212,7 @@ World restoration is intentionally explicit:
 
 ```powershell
 .\packwiz-tools\Restore-ServerBackup.ps1 `
-  -BackupPath ".\backups\packwiz\YYYYMMDD-HHMMSS" `
+  -BackupPath ".\backups\packwiz\YYYYMMDD-HHMMSS.zip" `
   -RestoreWorld
 ```
 

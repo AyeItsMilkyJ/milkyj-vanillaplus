@@ -48,7 +48,7 @@ $instanceTemplate = Get-Content -LiteralPath (Join-Path $projectRootResolved 'bo
 $instanceTemplate = [regex]::Replace(
     $instanceTemplate,
     '(?m)^PreLaunchCommand=.*$',
-    ('PreLaunchCommand="$INST_JAVA" -jar packwiz-installer-bootstrap.jar ' + $PackUrl)
+    ('PreLaunchCommand=\"$INST_JAVA\" -jar packwiz-installer-bootstrap.jar ' + $PackUrl)
 )
 [IO.File]::WriteAllText((Join-Path $buildRoot 'instance.cfg'), $instanceTemplate, [Text.UTF8Encoding]::new($false))
 
@@ -79,6 +79,17 @@ try {
     }
     if ($entries | Where-Object { $_ -match 'options\.txt|servers\.dat|saves/|screenshots/|accounts|token' }) {
         throw 'Bootstrap ZIP unexpectedly contains personal data.'
+    }
+
+    $instanceEntry = $archive.GetEntry('instance.cfg')
+    $reader = [IO.StreamReader]::new($instanceEntry.Open(), [Text.UTF8Encoding]::new($false))
+    try { $generatedInstance = $reader.ReadToEnd() } finally { $reader.Dispose() }
+    $preLaunch = [regex]::Match($generatedInstance, '(?m)^PreLaunchCommand=(.*)$').Groups[1].Value
+    if ($preLaunch -ne ('\"$INST_JAVA\" -jar packwiz-installer-bootstrap.jar ' + $PackUrl)) {
+        throw "Generated Prism pre-launch command is malformed: $preLaunch"
+    }
+    if ($preLaunch -match '(?i)(?:javaw?\.exe|\$INST_JAVA)-jar') {
+        throw "Generated Prism pre-launch command concatenates Java and -jar: $preLaunch"
     }
 } finally {
     $archive.Dispose()

@@ -1,0 +1,11 @@
+{
+    "status":  "PASS",
+    "encodedCommand":  "\\\"$INST_JAVA\\\" -jar packwiz-installer-bootstrap.jar http://127.0.0.1:9/packwiz/pack.toml",
+    "javaPathContainedSpaces":  true,
+    "spawnedJavaProcess":  true,
+    "separateJarArgumentObserved":  true,
+    "forbiddenConcatenationFound":  false,
+    "productionBootstrapUsesSameGenerator":  true,
+    "generatedZip":  "build/prism-command-regression/bootstrap.zip",
+    "checkedAt":  "2026-08-12T17:53:25.8018783+10:00"
+}
