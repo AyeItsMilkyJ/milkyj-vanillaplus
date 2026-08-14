@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/fml.toml"
 hash-format = "sha256"
-hash = "1ed9280977d03a3e6d0661ae5c7217b49a4c40e255c88c6811b12b1b28f69ea5"
+hash = "00724b388497f2c47a412c371d59476a42e6d42e03a4fd1a8dc326f8544f8b1d"

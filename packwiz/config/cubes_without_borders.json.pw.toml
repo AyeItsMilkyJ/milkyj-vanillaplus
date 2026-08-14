@@ -1,8 +1,0 @@
-name = "Managed config: cubes_without_borders.json"
-filename = "cubes_without_borders.json"
-side = "both"
-
-[download]
-url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/cubes_without_borders.json"
-hash-format = "sha256"
-hash = "f248bc2019d956312c0c18037b84e764947dd200c00a96f45a807624d233010d"

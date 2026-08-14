@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/alexscaves/sounds.json"
+filename = "sounds.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/alexscaves/sounds.json"
+hash-format = "sha256"
+hash = "243bfa8f528a32923bab99b7fe872b44a2c5baae6240f7ee10cdf43c2b1fca6e"

@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/twilightforest/textures/block/thorn_leaves.png"
+filename = "thorn_leaves.png"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/twilightforest/textures/block/thorn_leaves.png"
+hash-format = "sha256"
+hash = "940300243c1efd72fcaad15c022039f1b31764758608c72777e5039becd4e8cc"

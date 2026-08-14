@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/biomesoplenty/textures/block/null_leaves.png"
+filename = "null_leaves.png"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/biomesoplenty/textures/block/null_leaves.png"
+hash-format = "sha256"
+hash = "940300243c1efd72fcaad15c022039f1b31764758608c72777e5039becd4e8cc"

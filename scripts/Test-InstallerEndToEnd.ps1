@@ -65,7 +65,7 @@ try {
     if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'saves\personal-world\level.dat'))) { throw 'Packwiz removed a personal save sentinel.' }
     if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'shaderpacks\personal-sentinel.txt'))) { throw 'Packwiz removed a personal shaderpack sentinel.' }
     $clientJars = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter *.jar)
-    if ($clientJars.Count -ne 236) { throw "Expected 236 client JARs; installed $($clientJars.Count)." }
+    if ($clientJars.Count -ne 235) { throw "Expected 235 client JARs; installed $($clientJars.Count)." }
 
     Copy-Item -LiteralPath $bootstrap -Destination (Join-Path $serverRoot 'packwiz-installer-bootstrap.jar')
     Push-Location $serverRoot

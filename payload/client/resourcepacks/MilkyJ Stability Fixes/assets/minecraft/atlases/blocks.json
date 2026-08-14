@@ -4,6 +4,46 @@
       "type": "single",
       "resource": "minecraft:fish_tank_frame",
       "sprite": "minecraft:fish_tank_frame"
+    },
+    {
+      "type": "single",
+      "resource": "farmersdelight:block/tray",
+      "sprite": "farmersdelight:block/tray_pie_leftover"
+    },
+    {
+      "type": "single",
+      "resource": "farmersdelight:block/tray",
+      "sprite": "farmersdelight:block/tray_top"
+    },
+    {
+      "type": "single",
+      "resource": "supplementaries:item/party_hat",
+      "sprite": "supplementaries:party_hat/party_hat"
+    },
+    {
+      "type": "single",
+      "resource": "farmersdelight:block/tomatoes_on_rope_stage0",
+      "sprite": "farmersdelight:block/tomatoes_vine_stage0"
+    },
+    {
+      "type": "single",
+      "resource": "farmersdelight:block/tomatoes_on_rope_stage1",
+      "sprite": "farmersdelight:block/tomatoes_vine_stage1"
+    },
+    {
+      "type": "single",
+      "resource": "farmersdelight:block/tomatoes_on_rope_stage2",
+      "sprite": "farmersdelight:block/tomatoes_vine_stage2"
+    },
+    {
+      "type": "single",
+      "resource": "farmersdelight:block/tomatoes_on_rope_stage3",
+      "sprite": "farmersdelight:block/tomatoes_vine_stage3"
+    },
+    {
+      "type": "single",
+      "resource": "quark:block/tiny_potato/default",
+      "sprite": "quark:model/tiny_potato/default"
     }
   ]
 }

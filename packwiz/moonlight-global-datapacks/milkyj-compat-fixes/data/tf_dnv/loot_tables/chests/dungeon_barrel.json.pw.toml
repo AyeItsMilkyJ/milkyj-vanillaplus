@@ -1,0 +1,8 @@
+name = "Managed moonlight-global-datapacks: milkyj-compat-fixes/data/tf_dnv/loot_tables/chests/dungeon_barrel.json"
+filename = "dungeon_barrel.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/tf_dnv/loot_tables/chests/dungeon_barrel.json"
+hash-format = "sha256"
+hash = "8c7b721e9b58ef96899d9b1cfb7eab322a81b6f23a98ed6f9f807a8430d662ff"

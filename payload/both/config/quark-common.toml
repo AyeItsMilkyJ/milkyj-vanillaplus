@@ -589,6 +589,9 @@
 	[management.quick_armor_swapping]
 		"Swap Off Hand" = true
 
+	[management.hotbar_changer]
+		"Animation Time" = 7.0
+
 [tools]
 	Abacus = true
 	"Ambient Discs" = true
@@ -1948,4 +1951,3 @@
 		"Destroy Lost Items" = false
 		#Set this to false to only allow the owner of a totem to collect its items rather than any player
 		"Allow Anyone To Collect" = true
-

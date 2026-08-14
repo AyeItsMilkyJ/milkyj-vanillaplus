@@ -45,6 +45,8 @@
 	Range = 50.0
 	#Range: 0 ~ 100000000
 	"How many guards should spawn in a village?" = 6
+	#Guards are placed in the middle, thus more advanced placement should be done via datapacks
+	"Structure pieces that spawn guards" = ["minecraft:village/common/iron_golem"]
 	"Have guards attempt to avoid firing into other friendlies?" = true
 	"Allow guards to convert to zombie villagers upon being killed by zombies?" = true
 	"Allow the player to right click on bells to mass order guards to follow them?" = true
@@ -89,7 +91,8 @@
 	"How many times a villager can heal a guard's equipment in one day" = 3
 	#This will make it so villagers will only be converted into guards if the player has hero of the village
 	"Make it so players have to have hero of the village to convert villagers into guards?" = false
+	#Professions that can be converted into guards
+	"Profession Whitelist for guard conversion" = ["nitwit", "none"]
 	#Range: 0 ~ 1000000
 	"How many times a smith villager can heal a golem in one day" = 3
 	"Have it so blacksmiths heal golems under 60 health?" = true
-

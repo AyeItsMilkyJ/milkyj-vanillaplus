@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/alexscaves/sounds/block/purple_soda/purple_soda_swim_3.ogg"
+filename = "purple_soda_swim_3.ogg"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/alexscaves/sounds/block/purple_soda/purple_soda_swim_3.ogg"
+hash-format = "sha256"
+hash = "76aaefcb961b78c9306229b6aa3c1100e66750d1d09b15c89b5fc20ecb096844"

@@ -901,11 +901,6 @@ hash = "3c113652bbcba03ce6d12298e380d178df6c54ccb7ba17860303d3a66145eb6f"
 metafile = true
 
 [[files]]
-file = "config/cubes_without_borders.json.pw.toml"
-hash = "16cf1c0e1e2ab051d3fe37ea41a1e469582742ffa3b18dc98fcd0f86a17ab33c"
-metafile = true
-
-[[files]]
 file = "config/cumulus_menus-client.toml.pw.toml"
 hash = "051d4a3a7d2e62ba797e7b32341609565298d1f6742980f967f7c5c9f61198ee"
 metafile = true
@@ -1142,7 +1137,7 @@ metafile = true
 
 [[files]]
 file = "config/fml.toml.pw.toml"
-hash = "e5570b7bff79b4378391d9d08ccf945d8eaeaa2c7ffbf83b36f29514fab1a5e9"
+hash = "58ba3709a4e57ae9a4ecc13bb10c2a1b6141c1bc111aab741e1d96f2c44dbd2b"
 metafile = true
 
 [[files]]
@@ -1272,7 +1267,7 @@ metafile = true
 
 [[files]]
 file = "config/guardvillagers-common.toml.pw.toml"
-hash = "a49a83ee5fa3a37590587480bb13b63cb1205237c3743ccf090dd6f42fcdcfb8"
+hash = "60c0240ff1733209ea9e10a4dbc4933c5684c7007b2b16326a6a00d09d4beebf"
 metafile = true
 
 [[files]]
@@ -1362,17 +1357,17 @@ metafile = true
 
 [[files]]
 file = "config/jei/jei-colors.ini.pw.toml"
-hash = "97b33da280db3738542027291187578beec06d37a21b1ab72abe9c4fcf6a64e7"
+hash = "b3551fc21a1496603a870ea723484919b252e6ca6315a8fa779b14c7fadc4557"
 metafile = true
 
 [[files]]
 file = "config/jei/jei-debug.ini.pw.toml"
-hash = "4f6e1a0229e4beed5b02e90bcb12400aaa98bbb37ee5cc6b29aca24a542cd2dd"
+hash = "78d5dc83befcc10485389a64289b9facba3eeeaa82679f7a80a00924a14aa7a7"
 metafile = true
 
 [[files]]
 file = "config/jei/jei-mod-id-format.ini.pw.toml"
-hash = "c921a033dded5d79fffc5f4c4d3e7bcbae72eeb65bfdf342de167d350df027f7"
+hash = "e535224179eb5a4c71bd8c75b0a5a90d37cb00263fcab0e169a9cf183222c501"
 metafile = true
 
 [[files]]
@@ -1622,7 +1617,7 @@ metafile = true
 
 [[files]]
 file = "config/quark-common.toml.pw.toml"
-hash = "770afb74e29cd8b3c3bde455fcc0516d435f58a41d29fc3e602e88454db19a28"
+hash = "68727c56fea126483ec58598d6baab1e0e783d00f02e4bc742300d18f526a19b"
 metafile = true
 
 [[files]]
@@ -1937,7 +1932,7 @@ metafile = true
 
 [[files]]
 file = "config/xaero/minimap/client.cfg.pw.toml"
-hash = "f26a05a23d8fc0e22bce4b98a800b0ba0e9b36b3464233a7138cf2d0af93f757"
+hash = "1081cc5fe77cd90e0dd2e2684d1fc8124979c2d81d43b65e30e6ac6bf0eaac03"
 metafile = true
 
 [[files]]
@@ -1977,7 +1972,7 @@ metafile = true
 
 [[files]]
 file = "config/xaero/world-map/client.cfg.pw.toml"
-hash = "0051994dfca1f9007b1548167d6b2afdf2ae57179d7fc1cbaa101fa857035080"
+hash = "b3acfd985f7ba71251b6bdfedfb3fdf3a01d1b00a6209fa6c83fb2ea203ef9b8"
 metafile = true
 
 [[files]]
@@ -2368,11 +2363,6 @@ metafile = true
 [[files]]
 file = "mods/crittersandcompanions-forge-1-20-1-2-6-2.pw.toml"
 hash = "e9c478e80123cfd3ad73c60b3ccb235bb82f1ce54232ec421cdc62004e80692b"
-metafile = true
-
-[[files]]
-file = "mods/cubes-without-borders.pw.toml"
-hash = "a13de76c778c1d9b7c09917142ec96f54d341ac8337e09dd5cebcae3ed42d3a6"
 metafile = true
 
 [[files]]
@@ -3276,6 +3266,11 @@ hash = "cfee0adaf5e1d6a80f29d9f400a7431c50cbc745cf41468bc977b55a72c5704f"
 metafile = true
 
 [[files]]
+file = "moonlight-global-datapacks/milkyj-compat-fixes/data/tf_dnv/loot_tables/chests/dungeon_barrel.json.pw.toml"
+hash = "4a789861235966f6962c0f701d6e67efa77f7f76f6e09db97abc4e13f6c9bb3f"
+metafile = true
+
+[[files]]
 file = "moonlight-global-datapacks/milkyj-compat-fixes/data/tf_dnv/loot_tables/chests/dungeon_shroom_barrel.json.pw.toml"
 hash = "2929e29801988ab0ba68f3349f65aa07b1b22b1cff767cb1478c727a538ff218"
 metafile = true
@@ -3311,8 +3306,73 @@ hash = "43b2ff8af8f6dcd11e838b0f1f7051ef7fc82041a9c841f33b706295ccad1163"
 metafile = true
 
 [[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/alexscaves/sounds.json.pw.toml"
+hash = "961be790a2f3973a7b2582cb4b53f7500a741bf36442b3ba0f501e7d5ed7f379"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/alexscaves/sounds/block/purple_soda/purple_soda_swim_3.ogg.pw.toml"
+hash = "10eec76395b42ed18c9002121a376711c38726cd59eecdf07b64bd06dd0962cd"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/alexscaves/sounds/block/purple_soda/purple_soda_swim_4.ogg.pw.toml"
+hash = "220651d79dc58537f3f850225d7e0ded05572fbd3792562d1ad1532e2108f74c"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/alexscaves/sounds/mob/luxtructosaurus/luxtructosaurus_breathe_0.ogg.pw.toml"
+hash = "babd2f81813031e47cbbb7abe6a052d28ba3873b27867233eb0bc3ccf2d2f9ed"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/alexscaves/sounds/mob/luxtructosaurus/luxtructosaurus_breathe_1.ogg.pw.toml"
+hash = "dc783d4f21526f0732af4bc072bdd25328df2eb06595055ff65b44e60ff4cdd6"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/alexscaves/sounds/mob/luxtructosaurus/luxtructosaurus_breathe_2.ogg.pw.toml"
+hash = "420da9f047a63ed4e3f76391f48b9c654a5bb17cfd07aaf054729a2b7d54c917"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/alexscaves/sounds/mob/luxtructosaurus/luxtructosaurus_snort_0.ogg.pw.toml"
+hash = "4d637186f0b3e14f215414e4eb555c3b04cc682d81fea334555b0f483d818282"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/alexscaves/sounds/mob/luxtructosaurus/luxtructosaurus_snort_1.ogg.pw.toml"
+hash = "330ab437633246393854b2775fdf348e494a85b505945167ac208caeb588d77a"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/alexscaves/sounds/mob/luxtructosaurus/luxtructosaurus_snort_2.ogg.pw.toml"
+hash = "0ee35ffa6784f61db8c401504f2622214de10d9123e45ae5b7dedabae4d88d3d"
+metafile = true
+
+[[files]]
 file = "resourcepacks/MilkyJ Stability Fixes/assets/betterfishtanks/textures/block/fishfood_container_pelelts.png.pw.toml"
 hash = "abcc337ce0eb4ceddd8753373735fa7a46055ae3f2fd1e4f2723421eafeaf11c"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/biomesoplenty/textures/block/null_leaves.png.pw.toml"
+hash = "653aa665d63d10ad83fcd92b8e4fde6c4656ab746edd5667c5ab50044003707e"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/bountiful/textures/item/decree.png.pw.toml"
+hash = "2bd6561a588c53deab9d42164d22919ccb4f2adb043ad47ff98bc978972d65fb"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/chimes/sounds/block/copper/chiming9.ogg.pw.toml"
+hash = "cd48c982f78f868d9105957c47d99c7344ae4e860ef7970c74589fe93bc3e016"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/decorative_blocks/models/item/blockstate_copy_item.json.pw.toml"
+hash = "735c1931f6651acbab8ba2ac6465518b83711ca074272eac9b1dee870cb19de3"
 metafile = true
 
 [[files]]
@@ -3337,7 +3397,7 @@ metafile = true
 
 [[files]]
 file = "resourcepacks/MilkyJ Stability Fixes/assets/minecraft/atlases/blocks.json.pw.toml"
-hash = "d2165ee166f1795f89396aea71e03d34fea304d880a33d0fe4722a0f47652495"
+hash = "d958958fb32863fbfccbccd9f626ceac2b6f0be4f2f9e877d1a5c92d2d3dd196"
 metafile = true
 
 [[files]]
@@ -3358,6 +3418,11 @@ metafile = true
 [[files]]
 file = "resourcepacks/MilkyJ Stability Fixes/assets/mowziesmobs/models/block/diamond_grottol.json.pw.toml"
 hash = "674bfb1befb742c8a5f9ecb408cf5ba58fa1ac002587aa7c61744a3a88436f54"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/naturalist/sounds/mob/giraffe/idle.ogg.pw.toml"
+hash = "b1e7d2bb61cb51945f5cbda5f1946e789a7eb5095341e695d0f9fae992659ea9"
 metafile = true
 
 [[files]]
@@ -3408,6 +3473,36 @@ metafile = true
 [[files]]
 file = "resourcepacks/MilkyJ Stability Fixes/assets/netherdepthsupgrade/textures/block/warped_seagrass.png.pw.toml"
 hash = "e8272cd6491b912adbf58bd9e5f5e5c80df472b737f2d96350be5cce02bcce47"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/supplementaries/models/block/hanging_flower_pot_rope.json.pw.toml"
+hash = "d36613531aced9212c64ad6e34d77a4c867712144c924b71f7dbe9a2dfdcde74"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/supplementaries/sounds/item/awning_bounce_1.ogg.pw.toml"
+hash = "51aea6460a72a78f7eef93ffa4220807d22bff8e7ce9da6cb8bd3279a835dfba"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/supplementaries/sounds/item/awning_bounce_2.ogg.pw.toml"
+hash = "8dfd1e85abe58e7c78378f2d517ef210f47390f9404ea18d3fbec3803a7cffdd"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/supplementaries/sounds/item/awning_bounce_3.ogg.pw.toml"
+hash = "d7b341dc20b1a7d71c8f64f60dc8a38122cd48b10c1429ad6634a947458a578d"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/twilightforest/textures/block/beanstalk_leaves.png.pw.toml"
+hash = "e16730c1ff96b8db40e7fbdec965eff3433db3734613c2665d3ae30bbc790b48"
+metafile = true
+
+[[files]]
+file = "resourcepacks/MilkyJ Stability Fixes/assets/twilightforest/textures/block/thorn_leaves.png.pw.toml"
+hash = "06a07552db56d3557e3da4e66b8b02c36fbe0f6500485a60d6b45bc0459163e6"
 metafile = true
 
 [[files]]

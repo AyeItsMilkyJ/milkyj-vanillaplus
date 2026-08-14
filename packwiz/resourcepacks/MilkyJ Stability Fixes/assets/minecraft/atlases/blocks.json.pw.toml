@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/minecraft/atlases/blocks.json"
 hash-format = "sha256"
-hash = "423bcaabba7b43899c879d4facacd5e24867728cd86a5caf716f5555ceb8bd83"
+hash = "3319becc5b0b4d3475d607a41dd3ee830570151ef85df3e00f3ece04ac8d62f1"

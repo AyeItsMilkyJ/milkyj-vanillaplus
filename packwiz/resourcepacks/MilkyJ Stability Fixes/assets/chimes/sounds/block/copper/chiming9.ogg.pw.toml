@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/chimes/sounds/block/copper/chiming9.ogg"
+filename = "chiming9.ogg"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/chimes/sounds/block/copper/chiming9.ogg"
+hash-format = "sha256"
+hash = "da6422f10721722b949297b9d60c2a962e5c4ca3290c775ad09498e2796a273c"

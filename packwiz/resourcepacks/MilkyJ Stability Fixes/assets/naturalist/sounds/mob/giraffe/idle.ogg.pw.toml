@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/naturalist/sounds/mob/giraffe/idle.ogg"
+filename = "idle.ogg"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/naturalist/sounds/mob/giraffe/idle.ogg"
+hash-format = "sha256"
+hash = "22b0ac16d0688f8eaa89c25a6f2775c28b1d35d4a12ef37e2cea9f4ef253b7e1"

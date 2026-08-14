@@ -115,6 +115,7 @@ try {
         'moonlight-global-datapacks\milkyj-compat-fixes\data\nethersdelight\loot_modifiers\chopping_leather.json',
         'moonlight-global-datapacks\milkyj-compat-fixes\data\nethersdelight\loot_modifiers\chopping_string.json',
         'moonlight-global-datapacks\milkyj-compat-fixes\data\beautify\advancements\progression\candelabra.json',
+        'moonlight-global-datapacks\milkyj-compat-fixes\data\tf_dnv\loot_tables\chests\dungeon_barrel.json',
         'moonlight-global-datapacks\milkyj-compat-fixes\data\tf_dnv\loot_tables\chests\dungeon_shroom_barrel.json'
     )
     foreach ($relative in $compatibilityFiles) {
@@ -136,7 +137,7 @@ try {
     if (-not $compatibilityFilesRemoved) { throw 'Rollback did not remove all candidate-only compatibility resources.' }
 
     $clientJarCount = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter '*.jar').Count
-    if ($clientJarCount -ne 236) { throw "Expected 236 client JARs after rollback; found $clientJarCount." }
+    if ($clientJarCount -ne 236) { throw "Expected 236 baseline client JARs after rollback; found $clientJarCount." }
 
     $report = [ordered]@{
         testedAt = (Get-Date).ToString('o')

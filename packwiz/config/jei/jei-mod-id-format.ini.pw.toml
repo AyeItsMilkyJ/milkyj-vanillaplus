@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/jei/jei-mod-id-format.ini"
 hash-format = "sha256"
-hash = "07052785400b48d3757dbbcfff0b50899fbaed1ac54ea09bc9024ea7f73b7644"
+hash = "16b61fe5d4172209922975536fc39b63fa7fa554097c826644efad95fd87b176"

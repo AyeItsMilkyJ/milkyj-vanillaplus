@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/bountiful/textures/item/decree.png"
+filename = "decree.png"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/bountiful/textures/item/decree.png"
+hash-format = "sha256"
+hash = "804434b6d2c189bf9b6193efe672a1eacd611d37b3c04a93727dcb7aabde9198"

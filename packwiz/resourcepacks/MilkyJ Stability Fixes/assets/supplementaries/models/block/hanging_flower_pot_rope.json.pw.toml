@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/supplementaries/models/block/hanging_flower_pot_rope.json"
+filename = "hanging_flower_pot_rope.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/supplementaries/models/block/hanging_flower_pot_rope.json"
+hash-format = "sha256"
+hash = "ce3e61fb1f8b11e83de99c6183490d59be55a6de2db5bfc11ba15ae5e8451a8e"

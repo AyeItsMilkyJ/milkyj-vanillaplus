@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/supplementaries/sounds/item/awning_bounce_2.ogg"
+filename = "awning_bounce_2.ogg"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/supplementaries/sounds/item/awning_bounce_2.ogg"
+hash-format = "sha256"
+hash = "d9f144f93cfbe182054b07bbe6ab45de0774d2695b0285faf5794b7455d1dfd1"

@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/alexscaves/sounds/mob/luxtructosaurus/luxtructosaurus_breathe_0.ogg"
+filename = "luxtructosaurus_breathe_0.ogg"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/alexscaves/sounds/mob/luxtructosaurus/luxtructosaurus_breathe_0.ogg"
+hash-format = "sha256"
+hash = "2dca5c8fa542d7c058c91ec13b7550210d27c27029cdce774f6e831e4407f919"

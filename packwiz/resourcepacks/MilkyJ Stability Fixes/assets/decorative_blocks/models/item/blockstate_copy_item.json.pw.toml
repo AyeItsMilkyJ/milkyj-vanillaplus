@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/decorative_blocks/models/item/blockstate_copy_item.json"
+filename = "blockstate_copy_item.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/decorative_blocks/models/item/blockstate_copy_item.json"
+hash-format = "sha256"
+hash = "4f8d355dd6d83820dd507ecf6aab6a6d9dadd60be2fd76ee2ce5fd5f89aa5182"

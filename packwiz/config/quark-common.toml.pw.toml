@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/quark-common.toml"
 hash-format = "sha256"
-hash = "172b8c1540d34b2737e8d80f1f38a3b1104db12dcaff5a8b441fb8c16882bd25"
+hash = "a0b0ccf1bbdbac305cf17c5a9b4382ebfcbb334e80e0e49ff2af74e7fa7a241b"

@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/jei/jei-colors.ini"
 hash-format = "sha256"
-hash = "30ffef1681a9b0255e65a756406f85b1cca8b0bb3c0fab357c2727e325401bd0"
+hash = "e7b6ed1eec013539e37a863890ba3e7b825726b32c2f96120c59cabee0e40afa"

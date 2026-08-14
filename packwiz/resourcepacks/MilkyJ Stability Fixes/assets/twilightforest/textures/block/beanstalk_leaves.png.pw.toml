@@ -1,0 +1,8 @@
+name = "Managed resourcepacks: MilkyJ Stability Fixes/assets/twilightforest/textures/block/beanstalk_leaves.png"
+filename = "beanstalk_leaves.png"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/twilightforest/textures/block/beanstalk_leaves.png"
+hash-format = "sha256"
+hash = "8657b620bc742543174566cbd89871de223d572e8787e7d3503dbd14e4a31da2"

@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/guardvillagers-common.toml"
 hash-format = "sha256"
-hash = "d703bbc5dac576a4433431a6f4e895b85f12b352d93142231a461b59a7673cb4"
+hash = "ef1c648628e2c2e2d59b35d3d379d532c90dc715730d7e6cd7c82132b035de0c"
