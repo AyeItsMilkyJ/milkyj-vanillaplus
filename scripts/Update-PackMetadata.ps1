@@ -117,14 +117,13 @@ foreach ($file in Get-ChildItem -LiteralPath $packRoot -Recurse -File -Force) {
 $entries = @($entries | Sort-Object File)
 
 $builder = [Text.StringBuilder]::new()
-[void]$builder.AppendLine('hash-format = "sha256"')
+[void]$builder.Append("hash-format = `"sha256`"`n")
 foreach ($entry in $entries) {
-    [void]$builder.AppendLine()
-    [void]$builder.AppendLine('[[files]]')
-    [void]$builder.AppendLine("file = $(ConvertTo-TomlString $entry.File)")
-    [void]$builder.AppendLine("hash = $(ConvertTo-TomlString $entry.Hash)")
+    [void]$builder.Append("`n[[files]]`n")
+    [void]$builder.Append("file = $(ConvertTo-TomlString $entry.File)`n")
+    [void]$builder.Append("hash = $(ConvertTo-TomlString $entry.Hash)`n")
     if ($entry.Metafile) {
-        [void]$builder.AppendLine('metafile = true')
+        [void]$builder.Append("metafile = true`n")
     }
 }
 
