@@ -3,6 +3,6 @@ filename = "farmersdelight-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/farmersdelight-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/farmersdelight-client.toml"
 hash-format = "sha256"
 hash = "e4a752b4f86b93e50eeeaf91e045a67be910b0a70c0b582927099bb93c0b3132"

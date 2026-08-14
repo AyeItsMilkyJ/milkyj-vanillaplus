@@ -3,6 +3,6 @@ filename = "embeddium-fingerprint.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/embeddium-fingerprint.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/embeddium-fingerprint.json"
 hash-format = "sha256"
 hash = "32c4b8c51b5362b7893a3b196bf3623adeefb5dc0971647309e6b6bf362b070c"

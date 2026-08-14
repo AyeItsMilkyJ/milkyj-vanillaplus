@@ -3,6 +3,6 @@ filename = "smallships-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/smallships-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/smallships-common.toml"
 hash-format = "sha256"
 hash = "2c2914337fc96d44520ac1758afed504616cd9b13a11a0992c3d3528c79a5c5b"

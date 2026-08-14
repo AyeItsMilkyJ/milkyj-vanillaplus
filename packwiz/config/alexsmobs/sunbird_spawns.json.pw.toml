@@ -3,6 +3,6 @@ filename = "sunbird_spawns.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/sunbird_spawns.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexsmobs/sunbird_spawns.json"
 hash-format = "sha256"
 hash = "7b82ff39e191bd213cd8ecf06ff9a78c4658e6f6b9d8b48a4fcc4017e7268cb5"

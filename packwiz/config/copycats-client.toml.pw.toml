@@ -3,6 +3,6 @@ filename = "copycats-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/copycats-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/copycats-client.toml"
 hash-format = "sha256"
 hash = "70a02fe59453e5b8ad07512adf5feb85fff05bfc3c615349f13d429496f9f7ea"

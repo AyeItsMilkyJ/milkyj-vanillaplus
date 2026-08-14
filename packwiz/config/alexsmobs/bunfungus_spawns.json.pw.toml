@@ -3,6 +3,6 @@ filename = "bunfungus_spawns.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/bunfungus_spawns.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexsmobs/bunfungus_spawns.json"
 hash-format = "sha256"
 hash = "5d5a9d2039b6df546b788f62cb376cc29312a7115a5553541652aad7259436a6"

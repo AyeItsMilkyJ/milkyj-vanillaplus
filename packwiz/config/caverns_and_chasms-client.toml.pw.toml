@@ -3,6 +3,6 @@ filename = "caverns_and_chasms-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/caverns_and_chasms-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/caverns_and_chasms-client.toml"
 hash-format = "sha256"
 hash = "75f454e2804bea270df208ceebb61beab9ad1e2e9ddb54aebfb0bb77a4ab25f3"

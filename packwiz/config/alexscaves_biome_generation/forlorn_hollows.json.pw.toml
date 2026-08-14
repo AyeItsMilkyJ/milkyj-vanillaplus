@@ -3,6 +3,6 @@ filename = "forlorn_hollows.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexscaves_biome_generation/forlorn_hollows.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexscaves_biome_generation/forlorn_hollows.json"
 hash-format = "sha256"
 hash = "5eea375f709ff5d7096b51fdc32b671952e1d2aed9f48c9bd9bc8e50ec2cb7f7"

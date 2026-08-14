@@ -3,6 +3,6 @@ filename = "bettas_aquatics-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/bettas_aquatics-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/bettas_aquatics-common.toml"
 hash-format = "sha256"
 hash = "6a5b50f5ceb6dd9e0501ad9389159aeb9026b4ce12484db88038d8b68846f5d9"

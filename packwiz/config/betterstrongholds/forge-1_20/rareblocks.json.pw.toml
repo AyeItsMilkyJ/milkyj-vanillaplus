@@ -3,6 +3,6 @@ filename = "rareblocks.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/forge-1_20/rareblocks.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/forge-1_20/rareblocks.json"
 hash-format = "sha256"
 hash = "890eaae9d4766bf7a20a3862d53fa7be60eb690bdfb9bf82d84acd9341505826"

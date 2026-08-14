@@ -3,6 +3,6 @@ filename = "storagedrawers-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/storagedrawers-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/storagedrawers-client.toml"
 hash-format = "sha256"
 hash = "5281de138529e2f84fb537c78dd5b12907cdb95b8e3b13d006d16284fa082005"

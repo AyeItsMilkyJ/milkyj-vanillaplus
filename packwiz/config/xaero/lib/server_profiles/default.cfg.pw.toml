@@ -3,6 +3,6 @@ filename = "default.cfg"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/xaero/lib/server_profiles/default.cfg"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/xaero/lib/server_profiles/default.cfg"
 hash-format = "sha256"
 hash = "d438aea41ca41e93697e059f523686935c0add482f6abe96b532bbf10c6ed80a"

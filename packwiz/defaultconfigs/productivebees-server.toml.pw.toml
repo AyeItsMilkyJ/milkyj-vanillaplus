@@ -3,6 +3,6 @@ filename = "productivebees-server.toml"
 side = "server"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/defaultconfigs/productivebees-server.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/server/defaultconfigs/productivebees-server.toml"
 hash-format = "sha256"
 hash = "cedc86c4d47144fae31decedcaa3593768b6d6ff3f11d8cbad64d38af0691f3f"

@@ -3,6 +3,6 @@ filename = "blocks.json"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/minecraft/atlases/blocks.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/minecraft/atlases/blocks.json"
 hash-format = "sha256"
 hash = "423bcaabba7b43899c879d4facacd5e24867728cd86a5caf716f5555ceb8bd83"

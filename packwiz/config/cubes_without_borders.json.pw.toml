@@ -3,6 +3,6 @@ filename = "cubes_without_borders.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/cubes_without_borders.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/cubes_without_borders.json"
 hash-format = "sha256"
 hash = "f248bc2019d956312c0c18037b84e764947dd200c00a96f45a807624d233010d"

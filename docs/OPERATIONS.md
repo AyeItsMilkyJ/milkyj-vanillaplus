@@ -1,29 +1,14 @@
 # Operations guide
 
-## One-time repository setup
+## Permanent repository
 
-The project is fully generated and validated, but it cannot have a real public URL until you create the remote repository.
+The public repository and stable Packwiz URL are configured:
 
-1. Create a **public** GitHub repository. The recommended name is `milkyj-vanillaplus`.
-2. From this repository directory, configure the one value that cannot be inferred locally:
+```text
+https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/packwiz/pack.toml
+```
 
-   ```powershell
-   .\scripts\Set-PackUrl.ps1 -RawRepositoryBaseUrl "https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/milkyj-vanillaplus/main"
-   ```
-
-3. Validate, create the first commit, connect the remote, and push:
-
-   ```powershell
-   .\scripts\Update-PackMetadata.ps1
-   .\scripts\Validate-Pack.ps1
-   git add -- .
-   git commit -m "Initial permanent Packwiz release"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_GITHUB_USERNAME/milkyj-vanillaplus.git
-   git push -u origin main
-   ```
-
-4. Build the one-time Prism import:
+Build the one-time Prism import with:
 
    ```powershell
    .\scripts\Build-Prism-Bootstrap.ps1
@@ -34,7 +19,7 @@ The player ZIP appears in `dist\MilkyJ-VanillaPlus-AutoUpdating-Prism.zip`. `dis
 The final pack URL is:
 
 ```text
-https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/milkyj-vanillaplus/main/packwiz/pack.toml
+https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/packwiz/pack.toml
 ```
 
 Do not make the repository private unless you replace GitHub raw hosting with another public HTTPS host. Packwiz clients do not have your GitHub credentials.
@@ -224,9 +209,9 @@ The Packwiz index and repository ignore rules exclude `options.txt`, keybinding 
 
 Exact managed/excluded file and side reports are in `audit\mods.csv`, `audit\managed-files.csv`, and `audit\excluded-files.csv`.
 
-## 1.9.0-rc1 manual release gate
+## Optional 1.9.0-rc1 multiplayer interaction gate
 
-Do not deploy this branch to the live server yet. The local-only bootstrap is intentionally named `MilkyJ-VanillaPlus-1.9.0-rc1-LOCAL-TEST-Prism.zip` and points at `http://127.0.0.1:8765/packwiz/pack.toml`.
+The automated manifest, clean-install, dedicated-server startup, save, and shutdown checks are required before publishing. The following manual multiplayer checks remain useful when quest or team behaviour changes; run them in disposable installations rather than using the live world.
 
 For the final interaction test, use a separate disposable Prism application root and disposable offline-mode Forge server. Start a local repository host on port 8765, import the RC ZIP, and use an authenticated Minecraft account without copying account files into the project. Then:
 

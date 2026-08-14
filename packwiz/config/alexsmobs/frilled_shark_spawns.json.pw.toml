@@ -3,6 +3,6 @@ filename = "frilled_shark_spawns.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/frilled_shark_spawns.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexsmobs/frilled_shark_spawns.json"
 hash-format = "sha256"
 hash = "7e7b175c33aed22c3d2cd31e215c6243e3790b07a3664b42d130a8f3b897489f"

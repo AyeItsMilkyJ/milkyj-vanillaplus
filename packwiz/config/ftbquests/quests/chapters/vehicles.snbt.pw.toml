@@ -3,6 +3,6 @@ filename = "vehicles.snbt"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/vehicles.snbt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/vehicles.snbt"
 hash-format = "sha256"
 hash = "0c98158114f2a860d4fc855d6772bc7188bf83f18181f5f55712594a78ff8eba"

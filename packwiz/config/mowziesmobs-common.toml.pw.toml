@@ -3,6 +3,6 @@ filename = "mowziesmobs-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/mowziesmobs-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/mowziesmobs-common.toml"
 hash-format = "sha256"
 hash = "e42b0834c14fe11a09d0e330daed8c35090fdf9de864b4e06bb13ccd155b7d06"

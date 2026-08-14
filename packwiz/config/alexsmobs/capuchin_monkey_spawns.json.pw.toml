@@ -3,6 +3,6 @@ filename = "capuchin_monkey_spawns.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/capuchin_monkey_spawns.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexsmobs/capuchin_monkey_spawns.json"
 hash-format = "sha256"
 hash = "83b68d395236771ae9276f48b2988cfa9eb65e14dc41531b37a6b4e77c64859a"

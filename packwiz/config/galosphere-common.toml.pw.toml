@@ -3,6 +3,6 @@ filename = "galosphere-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/galosphere-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/galosphere-common.toml"
 hash-format = "sha256"
 hash = "c2dec648a058478998920a077e7fd6624b31281f711e4c2df315599c73d8171e"

@@ -3,6 +3,6 @@ filename = "endgame.snbt"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/endgame.snbt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/endgame.snbt"
 hash-format = "sha256"
 hash = "3b209fabf2b295bf51c5564fd3458b70faba6798affb17ec652a9e58ab28c7d8"

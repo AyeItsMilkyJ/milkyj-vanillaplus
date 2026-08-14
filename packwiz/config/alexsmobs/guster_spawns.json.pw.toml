@@ -3,6 +3,6 @@ filename = "guster_spawns.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/guster_spawns.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexsmobs/guster_spawns.json"
 hash-format = "sha256"
 hash = "263974f58a4b48df633648246820681745da9f9e16f30fefe6e07f576251dfb1"

@@ -3,6 +3,6 @@ filename = "moose_spawns.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/moose_spawns.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexsmobs/moose_spawns.json"
 hash-format = "sha256"
 hash = "abac051da2458ec848604b66a6d7889f7c715060bb9706c1d1822155127d096c"

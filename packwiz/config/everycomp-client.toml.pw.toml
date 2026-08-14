@@ -3,6 +3,6 @@ filename = "everycomp-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/everycomp-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/everycomp-client.toml"
 hash-format = "sha256"
 hash = "488c9da035e87b31673ecf85b9656fd460c5b7d2f00365ce8e714640cd5b83e9"

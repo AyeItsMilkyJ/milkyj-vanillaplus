@@ -3,6 +3,6 @@ filename = "exoticbirds-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/exoticbirds-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/exoticbirds-common.toml"
 hash-format = "sha256"
 hash = "1906dbe9d337b0c41b992692ac228a536c65fc93b4deb3809a9dcd569842f2e9"

@@ -3,6 +3,6 @@ filename = "demon_herring.animation.json"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/demon_herring.animation.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/demon_herring.animation.json"
 hash-format = "sha256"
 hash = "ea451058524995b54ee893a798d28975dc399e52d5b02c083c4453e9c8ee6e21"

@@ -3,6 +3,6 @@ filename = "ribbits-forge-1_20_1.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ribbits-forge-1_20_1.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ribbits-forge-1_20_1.toml"
 hash-format = "sha256"
 hash = "fb650d06ef5cd1bbf28beabac22203ad62d39eb712a84f2c2fcca6856ea09cf8"

@@ -3,6 +3,6 @@ filename = "fish_tank_frame.png"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/minecraft/textures/block/fish_tank_frame.png"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/minecraft/textures/block/fish_tank_frame.png"
 hash-format = "sha256"
 hash = "3d87955ec5180072c87eb50b47b85b5f50798e61627aa28d47a13f7fa0ffa0f5"

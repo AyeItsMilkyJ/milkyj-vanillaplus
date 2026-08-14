@@ -3,6 +3,6 @@ filename = "guardvillagers-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/guardvillagers-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/guardvillagers-client.toml"
 hash-format = "sha256"
 hash = "645da331f569f887cda302c428cdaa1a8dc934183c914c708dc6821c20d9c713"

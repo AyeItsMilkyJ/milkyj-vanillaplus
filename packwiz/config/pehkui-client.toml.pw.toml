@@ -3,6 +3,6 @@ filename = "pehkui-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/pehkui-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/pehkui-client.toml"
 hash-format = "sha256"
 hash = "b99f791974a57bce18a9c3bde4b416de180f24df878e985336814e6be4615e0d"

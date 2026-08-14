@@ -3,6 +3,6 @@ filename = "obscure-api-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/Obscuria/obscure-api-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/Obscuria/obscure-api-client.toml"
 hash-format = "sha256"
 hash = "caa611136fde92cc4eb9f63fde2bab6678c9309e737fedd9adcf139b4b8d05db"

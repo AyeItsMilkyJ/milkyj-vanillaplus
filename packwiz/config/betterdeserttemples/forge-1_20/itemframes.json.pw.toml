@@ -3,6 +3,6 @@ filename = "itemframes.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterdeserttemples/forge-1_20/itemframes.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/betterdeserttemples/forge-1_20/itemframes.json"
 hash-format = "sha256"
 hash = "5d9091ba269a6ee3f4a795d7415bc0f30adce44aab0e9336eb86d39f2d097c18"

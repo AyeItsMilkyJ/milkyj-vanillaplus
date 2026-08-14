@@ -3,6 +3,6 @@ filename = "explorerscompass-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/explorerscompass-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/explorerscompass-common.toml"
 hash-format = "sha256"
 hash = "03fb004e8c53e37c3daa824792625e0b7f96c79d655ff3a070d3ce6513d0a717"

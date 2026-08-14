@@ -3,6 +3,6 @@ filename = "suppsquared-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/suppsquared-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/suppsquared-common.toml"
 hash-format = "sha256"
 hash = "1a5611d619632a973471245209520f703c3e6eff6db8b15f94267ebba02e428d"

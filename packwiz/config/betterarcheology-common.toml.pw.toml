@@ -3,6 +3,6 @@ filename = "betterarcheology-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterarcheology-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/betterarcheology-common.toml"
 hash-format = "sha256"
 hash = "ad9e40f11ad0196f04edb97ed058148a207992d768137266d7279502d5186bf2"

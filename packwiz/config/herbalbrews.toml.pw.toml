@@ -3,6 +3,6 @@ filename = "herbalbrews.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/herbalbrews.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/herbalbrews.toml"
 hash-format = "sha256"
 hash = "d9d0b04f4dfd4d3ea40ac3ca7bf92386e11f0b6aef587eec015643927fd9c3fd"

@@ -3,6 +3,6 @@ filename = "jearchaeology-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/jearchaeology-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/jearchaeology-common.toml"
 hash-format = "sha256"
 hash = "a02cc7f90ec74653c413df43edcd199ee758bf8428b294cf2bb0e7866ab5d3d3"

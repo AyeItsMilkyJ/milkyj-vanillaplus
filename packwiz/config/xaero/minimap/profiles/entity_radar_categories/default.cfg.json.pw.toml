@@ -3,6 +3,6 @@ filename = "default.cfg.json"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/xaero/minimap/profiles/entity_radar_categories/default.cfg.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/xaero/minimap/profiles/entity_radar_categories/default.cfg.json"
 hash-format = "sha256"
 hash = "b8ddf54611a9ab8c53177fc0d062321e9e731192b65b9e50d0fcb38a86a91696"

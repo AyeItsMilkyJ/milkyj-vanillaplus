@@ -3,6 +3,6 @@ filename = "valhelsia_structures-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/valhelsia_structures-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/valhelsia_structures-common.toml"
 hash-format = "sha256"
 hash = "9965ae186213d409a68fe3d1ac3b7dee6dd19e97fd14cb1e2d13e4a4c0a0a8f3"

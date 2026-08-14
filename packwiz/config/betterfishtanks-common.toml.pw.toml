@@ -3,6 +3,6 @@ filename = "betterfishtanks-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterfishtanks-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/betterfishtanks-common.toml"
 hash-format = "sha256"
 hash = "4eeca1a9bd5ef9c13503eb9b95408e1a67bfe68bd93c16cb99b83f266f644b13"

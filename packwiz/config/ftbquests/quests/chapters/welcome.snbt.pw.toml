@@ -3,6 +3,6 @@ filename = "welcome.snbt"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/welcome.snbt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/welcome.snbt"
 hash-format = "sha256"
 hash = "e898703409660c1661aa2df3223ce30f2e9c58dc272ca81aad4308a15f44021d"

@@ -3,6 +3,6 @@ filename = "statues-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/statues-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/statues-common.toml"
 hash-format = "sha256"
 hash = "cac444178f160e6dfdc643899990b83d58d6cb95c7d1a42e3104247b40edb936"

@@ -3,6 +3,6 @@ filename = "chapter_groups.snbt"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapter_groups.snbt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapter_groups.snbt"
 hash-format = "sha256"
 hash = "1dfa1a040388dc58f6accbf68b09ef51e8318eb66967a423ec370d3af06eded2"

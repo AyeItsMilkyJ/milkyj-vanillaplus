@@ -3,6 +3,6 @@ filename = "trashslot-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/trashslot-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/trashslot-common.toml"
 hash-format = "sha256"
 hash = "27ef03d4cace8016a12c021daeed1c96d2957a8b6f425177bf01cee15fed14e2"

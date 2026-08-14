@@ -3,6 +3,6 @@ filename = "structure_toggle.json5"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterarcheology_structures/structure_toggle.json5"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/betterarcheology_structures/structure_toggle.json5"
 hash-format = "sha256"
 hash = "2e50e09b1315e4a45ae949f4b515fd29ed4fa2f307849eafe8cd4c5b7706dea0"

@@ -3,6 +3,6 @@ filename = "amendments-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/amendments-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/amendments-common.toml"
 hash-format = "sha256"
 hash = "fbe54a19025a91892dc41d1c8ecdd756379aa7414987afbdc40b58ed8ce3ba94"

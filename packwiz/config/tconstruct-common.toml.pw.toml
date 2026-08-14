@@ -3,6 +3,6 @@ filename = "tconstruct-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/tconstruct-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/tconstruct-common.toml"
 hash-format = "sha256"
 hash = "c25c28f715d616dfd201eb6c2fbeacc3deb33f0ddddfa9b7a275b7d6c03dbb5b"

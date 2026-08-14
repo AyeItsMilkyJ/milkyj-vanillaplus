@@ -3,6 +3,6 @@ filename = "config.json"
 side = "server"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/config/chunky/config.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/server/config/chunky/config.json"
 hash-format = "sha256"
 hash = "c7384a22595488f79f3125b22cc175eb729267267807a084479419349797abc8"

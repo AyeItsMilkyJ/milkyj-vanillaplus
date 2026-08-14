@@ -3,6 +3,6 @@ filename = "upgrade_aquatic-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/upgrade_aquatic-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/upgrade_aquatic-common.toml"
 hash-format = "sha256"
 hash = "1d401fa2a6b150b9dc83f7c356aa08e76b49717bcc2f8e202e2a478a6218dd40"

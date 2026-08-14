@@ -3,6 +3,6 @@ filename = "crittersandcompanions-common.json5"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/crittersandcompanions-common.json5"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/crittersandcompanions-common.json5"
 hash-format = "sha256"
 hash = "86b7e603962ff30fc3f1b975fcb368646d30f0e153e20184518fab615f7b18a6"

@@ -3,6 +3,6 @@ filename = "railways-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/railways-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/railways-client.toml"
 hash-format = "sha256"
 hash = "53d8ad41438e77320df71a6f9306da8e63869176f122e5cdef67dc7dbfebe8b2"

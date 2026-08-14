@@ -3,6 +3,6 @@ filename = "warped_seagrass.png"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/netherdepthsupgrade/textures/block/warped_seagrass.png"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/netherdepthsupgrade/textures/block/warped_seagrass.png"
 hash-format = "sha256"
 hash = "3422a580bef1628dd149abba5c1a370bb097a9d250b94654727741232525e54b"

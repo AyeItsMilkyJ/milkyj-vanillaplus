@@ -3,6 +3,6 @@ filename = "gottschcore-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/gottschcore-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/gottschcore-common.toml"
 hash-format = "sha256"
 hash = "c02704ceb689173cd460347f21ed1f3da0dd782618cabe78f0e1af7e40e143dc"

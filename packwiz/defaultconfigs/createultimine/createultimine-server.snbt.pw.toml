@@ -3,6 +3,6 @@ filename = "createultimine-server.snbt"
 side = "server"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/defaultconfigs/createultimine/createultimine-server.snbt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/server/defaultconfigs/createultimine/createultimine-server.snbt"
 hash-format = "sha256"
 hash = "b5469fe8a93297a52adc176081291d67aaca255430b21c18ff3a9f7608894ac4"

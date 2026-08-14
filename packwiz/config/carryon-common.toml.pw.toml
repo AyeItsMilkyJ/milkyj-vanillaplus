@@ -3,6 +3,6 @@ filename = "carryon-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/carryon-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/carryon-common.toml"
 hash-format = "sha256"
 hash = "e309110397629770f5080b9ba81ab26e9476250c4372a051ece7c13557370f29"

@@ -3,6 +3,6 @@ filename = "armorstands.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterdeserttemples/forge-1_20/armorstands.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/betterdeserttemples/forge-1_20/armorstands.json"
 hash-format = "sha256"
 hash = "8f45ebbfa6cf88132ce2202e1bbd102282810b73ab0a48ff224364eb89234eca"

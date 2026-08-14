@@ -3,6 +3,6 @@ filename = "smarterfarmers-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/smarterfarmers-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/smarterfarmers-common.toml"
 hash-format = "sha256"
 hash = "5236a63d3f2dbe7a514fdb86ea19b46571fc2feb899984e148bece8398a30b69"

@@ -3,6 +3,6 @@ filename = "modded_loot.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/repurposed_structures-forge/modded_loot.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/repurposed_structures-forge/modded_loot.toml"
 hash-format = "sha256"
 hash = "c21921f03014bdd061fc83803277218093d6b7c0a6175dd931d2d46045701a5f"

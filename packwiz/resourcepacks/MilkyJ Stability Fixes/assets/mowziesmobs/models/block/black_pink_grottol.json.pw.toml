@@ -3,6 +3,6 @@ filename = "black_pink_grottol.json"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/mowziesmobs/models/block/black_pink_grottol.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/mowziesmobs/models/block/black_pink_grottol.json"
 hash-format = "sha256"
 hash = "4f4f234cb9bd4bcbb53845b37c675e12a013556a907530ec6c066875f5a6d7e2"

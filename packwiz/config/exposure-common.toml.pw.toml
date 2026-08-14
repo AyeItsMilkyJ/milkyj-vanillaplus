@@ -3,6 +3,6 @@ filename = "exposure-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/exposure-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/exposure-common.toml"
 hash-format = "sha256"
 hash = "f7d96d208d00c8d5cf91348dec1c4ab45c2bff08d39f85dce71e5849b8cfc365"

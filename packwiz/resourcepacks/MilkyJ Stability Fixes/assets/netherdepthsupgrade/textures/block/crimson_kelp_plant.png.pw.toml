@@ -3,6 +3,6 @@ filename = "crimson_kelp_plant.png"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/netherdepthsupgrade/textures/block/crimson_kelp_plant.png"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/netherdepthsupgrade/textures/block/crimson_kelp_plant.png"
 hash-format = "sha256"
 hash = "4fa41f985742821a756a0e228b73c21129a797408cd798bb18671226972ff718"

@@ -3,6 +3,6 @@ filename = "rice.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/forge/tags/items/crops/rice.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/forge/tags/items/crops/rice.json"
 hash-format = "sha256"
 hash = "c2cc5482b5b96ab57ec2c15ff6ba1de879b6eac46f7fdfbd607f0a8001792321"

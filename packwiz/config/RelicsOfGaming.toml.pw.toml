@@ -3,6 +3,6 @@ filename = "RelicsOfGaming.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/RelicsOfGaming.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/RelicsOfGaming.toml"
 hash-format = "sha256"
 hash = "1c455b76a785fef208f36de06b21fede4362ab00e1ba6d295f99e0fecc7b2382"

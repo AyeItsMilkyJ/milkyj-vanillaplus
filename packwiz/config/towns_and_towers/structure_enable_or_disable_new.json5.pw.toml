@@ -3,6 +3,6 @@ filename = "structure_enable_or_disable_new.json5"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/towns_and_towers/structure_enable_or_disable_new.json5"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/towns_and_towers/structure_enable_or_disable_new.json5"
 hash-format = "sha256"
 hash = "3aaa6ac8835dbbce97928c4d0d03f9957749a7a57a3f1668597310e9227900da"

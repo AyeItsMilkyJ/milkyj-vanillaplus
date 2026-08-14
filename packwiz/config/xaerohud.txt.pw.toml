@@ -3,6 +3,6 @@ filename = "xaerohud.txt"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/xaerohud.txt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/xaerohud.txt"
 hash-format = "sha256"
 hash = "cece60604b8de5e978141c981c1ed85227c8f30697a513869012b06dd15fcf02"

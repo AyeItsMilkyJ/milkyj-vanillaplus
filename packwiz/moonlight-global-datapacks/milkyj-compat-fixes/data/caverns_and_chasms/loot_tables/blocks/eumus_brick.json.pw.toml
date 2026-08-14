@@ -3,6 +3,6 @@ filename = "eumus_brick.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/caverns_and_chasms/loot_tables/blocks/eumus_brick.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/caverns_and_chasms/loot_tables/blocks/eumus_brick.json"
 hash-format = "sha256"
 hash = "f2ef2d7bc8fa2d343b0a7dd834f0eb550f84937bc0ce41f37b2cbae81c945496"

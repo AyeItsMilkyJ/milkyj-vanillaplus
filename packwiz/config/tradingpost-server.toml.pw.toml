@@ -3,6 +3,6 @@ filename = "tradingpost-server.toml"
 side = "server"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/server/config/tradingpost-server.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/server/config/tradingpost-server.toml"
 hash-format = "sha256"
 hash = "f8e08cdf664d3e5fa2805eddbdeef0e2b46bbe94cf1e5ef86ed70f29fea54add"

@@ -3,6 +3,6 @@ filename = "cookingforblockheads-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/cookingforblockheads-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/cookingforblockheads-common.toml"
 hash-format = "sha256"
 hash = "475551e41751c665a70640c206f613093b5bc53e273a27d60ee32bb79e165b2f"

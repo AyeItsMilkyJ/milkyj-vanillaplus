@@ -3,6 +3,6 @@ filename = "skreecher.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/skreecher.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexsmobs/skreecher.json"
 hash-format = "sha256"
 hash = "f812e719afb24421c6853dacf4d1f66864305e335cfdf6193613d7c408ecab30"

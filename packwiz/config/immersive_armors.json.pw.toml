@@ -3,6 +3,6 @@ filename = "immersive_armors.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/immersive_armors.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/immersive_armors.json"
 hash-format = "sha256"
 hash = "3b1b222917697f4e339d7770136473fb277c46687d94b85f0b0835be8ebad695"

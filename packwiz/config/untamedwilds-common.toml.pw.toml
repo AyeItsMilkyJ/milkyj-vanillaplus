@@ -3,6 +3,6 @@ filename = "untamedwilds-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/untamedwilds-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/untamedwilds-common.toml"
 hash-format = "sha256"
 hash = "60138e65bc6bb436d8e89fd15226f7392e42f46b49939bb4c0af199d4b7fb27d"

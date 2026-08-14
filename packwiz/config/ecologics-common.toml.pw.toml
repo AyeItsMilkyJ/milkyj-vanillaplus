@@ -3,6 +3,6 @@ filename = "ecologics-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ecologics-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ecologics-common.toml"
 hash-format = "sha256"
 hash = "b6df63e1035657e07f4b8ef5b7fae10ff03239f62c1393fab6cfdac0e8f70339"

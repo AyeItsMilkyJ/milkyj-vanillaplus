@@ -3,6 +3,6 @@ filename = "ftblibrary-client.snbt"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/defaultconfigs/ftblibrary/ftblibrary-client.snbt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/defaultconfigs/ftblibrary/ftblibrary-client.snbt"
 hash-format = "sha256"
 hash = "d9370c264daed232a167d23424db1d1ae8c01ac00377700fdd345a8a1b7afd75"

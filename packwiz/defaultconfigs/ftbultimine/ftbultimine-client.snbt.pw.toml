@@ -3,6 +3,6 @@ filename = "ftbultimine-client.snbt"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/defaultconfigs/ftbultimine/ftbultimine-client.snbt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/defaultconfigs/ftbultimine/ftbultimine-client.snbt"
 hash-format = "sha256"
 hash = "29b00fa9efa03679a1743cad71b994decd0f79a597aaac22994e38278079d226"

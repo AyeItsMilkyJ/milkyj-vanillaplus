@@ -3,6 +3,6 @@ filename = "supplementaries-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/supplementaries-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/supplementaries-common.toml"
 hash-format = "sha256"
 hash = "fa8b18b30afeb1105aa6dc5c5f2ebae4218e9631fb3c4b33487fcd4ba71f6e70"

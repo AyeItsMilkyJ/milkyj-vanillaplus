@@ -3,6 +3,6 @@ filename = "fossil-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/fossil-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/fossil-common.toml"
 hash-format = "sha256"
 hash = "4234cd6889671307eaafc48509b7d4017be1149b799052e8282d29a54fb0fba5"

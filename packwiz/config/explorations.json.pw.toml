@@ -3,6 +3,6 @@ filename = "explorations.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/explorations.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/explorations.json"
 hash-format = "sha256"
 hash = "5d3aec0b61f27494d5d29c366cf8957b18a5c389473eef18597231f280b2c776"

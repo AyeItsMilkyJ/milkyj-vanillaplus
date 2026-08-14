@@ -3,6 +3,6 @@ filename = "immersive_melodies.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/immersive_melodies.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/immersive_melodies.json"
 hash-format = "sha256"
 hash = "a3aeb8c0aa0225491e997139b3a1358824626c204918f2b7a09f102269e27d97"

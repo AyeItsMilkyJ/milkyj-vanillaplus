@@ -3,6 +3,6 @@ filename = "inventoryessentials-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/inventoryessentials-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/inventoryessentials-common.toml"
 hash-format = "sha256"
 hash = "81fb018bb31ca9c8262d75870094b38162dedb0f620104f5ed50184552a3cfd4"

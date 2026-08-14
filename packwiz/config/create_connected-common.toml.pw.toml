@@ -3,6 +3,6 @@ filename = "create_connected-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/create_connected-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/create_connected-common.toml"
 hash-format = "sha256"
 hash = "e6dcce46f6da0f696ef1df87860c8619c72d95397f167cd7f7b8d8772b20cc21"

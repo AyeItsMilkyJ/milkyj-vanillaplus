@@ -3,6 +3,6 @@ filename = "friendsandfoes.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/friendsandfoes.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/friendsandfoes.json"
 hash-format = "sha256"
 hash = "ee3c57121829b033819d410d1d684b66865d165cee38ce62dbb36e4c4639d4b2"

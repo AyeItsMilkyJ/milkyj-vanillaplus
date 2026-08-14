@@ -3,6 +3,6 @@ filename = "biome_toggles.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/biomesoplenty/biome_toggles.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/biomesoplenty/biome_toggles.json"
 hash-format = "sha256"
 hash = "73a6c7501f19022b96ffed49e470159a59c993425525cae4099fae43f9a1a996"

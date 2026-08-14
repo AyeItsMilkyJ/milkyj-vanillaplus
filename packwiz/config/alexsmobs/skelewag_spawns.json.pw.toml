@@ -3,6 +3,6 @@ filename = "skelewag_spawns.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/skelewag_spawns.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexsmobs/skelewag_spawns.json"
 hash-format = "sha256"
 hash = "86aad88d05c283679e85900cab1bf3977d496849005ac068a14e40b93db35aa2"

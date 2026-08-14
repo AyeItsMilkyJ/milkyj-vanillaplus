@@ -1,16 +1,23 @@
-{
-  "packUrl": "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/packwiz/pack.toml",
-  "backupDirectory": "backups/packwiz",
-  "gracefulStopTimeoutSeconds": 240,
-  "startupTimeoutSeconds": 180,
-  "startupDelaySeconds": 60,
-  "restartBackoffSeconds": [15, 30, 60, 120],
-  "rapidFailureWindowMinutes": 10,
-  "maxRapidFailures": 4,
-  "stableRunResetMinutes": 20,
-  "backupRetentionDaily": 7,
-  "backupRetentionWeekly": 4,
-  "taskNamePrefix": "MilkyJ Minecraft Server",
-  "launchExecutable": "",
-  "launchArguments": []
+﻿{
+    "packUrl":  "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/packwiz/pack.toml",
+    "backupDirectory":  "backups/packwiz",
+    "gracefulStopTimeoutSeconds":  240,
+    "startupTimeoutSeconds":  180,
+    "startupDelaySeconds":  60,
+    "restartBackoffSeconds":  [
+                                  15,
+                                  30,
+                                  60,
+                                  120
+                              ],
+    "rapidFailureWindowMinutes":  10,
+    "maxRapidFailures":  4,
+    "stableRunResetMinutes":  20,
+    "backupRetentionDaily":  7,
+    "backupRetentionWeekly":  4,
+    "taskNamePrefix":  "MilkyJ Minecraft Server",
+    "launchExecutable":  "",
+    "launchArguments":  [
+
+                        ]
 }

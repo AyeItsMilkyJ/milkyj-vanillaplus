@@ -3,6 +3,6 @@ filename = "astikorcartsredux-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/astikorcartsredux-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/astikorcartsredux-client.toml"
 hash-format = "sha256"
 hash = "93e2b40f83a4f7104e367620a00ab210020abc0625e077ca7f6a9663cae4d536"

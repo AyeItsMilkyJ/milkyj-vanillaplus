@@ -3,6 +3,6 @@ filename = "brewinandchewin-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/brewinandchewin-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/brewinandchewin-client.toml"
 hash-format = "sha256"
 hash = "425c196faa3e26bc4a04b2cddf560c0f238acab72590fe046aace789d532bdc4"

@@ -3,6 +3,6 @@ filename = "gml-script-mods.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/gml-script-mods.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/gml-script-mods.toml"
 hash-format = "sha256"
 hash = "e2efc8f94eafa0528d995a427040081180d9a1063550b3723fb35c392411651a"

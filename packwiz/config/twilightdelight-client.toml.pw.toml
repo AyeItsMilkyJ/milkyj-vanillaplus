@@ -3,6 +3,6 @@ filename = "twilightdelight-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/twilightdelight-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/twilightdelight-client.toml"
 hash-format = "sha256"
 hash = "e1e69cd353751721bbe8e4b24978eed91a7ba84603f2d981b7537f2a0aef09c8"

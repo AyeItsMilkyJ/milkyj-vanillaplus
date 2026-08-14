@@ -3,6 +3,6 @@ filename = "neapolitan-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/neapolitan-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/neapolitan-common.toml"
 hash-format = "sha256"
 hash = "6ac7a14837b8911f077690112a7dd949cdaa157fee552e4694340e688a46122f"

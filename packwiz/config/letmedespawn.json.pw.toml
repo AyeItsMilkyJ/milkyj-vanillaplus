@@ -3,6 +3,6 @@ filename = "letmedespawn.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/letmedespawn.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/letmedespawn.json"
 hash-format = "sha256"
 hash = "6af411644e22ede34383135509cb96b2a636d8ed45494b28976514a95537105e"

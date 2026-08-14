@@ -3,6 +3,6 @@ filename = "freshwater_mantis.animation.json"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/freshwater_mantis.animation.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/freshwater_mantis.animation.json"
 hash-format = "sha256"
 hash = "8297c4b54a31ed3f8c3f8d955bed035aaa5eb97e0674564c4d4bb0fc354d38e3"

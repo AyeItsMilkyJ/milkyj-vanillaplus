@@ -3,6 +3,6 @@ filename = "diamond_grottol.json"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/mowziesmobs/models/block/diamond_grottol.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/mowziesmobs/models/block/diamond_grottol.json"
 hash-format = "sha256"
 hash = "de2af3322addf3321d8983d8c5caa11a75147c2a8cf8985cbb2cf824801c26dd"

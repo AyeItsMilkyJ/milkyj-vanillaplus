@@ -3,6 +3,6 @@ filename = "structure_gel-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/structure_gel-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/structure_gel-client.toml"
 hash-format = "sha256"
 hash = "c53c5d639db55786a899f1eeaef133efa78ccf5e841b5ffcf8d4a40f714de947"

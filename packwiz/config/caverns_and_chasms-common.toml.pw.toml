@@ -3,6 +3,6 @@ filename = "caverns_and_chasms-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/caverns_and_chasms-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/caverns_and_chasms-common.toml"
 hash-format = "sha256"
 hash = "bad619ccbc48305161bc8c28627c4f5c4122f6a078d4000386d840832d6a8d66"

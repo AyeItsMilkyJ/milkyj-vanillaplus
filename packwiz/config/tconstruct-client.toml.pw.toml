@@ -3,6 +3,6 @@ filename = "tconstruct-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/tconstruct-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/tconstruct-client.toml"
 hash-format = "sha256"
 hash = "3c45675117fb9fdca36f825fbc0fd72b1be887ec17895b17f1052c550b7f0e2f"

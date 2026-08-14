@@ -3,6 +3,6 @@ filename = "cachalot_whale_beached_spawns.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/cachalot_whale_beached_spawns.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexsmobs/cachalot_whale_beached_spawns.json"
 hash-format = "sha256"
 hash = "73b8f83ddfa936642b38af1003e3c47eab6f089ad61612ee5181137409038f57"

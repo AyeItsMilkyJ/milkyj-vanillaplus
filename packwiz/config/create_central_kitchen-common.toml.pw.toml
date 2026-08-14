@@ -3,6 +3,6 @@ filename = "create_central_kitchen-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/create_central_kitchen-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/create_central_kitchen-common.toml"
 hash-format = "sha256"
 hash = "b7510efb91bfc3fdad23399904833f798b7f1d021af78934aaa45c55ee6476f8"

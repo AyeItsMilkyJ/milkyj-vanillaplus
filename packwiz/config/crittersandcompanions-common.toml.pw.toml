@@ -3,6 +3,6 @@ filename = "crittersandcompanions-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/crittersandcompanions-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/crittersandcompanions-common.toml"
 hash-format = "sha256"
 hash = "430fa8ca2e87a598a6084ff4a4e85baf07547f6296e7f843658cf3ea3cbdfae6"

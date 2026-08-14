@@ -3,6 +3,6 @@ filename = "sophisticatedcore-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/sophisticatedcore-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/sophisticatedcore-common.toml"
 hash-format = "sha256"
 hash = "69935fd56fd8a64647a909581e78cc800bf0f3531a57e3b121388f1dd580ef6b"

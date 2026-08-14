@@ -3,6 +3,6 @@ filename = "aquaculture-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/aquaculture-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/aquaculture-common.toml"
 hash-format = "sha256"
 hash = "267ad4c40c6c554c99c9abf7f19e7f291ad8d7865bfee9bc66eb8acb6bca79ae"

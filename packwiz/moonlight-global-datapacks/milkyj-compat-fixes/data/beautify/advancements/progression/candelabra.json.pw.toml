@@ -3,6 +3,6 @@ filename = "candelabra.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/beautify/advancements/progression/candelabra.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/beautify/advancements/progression/candelabra.json"
 hash-format = "sha256"
 hash = "f105986614064ded8142f528a33bfcc79d329dfd99363a76d9b8f8f64cd5717a"

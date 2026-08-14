@@ -3,6 +3,6 @@ filename = "alexscaves-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/alexscaves-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/alexscaves-client.toml"
 hash-format = "sha256"
 hash = "6d1470a16e0569850dbf63ec3408595e33f0919685382507aba54145f6025707"

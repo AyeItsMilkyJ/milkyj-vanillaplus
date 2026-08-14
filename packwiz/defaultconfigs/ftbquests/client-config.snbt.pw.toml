@@ -3,6 +3,6 @@ filename = "client-config.snbt"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/defaultconfigs/ftbquests/client-config.snbt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/defaultconfigs/ftbquests/client-config.snbt"
 hash-format = "sha256"
 hash = "b882485f06e840273d3d289b6040442b9a93f0c3a7ea01d730e0fea76d246c22"

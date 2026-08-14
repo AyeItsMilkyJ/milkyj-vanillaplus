@@ -3,6 +3,6 @@ filename = "pack.mcmeta"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/pack.mcmeta"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/pack.mcmeta"
 hash-format = "sha256"
 hash = "d0ecc11236368a78905cc8457fada14345529a9b0aecfa8497d140838d5991cf"

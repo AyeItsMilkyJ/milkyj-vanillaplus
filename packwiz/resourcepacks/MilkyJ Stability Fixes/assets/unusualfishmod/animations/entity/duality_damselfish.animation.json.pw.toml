@@ -3,6 +3,6 @@ filename = "duality_damselfish.animation.json"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/duality_damselfish.animation.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/duality_damselfish.animation.json"
 hash-format = "sha256"
 hash = "caa645bdedcfc425f219e47173939a81566a1424a6f69d6f0f385cc4bf9390a0"

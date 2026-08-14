@@ -3,6 +3,6 @@ filename = "abyssal_chasm.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexscaves_biome_generation/abyssal_chasm.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexscaves_biome_generation/abyssal_chasm.json"
 hash-format = "sha256"
 hash = "d286a521c5fd852ef189e15f02952d3e6f529efbb67fe769d88d45183279c3b9"

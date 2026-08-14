@@ -3,6 +3,6 @@ filename = "flywheel-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/flywheel-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/flywheel-client.toml"
 hash-format = "sha256"
 hash = "2c7195f67d51df85e9af2edb5915b0af09fcc20f60ba00aba1785a1f2609712a"

@@ -3,6 +3,6 @@ filename = "seasons.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/sereneseasons/seasons.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/sereneseasons/seasons.toml"
 hash-format = "sha256"
 hash = "dbf1fcbddf5d8d5f3008742e8ae3278e3e3d8686b2cdbb71a4aa3223246abe79"

@@ -3,6 +3,6 @@ filename = "armoroftheages.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/armoroftheages.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/armoroftheages.json"
 hash-format = "sha256"
 hash = "99e63a1f0c630297a20ade88c7c5011bb69e5fbcc772a6e317e7661185a57ab0"

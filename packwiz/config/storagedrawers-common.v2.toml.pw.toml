@@ -3,6 +3,6 @@ filename = "storagedrawers-common.v2.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/storagedrawers-common.v2.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/storagedrawers-common.v2.toml"
 hash-format = "sha256"
 hash = "c23016e1d05b4094af9f199bfaaf392fddd252cc88e73839b7eeb20876fd923e"

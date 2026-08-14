@@ -3,6 +3,6 @@ filename = "betteroceanmonuments-forge-1_20.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betteroceanmonuments-forge-1_20.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/betteroceanmonuments-forge-1_20.toml"
 hash-format = "sha256"
 hash = "3fc30fb36ba5fc5cabbecb82aa5a9800d7e30539212ec88246be179ede48f382"

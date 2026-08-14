@@ -3,6 +3,6 @@ filename = "pie.json"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/farmersdelight/models/block/pie.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/farmersdelight/models/block/pie.json"
 hash-format = "sha256"
 hash = "46bd7a01267fd5b47c905d778dce3dbcba68429f13243b704d6fd5d9583303a1"

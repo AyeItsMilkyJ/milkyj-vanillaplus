@@ -7,17 +7,21 @@ Current locked platform:
 - Minecraft `1.20.1`
 - Forge `47.4.10`
 - Established previous pack version `1.8.1-packwiz.1`
-- Repaired candidate `1.9.0-rc1` (unpublished; manual tests required)
+- Current Packwiz release `1.9.0-rc1`
+
+Permanent public update feed:
+
+```text
+https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/packwiz/pack.toml
+```
 
 The live world is not part of this repository and no update script is allowed to touch it without first producing a timestamped backup.
 
-## First setup
+## Player setup
 
-1. Create a public GitHub repository, recommended name `milkyj-vanillaplus`.
-2. Run `scripts\Set-PackUrl.ps1` with that repository's raw URL.
-3. Run `scripts\Update-PackMetadata.ps1`, then `scripts\Validate-Pack.ps1`.
-4. Commit and push the repository.
-5. Run `scripts\Build-Prism-Bootstrap.ps1` and give players the generated ZIP once.
+1. Build or download `MilkyJ-VanillaPlus-AutoUpdating-Prism.zip`.
+2. Import it into Prism Launcher once.
+3. Press **Play** normally. Packwiz checks this repository and downloads only changed managed files before Minecraft starts.
 
 Detailed day-to-day publishing, player installation, server updating, backups, and rollback are in [docs/OPERATIONS.md](docs/OPERATIONS.md).
 

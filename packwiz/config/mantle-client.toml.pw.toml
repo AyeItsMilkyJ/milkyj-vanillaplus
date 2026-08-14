@@ -3,6 +3,6 @@ filename = "mantle-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/mantle-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/mantle-client.toml"
 hash-format = "sha256"
 hash = "83a767bf5d96b03174cacef236ef7aebdd3577e184d53a5a1e9d3e7a5256d075"

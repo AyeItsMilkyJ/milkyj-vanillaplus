@@ -3,6 +3,6 @@ filename = "bountiful.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/bountiful/bountiful.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/bountiful/bountiful.json"
 hash-format = "sha256"
 hash = "dbc5b8504e5ad33a610cf86d7cb2035eafc867d8edc7898245c915a512036778"

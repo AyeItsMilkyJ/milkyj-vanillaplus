@@ -3,6 +3,6 @@ filename = "immersive_weathering-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/immersive_weathering-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/immersive_weathering-client.toml"
 hash-format = "sha256"
 hash = "85069297a7ce045a541f246e2a81d599502a4f143588bcfe3852f904444bf54a"

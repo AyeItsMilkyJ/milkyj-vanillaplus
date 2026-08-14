@@ -3,6 +3,6 @@ filename = "zebra_cornetfish.animation.json"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/zebra_cornetfish.animation.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/resourcepacks/MilkyJ%20Stability%20Fixes/assets/unusualfishmod/animations/entity/zebra_cornetfish.animation.json"
 hash-format = "sha256"
 hash = "9df8a03070798a0791eb950c9d6122f35de74393d6fa9877d1921cdd2c98133e"

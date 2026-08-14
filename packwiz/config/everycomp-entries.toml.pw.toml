@@ -3,6 +3,6 @@ filename = "everycomp-entries.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/everycomp-entries.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/everycomp-entries.toml"
 hash-format = "sha256"
 hash = "fdcbc89c3b4628d8b50083f243d16190670d1e7c85589af209aa4ff6c76b1532"

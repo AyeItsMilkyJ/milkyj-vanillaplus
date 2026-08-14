@@ -3,6 +3,6 @@ filename = "spawnanimations.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/spawnanimations.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/spawnanimations.json"
 hash-format = "sha256"
 hash = "b2b16aad46bca666c1a8393826b2e767cada40664083bea333003b7d969a88ed"

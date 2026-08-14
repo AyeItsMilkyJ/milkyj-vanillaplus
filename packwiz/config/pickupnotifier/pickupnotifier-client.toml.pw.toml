@@ -3,6 +3,6 @@ filename = "pickupnotifier-client.toml"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/pickupnotifier/pickupnotifier-client.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/pickupnotifier/pickupnotifier-client.toml"
 hash-format = "sha256"
 hash = "ec64b886d9d024c0494829bd3f545f7b518f65382e07a66dbbb71640572cf5b6"

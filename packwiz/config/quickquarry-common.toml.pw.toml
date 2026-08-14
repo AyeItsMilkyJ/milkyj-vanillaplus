@@ -3,6 +3,6 @@ filename = "quickquarry-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/quickquarry-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/quickquarry-common.toml"
 hash-format = "sha256"
 hash = "c3359d57f624476dfff531281085245a2eab5fa58c916bb5047c2d287bf8ebd2"

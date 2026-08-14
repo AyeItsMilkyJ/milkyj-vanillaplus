@@ -3,6 +3,6 @@ filename = "main.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/zawa/main.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/zawa/main.toml"
 hash-format = "sha256"
 hash = "277313b0cdcec727b71b87ff2d1f5d2d30b0f3700d1d3817313924b440035c70"

@@ -3,6 +3,6 @@ filename = "chalk-common.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/chalk-common.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/chalk-common.toml"
 hash-format = "sha256"
 hash = "539af37a36faf43f147891d67cce90f5462a42ed798dca7c453d8307dd696c2a"

@@ -3,6 +3,6 @@ filename = "create_basics.snbt"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/create_basics.snbt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/create_basics.snbt"
 hash-format = "sha256"
 hash = "60117415d31f4b247df41463ebddcf631964ed2ec2a95cd5c825b15d88603e39"

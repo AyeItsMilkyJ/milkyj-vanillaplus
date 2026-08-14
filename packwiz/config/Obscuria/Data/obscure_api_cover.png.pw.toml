@@ -3,6 +3,6 @@ filename = "obscure_api_cover.png"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/client/config/Obscuria/Data/obscure_api_cover.png"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/Obscuria/Data/obscure_api_cover.png"
 hash-format = "sha256"
 hash = "ecd943698913173d1513b8a300072557304e9c262eb8eaa012ba0a357a6a5ad1"

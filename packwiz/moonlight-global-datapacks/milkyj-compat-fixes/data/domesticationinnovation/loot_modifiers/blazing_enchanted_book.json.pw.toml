@@ -3,6 +3,6 @@ filename = "blazing_enchanted_book.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/domesticationinnovation/loot_modifiers/blazing_enchanted_book.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/domesticationinnovation/loot_modifiers/blazing_enchanted_book.json"
 hash-format = "sha256"
 hash = "733ea7be48dc5bffe499a704bfa196ddef034790ce2ade94abc7e04bf3f6198b"

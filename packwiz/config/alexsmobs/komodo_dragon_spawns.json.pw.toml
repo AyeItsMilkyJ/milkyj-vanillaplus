@@ -3,6 +3,6 @@ filename = "komodo_dragon_spawns.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/alexsmobs/komodo_dragon_spawns.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/alexsmobs/komodo_dragon_spawns.json"
 hash-format = "sha256"
 hash = "695a3eb4d61a8208cc634871c237b0e6efc980ac668793f4686848e32cda0907"

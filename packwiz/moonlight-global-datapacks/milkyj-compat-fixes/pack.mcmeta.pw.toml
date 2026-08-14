@@ -3,6 +3,6 @@ filename = "pack.mcmeta"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/pack.mcmeta"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/pack.mcmeta"
 hash-format = "sha256"
 hash = "027791f87d3b5aa7515843c31d6e1f7554a46d8b9e279015cf371a2bdfc37a7a"

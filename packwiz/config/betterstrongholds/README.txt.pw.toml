@@ -3,6 +3,6 @@ filename = "README.txt"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/README.txt"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/README.txt"
 hash-format = "sha256"
 hash = "13c5f6bd52bf778533a100453d8b295802f923109e0a2951446a00674113700b"

@@ -3,6 +3,6 @@ filename = "itemframes.json"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/forge-1_20/itemframes.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/betterstrongholds/forge-1_20/itemframes.json"
 hash-format = "sha256"
 hash = "245e5f7ae62569f182a3335236e330991d56d587025eb88fa9f54997cb39558d"

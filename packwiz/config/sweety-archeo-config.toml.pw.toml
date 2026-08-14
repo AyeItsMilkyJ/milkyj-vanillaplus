@@ -3,6 +3,6 @@ filename = "sweety-archeo-config.toml"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/milkyj-vanillaplus/main/payload/both/config/sweety-archeo-config.toml"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/sweety-archeo-config.toml"
 hash-format = "sha256"
 hash = "5da82f3c37c5ad032668f782f041da4c0dc2b203f97d7baeccfea7e300f49a3f"
