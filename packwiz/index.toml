@@ -3261,6 +3261,11 @@ hash = "fe528bea30c69de87e1e8195e25e36075413983ec1532d856c46251ef67cc41e"
 metafile = true
 
 [[files]]
+file = "moonlight-global-datapacks/milkyj-compat-fixes/data/forge/tags/items/crops/rice.json.pw.toml"
+hash = "8ee4d00885114c2300f1d6ce1a2d543ab2625a83954e3cb9080cc77cd2ca0e52"
+metafile = true
+
+[[files]]
 file = "moonlight-global-datapacks/milkyj-compat-fixes/data/nethersdelight/loot_modifiers/chopping_leather.json.pw.toml"
 hash = "d2f39459838ebf3572130b72ecbc88b1cb978e908a12cc4e8a6a68a15cd7612a"
 metafile = true

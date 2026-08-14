@@ -19,6 +19,7 @@ JAR_HASHES = {
     "beautify-2.0.2.jar": "d14eca2341539a9186599e335c72315a4210f90f8e2d8007200c1da70b27bf15",
     "aether-1.20.1-1.5.2-neoforge.jar": "b6b586eb6fdc9ce4b3645cab43642ba87817c5deadef4d87ab884e4fe20ef282",
     "tf_dnv-1.2.3.jar": "f6c4780c214c098a20b5d666f8ef0b8d6e92fa67a36f68f8259de1d9a12ed6f8",
+    "DoggyTalentsNext-1.20.1-1.19.0.jar": "0992997355626d46077d62b29a63fa0ab83bcfac177dd34911ee53d18d30dbea",
 }
 
 FIXED_RESOURCES = {
@@ -27,6 +28,7 @@ FIXED_RESOURCES = {
     "data/nethersdelight/loot_modifiers/chopping_leather.json": "81d79fdfc511e80aba3ab984025d67623998397fa7f43edc2f15db46801f036c",
     "data/nethersdelight/loot_modifiers/chopping_string.json": "aa08932d7e997a595bf0dcfc285a3768e5d94e562bd9445c97b7d041e9fda586",
     "data/tf_dnv/loot_tables/chests/dungeon_shroom_barrel.json": "aed53ece9f961c5c86e859739ba0feb44e1ebee65a507a23b1005fd41af1ba56",
+    "data/forge/tags/items/crops/rice.json": "c2cc5482b5b96ab57ec2c15ff6ba1de879b6eac46f7fdfbd607f0a8001792321",
 }
 
 
@@ -140,6 +142,15 @@ def main() -> int:
     require(repaired_shroom_barrel == expected_shroom_barrel, "tf_dnv override changes more than the missing chests/ path")
     require(jar_has(tf_dnv, "data/tf_dnv/loot_tables/chests/dungeon_shroom.json"), "corrected tf_dnv shroom loot table is not installed")
 
+    doggy = jars["DoggyTalentsNext-1.20.1-1.19.0.jar"]
+    rice_tag = load_json(datapack / "data/forge/tags/items/crops/rice.json")
+    require(rice_tag == {
+        "replace": False,
+        "values": ["doggytalents:rice_grains", "doggytalents:uncooked_rice"],
+    }, "rice compatibility tag changed unexpectedly")
+    require(jar_has(doggy, "assets/doggytalents/models/item/rice_grains.json"), "Doggy Talents rice_grains item is not installed")
+    require(jar_has(doggy, "assets/doggytalents/models/item/uncooked_rice.json"), "Doggy Talents uncooked_rice item is not installed")
+
     for forbidden in ("create_central_kitchen", "aether", "relics"):
         require(not (datapack / "data" / forbidden).exists(), f"IGNORE SAFELY namespace was integrated: {forbidden}")
 
@@ -153,6 +164,7 @@ def main() -> int:
         "nethersDelightSemantics": semantics,
         "beautifyOnlyTypoChanged": True,
         "tfDnvShroomOnlyPathChanged": True,
+        "doggyTalentsRiceAcceptedByForgeCropRecipes": True,
         "ignoredFindingsIntegrated": False,
     }
     print(json.dumps(report, indent=2))

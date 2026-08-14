@@ -1,6 +1,6 @@
 # Integrated compatibility fixes
 
-Status: integrated and automatically validated on `integration/v1.9.0-rc1-final`. Nothing has been published, pushed, merged, deployed, or copied into a live Minecraft installation.
+Status: integrated and automatically validated on `integration/v1.9.0-rc1-final`. Nothing has been published, pushed, or merged. The original five fixes and the later rice-tag interoperability repair were deployed locally only after verified cold backups.
 
 ## Release-candidate overrides
 
@@ -13,10 +13,11 @@ The existing highest-priority global datapack at `payload/both/moonlight-global-
 | Nether's Delight 4.0 string condition | `data/nethersdelight/loot_modifiers/chopping_string.json` | Unsupported `minecraft:alternative` condition | Changes only that condition ID to supported `minecraft:any_of`; machete, spiders, and string output are preserved |
 | Beautify 2.0.2 advancement typo | `data/beautify/advancements/progression/candelabra.json` | Two references used nonexistent `beautify:lamp_candleabra` | Changes only those references to installed `beautify:lamp_candelabra`; the advancement now loads |
 | Twilight Forest - Dungeons & Villages 1.2.3 shroom path | `data/tf_dnv/loot_tables/chests/dungeon_shroom_barrel.json` | Nested entry requested nonexistent `tf_dnv:dungeon_shroom` | Adds only the missing `chests/` segment and resolves to the JAR's installed `data/tf_dnv/loot_tables/chests/dungeon_shroom.json` |
+| Doggy Talents / Farmer's Delight rice interoperability | `data/forge/tags/items/crops/rice.json` | Doggy Talents `rice_grains` and `uncooked_rice` were separate from Forge's shared rice-crop tag, so Farmer's Delight cooking-pot recipes rejected them | Adds both installed items to `forge:crops/rice` with `replace: false`; existing Farmer's Delight rice remains accepted and no recipe definition is replaced |
 
 The first four definitions came from the validated compatibility worktree/source commit `bb62f885457e37c20b45bd52717f498aa0859b86`. The `tf_dnv` correction was discovered during this integration audit and separately constrained by static equality checking to its single path value.
 
-No mod JAR, mod version, recipe, quest, quest ID, reward, or unrelated loot entry was changed. The Central Kitchen vegan recipe, Aether's Delight shield overrides, and Relics talisman warning remain deliberately unchanged as previously classified `IGNORE SAFELY`.
+No mod JAR, mod version, recipe definition, quest, quest ID, reward, or unrelated loot entry was changed. The rice repair only extends the shared ingredient tag. The Central Kitchen vegan recipe, Aether's Delight shield overrides, and Relics talisman warning remain deliberately unchanged as previously classified `IGNORE SAFELY`.
 
 ## Proof
 
@@ -44,4 +45,4 @@ Classification: **FIX LATER**. Ask the add-on author which loot table was intend
 
 ## Recommendation
 
-The five proven isolated overrides should be included in 1.9.0. The unresolved casket warning should not block the current RC automatically, but it must remain documented for a later compatibility update.
+The six proven isolated overrides should be included in 1.9.0. The unresolved casket warning should not block the current RC automatically, but it must remain documented for a later compatibility update.
