@@ -14,6 +14,7 @@ metafile = true
 file = "config/aether/aether_customizations.txt.pw.toml"
 hash = "b938da1af2c3671cd395fb4e83904e5ca6d048f12f2de09560e09795a928cafb"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/aether/sun_altar_whitelist.json.pw.toml"
@@ -24,6 +25,7 @@ metafile = true
 file = "config/aether-client.toml.pw.toml"
 hash = "faf7e8ae075dfac8d0de12b03f9dc9cacc0b24e1883d9c04a5c62af44a8d0f5e"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/aether-common.toml.pw.toml"
@@ -74,6 +76,7 @@ metafile = true
 file = "config/alexscaves-client.toml.pw.toml"
 hash = "d91f23880326c567890c0c6010d7484a48db1f851ee24b7f73eef8fc4961e989"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/alexscaves-general.toml.pw.toml"
@@ -539,11 +542,13 @@ metafile = true
 file = "config/ambientsounds-client.json.pw.toml"
 hash = "edf0f92c3bef178ae45a58df0dc9849b52ccdb2f7077f01ac53b2445ef5d41e3"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/amendments-client.toml.pw.toml"
 hash = "46ea1c184d3c3a1ec82251c8814000fbf2d99f2bf193a5f85192bc696cec6d39"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/amendments-common.toml.pw.toml"
@@ -554,6 +559,7 @@ metafile = true
 file = "config/appleskin-client.toml.pw.toml"
 hash = "c12067cbb727ad0c744a86b7f3e4f0d592b8948591b31968bae25ef2290b47d3"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/aquaculture-common.toml.pw.toml"
@@ -569,6 +575,7 @@ metafile = true
 file = "config/artifacts/client.json5.pw.toml"
 hash = "23730a0ade2966d876f32548fa2669266ad84b07042a5e8a93140f06a1c886f9"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/artifacts/common.json5.pw.toml"
@@ -579,6 +586,7 @@ metafile = true
 file = "config/astikorcartsredux-client.toml.pw.toml"
 hash = "82259606124fd483de7accec0949ba2d2a9876d98a0d5c9e97d6c19e09c50f46"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/astikorcartsredux-common.toml.pw.toml"
@@ -599,6 +607,7 @@ metafile = true
 file = "config/betteradvancements-client.toml.pw.toml"
 hash = "74f7fb84781dbafe43cb6f5747b81551e586df47d9eae001e8682e16e6680f4a"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/betterarcheology_structures/structure_settings.json5.pw.toml"
@@ -754,6 +763,7 @@ metafile = true
 file = "config/blueprint-client.toml.pw.toml"
 hash = "14b37f3cbf666720c31195464d2c31aa0616d8f0329c3ce3d37fb9496c295002"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/blueprint-common.toml.pw.toml"
@@ -769,6 +779,7 @@ metafile = true
 file = "config/brewinandchewin-client.toml.pw.toml"
 hash = "b4f0938126587f997e9c966f0f982ba420a8ab7c5532b2524180657f14093543"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/brewinandchewin-common.toml.pw.toml"
@@ -779,6 +790,7 @@ metafile = true
 file = "config/carryon-client.toml.pw.toml"
 hash = "60b35d4635b8b97c608ffc89c46f5613797e2880ff54af8e4aacf09f2d443bfa"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/carryon-common.toml.pw.toml"
@@ -789,6 +801,7 @@ metafile = true
 file = "config/caverns_and_chasms-client.toml.pw.toml"
 hash = "6f4229d21d1000b80eef78692d3b59db36dbd3f5bb425356bcfad43d8de521d2"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/caverns_and_chasms-common.toml.pw.toml"
@@ -799,6 +812,7 @@ metafile = true
 file = "config/chalk-client.toml.pw.toml"
 hash = "886ada5435c3dd1b279c50635dc98c44bd7e8d64093653744089a424c4abf094"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/chalk-common.toml.pw.toml"
@@ -824,6 +838,7 @@ metafile = true
 file = "config/collectibles-client.toml.pw.toml"
 hash = "0b88b9eb646ff506f11be5cbc5554b22e9f41778d677006ab5255f91c17a92ef"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/collective.json5.pw.toml"
@@ -844,6 +859,7 @@ metafile = true
 file = "config/copycats-client.toml.pw.toml"
 hash = "275e9b5c9c9704a0b01f56ab9f475a2f98210b49f645ce5013cc1c034e3a40b3"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/copycats-common.toml.pw.toml"
@@ -869,6 +885,7 @@ metafile = true
 file = "config/create-client.toml.pw.toml"
 hash = "70b3a56bfcbf8ea16334c237fa3031b58edf211e560f4fe30c100697e4a37972"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/create-common.toml.pw.toml"
@@ -904,11 +921,13 @@ metafile = true
 file = "config/cumulus_menus-client.toml.pw.toml"
 hash = "051d4a3a7d2e62ba797e7b32341609565298d1f6742980f967f7c5c9f61198ee"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/curios-client.toml.pw.toml"
 hash = "de2f6df256ef094612e4c33e2ff409935d0e217f781432c00bf7d0660b42bfce"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/curios-common.toml.pw.toml"
@@ -929,11 +948,13 @@ metafile = true
 file = "config/doggytalents-client.toml.pw.toml"
 hash = "159da039bc7b9d30df0126fa9d5725c1393bb762dc9c08a78e4cc7d7b39cc942"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/doggytalents-dog_custom_skins_client.toml.pw.toml"
 hash = "7adbad1c38a4966fa95a788c6a90238f8759c5ce684df02860aa16c74ebb04e6"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/domestication-innovation.toml.pw.toml"
@@ -959,6 +980,7 @@ metafile = true
 file = "config/easyanvils-client.toml.pw.toml"
 hash = "cd795228a3acd358b4000015355273e091905a85b6127816a2037bd5aeb3fc24"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/easyanvils-server.toml.pw.toml"
@@ -969,6 +991,7 @@ metafile = true
 file = "config/easymagic-client.toml.pw.toml"
 hash = "8db7097d2286e6c71e451611de4801e1a749fbf7c84cd69c84607f4a0f6c4c47"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/easymagic-server.toml.pw.toml"
@@ -1004,6 +1027,7 @@ metafile = true
 file = "config/endermanoverhaul-client.jsonc.pw.toml"
 hash = "d3ab82462977549c3c39d65a1710985bca9f0a26312ad2dcd0340492ef24801b"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/endrem.toml.pw.toml"
@@ -1024,6 +1048,7 @@ metafile = true
 file = "config/equipmentcompare-common.toml.pw.toml"
 hash = "c59a9b39d4791c6401336d311a1ac906f8cb25aa6c665f8491b9e879603285d2"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/etf_warnings.json.pw.toml"
@@ -1034,6 +1059,7 @@ metafile = true
 file = "config/everycomp-client.toml.pw.toml"
 hash = "6207ec3eddff43a7865473f6e54b4687ba85c8e6ccec940d02b083944c1b81fa"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/everycomp-common.toml.pw.toml"
@@ -1064,6 +1090,7 @@ metafile = true
 file = "config/explorerscompass-client.toml.pw.toml"
 hash = "4bffb2db7b3b48a03e921912900dc38d6d140d8fae6bc8427df5cfd401af7ef1"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/explorerscompass-common.toml.pw.toml"
@@ -1074,11 +1101,13 @@ metafile = true
 file = "config/exposure_polaroid-client.toml.pw.toml"
 hash = "5af32a0da1593ce24361777365b3dcfc236b191f85b81f17a402f13186023cb2"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/exposure-client.toml.pw.toml"
 hash = "4587c7b57d742cb037b095f62acf7a46de4f225be7b6c726188aa67c15e4495e"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/exposure-common.toml.pw.toml"
@@ -1089,6 +1118,7 @@ metafile = true
 file = "config/fairylights-client.toml.pw.toml"
 hash = "a08c255840026447d84a10da5519293113db96edef901dcb62a99cea600e2b27"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/fairylights-common.toml.pw.toml"
@@ -1099,6 +1129,7 @@ metafile = true
 file = "config/fallingleaves-client.toml.pw.toml"
 hash = "b13ea699fb4bae0a6e00d627a671b72233fbec44c5e4d437bef84cea8f3efdce"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/fallingtree.json.pw.toml"
@@ -1109,6 +1140,7 @@ metafile = true
 file = "config/farmersdelight-client.toml.pw.toml"
 hash = "ef79593053cf665662d763f572f33685f59dfb1e4629f7e5f2ef23fb3d099ad5"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/farmersdelight-common.toml.pw.toml"
@@ -1134,6 +1166,7 @@ metafile = true
 file = "config/flywheel-client.toml.pw.toml"
 hash = "c50c5bafea8ed48970ee4a2e6cb3bebae1a002d819381fca756c705ce49e2a1e"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/fml.toml.pw.toml"
@@ -1149,11 +1182,13 @@ metafile = true
 file = "config/forge-client.toml.pw.toml"
 hash = "92c62d727377716ad9f3dfda3ccc949d3039afb8fd749338842e8752f6df20d8"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/fossil-client.toml.pw.toml"
 hash = "a42c7badd88bc6ad188a8f06f09e7e3996c0fc14c89a8e60624c13452c745c7a"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/fossil-common.toml.pw.toml"
@@ -1164,6 +1199,7 @@ metafile = true
 file = "config/framedblocks-client.toml.pw.toml"
 hash = "a2658c03fbe96728a556e5092480594bae7b38f31d5d05cff0b094909ce39814"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/framedblocks-common.toml.pw.toml"
@@ -1264,6 +1300,7 @@ metafile = true
 file = "config/guardvillagers-client.toml.pw.toml"
 hash = "e2b212514afef201d3dbb658303d1777f52c985778d7246199813ebf3538adfc"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/guardvillagers-common.toml.pw.toml"
@@ -1284,6 +1321,7 @@ metafile = true
 file = "config/immediatelyfast.json.pw.toml"
 hash = "745086ea2c868cb3d2ed838258fe718980b01a226aa8b1f87e70cdf836402b44"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/immersive_aircraft.json.pw.toml"
@@ -1309,6 +1347,7 @@ metafile = true
 file = "config/immersive_weathering-client.toml.pw.toml"
 hash = "d0849db342955b50781a01b8e5e6cfbf61c23cb21fd3df03c5a2955f7d2ce87f"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/immersive_weathering-common.toml.pw.toml"
@@ -1354,21 +1393,25 @@ metafile = true
 file = "config/jei/blacklist.cfg.pw.toml"
 hash = "1d10042cea71d580710cbe38605dca3ca7fe836fc006a31cc32f666676504bbe"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/jei/jei-colors.ini.pw.toml"
 hash = "b3551fc21a1496603a870ea723484919b252e6ca6315a8fa779b14c7fadc4557"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/jei/jei-debug.ini.pw.toml"
 hash = "78d5dc83befcc10485389a64289b9facba3eeeaa82679f7a80a00924a14aa7a7"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/jei/jei-mod-id-format.ini.pw.toml"
 hash = "e535224179eb5a4c71bd8c75b0a5a90d37cb00263fcab0e169a9cf183222c501"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/jeresources.toml.pw.toml"
@@ -1409,6 +1452,7 @@ metafile = true
 file = "config/l2_configs/l2library-client.toml.pw.toml"
 hash = "55af99471be3bf2ccf55800f4ec60b8461d79938d746918ef4613d061d1b3184"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/l2_configs/l2library-common.toml.pw.toml"
@@ -1419,6 +1463,7 @@ metafile = true
 file = "config/labels-client.toml.pw.toml"
 hash = "79ed8d5ffcfae0c2593e697a21d2459ca09372cfcf095a744521f52fc93b10a5"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/leavesbegone-server.toml.pw.toml"
@@ -1434,6 +1479,7 @@ metafile = true
 file = "config/lootr-client.toml.pw.toml"
 hash = "1b0b8c35ea25cb3f875d20bd87a001727b85c9583132f421ea95febbb441ced1"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/lootr-common.toml.pw.toml"
@@ -1449,6 +1495,7 @@ metafile = true
 file = "config/mantle-client.toml.pw.toml"
 hash = "66fdc245d82a27053b1a6bfa011fdcbdb4bfaf397269d2f01fdded2c1e891970"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/midnightlib.json.pw.toml"
@@ -1474,6 +1521,7 @@ metafile = true
 file = "config/moonlight-client.toml.pw.toml"
 hash = "ae6a8a4855060b87f211ebff85f19dfee63a6d347bc88b8c323648964b632043"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/moonlight-common.toml.pw.toml"
@@ -1489,6 +1537,7 @@ metafile = true
 file = "config/mowziesmobs-client.toml.pw.toml"
 hash = "fac403cb22bb77821192bfbba6fc15e5eebeba9a6db00c0764908580d338827e"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/mowziesmobs-common.toml.pw.toml"
@@ -1504,6 +1553,7 @@ metafile = true
 file = "config/naturescompass-client.toml.pw.toml"
 hash = "4dc693f5f684d1e597cdb9f951edc4c382680b1daaaad392b9402d82356a1a56"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/naturescompass-common.toml.pw.toml"
@@ -1524,6 +1574,7 @@ metafile = true
 file = "config/Obscuria/aquamirae-client.toml.pw.toml"
 hash = "2d7e2d40f91bc3101a3366573fc3d832a66e01802b79f8338cef056467c06d0c"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/Obscuria/aquamirae-common.toml.pw.toml"
@@ -1549,6 +1600,7 @@ metafile = true
 file = "config/Obscuria/obscure-api-client.toml.pw.toml"
 hash = "a3a53f624cf0da6445c6ee5cfd623d535177c4d7a7211b9f740adff8856a54a6"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/packetfixer.properties.pw.toml"
@@ -1564,11 +1616,13 @@ metafile = true
 file = "config/patchouli-client.toml.pw.toml"
 hash = "f1d0d466d0a2438a467d0782e47d53121f1568706e803cf594a2cdc08a6bf53a"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/pehkui-client.toml.pw.toml"
 hash = "234f04b93f83d639a2b9c4b9a72430a8b83d4d592319ec9e3fdbec53953e6a7c"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/pehkui-common.toml.pw.toml"
@@ -1579,6 +1633,7 @@ metafile = true
 file = "config/pickupnotifier/pickupnotifier-client.toml.pw.toml"
 hash = "456e88298b620fbb90211b744a8c7c94a61d46012964240f59d3740314e458f6"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/pickupnotifier/pickupnotifier-server.toml.pw.toml"
@@ -1594,6 +1649,7 @@ metafile = true
 file = "config/ponder-client.toml.pw.toml"
 hash = "d71a3252b40ac6ffcfec688d4647ad7a2bcda34d421cb3bbade9cb8ec31ddbe0"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/prehistoricfauna-common.toml.pw.toml"
@@ -1614,6 +1670,7 @@ metafile = true
 file = "config/productivebees-client.toml.pw.toml"
 hash = "1dd1570e72a5cdba99b588b84e63ff9808a7a47dca75b87844a10b246c7a6c01"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/quark-common.toml.pw.toml"
@@ -1629,6 +1686,7 @@ metafile = true
 file = "config/railways-client.toml.pw.toml"
 hash = "359aad4aabd325773cd19687e91393817899c6fd612fe2120ae8166fa917aacf"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/railways-common.toml.pw.toml"
@@ -1684,6 +1742,7 @@ metafile = true
 file = "config/sliceanddice-client.toml.pw.toml"
 hash = "34150d1b8277e251bfb46d408c5085743b2a3a0f11a467a427bf324b1a1e6cb9"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/sliceanddice-common.toml.pw.toml"
@@ -1699,6 +1758,7 @@ metafile = true
 file = "config/smallships-client.toml.pw.toml"
 hash = "85c57837d592194e23cbf80b67d97ddea9471e7bf255ce5e097e06e28ac0cad4"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/smallships-common.toml.pw.toml"
@@ -1719,6 +1779,7 @@ metafile = true
 file = "config/sophisticatedcore-client.toml.pw.toml"
 hash = "2fc5bb215d41b12fa83682dd3378451fe883372666f0e15a210ee8e5b05dc25f"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/sophisticatedcore-common.toml.pw.toml"
@@ -1734,6 +1795,7 @@ metafile = true
 file = "config/statues-client.toml.pw.toml"
 hash = "7c398a1c3d6563637261bc1e40bd35eba2f32beab05259875844ac6327f1c2a4"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/statues-common.toml.pw.toml"
@@ -1744,6 +1806,7 @@ metafile = true
 file = "config/storagedrawers-client.toml.pw.toml"
 hash = "282f38f81053fe3616151e2ccb4a379be85cac9b776f94860e3ad2ff9ddfde5d"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/storagedrawers-common.v2.toml.pw.toml"
@@ -1754,6 +1817,7 @@ metafile = true
 file = "config/structure_gel-client.toml.pw.toml"
 hash = "85760b6ffb6bf9a27446c2c59927879b111ffba526ed4665b2beac51a86833e5"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/structure_gel-common.toml.pw.toml"
@@ -1764,6 +1828,7 @@ metafile = true
 file = "config/supplementaries-client.toml.pw.toml"
 hash = "cd605e163cd7c1f03153414eaaded825c8eb5ba21989a369824f849e8578d0e1"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/supplementaries-common.toml.pw.toml"
@@ -1784,6 +1849,7 @@ metafile = true
 file = "config/tconstruct-client.toml.pw.toml"
 hash = "f1136b1504b97a5c289ad7599e8ecdf2e0648521b53f2f2a84436e571c700831"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/tconstruct-common.toml.pw.toml"
@@ -1829,6 +1895,7 @@ metafile = true
 file = "config/travelerstitles-forge-1_20.toml.pw.toml"
 hash = "3c2b82aac2cb199264761cc3b2ca8fe8d44987865add9b16f8e07b42785d4e84"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/treasure2-common.toml.pw.toml"
@@ -1844,6 +1911,7 @@ metafile = true
 file = "config/twilightdelight-client.toml.pw.toml"
 hash = "0e8471d567088bcf0bf5c1f8d0abe6b782ed49654ccb8d0cf76e6215845556fd"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/twilightdelight-common.toml.pw.toml"
@@ -1854,6 +1922,7 @@ metafile = true
 file = "config/twilightforest-client.toml.pw.toml"
 hash = "74b437a34353cfb68297434c5b7d0e526cbf157e6b7b9f80ab0434d49b595f95"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/twilightforest-common.toml.pw.toml"
@@ -1874,6 +1943,7 @@ metafile = true
 file = "config/upgrade_aquatic-client.toml.pw.toml"
 hash = "0bd03688ce20202900ea9da753c549311dd2cc86d7c6ace0ebbc912cd4ee5f1d"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/upgrade_aquatic-common.toml.pw.toml"
@@ -1884,6 +1954,7 @@ metafile = true
 file = "config/valhelsia_structures-client.toml.pw.toml"
 hash = "596bb37b22f1d6fd752a2b5fc6745ed18d01139cf75a73904b418c7eaa9f8b2f"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/valhelsia_structures-common.toml.pw.toml"
@@ -1899,6 +1970,7 @@ metafile = true
 file = "config/visualworkbench-client.toml.pw.toml"
 hash = "68bd82a94b618a61ea9a1d3073d4629a7df103bb0d58a374bb398e0ad7c0bcf6"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/waystones-common.toml.pw.toml"
@@ -1914,81 +1986,97 @@ metafile = true
 file = "config/xaero/lib/client.cfg.pw.toml"
 hash = "f413c843eac4d731e7f17eede3d8af89fec0a1873150a0ff9cbefc3af7c6944a"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/lib/common.cfg.pw.toml"
 hash = "9fc371359367075f288c70fb82ffd784fde3c6c7b67eb6aaa93ed2fa642f9434"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/lib/profiles/default.cfg.pw.toml"
 hash = "0841526a5684dd0d37b054fae54f0117abcff4b4d7ba51463eaf2ddfa8bef338"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/lib/server_profiles/default.cfg.pw.toml"
 hash = "d368ce732643bc6514a83c05391d9e6da4b6df8a35396934a4d0c737de3c40f3"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/minimap/client.cfg.pw.toml"
 hash = "1081cc5fe77cd90e0dd2e2684d1fc8124979c2d81d43b65e30e6ac6bf0eaac03"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/minimap/common.cfg.pw.toml"
 hash = "aae78a0d6e592aafaa2e97f6e4143b1af2bd65fd317dfae1be51640a2b8064ef"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/minimap/default_radar_categories_client.json.pw.toml"
 hash = "e6119bd78b8374f47bcc3213b4acf689a55ba88ae6db92e4f3aa769039c74a71"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/minimap/default_radar_categories_server.json.pw.toml"
 hash = "f9b7290486e0e8ca9cfb09520b6753df920bd59732e7b4e282c6bd1d867ee5a8"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/minimap/profiles/default.cfg.pw.toml"
 hash = "f267b04e96dbb3b7fce6758eead6d0afe0b0647cb00c8545cfd944d76352bc91"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/minimap/profiles/entity_radar_categories/default.cfg.json.pw.toml"
 hash = "c110c2a71aed716831d816db39ce28ac3875f9c5056566aba557f359ceefb3e3"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/minimap/profiles/info_display_config/default.cfg.txt.pw.toml"
 hash = "fb8afebc1fd7007327f23ade689b0fdb9f0baba2ff08609230cc44f2de88b300"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/minimap/server_profiles/default.cfg.pw.toml"
 hash = "c2f30f57d532fc4cd06ee0fe6c2a93039c275c8c897edd02fddfc251a9c5186a"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/world-map/client.cfg.pw.toml"
 hash = "b3acfd985f7ba71251b6bdfedfb3fdf3a01d1b00a6209fa6c83fb2ea203ef9b8"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/world-map/common.cfg.pw.toml"
 hash = "f070118f08f5df503563fa3597880dd3d7e89774d4e82b36b2019128cb937e78"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/world-map/profiles/default.cfg.pw.toml"
 hash = "a4a821905949ba567d2e7775d673b5c535c3180d77e28e0d5baf1a3a2aa8affd"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaero/world-map/server_profiles/default.cfg.pw.toml"
 hash = "821e724d11740e3b46fecd84651abe4efeb65bd8338fa762603db9fb9a0f0c07"
 metafile = true
+preserve = true
 
 [[files]]
 file = "config/xaerohud.txt.pw.toml"

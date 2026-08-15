@@ -81,6 +81,7 @@ def main() -> int:
     destinations: dict[str, str] = {}
     payload_count = 0
     external_count = 0
+    preserved_count = 0
 
     for entry in index.get("files", []):
         relative = entry.get("file", "")
@@ -146,6 +147,15 @@ def main() -> int:
                 external_count += 1
 
         destination_lower = destination.lower()
+        if entry.get("preserve", False):
+            preserved_count += 1
+            filename_lower = Path(destination).name.lower()
+            binary_setting = filename_lower.endswith((".png", ".jpg", ".jpeg", ".gif", ".webp"))
+            if not entry.get("metafile", False):
+                errors.append(f"preserve is only allowed on setting metafiles: {relative}")
+            elif side != "client" or not destination_lower.startswith("config/") or binary_setting:
+                errors.append(f"preserve is only allowed on client text settings: {relative} -> {destination}")
+
         destination_parts = set(Path(destination_lower).parts)
         if Path(destination_lower).name in PROTECTED_FILES or destination_parts & PROTECTED_PARTS:
             errors.append(f"protected player/server data is managed: {destination}")
@@ -168,6 +178,7 @@ def main() -> int:
         "categories": dict(sorted(category_counts.items())),
         "hostedPayloads": payload_count,
         "externalDownloads": external_count,
+        "preservedClientSettings": preserved_count,
         "errors": errors,
     }
     print(json.dumps(report, indent=2))

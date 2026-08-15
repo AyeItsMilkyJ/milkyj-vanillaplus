@@ -83,6 +83,10 @@ INSTALL ONCE
 3. Browse to this ZIP itself. Do not unzip it.
 4. Sign into Minecraft and press Play.
 5. The first launch downloads the managed pack. Later launches download only changes.
+6. Keep using this same instance. Do not import another ZIP for routine updates.
+
+YOUR SETTINGS
+Video/render settings, controls, resource-pack order, shader choice and mod-specific client preferences are preserved when this instance updates. A newly imported instance is separate and starts from the pack defaults.
 
 SERVER RESTARTS
 The server restarts cleanly every $RestartIntervalMinutes minutes ($restartHours hours), counted from when startup reaches Done.
@@ -97,7 +101,7 @@ If a shader misbehaves on a particular GPU, switch shaders before changing pack 
 MEMORY
 The shared instance allows 4–8 GB. Do not allocate nearly all of the computer's RAM.
 
-The installer does not contain accounts, tokens, worlds, saves, screenshots, logs, keybinds, or personal shader selection/settings.
+The installer does not contain accounts, tokens, worlds, saves, screenshots, logs, keybinds, or personal shader selection/settings. Those stay local to each player's existing instance.
 "@
 [IO.File]::WriteAllText(
     (Join-Path $minecraft 'README-MILKYJ-MATES.txt'),

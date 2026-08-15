@@ -96,7 +96,7 @@ The server supervisor:
 
 ### 9. Permanent updates and compatibility repairs
 
-Players import one Prism ZIP once. Before every launch, Packwiz compares the public manifest, downloads only changed managed files and removes obsolete files it previously managed. It does not overwrite accounts, saves, screenshots, logs, controls, shader selection or per-shader settings.
+Players import one Prism ZIP once and keep using that same instance. Before every launch, Packwiz compares the public manifest, downloads only changed managed files and removes obsolete files it previously managed. It does not overwrite accounts, saves, screenshots, logs, controls, video/render settings, resource-pack order, shader selection or per-shader settings. Mod-specific client settings now receive sensible defaults on their first install and are preserved on later updates; server and gameplay configs still update normally.
 
 Compatibility work has repaired:
 

@@ -64,6 +64,31 @@ try {
     if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'screenshots\personal-sentinel.txt'))) { throw 'Packwiz removed a personal screenshot sentinel.' }
     if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'saves\personal-world\level.dat'))) { throw 'Packwiz removed a personal save sentinel.' }
     if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'shaderpacks\personal-sentinel.txt'))) { throw 'Packwiz removed a personal shaderpack sentinel.' }
+    $preservedSetting = 'config\xaero\minimap\client.cfg'
+    $preservedClientPath = Join-Path $clientRoot $preservedSetting
+    $preservedHostPath = Join-Path (Join-Path $hostRoot 'payload\client') $preservedSetting
+    if (-not (Test-Path -LiteralPath $preservedClientPath -PathType Leaf)) { throw "Fresh install omitted preserved default: $preservedSetting" }
+    if ((Get-FileHash -LiteralPath $preservedClientPath -Algorithm SHA256).Hash -ne (Get-FileHash -LiteralPath $preservedHostPath -Algorithm SHA256).Hash) {
+        throw "Fresh install did not receive the supplied default for $preservedSetting"
+    }
+
+    # Exercise a real manifest change: a preserved client setting must keep the
+    # player's edit, while an ordinary managed client resource must receive v2.
+    $personalSettingSentinel = 'personal-xaero-setting=true'
+    [IO.File]::WriteAllText($preservedClientPath, $personalSettingSentinel, [Text.UTF8Encoding]::new($false))
+    [IO.File]::WriteAllText($preservedHostPath, 'pack-xaero-default-v2=true', [Text.UTF8Encoding]::new($false))
+    $managedResource = 'resourcepacks\MilkyJ Stability Fixes\pack.mcmeta'
+    $managedClientPath = Join-Path $clientRoot $managedResource
+    $managedHostPath = Join-Path (Join-Path $hostRoot 'payload\client') $managedResource
+    $managedV2 = '{"pack":{"pack_format":15,"description":"Packwiz preservation test v2"}}'
+    [IO.File]::WriteAllText($managedClientPath, '{"player":"edit"}', [Text.UTF8Encoding]::new($false))
+    [IO.File]::WriteAllText($managedHostPath, $managedV2, [Text.UTF8Encoding]::new($false))
+    & (Join-Path $PSScriptRoot 'Update-PackMetadata.ps1') -ProjectRoot $hostRoot
+    Push-Location $clientRoot
+    try { & $java -jar 'packwiz-installer-bootstrap.jar' -g -s client $localPackUrl; $settingsUpdateExit = $LASTEXITCODE } finally { Pop-Location }
+    if ($settingsUpdateExit -ne 0) { throw "Client Packwiz settings-update test failed with exit code $settingsUpdateExit" }
+    if ((Get-Content -LiteralPath $preservedClientPath -Raw) -ne $personalSettingSentinel) { throw 'Packwiz reset a preserved mod-specific client setting.' }
+    if ((Get-Content -LiteralPath $managedClientPath -Raw) -ne $managedV2) { throw 'Packwiz failed to update an ordinary managed client resource.' }
     $clientJars = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter *.jar)
     if ($clientJars.Count -ne 235) { throw "Expected 235 client JARs; installed $($clientJars.Count)." }
 
@@ -207,7 +232,9 @@ try {
         personalScreenshotsPreserved = $true
         personalSavesPreserved = $true
         personalShaderSettingsPreserved = $true
-        packwizDestinationCount = 689
+        modSpecificClientSettingsPreserved = $true
+        managedClientResourcesStillUpdate = $true
+        packwizDestinationCount = 709
         serverReachedDone = (-not $SkipServerLaunch)
         questParserLoaded = if ($SkipServerLaunch) { $null } else { $questParserLoaded }
         compatibilityStaticValidation = $true

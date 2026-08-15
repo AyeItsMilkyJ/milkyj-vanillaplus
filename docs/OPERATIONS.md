@@ -119,6 +119,16 @@ To remove a hosted file, delete both its payload and its matching `.pw.toml`, th
 
 Resource-pack archives from Modrinth and the custom **MilkyJ Stability Fixes** files are client-only and managed. Shader packs are deliberately unmanaged, so players' shader archives, selected shader, and per-shader `.txt` settings remain personal.
 
+### Player settings and Packwiz preservation
+
+Players must keep using the same imported Prism instance. Importing a newer ZIP creates a different instance and cannot inherit personal settings from the old one.
+
+`options.txt` remains completely outside Packwiz management, so Minecraft video settings, render distance, controls, selected resource packs and selected shader are never replaced by an update. Shader sidecars, saves, screenshots, Xaero player data and Distant Horizons caches are also unmanaged.
+
+Text settings under `payload/client/config` are installed as the pack's defaults on a clean client and emitted into `index.toml` with Packwiz `preserve = true`. After that first install, Packwiz leaves the player's existing mod-specific settings alone. Client binary assets, `defaultconfigs`, resource packs and every `both`/`server` config remain normally managed so compatibility and gameplay fixes still update.
+
+If one preserved mod config becomes corrupt or the player wants the newest pack default, close Minecraft, delete only that individual file from the instance's `minecraft/config` folder, and press Play. Packwiz will restore the current default. Do not remove a preserved entry from the manifest casually: an entry removed from the Packwiz index is obsolete managed content and may be deleted by the updater.
+
 ## Publishing an update
 
 1. Increment `version` in `packwiz\pack.toml` and `packVersion`/`ExportVersion` when appropriate.
@@ -205,7 +215,7 @@ Before replacing the world, the restore script automatically backs up the curren
 
 ## What is never managed
 
-The Packwiz index and repository ignore rules exclude `options.txt`, keybinding data stored in options, `servers.dat`, saves, screenshots, logs, crash reports, account/token files, shader packs/settings, Xaero player data, Distant Horizons local cache, live worlds, and backups.
+The Packwiz index and repository ignore rules exclude `options.txt`, keybinding data stored in options, `servers.dat`, saves, screenshots, logs, crash reports, account/token files, shader packs/settings, Xaero player data, Distant Horizons local cache, live worlds, and backups. Mod-specific client text settings are managed only for their first-install defaults and are then preserved as described above.
 
 Exact managed/excluded file and side reports are in `audit\mods.csv`, `audit\managed-files.csv`, and `audit\excluded-files.csv`.
 

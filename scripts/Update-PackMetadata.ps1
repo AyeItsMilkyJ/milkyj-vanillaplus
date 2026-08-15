@@ -108,10 +108,27 @@ foreach ($file in Get-ChildItem -LiteralPath $packRoot -Recurse -File -Force) {
         continue
     }
 
+    $isMetafile = $relative.EndsWith('.pw.toml', [StringComparison]::OrdinalIgnoreCase)
+    $preservePlayerCopy = $false
+    if ($isMetafile -and $relative.StartsWith('config/', [StringComparison]::OrdinalIgnoreCase)) {
+        $metadataText = [IO.File]::ReadAllText($file.FullName)
+        $sideMatch = [regex]::Match($metadataText, '(?m)^side\s*=\s*"([^"]+)"')
+        $filenameMatch = [regex]::Match($metadataText, '(?m)^filename\s*=\s*"([^"]+)"')
+        $isClientOnly = $sideMatch.Success -and $sideMatch.Groups[1].Value -eq 'client'
+        $isTextSetting = $filenameMatch.Success -and
+            -not [IO.Path]::GetExtension($filenameMatch.Groups[1].Value).Equals('.png', [StringComparison]::OrdinalIgnoreCase) -and
+            -not [IO.Path]::GetExtension($filenameMatch.Groups[1].Value).Equals('.jpg', [StringComparison]::OrdinalIgnoreCase) -and
+            -not [IO.Path]::GetExtension($filenameMatch.Groups[1].Value).Equals('.jpeg', [StringComparison]::OrdinalIgnoreCase) -and
+            -not [IO.Path]::GetExtension($filenameMatch.Groups[1].Value).Equals('.gif', [StringComparison]::OrdinalIgnoreCase) -and
+            -not [IO.Path]::GetExtension($filenameMatch.Groups[1].Value).Equals('.webp', [StringComparison]::OrdinalIgnoreCase)
+        $preservePlayerCopy = $isClientOnly -and $isTextSetting
+    }
+
     $entries += [pscustomobject]@{
         File = $relative
         Hash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
-        Metafile = $relative.EndsWith('.pw.toml', [StringComparison]::OrdinalIgnoreCase)
+        Metafile = $isMetafile
+        Preserve = $preservePlayerCopy
     }
 }
 $entries = @($entries | Sort-Object File)
@@ -124,6 +141,11 @@ foreach ($entry in $entries) {
     [void]$builder.Append("hash = $(ConvertTo-TomlString $entry.Hash)`n")
     if ($entry.Metafile) {
         [void]$builder.Append("metafile = true`n")
+    }
+    if ($entry.Preserve) {
+        # Packwiz installs the supplied default on a clean client, then leaves an
+        # existing player's copy untouched during later updates.
+        [void]$builder.Append("preserve = true`n")
     }
 }
 
@@ -144,4 +166,5 @@ $packText = $indexPattern.Replace(
 [IO.File]::WriteAllText($packFile, $packText, $utf8)
 
 Write-Host "Refreshed $($entries.Count) Packwiz index entries."
+Write-Host "Preserving $(@($entries | Where-Object Preserve).Count) client setting files after first install."
 Write-Host "index.toml SHA-256: $indexHash"
