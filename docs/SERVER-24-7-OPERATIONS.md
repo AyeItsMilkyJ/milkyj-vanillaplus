@@ -1,6 +1,6 @@
 # Windows 24/7 dedicated-server operations
 
-Status: built and tested only against disposable installations. No scheduled task was installed, no production tools were deployed, and the live server/world were untouched.
+Status: the management tools and optional Discord helper are installed on the dedicated-server PC. Discord lifecycle behaviour was validated against disposable installations only. No scheduled task was installed, no webhook secret was created, and the running server process/world were not interrupted.
 
 ## Architecture
 
@@ -13,6 +13,29 @@ If a mod such as Distant Horizons leaves the JVM alive after world saving, the s
 Unexpected exits use backoff of 15, 30, 60, then 120 seconds. Four failures inside ten minutes stop automatic retry and surface `failed-repeatedly`. A stable 20-minute run resets the rapid-failure history. Intentional stop requests cancel restarts.
 
 No Packwiz update occurs during startup, crash recovery, scheduled startup, or scheduled backup.
+
+## Discord status notifications
+
+Discord incoming-webhook notifications are optional and require no bot account. When configured, the supervisor posts colour-coded messages for:
+
+- server online after a fresh `Done` line;
+- clean offline shutdown;
+- operator or scheduled restart;
+- unexpected crash plus recovery delay; and
+- repeated failures or supervisor errors that need attention.
+
+The webhook is a secret. It is stored only in `discord-webhook.txt` at the dedicated-server root, is covered by `.gitignore`, is never printed by the setup script, and is not part of a Packwiz update or backup. Notification delivery failure only emits a warning and cannot stop Minecraft or its restart supervisor.
+
+To configure it:
+
+1. In the desired Discord text channel, open **Edit Channel → Integrations → Webhooks**, create a webhook named `MilkyJ Server Status`, and copy its URL.
+2. Double-click `packwiz-tools\SET UP DISCORD STATUS.bat` on the server PC.
+3. Paste the URL into the hidden prompt and press Enter. A green connection-test message must appear in the channel.
+4. Keep using the normal root `run.bat` launcher. The newly configured lifecycle messages begin the next time that supervisor starts.
+
+Never paste the webhook URL into chat, commit it, include it in the mate ZIP, or show it in a screenshot. If it leaks, delete that webhook in Discord and create a replacement.
+
+This is a server-local notifier. If Java crashes while Windows and the internet are available, it can report the crash. If the entire PC, router, power, or internet connection dies, it cannot send an immediate offline message; that case requires a separate externally hosted uptime monitor.
 
 ## One-time deployment (manual; not run)
 
@@ -33,6 +56,7 @@ The double-click wrappers in that folder are:
 - `BACKUP SERVER.bat`
 - `UPDATE SERVER.bat`
 - `VIEW LATEST LOG.bat`
+- `SET UP DISCORD STATUS.bat`
 
 Each wrapper delegates to PowerShell and contains no duplicated server logic.
 
@@ -98,7 +122,7 @@ World restoration remains a separate high-impact option in `Restore-ServerBackup
 
 ## Status output
 
-`SERVER STATUS.bat` reports running/stopped state, listener/Minecraft PID, recorded launch PID, port, supervisor state/PID, current recorded pack version, latest verified backup, last start, latest crash/restart event, latest Minecraft log, and whether an update is safe.
+`SERVER STATUS.bat` reports running/stopped state, listener/Minecraft PID, recorded launch PID, port, supervisor state/PID, current recorded pack version, latest verified backup, last start, latest crash/restart event, latest Minecraft log, whether Discord notifications are configured, and whether an update is safe. It never prints the webhook URL.
 
 ## Disposable test evidence
 
@@ -110,6 +134,7 @@ The lightweight management harness at port 25577 passed:
 - normal stop with world-save evidence;
 - graceful restart;
 - forced unexpected exit, watchdog restart, and backoff;
+- Discord online/offline/restart/crash/failure lifecycle messages against a loopback-only fake webhook;
 - repeated-failure cut-off;
 - verified ZIP backup and managed-file rollback preparation;
 - stopped status/update-safe reporting;

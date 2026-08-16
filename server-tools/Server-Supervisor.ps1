@@ -6,6 +6,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 . (Join-Path $PSScriptRoot 'Common.ps1')
+. (Join-Path $PSScriptRoot 'Discord-Notifications.ps1')
 $serverRootResolved = Assert-ValidServerRoot $ServerRoot
 $settings = Get-ServerSettings -ServerRoot $serverRootResolved -SettingsPath $SettingsPath
 $managementRoot = Get-ManagementRoot $serverRootResolved
@@ -83,9 +84,26 @@ try {
         $state.manualInterventionRequired = $false
         Save-State
         Write-SupervisorLog "Minecraft launch process started as PID $($child.Id)."
+        $onlineNotified = $false
 
         $intentional = $false
         while (-not $child.HasExited) {
+            if (-not $onlineNotified) {
+                $latestLog = Join-Path $serverRootResolved 'logs\latest.log'
+                $freshDone = $false
+                if (Test-Path -LiteralPath $latestLog -PathType Leaf) {
+                    $logItem = Get-Item -LiteralPath $latestLog
+                    if ($logItem.LastWriteTime -ge $startAt) {
+                        $freshDone = [bool](Select-String -LiteralPath $latestLog -SimpleMatch 'Done (' -Quiet)
+                    }
+                }
+                if ($freshDone) {
+                    $onlineNotified = $true
+                    Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event online `
+                        -Description 'The server finished starting and is accepting players.' `
+                        -Fields @{ Port = $state.port; 'Server PID' = $child.Id }
+                }
+            }
             if (Test-Path -LiteralPath $stopRequest) {
                 $intentional = $true
                 $state.status = 'stopping'
@@ -102,6 +120,8 @@ try {
                     $state.status = 'manual-intervention-required'
                     $state.manualInterventionRequired = $true
                     Set-Event "Minecraft did not exit within $($settings.gracefulStopTimeoutSeconds)s after stop. It was NOT killed; manual intervention is required (possible lingering JVM/Distant Horizons shutdown)."
+                    Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event failed `
+                        -Description 'Minecraft did not finish its clean shutdown in time. Manual attention is required; the JVM was not force-killed.'
                     return
                 }
                 break
@@ -126,9 +146,14 @@ try {
                 $state.status = 'manual-intervention-required'
                 $state.manualInterventionRequired = $true
                 Set-Event "Launch process exited but port $($state.port) is still listening. No process was killed; manual intervention is required."
+                Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event failed `
+                    -Description "The launch process exited but port $($state.port) is still open. Manual attention is required."
             } else {
                 $state.status = 'stopped'
                 Set-Event "Intentional shutdown completed with exit code $exitCode; port $($state.port) is no longer listening."
+                Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event offline `
+                    -Description 'The server stopped cleanly and the world was given time to save.' `
+                    -Fields @{ 'Exit code' = $exitCode }
             }
             break
         }
@@ -144,6 +169,9 @@ try {
             $state.status = 'failed-repeatedly'
             $state.manualInterventionRequired = $true
             Set-Event "Minecraft exited unexpectedly $($crashTimes.Count) times inside $($settings.rapidFailureWindowMinutes) minutes. Automatic restarts stopped. Last exit=$exitCode."
+            Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event failed `
+                -Description "The server exited unexpectedly $($crashTimes.Count) times in $($settings.rapidFailureWindowMinutes) minutes. Automatic retries stopped." `
+                -Fields @{ 'Last exit code' = $exitCode }
             break
         }
 
@@ -154,11 +182,16 @@ try {
         $state.status = 'restart-backoff'
         $state.restartCount = [int]$state.restartCount + 1
         Set-Event "Unexpected exit code $exitCode after $([Math]::Round($uptime.TotalSeconds, 1))s; restart $($state.restartCount) scheduled after ${delay}s backoff."
+        Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event crashed `
+            -Description "The server exited unexpectedly. A recovery restart is scheduled in $delay seconds." `
+            -Fields @{ 'Exit code' = $exitCode; Uptime = "$([Math]::Round($uptime.TotalSeconds, 1)) seconds"; Attempt = $state.restartCount }
         $backoffDeadline = (Get-Date).AddSeconds($delay)
         while ((Get-Date) -lt $backoffDeadline) {
             if (Test-Path -LiteralPath $stopRequest) {
                 $state.status = 'stopped'
                 Set-Event 'Intentional stop request cancelled a pending crash restart.'
+                Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event offline `
+                    -Description 'A pending crash-recovery restart was cancelled by an intentional stop request.'
                 return
             }
             Start-Sleep -Milliseconds 250
@@ -168,6 +201,8 @@ try {
     $state.status = 'supervisor-error'
     $state.manualInterventionRequired = $true
     Set-Event "Supervisor error: $($_.Exception.Message)"
+    Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event failed `
+        -Description 'The server supervisor encountered an error and needs attention.'
     throw
 } finally {
     if ($lock) { $lock.Dispose() }

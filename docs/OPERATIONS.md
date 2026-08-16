@@ -173,6 +173,8 @@ The copy operation creates `Minecraft Server\packwiz-tools`; it does not install
 
 Use the double-click `START SERVER.bat`, `STOP SERVER.bat`, `RESTART SERVER.bat`, `SERVER STATUS.bat`, `BACKUP SERVER.bat`, and operator-controlled `UPDATE SERVER.bat` wrappers in that folder. The new supervisor launches Forge directly, gracefully stops through Minecraft stdin, restarts unexpected crashes with bounded backoff, and never applies an update by itself.
 
+Optional Discord online/offline, restart and crash alerts are configured locally with `packwiz-tools\SET UP DISCORD STATUS.bat`. The secret webhook is stored only in the server root's ignored `discord-webhook.txt`; see `docs\SERVER-24-7-OPERATIONS.md` for setup and limitations.
+
 Cold backups are verified timestamped ZIPs under `backups\packwiz`. `UPDATE SERVER.bat` refuses active server processes, validates a backup before Packwiz, validates installation/startup afterward, and retains an explicit rollback path. Full architecture, scheduled-task install/remove commands, retention, status fields, and test evidence are in [SERVER-24-7-OPERATIONS.md](SERVER-24-7-OPERATIONS.md).
 
 ## Rollback

@@ -48,6 +48,8 @@ server-runtime/
 **/accounts.json
 **/*session*.json
 **/*auth*.json
+**/discord-webhook.txt
+**/*discord*webhook*.secret
 **/screenshots/
 **/saves/
 **/logs/

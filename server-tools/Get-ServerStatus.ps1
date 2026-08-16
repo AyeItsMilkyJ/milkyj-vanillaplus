@@ -2,12 +2,14 @@
 param([string]$ServerRoot, [string]$SettingsPath, [switch]$AsJson)
 
 . (Join-Path $PSScriptRoot 'Common.ps1')
+. (Join-Path $PSScriptRoot 'Discord-Notifications.ps1')
 $serverRootResolved = Assert-ValidServerRoot (Resolve-ServerRoot $ServerRoot)
 $settings = Get-ServerSettings -ServerRoot $serverRootResolved -SettingsPath $SettingsPath
 $activity = Get-ServerActivity $serverRootResolved
 $state = $activity.State
 $latestBackup = Get-LatestBackup $serverRootResolved $settings
 $latestLog = Join-Path $serverRootResolved 'logs\latest.log'
+$discordWebhookFile = Get-DiscordWebhookFilePath -ServerRoot $serverRootResolved -Settings $settings
 $result = [ordered]@{
     serverRoot = $serverRootResolved
     server = if ($activity.Listeners.Count -gt 0 -or $activity.ServerProcesses.Count -gt 0) { 'RUNNING' } else { 'STOPPED' }
@@ -23,6 +25,7 @@ $result = [ordered]@{
     latestServerStartTime = if ($state -and $state.latestServerStartAt) { [string]$state.latestServerStartAt } else { 'unknown' }
     latestCrashOrRestartEvent = if ($state -and $state.latestCrashOrRestartEvent) { [string]$state.latestCrashOrRestartEvent } else { 'none recorded' }
     latestMinecraftLog = if (Test-Path -LiteralPath $latestLog) { $latestLog } else { 'none' }
+    discordNotifications = if (Test-Path -LiteralPath $discordWebhookFile -PathType Leaf) { 'CONFIGURED' } else { 'NOT CONFIGURED' }
     updateSafe = -not $activity.Running
 }
 if ($AsJson) { $result | ConvertTo-Json -Depth 6 } else { [pscustomobject]$result | Format-List }

@@ -30,6 +30,26 @@ New-Item -ItemType Directory -Path $serverRoot,$backupRoot,(Join-Path $serverRoo
 
 $python = (Get-Command python -ErrorAction Stop).Source
 $fake = Join-Path $root 'tests\fake_minecraft_server.py'
+$webhookListener = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, 0)
+$webhookListener.Start()
+$webhookPort = ([Net.IPEndPoint]$webhookListener.LocalEndpoint).Port
+$webhookListener.Stop()
+$webhookRecording = Join-Path $testRoot 'discord-requests.jsonl'
+$webhookProcess = Start-Process -FilePath $python -ArgumentList @(
+    ('"' + (Join-Path $root 'tests\fake_discord_webhook.py') + '"'), '--port', "$webhookPort", '--output', ('"' + $webhookRecording + '"')
+) -WindowStyle Hidden -RedirectStandardOutput (Join-Path $testRoot 'discord-webhook.stdout.log') `
+    -RedirectStandardError (Join-Path $testRoot 'discord-webhook.stderr.log') -PassThru
+$webhookReadyDeadline = (Get-Date).AddSeconds(10)
+do {
+    try {
+        $webhookClient = [Net.Sockets.TcpClient]::new()
+        $webhookClient.Connect('127.0.0.1', $webhookPort)
+        $webhookReady = $webhookClient.Connected
+        $webhookClient.Dispose()
+    } catch { Start-Sleep -Milliseconds 100 }
+} while (-not $webhookReady -and (Get-Date) -lt $webhookReadyDeadline)
+if (-not $webhookReady) { throw 'Disposable Discord webhook did not start.' }
+[IO.File]::WriteAllText((Join-Path $serverRoot 'discord-webhook.txt'), "http://127.0.0.1:$webhookPort/webhook`r`n", [Text.UTF8Encoding]::new($false))
 $settingsPath = Join-Path $testRoot 'test-settings.json'
 $settings = [ordered]@{
     packUrl = 'https://example.invalid/packwiz/pack.toml'
@@ -44,6 +64,10 @@ $settings = [ordered]@{
     backupRetentionDaily = 2
     backupRetentionWeekly = 2
     taskNamePrefix = 'MilkyJ Minecraft Disposable Infrastructure Test'
+    discordWebhookFile = 'discord-webhook.txt'
+    discordServerName = 'Disposable Infrastructure Test'
+    discordWebhookUsername = 'Disposable Status'
+    discordAllowInsecureLocalTest = $true
     launchExecutable = $python
     launchArguments = @($fake, '--server-root', $serverRoot, '--port', "$TestPort")
 }
@@ -151,6 +175,17 @@ try {
     Wait-Until { -not (Get-NetTCPConnection -LocalPort $TestPort -State Listen -ErrorAction SilentlyContinue) } 5 'Lingering test process did not release its disposable port.'
     $results.lingeringJvmNotKilled = 'PASS'
 
+    $discordRecords = @(Get-Content -LiteralPath $webhookRecording -ErrorAction SilentlyContinue | ForEach-Object { $_ | ConvertFrom-Json })
+    $discordEvents = @($discordRecords | ForEach-Object {
+        [regex]::Match([string]$_.body.embeds[0].footer.text, 'event=([a-z]+)').Groups[1].Value
+    })
+    foreach ($expectedEvent in @('online', 'offline', 'restarting', 'crashed', 'failed')) {
+        if ($expectedEvent -notin $discordEvents) { throw "Lifecycle Discord notification was not observed: $expectedEvent" }
+    }
+    $results.discordLifecycleNotifications = 'PASS'
+    $results.discordEventsObserved = @($discordEvents | Sort-Object -Unique)
+    $results.discordUsedDisposableLoopbackOnly = $true
+
     $productionAfter = @(Get-NetTCPConnection -LocalPort 25565 -State Listen -ErrorAction SilentlyContinue | Select-Object OwningProcess,LocalAddress,LocalPort)
     if (($productionBefore | ConvertTo-Json -Compress) -ne ($productionAfter | ConvertTo-Json -Compress)) { throw 'Production port 25565 listener state changed during disposable tests.' }
     $results.productionPathProtection = 'PASS'
@@ -169,6 +204,7 @@ try {
             if ($supervisor -and $supervisor.CommandLine -match 'server-infrastructure-test') { Stop-Process -Id $state.supervisorPid -Force }
         }
     }
+    if ($webhookProcess -and -not $webhookProcess.HasExited) { Stop-Process -Id $webhookProcess.Id -Force }
 }
 
 $auditPath = Join-Path $root 'audit\server-infrastructure-tests.json'

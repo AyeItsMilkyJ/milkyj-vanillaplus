@@ -90,6 +90,7 @@ The server supervisor:
 - launches Forge directly under Java 17;
 - detects unexpected exits and relaunches with a delay;
 - announces scheduled restarts in chat;
+- can post secure Discord online, offline, restart, crash and attention alerts through an optional local webhook;
 - runs `save-all flush` and performs a normal stop;
 - restarts every 180 minutes after the server reaches `Done`; and
 - keeps the Java process in the supervisor console rather than opening a separate GUI window.
