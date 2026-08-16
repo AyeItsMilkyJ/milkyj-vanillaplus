@@ -51,7 +51,7 @@ function Get-DiscordWebhookUrl {
 
     $allowLocal = [bool](Get-DiscordSettingValue $Settings 'discordAllowInsecureLocalTest' $false)
     if (-not (Test-DiscordWebhookUrl -WebhookUrl $candidate -AllowLocalTest:$allowLocal)) {
-        Write-Warning 'Discord notifications are disabled because the configured webhook URL is invalid. The URL was not printed.'
+        try { Write-Warning 'Discord notifications are disabled because the configured webhook URL is invalid. The URL was not printed.' } catch { }
         return $null
     }
     return $candidate
@@ -118,15 +118,19 @@ function Send-DiscordServerNotification {
     }
     $separator = if ($url.Contains('?')) { '&' } else { '?' }
     $endpoint = $url + $separator + 'wait=true'
+    $json = $payload | ConvertTo-Json -Depth 10 -Compress
+    # Windows PowerShell 5.1 can otherwise submit a string request body using an
+    # ANSI-compatible encoding, which turns emoji into question marks.
+    $bodyBytes = [Text.UTF8Encoding]::new($false).GetBytes($json)
 
     try {
-        $null = Invoke-RestMethod -Method Post -Uri $endpoint -ContentType 'application/json' `
-            -Body ($payload | ConvertTo-Json -Depth 10 -Compress) -TimeoutSec 10
+        $null = Invoke-RestMethod -Method Post -Uri $endpoint -ContentType 'application/json; charset=utf-8' `
+            -Body $bodyBytes -TimeoutSec 10
         if ($PassThru) { return $true }
     } catch {
         $safeMessage = "Discord notification '$Event' failed: $($_.Exception.Message)"
         if ($ThrowOnFailure) { throw $safeMessage }
-        Write-Warning $safeMessage
+        try { Write-Warning $safeMessage } catch { }
         if ($PassThru) { return $false }
     }
 }
