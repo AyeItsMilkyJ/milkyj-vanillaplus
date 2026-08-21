@@ -1,12 +1,12 @@
 # Windows 24/7 dedicated-server operations
 
-Status: the management tools, visible console launcher, three-hour restart policy, and optional Discord helper are installed on the dedicated-server PC. Automated validation used disposable installations only. No scheduled task was installed, no webhook secret was created, and deployment did not start Java or touch the world.
+Status: the management tools, visible console launcher, three-hour restart policy, and optional Discord helper are installed on the dedicated-server PC. Automated validation used disposable installations, followed by a supervised cold-backed rc2 deployment and live visible-console startup. No scheduled task was installed, and no webhook secret is stored in this repository.
 
 ## Architecture
 
 `Server-Supervisor.ps1` is the single long-lived owner of the Minecraft process. It launches Java directly with Forge's `user_jvm_args.txt` and `libraries/.../win_args.txt`; it deliberately does not invoke legacy wrappers that may start a second watchdog. The supervisor owns Minecraft stdin, records process state under `server-management`, and writes a timestamped supervisor log per session.
 
-Forge runs with `nogui`, so there is no separate graphical Java server window. When root `run.bat` or `packwiz-tools\START SERVER.bat` is double-clicked, CMD, PowerShell, and Java share one visible console window titled **MilkyCraft Vanilla+ Server - Java Console**. Raw Forge/Minecraft stdout and stderr appear there. The supervisor asynchronously reads commands typed into that same window and forwards ordinary commands to Java; it handles `restart` and `stop` as safe lifecycle requests. There are separate processes in Task Manager, but only one terminal window.
+Forge runs with `nogui`, so there is no separate graphical Java server window. When root `run.bat` or `packwiz-tools\START SERVER.bat` is double-clicked, CMD, PowerShell, and Java share one visible console window titled **MilkyCraft Vanilla+ Server - Java Console**. Raw Forge/Minecraft stdout and stderr appear there. The supervisor reads the console through a non-blocking `StreamReader` and forwards ordinary commands to Java; it handles `restart` and `stop` as safe lifecycle requests. This avoids Windows PowerShell 5.1's synchronized `Console.In.ReadLineAsync` startup block. There are separate processes in Task Manager, but only one terminal window.
 
 `Start-Server.ps1` refuses a duplicate listener, supervisor, or recorded server PID. `Stop-Server.ps1` creates a server-local stop request. The supervisor writes Minecraft's normal `stop` command to stdin, waits for the launch process to exit, and checks that the configured port is no longer listening.
 
@@ -163,10 +163,10 @@ The lightweight management harness at port 25577 passed:
 - simulated lingering JVM reported but not killed;
 - production path and port guards.
 
-The focused one-console harness at port 25579 also passed inline supervisor ownership, direct Minecraft child ownership, no second CMD/PowerShell child, inherited raw stdout/stderr, interactive command forwarding, external clean-stop recognition, save-before-stop order, warnings, and a compressed scheduled restart/relaunch cycle. Port 25565 and all live data remained untouched. A final visual acceptance check still requires double-clicking live `run.bat`, issuing `list`, and then typing `stop`.
+The focused one-console harness at port 25579 also passed its non-blocking input-reader guard, inline supervisor ownership, direct Minecraft child ownership, no second CMD/PowerShell child, inherited raw stdout/stderr, interactive command forwarding, external clean-stop recognition, save-before-stop order, warnings, and a compressed scheduled restart/relaunch cycle. Port 25565 and all live data remained untouched by the harness. A supervised live launch additionally confirmed that Java starts before any command is typed and the one-window state is reported as `VISIBLE / INTERACTIVE`; issuing `list` remains a simple operator-facing visual check.
 
 The supervisor-resilience harness at port 25581 injected the exact historical broken-pipe `HostException`, rejected a live unrelated recycled PID, force-ended a disposable supervisor while its fake Minecraft child remained online, and then ended the child. It confirmed no escaped console exception, continued file logging, cleared terminal process identities, reported the orphan as **RUNNING / UNMANAGED** and update-unsafe, blocked a duplicate start, reconciled state only after every real process/listener was gone, and completed a clean recovery launch/save/exit. It never used port 25565 or a live path.
 
-The latest real Forge integration at port 25578 used the clean disposable 206-JAR Packwiz server installation; it did not read a live server path, world or private server file. It passed direct Java ownership, reached `Done` in 93.28 seconds, accepted the normal `stop` command, saved all loaded dimensions, exited the JVM, and released the port.
+The latest real Forge integration at port 25578 used the clean disposable 206-JAR Packwiz server installation; it did not read a live server path, world or private server file. It passed direct Java ownership, reached `Done` in 79.339 seconds, accepted the normal `stop` command, saved all loaded dimensions, exited the JVM, and released the port.
 
 Evidence: `audit/server-infrastructure-tests.json`, `audit/visible-server-console.json`, `audit/server-supervisor-resilience.json`, and `audit/forge-supervisor-integration.json`.

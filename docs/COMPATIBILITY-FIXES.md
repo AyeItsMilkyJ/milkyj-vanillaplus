@@ -4,7 +4,7 @@ Status: the original fixes and Aquatic Ambitions repair are integrated into the 
 
 ## Release-candidate overrides
 
-The existing highest-priority global datapack at `payload/both/moonlight-global-datapacks/milkyj-compat-fixes` now contains these narrowly scoped overrides. Packwiz delivers each file to both clients and dedicated servers; Moonlight loads the datapack after built-in/mod datapacks as `file/milkyj-compat-fixes`.
+The global datapack at `payload/both/moonlight-global-datapacks/milkyj-compat-fixes` contains these narrowly scoped overrides. Packwiz delivers each file to both clients and dedicated servers. On a clean world, Moonlight automatically loads it after built-in/mod datapacks as `file/milkyj-compat-fixes`.
 
 | Finding | Exact resource | Original error | Repaired behaviour |
 |---|---|---|---|
@@ -21,6 +21,18 @@ The first four definitions came from the validated compatibility worktree/source
 
 No mod JAR was edited. The four Aquatic recipe overrides change only invalid ingredient IDs; no output, count, chance or condition changes. The rice repair only extends the shared ingredient tag. The Central Kitchen vegan recipe, Aether's Delight shield overrides, and Relics talisman warning remain deliberately unchanged as previously classified `IGNORE SAFELY`.
 
+## Existing-world pack priority
+
+Minecraft persists enabled datapack order in each world's `level.dat`. If an existing world receives a new mod after `file/milkyj-compat-fixes` was first enabled, that new mod's built-in pack can be appended above the compatibility pack and win the same resource paths. A clean test world will not reproduce that upgrade-only ordering.
+
+After adding mods to an established world, check the next startup log. If an original repaired definition reappears, run this once in the normal server console while no players are active:
+
+```text
+datapack enable "file/milkyj-compat-fixes" last
+```
+
+The command reloads data and persists the compatibility pack at highest priority. Restart normally and confirm that no targeted recipe, loot-table or advancement error returns. Keep the pre-update cold backup; never edit `level.dat` while the server is running.
+
 ## Proof
 
 `scripts/validate_integrated_compatibility.py` pins the exact installed JAR hashes and proves the override semantics. `scripts/Test-InstallerEndToEnd.ps1` then performs clean Packwiz installs and a real disposable Forge launch.
@@ -28,14 +40,14 @@ No mod JAR was edited. The four Aquatic recipe overrides change only invalid ing
 The latest authoritative runs through 22 August 2026 established:
 
 - 240 clean client JARs and 206 clean server JARs;
-- 718 Packwiz destinations and 242 mod definitions;
+- 724 Packwiz destinations and 242 mod definitions;
 - automatic enablement and final effective priority of `file/milkyj-compat-fixes`;
 - 1,258 advancements at startup and after explicit `/reload`;
 - zero targeted global-loot-modifier or advancement errors;
 - zero Aquatic Ambitions recipe errors at startup and after reload;
 - the corrected `tf_dnv:chests/dungeon_shroom` reference loads without a warning;
 - the removed `twilightforest:chests/casket_loot` lookup no longer appears during a real world load;
-- 118 FTB quests still parse;
+- 210 FTB quests still parse;
 - all seven loaded dimensions save; and
 - normal JVM exit code 0.
 
@@ -43,4 +55,4 @@ Baseline-to-candidate and candidate-to-baseline Packwiz testing installs and rem
 
 ## Recommendation
 
-The original isolated overrides remain suitable for 1.9.0. The four additional Aquatic recipe resources are suitable for the `1.9.0-rc2` expansion once its manual multiplayer interaction pass is complete; the original errors disappeared and no new datapack, recipe, loot-table or advancement error appeared.
+The original isolated overrides and the four Aquatic recipe resources are suitable for the `1.9.0-rc2` pre-release. Clean-world validation and an established-world priority migration both removed the original errors without introducing a datapack, recipe, loot-table or advancement failure. The separate authenticated multiplayer interaction pass remains required before promotion to a final release.

@@ -108,7 +108,7 @@ function Receive-InteractiveCommand {
         $script:consoleReadTask = $null
         return $null
     }
-    try { $script:consoleReadTask = [Console]::In.ReadLineAsync() } catch { $script:consoleReadTask = $null }
+    try { $script:consoleReadTask = $script:consoleReader.ReadLineAsync() } catch { $script:consoleReadTask = $null }
     return $line.Trim()
 }
 
@@ -117,6 +117,7 @@ $scheduledRestartDelaySeconds = [Math]::Max(0, [int]$settings.scheduledRestartDe
 $scheduledRestartIntervalSeconds = $scheduledRestartMinutes * 60
 $scheduledWarningSeconds = @($settings.scheduledRestartWarningSeconds | ForEach-Object { [int]$_ } |
     Where-Object { $_ -gt 0 -and $_ -le $scheduledRestartIntervalSeconds } | Sort-Object -Descending -Unique)
+$script:consoleReader = $null
 $script:consoleReadTask = $null
 $supervisorFingerprint = Get-ProcessFingerprint -ProcessId $PID
 $supervisorStartedAt = if ($supervisorFingerprint) { [string]$supervisorFingerprint.creationTimeUtc } else { (Get-Date).ToString('o') }
@@ -169,7 +170,20 @@ try {
         Write-InteractiveHostSafe 'Type Minecraft commands normally. Type restart for a clean restart, or stop for a clean shutdown.' 'Cyan'
         Write-InteractiveHostSafe 'Do not close this window while the world is saving.' 'Yellow'
         Write-InteractiveHostSafe ''
-        try { $script:consoleReadTask = [Console]::In.ReadLineAsync() } catch {
+        try {
+            # Windows PowerShell 5.1's synchronized Console.In wrapper can make
+            # ReadLineAsync block synchronously until an operator types a line.
+            # Reading through StreamReader keeps startup non-blocking while still
+            # forwarding commands from this single visible console to Minecraft.
+            $script:consoleReader = [IO.StreamReader]::new(
+                [Console]::OpenStandardInput(),
+                [Console]::InputEncoding,
+                $false,
+                1024,
+                $true
+            )
+            $script:consoleReadTask = $script:consoleReader.ReadLineAsync()
+        } catch {
             Write-SupervisorLog "Interactive input is unavailable: $($_.Exception.Message)"
         }
     }

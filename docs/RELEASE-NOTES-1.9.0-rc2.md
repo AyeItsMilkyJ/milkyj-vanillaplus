@@ -11,6 +11,7 @@ This is a Forge 1.20.1 pre-release delivered through the existing Packwiz update
 - Updates Create: Enchantment Industry to 1.4.1 for its final Forge 1.20.1 maintenance fixes.
 - Integrates narrow datapack repairs for Domestication Innovation, Nether's Delight, Beautify, Twilight Forest Dungeons & Villages, shared rice recipes and Aquatic Ambitions coral recipes.
 - Keeps the public MilkyCraft name, visible server console, three-hour graceful restarts, Discord status integration, permanent Packwiz updates and preservation of player settings.
+- Fixes a Windows PowerShell 5.1 edge case that could leave the visible server console waiting for input before Java started.
 
 ## Validation
 
@@ -27,3 +28,5 @@ The headless and static gates cannot operate the Matrix, Anvil or new Create GUI
 ## Server owners
 
 Stop the dedicated server cleanly and use the guarded update-and-start workflow. It creates and verifies a timestamped cold backup before changing managed files, refuses to update a running JVM, requires the updated server to reach `Done`, and retains the rollback path.
+
+Existing worlds persist datapack order. If the startup log shows one of the repaired Aquatic Ambitions, loot or advancement definitions after adding new mods, run `datapack enable "file/milkyj-compat-fixes" last` once in the server console with no players active, then restart and recheck the log. Clean worlds already receive this priority automatically.

@@ -38,6 +38,10 @@ $settings = [ordered]@{
 [IO.File]::WriteAllText($settingsPath, (($settings | ConvertTo-Json -Depth 8) + "`r`n"), [Text.UTF8Encoding]::new($false))
 
 $tools = Join-Path $root 'server-tools'
+$supervisorSource = Get-Content -LiteralPath (Join-Path $tools 'Server-Supervisor.ps1') -Raw
+if ($supervisorSource -match '\[Console\]::In\.ReadLineAsync\(') {
+    throw 'Visible-console supervisor still uses the blocking Windows PowerShell Console.In async wrapper.'
+}
 $stdoutPath = Join-Path $testRoot 'visible-console.stdout.log'
 $stderrPath = Join-Path $testRoot 'visible-console.stderr.log'
 $stdinPath = Join-Path $testRoot 'visible-console.stdin.txt'
@@ -56,6 +60,7 @@ $results = [ordered]@{
     testRoot = 'build/server-infrastructure-test-visible-console'
     testPort = $TestPort
     productionPort = 25565
+    nonBlockingConsoleReader = 'PASS'
 }
 
 function Wait-Until([scriptblock]$Condition, [int]$Seconds, [string]$Failure) {
