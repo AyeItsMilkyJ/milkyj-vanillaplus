@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-08-21T15:11:21.075885+00:00",
+  "result": "PASS",
+  "pack": {
+    "publicName": "Mundane Craft",
+    "minecraft": "1.20.1",
+    "forge": "47.4.10",
+    "packwizVersion": "1.9.0-rc1"
+  },
+  "production": {
+    "payloadChanged": false,
+    "modMetafiles": 237,
+    "sideCounts": {
+      "both": 201,
+      "client": 34,
+      "server": 2
+    },
+    "cleanManagedClientJarCount": 235,
+    "cleanManagedServerJarCount": 203,
+    "creatorJarLeakage": false
+  },
+  "candidates": [
+    {
+      "key": "recordium-1.20.1-1",
+      "name": "Recordium",
+      "status": "rejected-incompatible",
+      "eligible": false,
+      "serverAllowed": false,
+      "artifact": {
+        "filename": "replaymod-1.20.1-1-shadow.jar",
+        "verified": true,
+        "sha512": "ec416fef77fb05bd7686522b698935bde69c4ad06905015d753434b752b5e4dd0a31e497912d570cd93803f9dd8bf760f386fb136989a0ab36f1d003985a4370"
+      },
+      "observedTests": [
+        {
+          "name": "clean full-pack Forge loader probe",
+          "jarCount": 204,
+          "result": "FAIL",
+          "phase": "Java module-layer resolution before mod construction",
+          "error": "java.lang.module.ResolutionException: Modules replaymod and org.groovymc.gml.groovyjij.com.fasterxml.jackson.core.jackson.core export package com.fasterxml.jackson.core"
+        }
+      ],
+      "blockers": [
+        "The shadow JAR exports Jackson packages already supplied by the installed Groovy/Jar-in-Jar module, so the Mundane Craft Forge module layer cannot resolve.",
+        "The published META-INF/mods.toml contains unresolved build placeholders and reports mod version 0.",
+        "The upstream tracker has an open multiplayer replay playback failure report."
+      ]
+    },
+    {
+      "key": "free-camera-2.2.0-forge-1.20.1",
+      "name": "Free Camera",
+      "status": "rejected-incompatible",
+      "eligible": false,
+      "serverAllowed": false,
+      "artifact": {
+        "filename": "freecamera-1.20.1-forge-2.2.0.jar",
+        "verified": true,
+        "sha512": "8ac2d69a1d9ff5ecf447167275f29c9258ab91ce6b33883cc9128e7f87300379e5a9645cbda1c7d9ce603dfa9deeba19cb712962630c433110316980fb916b27"
+      },
+      "observedTests": [
+        {
+          "name": "clean full-pack Forge loader probe",
+          "jarCount": 204,
+          "result": "FAIL",
+          "phase": "FML language-provider validation",
+          "error": "freecamera-1.20.1-forge-2.2.0.jar needs language provider javafml:62 or above; Forge 47.4.10 provides javafml 47"
+        }
+      ],
+      "blockers": [
+        "The published 1.20.1 artifact declares javafml loaderVersion [62,), so it cannot load on Forge 47.4.10.",
+        "The legacy implementation sets the local player's noPhysics flag and cancels normal player input while active; that does not meet this task's conservative multiplayer movement/network safety requirement.",
+        "The legacy build lacks the requested follow and camera-path recording features."
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "registry schema",
+      "result": "PASS",
+      "detail": "schemaVersion must be 1"
+    },
+    {
+      "name": "public pack name",
+      "result": "PASS",
+      "detail": "registry publicName must be Mundane Craft"
+    },
+    {
+      "name": "platform lock",
+      "result": "PASS",
+      "detail": "expected Minecraft 1.20.1 / Forge 47.4.10"
+    },
+    {
+      "name": "Packwiz platform matches registry",
+      "result": "PASS",
+      "detail": "packwiz/pack.toml must retain the inspected Minecraft and Forge versions"
+    },
+    {
+      "name": "production side classification",
+      "result": "PASS",
+      "detail": "side counts: {'both': 201, 'client': 34, 'server': 2}"
+    },
+    {
+      "name": "clean managed client JAR count",
+      "result": "PASS",
+      "detail": "observed 235, expected 235"
+    },
+    {
+      "name": "clean managed server JAR count",
+      "result": "PASS",
+      "detail": "observed 203, expected 203"
+    },
+    {
+      "name": "no creator artifact in source tree",
+      "result": "PASS",
+      "detail": "tracked creator JARs: []; source-tree creator JARs: []"
+    },
+    {
+      "name": "candidate registry non-empty",
+      "result": "PASS",
+      "detail": "at least one evaluated candidate is required"
+    },
+    {
+      "name": "recordium-1.20.1-1 hash syntax",
+      "result": "PASS",
+      "detail": "SHA-512 must be 128 lowercase hexadecimal characters"
+    },
+    {
+      "name": "recordium-1.20.1-1 client-only policy",
+      "result": "PASS",
+      "detail": "creator candidates must never be allowed on the dedicated server"
+    },
+    {
+      "name": "recordium-1.20.1-1 rejected status",
+      "result": "PASS",
+      "detail": "an ineligible candidate must fail closed as rejected-incompatible"
+    },
+    {
+      "name": "recordium-1.20.1-1 not Packwiz-managed",
+      "result": "PASS",
+      "detail": "rejected candidate must not enter production Packwiz metadata"
+    },
+    {
+      "name": "recordium-1.20.1-1 absent from production",
+      "result": "PASS",
+      "detail": "metafiles=[], JAR destinations=[]"
+    },
+    {
+      "name": "recordium-1.20.1-1 downloaded artifact hash",
+      "result": "PASS",
+      "detail": "verified replaymod-1.20.1-1-shadow.jar"
+    },
+    {
+      "name": "free-camera-2.2.0-forge-1.20.1 hash syntax",
+      "result": "PASS",
+      "detail": "SHA-512 must be 128 lowercase hexadecimal characters"
+    },
+    {
+      "name": "free-camera-2.2.0-forge-1.20.1 client-only policy",
+      "result": "PASS",
+      "detail": "creator candidates must never be allowed on the dedicated server"
+    },
+    {
+      "name": "free-camera-2.2.0-forge-1.20.1 rejected status",
+      "result": "PASS",
+      "detail": "an ineligible candidate must fail closed as rejected-incompatible"
+    },
+    {
+      "name": "free-camera-2.2.0-forge-1.20.1 not Packwiz-managed",
+      "result": "PASS",
+      "detail": "rejected candidate must not enter production Packwiz metadata"
+    },
+    {
+      "name": "free-camera-2.2.0-forge-1.20.1 absent from production",
+      "result": "PASS",
+      "detail": "metafiles=[], JAR destinations=[]"
+    },
+    {
+      "name": "free-camera-2.2.0-forge-1.20.1 downloaded artifact hash",
+      "result": "PASS",
+      "detail": "verified freecamera-1.20.1-forge-2.2.0.jar"
+    },
+    {
+      "name": "creator layer defaults off",
+      "result": "PASS",
+      "detail": "Creator Capture must be opt-in"
+    },
+    {
+      "name": "production payload unchanged",
+      "result": "PASS",
+      "detail": "payload flag must reflect candidate eligibility"
+    },
+    {
+      "name": "server creator layer forbidden",
+      "result": "PASS",
+      "detail": "server policy must remain false"
+    },
+    {
+      "name": "source replay immutability",
+      "result": "PASS",
+      "detail": "original replays must be immutable"
+    },
+    {
+      "name": "no private absolute paths in creator files",
+      "result": "PASS",
+      "detail": "findings: []"
+    },
+    {
+      "name": "replay media ignored",
+      "result": "PASS",
+      "detail": "missing patterns: []"
+    }
+  ],
+  "runtimeMatrix": {
+    "packwizUpdate": "PASS - disposable client/server installs resolved 235/203 JARs and preserved personal client settings",
+    "normalClientFreshInteractiveLaunch": "NOT RUN - disposable Prism requires an authenticated owned-game account; no account data was copied",
+    "creatorClientLaunch": "BLOCKED AT LOADER - Recordium module conflict; Free Camera JavaFML requirement mismatch",
+    "multiplayerReplayCreateDhShaderDimensionsLongSession": "NOT RUN - no candidate passed the loader gate",
+    "render": "NOT RUN - no candidate passed the loader gate",
+    "dedicatedServerBaseline": "PASS - disposable 203-JAR server reached Done; normal stop saved all seven loaded dimensions; JVM exited 0"
+  },
+  "errors": []
+}

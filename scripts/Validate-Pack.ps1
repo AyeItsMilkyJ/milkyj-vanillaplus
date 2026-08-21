@@ -20,3 +20,12 @@ Write-Host 'Packwiz manifest validation passed.'
 & $python.Source (Join-Path $PSScriptRoot 'check_encoding.py') ([IO.Path]::GetFullPath($ProjectRoot))
 if ($LASTEXITCODE -ne 0) { throw 'UTF-8/mojibake validation failed.' }
 Write-Host 'UTF-8/mojibake validation passed.'
+
+$creatorRegistry = Join-Path ([IO.Path]::GetFullPath($ProjectRoot)) 'creator-capture\candidate-registry.json'
+if (Test-Path -LiteralPath $creatorRegistry -PathType Leaf) {
+    & $python.Source (Join-Path $PSScriptRoot 'validate_creator_capture.py') ([IO.Path]::GetFullPath($ProjectRoot))
+    if ($LASTEXITCODE -ne 0) { throw 'Creator Capture fail-closed validation failed.' }
+    Write-Host 'Creator Capture fail-closed validation passed.'
+} else {
+    Write-Host 'Creator Capture validation skipped for this Packwiz-only staging root.'
+}

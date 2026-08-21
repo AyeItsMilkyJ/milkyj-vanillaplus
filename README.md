@@ -1,6 +1,8 @@
-# MilkyJ Vanilla+ — Packwiz distribution
+# Mundane Craft — Packwiz distribution
 
 This repository is the permanent update source for the Forge 1.20.1 client and dedicated server. Players import one small Prism Launcher bootstrap ZIP once. Prism runs Packwiz before every launch; Packwiz downloads changed files and removes only files it previously managed.
+
+`Mundane Craft` is the public pack name. Existing internal distribution identifiers and update paths retain their established MilkyJ Vanilla+ names to preserve installed-instance compatibility.
 
 Current locked platform:
 
@@ -28,5 +30,7 @@ Detailed day-to-day publishing, player installation, server updating, backups, a
 The Prism quoting repair is documented in [docs/PRISM-BOOTSTRAP-REPAIR.md](docs/PRISM-BOOTSTRAP-REPAIR.md). The opt-in, not-yet-deployed 24/7 Windows supervisor, cold backups, scheduled tasks, status, update, and rollback tooling are documented in [docs/SERVER-24-7-OPERATIONS.md](docs/SERVER-24-7-OPERATIONS.md).
 
 The current beginner progression contains 118 pack-specific quests across 9 chapters. Its exact chapter counts, progress-preservation audit, installed-system boundaries, and verification checklist are in [docs/QUEST-PROGRESSION.md](docs/QUEST-PROGRESSION.md).
+
+The optional creator replay/cinematic evaluation, current fail-closed status and future enablement gates are in [docs/CREATOR-CAPTURE.md](docs/CREATOR-CAPTURE.md). Prophet's immutable replay-media boundary is in [docs/CREATOR-REPLAY-INTEGRATION.md](docs/CREATOR-REPLAY-INTEGRATION.md).
 
 The generated audit reports in `audit/` are the source of truth for mod/file sides and exclusions.

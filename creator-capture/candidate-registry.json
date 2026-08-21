@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "publicName": "Mundane Craft",
+    "minecraft": "1.20.1",
+    "forge": "47.4.10"
+  },
+  "policy": {
+    "defaultEnabled": false,
+    "productionPackwizPayloadChanged": false,
+    "dedicatedServerAllowed": false,
+    "originalReplayFilesAreImmutable": true,
+    "note": "No candidate is eligible. This registry quarantines provenance and test results; it is not a second updater or an install manifest."
+  },
+  "candidates": [
+    {
+      "key": "recordium-1.20.1-1",
+      "name": "Recordium",
+      "role": "replay recording and cinematic playback",
+      "project": {
+        "provider": "CurseForge",
+        "projectId": 1017695,
+        "fileId": 5338821,
+        "projectUrl": "https://www.curseforge.com/minecraft/mc-mods/recordium",
+        "fileUrl": "https://www.curseforge.com/minecraft/mc-mods/recordium/files/5338821",
+        "sourceUrl": "https://github.com/Tfarcenim/ReplayModForge-1201",
+        "sourceCommitInspected": "e1057997293f35dd1b6d7d9504cfb512a03e5301"
+      },
+      "artifact": {
+        "filename": "replaymod-1.20.1-1-shadow.jar",
+        "downloadUrl": "https://edge.forgecdn.net/files/5338/821/replaymod-1.20.1-1-shadow.jar",
+        "sha512": "ec416fef77fb05bd7686522b698935bde69c4ad06905015d753434b752b5e4dd0a31e497912d570cd93803f9dd8bf760f386fb136989a0ab36f1d003985a4370"
+      },
+      "declared": {
+        "minecraft": "1.20.1",
+        "loader": "Forge",
+        "environment": "client",
+        "license": "GPL-3.0",
+        "releaseMaturity": "beta",
+        "requiredModDependencies": []
+      },
+      "capabilitiesPresentInArtifact": [
+        "automatic multiplayer recording",
+        "recording indicator",
+        "session markers",
+        "replay viewer",
+        "seeking and playback speed control",
+        "independent replay camera",
+        "camera position/time keyframes and paths",
+        "Replay Mod MCPR read/write",
+        "FFmpeg-backed rendering code"
+      ],
+      "status": "rejected-incompatible",
+      "eligible": false,
+      "productionPackwizManaged": false,
+      "serverAllowed": false,
+      "observedTests": [
+        {
+          "name": "clean full-pack Forge loader probe",
+          "jarCount": 204,
+          "result": "FAIL",
+          "phase": "Java module-layer resolution before mod construction",
+          "error": "java.lang.module.ResolutionException: Modules replaymod and org.groovymc.gml.groovyjij.com.fasterxml.jackson.core.jackson.core export package com.fasterxml.jackson.core"
+        }
+      ],
+      "blockers": [
+        "The shadow JAR exports Jackson packages already supplied by the installed Groovy/Jar-in-Jar module, so the Mundane Craft Forge module layer cannot resolve.",
+        "The published META-INF/mods.toml contains unresolved build placeholders and reports mod version 0.",
+        "The upstream tracker has an open multiplayer replay playback failure report."
+      ]
+    },
+    {
+      "key": "free-camera-2.2.0-forge-1.20.1",
+      "name": "Free Camera",
+      "role": "live cinematic camera",
+      "project": {
+        "provider": "Modrinth",
+        "projectId": "fqm3K0r7",
+        "versionId": "LHxuDAXb",
+        "projectUrl": "https://modrinth.com/mod/free-camera",
+        "versionUrl": "https://modrinth.com/mod/free-camera/version/LHxuDAXb",
+        "sourceUrl": "https://github.com/Cukkoo12/free-camera",
+        "sourceCommitInspected": "9dc299c70e19cfbd297a65912ea3e70809548b9d"
+      },
+      "artifact": {
+        "filename": "freecamera-1.20.1-forge-2.2.0.jar",
+        "downloadUrl": "https://cdn.modrinth.com/data/fqm3K0r7/versions/LHxuDAXb/freecamera-1.20.1-forge-2.2.0.jar",
+        "sha512": "8ac2d69a1d9ff5ecf447167275f29c9258ab91ce6b33883cc9128e7f87300379e5a9645cbda1c7d9ce603dfa9deeba19cb712962630c433110316980fb916b27"
+      },
+      "declared": {
+        "minecraft": "1.20.1",
+        "loader": "Forge",
+        "environment": "client",
+        "license": "MIT",
+        "releaseMaturity": "legacy",
+        "requiredModDependencies": []
+      },
+      "featuresInLegacyArtifact": [
+        "free camera",
+        "orbit camera",
+        "tripod position lock",
+        "cinematic smoothing",
+        "camera roll",
+        "zoom",
+        "settings screen"
+      ],
+      "featuresNotInLegacyArtifact": [
+        "entity or player follow camera",
+        "camera-path recording",
+        "replay recording"
+      ],
+      "status": "rejected-incompatible",
+      "eligible": false,
+      "productionPackwizManaged": false,
+      "serverAllowed": false,
+      "observedTests": [
+        {
+          "name": "clean full-pack Forge loader probe",
+          "jarCount": 204,
+          "result": "FAIL",
+          "phase": "FML language-provider validation",
+          "error": "freecamera-1.20.1-forge-2.2.0.jar needs language provider javafml:62 or above; Forge 47.4.10 provides javafml 47"
+        }
+      ],
+      "blockers": [
+        "The published 1.20.1 artifact declares javafml loaderVersion [62,), so it cannot load on Forge 47.4.10.",
+        "The legacy implementation sets the local player's noPhysics flag and cancels normal player input while active; that does not meet this task's conservative multiplayer movement/network safety requirement.",
+        "The legacy build lacks the requested follow and camera-path recording features."
+      ]
+    }
+  ]
+}

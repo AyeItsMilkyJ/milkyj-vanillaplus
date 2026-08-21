@@ -63,6 +63,16 @@ server-runtime/
 **/XaeroWorldMap/
 **/Distant_Horizons_server_data/
 
+# Creator replay source media and working caches (never commit these)
+**/replay_recordings/
+**/.replay_cache/
+*.mcpr
+*.mcpr.tmp
+*.mcpr.cache
+**/config/replaymod.json
+**/config/replaymod-rendersettings.json
+**/config/replaymod-screenshotsettings.json
+
 # Generated private values and third-party identity caches
 **/resourceful-config-web.json
 **/dawnoftimebuilder/patrons_cache.json
