@@ -1,11 +1,12 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ProjectRoot,
     [switch]$AllowPlaceholder,
     [switch]$AllowPrivateLan
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $python = Get-Command python -ErrorAction SilentlyContinue
 if (-not $python) { $python = Get-Command py -ErrorAction SilentlyContinue }
 if (-not $python) { throw 'Python 3.11+ is required for strict TOML validation.' }

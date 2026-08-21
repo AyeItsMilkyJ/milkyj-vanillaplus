@@ -2,12 +2,16 @@
 param(
     [string]$ClientMinecraftRoot = (Join-Path $env:APPDATA 'PrismLauncher\instances\Premium Modpack DEV\minecraft'),
     [string]$ServerRoot = (Join-Path ([Environment]::GetFolderPath('Desktop')) 'Minecraft Server'),
-    [string]$ModrinthManifest = (Join-Path (Split-Path -Parent (Split-Path -Parent $PSScriptRoot)) 'release-builds\MilkyJ-VanillaPlus-1.8.0\modrinth.index.json'),
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ModrinthManifest,
+    [string]$ProjectRoot,
     [switch]$Apply
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
+if (-not $ModrinthManifest) {
+    $ModrinthManifest = Join-Path (Split-Path -Parent (Split-Path -Parent $PSScriptRoot)) 'release-builds\MilkyJ-VanillaPlus-1.8.0\modrinth.index.json'
+}
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 $clientRootResolved = [IO.Path]::GetFullPath($ClientMinecraftRoot)
 $serverRootResolved = [IO.Path]::GetFullPath($ServerRoot)

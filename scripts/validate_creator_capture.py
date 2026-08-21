@@ -27,7 +27,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--baseline-server-pass",
         action="store_true",
-        help="Record that the operator separately observed the disposable 203-JAR baseline reach Done and stop cleanly.",
+        help="Record that the operator separately observed the disposable 202-JAR baseline reach Done and stop cleanly.",
     )
     parser.add_argument(
         "--packwiz-e2e-pass",
@@ -122,7 +122,7 @@ def main() -> int:
 
     check("production side classification", not any("invalid side" in e for e in errors), f"side counts: {side_counts}")
     check("clean managed client JAR count", len(client_jar_names) == 235, f"observed {len(client_jar_names)}, expected 235")
-    check("clean managed server JAR count", len(server_jar_names) == 203, f"observed {len(server_jar_names)}, expected 203")
+    check("clean managed server JAR count", len(server_jar_names) == 202, f"observed {len(server_jar_names)}, expected 202")
 
     tracked = tracked_files(root)
     tracked_creator_jars = [path for path in tracked if path.startswith("creator-capture/") and path.lower().endswith(".jar")]
@@ -236,7 +236,7 @@ def main() -> int:
         "checks": checks,
         "runtimeMatrix": {
             "packwizUpdate": (
-                "PASS - disposable client/server installs resolved 235/203 JARs and preserved personal client settings"
+                "PASS - disposable client/server installs resolved 235/202 JARs and preserved personal client settings"
                 if args.packwiz_e2e_pass
                 else "NOT RUN IN THIS INVOCATION - use --packwiz-e2e-pass only after directly observing the disposable E2E run"
             ),
@@ -245,7 +245,7 @@ def main() -> int:
             "multiplayerReplayCreateDhShaderDimensionsLongSession": "NOT RUN - no candidate passed the loader gate",
             "render": "NOT RUN - no candidate passed the loader gate",
             "dedicatedServerBaseline": (
-                "PASS - disposable 203-JAR server reached Done; normal stop saved all seven loaded dimensions; JVM exited 0"
+                "PASS - disposable 202-JAR server reached Done; normal stop saved all seven loaded dimensions; JVM exited 0"
                 if args.baseline_server_pass
                 else "NOT RUN IN THIS INVOCATION - use --baseline-server-pass only after directly observing the disposable run"
             )

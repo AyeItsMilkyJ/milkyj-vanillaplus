@@ -1,9 +1,10 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot)
+    [string]$ProjectRoot
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 $packRoot = Join-Path $projectRootResolved 'packwiz'
 $packFile = Join-Path $packRoot 'pack.toml'

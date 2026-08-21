@@ -1,7 +1,8 @@
 [CmdletBinding()]
-param([string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot))
+param([string]$ProjectRoot)
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $root = [IO.Path]::GetFullPath($ProjectRoot)
 $testRoot = [IO.Path]::GetFullPath((Join-Path $root 'build\rc-lan-test'))
 $expected = [IO.Path]::GetFullPath((Join-Path $root 'build\rc-lan-test'))

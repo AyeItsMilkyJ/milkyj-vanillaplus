@@ -4,10 +4,11 @@ param(
     [ValidatePattern('^(https://|http://127\.0\.0\.1(?::\d+)?(?:/|$))')]
     [string]$RawRepositoryBaseUrl,
 
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot)
+    [string]$ProjectRoot
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 $settingsPath = Join-Path $projectRootResolved 'project-settings.json'
 $rawBase = $RawRepositoryBaseUrl.TrimEnd('/')

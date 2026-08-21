@@ -1,10 +1,11 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ProjectRoot,
     [switch]$Deploy
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $utf8 = [Text.UTF8Encoding]::new($false)
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 $sourceRoot = Join-Path $projectRootResolved 'audit\questbook-legacy-1.8.0'

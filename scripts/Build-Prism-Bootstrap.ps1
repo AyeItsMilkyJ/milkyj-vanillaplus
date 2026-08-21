@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ProjectRoot,
     [string]$PackUrl,
     [string]$OutputPath,
     [switch]$AllowPlaceholder,
@@ -8,6 +8,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 $settings = Get-Content -LiteralPath (Join-Path $projectRootResolved 'project-settings.json') -Raw | ConvertFrom-Json
 if (-not $PackUrl) { $PackUrl = $settings.packUrl }

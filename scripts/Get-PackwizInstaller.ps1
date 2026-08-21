@@ -1,10 +1,11 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ProjectRoot,
     [switch]$PassThru
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $version = 'v0.0.3'
 $expectedSha256 = 'a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c'
 $url = "https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/$version/packwiz-installer-bootstrap.jar"

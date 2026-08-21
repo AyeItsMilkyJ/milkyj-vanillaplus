@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ProjectRoot,
     [string]$LanAddress,
     [int]$PackHttpPort = 8765,
     [int]$MinecraftPort = 25566,
@@ -8,6 +8,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 if ($MinecraftPort -eq 25565 -or $PackHttpPort -eq 25565) { throw 'Port 25565 is production-reserved and cannot be used by the RC harness.' }
 if ($MinecraftPort -eq $PackHttpPort) { throw 'The Packwiz HTTP and Minecraft ports must be different.' }
 if ($PackHttpPort -lt 1024 -or $PackHttpPort -gt 65535 -or $MinecraftPort -lt 1024 -or $MinecraftPort -gt 65535) { throw 'Test ports must be between 1024 and 65535.' }
@@ -89,7 +90,7 @@ try {
     try { & $java -jar 'packwiz-installer-bootstrap.jar' -g -s server $packUrl; $installExit = $LASTEXITCODE } finally { Pop-Location }
     if ($installExit -ne 0) { throw "Disposable server Packwiz install failed with exit code $installExit." }
     $serverJars = @(Get-ChildItem -LiteralPath (Join-Path $serverRoot 'mods') -File -Filter '*.jar').Count
-    if ($serverJars -ne 203) { throw "Expected 203 server JARs; found $serverJars." }
+    if ($serverJars -ne 202) { throw "Expected 202 server JARs; found $serverJars." }
 
     if (-not $ForgeLibrariesPath) { $ForgeLibrariesPath = Join-Path $root '.tools\forge-libraries' }
     $forge = [IO.Path]::GetFullPath($ForgeLibrariesPath)

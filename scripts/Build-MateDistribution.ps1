@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ProjectRoot,
     [string]$ShaderSourceDirectory = "$env:APPDATA\PrismLauncher\instances\Premium Modpack DEV\minecraft\shaderpacks",
     [Parameter(Mandatory = $true)]
     [string]$ServerAddress,
@@ -12,6 +12,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $root = [IO.Path]::GetFullPath($ProjectRoot)
 $settings = Get-Content -LiteralPath (Join-Path $root 'project-settings.json') -Raw | ConvertFrom-Json
 if (-not $OutputPath) {

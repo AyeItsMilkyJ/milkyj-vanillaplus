@@ -1,10 +1,11 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ProjectRoot,
     [int]$Port = 8765
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 $hostRoot = [IO.Path]::GetFullPath((Join-Path $projectRootResolved 'build\rc-local-host'))
 $expected = [IO.Path]::GetFullPath((Join-Path $projectRootResolved 'build\rc-local-host'))

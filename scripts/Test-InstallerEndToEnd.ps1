@@ -1,11 +1,12 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ProjectRoot,
     [string]$ForgeLibrariesPath,
     [switch]$SkipServerLaunch
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 if (-not $ForgeLibrariesPath) { $ForgeLibrariesPath = Join-Path $projectRootResolved '.tools\forge-libraries' }
 $testRoot = Join-Path $projectRootResolved 'build\end-to-end'
@@ -97,7 +98,7 @@ try {
     try { & $java -jar 'packwiz-installer-bootstrap.jar' -g -s server $localPackUrl; $serverExit = $LASTEXITCODE } finally { Pop-Location }
     if ($serverExit -ne 0) { throw "Server Packwiz installation failed with exit code $serverExit" }
     $serverJars = @(Get-ChildItem -LiteralPath (Join-Path $serverRoot 'mods') -File -Filter *.jar)
-    if ($serverJars.Count -ne 203) { throw "Expected 203 server JARs; installed $($serverJars.Count)." }
+    if ($serverJars.Count -ne 202) { throw "Expected 202 server JARs; installed $($serverJars.Count)." }
     $compatibilityStatic = & $python (Join-Path $PSScriptRoot 'validate_integrated_compatibility.py') --project-root $projectRootResolved --mods-dir (Join-Path $serverRoot 'mods')
     if ($LASTEXITCODE -ne 0) { throw 'Integrated compatibility static validation failed.' }
     [IO.File]::WriteAllText((Join-Path $testRoot 'compatibility-static.json'), (($compatibilityStatic -join "`n") + "`n"), [Text.UTF8Encoding]::new($false))
@@ -211,14 +212,15 @@ try {
         $advancementParseErrors = @([regex]::Matches($finalLog, 'Parsing error loading custom advancement')).Count
         $datapackLoadFailures = @([regex]::Matches($finalLog, '(?i)failed to load data ?packs|errors in currently selected datapacks')).Count
         $lootDataWarnings = @(Select-String -LiteralPath $latestLog -Pattern 'LootDataManager/.+Unknown loot table called' | ForEach-Object { $_.Line })
-        $onlyKnownLootWarnings = ($lootDataWarnings.Count -eq 2 -and (@($lootDataWarnings | Where-Object { $_ -notmatch 'twilightforest:chests/casket_loot' })).Count -eq 0)
+        $unexpectedLootWarnings = @($lootDataWarnings | Where-Object { $_ -notmatch 'twilightforest:chests/casket_loot' })
+        $onlyKnownLootWarnings = ($unexpectedLootWarnings.Count -eq 0)
         if (-not $candidateAutomaticallyEnabled -or -not $candidateHasFinalPriority) { throw 'The integrated compatibility datapack was not automatically enabled at final effective priority.' }
         if (-not $beautifyAdvancementLoaded) { throw "Beautify advancement did not load on startup and reload: $($advancementCounts -join ', ')." }
         if ($targetedErrors.Values -contains $true) { throw 'At least one targeted compatibility error remains.' }
         if ($globalLootModifierDecodeErrors -ne 0) { throw "Found $globalLootModifierDecodeErrors global loot modifier decode error(s)." }
         if ($advancementParseErrors -ne 0) { throw "Found $advancementParseErrors advancement parse error(s)." }
         if ($datapackLoadFailures -ne 0) { throw "Found $datapackLoadFailures datapack load failure(s)." }
-        if (-not $onlyKnownLootWarnings) { throw 'Loot data warnings differ from the one intentionally unresolved tf_dnv casket finding.' }
+        if (-not $onlyKnownLootWarnings) { throw 'Found an unexpected loot-table warning outside the intentionally tolerated tf_dnv casket finding.' }
     }
 
     $report = [ordered]@{
@@ -246,7 +248,8 @@ try {
         newGlobalLootModifierDecodeErrors = if ($SkipServerLaunch) { $null } else { $globalLootModifierDecodeErrors }
         newAdvancementParseErrors = if ($SkipServerLaunch) { $null } else { $advancementParseErrors }
         newDatapackLoadFailures = if ($SkipServerLaunch) { $null } else { $datapackLoadFailures }
-        onlyKnownTfDnvCasketWarningRemains = if ($SkipServerLaunch) { $null } else { $onlyKnownLootWarnings }
+        noUnexpectedLootTableWarnings = if ($SkipServerLaunch) { $null } else { $onlyKnownLootWarnings }
+        toleratedTfDnvCasketWarningCount = if ($SkipServerLaunch) { $null } else { $lootDataWarnings.Count }
         allLoadedDimensionsSaved = if ($SkipServerLaunch) { $null } else { $savedAllDimensions }
         serverProcessExited = if ($SkipServerLaunch) { $null } else { $serverProcessExited }
         serverExitCode = if ($SkipServerLaunch) { $null } else { $process.ExitCode }

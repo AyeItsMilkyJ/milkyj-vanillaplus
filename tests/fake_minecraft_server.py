@@ -55,6 +55,18 @@ def main() -> int:
             if (root / "linger-on-stop.flag").exists():
                 time.sleep(120)
             return 0
+        if (root / "linger-on-stdin-eof.flag").exists():
+            # Abrupt-supervisor regression mode: keep the disposable listener
+            # alive after its inherited stdin pipe closes so management can
+            # prove that an orphan is reported but never force-killed.
+            append_log(latest, "[Server thread/WARN] [test]: Supervisor stdin closed; disposable orphan mode remains active")
+            deadline = time.monotonic() + 120
+            while time.monotonic() < deadline:
+                try:
+                    connection, _ = listener.accept()
+                    connection.close()
+                except socket.timeout:
+                    pass
     finally:
         try:
             listener.close()

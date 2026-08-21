@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-21T15:20:30.636689+00:00",
+  "checkedAt": "2026-08-21T16:35:02.574262+00:00",
   "result": "PASS",
   "pack": {
     "publicName": "MilkyCraft Vanilla+",
@@ -12,12 +12,12 @@
     "payloadChanged": false,
     "modMetafiles": 237,
     "sideCounts": {
-      "both": 201,
-      "client": 34,
+      "both": 200,
+      "client": 35,
       "server": 2
     },
     "cleanManagedClientJarCount": 235,
-    "cleanManagedServerJarCount": 203,
+    "cleanManagedServerJarCount": 202,
     "creatorJarLeakage": false
   },
   "candidates": [
@@ -29,8 +29,7 @@
       "serverAllowed": false,
       "artifact": {
         "filename": "replaymod-1.20.1-1-shadow.jar",
-        "verified": true,
-        "sha512": "ec416fef77fb05bd7686522b698935bde69c4ad06905015d753434b752b5e4dd0a31e497912d570cd93803f9dd8bf760f386fb136989a0ab36f1d003985a4370"
+        "verified": false
       },
       "observedTests": [
         {
@@ -55,8 +54,7 @@
       "serverAllowed": false,
       "artifact": {
         "filename": "freecamera-1.20.1-forge-2.2.0.jar",
-        "verified": true,
-        "sha512": "8ac2d69a1d9ff5ecf447167275f29c9258ab91ce6b33883cc9128e7f87300379e5a9645cbda1c7d9ce603dfa9deeba19cb712962630c433110316980fb916b27"
+        "verified": false
       },
       "observedTests": [
         {
@@ -103,7 +101,7 @@
     {
       "name": "production side classification",
       "result": "PASS",
-      "detail": "side counts: {'both': 201, 'client': 34, 'server': 2}"
+      "detail": "side counts: {'both': 200, 'client': 35, 'server': 2}"
     },
     {
       "name": "clean managed client JAR count",
@@ -113,7 +111,7 @@
     {
       "name": "clean managed server JAR count",
       "result": "PASS",
-      "detail": "observed 203, expected 203"
+      "detail": "observed 202, expected 202"
     },
     {
       "name": "no creator artifact in source tree",
@@ -151,11 +149,6 @@
       "detail": "metafiles=[], JAR destinations=[]"
     },
     {
-      "name": "recordium-1.20.1-1 downloaded artifact hash",
-      "result": "PASS",
-      "detail": "verified replaymod-1.20.1-1-shadow.jar"
-    },
-    {
       "name": "free-camera-2.2.0-forge-1.20.1 hash syntax",
       "result": "PASS",
       "detail": "SHA-512 must be 128 lowercase hexadecimal characters"
@@ -179,11 +172,6 @@
       "name": "free-camera-2.2.0-forge-1.20.1 absent from production",
       "result": "PASS",
       "detail": "metafiles=[], JAR destinations=[]"
-    },
-    {
-      "name": "free-camera-2.2.0-forge-1.20.1 downloaded artifact hash",
-      "result": "PASS",
-      "detail": "verified freecamera-1.20.1-forge-2.2.0.jar"
     },
     {
       "name": "creator layer defaults off",
@@ -217,12 +205,12 @@
     }
   ],
   "runtimeMatrix": {
-    "packwizUpdate": "PASS - disposable client/server installs resolved 235/203 JARs and preserved personal client settings",
+    "packwizUpdate": "PASS - disposable client/server installs resolved 235/202 JARs and preserved personal client settings",
     "normalClientFreshInteractiveLaunch": "NOT RUN - disposable Prism requires an authenticated owned-game account; no account data was copied",
     "creatorClientLaunch": "BLOCKED AT LOADER - Recordium module conflict; Free Camera JavaFML requirement mismatch",
     "multiplayerReplayCreateDhShaderDimensionsLongSession": "NOT RUN - no candidate passed the loader gate",
     "render": "NOT RUN - no candidate passed the loader gate",
-    "dedicatedServerBaseline": "PASS - disposable 203-JAR server reached Done; normal stop saved all seven loaded dimensions; JVM exited 0"
+    "dedicatedServerBaseline": "PASS - disposable 202-JAR server reached Done; normal stop saved all seven loaded dimensions; JVM exited 0"
   },
   "errors": []
 }

@@ -10,6 +10,8 @@ Forge runs with `nogui`, so there is no separate graphical Java server window. W
 
 `Start-Server.ps1` refuses a duplicate listener, supervisor, or recorded server PID. `Stop-Server.ps1` creates a server-local stop request. The supervisor writes Minecraft's normal `stop` command to stdin, waits for the launch process to exit, and checks that the configured port is no longer listening.
 
+Runtime state records a process fingerprint (PID, creation time, executable, command-line hash, and parent PID) for both the supervisor and Minecraft. A recycled Windows PID is never accepted by number alone. Status/start checks also honour the configured port and the held supervisor lock. If both processes and the listener are gone after an abrupt exit, stale active state is atomically reconciled to `stopped-after-abrupt-exit` and active identities are cleared. If Minecraft is still alive but its supervisor is gone, status reports **RUNNING / UNMANAGED**, updates and duplicate starts remain blocked, and no process is killed automatically.
+
 If a mod such as Distant Horizons leaves the JVM alive after world saving, the supervisor waits for the configured timeout (240 seconds by default), records `manual-intervention-required`, and leaves the process alive for diagnosis. It never immediately kills a production JVM.
 
 After each fresh `Done`, the normal policy schedules a clean restart 180 minutes later. Players receive warnings at 10 minutes, 5 minutes, 1 minute, 30 seconds, and 10 seconds. The supervisor runs `save-all flush`, sends the normal `stop`, verifies process exit and port release, waits 10 seconds, and launches Java again in the same console. A stop request during the wait cancels relaunch.
@@ -28,6 +30,8 @@ Double-click root `run.bat` (preferred) or `packwiz-tools\START SERVER.bat`. Do 
 - do not close the window with **X** or press Ctrl+C while the server is running or saving.
 
 The window remains open after shutdown so an error can be read. Press any key only after it says the server console is closed.
+
+Console display is deliberately non-critical: if Windows detaches the output pipe and `Write-Host` raises the historical `0xE9` `HostException`, the supervisor disables further host writes, keeps file logging/state persistence active, and continues lifecycle handling. This does **not** make the window's **X** button a safe shutdown mechanism. Windows can terminate console-attached processes before Minecraft receives its full save timeout, so always type `stop`.
 
 ## Discord status notifications
 
@@ -139,7 +143,7 @@ World restoration remains a separate high-impact option in `Restore-ServerBackup
 
 ## Status output
 
-`SERVER STATUS.bat` reports running/stopped state, listener/Minecraft PID, recorded launch PID, port, supervisor state/PID, visible/background console mode, next scheduled restart, restart interval, current recorded pack version, latest verified backup, last start, latest crash/restart event, latest Minecraft log, whether Discord notifications are configured, and whether an update is safe. It never prints the webhook URL.
+`SERVER STATUS.bat` reports running/stopped/unmanaged state, listener/Minecraft PID, verified recorded launch PID, port, supervisor state/PID, stale-state reconciliation time, visible/background console mode, next scheduled restart, restart interval, current recorded pack version, latest verified backup, last start, latest crash/restart event, latest Minecraft log, whether Discord notifications are configured, and whether an update is safe. It never prints the webhook URL.
 
 ## Disposable test evidence
 
@@ -161,6 +165,8 @@ The lightweight management harness at port 25577 passed:
 
 The focused one-console harness at port 25579 also passed inline supervisor ownership, direct Minecraft child ownership, no second CMD/PowerShell child, inherited raw stdout/stderr, interactive command forwarding, external clean-stop recognition, save-before-stop order, warnings, and a compressed scheduled restart/relaunch cycle. Port 25565 and all live data remained untouched. A final visual acceptance check still requires double-clicking live `run.bat`, issuing `list`, and then typing `stop`.
 
-The real Forge integration at port 25578 used a read-only clone of the current 203-mod server payload while excluding the world and private server files. It passed direct Java ownership, reached `Done` in 95.466 seconds, accepted `save-all flush` and the normal `stop` command, saved all loaded dimensions, exited the JVM, and released the port.
+The supervisor-resilience harness at port 25581 injected the exact historical broken-pipe `HostException`, rejected a live unrelated recycled PID, force-ended a disposable supervisor while its fake Minecraft child remained online, and then ended the child. It confirmed no escaped console exception, continued file logging, cleared terminal process identities, reported the orphan as **RUNNING / UNMANAGED** and update-unsafe, blocked a duplicate start, reconciled state only after every real process/listener was gone, and completed a clean recovery launch/save/exit. It never used port 25565 or a live path.
 
-Evidence: `audit/server-infrastructure-tests.json`, `audit/visible-server-console.json`, and `audit/forge-supervisor-integration.json`.
+The real Forge integration at port 25578 used a read-only clone of the current 202-mod server payload while excluding the world and private server files. It passed direct Java ownership, reached `Done` in 100.169 seconds, accepted `save-all flush` and the normal `stop` command, saved all loaded dimensions, exited the JVM, and released the port.
+
+Evidence: `audit/server-infrastructure-tests.json`, `audit/visible-server-console.json`, `audit/server-supervisor-resilience.json`, and `audit/forge-supervisor-integration.json`.

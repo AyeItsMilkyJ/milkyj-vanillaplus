@@ -60,8 +60,20 @@ $results = [ordered]@{
 
 function Wait-Until([scriptblock]$Condition, [int]$Seconds, [string]$Failure) {
     $deadline = (Get-Date).AddSeconds($Seconds)
-    do { if (& $Condition) { return }; Start-Sleep -Milliseconds 200 } while ((Get-Date) -lt $deadline)
+    do {
+        try { if (& $Condition) { return } } catch [IO.IOException] { }
+        Start-Sleep -Milliseconds 200
+    } while ((Get-Date) -lt $deadline)
     throw $Failure
+}
+
+function Read-TestState([int]$Seconds = 5) {
+    $deadline = (Get-Date).AddSeconds($Seconds)
+    do {
+        try { return (Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json) } catch { }
+        Start-Sleep -Milliseconds 100
+    } while ((Get-Date) -lt $deadline)
+    throw 'Disposable supervisor state remained unreadable.'
 }
 
 function Stop-TestProcess([int]$ProcessId) {
@@ -80,7 +92,7 @@ try {
     Wait-Until { Get-NetTCPConnection -LocalPort $TestPort -State Listen -ErrorAction SilentlyContinue } 15 'Interactive disposable server never listened.'
     $statePath = Join-Path $serverRoot 'server-management\state.json'
     Wait-Until { Test-Path -LiteralPath $statePath -PathType Leaf } 5 'Interactive supervisor did not write state.'
-    $firstState = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
+    $firstState = Read-TestState
     if ([int]$firstState.supervisorPid -ne $hostProcess.Id -or -not $firstState.interactiveConsole) {
         throw 'Interactive launcher did not run the supervisor inline in its one PowerShell host.'
     }
@@ -96,14 +108,14 @@ try {
     $results.noSecondCommandShell = 'PASS'
 
     Wait-Until {
-        $state = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
+        $state = Read-TestState
         $countPath = Join-Path $serverRoot 'server-management\fake-launch-count.txt'
         $count = if (Test-Path -LiteralPath $countPath) { [int](Get-Content -LiteralPath $countPath -Raw) } else { 0 }
         $count -ge 2 -and [int]$state.restartCount -ge 1 -and $state.serverPid -and
             (Get-NetTCPConnection -LocalPort $TestPort -State Listen -ErrorAction SilentlyContinue)
     } 20 'Compressed scheduled restart did not stop and relaunch the disposable server.'
 
-    $afterRestartState = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
+    $afterRestartState = Read-TestState
     if ([int]$afterRestartState.serverPid -eq $firstChildPid) { throw 'Scheduled restart did not create a new Minecraft process.' }
     $commandsPath = Join-Path $serverRoot 'server-management\fake-commands.log'
     $commands = @(Get-Content -LiteralPath $commandsPath -ErrorAction Stop)
@@ -142,8 +154,11 @@ try {
     & (Join-Path $tools 'Stop-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath -TimeoutSeconds 15
     Wait-Until { $hostProcess.Refresh(); $hostProcess.HasExited } 10 'Interactive PowerShell host remained after a clean server stop.'
     if (Get-NetTCPConnection -LocalPort $TestPort -State Listen -ErrorAction SilentlyContinue) { throw 'Disposable port remained open after stop.' }
-    $finalState = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
-    if ($finalState.status -ne 'stopped' -or $finalState.serverPid) { throw 'Final supervisor state is not a clean stop.' }
+    $finalState = Read-TestState
+    if ($finalState.status -ne 'stopped' -or $finalState.serverPid -or $finalState.supervisorPid -or
+        $finalState.serverProcessFingerprint -or $finalState.supervisorProcessFingerprint -or $finalState.nextScheduledRestart) {
+        throw 'Final supervisor state retained an active PID, fingerprint, or restart time after a clean stop.'
+    }
     $latestLog = Join-Path $serverRoot 'logs\latest.log'
     if (-not (Select-String -LiteralPath $latestLog -SimpleMatch 'All dimensions are saved' -Quiet)) {
         throw 'Final stop did not record full dimension-save evidence.'
@@ -151,6 +166,7 @@ try {
     $results.externalStopRecognizedInlineSupervisor = 'PASS'
     $results.cleanShutdownAndSave = 'PASS'
     $results.hostAndChildExited = 'PASS'
+    $results.terminalStateClearsProcessIdentity = 'PASS'
 
     $productionAfter = @(Get-NetTCPConnection -LocalPort 25565 -State Listen -ErrorAction SilentlyContinue | Select-Object OwningProcess,LocalAddress,LocalPort)
     if (($productionBefore | ConvertTo-Json -Compress) -ne ($productionAfter | ConvertTo-Json -Compress)) {
@@ -167,7 +183,7 @@ try {
     }
     $statePath = Join-Path $serverRoot 'server-management\state.json'
     if (Test-Path -LiteralPath $statePath -PathType Leaf) {
-        $cleanupState = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
+        $cleanupState = Read-TestState
         if ($cleanupState.serverPid) { Stop-TestProcess ([int]$cleanupState.serverPid) }
         if ($cleanupState.supervisorPid) { Stop-TestProcess ([int]$cleanupState.supervisorPid) }
     }

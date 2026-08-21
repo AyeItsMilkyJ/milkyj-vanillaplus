@@ -3,10 +3,11 @@ param(
     [Parameter(Mandatory)][string]$ProductionServerRoot,
     [Parameter(Mandatory)][string]$ProductionWorldName,
     [Parameter(Mandatory)][int]$StoppedProductionServerPid,
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot)
+    [string]$ProjectRoot
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $root = [IO.Path]::GetFullPath($ProjectRoot)
 $production = [IO.Path]::GetFullPath($ProductionServerRoot)
 $sourceWorld = [IO.Path]::GetFullPath((Join-Path $production $ProductionWorldName))

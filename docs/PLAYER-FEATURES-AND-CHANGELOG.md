@@ -9,7 +9,7 @@ MilkyCraft Vanilla+ is a multiplayer-friendly adventure and homestead pack built
 Current foundation:
 
 - Minecraft 1.20.1 with Forge 47.4.10.
-- 235 client JARs and 203 dedicated-server JARs after side classification.
+- 235 client JARs and 202 dedicated-server JARs after side classification.
 - 118 original pack quests across 9 chapters.
 - Seven managed resource-pack choices plus ten optional shader choices in the mate installer.
 - Dedicated-server view distance 12 and simulation distance 6.

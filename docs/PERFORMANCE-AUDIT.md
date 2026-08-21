@@ -50,7 +50,7 @@ Recommendation: **DO NOT CHANGE** simulation distance 6, the 80% broadcast range
 
 ## Disposable benchmark
 
-The repeatable harness is `scripts/Test-ServerPerformance.ps1`. It rebuilds only `build/performance-audit`, refuses port 25565, binds Minecraft to 25579, requires Java 17 and exactly 203 server JARs, and performs a normal save/stop. The authoritative machine output is `audit/performance-benchmark.json`.
+The repeatable harness is `scripts/Test-ServerPerformance.ps1`. It rebuilds only `build/performance-audit`, refuses port 25565, binds Minecraft to 25579, requires Java 17 and exactly 202 server JARs, and performs a normal save/stop. The authoritative machine output is `audit/performance-benchmark.json`.
 
 | Scenario | Duration | Average / peak working set | Average / peak used heap | End snapshot | Entities | GC during sample |
 |---|---:|---:|---:|---:|---:|---:|

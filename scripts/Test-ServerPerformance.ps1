@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ProjectRoot,
     [string]$InstalledServerSource,
     [string]$JavaPath,
     [ValidateRange(1, 65535)][int]$TestPort = 25579,
@@ -11,6 +11,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $project = [IO.Path]::GetFullPath($ProjectRoot)
 if (-not $InstalledServerSource) { $InstalledServerSource = Join-Path $project 'build\end-to-end\server' }
 $source = [IO.Path]::GetFullPath($InstalledServerSource)
@@ -26,8 +27,8 @@ if (-not $source.StartsWith(($project.TrimEnd('\') + '\'), [StringComparison]::O
 if (-not (Test-Path -LiteralPath (Join-Path $source 'mods') -PathType Container)) {
     throw "Disposable installed server source is missing: $source"
 }
-if (@(Get-ChildItem -LiteralPath (Join-Path $source 'mods') -File -Filter '*.jar').Count -ne 203) {
-    throw 'The disposable installed server source must contain exactly 203 mod JARs.'
+if (@(Get-ChildItem -LiteralPath (Join-Path $source 'mods') -File -Filter '*.jar').Count -ne 202) {
+    throw 'The disposable installed server source must contain exactly 202 mod JARs.'
 }
 $occupied = Get-NetTCPConnection -State Listen -LocalPort $TestPort -ErrorAction SilentlyContinue
 if ($occupied) { throw "Disposable benchmark port $TestPort is already in use." }
@@ -317,7 +318,7 @@ try {
         testPort = $TestPort
         minecraft = '1.20.1'
         forge = '47.4.10'
-        serverJarCount = 203
+        serverJarCount = 202
         java = [ordered]@{ executable = 'java.exe (absolute host path intentionally omitted)'; versionOutput = $javaVersion }
         jvmArguments = @('-Xmx8G', '-Xms2G', '-XX:+UseG1GC', '-XX:+ParallelRefProcEnabled', '-XX:MaxGCPauseMillis=150', '-XX:+DisableExplicitGC')
         serverSettings = [ordered]@{ viewDistance = 12; simulationDistance = 6; entityBroadcastRangePercentage = 80; syncChunkWrites = $false }

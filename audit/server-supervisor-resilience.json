@@ -1,0 +1,22 @@
+{
+    "testedAt":  "2026-08-22T02:58:54.7543741+10:00",
+    "testRoot":  "build/server-infrastructure-test-supervisor-resilience",
+    "testPort":  25581,
+    "productionPort":  25565,
+    "brokenConsoleHostExceptionContained":  "PASS",
+    "fileLoggingSurvivedBrokenConsole":  "PASS",
+    "minecraftRemainedManagedAfterConsoleWriteFailure":  "PASS",
+    "brokenConsoleCleanSaveAndExit":  "PASS",
+    "cleanStopClearsAllProcessIdentity":  "PASS",
+    "recycledUnrelatedPidRejected":  "PASS",
+    "stalePidStateReconciled":  "PASS",
+    "textualSupervisorFilenameDecoyRejected":  "PASS",
+    "orphanReportedRunningUnmanaged":  "PASS",
+    "unmanagedServerBlocksUpdateAndDuplicateStart":  "PASS",
+    "abruptExitReconcilesAfterProcessesGone":  "PASS",
+    "cleanRelaunchAfterReconciliation":  "PASS",
+    "recoveryShutdownSavedAllDimensions":  "PASS",
+    "productionPortTouched":  false,
+    "liveServerWorldOrPrismTouched":  false,
+    "status":  "PASS"
+}

@@ -17,11 +17,41 @@ $lockPath = Join-Path $managementRoot 'supervisor.lock'
 $logRoot = Join-Path $managementRoot 'logs'
 New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
 $supervisorLog = Join-Path $logRoot ("supervisor-{0}.log" -f (Get-Date -Format 'yyyyMMdd-HHmmss'))
+$script:interactiveHostAvailable = [bool]$Interactive
+$script:consoleFailureRecorded = $false
+
+function Write-SupervisorLogFileOnlyBestEffort([string]$Message) {
+    try {
+        $line = "[{0}] {1}" -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss.fff zzz'), $Message
+        [IO.File]::AppendAllText($supervisorLog, $line + "`r`n", [Text.UTF8Encoding]::new($false))
+    } catch { }
+}
+
+function Write-InteractiveHostSafe([string]$Message, [string]$ForegroundColor = '') {
+    if (-not $Interactive -or -not $script:interactiveHostAvailable) { return }
+    try {
+        if ($ForegroundColor) {
+            Write-Host $Message -ForegroundColor $ForegroundColor
+        } else {
+            Write-Host $Message
+        }
+    } catch {
+        # Closing/detaching a Windows console can make Write-Host throw a
+        # HostException (0xE9). Console output is optional; server lifecycle and
+        # atomic state persistence must continue without it.
+        $script:interactiveHostAvailable = $false
+        if (-not $script:consoleFailureRecorded) {
+            $script:consoleFailureRecorded = $true
+            Write-SupervisorLogFileOnlyBestEffort "Interactive console output disabled after host write failure: $($_.Exception.Message)"
+        }
+        if ($state) { $state.interactiveConsoleOutputAvailable = $false }
+    }
+}
 
 function Write-SupervisorLog([string]$Message) {
     $line = "[{0}] {1}" -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss.fff zzz'), $Message
     [IO.File]::AppendAllText($supervisorLog, $line + "`r`n", [Text.UTF8Encoding]::new($false))
-    if ($Interactive) { Write-Host "[Supervisor] $Message" -ForegroundColor DarkCyan }
+    Write-InteractiveHostSafe "[Supervisor] $Message" 'DarkCyan'
 }
 
 function Send-ServerCommand {
@@ -88,12 +118,17 @@ $scheduledRestartIntervalSeconds = $scheduledRestartMinutes * 60
 $scheduledWarningSeconds = @($settings.scheduledRestartWarningSeconds | ForEach-Object { [int]$_ } |
     Where-Object { $_ -gt 0 -and $_ -le $scheduledRestartIntervalSeconds } | Sort-Object -Descending -Unique)
 $script:consoleReadTask = $null
+$supervisorFingerprint = Get-ProcessFingerprint -ProcessId $PID
+$supervisorStartedAt = if ($supervisorFingerprint) { [string]$supervisorFingerprint.creationTimeUtc } else { (Get-Date).ToString('o') }
 $state = [ordered]@{
+    stateSchemaVersion = 2
     status = 'starting'
     supervisorPid = $PID
+    supervisorProcessFingerprint = $supervisorFingerprint
     serverPid = $null
+    serverProcessFingerprint = $null
     port = Get-ServerPort $serverRootResolved
-    supervisorStartedAt = (Get-Date).ToString('o')
+    supervisorStartedAt = $supervisorStartedAt
     latestServerStartAt = $null
     latestServerExitAt = $null
     latestServerExitCode = $null
@@ -101,6 +136,7 @@ $state = [ordered]@{
     nextScheduledRestart = $null
     scheduledRestartMinutes = $scheduledRestartMinutes
     interactiveConsole = [bool]$Interactive
+    interactiveConsoleOutputAvailable = [bool]$Interactive
     restartCount = 0
     rapidFailureCount = 0
     supervisorLog = $supervisorLog
@@ -110,8 +146,8 @@ $state = [ordered]@{
 function Save-State { Write-JsonAtomic $statePath $state }
 function Set-Event([string]$Message) {
     $state.latestCrashOrRestartEvent = "$(Get-Date -Format o) $Message"
-    Write-SupervisorLog $Message
     Save-State
+    Write-SupervisorLog $Message
 }
 
 $lock = $null
@@ -128,11 +164,11 @@ try {
     Write-SupervisorLog "Supervisor started as PID $PID. Port=$($state.port). Executable=$($launchSpec.Executable)"
     if ($Interactive) {
         try { [Console]::Title = 'MilkyCraft Vanilla+ Server - Java Console' } catch { }
-        Write-Host ''
-        Write-Host 'MilkyCraft Vanilla+ server console is active.' -ForegroundColor Green
-        Write-Host 'Type Minecraft commands normally. Type restart for a clean restart, or stop for a clean shutdown.' -ForegroundColor Cyan
-        Write-Host 'Do not close this window while the world is saving.' -ForegroundColor Yellow
-        Write-Host ''
+        Write-InteractiveHostSafe ''
+        Write-InteractiveHostSafe 'MilkyCraft Vanilla+ server console is active.' 'Green'
+        Write-InteractiveHostSafe 'Type Minecraft commands normally. Type restart for a clean restart, or stop for a clean shutdown.' 'Cyan'
+        Write-InteractiveHostSafe 'Do not close this window while the world is saving.' 'Yellow'
+        Write-InteractiveHostSafe ''
         try { $script:consoleReadTask = [Console]::In.ReadLineAsync() } catch {
             Write-SupervisorLog "Interactive input is unavailable: $($_.Exception.Message)"
         }
@@ -142,6 +178,7 @@ try {
         if (Test-Path -LiteralPath $stopRequest) {
             $state.status = 'stopped'
             $state.serverPid = $null
+            $state.serverProcessFingerprint = $null
             $state.nextScheduledRestart = $null
             Set-Event 'Intentional stop request observed while no server process was active.'
             break
@@ -165,6 +202,7 @@ try {
 
         $state.status = 'running'
         $state.serverPid = $child.Id
+        $state.serverProcessFingerprint = Get-ProcessFingerprint -ProcessId $child.Id
         $state.latestServerStartAt = $startAt.ToString('o')
         $state.nextScheduledRestart = $null
         $state.manualInterventionRequired = $false
@@ -272,10 +310,14 @@ try {
         $exitAt = Get-Date
         $exitCode = $child.ExitCode
         $state.serverPid = $null
+        $state.serverProcessFingerprint = $null
         $state.latestServerExitAt = $exitAt.ToString('o')
         $state.latestServerExitCode = $exitCode
         $state.nextScheduledRestart = $null
         $uptime = $exitAt - $startAt
+        # Persist terminal process identity immediately. Notifications and
+        # console/log output happen later and must never leave a live-looking PID.
+        Save-State
 
         if ($intentionalStop -or $plannedRestart) {
             $portDeadline = (Get-Date).AddSeconds(30)
@@ -369,14 +411,59 @@ try {
         }
     }
 } catch {
+    $supervisorException = $_
     $state.status = 'supervisor-error'
     $state.manualInterventionRequired = $true
-    Set-Event "Supervisor error: $($_.Exception.Message)"
-    Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event failed `
-        -Description 'The server supervisor encountered an error and needs attention.'
-    throw
+    $state.nextScheduledRestart = $null
+    $state.latestCrashOrRestartEvent = "$(Get-Date -Format o) Supervisor error: $($supervisorException.Exception.Message)"
+
+    # If Minecraft survived the supervisor error, request a normal save/stop.
+    # Never force-kill it: an unresponsive child remains explicitly unmanaged.
+    $childAliveAfterError = $false
+    if ($child) {
+        try { $childAliveAfterError = -not $child.HasExited } catch { }
+    }
+    if ($childAliveAfterError) {
+        try { $child.StandardInput.WriteLine('save-all flush'); $child.StandardInput.Flush() } catch { }
+        try { $child.StandardInput.WriteLine('stop'); $child.StandardInput.Flush() } catch { }
+        try { $childAliveAfterError = -not (Wait-ForCleanProcessExit -Process $child -TimeoutSeconds ([int]$settings.gracefulStopTimeoutSeconds)) } catch { }
+    }
+    if (-not $childAliveAfterError) {
+        $state.serverPid = $null
+        $state.serverProcessFingerprint = $null
+        if ($child) {
+            $state.latestServerExitAt = (Get-Date).ToString('o')
+            try { $state.latestServerExitCode = $child.ExitCode } catch { }
+        }
+    }
+    try { Save-State } catch { }
+    Write-SupervisorLogFileOnlyBestEffort "Supervisor error: $($supervisorException.Exception.Message)"
+    try {
+        Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event failed `
+            -Description 'The server supervisor encountered an error and needs attention.'
+    } catch { }
+    throw $supervisorException
 } finally {
-    if ($child) { $child.Dispose() }
-    if ($lock) { $lock.Dispose() }
+    $childStillAlive = $false
+    if ($child) {
+        try { $childStillAlive = -not $child.HasExited } catch { }
+    }
+    if (-not $childStillAlive) {
+        $state.serverPid = $null
+        $state.serverProcessFingerprint = $null
+    } else {
+        $state.status = 'manual-intervention-required'
+        $state.manualInterventionRequired = $true
+        $state.nextScheduledRestart = $null
+        $state.latestCrashOrRestartEvent = "$(Get-Date -Format o) Supervisor exited while Minecraft PID $($state.serverPid) remained alive. Nothing was killed; manual intervention is required."
+    }
+    if ([int]$state.supervisorPid -eq $PID) {
+        $state.supervisorPid = $null
+        $state.supervisorProcessFingerprint = $null
+    }
+    $state.nextScheduledRestart = $null
+    try { Save-State } catch { }
+    if ($child) { try { $child.Dispose() } catch { } }
+    if ($lock) { try { $lock.Dispose() } catch { } }
     if (Test-Path -LiteralPath $lockPath) { Remove-Item -LiteralPath $lockPath -Force -ErrorAction SilentlyContinue }
 }

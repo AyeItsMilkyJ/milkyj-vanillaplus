@@ -3,10 +3,11 @@ param(
     [Parameter(Mandatory)][string]$SourcePath,
     [Parameter(Mandatory)][ValidatePattern('^(config|defaultconfigs|kubejs|scripts|resourcepacks|moonlight-global-datapacks)/')][string]$DestinationPath,
     [Parameter(Mandatory)][ValidateSet('client','server','both')][string]$Side,
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot)
+    [string]$ProjectRoot
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 $sourceResolved = [IO.Path]::GetFullPath($SourcePath)
 if (-not (Test-Path -LiteralPath $sourceResolved -PathType Leaf)) { throw "Source file not found: $sourceResolved" }

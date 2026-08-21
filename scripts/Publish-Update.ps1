@@ -1,11 +1,12 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory)][string]$CommitMessage,
-    [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$ProjectRoot,
     [switch]$Push
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
 & (Join-Path $PSScriptRoot 'Update-PackMetadata.ps1') -ProjectRoot $projectRootResolved
 & (Join-Path $PSScriptRoot 'Validate-Pack.ps1') -ProjectRoot $projectRootResolved

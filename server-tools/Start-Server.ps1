@@ -7,6 +7,17 @@ param(
 )
 
 . (Join-Path $PSScriptRoot 'Common.ps1')
+
+function Write-LauncherHostSafe([string]$Message, [string]$ForegroundColor = '') {
+    try {
+        if ($ForegroundColor) { Write-Host $Message -ForegroundColor $ForegroundColor }
+        else { Write-Host $Message }
+    } catch {
+        # A detached/closing Windows console must not prevent the supervisor
+        # from starting or completing state recovery.
+    }
+}
+
 $serverRootResolved = Assert-ValidServerRoot (Resolve-ServerRoot $ServerRoot)
 $settings = Get-ServerSettings -ServerRoot $serverRootResolved -SettingsPath $SettingsPath
 if ($StartupTimeoutSeconds -le 0) { $StartupTimeoutSeconds = [int]$settings.startupTimeoutSeconds }
@@ -22,8 +33,8 @@ if (-not (Test-Path -LiteralPath $supervisor -PathType Leaf)) { throw "Superviso
 
 if ($Interactive) {
     try { [Console]::Title = 'MilkyCraft Vanilla+ Server - Java Console' } catch { }
-    Write-Host 'Starting Minecraft in this console.' -ForegroundColor Cyan
-    Write-Host 'Server output and commands share this one window. Type stop for a clean shutdown.' -ForegroundColor Cyan
+    Write-LauncherHostSafe 'Starting Minecraft in this console.' 'Cyan'
+    Write-LauncherHostSafe 'Server output and commands share this one window. Type stop for a clean shutdown.' 'Cyan'
     $supervisorParameters = @{ ServerRoot = $serverRootResolved; Interactive = $true }
     if ($SettingsPath) { $supervisorParameters.SettingsPath = [IO.Path]::GetFullPath($SettingsPath) }
     & $supervisor @supervisorParameters
@@ -42,7 +53,7 @@ do {
     Start-Sleep -Seconds 1
     $activity = Get-ServerActivity $serverRootResolved
     if ($activity.Listeners.Count -gt 0) {
-        Write-Host "Server is listening on port $($activity.Port). Supervisor PID: $($process.Id)"
+        Write-LauncherHostSafe "Server is listening on port $($activity.Port). Supervisor PID: $($process.Id)"
         return
     }
     if ($process.HasExited) {

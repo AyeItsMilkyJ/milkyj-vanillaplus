@@ -1,0 +1,79 @@
+{
+  "auditedAt": "2026-08-22T02:59:28+10:00",
+  "status": "PASS_WITH_KNOWN_UPSTREAM_WARNINGS",
+  "branch": "integration/v1.9.0-rc1-final",
+  "versions": {
+    "pack": "1.9.0-rc1",
+    "minecraft": "1.20.1",
+    "forge": "47.4.10",
+    "java": "17.0.19"
+  },
+  "managedPayload": {
+    "packwizDestinations": 709,
+    "modEntries": 237,
+    "clientJarCount": 235,
+    "serverJarCount": 202,
+    "clientMissingOrExtraJars": 0,
+    "serverMissingOrExtraJars": 0,
+    "hashMismatches": 0,
+    "duplicateTopLevelModIds": 0,
+    "duplicateJarPayloads": 0,
+    "missingMandatoryForgeDependencies": 0
+  },
+  "fixes": [
+    {
+      "issue": "Fusion was classified for the dedicated server even though its supported environment and Rechiseled dependency are client-only.",
+      "repair": "Changed Fusion 1.3.12 from both to client; client remains 235 JARs and server is now 202 JARs.",
+      "modVersionChanged": false
+    },
+    {
+      "issue": "Windows PowerShell could not resolve PSScriptRoot in maintenance-script parameter defaults.",
+      "repair": "Deferred ProjectRoot and dependent defaults until after parameter binding in all affected scripts."
+    },
+    {
+      "issue": "The selected local Prism instance had its per-instance pre-launch command disabled/blank.",
+      "repair": "Restored the escaped Packwiz bootstrap command and enabled command overrides after making a timestamped instance.cfg backup.",
+      "personalMinecraftSettingsChanged": false
+    },
+    {
+      "issue": "A closed Windows console pipe could throw HostException 0xE9, terminate the restart supervisor, and leave stale process state.",
+      "repair": "Made console output best-effort, persisted state before optional output, added process fingerprints, rejected recycled PIDs, detected unmanaged Java processes, and reconciled stale state only when no process/listener/lock remains."
+    },
+    {
+      "issue": "The end-to-end validator incorrectly required exactly two tolerated loot warnings even when the corrected pack emitted none.",
+      "repair": "The validator now rejects unexpected loot-table warnings while allowing zero or only the explicitly tolerated legacy warning."
+    }
+  ],
+  "validation": {
+    "packwizManifest": "PASS",
+    "utf8AndMojibake": "PASS",
+    "prismBootstrapCommand": "PASS",
+    "questBook": "PASS: 118 quests, 235-JAR client registry, zero unresolved items",
+    "cleanPackwizClientInstall": "PASS: 235 JARs and personal files preserved",
+    "cleanPackwizServerInstall": "PASS: 202 JARs and Fusion absent",
+    "disposableForgeServer": "PASS: reached Done, all seven dimensions saved, JVM exited 0",
+    "compatibilityDatapack": "PASS: final priority, reload, zero targeted errors",
+    "visibleSingleConsole": "PASS",
+    "supervisorResilience": "PASS",
+    "serverInfrastructure": "PASS",
+    "forgeSupervisorIntegration": "PASS: 202 JARs, reached Done, saved, exited, released port"
+  },
+  "liveDeployment": {
+    "serverWasStopped": true,
+    "coldBackupValidated": true,
+    "worldModified": false,
+    "fusionMovedToRecoverableQuarantine": true,
+    "serverToolSourceAndDeployedHashesMatch": true,
+    "finalServerStatus": "STOPPED",
+    "finalUpdateSafe": true
+  },
+  "remainingWarnings": [
+    "Supplementaries 3.1.43 and JER 1.4.0.247 can omit cartographer trade display data; actual trades continue to work.",
+    "Smarter Farmers 2.1.2 warns that its custom-food villager map could not be extended; there is no isolated configuration repair in this build.",
+    "Bloop 1.8.0 Alpha 3 requires many Oculus compatibility patches and remains an optional visual-risk shader.",
+    "Some EMF Relics/cape models hit EMF's creation safety cap and may use a visual fallback.",
+    "Several high-collision keys remain player-selectable and were not overwritten.",
+    "Routine mixin metadata, version-check timeout, Distant Horizons GC preference, and transient entity-sync warnings remain non-fatal."
+  ],
+  "published": false
+}
