@@ -5,7 +5,7 @@
 	group: "676547C5A87BA338"
 	icon: "explorerscompass:explorerscompass"
 	id: "1CDE54C53326DB2E"
-	order_index: 9
+	order_index: 10
 	progression_mode: "flexible"
 	quest_links: [ ]
 	title: "Exploration Without Getting Completely Lost"

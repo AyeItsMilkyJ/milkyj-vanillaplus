@@ -5,7 +5,7 @@
 	group: "455989FDDDEB7EAA"
 	icon: "create:mechanical_arm"
 	id: "656E76FAECBEFE8D"
-	order_index: 7
+	order_index: 8
 	progression_mode: "flexible"
 	quest_links: [ ]
 	title: "Create Projects: Workshop to Railway"

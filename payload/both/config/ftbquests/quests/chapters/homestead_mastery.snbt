@@ -5,7 +5,7 @@
 	group: "455989FDDDEB7EAA"
 	icon: "farmersdelight:cooking_pot"
 	id: "3DE8DA0F3834D67A"
-	order_index: 5
+	order_index: 6
 	progression_mode: "flexible"
 	quest_links: [ ]
 	title: "Homestead Mastery: Farm, Kitchen and Apiary"

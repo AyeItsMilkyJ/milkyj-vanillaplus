@@ -6,8 +6,8 @@ Maintainer entry points:
 
 - `scripts\Build-BeginnerQuestBook.ps1` deterministically generates and validates the quest definitions.
 - `scripts\validate_questbook.py` performs independent ID, graph, item, icon, tag, layout and ledger checks.
-- `scripts\quest-content\ProgressionExpansion.ps1` contains the maintained 82-lesson progression expansion.
-- `audit\quests.csv` is the 200-row quest ledger.
+- `scripts\quest-content\ProgressionExpansion.ps1` contains the maintained 90-lesson progression expansion.
+- `audit\quests.csv` is the 210-row quest ledger.
 - `audit\questbook-validation.json` and `audit\questbook-validation-detailed.json` are the generated reports.
 - `audit\questbook-legacy-1.8.0` preserves the former definitions and is never shipped.
 - `docs\QUEST-RESEARCH-SOURCES.md` records exact installed versions, primary sources, showcase cross-checks and manual-test boundaries.

@@ -57,8 +57,10 @@ herbalbrews:tea_blossom
 immersive_aircraft:airship
 immersive_aircraft:biplane
 immersive_aircraft:gyrodyne
+minecraft:anvil
 minecraft:beehive
 minecraft:bone_meal
+minecraft:bookshelf
 minecraft:bowl
 minecraft:bread
 minecraft:campfire
@@ -66,6 +68,7 @@ minecraft:coal
 minecraft:compass
 minecraft:cooked_beef
 minecraft:dragon_breath
+minecraft:enchanting_table
 minecraft:ender_pearl
 minecraft:experience_bottle
 minecraft:golden_carrot
@@ -73,6 +76,7 @@ minecraft:honey_bottle
 minecraft:honeycomb
 minecraft:iron_ingot
 minecraft:item_frame
+minecraft:lapis_lazuli
 minecraft:lead
 minecraft:torch
 minecraft:wheat_seeds

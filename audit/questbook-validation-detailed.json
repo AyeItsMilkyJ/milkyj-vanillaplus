@@ -1,21 +1,21 @@
 {
-  "validatedAt": "2026-08-22T05:20:53.937646+10:00",
+  "validatedAt": "2026-08-22T05:50:36.741364+10:00",
   "questRoot": "payload/both/config/ftbquests/quests",
   "modsDirectory": "build/end-to-end/client/mods",
   "jarCountScanned": 240,
-  "chapterCount": 14,
-  "questCount": 200,
-  "taskIdCount": 247,
-  "rewardIdCount": 216,
-  "uniqueQuestIds": 200,
-  "uniqueTaskIds": 247,
-  "uniqueRewardIds": 216,
+  "chapterCount": 15,
+  "questCount": 210,
+  "taskIdCount": 258,
+  "rewardIdCount": 227,
+  "uniqueQuestIds": 210,
+  "uniqueTaskIds": 258,
+  "uniqueRewardIds": 227,
   "rootQuestIds": [
     "7DA1925406767A08"
   ],
-  "rootReachableQuests": 200,
-  "graphVisitedQuests": 200,
-  "referencedItemAndIconIds": 102,
+  "rootReachableQuests": 210,
+  "graphVisitedQuests": 210,
+  "referencedItemAndIconIds": 107,
   "unresolvedItems": [],
   "referencedTags": [],
   "unresolvedTags": [],
@@ -52,6 +52,12 @@
       "questCount": 24
     },
     {
+      "file": "enchanting_gear.snbt",
+      "title": "Enchanting and the Public Armoury",
+      "icon": "minecraft:enchanted_book",
+      "questCount": 9
+    },
+    {
       "file": "endgame.snbt",
       "title": "Dangerous Shit and Endgame",
       "icon": "minecraft:dragon_egg",
@@ -85,7 +91,7 @@
       "file": "roadmap.snbt",
       "title": "What Leads Into What?",
       "icon": "minecraft:compass",
-      "questCount": 8
+      "questCount": 9
     },
     {
       "file": "travel_storage.snbt",

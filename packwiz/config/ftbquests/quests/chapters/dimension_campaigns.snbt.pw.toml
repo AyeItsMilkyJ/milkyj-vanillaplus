@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/dimension_campaigns.snbt"
 hash-format = "sha256"
-hash = "4f4df2733cab05183f29274aec535ae6c6d940c226933e9e498a699a7ab07c2d"
+hash = "91ca32daa118b9ba3edf0aa81d6f1c1cab93b0e90c7710ae0548fb6962abf632"

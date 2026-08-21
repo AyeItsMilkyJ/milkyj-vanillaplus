@@ -31,7 +31,7 @@ Every result below remains **NOT RUN** until two people perform and record it.
 1. **NOT RUN** — On both PCs, create fresh disposable Prism test application roots and import the LAN-test ZIP. Do not reuse the working player instance.
 2. **NOT RUN** — Launch both imported instances and confirm Packwiz downloads the candidate from the exact LAN URL printed by the start script.
 3. **NOT RUN** — Connect both authenticated clients to the printed disposable address on port `25566`.
-4. **NOT RUN** — Open FTB Quests on both clients; confirm all 14 chapters and 200 quests are visible, readable, and free of broken characters.
+4. **NOT RUN** — Open FTB Quests on both clients; confirm all 15 chapters and 210 quests are visible, readable, and free of broken characters. In particular, run the disposable Matrix/Anvil checks in `docs/ENCHANTING.md`.
 5. **NOT RUN** — Complete one manual checkmark quest and confirm it completes only after the click.
 6. **NOT RUN** — Complete one inexpensive automatic item-detection quest and confirm holding the correct item is detected.
 7. **NOT RUN** — Claim one reward and confirm the received item/XP matches the displayed reward.

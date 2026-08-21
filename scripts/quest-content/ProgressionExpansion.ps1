@@ -16,6 +16,12 @@ $roadmapChapter = Chapter 'roadmap' 'What Leads Into What?' 'minecraft:compass' 
         'WHY DO I CARE? Homesteads, pets and machines all become frustrating when the base is unsafe, cramped or impossible for friends to find.',
         'COMMON FUCK-UP: Do not flatten an entire biome on day one. Mark expandable zones and build one useful room at a time so the server is not generating chunks while everyone searches for a perfect mega-base.'
     )),
+    (NewLesson 'gear_to_armoury' 'Iron Gear Leads to the Public Armoury' @(
+        'WHAT IS THIS? The enchanting branch turns early iron, books, lapis and experience into deliberate equipment upgrades. It then leads through Matrix Enchanting, Easy Anvils, safe recovery and Create: Enchantment Industry.',
+        'DO THIS: Reserve one shared room for an Enchanting Table, fifteen usable bookshelves, candles, an Anvil, a Grindstone and labelled lapis and book storage.',
+        'WHY DO I CARE? A public armoury lets the group improve and repair equipment without every player wasting levels on a separate mystery setup.',
+        'COMMON FUCK-UP: Do not spend the group''s only rare book or best tool while learning the interface. Run the entire loop with an ordinary iron item first.'
+    )),
     (NewLesson 'hearth_to_harvest' 'Food Leads to Seasons, Kitchens and Bees' @(
         'WHAT IS THIS? The food branch starts with a Farmer''s Delight Knife and Cutting Board, grows into a real kitchen, then forks into seasonal farming, Create food processing and Productive Bees.',
         'DO THIS: Establish two reliable meals before chasing variety. Keep seed stock, label raw ingredients, and use JEI to see which installed cooking station performs each step.',
@@ -52,6 +58,53 @@ $roadmapChapter = Chapter 'roadmap' 'What Leads Into What?' 'minecraft:compass' 
         'WHY DO I CARE? A concrete outcome turns a huge mod list into a memorable shared build and makes it obvious which tutorial chapter to read next.',
         'COMMON FUCK-UP: Do not start five portals and four factories at once. Finish or safely park one project, record what remains, then choose another branch.'
     ))
+)
+
+$enchantingGearChapter = Chapter 'enchanting_gear' 'Enchanting and the Public Armoury' 'minecraft:enchanted_book' 'systems' $null @(
+    (Existing '56791EFEB7941CF8' $false @('54C781F3CD01DB25')),
+    (NewLesson 'matrix_first_pieces' 'Matrix Enchanting: Generate and Place Pieces' @(
+        'WHAT IS THIS? Quark''s Matrix Enchanting is the pack''s primary Enchanting Table interface. Lapis and experience generate enchantment pieces, and the player chooses which compatible pieces to place on the item''s grid.',
+        'DO THIS: Insert a disposable iron tool and lapis, generate a small set of pieces, read every tooltip, place one useful piece and commit only after the preview matches the intended result.',
+        'WHY DO I CARE? The Matrix replaces the blind three-choice gamble with a visible decision while preserving Minecraft''s bookshelves, lapis and experience progression.',
+        'COMMON FUCK-UP: Easy Magic is also installed, but its reroll button belongs to the standard table screen and is not expected inside Quark''s Matrix screen. If the classic three-offer screen appears instead, stop and report the configuration mismatch.'
+    )),
+    (NewLesson 'matrix_merge_pieces' 'Merge Matching Pieces Instead of Chasing Perfect Rolls' @(
+        'WHAT IS THIS? Two Matrix pieces of the same enchantment can merge into a higher-level piece. The tuned pack slightly favours useful repeats and gives five piece charges per lapis without making enchantments free.',
+        'DO THIS: Generate pieces on a cheap item until a matching pair appears, merge the pair, compare the level and cost, then decide whether the result is worth committing or saving for a later attempt.',
+        'WHY DO I CARE? Merging gives ordinary rolls a purpose and makes a planned equipment set achievable without demanding exact deterministic selection.',
+        'COMMON FUCK-UP: Generating forever still consumes resources and rising costs still matter. Set a lapis and experience budget before rolling, and bank the levels needed for the final enchantment.'
+    )),
+    (NewLesson 'matrix_candle_influence' 'Steer the Matrix with Coloured Candles' @(
+        'WHAT IS THIS? Up to four nearby coloured candles influence Matrix piece odds. In this pack each candle applies a meaningful 25 percent weight adjustment; soul sand below the candle or its supporting bookshelf reverses that influence.',
+        'DO THIS: Test one colour beside the table and compare several cheap rolls. White favours Unbreaking, yellow favours Looting/Fortune/Luck of the Sea, pink favours Silk Touch/Channeling, and blue favours Efficiency/Sharpness and several ranged enchants.',
+        'WHY DO I CARE? A themed enchanting room becomes functional preparation: colour nudges the table toward the job while randomness, cost and compatibility still preserve balance.',
+        'COMMON FUCK-UP: Candle influence changes odds; it does not guarantee an enchantment. Do not stack more than four, and do not place soul sand underneath unless the goal is to suppress that colour''s enchantments.'
+    )),
+    (NewLesson 'enchanting_books_treasure' 'Books, Treasure Enchantments and Honest Limits' @(
+        'WHAT IS THIS? Matrix Enchanting accepts ordinary books, but treasure and undiscoverable enchantments remain disabled in the table. Mending, Swift Sneak and other special results still come from their intended loot, trade or exploration sources.',
+        'DO THIS: Enchant one ordinary book for a reusable upgrade, then use JEI, Enchantment Descriptions and the owning mod''s advancement or loot path to research one treasure enchantment the group actually needs.',
+        'WHY DO I CARE? Books separate rolling from committing gear, while the treasure boundary keeps exploration, structures and useful villagers relevant.',
+        'COMMON FUCK-UP: A missing treasure enchantment is not a broken table. Do not enable every hidden enchantment or follow an Apotheosis tutorial; that overhaul is not installed in MilkyCraft.'
+    )),
+    (Existing '063A59CCA4DD3620' $false @('enchanting_books_treasure')),
+    (NewLesson 'anvil_order' 'Combine Books in a Sensible Order' @(
+        'WHAT IS THIS? Easy Anvils removes the hard Too Expensive cap, halves enchanted-book application costs and uses a fixed prior-work penalty. Operations can still consume many levels, so order remains important.',
+        'DO THIS: Plan the final enchantments first, combine equal-level books in balanced pairs, preview each Anvil operation and apply the most expensive combined books to the target only after testing the sequence.',
+        'WHY DO I CARE? A planned order spends fewer levels, keeps the result readable and avoids repeatedly handling the group''s best tool.',
+        'COMMON FUCK-UP: No Too Expensive message does not mean no cost. Incompatible enchantments still reject each other, curses remain dangerous, and clicking the output commits the operation immediately.'
+    )),
+    (NewLesson 'armoury_recovery' 'Grindstone First, Disenchanter Later' @(
+        'WHAT IS THIS? A vanilla Grindstone removes ordinary enchantments and returns some experience, but it does not preserve the enchantments as books. Create: Enchantment Industry later turns unwanted enchantment work and experience into a controlled workshop process.',
+        'DO THIS: Test a Grindstone with a disposable enchanted item and inspect the preview before taking the output. Later, Ponder and JEI the Enchantment Industry Disenchanter and test it on another cheap item inside a contained line.',
+        'WHY DO I CARE? Knowing the destructive early option and the advanced recovery path prevents valuable gear from being fed into the wrong station.',
+        'COMMON FUCK-UP: Never assume a Grindstone, Disenchanter or Printer will return the exact enchanted book you imagine. Preview or test the installed recipe with rubbish gear before touching named, borrowed or irreplaceable equipment.'
+    )),
+    (NewLesson 'public_armoury_project' 'Project: Build a Public Armoury' @(
+        'WHAT IS THIS? The armoury capstone connects the Matrix table, candle controls, book storage, Easy Anvils, Grindstone and the tested Create experience line into one safe shared service.',
+        'DO THIS: Label inputs and destructive stations, provide ordinary test gear, store treasure books separately, document the candle colours, contain experience outputs and ask a teammate to enchant and repair one cheap item unaided.',
+        'WHY DO I CARE? A teammate-proof armoury turns scattered levels and loot into durable expedition equipment without creating another confusing private machine room.',
+        'COMMON FUCK-UP: Do not automate the final input for valuable gear. Keep a manual confirmation step, an obvious shutdown and enough empty output space that the line cannot consume or eject items unexpectedly.'
+    ) $true 5 @('armoury_recovery', '5A53AAEC0E3B4B96'))
 )
 
 $homesteadMasteryChapter = Chapter 'homestead_mastery' 'Homestead Mastery: Farm, Kitchen and Apiary' 'farmersdelight:cooking_pot' 'systems' $null @(

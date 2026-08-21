@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/homestead.snbt"
 hash-format = "sha256"
-hash = "ab644b4308c3bd2be28d4ea6ea5f7caadcf9b13a8d267726dc6c757cc2db1c0e"
+hash = "0947063f18e00256bb0c24511db53094cfd46ac783ff704fb095d682dad70ed4"

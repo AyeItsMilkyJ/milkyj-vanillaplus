@@ -1,6 +1,6 @@
 # Quest research and installed-version boundaries
 
-This file records the evidence used for the MilkyCraft Vanilla+ 200-quest progression guide. It exists so future quest edits do not quietly copy mechanics from a different Minecraft or mod version.
+This file records the evidence used for the MilkyCraft Vanilla+ 210-quest progression guide. It exists so future quest edits do not quietly copy mechanics from a different Minecraft or mod version.
 
 ## Evidence order
 
@@ -52,6 +52,29 @@ Primary Create sources:
 - [Copycats+ source/wiki](https://github.com/copycats-plus/copycats)
 - [Aquatic Ambitions source](https://github.com/davioliva16/create-aquatic-ambitions)
 - [Components and Additions source](https://github.com/Sshmoob/Create-Components-and-Additions)
+
+## Exact enchanting stack inspected
+
+| Component | Exact installed version | Verified role |
+|---|---:|---|
+| Quark / Zeta | `4.0-462` / `1.0-31` | Matrix Enchanting, matching-piece merging, books, coloured-candle influence and item/lapis retention |
+| Easy Magic | `8.0.1` | installed both-side table helper; not taught as the active Matrix interface |
+| Easy Anvils | `8.0.2` | no hard Too Expensive cap, halved book costs, free renaming and fixed prior-work penalty |
+| Enchantment Descriptions | `17.1.21` | client-only tooltip explanations |
+| Create: Enchantment Industry | `1.4.1` | advanced liquid-XP, Disenchanter, Enchanting Guide, Blaze Enchanter and Printer route |
+
+The exact Matrix settings came from `payload/both/config/quark-common.toml`. Automatic conversion remains enabled; ordinary books remain allowed; treasure and undiscoverable enchantments remain disabled. The tuned values are documented in [ENCHANTING.md](ENCHANTING.md).
+
+Enchanting Infuser `8.0.3` was evaluated and rejected for this pass. It would overlap the Matrix, Easy Anvils and Enchantment Industry, and its upstream tracker contains relevant Alex's Caves and GeckoLib-era Forge 1.20.1 issues. A dedicated authenticated workstation test would be required before reconsidering it.
+
+Primary enchanting sources:
+
+- [Quark Matrix language/behaviour source](https://github.com/VazkiiMods/Quark/blob/master/src/main/resources/assets/quark/lang/en_us.json)
+- [Easy Magic source](https://github.com/Fuzss/easy-magic)
+- [Easy Anvils source](https://github.com/Fuzss/easy-anvils)
+- [Enchanting Infuser source](https://github.com/Fuzss/enchanting-infuser)
+- [Infuser Alex's Caves issue](https://github.com/Fuzss/enchanting-infuser/issues/83)
+- [Infuser Forge 1.20.1/GeckoLib report](https://github.com/Fuzss/enchanting-infuser/issues/120)
 
 ## Adventure progression inspected
 

@@ -98,6 +98,7 @@ $chapters = @(
         (Existing '46CFCE08506A17DA' $true),
         (Existing '213BA8647E82F355' $true)
     )),
+    $enchantingGearChapter,
     (Chapter 'homestead' "Food That Isn't Raw Chicken" 'farmersdelight:cooking_pot' 'start' 'homestead' @(
         (Existing '1725341D3243AFDD'),
         (Existing '4CE08428A26650E2'),
@@ -253,6 +254,18 @@ $titleOverrides = @{
 }
 
 $descriptionOverrides = @{
+    '56791EFEB7941CF8' = @(
+        'WHAT IS THIS? Quark Matrix Enchanting is enabled and automatically converts the normal Enchanting Table into a piece-based interface. Easy Magic remains installed, but Quark owns this Matrix screen; Enchantment Descriptions explains unfamiliar results in item tooltips.',
+        'DO THIS: Build the Enchanting Table and fifteen accessible bookshelves with a clear air gap. Open it with a disposable iron item and confirm the Matrix piece grid appears before spending valuable levels.',
+        'WHY DO I CARE? Fifteen shelves unlock the full ordinary enchanting-power range, while the visible Matrix makes the outcome a decision instead of a blind three-option gamble.',
+        'COMMON FUCK-UP: Full-height blocks or a bad shelf gap can block enchanting power; this pack allows short blocks such as carpet in the gap. The Easy Magic reroll button is not expected inside Quark''s replacement Matrix screen; do not diagnose its absence as a missing mod.'
+    )
+    '063A59CCA4DD3620' = @(
+        'WHAT IS THIS? Easy Anvils keeps the vanilla Anvil recognisable while removing the hard Too Expensive cap, halving enchanted-book costs, making renames free and replacing exponential prior-work growth with a fixed penalty.',
+        'DO THIS: Craft an Anvil, rename a disposable tool, preview a small book combination and compare both slot orders before taking the output.',
+        'WHY DO I CARE? The group can maintain favourite equipment without hitting an arbitrary wall, while material and experience costs still make good planning worthwhile.',
+        'COMMON FUCK-UP: The output preview is a commitment screen, not a suggestion. Check enchantment compatibility, final durability, name and level cost before clicking the result.'
+    )
     '18C0AF7F5C17CAB7' = @(
         'What this is: the Field Guide explains progression, JEI explains recipes, Jade identifies the block in front of you, and Patchouli manuals provide the deep reference written by a mod author.',
         'Why it matters: hover an item and read the mod name in its tooltip before searching. In JEI, type an at-sign followed by that mod name to isolate its items and avoid mixing similarly named systems.',
@@ -752,8 +765,8 @@ $duplicateRewardIds = @($rewardIds | Group-Object | Where-Object Count -gt 1)
 $unsafeIds = @($allIds | Where-Object { $_ -match '^[89A-F]' })
 $missingDependencies = @($dependencies | Where-Object { -not $questIds.Contains($_) } | Select-Object -Unique)
 $chapterFiles = @(Get-ChildItem -LiteralPath $chapterRoot -File -Filter '*.snbt')
-if ($chapterFiles.Count -ne 14) { throw "Expected 14 chapters, found $($chapterFiles.Count)." }
-if ($questIds.Count -ne 200) { throw "Expected 200 quests, found $($questIds.Count)." }
+if ($chapterFiles.Count -ne 15) { throw "Expected 15 chapters, found $($chapterFiles.Count)." }
+if ($questIds.Count -ne 210) { throw "Expected 210 quests, found $($questIds.Count)." }
 if ($duplicateIds.Count -gt 0) { throw "Duplicate IDs: $($duplicateIds.Name -join ', ')" }
 if ($duplicateQuestIds.Count -gt 0) { throw "Duplicate quest IDs: $($duplicateQuestIds.Name -join ', ')" }
 if ($duplicateTaskIds.Count -gt 0) { throw "Duplicate task IDs: $($duplicateTaskIds.Name -join ', ')" }
@@ -879,6 +892,7 @@ $report = [ordered]@{
 
 $chapterDefaultMods = @{
     welcome = 'guide'; roadmap = 'guide'; first_days = 'minecraft'; homestead = 'farmersdelight + integrations'
+    enchanting_gear = 'quark + easymagic + easyanvils + create_enchantment_industry'
     homestead_mastery = 'farmersdelight + sereneseasons + productivebees'
     create_basics = 'create + installed addons'
     create_projects = 'create + installed addons'

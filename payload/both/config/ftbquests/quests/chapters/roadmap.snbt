@@ -59,6 +59,29 @@
 		{
 			dependencies: ["5FBA9C2A946AF928"]
 			description: [
+				"WHAT IS THIS? The enchanting branch turns early iron, books, lapis and experience into deliberate equipment upgrades. It then leads through Matrix Enchanting, Easy Anvils, safe recovery and Create: Enchantment Industry."
+				"DO THIS: Reserve one shared room for an Enchanting Table, fifteen usable bookshelves, candles, an Anvil, a Grindstone and labelled lapis and book storage."
+				"WHY DO I CARE? A public armoury lets the group improve and repair equipment without every player wasting levels on a separate mystery setup."
+				"COMMON FUCK-UP: Do not spend the group's only rare book or best tool while learning the interface. Run the entire loop with an ordinary iron item first."
+			]
+			id: "2EA09A0DD85E0043"
+			rewards: [{
+				id: "24E691937BAF6A8D"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "3E4E9DE04AA78D37"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Iron Gear Leads to the Public Armoury"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2EA09A0DD85E0043"]
+			description: [
 				"WHAT IS THIS? The food branch starts with a Farmer's Delight Knife and Cutting Board, grows into a real kitchen, then forks into seasonal farming, Create food processing and Productive Bees."
 				"DO THIS: Establish two reliable meals before chasing variety. Keep seed stock, label raw ingredients, and use JEI to see which installed cooking station performs each step."
 				"WHY DO I CARE? A stocked kitchen supplies expeditions, recovers hunger efficiently and creates useful work for players who do not want to fight bosses or design factories."
@@ -76,7 +99,7 @@
 				type: "checkmark"
 			}]
 			title: "Food Leads to Seasons, Kitchens and Bees"
-			x: 4.0d
+			x: 6.0d
 			y: 0.0d
 		}
 		{
@@ -99,7 +122,7 @@
 				type: "checkmark"
 			}]
 			title: "Create Leads from Motion to Projects"
-			x: 6.0d
+			x: 8.0d
 			y: 0.0d
 		}
 		{
@@ -122,7 +145,7 @@
 				type: "checkmark"
 			}]
 			title: "Storage Leads to Logistics and Transport"
-			x: 8.0d
+			x: 10.0d
 			y: 0.0d
 		}
 		{
@@ -146,7 +169,7 @@
 			}]
 			title: "Exploration Leads to Campaigns"
 			x: 10.0d
-			y: 0.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["09CFC052E8CF2070"]
@@ -168,7 +191,7 @@
 				type: "checkmark"
 			}]
 			title: "Companions Lead to a Living Settlement"
-			x: 10.0d
+			x: 8.0d
 			y: 2.0d
 		}
 		{
@@ -191,7 +214,7 @@
 				type: "checkmark"
 			}]
 			title: "Choose One Next Project"
-			x: 8.0d
+			x: 6.0d
 			y: 2.0d
 		}
 	]

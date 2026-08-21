@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-22T05:15:43.8011145+10:00",
+  "generatedAt": "2026-08-22T05:44:01.9824055+10:00",
   "source": "audit/questbook-legacy-1.8.0",
-  "chapterCount": 14,
-  "questCount": 200,
-  "taskIdCount": 247,
-  "rewardIdCount": 216,
-  "manualCheckmarkQuests": 143,
-  "automaticDetectionQuests": 57,
-  "existingQuestBlocksRetained": 109,
-  "legacyQuestBlocksRemovedFromVisibleGuide": 287,
+  "chapterCount": 15,
+  "questCount": 210,
+  "taskIdCount": 258,
+  "rewardIdCount": 227,
+  "manualCheckmarkQuests": 151,
+  "automaticDetectionQuests": 59,
+  "existingQuestBlocksRetained": 111,
+  "legacyQuestBlocksRemovedFromVisibleGuide": 285,
   "baselineIdComparison": "compared with local v1.0.0 tag",
   "baselineDefinitionIdsFound": 429,
   "baselineDefinitionIdsPreserved": 420,
@@ -24,7 +24,7 @@
     "7DA1925406767A08"
   ],
   "cyclicOrUnreachableQuests": 0,
-  "referencedItemIds": 98,
+  "referencedItemIds": 102,
   "chapters": [
     {
       "Chapter": "WHERE THE FUCK DO I START?",
@@ -34,12 +34,17 @@
     {
       "Chapter": "What Leads Into What?",
       "File": "roadmap.snbt",
-      "Quests": 8
+      "Quests": 9
     },
     {
       "Chapter": "Surviving the First Night",
       "File": "first_days.snbt",
       "Quests": 10
+    },
+    {
+      "Chapter": "Enchanting and the Public Armoury",
+      "File": "enchanting_gear.snbt",
+      "Quests": 9
     },
     {
       "Chapter": "Food That Isn't Raw Chicken",

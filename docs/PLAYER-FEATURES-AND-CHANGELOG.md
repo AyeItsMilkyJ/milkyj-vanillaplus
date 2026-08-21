@@ -10,7 +10,7 @@ Current foundation:
 
 - Minecraft 1.20.1 with Forge 47.4.10.
 - 240 client JARs and 206 dedicated-server JARs after side classification.
-- 200 connected beginner-guide quests across 14 chapters.
+- 210 connected beginner-guide quests across 15 chapters.
 - Seven managed resource-pack choices plus ten optional shader choices in the mate installer.
 - Dedicated-server view distance 12 and simulation distance 6.
 - Packwiz checks for managed updates before each Prism launch.
@@ -54,11 +54,11 @@ Travel also includes Small Ships and upgrades, Immersive Aircraft and AstikorCar
 
 Sophisticated Backpacks, Tom's Simple Storage, Storage Drawers, labels, shulker previews, Carry On and inventory/crafting helpers reduce chest-wall chaos. Corpse provides recoverable death storage. Jade explains blocks and entities, JEI remains the recipe authority, Polymorph resolves recipe collisions, and Create Ponder teaches machine layouts. SeasonHUD is client-only and makes the already-installed Serene Seasons cycle visible without adding server tick work.
 
-Other quality-of-life features include Ultimine/VeinMiner-style excavation, falling trees, comfort items, easier anvils and enchanting, visual workbenches, equipment comparison, enchantment descriptions, advancement plaques, third-person improvements, zoom, controller/search helpers and clearer HUD information. Simple Voice Chat was removed because the group uses Discord.
+Other quality-of-life features include Ultimine/VeinMiner-style excavation, falling trees, comfort items, a tuned Quark Matrix enchanting table, easier anvils, Create-powered experience recovery, visual workbenches, equipment comparison, enchantment descriptions, advancement plaques, third-person improvements, zoom, controller/search helpers and clearer HUD information. Matrix rolls now waste less lapis, matching pieces are more practical to merge and coloured candles more meaningfully steer the result without making treasure enchantments free. Simple Voice Chat was removed because the group uses Discord.
 
 ### 6. A real beginner field guide
 
-The old shallow quest list became a 200-quest field guide designed for players new to mods. Its 14 chapters now include an explicit route map, first-night survival, food basics, homestead mastery, Create fundamentals, 20 practical Create projects, storage, exploration, 24 verified adventure-campaign lessons, archaeology, vehicles, companions/fishing/settlements and endgame. The guide explains what leads into what, gives a small test, explains why it matters and warns about the most likely failure. Quests teach and suggest experiments; they do not lock recipes or force established players to rebuild their base.
+The old shallow quest list became a 210-quest field guide designed for players new to mods. Its 15 chapters now include an explicit route map, first-night survival, a nine-quest enchanting/public-armoury course, food basics, homestead mastery, Create fundamentals, 20 practical Create projects, storage, exploration, 24 verified adventure-campaign lessons, archaeology, vehicles, companions/fishing/settlements and endgame. The guide explains what leads into what, gives a small test, explains why it matters and warns about the most likely failure. Quests teach and suggest experiments; they do not lock recipes or force established players to rebuild their base.
 
 ### 7. Visual choices and distant terrain
 

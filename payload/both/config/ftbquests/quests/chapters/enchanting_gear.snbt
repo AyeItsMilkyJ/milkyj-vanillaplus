@@ -1,0 +1,238 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "enchanting_gear"
+	group: "455989FDDDEB7EAA"
+	icon: "minecraft:enchanted_book"
+	id: "7FEAB6B876385571"
+	order_index: 4
+	progression_mode: "flexible"
+	quest_links: [ ]
+	title: "Enchanting and the Public Armoury"
+	quests: [
+		{
+			dependencies: ["54C781F3CD01DB25"]
+			description: [
+				"WHAT IS THIS? Quark Matrix Enchanting is enabled and automatically converts the normal Enchanting Table into a piece-based interface. Easy Magic remains installed, but Quark owns this Matrix screen; Enchantment Descriptions explains unfamiliar results in item tooltips."
+				"DO THIS: Build the Enchanting Table and fifteen accessible bookshelves with a clear air gap. Open it with a disposable iron item and confirm the Matrix piece grid appears before spending valuable levels."
+				"WHY DO I CARE? Fifteen shelves unlock the full ordinary enchanting-power range, while the visible Matrix makes the outcome a decision instead of a blind three-option gamble."
+				"COMMON FUCK-UP: Full-height blocks or a bad shelf gap can block enchanting power; this pack allows short blocks such as carpet in the gap. The Easy Magic reroll button is not expected inside Quark's replacement Matrix screen; do not diagnose its absence as a missing mod."
+			]
+			id: "56791EFEB7941CF8"
+			rewards: [
+				{
+					count: 16
+					id: "1FB9A4059EDAE144"
+					item: "minecraft:lapis_lazuli"
+					type: "item"
+				}
+				{
+					id: "2F08A2E49A48D8E7"
+					type: "xp"
+					xp: 15
+				}
+			]
+			tasks: [
+				{
+					id: "1DBC59A690093407"
+					item: "minecraft:enchanting_table"
+					type: "item"
+				}
+				{
+					count: 15L
+					id: "0AF00CF2DC082AFA"
+					item: "minecraft:bookshelf"
+					type: "item"
+				}
+			]
+			title: "Better Enchanting"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["56791EFEB7941CF8"]
+			description: [
+				"WHAT IS THIS? Quark's Matrix Enchanting is the pack's primary Enchanting Table interface. Lapis and experience generate enchantment pieces, and the player chooses which compatible pieces to place on the item's grid."
+				"DO THIS: Insert a disposable iron tool and lapis, generate a small set of pieces, read every tooltip, place one useful piece and commit only after the preview matches the intended result."
+				"WHY DO I CARE? The Matrix replaces the blind three-choice gamble with a visible decision while preserving Minecraft's bookshelves, lapis and experience progression."
+				"COMMON FUCK-UP: Easy Magic is also installed, but its reroll button belongs to the standard table screen and is not expected inside Quark's Matrix screen. If the classic three-offer screen appears instead, stop and report the configuration mismatch."
+			]
+			id: "3B5E7701107D99B9"
+			rewards: [{
+				id: "2DE19F14CE092729"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "37D499B0541B5CBF"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Matrix Enchanting: Generate and Place Pieces"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3B5E7701107D99B9"]
+			description: [
+				"WHAT IS THIS? Two Matrix pieces of the same enchantment can merge into a higher-level piece. The tuned pack slightly favours useful repeats and gives five piece charges per lapis without making enchantments free."
+				"DO THIS: Generate pieces on a cheap item until a matching pair appears, merge the pair, compare the level and cost, then decide whether the result is worth committing or saving for a later attempt."
+				"WHY DO I CARE? Merging gives ordinary rolls a purpose and makes a planned equipment set achievable without demanding exact deterministic selection."
+				"COMMON FUCK-UP: Generating forever still consumes resources and rising costs still matter. Set a lapis and experience budget before rolling, and bank the levels needed for the final enchantment."
+			]
+			id: "27E0729B8A8349F6"
+			rewards: [{
+				id: "41222A82DC50706C"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "63A1DF7CF9B3D7DC"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Merge Matching Pieces Instead of Chasing Perfect Rolls"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["27E0729B8A8349F6"]
+			description: [
+				"WHAT IS THIS? Up to four nearby coloured candles influence Matrix piece odds. In this pack each candle applies a meaningful 25 percent weight adjustment; soul sand below the candle or its supporting bookshelf reverses that influence."
+				"DO THIS: Test one colour beside the table and compare several cheap rolls. White favours Unbreaking, yellow favours Looting/Fortune/Luck of the Sea, pink favours Silk Touch/Channeling, and blue favours Efficiency/Sharpness and several ranged enchants."
+				"WHY DO I CARE? A themed enchanting room becomes functional preparation: colour nudges the table toward the job while randomness, cost and compatibility still preserve balance."
+				"COMMON FUCK-UP: Candle influence changes odds; it does not guarantee an enchantment. Do not stack more than four, and do not place soul sand underneath unless the goal is to suppress that colour's enchantments."
+			]
+			id: "74A2F32D229F47BD"
+			rewards: [{
+				id: "6BA3E9DAE1EBA250"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "4A585494B86F24F7"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Steer the Matrix with Coloured Candles"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["74A2F32D229F47BD"]
+			description: [
+				"WHAT IS THIS? Matrix Enchanting accepts ordinary books, but treasure and undiscoverable enchantments remain disabled in the table. Mending, Swift Sneak and other special results still come from their intended loot, trade or exploration sources."
+				"DO THIS: Enchant one ordinary book for a reusable upgrade, then use JEI, Enchantment Descriptions and the owning mod's advancement or loot path to research one treasure enchantment the group actually needs."
+				"WHY DO I CARE? Books separate rolling from committing gear, while the treasure boundary keeps exploration, structures and useful villagers relevant."
+				"COMMON FUCK-UP: A missing treasure enchantment is not a broken table. Do not enable every hidden enchantment or follow an Apotheosis tutorial; that overhaul is not installed in MilkyCraft."
+			]
+			id: "3C93B0EB6DFD20CF"
+			rewards: [{
+				id: "32953A9DDDE0B83C"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "37922E8CF5C60BA4"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Books, Treasure Enchantments and Honest Limits"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3C93B0EB6DFD20CF"]
+			description: [
+				"WHAT IS THIS? Easy Anvils keeps the vanilla Anvil recognisable while removing the hard Too Expensive cap, halving enchanted-book costs, making renames free and replacing exponential prior-work growth with a fixed penalty."
+				"DO THIS: Craft an Anvil, rename a disposable tool, preview a small book combination and compare both slot orders before taking the output."
+				"WHY DO I CARE? The group can maintain favourite equipment without hitting an arbitrary wall, while material and experience costs still make good planning worthwhile."
+				"COMMON FUCK-UP: The output preview is a commitment screen, not a suggestion. Check enchantment compatibility, final durability, name and level cost before clicking the result."
+			]
+			id: "063A59CCA4DD3620"
+			rewards: [{
+				id: "466C111B409ED7DF"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "25216B4213043E60"
+				item: "minecraft:anvil"
+				type: "item"
+			}]
+			title: "Repair and Rename"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["063A59CCA4DD3620"]
+			description: [
+				"WHAT IS THIS? Easy Anvils removes the hard Too Expensive cap, halves enchanted-book application costs and uses a fixed prior-work penalty. Operations can still consume many levels, so order remains important."
+				"DO THIS: Plan the final enchantments first, combine equal-level books in balanced pairs, preview each Anvil operation and apply the most expensive combined books to the target only after testing the sequence."
+				"WHY DO I CARE? A planned order spends fewer levels, keeps the result readable and avoids repeatedly handling the group's best tool."
+				"COMMON FUCK-UP: No Too Expensive message does not mean no cost. Incompatible enchantments still reject each other, curses remain dangerous, and clicking the output commits the operation immediately."
+			]
+			id: "7BD8DEC5AB2F1862"
+			rewards: [{
+				id: "258DF61E8CD474B4"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "475E3C7942794FF5"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Combine Books in a Sensible Order"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7BD8DEC5AB2F1862"]
+			description: [
+				"WHAT IS THIS? A vanilla Grindstone removes ordinary enchantments and returns some experience, but it does not preserve the enchantments as books. Create: Enchantment Industry later turns unwanted enchantment work and experience into a controlled workshop process."
+				"DO THIS: Test a Grindstone with a disposable enchanted item and inspect the preview before taking the output. Later, Ponder and JEI the Enchantment Industry Disenchanter and test it on another cheap item inside a contained line."
+				"WHY DO I CARE? Knowing the destructive early option and the advanced recovery path prevents valuable gear from being fed into the wrong station."
+				"COMMON FUCK-UP: Never assume a Grindstone, Disenchanter or Printer will return the exact enchanted book you imagine. Preview or test the installed recipe with rubbish gear before touching named, borrowed or irreplaceable equipment."
+			]
+			id: "48485EFD8ED622AA"
+			rewards: [{
+				id: "23378CC88DC82A3E"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "2C07F091DE81275D"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Grindstone First, Disenchanter Later"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["48485EFD8ED622AA", "5A53AAEC0E3B4B96"]
+			description: [
+				"WHAT IS THIS? The armoury capstone connects the Matrix table, candle controls, book storage, Easy Anvils, Grindstone and the tested Create experience line into one safe shared service."
+				"DO THIS: Label inputs and destructive stations, provide ordinary test gear, store treasure books separately, document the candle colours, contain experience outputs and ask a teammate to enchant and repair one cheap item unaided."
+				"WHY DO I CARE? A teammate-proof armoury turns scattered levels and loot into durable expedition equipment without creating another confusing private machine room."
+				"COMMON FUCK-UP: Do not automate the final input for valuable gear. Keep a manual confirmation step, an obvious shutdown and enough empty output space that the line cannot consume or eject items unexpectedly."
+			]
+			id: "32783418D0A32007"
+			rewards: [{
+				id: "4C7282C78FF5E13B"
+				type: "xp"
+				xp: 5
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "54ED80FE336FF69B"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Project: Build a Public Armoury"
+			x: 6.0d
+			y: 2.0d
+		}
+	]
+}

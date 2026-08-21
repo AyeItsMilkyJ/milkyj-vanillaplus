@@ -1,0 +1,8 @@
+name = "Managed config: ftbquests/quests/chapters/enchanting_gear.snbt"
+filename = "enchanting_gear.snbt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/enchanting_gear.snbt"
+hash-format = "sha256"
+hash = "da8dda55a4dcc05b0e08948985a516cfa3d30f2da3c26f961f1f1b95a6ae092c"

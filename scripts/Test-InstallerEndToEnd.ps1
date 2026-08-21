@@ -49,6 +49,7 @@ try {
     . (Join-Path $projectRootResolved 'server-tools\Common.ps1')
     $java = Find-Java17 $null
     $bootstrap = & (Join-Path $PSScriptRoot 'Get-PackwizInstaller.ps1') -ProjectRoot $projectRootResolved -PassThru
+    $mainInstaller = & (Join-Path $PSScriptRoot 'Get-PackwizInstaller.ps1') -ProjectRoot $projectRootResolved -MainJarPassThru
 
     [IO.File]::WriteAllText((Join-Path $clientRoot 'options.txt'), 'personal-sentinel=true', [Text.UTF8Encoding]::new($false))
     [IO.File]::WriteAllText((Join-Path $clientRoot 'optionsshaders.txt'), 'shader-settings-sentinel=true', [Text.UTF8Encoding]::new($false))
@@ -57,8 +58,9 @@ try {
     [IO.File]::WriteAllText((Join-Path $clientRoot 'saves\personal-world\level.dat'), 'save-sentinel', [Text.UTF8Encoding]::new($false))
     [IO.File]::WriteAllText((Join-Path $clientRoot 'shaderpacks\personal-sentinel.txt'), 'shaderpack-sentinel', [Text.UTF8Encoding]::new($false))
     Copy-Item -LiteralPath $bootstrap -Destination (Join-Path $clientRoot 'packwiz-installer-bootstrap.jar')
+    Copy-Item -LiteralPath $mainInstaller -Destination (Join-Path $clientRoot 'packwiz-installer.jar')
     Push-Location $clientRoot
-    try { & $java -jar 'packwiz-installer-bootstrap.jar' -g -s client $localPackUrl; $clientExit = $LASTEXITCODE } finally { Pop-Location }
+    try { & $java -jar 'packwiz-installer-bootstrap.jar' --bootstrap-no-update --bootstrap-main-jar 'packwiz-installer.jar' -g -s client $localPackUrl; $clientExit = $LASTEXITCODE } finally { Pop-Location }
     if ($clientExit -ne 0) { throw "Client Packwiz installation failed with exit code $clientExit" }
     if ((Get-Content -LiteralPath (Join-Path $clientRoot 'options.txt') -Raw) -ne 'personal-sentinel=true') { throw 'Packwiz overwrote options.txt.' }
     if ((Get-Content -LiteralPath (Join-Path $clientRoot 'optionsshaders.txt') -Raw) -ne 'shader-settings-sentinel=true') { throw 'Packwiz overwrote shader settings.' }
@@ -86,7 +88,7 @@ try {
     [IO.File]::WriteAllText($managedHostPath, $managedV2, [Text.UTF8Encoding]::new($false))
     & (Join-Path $PSScriptRoot 'Update-PackMetadata.ps1') -ProjectRoot $hostRoot
     Push-Location $clientRoot
-    try { & $java -jar 'packwiz-installer-bootstrap.jar' -g -s client $localPackUrl; $settingsUpdateExit = $LASTEXITCODE } finally { Pop-Location }
+    try { & $java -jar 'packwiz-installer-bootstrap.jar' --bootstrap-no-update --bootstrap-main-jar 'packwiz-installer.jar' -g -s client $localPackUrl; $settingsUpdateExit = $LASTEXITCODE } finally { Pop-Location }
     if ($settingsUpdateExit -ne 0) { throw "Client Packwiz settings-update test failed with exit code $settingsUpdateExit" }
     if ((Get-Content -LiteralPath $preservedClientPath -Raw) -ne $personalSettingSentinel) { throw 'Packwiz reset a preserved mod-specific client setting.' }
     if ((Get-Content -LiteralPath $managedClientPath -Raw) -ne $managedV2) { throw 'Packwiz failed to update an ordinary managed client resource.' }
@@ -94,8 +96,9 @@ try {
     if ($clientJars.Count -ne 240) { throw "Expected 240 client JARs; installed $($clientJars.Count)." }
 
     Copy-Item -LiteralPath $bootstrap -Destination (Join-Path $serverRoot 'packwiz-installer-bootstrap.jar')
+    Copy-Item -LiteralPath $mainInstaller -Destination (Join-Path $serverRoot 'packwiz-installer.jar')
     Push-Location $serverRoot
-    try { & $java -jar 'packwiz-installer-bootstrap.jar' -g -s server $localPackUrl; $serverExit = $LASTEXITCODE } finally { Pop-Location }
+    try { & $java -jar 'packwiz-installer-bootstrap.jar' --bootstrap-no-update --bootstrap-main-jar 'packwiz-installer.jar' -g -s server $localPackUrl; $serverExit = $LASTEXITCODE } finally { Pop-Location }
     if ($serverExit -ne 0) { throw "Server Packwiz installation failed with exit code $serverExit" }
     $serverJars = @(Get-ChildItem -LiteralPath (Join-Path $serverRoot 'mods') -File -Filter *.jar)
     if ($serverJars.Count -ne 206) { throw "Expected 206 server JARs; installed $($serverJars.Count)." }
@@ -184,7 +187,7 @@ try {
         $process.StandardInput.WriteLine('stop'); $process.StandardInput.Flush()
         $serverProcessExited = $process.WaitForExit(300000)
         $savedAllDimensions = [bool](Select-String -LiteralPath $latestLog -SimpleMatch 'ThreadedAnvilChunkStorage: All dimensions are saved' -Quiet)
-        $questParserLoaded = [bool](Select-String -LiteralPath $latestLog -Pattern 'Loaded 4 chapter groups, 14 chapters, 200 quests, 0 reward tables' -Quiet)
+        $questParserLoaded = [bool](Select-String -LiteralPath $latestLog -Pattern 'Loaded 4 chapter groups, 15 chapters, 210 quests, 0 reward tables' -Quiet)
         if (-not $serverProcessExited) {
             $process.Kill()
             $process.WaitForExit()
@@ -193,7 +196,7 @@ try {
         [IO.File]::WriteAllText((Join-Path $testRoot 'server.stdout.log'), $stdoutTask.Result)
         [IO.File]::WriteAllText((Join-Path $testRoot 'server.stderr.log'), $stderrTask.Result)
         if ($serverProcessExited -and $process.ExitCode -ne 0) { throw "Disposable Forge server exited with code $($process.ExitCode)." }
-        if (-not $questParserLoaded) { throw 'FTB Quests did not report the expected 14 chapters and 200 quests.' }
+        if (-not $questParserLoaded) { throw 'FTB Quests did not report the expected 15 chapters and 210 quests.' }
         if (-not $savedAllDimensions) { throw 'Disposable server did not confirm that all loaded dimensions were saved.' }
         $finalLog = Get-Content -LiteralPath $latestLog -Raw
         $candidateAutomaticallyEnabled = $finalLog.Contains('Found new data pack file/milkyj-compat-fixes, loading it automatically')

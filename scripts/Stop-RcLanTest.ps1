@@ -24,7 +24,7 @@ if ($http) { Stop-Process -Id $http.Id -Force }
 $latest = Join-Path $state.serverRoot 'logs\latest.log'
 $saved = (Test-Path -LiteralPath $latest) -and [bool](Select-String -LiteralPath $latest -SimpleMatch 'ThreadedAnvilChunkStorage: All dimensions are saved' -Quiet)
 $reachedDone = (Test-Path -LiteralPath $latest) -and [bool](Select-String -LiteralPath $latest -SimpleMatch 'Done (' -Quiet)
-$questsLoaded = (Test-Path -LiteralPath $latest) -and [bool](Select-String -LiteralPath $latest -Pattern 'Loaded 4 chapter groups, 14 chapters, 200 quests, 0 reward tables' -Quiet)
+$questsLoaded = (Test-Path -LiteralPath $latest) -and [bool](Select-String -LiteralPath $latest -Pattern 'Loaded 4 chapter groups, 15 chapters, 210 quests, 0 reward tables' -Quiet)
 $stopped = [ordered]@{
     stoppedAt = (Get-Date).ToString('o'); gracefulStopRequested = $true; allLoadedDimensionsSaved = $saved
     supervisorStopped = -not [bool](Get-Process -Id $state.supervisorProcessId -ErrorAction SilentlyContinue)
@@ -36,7 +36,7 @@ $audit = [ordered]@{
     testedAt = $stopped.stoppedAt; candidate = '1.9.0-rc2'; lanAddress = $state.lanAddress
     packHttpPort = $state.packHttpPort; minecraftPort = $state.minecraftPort
     productionPortTouched = $false; serverJarCount = $state.serverJarCount
-    serverReachedDone = $reachedDone; questParserLoaded = $questsLoaded; chapterCount = 14; questCount = 200
+    serverReachedDone = $reachedDone; questParserLoaded = $questsLoaded; chapterCount = 15; questCount = 210
     allLoadedDimensionsSaved = $saved; supervisorStopped = $stopped.supervisorStopped; httpStopped = $stopped.httpStopped
     zip = 'dist/MilkyJ-VanillaPlus-1.9.0-rc2-LAN-TEST-Prism.zip'
     zipSha256 = (Get-FileHash -LiteralPath $state.zip -Algorithm SHA256).Hash.ToLowerInvariant()

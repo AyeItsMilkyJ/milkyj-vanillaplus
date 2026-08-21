@@ -20,10 +20,11 @@ QUEST_ID_RE = re.compile(r'^\t\t\tid:\s*"([0-9A-F]{16})"', re.MULTILINE)
 ALL_ID_RE = re.compile(r'^\s*id:\s*"([0-9A-F]{16})"', re.MULTILINE)
 ITEM_RE = re.compile(r'^\s*item:\s*"([a-z0-9_.-]+:[a-z0-9_./-]+)"', re.MULTILINE)
 TAG_RE = re.compile(r'^\s*tag:\s*"#?([a-z0-9_.-]+:[a-z0-9_./-]+)"', re.MULTILINE)
-EXPECTED_CHAPTERS = 14
-EXPECTED_QUESTS = 200
+EXPECTED_CHAPTERS = 15
+EXPECTED_QUESTS = 210
 BEGINNER_FORMAT_CHAPTERS = {
     "roadmap",
+    "enchanting_gear",
     "homestead_mastery",
     "create_basics",
     "create_projects",
@@ -107,7 +108,8 @@ def main() -> int:
         "minecraft:golden_carrot", "minecraft:honey_bottle", "minecraft:honeycomb",
         "minecraft:iron_ingot", "minecraft:item_frame", "minecraft:lead", "minecraft:torch",
         "minecraft:wheat_seeds", "minecraft:writable_book", "minecraft:lava_bucket",
-        "minecraft:dragon_egg",
+        "minecraft:dragon_egg", "minecraft:anvil", "minecraft:bookshelf",
+        "minecraft:enchanted_book", "minecraft:enchanting_table", "minecraft:lapis_lazuli",
     }
 
     quest_ids: list[str] = []

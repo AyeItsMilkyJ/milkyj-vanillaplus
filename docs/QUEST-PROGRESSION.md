@@ -8,7 +8,7 @@ Forge: `47.4.10`
 
 ## Player experience
 
-The Beginner Field Guide contains **200 pack-specific quests across 14 chapters**. It is written for people who have barely touched modded Minecraft, but it remains useful as a project map for an established multiplayer world.
+The Beginner Field Guide contains **210 pack-specific quests across 15 chapters**. It is written for people who have barely touched modded Minecraft, but it remains useful as a project map for an established multiplayer world.
 
 The guide explains the systems already installed. It does not lock recipes, block dimensions, force a class, require every side branch or demand that an existing player rebuild completed work. A player can choose survival, homestead, Create, storage, community or adventure routes in parallel.
 
@@ -26,8 +26,9 @@ JEI is the exact recipe authority, Jade identifies the block or entity in front 
 | Chapter | Quests | Purpose |
 |---|---:|---|
 | WHERE THE FUCK DO I START? | 14 | Quest UI, JEI, Jade, recovery, backpack, Waystones, manuals, Ponder, maps and FTB Teams |
-| What Leads Into What? | 8 | A route map connecting survival, homestead, Create, storage, exploration and community branches |
+| What Leads Into What? | 9 | A route map connecting survival, enchanting, homestead, Create, storage, exploration and community branches |
 | Surviving the First Night | 10 | Shelter, iron, sleep, portable supplies, landmarks and a healthy first base |
+| Enchanting and the Public Armoury | 9 | Matrix pieces, candle steering, books, Easy Anvils, recovery and a shared armoury |
 | Food That Isn't Raw Chicken | 13 | Farmer's Delight basics, a working kitchen, seasons, tea and first bees |
 | Homestead Mastery: Farm, Kitchen and Apiary | 18 | Seasonal fields, Cooking for Blockheads, Slice & Dice, Central Kitchen and Productive Bees |
 | Create Without Having a Brain Aneurysm | 22 | Ponder, rotation, stress, core machines, logistics, brass, trains and installed-addon orientation |
@@ -39,17 +40,18 @@ JEI is the exact recipe authority, Jade identifies the block or entity in front 
 | Vehicles and Transport | 9 | Astikor carts, Small Ships, Immersive Aircraft and Create trains |
 | Companions, Fishing and Settlements | 12 | Doggy Talents, Domestication Innovation, fishing, aquariums, guards, trades and bounties |
 | Dangerous Shit and Endgame | 14 | Nether travel, End Remastered eyes, End safety, dragon progression and optional lore |
-| **Total** | **200** | **143 manual/tutorial quests and 57 automatic-detection quests** |
+| **Total** | **210** | **151 manual/tutorial quests and 59 automatic-detection quests** |
 
 ## How branches connect
 
 The first three interface lessons now lead directly to **How to Read the Field Guide**. Basic help is no longer hidden behind crafting a backpack and Waystone. The remaining orientation lessons still teach those systems, but every main route becomes readable as soon as the player understands the guide.
 
-The five added chapters start from meaningful existing milestones:
+The six added chapters start from meaningful existing milestones:
 
 | New chapter | Unlock milestone | Reason |
 |---|---|---|
 | What Leads Into What? | How to Read the Field Guide | lets the player choose a route immediately |
+| Enchanting and the Public Armoury | An Iron Foundation | starts with ordinary table, shelf, lapis and anvil materials |
 | Homestead Mastery | Build a Working Kitchen | assumes the basic knife, board, garden and pot loop exists |
 | Create Projects | Diagnosing a Silent Machine | assumes one complete line and basic troubleshooting |
 | Expedition Campaigns | The Boss Threshold | assumes the group can travel, recover and share Lootr rewards |
@@ -58,6 +60,7 @@ The five added chapters start from meaningful existing milestones:
 Within the new chapters, explicit dependency forks show what actually stems from what:
 
 - homestead farming and apiary work split after the homestead map;
+- the armoury moves from Matrix pieces and candles through books and anvil discipline, then joins the existing Create experience branch only for its optional capstone;
 - Create ore, tree, food and contraption projects split after the machine-contract lesson;
 - Aether, Twilight, Otherside, Alex's Caves, Aquamirae and Mowzie campaigns split from one expedition briefing;
 - the Twilight path splits after the Lich and merges only after Hydra, Ur-Ghast and Snow Queen progress;
@@ -74,6 +77,16 @@ Existing chapter semantics were also repaired without changing their IDs or rewa
 - the Create train transport lesson also requires the schedule lesson;
 - Nether roads now appear directly after Nether exploration and End safety appears before entering the End;
 - museum/relic memory work is optional rather than a mandatory End tail.
+
+## Enchanting and the public armoury
+
+The pack already contained a full vanilla+ enchanting stack, but the former 200-quest guide did not teach it. The new nine-quest chapter restores the legacy Enchanting Table/bookshelf and Anvil item tasks with their original IDs and rewards, then adds seven focused lessons.
+
+Quark Matrix Enchanting is the primary table. It generates visible pieces with lapis and experience, lets players place compatible results, merges matching pieces to raise their level and uses coloured candles to steer probability. The tuned configuration gives five charges per lapis, delays the piece-price step, favours repeats modestly and doubles each candle's configured weight influence while retaining the four-candle limit. Fifteen bookshelves remain the ordinary maximum, and treasure or undiscoverable enchantments remain outside the table.
+
+Easy Anvils teaches planned book combinations, fixed prior-work costs and the absence of the hard Too Expensive cap. The route then distinguishes the destructive vanilla Grindstone from the later Create: Enchantment Industry recovery workflow. The optional capstone asks another player to use a labelled public armoury safely; valuable equipment always retains a manual confirmation step.
+
+Easy Magic remains installed but is not presented as the active screen. Quark automatically owns the Matrix interface, so Easy Magic's classic reroll control must not be expected there. The exact settings, rejected Infuser candidate and authenticated gameplay gate are in [ENCHANTING.md](ENCHANTING.md).
 
 ## Homestead mastery
 
@@ -134,15 +147,15 @@ Exact installed versions, primary sources, supplemental showcase links, confiden
 
 Manual checkmarks are used for reading, UI lessons, explanations, troubleshooting and subjective project tests. Stable inexpensive item tasks remain where holding an item is reliable proof. Existing advancement, dimension and kill checks remain only where the installed trigger already represented the activity reliably.
 
-The generator retains all **109 selected existing quest blocks** with their quest, task and reward IDs. It also preserves the previously published deterministic IDs already present in the 118-quest guide. The 82 added lessons use new deterministic seeds and modest XP rewards. No existing item reward or XP definition changed meaning.
+The generator retains all **111 selected existing quest blocks** with their quest, task and reward IDs, including two restored legacy enchanting foundations. It also preserves the previously published deterministic IDs already present in the 118-quest guide. The maintained expansion now contains 90 authored lessons with deterministic seeds and modest XP rewards. No existing item reward or XP definition changed meaning.
 
 The current generated totals are:
 
-- 200 unique quest IDs;
-- 247 unique task IDs;
-- 216 unique reward IDs;
-- 143 manual/checkmark quests;
-- 57 automatic-detection quests;
+- 210 unique quest IDs;
+- 258 unique task IDs;
+- 227 unique reward IDs;
+- 151 manual/checkmark quests;
+- 59 automatic-detection quests;
 - zero duplicate, signed-unsafe or missing IDs;
 - zero missing dependencies or graph cycles.
 
@@ -160,13 +173,13 @@ The managed definitions live at `payload/both/config/ftbquests/quests/`; matchin
 
 `scripts/Build-BeginnerQuestBook.ps1` loads authored expansion data from `scripts/quest-content/ProgressionExpansion.ps1`, preserves selected legacy blocks, generates deterministic IDs and validates the whole graph before deployment. Never change a published seed or ID. Add a new stable seed for a genuinely new lesson.
 
-`audit/quests.csv` is the 200-row release ledger. Each row records chapter, quest ID, title, system, task type and target, dependencies, optional state, reward summary and verification status.
+`audit/quests.csv` is the 210-row release ledger. Each row records chapter, quest ID, title, system, task type and target, dependencies, optional state, reward summary and verification status.
 
 ## Validation gates
 
 Automated validation now checks:
 
-- 14 non-empty chapter files and exactly 200 quests;
+- 15 non-empty chapter files and exactly 210 quests;
 - unique quest/task/reward IDs and FTB-safe signed values;
 - all dependency targets, exactly one guide root, full root reachability and acyclicity;
 - installed item/icon and tag evidence against the 240-JAR disposable client;
@@ -177,4 +190,4 @@ Automated validation now checks:
 - personal-setting preservation during update and rollback;
 - dedicated-server FTB parsing, normal save and JVM exit.
 
-Automated parsing is not release approval. Before publication, two clean authenticated disposable clients must open the book, inspect all pages and dependency lines, complete a checkmark and automatic task, claim a reward, verify same-team/outside-team behaviour, and manually test representative Create, apiary and dimension lessons. No live world or live Prism instance is used for this work.
+Automated parsing is not release approval. Before publication, two clean authenticated disposable clients must open the book, inspect all pages and dependency lines, complete a checkmark and automatic task, claim a reward, verify same-team/outside-team behaviour, and manually test representative Matrix enchanting, Create, apiary and dimension lessons. No live world or live Prism instance is used for this work.
