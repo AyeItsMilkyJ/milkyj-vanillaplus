@@ -1,18 +1,33 @@
 # Windows 24/7 dedicated-server operations
 
-Status: the management tools and optional Discord helper are installed on the dedicated-server PC. Discord lifecycle behaviour was validated against disposable installations only. No scheduled task was installed, no webhook secret was created, and the running server process/world were not interrupted.
+Status: the management tools, visible console launcher, three-hour restart policy, and optional Discord helper are installed on the dedicated-server PC. Automated validation used disposable installations only. No scheduled task was installed, no webhook secret was created, and deployment did not start Java or touch the world.
 
 ## Architecture
 
-`Server-Supervisor.ps1` is the single long-lived owner of the Minecraft process. It launches Java directly with Forge's `user_jvm_args.txt` and `libraries/.../win_args.txt`; it deliberately does not invoke legacy `run.bat` wrappers that may start a second watchdog. The supervisor owns Minecraft stdin, records process state under `server-management`, and writes a timestamped supervisor log per session.
+`Server-Supervisor.ps1` is the single long-lived owner of the Minecraft process. It launches Java directly with Forge's `user_jvm_args.txt` and `libraries/.../win_args.txt`; it deliberately does not invoke legacy wrappers that may start a second watchdog. The supervisor owns Minecraft stdin, records process state under `server-management`, and writes a timestamped supervisor log per session.
+
+Forge runs with `nogui`, so there is no separate graphical Java server window. When root `run.bat` or `packwiz-tools\START SERVER.bat` is double-clicked, CMD, PowerShell, and Java share one visible console window titled **MilkyCraft Vanilla+ Server - Java Console**. Raw Forge/Minecraft stdout and stderr appear there. The supervisor asynchronously reads commands typed into that same window and forwards ordinary commands to Java; it handles `restart` and `stop` as safe lifecycle requests. There are separate processes in Task Manager, but only one terminal window.
 
 `Start-Server.ps1` refuses a duplicate listener, supervisor, or recorded server PID. `Stop-Server.ps1` creates a server-local stop request. The supervisor writes Minecraft's normal `stop` command to stdin, waits for the launch process to exit, and checks that the configured port is no longer listening.
 
 If a mod such as Distant Horizons leaves the JVM alive after world saving, the supervisor waits for the configured timeout (240 seconds by default), records `manual-intervention-required`, and leaves the process alive for diagnosis. It never immediately kills a production JVM.
 
-Unexpected exits use backoff of 15, 30, 60, then 120 seconds. Four failures inside ten minutes stop automatic retry and surface `failed-repeatedly`. A stable 20-minute run resets the rapid-failure history. Intentional stop requests cancel restarts.
+After each fresh `Done`, the normal policy schedules a clean restart 180 minutes later. Players receive warnings at 10 minutes, 5 minutes, 1 minute, 30 seconds, and 10 seconds. The supervisor runs `save-all flush`, sends the normal `stop`, verifies process exit and port release, waits 10 seconds, and launches Java again in the same console. A stop request during the wait cancels relaunch.
+
+Unexpected exits use separate backoff of 15, 30, 60, then 120 seconds. Four failures inside ten minutes stop automatic retry and surface `failed-repeatedly`. A stable 20-minute run resets the rapid-failure history. Intentional stop requests cancel restarts.
 
 No Packwiz update occurs during startup, crash recovery, scheduled startup, or scheduled backup.
+
+## Normal visible start
+
+Double-click root `run.bat` (preferred) or `packwiz-tools\START SERVER.bat`. Do not launch both. The apparent CMD window is the real interactive Java server console:
+
+- type normal Minecraft commands such as `list`, `say hello`, or `save-all` directly;
+- type `restart` for a clean save, stop, and relaunch in the same window;
+- type `stop` for a clean save and full shutdown; and
+- do not close the window with **X** or press Ctrl+C while the server is running or saving.
+
+The window remains open after shutdown so an error can be read. Press any key only after it says the server console is closed.
 
 ## Discord status notifications
 
@@ -37,15 +52,17 @@ Never paste the webhook URL into chat, commit it, include it in the mate ZIP, or
 
 This is a server-local notifier. If Java crashes while Windows and the internet are available, it can report the crash. If the entire PC, router, power, or internet connection dies, it cannot send an immediate offline message; that case requires a separate externally hosted uptime monitor.
 
-## One-time deployment (manual; not run)
+## One-time deployment
 
 After the RC is approved and while reviewing the target path:
 
 ```powershell
-.\server-tools\Install-ServerTools.ps1 -ServerRoot "$env:USERPROFILE\Desktop\Minecraft Server"
+.\server-tools\Install-ServerTools.ps1 `
+  -ServerRoot "$env:USERPROFILE\Desktop\Minecraft Server" `
+  -InstallRootLaunchers
 ```
 
-This copies the management package to `Minecraft Server\packwiz-tools`. It does not install a task, start the server, apply Packwiz, or replace the world.
+This copies the management package to `Minecraft Server\packwiz-tools` and installs the root visible `run.bat` plus stop/status aliases. Existing management tools and root launchers are preserved first under `server-management\deployment-backups\<timestamp>`. It does not install a task, start the server, apply Packwiz, change mods, or replace the world. The server must be stopped when `-InstallRootLaunchers` is used.
 
 The double-click wrappers in that folder are:
 
@@ -80,7 +97,7 @@ Removal command:
 .\packwiz-tools\Remove-AutomaticStartup.ps1 -IncludeDailyBackup
 ```
 
-The startup task uses a BootTrigger, waits 60 seconds for networking, requests an S4U background logon for the installing Windows user, uses the server root as its working directory, and relies on duplicate-start locking. The optional daily task runs at 04:00 and calls the cold-backup workflow. Installation may require an elevated PowerShell depending on local Task Scheduler policy.
+The startup task uses a BootTrigger, waits 60 seconds for networking, requests an S4U background logon for the installing Windows user, uses the server root as its working directory, and relies on duplicate-start locking. An S4U boot task is intentionally background-only and cannot show an interactive desktop console. Log in and use root `run.bat` whenever a visible terminal is wanted. The optional daily task runs at 04:00 and calls the cold-backup workflow. Installation may require an elevated PowerShell depending on local Task Scheduler policy.
 
 No task was installed or enabled during implementation. The disposable test parsed two generated XML files and confirmed the matching task count did not change.
 
@@ -122,7 +139,7 @@ World restoration remains a separate high-impact option in `Restore-ServerBackup
 
 ## Status output
 
-`SERVER STATUS.bat` reports running/stopped state, listener/Minecraft PID, recorded launch PID, port, supervisor state/PID, current recorded pack version, latest verified backup, last start, latest crash/restart event, latest Minecraft log, whether Discord notifications are configured, and whether an update is safe. It never prints the webhook URL.
+`SERVER STATUS.bat` reports running/stopped state, listener/Minecraft PID, recorded launch PID, port, supervisor state/PID, visible/background console mode, next scheduled restart, restart interval, current recorded pack version, latest verified backup, last start, latest crash/restart event, latest Minecraft log, whether Discord notifications are configured, and whether an update is safe. It never prints the webhook URL.
 
 ## Disposable test evidence
 
@@ -142,6 +159,8 @@ The lightweight management harness at port 25577 passed:
 - simulated lingering JVM reported but not killed;
 - production path and port guards.
 
-The real Forge integration at port 25578 used a fresh clone of the clean 203-mod RC server. It passed direct Java ownership, reached `Done` in 100.442 seconds, accepted the normal `stop` command, saved all loaded dimensions, exited the JVM, and released the port.
+The focused one-console harness at port 25579 also passed inline supervisor ownership, direct Minecraft child ownership, no second CMD/PowerShell child, inherited raw stdout/stderr, interactive command forwarding, external clean-stop recognition, save-before-stop order, warnings, and a compressed scheduled restart/relaunch cycle. Port 25565 and all live data remained untouched. A final visual acceptance check still requires double-clicking live `run.bat`, issuing `list`, and then typing `stop`.
 
-Evidence: `audit/server-infrastructure-tests.json` and `audit/forge-supervisor-integration.json`.
+The real Forge integration at port 25578 used a read-only clone of the current 203-mod server payload while excluding the world and private server files. It passed direct Java ownership, reached `Done` in 95.466 seconds, accepted `save-all flush` and the normal `stop` command, saved all loaded dimensions, exited the JVM, and released the port.
+
+Evidence: `audit/server-infrastructure-tests.json`, `audit/visible-server-console.json`, and `audit/forge-supervisor-integration.json`.

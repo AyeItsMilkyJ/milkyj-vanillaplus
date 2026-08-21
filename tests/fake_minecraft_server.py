@@ -1,4 +1,4 @@
-"""Disposable stdin-controlled TCP server used only by Test-ServerInfrastructure.ps1."""
+"""Disposable stdin-controlled TCP server used by server-tool test harnesses."""
 
 from __future__ import annotations
 
@@ -33,6 +33,9 @@ def main() -> int:
 
     latest = root / "logs" / "latest.log"
     append_log(latest, f"[Server thread/INFO] [minecraft/DedicatedServer]: Done (0.123s)! Test launch {count}")
+    print(f"[Fake Minecraft] Done (0.123s)! Test launch {count}", flush=True)
+    print(f"[Fake Minecraft stderr] Java console stream test launch {count}", file=sys.stderr, flush=True)
+    command_log = root / "server-management" / "fake-commands.log"
     listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     listener.bind(("127.0.0.1", args.port))
@@ -40,7 +43,10 @@ def main() -> int:
     listener.settimeout(0.2)
     try:
         for line in sys.stdin:
-            if line.strip().lower() != "stop":
+            command = line.strip()
+            append_log(command_log, command)
+            print(f"[Fake Minecraft command] {command}", flush=True)
+            if command.lower() != "stop":
                 continue
             append_log(latest, "[Server thread/INFO] [minecraft/MinecraftServer]: Saving players")
             append_log(latest, "[Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds")

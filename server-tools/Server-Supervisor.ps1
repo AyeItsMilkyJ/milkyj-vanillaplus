@@ -1,7 +1,8 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory)][string]$ServerRoot,
-    [string]$SettingsPath
+    [string]$SettingsPath,
+    [switch]$Interactive
 )
 
 $ErrorActionPreference = 'Stop'
@@ -18,10 +19,75 @@ New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
 $supervisorLog = Join-Path $logRoot ("supervisor-{0}.log" -f (Get-Date -Format 'yyyyMMdd-HHmmss'))
 
 function Write-SupervisorLog([string]$Message) {
-    $line = "[{0}] {1}`r`n" -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss.fff zzz'), $Message
-    [IO.File]::AppendAllText($supervisorLog, $line, [Text.UTF8Encoding]::new($false))
+    $line = "[{0}] {1}" -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss.fff zzz'), $Message
+    [IO.File]::AppendAllText($supervisorLog, $line + "`r`n", [Text.UTF8Encoding]::new($false))
+    if ($Interactive) { Write-Host "[Supervisor] $Message" -ForegroundColor DarkCyan }
 }
 
+function Send-ServerCommand {
+    param(
+        [Parameter(Mandatory)][Diagnostics.Process]$Process,
+        [Parameter(Mandatory)][string]$Command
+    )
+
+    if ($Process.HasExited) { return $false }
+    try {
+        $Process.StandardInput.WriteLine($Command)
+        $Process.StandardInput.Flush()
+        Write-SupervisorLog "> $Command"
+        return $true
+    } catch {
+        Write-SupervisorLog "Unable to send '$Command' to server stdin: $($_.Exception.Message)"
+        return $false
+    }
+}
+
+function Wait-ForCleanProcessExit {
+    param(
+        [Parameter(Mandatory)][Diagnostics.Process]$Process,
+        [Parameter(Mandatory)][int]$TimeoutSeconds
+    )
+
+    $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
+    while (-not $Process.HasExited -and (Get-Date) -lt $deadline) { Start-Sleep -Milliseconds 250 }
+    return $Process.HasExited
+}
+
+function Format-RestartWarning([int]$Seconds) {
+    if ($Seconds -ge 60 -and ($Seconds % 60) -eq 0) {
+        $minutes = [int]($Seconds / 60)
+        if ($minutes -eq 1) { return '1 minute' }
+        return "$minutes minutes"
+    }
+    if ($Seconds -eq 1) { return '1 second' }
+    return "$Seconds seconds"
+}
+
+function Receive-InteractiveCommand {
+    if (-not $Interactive -or $null -eq $script:consoleReadTask -or -not $script:consoleReadTask.IsCompleted) {
+        return $null
+    }
+    try {
+        $line = $script:consoleReadTask.GetAwaiter().GetResult()
+    } catch {
+        Write-SupervisorLog "Interactive console input ended: $($_.Exception.Message)"
+        $script:consoleReadTask = $null
+        return $null
+    }
+    if ($null -eq $line) {
+        $script:consoleReadTask = $null
+        return $null
+    }
+    try { $script:consoleReadTask = [Console]::In.ReadLineAsync() } catch { $script:consoleReadTask = $null }
+    return $line.Trim()
+}
+
+$scheduledRestartMinutes = [double]$settings.scheduledRestartMinutes
+$scheduledRestartDelaySeconds = [Math]::Max(0, [int]$settings.scheduledRestartDelaySeconds)
+$scheduledRestartIntervalSeconds = $scheduledRestartMinutes * 60
+$scheduledWarningSeconds = @($settings.scheduledRestartWarningSeconds | ForEach-Object { [int]$_ } |
+    Where-Object { $_ -gt 0 -and $_ -le $scheduledRestartIntervalSeconds } | Sort-Object -Descending -Unique)
+$script:consoleReadTask = $null
 $state = [ordered]@{
     status = 'starting'
     supervisorPid = $PID
@@ -32,6 +98,9 @@ $state = [ordered]@{
     latestServerExitAt = $null
     latestServerExitCode = $null
     latestCrashOrRestartEvent = $null
+    nextScheduledRestart = $null
+    scheduledRestartMinutes = $scheduledRestartMinutes
+    interactiveConsole = [bool]$Interactive
     restartCount = 0
     rapidFailureCount = 0
     supervisorLog = $supervisorLog
@@ -57,11 +126,23 @@ try {
     $crashTimes = [Collections.Generic.List[datetime]]::new()
     $launchSpec = Get-LaunchSpec $serverRootResolved $settings
     Write-SupervisorLog "Supervisor started as PID $PID. Port=$($state.port). Executable=$($launchSpec.Executable)"
+    if ($Interactive) {
+        try { [Console]::Title = 'MilkyCraft Vanilla+ Server - Java Console' } catch { }
+        Write-Host ''
+        Write-Host 'MilkyCraft Vanilla+ server console is active.' -ForegroundColor Green
+        Write-Host 'Type Minecraft commands normally. Type restart for a clean restart, or stop for a clean shutdown.' -ForegroundColor Cyan
+        Write-Host 'Do not close this window while the world is saving.' -ForegroundColor Yellow
+        Write-Host ''
+        try { $script:consoleReadTask = [Console]::In.ReadLineAsync() } catch {
+            Write-SupervisorLog "Interactive input is unavailable: $($_.Exception.Message)"
+        }
+    }
 
     while ($true) {
         if (Test-Path -LiteralPath $stopRequest) {
             $state.status = 'stopped'
             $state.serverPid = $null
+            $state.nextScheduledRestart = $null
             Set-Event 'Intentional stop request observed while no server process was active.'
             break
         }
@@ -72,8 +153,12 @@ try {
         $processInfo.Arguments = $launchSpec.Arguments
         $processInfo.WorkingDirectory = $serverRootResolved
         $processInfo.UseShellExecute = $false
-        $processInfo.CreateNoWindow = $true
+        $processInfo.CreateNoWindow = -not $Interactive
         $processInfo.RedirectStandardInput = $true
+        # In interactive mode Java inherits this console's stdout/stderr. That gives
+        # operators raw Forge/Minecraft output without opening a second terminal.
+        $processInfo.RedirectStandardOutput = $false
+        $processInfo.RedirectStandardError = $false
         $child = [Diagnostics.Process]::new()
         $child.StartInfo = $processInfo
         if (-not $child.Start()) { throw 'The Minecraft launch process did not start.' }
@@ -81,12 +166,17 @@ try {
         $state.status = 'running'
         $state.serverPid = $child.Id
         $state.latestServerStartAt = $startAt.ToString('o')
+        $state.nextScheduledRestart = $null
         $state.manualInterventionRequired = $false
         Save-State
         Write-SupervisorLog "Minecraft launch process started as PID $($child.Id)."
         $onlineNotified = $false
+        $scheduledRestartAt = $null
+        $warningsSent = @{}
+        $intentionalStop = $false
+        $plannedRestart = $false
+        $restartReason = $null
 
-        $intentional = $false
         while (-not $child.HasExited) {
             if (-not $onlineNotified) {
                 $latestLog = Join-Path $serverRootResolved 'logs\latest.log'
@@ -99,24 +189,38 @@ try {
                 }
                 if ($freshDone) {
                     $onlineNotified = $true
+                    $state.status = 'online'
+                    if ($scheduledRestartMinutes -gt 0) {
+                        $scheduledRestartAt = (Get-Date).AddMinutes($scheduledRestartMinutes)
+                        $state.nextScheduledRestart = $scheduledRestartAt.ToString('o')
+                    }
+                    Save-State
                     Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event online `
                         -Description 'The server finished starting and is accepting players.' `
                         -Fields @{ Port = $state.port; 'Server PID' = $child.Id }
                 }
             }
-            if (Test-Path -LiteralPath $stopRequest) {
-                $intentional = $true
-                $state.status = 'stopping'
-                Set-Event "Intentional stop requested; sending Minecraft's normal stop command to PID $($child.Id)."
-                try {
-                    $child.StandardInput.WriteLine('stop')
-                    $child.StandardInput.Flush()
-                } catch {
-                    Write-SupervisorLog "Unable to write stop to server stdin: $($_.Exception.Message)"
+
+            if ($Interactive) {
+                $operatorCommand = Receive-InteractiveCommand
+                if ($operatorCommand -ieq 'stop') {
+                    [IO.File]::WriteAllText($stopRequest, "requestedAt=$(Get-Date -Format o)`r`nrequestedBy=interactive-console`r`n", [Text.UTF8Encoding]::new($false))
+                } elseif ($operatorCommand -ieq 'restart') {
+                    $plannedRestart = $true
+                    $restartReason = 'operator-requested'
+                } elseif ($operatorCommand) {
+                    $null = Send-ServerCommand -Process $child -Command $operatorCommand
                 }
-                $deadline = (Get-Date).AddSeconds([int]$settings.gracefulStopTimeoutSeconds)
-                while (-not $child.HasExited -and (Get-Date) -lt $deadline) { Start-Sleep -Milliseconds 500 }
-                if (-not $child.HasExited) {
+            }
+
+            if (Test-Path -LiteralPath $stopRequest) {
+                $intentionalStop = $true
+                $state.status = 'stopping'
+                $state.nextScheduledRestart = $null
+                Set-Event "Intentional stop requested; saving and stopping Minecraft PID $($child.Id)."
+                $null = Send-ServerCommand -Process $child -Command 'save-all flush'
+                $null = Send-ServerCommand -Process $child -Command 'stop'
+                if (-not (Wait-ForCleanProcessExit -Process $child -TimeoutSeconds ([int]$settings.gracefulStopTimeoutSeconds))) {
                     $state.status = 'manual-intervention-required'
                     $state.manualInterventionRequired = $true
                     Set-Event "Minecraft did not exit within $($settings.gracefulStopTimeoutSeconds)s after stop. It was NOT killed; manual intervention is required (possible lingering JVM/Distant Horizons shutdown)."
@@ -126,7 +230,42 @@ try {
                 }
                 break
             }
-            Start-Sleep -Milliseconds 500
+
+            if (-not $plannedRestart -and $scheduledRestartAt) {
+                $remainingSeconds = [int][Math]::Ceiling(($scheduledRestartAt - (Get-Date)).TotalSeconds)
+                foreach ($warningSeconds in $scheduledWarningSeconds) {
+                    if ($remainingSeconds -le $warningSeconds -and -not $warningsSent.ContainsKey($warningSeconds)) {
+                        $warningText = Format-RestartWarning $warningSeconds
+                        $null = Send-ServerCommand -Process $child -Command "say [MilkyCraft] Scheduled restart in $warningText."
+                        $warningsSent[$warningSeconds] = $true
+                    }
+                }
+                if ((Get-Date) -ge $scheduledRestartAt) {
+                    $plannedRestart = $true
+                    $restartReason = 'scheduled'
+                }
+            }
+
+            if ($plannedRestart) {
+                $state.status = 'scheduled-restart'
+                $state.nextScheduledRestart = $null
+                Set-Event "Clean $restartReason restart requested; saving and stopping Minecraft PID $($child.Id)."
+                Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event restarting `
+                    -Description "A clean $restartReason restart has begun. Players can reconnect when the online message appears."
+                $null = Send-ServerCommand -Process $child -Command 'say [MilkyCraft] Server restarting now. Reconnect when it is back online.'
+                $null = Send-ServerCommand -Process $child -Command 'save-all flush'
+                $null = Send-ServerCommand -Process $child -Command 'stop'
+                if (-not (Wait-ForCleanProcessExit -Process $child -TimeoutSeconds ([int]$settings.gracefulStopTimeoutSeconds))) {
+                    $state.status = 'manual-intervention-required'
+                    $state.manualInterventionRequired = $true
+                    Set-Event "Minecraft did not exit within $($settings.gracefulStopTimeoutSeconds)s for a planned restart. It was NOT killed; manual intervention is required."
+                    Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event failed `
+                        -Description 'Minecraft did not finish its clean restart shutdown in time. The JVM was not force-killed.'
+                    return
+                }
+                break
+            }
+            Start-Sleep -Milliseconds 250
         }
 
         if (-not $child.HasExited) { continue }
@@ -135,12 +274,13 @@ try {
         $state.serverPid = $null
         $state.latestServerExitAt = $exitAt.ToString('o')
         $state.latestServerExitCode = $exitCode
+        $state.nextScheduledRestart = $null
         $uptime = $exitAt - $startAt
 
-        if ($intentional) {
+        if ($intentionalStop -or $plannedRestart) {
             $portDeadline = (Get-Date).AddSeconds(30)
             while ((Get-NetTCPConnection -LocalPort $state.port -State Listen -ErrorAction SilentlyContinue) -and (Get-Date) -lt $portDeadline) {
-                Start-Sleep -Milliseconds 500
+                Start-Sleep -Milliseconds 250
             }
             if (Get-NetTCPConnection -LocalPort $state.port -State Listen -ErrorAction SilentlyContinue) {
                 $state.status = 'manual-intervention-required'
@@ -148,14 +288,39 @@ try {
                 Set-Event "Launch process exited but port $($state.port) is still listening. No process was killed; manual intervention is required."
                 Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event failed `
                     -Description "The launch process exited but port $($state.port) is still open. Manual attention is required."
-            } else {
+                break
+            }
+
+            if ($intentionalStop) {
                 $state.status = 'stopped'
                 Set-Event "Intentional shutdown completed with exit code $exitCode; port $($state.port) is no longer listening."
                 Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event offline `
                     -Description 'The server stopped cleanly and the world was given time to save.' `
                     -Fields @{ 'Exit code' = $exitCode }
+                break
             }
-            break
+
+            $state.status = 'restart-delay'
+            $state.restartCount = [int]$state.restartCount + 1
+            Set-Event "Clean $restartReason shutdown completed; restart $($state.restartCount) begins in $scheduledRestartDelaySeconds seconds."
+            $restartDeadline = (Get-Date).AddSeconds($scheduledRestartDelaySeconds)
+            while ((Get-Date) -lt $restartDeadline) {
+                $delayCommand = Receive-InteractiveCommand
+                if ($delayCommand -ieq 'stop') {
+                    [IO.File]::WriteAllText($stopRequest, "requestedAt=$(Get-Date -Format o)`r`nrequestedBy=interactive-console`r`n", [Text.UTF8Encoding]::new($false))
+                } elseif ($delayCommand) {
+                    Write-SupervisorLog "Server is between launches; '$delayCommand' was not sent. Type stop to cancel the restart."
+                }
+                if (Test-Path -LiteralPath $stopRequest) {
+                    $state.status = 'stopped'
+                    Set-Event 'Intentional stop request cancelled a pending planned restart.'
+                    Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event offline `
+                        -Description 'A pending restart was cancelled by an intentional stop request.'
+                    return
+                }
+                Start-Sleep -Milliseconds 250
+            }
+            continue
         }
 
         if ($uptime.TotalMinutes -ge [double]$settings.stableRunResetMinutes) { $crashTimes.Clear() }
@@ -187,6 +352,12 @@ try {
             -Fields @{ 'Exit code' = $exitCode; Uptime = "$([Math]::Round($uptime.TotalSeconds, 1)) seconds"; Attempt = $state.restartCount }
         $backoffDeadline = (Get-Date).AddSeconds($delay)
         while ((Get-Date) -lt $backoffDeadline) {
+            $backoffCommand = Receive-InteractiveCommand
+            if ($backoffCommand -ieq 'stop') {
+                [IO.File]::WriteAllText($stopRequest, "requestedAt=$(Get-Date -Format o)`r`nrequestedBy=interactive-console`r`n", [Text.UTF8Encoding]::new($false))
+            } elseif ($backoffCommand) {
+                Write-SupervisorLog "Server is in crash backoff; '$backoffCommand' was not sent. Type stop to cancel recovery."
+            }
             if (Test-Path -LiteralPath $stopRequest) {
                 $state.status = 'stopped'
                 Set-Event 'Intentional stop request cancelled a pending crash restart.'
@@ -205,6 +376,7 @@ try {
         -Description 'The server supervisor encountered an error and needs attention.'
     throw
 } finally {
+    if ($child) { $child.Dispose() }
     if ($lock) { $lock.Dispose() }
     if (Test-Path -LiteralPath $lockPath) { Remove-Item -LiteralPath $lockPath -Force -ErrorAction SilentlyContinue }
 }

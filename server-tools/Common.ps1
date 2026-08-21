@@ -66,6 +66,9 @@ function Get-ServerSettings {
         gracefulStopTimeoutSeconds = 240
         startupTimeoutSeconds = 180
         startupDelaySeconds = 60
+        scheduledRestartMinutes = 180
+        scheduledRestartDelaySeconds = 10
+        scheduledRestartWarningSeconds = @(600, 300, 60, 30, 10)
         restartBackoffSeconds = @(15, 30, 60, 120)
         rapidFailureWindowMinutes = 10
         maxRapidFailures = 4
@@ -103,7 +106,11 @@ function Get-ServerActivity([string]$ServerRoot) {
     $state = Get-ServerState $ServerRoot
     $supervisors = @()
     $serverProcesses = @()
-    if ($state -and $state.supervisorPid -and (Test-ProcessIdentity ([int]$state.supervisorPid) 'Server-Supervisor\.ps1')) {
+    # The background mode runs Server-Supervisor.ps1 in its own PowerShell
+    # process. The visible mode runs it inline from Start-Server.ps1 so Java can
+    # share that one console. Both command lines represent the same supervisor.
+    $supervisorIdentityPattern = '(?:Server-Supervisor|Start-Server)\.ps1'
+    if ($state -and $state.supervisorPid -and (Test-ProcessIdentity ([int]$state.supervisorPid) $supervisorIdentityPattern)) {
         $supervisors = @(Get-CimInstance Win32_Process -Filter "ProcessId=$([int]$state.supervisorPid)" -ErrorAction SilentlyContinue)
     }
     if ($state -and $state.serverPid) {
@@ -112,6 +119,10 @@ function Get-ServerActivity([string]$ServerRoot) {
     if ($supervisors.Count -eq 0) {
         $escapedRoot = [regex]::Escape($ServerRoot)
         $supervisors = @(Get-CimInstance Win32_Process -Filter "Name='powershell.exe' OR Name='pwsh.exe'" -ErrorAction SilentlyContinue |
+            # Fallback discovery deliberately excludes Start-Server.ps1 because
+            # this function is called by that script before it becomes the
+            # recorded interactive supervisor; matching it here would reject
+            # every legitimate visible start as a duplicate.
             Where-Object { $_.CommandLine -and $_.CommandLine -match 'Server-Supervisor\.ps1' -and $_.CommandLine -match $escapedRoot })
     }
     return [pscustomobject]@{

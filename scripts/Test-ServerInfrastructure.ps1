@@ -57,6 +57,9 @@ $settings = [ordered]@{
     gracefulStopTimeoutSeconds = 3
     startupTimeoutSeconds = 15
     startupDelaySeconds = 1
+    scheduledRestartMinutes = 0
+    scheduledRestartDelaySeconds = 1
+    scheduledRestartWarningSeconds = @()
     restartBackoffSeconds = @(1,2,3)
     rapidFailureWindowMinutes = 2
     maxRapidFailures = 3
@@ -73,7 +76,7 @@ $settings = [ordered]@{
 }
 [IO.File]::WriteAllText($settingsPath, (($settings | ConvertTo-Json -Depth 8) + "`r`n"), [Text.UTF8Encoding]::new($false))
 $tools = Join-Path $root 'server-tools'
-$results = [ordered]@{ testedAt=(Get-Date).ToString('o'); testRoot=$testRoot; testPort=$TestPort; productionPort=25565 }
+$results = [ordered]@{ testedAt=(Get-Date).ToString('o'); testRoot='build/server-infrastructure-test'; testPort=$TestPort; productionPort=25565 }
 
 function Wait-Until([scriptblock]$Condition, [int]$Seconds, [string]$Failure) {
     $deadline = (Get-Date).AddSeconds($Seconds)

@@ -4,6 +4,15 @@
     "gracefulStopTimeoutSeconds":  240,
     "startupTimeoutSeconds":  180,
     "startupDelaySeconds":  60,
+    "scheduledRestartMinutes":  180,
+    "scheduledRestartDelaySeconds":  10,
+    "scheduledRestartWarningSeconds":  [
+                                             600,
+                                             300,
+                                             60,
+                                             30,
+                                             10
+                                         ],
     "restartBackoffSeconds":  [
                                   15,
                                   30,

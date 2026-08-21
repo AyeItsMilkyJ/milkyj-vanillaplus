@@ -2,7 +2,8 @@
 param(
     [string]$ServerRoot,
     [string]$SettingsPath,
-    [int]$StartupTimeoutSeconds = 0
+    [int]$StartupTimeoutSeconds = 0,
+    [switch]$Interactive
 )
 
 . (Join-Path $PSScriptRoot 'Common.ps1')
@@ -18,6 +19,17 @@ if (Test-Path -LiteralPath $stopRequest) { Remove-Item -LiteralPath $stopRequest
 
 $supervisor = Join-Path $PSScriptRoot 'Server-Supervisor.ps1'
 if (-not (Test-Path -LiteralPath $supervisor -PathType Leaf)) { throw "Supervisor script not found: $supervisor" }
+
+if ($Interactive) {
+    try { [Console]::Title = 'MilkyCraft Vanilla+ Server - Java Console' } catch { }
+    Write-Host 'Starting Minecraft in this console.' -ForegroundColor Cyan
+    Write-Host 'Server output and commands share this one window. Type stop for a clean shutdown.' -ForegroundColor Cyan
+    $supervisorParameters = @{ ServerRoot = $serverRootResolved; Interactive = $true }
+    if ($SettingsPath) { $supervisorParameters.SettingsPath = [IO.Path]::GetFullPath($SettingsPath) }
+    & $supervisor @supervisorParameters
+    return
+}
+
 $arguments = @(
     '-NoProfile', '-ExecutionPolicy', 'Bypass', '-WindowStyle', 'Hidden',
     '-File', ('"' + $supervisor + '"'), '-ServerRoot', ('"' + $serverRootResolved + '"')

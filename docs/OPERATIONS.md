@@ -166,12 +166,14 @@ Do not hand-copy the generated chapter files into a running server. Publish the 
 After setting the real URL, copy the tools into the dedicated server folder:
 
 ```powershell
-.\server-tools\Install-ServerTools.ps1 -ServerRoot "$env:USERPROFILE\Desktop\Minecraft Server"
+.\server-tools\Install-ServerTools.ps1 `
+  -ServerRoot "$env:USERPROFILE\Desktop\Minecraft Server" `
+  -InstallRootLaunchers
 ```
 
-The copy operation creates `Minecraft Server\packwiz-tools`; it does not install scheduled tasks, run Packwiz, start a server, or replace a world. Deployment remains manual and was not performed for `1.9.0-rc1`.
+The copy operation creates `Minecraft Server\packwiz-tools`, backs up existing root launchers, and installs the preferred root `run.bat`. It does not install scheduled tasks, run Packwiz, start a server, change mods, or replace a world. `-InstallRootLaunchers` refuses to run while server activity exists.
 
-Use the double-click `START SERVER.bat`, `STOP SERVER.bat`, `RESTART SERVER.bat`, `SERVER STATUS.bat`, `BACKUP SERVER.bat`, and operator-controlled `UPDATE SERVER.bat` wrappers in that folder. The new supervisor launches Forge directly, gracefully stops through Minecraft stdin, restarts unexpected crashes with bounded backoff, and never applies an update by itself.
+Double-click root `run.bat` for one visible interactive Java-style console. Forge output appears there and normal commands can be typed there; use `restart` or `stop` for safe lifecycle control. The `packwiz-tools` folder also contains `START SERVER.bat`, `STOP SERVER.bat`, `RESTART SERVER.bat`, `SERVER STATUS.bat`, `BACKUP SERVER.bat`, and operator-controlled `UPDATE SERVER.bat`. The supervisor restarts cleanly every 180 minutes after `Done`, recovers unexpected crashes with bounded backoff, and never applies an update by itself.
 
 Optional Discord online/offline, restart and crash alerts are configured locally with `packwiz-tools\SET UP DISCORD STATUS.bat`. The secret webhook is stored only in the server root's ignored `discord-webhook.txt`; see `docs\SERVER-24-7-OPERATIONS.md` for setup and limitations.
 

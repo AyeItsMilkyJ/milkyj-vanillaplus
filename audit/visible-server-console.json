@@ -1,0 +1,23 @@
+{
+    "testedAt":  "2026-08-22T02:01:53.1021926+10:00",
+    "testRoot":  "build/server-infrastructure-test-visible-console",
+    "testPort":  25579,
+    "productionPort":  25565,
+    "inlineSupervisorPid":  "PASS",
+    "directMinecraftChild":  "PASS",
+    "noSecondCommandShell":  "PASS",
+    "scheduledRestart":  "PASS",
+    "interactiveCommandForwarding":  "PASS",
+    "restartWarning":  "PASS",
+    "saveBeforeStop":  "PASS",
+    "rawJavaStdout":  "PASS",
+    "rawJavaStderr":  "PASS",
+    "wrapperOneWindowPath":  "PASS",
+    "externalStopRecognizedInlineSupervisor":  "PASS",
+    "cleanShutdownAndSave":  "PASS",
+    "hostAndChildExited":  "PASS",
+    "productionPortTouched":  false,
+    "liveServerWorldOrPrismTouched":  false,
+    "manualAcceptanceStillRequired":  "Double-click live run.bat, observe one titled console, run list, then stop.",
+    "status":  "PASS"
+}
