@@ -1,10 +1,10 @@
-# MilkyJ Vanilla+ — player features and evolution
+# MilkyCraft Vanilla+ — player features and evolution
 
 This document describes only systems confirmed in the current `1.9.0-rc1` Forge 1.20.1 pack. Library mods are not advertised as gameplay features, and removed or rejected additions are not presented as installed.
 
 ## The short version
 
-MilkyJ Vanilla+ is a multiplayer-friendly adventure and homestead pack built around the idea that additions should still feel at home in Minecraft. It keeps normal survival recognisable, then layers in Create engineering, richer food and farming, useful structures, collectible loot, new wildlife, archaeology, transport, several substantial dimensions and a beginner field guide. Its client and dedicated server have been tuned for modest PCs while preserving long-distance terrain through Distant Horizons.
+MilkyCraft Vanilla+ is a multiplayer-friendly adventure and homestead pack built around the idea that additions should still feel at home in Minecraft. It keeps normal survival recognisable, then layers in Create engineering, richer food and farming, useful structures, collectible loot, new wildlife, archaeology, transport, several substantial dimensions and a beginner field guide. Its client and dedicated server have been tuned for modest PCs while preserving long-distance terrain through Distant Horizons.
 
 Current foundation:
 

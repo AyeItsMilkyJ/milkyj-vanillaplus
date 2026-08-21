@@ -1,13 +1,13 @@
-# Mundane Craft Creator Capture
+# MilkyCraft Vanilla+ Creator Capture
 
 ## Current release status
 
 Creator Capture is **not enabled in the public pack**. It is optional by policy and currently unavailable because neither requested Forge 1.20.1 candidate passes the pack's loader gate:
 
-- Recordium `replaymod-1.20.1-1-shadow.jar` fails while Java builds the Forge module layer. Its shaded Jackson classes collide with Jackson classes supplied through Mundane Craft's Groovy/Jar-in-Jar stack.
-- Free Camera `freecamera-1.20.1-forge-2.2.0.jar` declares `javafml [62,)`; Mundane Craft's Forge 47.4.10 supplies JavaFML 47. The legacy build also manipulates the local player's physics/input while active and does not provide follow shots or camera-path recording.
+- Recordium `replaymod-1.20.1-1-shadow.jar` fails while Java builds the Forge module layer. Its shaded Jackson classes collide with Jackson classes supplied through MilkyCraft Vanilla+'s Groovy/Jar-in-Jar stack.
+- Free Camera `freecamera-1.20.1-forge-2.2.0.jar` declares `javafml [62,)`; MilkyCraft Vanilla+'s Forge 47.4.10 supplies JavaFML 47. The legacy build also manipulates the local player's physics/input while active and does not provide follow shots or camera-path recording.
 
-The candidates are quarantined as metadata in `creator-capture/candidate-registry.json`. No candidate JAR, Packwiz entry, default configuration, keybind or server file is shipped. Do not manually copy either tested JAR into a Mundane Craft instance: both prevent the full pack from loading.
+The candidates are quarantined as metadata in `creator-capture/candidate-registry.json`. No candidate JAR, Packwiz entry, default configuration, keybind or server file is shipped. Do not manually copy either tested JAR into a MilkyCraft Vanilla+ instance: both prevent the full pack from loading.
 
 This is an implemented fail-closed creator layer, not an abandoned proposal. Repository validation now rejects accidental candidate leakage into the normal Packwiz payload or server set. A future compatible candidate can use the existing Packwiz updater once it passes the gates below; no second updater is needed.
 
@@ -32,7 +32,7 @@ The following workflow reflects capabilities present in the inspected Recordium 
 1. Enable the future optional Creator Capture component through the pack's Packwiz option, then launch the same Prism instance normally.
 2. Open Replay settings and confirm multiplayer recording is enabled. Recordium's inspected defaults enable server recording, automatic start and the on-screen recording indicator; pack defaults must not silently override a creator's later choice.
 3. Join the server and confirm the recording indicator is visible before relying on the session.
-4. Add an event marker when something interesting happens. The inspected build registers `M` by default, but Mundane Craft already has many controls, so the creator must resolve the binding in Minecraft's Controls screen. The pack must not overwrite `options.txt` or choose a binding on the player's behalf.
+4. Add an event marker when something interesting happens. The inspected build registers `M` by default, but MilkyCraft Vanilla+ already has many controls, so the creator must resolve the binding in Minecraft's Controls screen. The pack must not overwrite `options.txt` or choose a binding on the player's behalf.
 5. Disconnect normally and wait for replay post-processing/rename prompts to finish. Do not kill Java while a replay is being finalised.
 6. Preserve the newly created `.mcpr` as immutable source media. Make a working copy before opening it for marker edits, timelines or rendering.
 7. Open the working copy from the Replay Viewer. Use pause, seek and speed controls to find the event, then move the replay camera independently from the recorded player.
@@ -63,16 +63,16 @@ All tests use disposable installations and a non-production server address that 
 | Replay | Open, playback, seek, pause/speed, alternate camera and uncorrupted close | Not run because Recordium fails before launch. |
 | Create | Contraptions, mechanical animations and trains record/play correctly | Not run; no safe recorder. |
 | Distant Horizons | Record, replay camera and render with DH enabled | Not run; no safe recorder. |
-| Shaders | Shaders off and one known-good Mundane Craft shader | Not run; no safe recorder. Universal shader support is never implied. |
+| Shaders | Shaders off and one known-good MilkyCraft Vanilla+ shader | Not run; no safe recorder. Universal shader support is never implied. |
 | Dimensions | Record a representative transition and seek around it | Not run; no safe recorder. |
 | Long session | Observe memory, file growth, disconnect, finalisation and corruption | Not run; no safe recorder. |
 | Rendering | Short keyframed render and verified output | Not run; no safe recorder. |
 
-Static inspection confirms the Recordium JAR contains recording, replay viewer, markers, seeking/playback controls, camera/pathing and FFmpeg render code. That is evidence of intended functionality, not runtime compatibility with Mundane Craft.
+Static inspection confirms the Recordium JAR contains recording, replay viewer, markers, seeking/playback controls, camera/pathing and FFmpeg render code. That is evidence of intended functionality, not runtime compatibility with MilkyCraft Vanilla+.
 
 ## Rendering and FFmpeg
 
-The inspected Recordium code uses an external FFmpeg process for normal encoded video. On Windows it searches for an executable at `.minecraft/ffmpeg/bin/ffmpeg.exe`, in versioned FFmpeg subdirectories beneath `.minecraft`, or by an explicitly configured command. Mundane Craft does not bundle FFmpeg: its binary distribution and licensing must be reviewed separately.
+The inspected Recordium code uses an external FFmpeg process for normal encoded video. On Windows it searches for an executable at `.minecraft/ffmpeg/bin/ffmpeg.exe`, in versioned FFmpeg subdirectories beneath `.minecraft`, or by an explicitly configured command. MilkyCraft Vanilla+ does not bundle FFmpeg: its binary distribution and licensing must be reviewed separately.
 
 Because Recordium cannot launch in this pack, no FFmpeg render was attempted and no rendering claim is made. If replay playback becomes stable before direct rendering does, use OBS or another external capture tool while playing the cinematic path and keep this as a documented manual workflow. Do not add screen-coordinate automation.
 

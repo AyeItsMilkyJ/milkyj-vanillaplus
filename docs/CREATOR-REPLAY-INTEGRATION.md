@@ -1,8 +1,8 @@
-# Prophet boundary for Mundane Craft replays
+# Prophet boundary for MilkyCraft Vanilla+ replays
 
 ## Status and purpose
 
-This is a stable read-only boundary for a future Prophet integration. Mundane Craft does not currently ship a replay recorder because the evaluated Recordium build fails the pack's loader gate. The boundary documents the inspected MCPR layout so a compatible replacement can be adopted without coupling the modpack to Prophet.
+This is a stable read-only boundary for a future Prophet integration. MilkyCraft Vanilla+ does not currently ship a replay recorder because the evaluated Recordium build fails the pack's loader gate. The boundary documents the inspected MCPR layout so a compatible replacement can be adopted without coupling the modpack to Prophet.
 
 Prophet must treat every original replay and OBS recording as immutable source media. Any marker edit, timeline edit, repair, conversion or Replay Viewer session must operate on a working copy.
 
@@ -95,4 +95,4 @@ The bridge should expose capability discovery, read-only replay inspection, work
 
 ## FFmpeg and output
 
-Recordium's inspected render code launches an external FFmpeg executable and writes to the path selected in its render settings. Mundane Craft does not bundle FFmpeg and Prophet must not assume a fixed executable or video directory. Record the FFmpeg version and final output hash in a Prophet sidecar when rendering becomes available.
+Recordium's inspected render code launches an external FFmpeg executable and writes to the path selected in its render settings. MilkyCraft Vanilla+ does not bundle FFmpeg and Prophet must not assume a fixed executable or video directory. Record the FFmpeg version and final output hash in a Prophet sidecar when rendering becomes available.

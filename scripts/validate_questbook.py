@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Strict, dependency-free validation for the MilkyJ FTB Quests guide."""
+"""Strict, dependency-free validation for the MilkyCraft Vanilla+ FTB Quests guide."""
 
 from __future__ import annotations
 

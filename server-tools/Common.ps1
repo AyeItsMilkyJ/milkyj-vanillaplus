@@ -74,8 +74,8 @@ function Get-ServerSettings {
         backupRetentionWeekly = 4
         taskNamePrefix = 'MilkyJ Minecraft Server'
         discordWebhookFile = 'discord-webhook.txt'
-        discordServerName = 'MilkyJ Vanilla+'
-        discordWebhookUsername = 'MilkyJ Server Status'
+        discordServerName = 'MilkyCraft Vanilla+'
+        discordWebhookUsername = 'MilkyCraft Server Status'
         discordAllowInsecureLocalTest = $false
         launchExecutable = ''
         launchArguments = @()

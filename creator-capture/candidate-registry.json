@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "pack": {
-    "publicName": "Mundane Craft",
+    "publicName": "MilkyCraft Vanilla+",
     "minecraft": "1.20.1",
     "forge": "47.4.10"
   },
@@ -64,7 +64,7 @@
         }
       ],
       "blockers": [
-        "The shadow JAR exports Jackson packages already supplied by the installed Groovy/Jar-in-Jar module, so the Mundane Craft Forge module layer cannot resolve.",
+        "The shadow JAR exports Jackson packages already supplied by the installed Groovy/Jar-in-Jar module, so the MilkyCraft Vanilla+ Forge module layer cannot resolve.",
         "The published META-INF/mods.toml contains unresolved build placeholders and reports mod version 0.",
         "The upstream tracker has an open multiplayer replay playback failure report."
       ]

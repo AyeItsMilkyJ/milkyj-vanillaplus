@@ -1,4 +1,4 @@
-# MilkyJ Vanilla+ quest progression
+# MilkyCraft Vanilla+ quest progression
 
 Release candidate: `1.9.0-rc1`
 Minecraft: `1.20.1`

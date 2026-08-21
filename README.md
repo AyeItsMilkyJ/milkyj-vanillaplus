@@ -1,8 +1,8 @@
-# Mundane Craft — Packwiz distribution
+# MilkyCraft Vanilla+ — Packwiz distribution
 
 This repository is the permanent update source for the Forge 1.20.1 client and dedicated server. Players import one small Prism Launcher bootstrap ZIP once. Prism runs Packwiz before every launch; Packwiz downloads changed files and removes only files it previously managed.
 
-`Mundane Craft` is the public pack name. Existing internal distribution identifiers and update paths retain their established MilkyJ Vanilla+ names to preserve installed-instance compatibility.
+`MilkyCraft Vanilla+` is the public pack name. Existing internal distribution identifiers, repository URLs, namespaces and managed paths retain their established `MilkyJ` names to preserve installed-instance compatibility.
 
 Current locked platform:
 

@@ -1,10 +1,10 @@
-# Prompt for ChatGPT Classic — MilkyJ Vanilla+ modpack page
+# Prompt for ChatGPT Classic — MilkyCraft Vanilla+ modpack page
 
 Copy everything below the line into ChatGPT Classic, then attach or paste `PLAYER-FEATURES-AND-CHANGELOG.md` beneath it.
 
 ---
 
-You are an experienced Minecraft modpack copywriter and technical editor. Using only the supplied MilkyJ Vanilla+ feature/history source, write a polished public modpack page for Modrinth or CurseForge.
+You are an experienced Minecraft modpack copywriter and technical editor. Using only the supplied MilkyCraft Vanilla+ feature/history source, write a polished public modpack page for Modrinth or CurseForge.
 
 Audience:
 
@@ -44,7 +44,7 @@ Accuracy requirements:
 - Do not claim Better Nether, Better End, Bumblezone, Simple Voice Chat, Immersive Engineering, Create Crafts & Additions, Tinkers' Construct, Botany Pots or dinosaur revival are installed.
 - Do not expose any server IP, home network details, personal Windows paths, account data, world files or private information.
 - Do not reproduce the complete raw mod list unless asked; group features into player-friendly themes.
-- Preserve the name “MilkyJ Vanilla+”.
+- Preserve the name “MilkyCraft Vanilla+”.
 
 Formatting:
 

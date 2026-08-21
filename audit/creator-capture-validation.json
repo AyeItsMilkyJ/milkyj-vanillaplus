@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-21T15:11:21.075885+00:00",
+  "checkedAt": "2026-08-21T15:20:30.636689+00:00",
   "result": "PASS",
   "pack": {
-    "publicName": "Mundane Craft",
+    "publicName": "MilkyCraft Vanilla+",
     "minecraft": "1.20.1",
     "forge": "47.4.10",
     "packwizVersion": "1.9.0-rc1"
@@ -42,7 +42,7 @@
         }
       ],
       "blockers": [
-        "The shadow JAR exports Jackson packages already supplied by the installed Groovy/Jar-in-Jar module, so the Mundane Craft Forge module layer cannot resolve.",
+        "The shadow JAR exports Jackson packages already supplied by the installed Groovy/Jar-in-Jar module, so the MilkyCraft Vanilla+ Forge module layer cannot resolve.",
         "The published META-INF/mods.toml contains unresolved build placeholders and reports mod version 0.",
         "The upstream tracker has an open multiplayer replay playback failure report."
       ]
@@ -83,12 +83,17 @@
     {
       "name": "public pack name",
       "result": "PASS",
-      "detail": "registry publicName must be Mundane Craft"
+      "detail": "registry publicName must be MilkyCraft Vanilla+"
     },
     {
       "name": "platform lock",
       "result": "PASS",
       "detail": "expected Minecraft 1.20.1 / Forge 47.4.10"
+    },
+    {
+      "name": "Packwiz display name matches registry",
+      "result": "PASS",
+      "detail": "packwiz/pack.toml name must match the public pack name"
     },
     {
       "name": "Packwiz platform matches registry",

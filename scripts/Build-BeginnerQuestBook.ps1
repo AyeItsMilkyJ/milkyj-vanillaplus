@@ -574,7 +574,7 @@ $data = @'
 	pause_game: false
 	progression_mode: "flexible"
 	show_lock_icons: true
-	title: "MilkyJ Vanilla+ Beginner Field Guide"
+	title: "MilkyCraft Vanilla+ Beginner Field Guide"
 	version: 14
 }
 '@

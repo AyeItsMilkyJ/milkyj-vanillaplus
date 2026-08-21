@@ -28,7 +28,7 @@ The webhook is a secret. It is stored only in `discord-webhook.txt` at the dedic
 
 To configure it:
 
-1. In the desired Discord text channel, open **Edit Channel → Integrations → Webhooks**, create a webhook named `MilkyJ Server Status`, and copy its URL.
+1. In the desired Discord text channel, open **Edit Channel → Integrations → Webhooks**, create a webhook named `MilkyCraft Server Status`, and copy its URL.
 2. Double-click `packwiz-tools\SET UP DISCORD STATUS.bat` on the server PC.
 3. Paste the URL into the hidden prompt and press Enter. A green connection-test message must appear in the channel.
 4. Keep using the normal root `run.bat` launcher. The newly configured lifecycle messages begin the next time that supervisor starts.

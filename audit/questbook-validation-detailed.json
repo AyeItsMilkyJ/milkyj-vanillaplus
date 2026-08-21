@@ -1,8 +1,8 @@
 {
-  "validatedAt": "2026-08-12T18:09:02.688614+10:00",
+  "validatedAt": "2026-08-22T01:20:30.437614+10:00",
   "questRoot": "payload/both/config/ftbquests/quests",
   "modsDirectory": "build/end-to-end/client/mods",
-  "jarCountScanned": 236,
+  "jarCountScanned": 235,
   "chapterCount": 9,
   "questCount": 118,
   "taskIdCount": 165,

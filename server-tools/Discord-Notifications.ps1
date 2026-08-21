@@ -90,8 +90,8 @@ function Send-DiscordServerNotification {
         test       = @{ Emoji = [char]::ConvertFromUtf32(0x2705); Label = 'Notifications connected'; Color = 0x57F287 }
     }
     $style = $eventStyle[$Event]
-    $serverName = [string](Get-DiscordSettingValue $Settings 'discordServerName' 'MilkyJ Vanilla+')
-    $username = [string](Get-DiscordSettingValue $Settings 'discordWebhookUsername' 'MilkyJ Server Status')
+    $serverName = [string](Get-DiscordSettingValue $Settings 'discordServerName' 'MilkyCraft Vanilla+')
+    $username = [string](Get-DiscordSettingValue $Settings 'discordWebhookUsername' 'MilkyCraft Server Status')
     $descriptionLimited = if ($Description.Length -gt 3900) { $Description.Substring(0, 3900) + '...' } else { $Description }
     $embedFields = @()
     if ($Fields) {
@@ -108,7 +108,7 @@ function Send-DiscordServerNotification {
         description = $descriptionLimited
         color = [int]$style.Color
         timestamp = [DateTimeOffset]::UtcNow.ToString('o')
-        footer = [ordered]@{ text = "MilkyJ server status | event=$Event" }
+        footer = [ordered]@{ text = "MilkyCraft server status | event=$Event" }
     }
     if ($embedFields.Count -gt 0) { $embed['fields'] = $embedFields }
     $payload = [ordered]@{

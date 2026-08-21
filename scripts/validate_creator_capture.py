@@ -82,11 +82,16 @@ def main() -> int:
 
     check("registry schema", registry.get("schemaVersion") == 1, "schemaVersion must be 1")
     pack = registry.get("pack", {})
-    check("public pack name", pack.get("publicName") == "Mundane Craft", "registry publicName must be Mundane Craft")
+    check("public pack name", pack.get("publicName") == "MilkyCraft Vanilla+", "registry publicName must be MilkyCraft Vanilla+")
     check("platform lock", (pack.get("minecraft"), pack.get("forge")) == ("1.20.1", "47.4.10"), "expected Minecraft 1.20.1 / Forge 47.4.10")
 
     pack_toml = read_toml(root / "packwiz" / "pack.toml")
     versions = pack_toml.get("versions", {})
+    check(
+        "Packwiz display name matches registry",
+        pack_toml.get("name") == pack.get("publicName"),
+        "packwiz/pack.toml name must match the public pack name",
+    )
     check(
         "Packwiz platform matches registry",
         (versions.get("minecraft"), versions.get("forge")) == (pack.get("minecraft"), pack.get("forge")),
