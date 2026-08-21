@@ -5,7 +5,7 @@
 	group: "676547C5A87BA338"
 	icon: "minecraft:dragon_egg"
 	id: "69DA49AB86E5AA58"
-	order_index: 9
+	order_index: 14
 	progression_mode: "flexible"
 	quest_links: [ ]
 	title: "Dangerous Shit and Endgame"
@@ -66,6 +66,29 @@
 		{
 			dependencies: ["2FF22EE22B1363FC"]
 			description: [
+				"Use enclosed paths, signs and coordinates between portals. Carry fire resistance when valuable gear is at risk, and protect intersections from ghasts and accidental falls."
+				"Test portal links before decorating them. Small coordinate mistakes can create extra portals or strand travellers far from the intended station."
+				"The Nether rewards infrastructure more than bravery: every protected bridge makes all future journeys cheaper."
+				"Incendium transforms the Nether through terrain, structures, and encounters while preserving its identity. Build protected roads and portal stations because open sprinting creates more chunks, more risk, and no reusable route."
+			]
+			id: "13E186E1D8309D38"
+			rewards: [{
+				id: "62F89EB794F9FCB8"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "2D0D18002CE09301"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Build Nether Roads, Not Breadcrumbs"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13E186E1D8309D38"]
+			description: [
 				"End Remastered replaces the routine portal search with eyes hidden across different adventures. The Nether Eye is one piece of that wider journey."
 				"Incendium transforms the Nether through terrain, structures, and encounters while preserving its identity. Build protected roads and portal stations because open sprinting creates more chunks, more risk, and no reusable route."
 				"YUNG's Better Nether Fortresses changes a familiar objective into a larger route problem. Bring fire resistance, blocks, ranged weapons, marked exits, and enough food to retreat without abandoning navigation."
@@ -89,15 +112,16 @@
 				type: "item"
 			}]
 			title: "Recover a Nether Eye"
-			x: 4.0d
+			x: 6.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["3CFD689EF13FCBC8"]
 			description: [
-				"Different eyes come from different structures, trades and challenges. Keep every unique eye in a labelled secure chest; duplicates are still valuable to friends."
-				"End Remastered scatters distinct Eyes across exploration and progression sources. Use JEI and the installed guide information to track which Eyes are missing; ordinary Eyes of Ender no longer tell the whole stronghold story."
-				"The Black Beyond doctrine requires a shared portal room, spare recovery equipment, coordinates for gateways and cities, and a written return route. The dragon kill is an opening of the frontier, not the end of responsibility."
+				"WHAT IS THIS? End Remastered installs 16 different custom Eye types, but the portal has 12 frames and requires 12 distinct Eyes. The four automatic item tasks shown across the preceding Nether Eye lesson and this lesson are representative checkpoints, not the whole collection."
+				"DO THIS: Make a shared checklist for all installed Eyes, record each source in JEI or the guide, and store every unique Eye in a labelled secure chest. Plan the stronghold trip only after the group has 12 different types."
+				"WHY DO I CARE? Treating four samples as the finish line strands the expedition at an incomplete portal. A shared collection also prevents several players from unknowingly chasing the same Eye."
+				"COMMON FUCK-UP: Duplicate Eyes do not replace missing types. Do not insert rare Eyes into frames piecemeal until the route, recovery equipment and full set of 12 distinct types are ready."
 			]
 			id: "4EDB912AD92FF62F"
 			rewards: [{
@@ -141,7 +165,7 @@
 				}
 			]
 			title: "Eyes from Across the World"
-			x: 6.0d
+			x: 8.0d
 			y: 0.0d
 		}
 		{
@@ -163,11 +187,34 @@
 				type: "checkmark"
 			}]
 			title: "Assemble the Portal Team"
-			x: 8.0d
+			x: 10.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["2D3D21E8896371A7"]
+			description: [
+				"Bring slow-falling options, blocks, ender pearls and equipment you can afford to lose. Mark gateways and construct guarded bridgeheads before chasing distant cities."
+				"Store the first irreplaceable finds before continuing deeper. One successful return is worth more than a backpack lost while gambling for a second city."
+				"The End is quiet enough to make distance feel harmless. Treat that silence as a warning, not reassurance."
+				"The Black Beyond doctrine requires a shared portal room, spare recovery equipment, coordinates for gateways and cities, and a written return route. The dragon kill is an opening of the frontier, not the end of responsibility."
+			]
+			id: "4C84F99D2AF7535A"
+			rewards: [{
+				id: "0BC7BAB4A3F5A0C4"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "1377D7DD4BF58436"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "Discipline at the Edge of the End"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4C84F99D2AF7535A"]
 			description: [
 				"Nullscape transforms End terrain beyond the central island. Mark the gateway home before exploring its dramatic outer islands."
 				"Nullscape reshapes the outer End into dramatic terrain without adding a separate progression system. Treat verticality and void exposure as the main hazards, and establish an End gateway outpost before long elytra searches."
@@ -186,8 +233,8 @@
 				type: "dimension"
 			}]
 			title: "Enter the End"
-			x: 10.0d
-			y: 0.0d
+			x: 8.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["2A603B486882AE2E"]
@@ -209,7 +256,7 @@
 				type: "advancement"
 			}]
 			title: "Free the End"
-			x: 10.0d
+			x: 6.0d
 			y: 2.0d
 		}
 		{
@@ -232,7 +279,7 @@
 				type: "advancement"
 			}]
 			title: "Find an Elytra"
-			x: 8.0d
+			x: 4.0d
 			y: 2.0d
 		}
 		{
@@ -255,7 +302,7 @@
 				type: "checkmark"
 			}]
 			title: "Survey the Outer End"
-			x: 6.0d
+			x: 2.0d
 			y: 2.0d
 		}
 		{
@@ -285,57 +332,11 @@
 				type: "checkmark"
 			}]
 			title: "An End Outpost for Everyone"
-			x: 4.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["3F4DB5EEDFFAC808"]
-			description: [
-				"Use enclosed paths, signs and coordinates between portals. Carry fire resistance when valuable gear is at risk, and protect intersections from ghasts and accidental falls."
-				"Test portal links before decorating them. Small coordinate mistakes can create extra portals or strand travellers far from the intended station."
-				"The Nether rewards infrastructure more than bravery: every protected bridge makes all future journeys cheaper."
-				"Incendium transforms the Nether through terrain, structures, and encounters while preserving its identity. Build protected roads and portal stations because open sprinting creates more chunks, more risk, and no reusable route."
-			]
-			id: "13E186E1D8309D38"
-			rewards: [{
-				id: "62F89EB794F9FCB8"
-				type: "xp"
-				xp: 10
-			}]
-			tasks: [{
-				id: "2D0D18002CE09301"
-				title: "I read and understood these field notes"
-				type: "checkmark"
-			}]
-			title: "Build Nether Roads, Not Breadcrumbs"
-			x: 2.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["13E186E1D8309D38"]
-			description: [
-				"Bring slow-falling options, blocks, ender pearls and equipment you can afford to lose. Mark gateways and construct guarded bridgeheads before chasing distant cities."
-				"Store the first irreplaceable finds before continuing deeper. One successful return is worth more than a backpack lost while gambling for a second city."
-				"The End is quiet enough to make distance feel harmless. Treat that silence as a warning, not reassurance."
-				"The Black Beyond doctrine requires a shared portal room, spare recovery equipment, coordinates for gateways and cities, and a written return route. The dragon kill is an opening of the frontier, not the end of responsibility."
-			]
-			id: "4C84F99D2AF7535A"
-			rewards: [{
-				id: "0BC7BAB4A3F5A0C4"
-				type: "xp"
-				xp: 10
-			}]
-			tasks: [{
-				id: "1377D7DD4BF58436"
-				title: "I read and understood these field notes"
-				type: "checkmark"
-			}]
-			title: "Discipline at the Edge of the End"
 			x: 0.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["4C84F99D2AF7535A"]
+			dependencies: ["3F4DB5EEDFFAC808"]
 			description: [
 				"Before engaging a Mowzie's Mobs encounter, clear ordinary enemies, study the arena, and watch the creature move. Windups, projectiles, area control, and recovery animations reveal the intended openings."
 				"Carry a shield or ranged option where appropriate, but do not assume every attack can be blocked or face-tanked. Preserve stamina, space, food, and an escape route while learning one pattern at a time."
@@ -358,7 +359,7 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["4C84F99D2AF7535A"]
+			dependencies: ["6416430518B427C3"]
 			description: [
 				"Artifacts, collectibles and archaeological fragments are called memories with weight because each carries a habit from its former owner. Their powers are conditional, specialised and sometimes awkward."
 				"Test relics deliberately and document their effects. A tool that seems weak in ordinary travel may be extraordinary in one biome, structure or machine room."
@@ -371,6 +372,7 @@
 				type: "xp"
 				xp: 5
 			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
 			tasks: [{
 				id: "6BA25C659A02269D"
 				title: "I read and understood these field notes"

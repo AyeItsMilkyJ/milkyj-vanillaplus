@@ -1,0 +1,198 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "roadmap"
+	group: "1C7D7A0940131874"
+	icon: "minecraft:compass"
+	id: "7E000A951764BF36"
+	order_index: 2
+	progression_mode: "flexible"
+	quest_links: [ ]
+	title: "What Leads Into What?"
+	quests: [
+		{
+			dependencies: ["18C0AF7F5C17CAB7"]
+			description: [
+				"WHAT IS THIS? This chapter is the route map for MilkyCraft Vanilla+. The large chapters are parallel projects, not a single compulsory campaign, and recipes remain available even when a lesson is locked."
+				"DO THIS: Pick one immediate need: survive, feed the group, organise storage, learn Create, improve a settlement, or prepare an expedition. Open that chapter and read its first lesson before spending rare materials."
+				"WHY DO I CARE? Knowing which branch solves which problem stops the classic modpack mistake of crafting random machines with no useful output."
+				"COMMON FUCK-UP: A completed teammate quest can look like skipped teaching. Completed pages are still readable; use the text and installed manuals even when your FTB Team already earned the checkmark."
+			]
+			id: "4951C019CBD41BC9"
+			rewards: [{
+				id: "588936F922937A36"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "489BA2A0C5DDEF14"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "The Pack Is a Web, Not a Checklist"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4951C019CBD41BC9"]
+			description: [
+				"WHAT IS THIS? The First Days branch establishes iron tools, sleep, light, portable supplies, landmarks and a healthy base location. It is the common foundation for every later project."
+				"DO THIS: Finish enough shelter and iron work to survive a night away from spawn, then mark home and reserve space for crops, storage, animals and a workshop."
+				"WHY DO I CARE? Homesteads, pets and machines all become frustrating when the base is unsafe, cramped or impossible for friends to find."
+				"COMMON FUCK-UP: Do not flatten an entire biome on day one. Mark expandable zones and build one useful room at a time so the server is not generating chunks while everyone searches for a perfect mega-base."
+			]
+			id: "5FBA9C2A946AF928"
+			rewards: [{
+				id: "5C548906BC1FEAA0"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "0B90670782FC92B3"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "First Days Lead to a Permanent Home"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5FBA9C2A946AF928"]
+			description: [
+				"WHAT IS THIS? The food branch starts with a Farmer's Delight Knife and Cutting Board, grows into a real kitchen, then forks into seasonal farming, Create food processing and Productive Bees."
+				"DO THIS: Establish two reliable meals before chasing variety. Keep seed stock, label raw ingredients, and use JEI to see which installed cooking station performs each step."
+				"WHY DO I CARE? A stocked kitchen supplies expeditions, recovers hunger efficiently and creates useful work for players who do not want to fight bosses or design factories."
+				"COMMON FUCK-UP: Similar foods from different Delight addons are not automatically interchangeable. Read the namespace in JEI and test one recipe before planting or automating a huge crop."
+			]
+			id: "240F25ACED5A4902"
+			rewards: [{
+				id: "114A2E68FE1D3035"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "5F93A52F4819DA73"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Food Leads to Seasons, Kitchens and Bees"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["240F25ACED5A4902"]
+			description: [
+				"WHAT IS THIS? Create Basics teaches Ponder, rotation, stress and individual machines. Create Projects then combines those parts into maintainable farms, processing lines, contraptions and rail service."
+				"DO THIS: Learn one power source, route a shaft, run a Press or Fan, and build one complete input-to-output line before entering the project chapter."
+				"WHY DO I CARE? The project branch assumes you can diagnose direction, speed and stress. That lets it teach design decisions instead of repeating what a cogwheel is."
+				"COMMON FUCK-UP: More RPM is not automatically better and more machines are not free. Wear Engineer's Goggles, check stress capacity, add an off switch and test overflow before scaling."
+			]
+			id: "3E394AB031E5749E"
+			rewards: [{
+				id: "07BDAC7FA7B63252"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "539F60073A7E252F"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Create Leads from Motion to Projects"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3E394AB031E5749E"]
+			description: [
+				"WHAT IS THIS? Backpacks solve personal carrying, Tom's Storage searches ordinary inventories, drawers hold bulk materials, Create Vaults buffer machines, and Packagers move requested stock."
+				"DO THIS: Give each system one job. Put unique tools in searchable storage, bulk stone or crops in locked drawers, and machine inputs in visible buffers."
+				"WHY DO I CARE? Clear ownership prevents item loops, lost components and factories that silently fill every chest in the base."
+				"COMMON FUCK-UP: Connecting every inventory through several transfer mods can create competing routes. Expand from a small tested network and keep one obvious overflow chest."
+			]
+			id: "3AB01C6540381820"
+			rewards: [{
+				id: "1F4CF90542AE86D7"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "4CA2867ED4896EE3"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Storage Leads to Logistics and Transport"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3AB01C6540381820"]
+			description: [
+				"WHAT IS THIS? Compasses, Waystones, maps, Lootr and expedition kits form the exploration foundation. Campaign chapters then explain the installed progression inside the Aether, Twilight Forest, Otherside and major overworld adventure systems."
+				"DO THIS: Prove that the group can leave home, share coordinates, recover from death and return with loot before opening a portal or challenging a named boss."
+				"WHY DO I CARE? Modded dimensions punish unmarked portals and unprepared groups far more than an ordinary cave trip does."
+				"COMMON FUCK-UP: A structure or boss from one mod is not automatically progression for another. Check the tooltip namespace, advancement tab and relevant manual before using a rare key or trophy."
+			]
+			id: "09CFC052E8CF2070"
+			rewards: [{
+				id: "2437B7D2E02E47AD"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "733F98C432E21E10"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Exploration Leads to Campaigns"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["09CFC052E8CF2070"]
+			description: [
+				"WHAT IS THIS? The companion branch connects tameable pets, fishing, aquariums, guarded villages, specialist trades and bounty boards into a peaceful parallel to factories and boss fights."
+				"DO THIS: Choose one responsibility for the shared settlement: pet care, fishing displays, village safety, trade access or public building."
+				"WHY DO I CARE? A multiplayer world feels inhabited when useful community projects exist between expeditions, and new players can contribute without endgame gear."
+				"COMMON FUCK-UP: Too many loose animals, villagers or fish in one loaded base can hurt weaker computers. Prefer small purposeful groups, secured enclosures and compact displays."
+			]
+			id: "2ACF4C98E1A3908D"
+			rewards: [{
+				id: "50EAF95C6004AF25"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "097B03C3F20A07EE"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Companions Lead to a Living Settlement"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["2ACF4C98E1A3908D"]
+			description: [
+				"WHAT IS THIS? This is the decision point. The guide offers routes, but the group decides which problem is worth solving now."
+				"DO THIS: Write one sentence in chat or on a sign: \"We are building X because it will do Y.\" Pick an owner, a storage location and a stopping point for the session."
+				"WHY DO I CARE? A concrete outcome turns a huge mod list into a memorable shared build and makes it obvious which tutorial chapter to read next."
+				"COMMON FUCK-UP: Do not start five portals and four factories at once. Finish or safely park one project, record what remains, then choose another branch."
+			]
+			id: "25F2DBA507BB3FDD"
+			rewards: [{
+				id: "72EAAD938684746B"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "4E0483D04BBC7E67"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Choose One Next Project"
+			x: 8.0d
+			y: 2.0d
+		}
+	]
+}

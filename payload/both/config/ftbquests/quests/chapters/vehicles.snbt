@@ -5,7 +5,7 @@
 	group: "676547C5A87BA338"
 	icon: "immersive_aircraft:biplane"
 	id: "0F73D94269F5D8E4"
-	order_index: 8
+	order_index: 12
 	progression_mode: "flexible"
 	quest_links: [ ]
 	title: "Vehicles and Transport"
@@ -219,7 +219,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["23BD29330147D352"]
+			dependencies: ["23BD29330147D352", "579F2C00A9B13FE7"]
 			description: [
 				"What this is: Create trains join tracks, stations, schedules, signals, carriages, and cargo into a persistent transport network."
 				"Why it matters: trains move groups and bulk cargo safely between known places, while ships and aircraft are better for flexible exploration."

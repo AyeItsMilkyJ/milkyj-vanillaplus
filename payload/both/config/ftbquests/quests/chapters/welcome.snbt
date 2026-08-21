@@ -94,6 +94,29 @@
 		{
 			dependencies: ["4B260074BFD1BB0C"]
 			description: [
+				"What this is: the Field Guide explains progression, JEI explains recipes, Jade identifies the block in front of you, and Patchouli manuals provide the deep reference written by a mod author."
+				"Why it matters: hover an item and read the mod name in its tooltip before searching. In JEI, type an at-sign followed by that mod name to isolate its items and avoid mixing similarly named systems."
+				"How to begin: open a Patchouli manual like the Aether Book of Lore or Alex's Caves Cave Book from your inventory and use its contents or search page. Manuals are ordinary items, not another keybind-only screen."
+				"What comes next: use the quest book for order, JEI for exact recipes, Patchouli for reference, Jade for live state, and Create Ponder for animated machinery."
+			]
+			id: "18C0AF7F5C17CAB7"
+			rewards: [{
+				id: "6591CA00ED66CA94"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "5D7F3480331AF688"
+				title: "I read and understood these field notes"
+				type: "checkmark"
+			}]
+			title: "How to Read the Field Guide"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["18C0AF7F5C17CAB7"]
+			description: [
 				"FTB Ultimine can break connected blocks while its key is held. It costs hunger and tool durability. Check the preview before mining near builds or lava."
 				"Treat JEI as the pack's recipe index: R shows recipes, U shows uses, and an at-sign search narrows the list to one mod. If two recipes overlap, use the recipe-selection button instead of assuming one is broken."
 				"Jade answers what is directly in front of you, while the quest book explains why it matters. Read the block or creature name before interacting; unfamiliar content is often useful, neutral, or part of a later progression chain."
@@ -110,7 +133,7 @@
 				type: "checkmark"
 			}]
 			title: "Mine Smarter, Not Recklessly"
-			x: 6.0d
+			x: 8.0d
 			y: 0.0d
 		}
 		{
@@ -134,7 +157,7 @@
 				type: "checkmark"
 			}]
 			title: "Death Is Recoverable"
-			x: 8.0d
+			x: 10.0d
 			y: 0.0d
 		}
 		{
@@ -158,7 +181,7 @@
 			}]
 			title: "Your First Backpack"
 			x: 10.0d
-			y: 0.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["044BBAC4BEC5CA7F"]
@@ -187,34 +210,11 @@
 				type: "item"
 			}]
 			title: "A Shared Waystone Network"
-			x: 10.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["31CF2E051B43098D"]
-			description: [
-				"What this is: the Field Guide explains progression, JEI explains recipes, Jade identifies the block in front of you, and Patchouli manuals provide the deep reference written by a mod author."
-				"Why it matters: hover an item and read the mod name in its tooltip before searching. In JEI, type an at-sign followed by that mod name to isolate its items and avoid mixing similarly named systems."
-				"How to begin: open a Patchouli manual like the Aether Book of Lore or Alex's Caves Cave Book from your inventory and use its contents or search page. Manuals are ordinary items, not another keybind-only screen."
-				"What comes next: use the quest book for order, JEI for exact recipes, Patchouli for reference, Jade for live state, and Create Ponder for animated machinery."
-			]
-			id: "18C0AF7F5C17CAB7"
-			rewards: [{
-				id: "6591CA00ED66CA94"
-				type: "xp"
-				xp: 10
-			}]
-			tasks: [{
-				id: "5D7F3480331AF688"
-				title: "I read and understood these field notes"
-				type: "checkmark"
-			}]
-			title: "How to Read the Field Guide"
 			x: 8.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["18C0AF7F5C17CAB7"]
+			dependencies: ["31CF2E051B43098D"]
 			description: [
 				"Create teaches machinery visually. Hover a Create component in JEI or your inventory and hold W to open its animated Ponder scene."
 				"When a machine is confusing, Ponder is usually better than guessing."

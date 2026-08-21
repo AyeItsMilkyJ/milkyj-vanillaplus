@@ -1,9 +1,9 @@
 {
-  "testedAt": "2026-08-22T04:04:58.5405661+10:00",
+  "testedAt": "2026-08-22T05:20:28.9992459+10:00",
   "baselineTag": "v1.0.0",
   "releaseCandidate": "1.9.0-rc2",
   "baselineQuestHash": "6ab1a439340e84fe6d3cbc0f8d5270e19d17f16005c64bbea5224f88cd4de9df",
-  "releaseCandidateQuestHash": "5d35f8488545ce8d0d94df7ec4055e892eecd221cfd7d7f274d57421e022fc3f",
+  "releaseCandidateQuestHash": "5451865e02e4e30a8163418d2915957977f8549cda8a2f9b85b1000319074f79",
   "releaseCandidateApplied": true,
   "compatibilityFilesInstalledByCandidate": true,
   "compatibilityFileCount": 11,

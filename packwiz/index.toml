@@ -1218,52 +1218,77 @@ metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/archaeology.snbt.pw.toml"
-hash = "70306322ea935a8192991f30d35f83c4e8b623c6700d20e30ff11b8891b16f63"
+hash = "1c0417e01d6b2a827b3c636e57076824590aac9473bcd0996a47581b1b49c31c"
+metafile = true
+
+[[files]]
+file = "config/ftbquests/quests/chapters/companions_communities.snbt.pw.toml"
+hash = "a351b350bd5046ae1b1db3fcf0b6162ea20d59a725272054b42599c836b52e1a"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create_basics.snbt.pw.toml"
-hash = "7ecbcf94644fb5707066df3c1560e0de5fdb9114e9a8d4d66caddc2651348ce7"
+hash = "5e99d7bdf1e91844647c0af4b23f69f7e968d78ab07d21f7d6da117f3ead4497"
+metafile = true
+
+[[files]]
+file = "config/ftbquests/quests/chapters/create_projects.snbt.pw.toml"
+hash = "5099f4c02e8bd6ff080985881f6d52bdaf94876ec9e0d837df3f7421f7258ca6"
+metafile = true
+
+[[files]]
+file = "config/ftbquests/quests/chapters/dimension_campaigns.snbt.pw.toml"
+hash = "e236afed9f8e862e341f051277425a57af3611e460ddebd26963a79e1ef68ce4"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/endgame.snbt.pw.toml"
-hash = "9ef8deb403920a8abb3ea1a932a35bd895fd074ad7e5524b59405a4327c7dc18"
+hash = "80f84e349603de58871c2f90d896d527a2946d9794c5aaca581fda5559953aab"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_days.snbt.pw.toml"
-hash = "19b43f5ac5378270123ca269ccee8bce0e18c47ce890637f24bd9e4c27da96d5"
+hash = "ab7cac9e70a869000549b5f2e525c0d833aa27d21337bba2a0c40ea4053b156a"
+metafile = true
+
+[[files]]
+file = "config/ftbquests/quests/chapters/homestead_mastery.snbt.pw.toml"
+hash = "0724747e4ad47bd126cb52895fa811af0fa126e2a2e100c4cc8dc26549a25769"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/homestead.snbt.pw.toml"
-hash = "757ec1e5a05c304d1608009e81806eae232a17e591dcb5fbb3a58590da045f6f"
+hash = "221a4ca990e4b77a6f11edd0c0a1253dfb73800a8f07cfda4bc190996b6490ab"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/new_horizons.snbt.pw.toml"
-hash = "967c865edc78dbeb52cce1aa7ab08295d34389c22e7cb8f5c8430aff5cf46f00"
+hash = "a581c88031f8e61a9fe684867c1e6d7da9fb591322318ee9374a07386832779b"
+metafile = true
+
+[[files]]
+file = "config/ftbquests/quests/chapters/roadmap.snbt.pw.toml"
+hash = "7a69ff7d1fcdc09bd726a5946adebb471513780362dd1b1be937757e43d01590"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/travel_storage.snbt.pw.toml"
-hash = "0d1fa678cdd2b9114756e57c4f847d23c9f08997c07a0dce6e83b76345ea521e"
+hash = "c2bd495c461c316035861c127db8fdbfaaa9f8aa0900a361410644ec3b98fb86"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/vehicles.snbt.pw.toml"
-hash = "18c8a47c5dab749c0ec5d8d0b78f607be3353ce4d8f722259feac72860da2ed2"
+hash = "c8d3db95595fe04ae04e35e08196deeb185b90c1d2cc437c21998480eb731de1"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/welcome.snbt.pw.toml"
-hash = "cb29115a7f1af8128fddae3e0b8b8615b3ff8e9c690f302ed1ff15ffb78d29d4"
+hash = "8b632255bd983508e25a553a5146d76760fa7ddc08a70650638fe8be9408e83d"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt.pw.toml"
-hash = "31b354aa6b5ce5a799225576c8e33daca785014981621b72e6f6eec859cab7c1"
+hash = "35fb5cd43ab0e7850bca8f2a17f4397f2e526aef938e88106ef46532a6b75255"
 metafile = true
 
 [[files]]

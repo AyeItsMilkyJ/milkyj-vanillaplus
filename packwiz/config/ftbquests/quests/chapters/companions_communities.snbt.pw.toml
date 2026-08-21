@@ -1,0 +1,8 @@
+name = "Managed config: ftbquests/quests/chapters/companions_communities.snbt"
+filename = "companions_communities.snbt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/companions_communities.snbt"
+hash-format = "sha256"
+hash = "53ca216274aa702ea6e40b1c13fcf955c69f6384a512cbb2942dfc2c550d7a5c"

@@ -66,17 +66,17 @@ All 204 shared JARs are enumerated in `audit/mods.csv`. The shorter exceptional 
 
 ## Non-mod files
 
-The Packwiz index contains 718 unique destinations in total:
+The Packwiz index contains 723 unique destinations in total:
 
 | Destination category | Entries |
 |---|---:|
 | Mods | 242 |
-| Config | 403 |
+| Config | 408 |
 | Default configs | 7 |
 | Moonlight global datapacks | 13 |
 | Resource packs | 53 |
 
-Across all 718 destinations, 520 are `both`, 183 are `client`, and 15 are `server`. Internal files are represented by side-aware `.pw.toml` metadata and repository-hosted payloads, rather than unconditionally copied internal files. The count reflects the 9-chapter guide, current compatibility datapack, curated resource-pack defaults, and exact client/server classification.
+Across all 723 destinations, 525 are `both`, 183 are `client`, and 15 are `server`. Internal files are represented by side-aware `.pw.toml` metadata and repository-hosted payloads, rather than unconditionally copied internal files. The count reflects the 14-chapter guide, current compatibility datapack, curated resource-pack defaults, and exact client/server classification.
 
 The migration left 38 observed files unmanaged. These are itemised in `audit/excluded-files.csv`; they include JEI bookmarks/history, renderer/Distant Horizons/Oculus/shader choices, generated Chunky state, sound settings, stale Bumblezone/Connector/Continuity configs, and config conflicts for which no safe canonical value was inferred.
 

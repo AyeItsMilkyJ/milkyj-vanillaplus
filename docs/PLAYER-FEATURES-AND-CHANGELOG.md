@@ -10,7 +10,7 @@ Current foundation:
 
 - Minecraft 1.20.1 with Forge 47.4.10.
 - 240 client JARs and 206 dedicated-server JARs after side classification.
-- 118 original pack quests across 9 chapters.
+- 200 connected beginner-guide quests across 14 chapters.
 - Seven managed resource-pack choices plus ten optional shader choices in the mate installer.
 - Dedicated-server view distance 12 and simulation distance 6.
 - Packwiz checks for managed updates before each Prism launch.
@@ -58,7 +58,7 @@ Other quality-of-life features include Ultimine/VeinMiner-style excavation, fall
 
 ### 6. A real beginner field guide
 
-The old shallow quest list became a 118-quest field guide designed for players new to mods. Its nine chapters cover starting controls and interfaces, first-night survival, food and homesteading, Create, storage, exploration, archaeology, vehicles and endgame. The 22-lesson Create chapter explains Ponder, rotation, RPM, stress, power sources, processing, logistics, brass, trains and the installed addons. Quests teach and suggest experiments; they do not lock recipes or force established players to rebuild their base.
+The old shallow quest list became a 200-quest field guide designed for players new to mods. Its 14 chapters now include an explicit route map, first-night survival, food basics, homestead mastery, Create fundamentals, 20 practical Create projects, storage, exploration, 24 verified adventure-campaign lessons, archaeology, vehicles, companions/fishing/settlements and endgame. The guide explains what leads into what, gives a small test, explains why it matters and warns about the most likely failure. Quests teach and suggest experiments; they do not lock recipes or force established players to rebuild their base.
 
 ### 7. Visual choices and distant terrain
 

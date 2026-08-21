@@ -5,7 +5,7 @@
 	group: "455989FDDDEB7EAA"
 	icon: "create:large_cogwheel"
 	id: "36119855CD15B1E0"
-	order_index: 4
+	order_index: 6
 	progression_mode: "flexible"
 	quest_links: [ ]
 	title: "Create Without Having a Brain Aneurysm"
@@ -290,7 +290,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["449599EDF06A1DB9"]
+			dependencies: ["449599EDF06A1DB9", "7F45F36FB147AD0A"]
 			description: [
 				"WHAT IS THIS? Slice & Dice adds Create-powered food tools, and Create Central Kitchen connects Create processing with installed cooking recipes. They extend Farmer's Delight; they do not replace knives, boards or Cooking Pots."
 				"DO THIS: Search JEI separately with the Slice & Dice and Central Kitchen mod filters. Ponder supported slicers or food machines, then automate one cheap ingredient from input chest to finished food."
@@ -316,9 +316,9 @@
 			dependencies: ["069DD3EFDF3EF83F"]
 			description: [
 				"WHAT IS THIS? Two Crushing Wheels grind items that fall between them. Both receive rotational power and must spin inward toward the gap; JEI lists outputs and possible secondary drops."
-				"DO THIS: Ponder a Crushing Wheel, build the open pair, power both sides and drop one cheap test item through the top. Collect underneath before adding chutes or a belt."
+				"DO THIS: Ponder a Crushing Wheel now so you understand the layout. Crafting the wheels themselves uses a 5x5 Mechanical Crafter arrangement, so return after the Brass and Mechanical Crafters lessons, then build the open pair, power both sides and test one cheap item."
 				"WHY DO I CARE? Crushing Wheels provide high-throughput ore and material processing and feed directly into fan washing or filtered storage."
-				"COMMON FUCK-UP: Wheels spinning the same way throw or jam items instead of crushing them. Reverse one side and make sure the output has somewhere to land."
+				"COMMON FUCK-UP: This lesson appears early to teach the machine, but it is not an early hand-crafting recipe. Once built, wheels spinning the same way throw or jam items; reverse one side and leave room for the output."
 			]
 			id: "1F2F7FDA97C0DC94"
 			rewards: [{
@@ -405,7 +405,7 @@
 			dependencies: ["7B0C1910CB444EA6"]
 			description: [
 				"WHAT IS THIS? This is your first complete automation: power source, visible transport, one processing step, filtered output, overflow storage and an obvious shutdown. A crop farm or ore-crushing line both count."
-				"DO THIS: Choose one cheap JEI recipe. For crops, use a guarded Saw or Harvester arrangement; for ore, use crushing then fan washing. Run a full stack and show another player how to stop it."
+				"DO THIS: Choose one cheap JEI recipe. For crops, use a guarded Saw or Harvester arrangement; for ore, begin with a Millstone or fan-processing step. Use Crushing Wheels only after the later Brass and Mechanical Crafters lessons, unless another player already supplied them. Run a full stack and show a teammate how to stop it."
 				"WHY DO I CARE? A complete small line teaches more than a chest of disconnected machines and unlocks the confidence to scale safely."
 				"COMMON FUCK-UP: Building without overflow makes items despawn or jam the Belt. Fill the output deliberately during testing and make sure the machine fails safely."
 			]
@@ -469,6 +469,7 @@
 				type: "xp"
 				xp: 15
 			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
 			tasks: [{
 				count: 8L
 				id: "137DD683C9AA06F9"
@@ -493,6 +494,7 @@
 				type: "xp"
 				xp: 20
 			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
 			tasks: [{
 				count: 9L
 				id: "4C25881B98D5D80B"
@@ -517,6 +519,7 @@
 				type: "xp"
 				xp: 20
 			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
 			tasks: [
 				{
 					count: 32L
@@ -548,6 +551,7 @@
 				type: "xp"
 				xp: 20
 			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
 			tasks: [{
 				id: "57E697CE5318CC22"
 				item: "create:schedule"
@@ -558,7 +562,7 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["579F2C00A9B13FE7"]
+			dependencies: ["3C8A246AFBC5BCB3"]
 			description: [
 				"WHAT IS THIS? Create: Enchantment Industry turns experience into a fluid that can be collected, stored and used by its installed machines. The Disenchanter can separate unwanted enchantment work from gear."
 				"DO THIS: Inspect every machine recipe in JEI, build a tiny labelled experience line, and test with disposable low-value gear. Provide an Experience Hatch or other documented player access point."
@@ -571,6 +575,7 @@
 				type: "xp"
 				xp: 10
 			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
 			tasks: [{
 				id: "60ECED289908D9A0"
 				title: "I read this field note and tested the idea"
@@ -581,7 +586,7 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["5A53AAEC0E3B4B96"]
+			dependencies: ["4EAA9A43A9020901"]
 			description: [
 				"WHAT IS THIS? The installed Create family is core Create 6.0.8 plus Steam 'n' Rails, Enchantment Industry, Slice & Dice, Central Kitchen, Connected, Deco, Copycats, Rechiseled Create, Aquatic Ambitions, Compatible Storage, Components and Additions and Create Ultimine. Each addon serves a different job."
 				"DO THIS: Use JEI's at-sign mod filter to inspect one addon at a time. Ponder unfamiliar blocks. Aquatic Ambitions handles focused ocean processing; Compatible Storage lets supported modded containers behave correctly on contraptions; Components and Additions provides compact kinetic controls."
@@ -594,6 +599,7 @@
 				type: "xp"
 				xp: 5
 			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
 			tasks: [{
 				id: "6D339E7853017809"
 				title: "I read and understood these field notes"

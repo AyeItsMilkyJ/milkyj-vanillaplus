@@ -144,7 +144,7 @@ Ten full-duty DH workers plus unlimited global LOD bandwidth can compete with Fo
 
 ### LOW — heap/GC and installed optimization overlap
 
-The 8 GiB cap retained headroom, peak sampled used heap was 3.62 GiB, and no full GC occurred. Existing optimization mods started and coexisted successfully. The explicit-GC flag is a DH-specific concern, not evidence of current heap exhaustion.
+The 8 GiB cap retained headroom, peak sampled used heap was 3,632.5 MiB (about 3.55 GiB), and no full GC occurred. Existing optimization mods started and coexisted successfully. The explicit-GC flag is a DH-specific concern, not evidence of current heap exhaustion.
 
 ## Classified recommendations
 

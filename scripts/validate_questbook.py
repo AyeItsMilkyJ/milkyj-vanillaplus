@@ -20,6 +20,16 @@ QUEST_ID_RE = re.compile(r'^\t\t\tid:\s*"([0-9A-F]{16})"', re.MULTILINE)
 ALL_ID_RE = re.compile(r'^\s*id:\s*"([0-9A-F]{16})"', re.MULTILINE)
 ITEM_RE = re.compile(r'^\s*item:\s*"([a-z0-9_.-]+:[a-z0-9_./-]+)"', re.MULTILINE)
 TAG_RE = re.compile(r'^\s*tag:\s*"#?([a-z0-9_.-]+:[a-z0-9_./-]+)"', re.MULTILINE)
+EXPECTED_CHAPTERS = 14
+EXPECTED_QUESTS = 200
+BEGINNER_FORMAT_CHAPTERS = {
+    "roadmap",
+    "homestead_mastery",
+    "create_basics",
+    "create_projects",
+    "dimension_campaigns",
+    "companions_communities",
+}
 
 
 def section(block: str, name: str, next_names: tuple[str, ...]) -> str:
@@ -110,8 +120,8 @@ def main() -> int:
     create_format_failures: list[str] = []
 
     chapter_files = sorted(chapter_root.glob("*.snbt"))
-    if len(chapter_files) != 9:
-        errors.append(f"expected 9 chapter files, found {len(chapter_files)}")
+    if len(chapter_files) != EXPECTED_CHAPTERS:
+        errors.append(f"expected {EXPECTED_CHAPTERS} chapter files, found {len(chapter_files)}")
 
     for chapter_file in chapter_files:
         text = chapter_file.read_text(encoding="utf-8")
@@ -155,7 +165,7 @@ def main() -> int:
             item_references.update(ITEM_RE.findall(block))
             tag_references.update(TAG_RE.findall(block))
 
-            if chapter_file.stem == "create_basics":
+            if chapter_file.stem in BEGINNER_FORMAT_CHAPTERS:
                 required = ("WHAT IS THIS?", "DO THIS:", "WHY DO I CARE?", "COMMON FUCK-UP:")
                 if not all(label in description for label in required):
                     create_format_failures.append(quest_id)
@@ -189,7 +199,24 @@ def main() -> int:
             if dep in quest_set:
                 indegree[quest] += 1
                 dependents[dep].append(quest)
-    queue = deque(quest for quest, degree in indegree.items() if degree == 0)
+    root_quest_ids = sorted(quest for quest, degree in indegree.items() if degree == 0)
+    if len(root_quest_ids) != 1:
+        errors.append(f"expected one connected quest root, found {len(root_quest_ids)}: {', '.join(root_quest_ids)}")
+
+    root_reachable: set[str] = set()
+    if len(root_quest_ids) == 1:
+        reachability_queue = deque(root_quest_ids)
+        while reachability_queue:
+            quest = reachability_queue.popleft()
+            if quest in root_reachable:
+                continue
+            root_reachable.add(quest)
+            reachability_queue.extend(dependents[quest])
+        disconnected = sorted(quest_set - root_reachable)
+        if disconnected:
+            errors.append(f"quests disconnected from the guide root: {', '.join(disconnected)}")
+
+    queue = deque(root_quest_ids)
     visited: set[str] = set()
     while queue:
         quest = queue.popleft()
@@ -204,10 +231,10 @@ def main() -> int:
     if graph_failures:
         errors.append(f"cyclic or unreachable quests: {', '.join(graph_failures)}")
 
-    if len(quest_ids) != 118:
-        errors.append(f"expected 118 quests, found {len(quest_ids)}")
+    if len(quest_ids) != EXPECTED_QUESTS:
+        errors.append(f"expected {EXPECTED_QUESTS} quests, found {len(quest_ids)}")
     if create_format_failures:
-        errors.append(f"Create quests missing beginner-format sections: {', '.join(create_format_failures)}")
+        errors.append(f"beginner-format quests missing required sections: {', '.join(create_format_failures)}")
 
     unresolved_items: list[str] = []
     for item in sorted(item_references):
@@ -243,6 +270,8 @@ def main() -> int:
         "uniqueQuestIds": len(set(quest_ids)),
         "uniqueTaskIds": len(set(task_ids)),
         "uniqueRewardIds": len(set(reward_ids)),
+        "rootQuestIds": root_quest_ids,
+        "rootReachableQuests": len(root_reachable),
         "graphVisitedQuests": len(visited),
         "referencedItemAndIconIds": len(item_references),
         "unresolvedItems": unresolved_items,

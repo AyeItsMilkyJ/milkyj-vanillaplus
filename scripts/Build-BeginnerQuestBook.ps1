@@ -31,19 +31,19 @@ function Escape-Snbt([string]$Value) {
     return $Value.Replace('\', '\\').Replace('"', '\"').Replace("`r", '').Replace("`n", '\n')
 }
 
-function Existing([string]$Id, [bool]$Optional = $false) {
-    return [pscustomobject]@{ Kind = 'existing'; Id = $Id; Optional = $Optional }
+function Existing([string]$Id, [bool]$Optional = $false, [string[]]$Parents = @()) {
+    return [pscustomobject]@{ Kind = 'existing'; Id = $Id; Optional = $Optional; Parents = @($Parents) }
 }
 
-function NewLesson([string]$Key, [string]$Title, [string[]]$Description, [bool]$Optional = $false, [int]$Xp = 5) {
+function NewLesson([string]$Key, [string]$Title, [string[]]$Description, [bool]$Optional = $false, [int]$Xp = 5, [string[]]$Parents = @()) {
     return [pscustomobject]@{
-        Kind = 'new'; Key = $Key; Title = $Title; Description = @($Description); Optional = $Optional; Xp = $Xp
+        Kind = 'new'; Key = $Key; Title = $Title; Description = @($Description); Optional = $Optional; Xp = $Xp; Parents = @($Parents)
     }
 }
 
-function ReplacementLesson([string]$Key, [string]$SourceId, [bool]$Optional = $false) {
+function ReplacementLesson([string]$Key, [string]$SourceId, [bool]$Optional = $false, [string[]]$Parents = @()) {
     return [pscustomobject]@{
-        Kind = 'replacement'; Key = $Key; SourceId = $SourceId; Optional = $Optional
+        Kind = 'replacement'; Key = $Key; SourceId = $SourceId; Optional = $Optional; Parents = @($Parents)
     }
 }
 
@@ -59,6 +59,12 @@ $groups = @(
     [pscustomobject]@{ Key = 'adventure'; Title = 'Explore and Survive' }
 )
 
+$progressionContent = Join-Path $PSScriptRoot 'quest-content\ProgressionExpansion.ps1'
+if (-not (Test-Path -LiteralPath $progressionContent -PathType Leaf)) {
+    throw "Missing progression quest content: $progressionContent"
+}
+. $progressionContent
+
 # These are the useful quests shown to players. Existing blocks retain their
 # quest/task/reward IDs. The generator also compares every generated ID with the
 # local v1.0.0 Git tag, so it never needs to read the production world.
@@ -67,11 +73,11 @@ $chapters = @(
         (Existing '7DA1925406767A08'),
         (Existing '381BFADC40CC9BDC'),
         (Existing '4B260074BFD1BB0C'),
+        (Existing '18C0AF7F5C17CAB7'),
         (Existing '72BE3B6573EDF96E'),
         (Existing '2E34979BCE044BF5'),
         (Existing '044BBAC4BEC5CA7F'),
         (Existing '31CF2E051B43098D'),
-        (Existing '18C0AF7F5C17CAB7'),
         (Existing '5466319B4BC86D8B'),
         (Existing '11A22EDB82B37413'),
         (Existing '34B44EE7DDB53F36'),
@@ -79,6 +85,7 @@ $chapters = @(
         (Existing '3522AB4192F75013'),
         (Existing '1885CF9658AB663D' $true)
     )),
+    $roadmapChapter,
     (Chapter 'first_days' 'Surviving the First Night' 'minecraft:campfire' 'start' 'first_days' @(
         (Existing '3BC686C3FBF1D35F'),
         (Existing '54C781F3CD01DB25'),
@@ -101,11 +108,12 @@ $chapters = @(
         (Existing '000927068CCE0DB0'),
         (Existing '0D4B75EF5618911F'),
         (Existing '7F45F36FB147AD0A'),
-        (Existing '64AC9DE8013767BD' $true),
-        (Existing '71BB70B3127ECE00' $true),
-        (Existing '519A57FD0FD737F9' $true),
+        (Existing '64AC9DE8013767BD' $true @('60435D16835B3DCE')),
+        (Existing '71BB70B3127ECE00' $true @('000927068CCE0DB0')),
+        (Existing '519A57FD0FD737F9' $true @('71BB70B3127ECE00')),
         (Existing '22B69CA315389C48' $true)
     )),
+    $homesteadMasteryChapter,
     (Chapter 'create_basics' 'Create Without Having a Brain Aneurysm' 'create:large_cogwheel' 'systems' 'create_basics' @(
         (Existing '4201CE5BFBBC062D'),
         (Existing '1AC77EEB81F556DC'),
@@ -117,7 +125,7 @@ $chapters = @(
         (Existing '4164748FA85EDE6A'),
         (Existing '3119C51ADD982ABF'),
         (Existing '449599EDF06A1DB9'),
-        (ReplacementLesson 'create_food_addons' '22B69CA315389C48'),
+        (ReplacementLesson 'create_food_addons' '22B69CA315389C48' $false @('449599EDF06A1DB9', '7F45F36FB147AD0A')),
         (NewLesson 'crushing_wheels' 'Crushing Wheels: Make Them Face Each Other' @(
             'What this is: two Crushing Wheels grind items more effectively than the early Millstone. Both wheels must spin inward toward the gap.',
             'Why it matters: the pair unlocks higher-throughput crushing recipes and useful secondary outputs shown in JEI.',
@@ -133,35 +141,36 @@ $chapters = @(
         (Existing '7B0C1910CB444EA6'),
         (Existing '1A354ABA1BE5171F'),
         (Existing '4EAA9A43A9020901'),
-        (Existing '3C8A246AFBC5BCB3'),
-        (Existing '6C2795B621514EE3'),
-        (Existing '40B5E1218A0226CD'),
-        (Existing '579F2C00A9B13FE7'),
-        (Existing '5A53AAEC0E3B4B96'),
-        (Existing '71CEDD5D336CCB38')
+        (Existing '3C8A246AFBC5BCB3' $true @('4EAA9A43A9020901')),
+        (Existing '6C2795B621514EE3' $true @('3C8A246AFBC5BCB3')),
+        (Existing '40B5E1218A0226CD' $true @('6C2795B621514EE3')),
+        (Existing '579F2C00A9B13FE7' $true @('40B5E1218A0226CD')),
+        (Existing '5A53AAEC0E3B4B96' $true @('3C8A246AFBC5BCB3')),
+        (Existing '71CEDD5D336CCB38' $true @('4EAA9A43A9020901'))
     )),
+    $createProjectsChapter,
     (Chapter 'travel_storage' 'Stop Living Out of 46 Chests' 'toms_storage:ts.storage_terminal' 'systems' 'travel_storage' @(
         (Existing '2993B4E786D1E3C6'),
         (Existing '34B78045A3F1DA78'),
         (Existing '74ACDA0161CB4F07'),
-        (Existing '5630715FB28AA469'),
-        (Existing '7471D65394B8D846'),
-        (Existing '28ED3EBB122D102D'),
-        (Existing '2D0F242D77ABDD04'),
-        (Existing '4130E2674DF6828B'),
-        (Existing '145EE14BCE66ADC0'),
+        (Existing '2D0F242D77ABDD04' $false @('74ACDA0161CB4F07')),
+        (Existing '5630715FB28AA469' $false @('2D0F242D77ABDD04')),
+        (Existing '7471D65394B8D846' $false @('74ACDA0161CB4F07')),
+        (Existing '28ED3EBB122D102D' $false @('34B78045A3F1DA78')),
+        (Existing '4130E2674DF6828B' $false @('74ACDA0161CB4F07')),
+        (Existing '145EE14BCE66ADC0' $false @('4130E2674DF6828B')),
         (NewLesson 'create_vaults' 'Create Item Vaults Are Machine Buffers' @(
             'What this is: Item Vaults combine into larger multiblock inventories. They are accessed through funnels, chutes, belts, hoppers, or other transfer blocks rather than opened like a chest.',
             'Why it matters: a vault is excellent high-throughput input or output storage for a Create line, but it is a poor replacement for a searchable personal storeroom.',
             'How to begin: hover an Item Vault and hold W. Build a small vault, insert and extract one stack through visible transfer blocks, then test what happens when the output is full.',
             'What comes next: put the vault behind a filter or connect its surrounding inventories to Tom''s Storage without creating competing loops.'
-        )),
+        ) -Parents @('74ACDA0161CB4F07', '1A354ABA1BE5171F')),
         (NewLesson 'packaged_stock' 'Packages, Stock Links and Stock Tickers' @(
             'What this is: a Packager attaches to an inventory and makes or opens packages. A Stock Link advertises linked stock, and a Stock Ticker lets a seated mob or Blaze Burner act as a keeper who accepts requests.',
             'Why it matters: this is Create 6 logistics already inside the core Create mod; no Crafts and Additions mod is required. The network finds items, but physical packages still need a safe route.',
             'How to begin: Ponder Packager, Stock Link, and Stock Ticker in that order. Bind links before placement, attach a Packager to a test chest, and request cheap blocks before using the main warehouse.',
             'What comes next: add package addresses, filters, overflow storage, and a clearly labelled delivery point only after the one-chest test works.'
-        ))
+        ) -Parents @('create_vaults', '3C8A246AFBC5BCB3', '7B0C1910CB444EA6'))
     )),
     (Chapter 'new_horizons' 'Exploration Without Getting Completely Lost' 'explorerscompass:explorerscompass' 'adventure' 'new_horizons' @(
         (Existing '6851604085D9D68D'),
@@ -175,11 +184,12 @@ $chapters = @(
         (Existing '4F7A5E294B48D343'),
         (Existing '3A8709849D637D3D'),
         (Existing '6416430518B427C3' $true),
-        (Existing '5A57FC5CEB08D333' $true),
-        (Existing '1CA7ED993BDE8D70' $true),
+        (Existing '5A57FC5CEB08D333' $true @('14EC247DD954A406')),
+        (Existing '1CA7ED993BDE8D70' $true @('14EC247DD954A406')),
         (Existing '5FCB22913E016C22'),
-        (Existing '53986E1D3385AA38' $true)
+        (Existing '53986E1D3385AA38' $true @('1CA7ED993BDE8D70'))
     )),
+    $dimensionCampaignsChapter,
     (Chapter 'archaeology' 'Fossils, Archaeology and Dinosaurs' 'betterarcheology:archeology_table' 'adventure' 'archaeology' @(
         (Existing '03AC335757DE4153'),
         (Existing '702A4062FE9B512F'),
@@ -216,23 +226,24 @@ $chapters = @(
             'Why it matters: trains move groups and bulk cargo safely between known places, while ships and aircraft are better for flexible exploration.',
             'How to begin: finish the track and schedule lessons in the Create chapter, then build two clearly named stations with safe platforms and an empty test train.',
             'What comes next: add signals, cargo loading, maps, and written schedules only after the basic round trip works without manual rescue.'
-        ) $true)
+        ) $true 5 @('farm_carts', '579F2C00A9B13FE7'))
     )),
+    $companionsCommunitiesChapter,
     (Chapter 'endgame' 'Dangerous Shit and Endgame' 'minecraft:dragon_egg' 'adventure' 'nether_end' @(
         (Existing '731E73362B4E623D'),
         (Existing '2FF22EE22B1363FC'),
+        (Existing '13E186E1D8309D38'),
         (Existing '3CFD689EF13FCBC8'),
         (Existing '4EDB912AD92FF62F'),
         (Existing '2D3D21E8896371A7'),
+        (Existing '4C84F99D2AF7535A'),
         (Existing '2A603B486882AE2E'),
         (Existing '4181D1295E6AA537'),
         (Existing '2839A2A2D207C7DB'),
         (Existing '3A45B4D48F3CEBD6'),
         (Existing '3F4DB5EEDFFAC808'),
-        (Existing '13E186E1D8309D38'),
-        (Existing '4C84F99D2AF7535A'),
         (Existing '51F9F47AB21426BA' $true),
-        (Existing '668CB4B502BECE63')
+        (Existing '668CB4B502BECE63' $true @('6416430518B427C3'))
     ))
 )
 
@@ -316,9 +327,15 @@ $descriptionOverrides = @{
     )
     '1F2F7FDA97C0DC94' = @(
         'WHAT IS THIS? Two Crushing Wheels grind items that fall between them. Both receive rotational power and must spin inward toward the gap; JEI lists outputs and possible secondary drops.',
-        'DO THIS: Ponder a Crushing Wheel, build the open pair, power both sides and drop one cheap test item through the top. Collect underneath before adding chutes or a belt.',
+        'DO THIS: Ponder a Crushing Wheel now so you understand the layout. Crafting the wheels themselves uses a 5x5 Mechanical Crafter arrangement, so return after the Brass and Mechanical Crafters lessons, then build the open pair, power both sides and test one cheap item.',
         'WHY DO I CARE? Crushing Wheels provide high-throughput ore and material processing and feed directly into fan washing or filtered storage.',
-        'COMMON FUCK-UP: Wheels spinning the same way throw or jam items instead of crushing them. Reverse one side and make sure the output has somewhere to land.'
+        'COMMON FUCK-UP: This lesson appears early to teach the machine, but it is not an early hand-crafting recipe. Once built, wheels spinning the same way throw or jam items; reverse one side and leave room for the output.'
+    )
+    '4EDB912AD92FF62F' = @(
+        'WHAT IS THIS? End Remastered installs 16 different custom Eye types, but the portal has 12 frames and requires 12 distinct Eyes. The four automatic item tasks shown across the preceding Nether Eye lesson and this lesson are representative checkpoints, not the whole collection.',
+        'DO THIS: Make a shared checklist for all installed Eyes, record each source in JEI or the guide, and store every unique Eye in a labelled secure chest. Plan the stronghold trip only after the group has 12 different types.',
+        'WHY DO I CARE? Treating four samples as the finish line strands the expedition at an incomplete portal. A shared collection also prevents several players from unknowingly chasing the same Eye.',
+        'COMMON FUCK-UP: Duplicate Eyes do not replace missing types. Do not insert rare Eyes into frames piecemeal until the route, recovery equipment and full set of 12 distinct types are ready.'
     )
     '0868E133B828D769' = @(
         'WHAT IS THIS? A Mechanical Saw cuts recipes and trees; a Mechanical Drill breaks blocks in front of its working face. Both require rotational power and can be stationary or attached to a moving contraption.',
@@ -334,7 +351,7 @@ $descriptionOverrides = @{
     )
     '1A354ABA1BE5171F' = @(
         'WHAT IS THIS? This is your first complete automation: power source, visible transport, one processing step, filtered output, overflow storage and an obvious shutdown. A crop farm or ore-crushing line both count.',
-        'DO THIS: Choose one cheap JEI recipe. For crops, use a guarded Saw or Harvester arrangement; for ore, use crushing then fan washing. Run a full stack and show another player how to stop it.',
+        'DO THIS: Choose one cheap JEI recipe. For crops, use a guarded Saw or Harvester arrangement; for ore, begin with a Millstone or fan-processing step. Use Crushing Wheels only after the later Brass and Mechanical Crafters lessons, unless another player already supplied them. Run a full stack and show a teammate how to stop it.',
         'WHY DO I CARE? A complete small line teaches more than a chest of disconnected machines and unlocks the confidence to scale safely.',
         'COMMON FUCK-UP: Building without overflow makes items despawn or jam the Belt. Fill the output deliberately during testing and make sure the machine fails safely.'
     )
@@ -576,7 +593,7 @@ $data = @'
 	progression_mode: "flexible"
 	show_lock_icons: true
 	title: "MilkyCraft Vanilla+ Beginner Field Guide"
-	version: 14
+	version: 15
 }
 '@
 [IO.File]::WriteAllText((Join-Path $stageRoot 'data.snbt'), ($data.Trim() + "`r`n"), $utf8)
@@ -597,13 +614,18 @@ $selectedExistingIds = [Collections.Generic.HashSet[string]]::new([StringCompare
 $chapterCounts = [Collections.Generic.List[object]]::new()
 $allSelectedQuestIds = [Collections.Generic.List[string]]::new()
 $chapterUnlockDependencies = @{
+    roadmap          = @('18C0AF7F5C17CAB7')
     first_days       = @('18C0AF7F5C17CAB7')
     homestead        = @('18C0AF7F5C17CAB7')
+    homestead_mastery = @('3C9A949E21E73BD7')
     create_basics    = @('18C0AF7F5C17CAB7')
+    create_projects  = @('4EAA9A43A9020901')
     travel_storage   = @('18C0AF7F5C17CAB7')
     new_horizons     = @('18C0AF7F5C17CAB7')
+    dimension_campaigns = @('3A8709849D637D3D')
     archaeology      = @('18C0AF7F5C17CAB7')
     vehicles         = @('18C0AF7F5C17CAB7')
+    companions_communities = @('341C28816B831FA9')
     endgame          = @('18C0AF7F5C17CAB7')
 }
 $compatibilityQuestIds = @('1885CF9658AB663D', '22B69CA315389C48')
@@ -635,7 +657,14 @@ for ($chapterIndex = 0; $chapterIndex -lt $chapters.Count; $chapterIndex++) {
         $xColumn = if (($row % 2) -eq 0) { $column } else { 5 - $column }
         $x = [double]($xColumn * 2)
         $y = [double]($row * 2)
-        $dependencies = if ($previousRequired) {
+        $explicitParents = @($entry.Parents | Where-Object { $_ })
+        $dependencies = if ($explicitParents.Count -gt 0) {
+            @($explicitParents | ForEach-Object {
+                if ($_ -match '^[0-9A-F]{16}$') { $_ }
+                else { Get-StableId "$($chapter.Key)|$_|quest" }
+            })
+        }
+        elseif ($previousRequired) {
             @($previousRequired)
         }
         elseif ($chapterUnlockDependencies.ContainsKey($chapter.Key)) {
@@ -723,8 +752,8 @@ $duplicateRewardIds = @($rewardIds | Group-Object | Where-Object Count -gt 1)
 $unsafeIds = @($allIds | Where-Object { $_ -match '^[89A-F]' })
 $missingDependencies = @($dependencies | Where-Object { -not $questIds.Contains($_) } | Select-Object -Unique)
 $chapterFiles = @(Get-ChildItem -LiteralPath $chapterRoot -File -Filter '*.snbt')
-if ($chapterFiles.Count -ne 9) { throw "Expected 9 chapters, found $($chapterFiles.Count)." }
-if ($questIds.Count -ne 118) { throw "Expected 118 quests, found $($questIds.Count)." }
+if ($chapterFiles.Count -ne 14) { throw "Expected 14 chapters, found $($chapterFiles.Count)." }
+if ($questIds.Count -ne 200) { throw "Expected 200 quests, found $($questIds.Count)." }
 if ($duplicateIds.Count -gt 0) { throw "Duplicate IDs: $($duplicateIds.Name -join ', ')" }
 if ($duplicateQuestIds.Count -gt 0) { throw "Duplicate quest IDs: $($duplicateQuestIds.Name -join ', ')" }
 if ($duplicateTaskIds.Count -gt 0) { throw "Duplicate task IDs: $($duplicateTaskIds.Name -join ', ')" }
@@ -744,8 +773,10 @@ foreach ($questId in $questIds) {
         $dependents[$dependency].Add($questId)
     }
 }
+$rootQuestIds = @($questIds | Where-Object { $inDegree[$_] -eq 0 })
+if ($rootQuestIds.Count -ne 1) { throw "Expected one connected quest root, found $($rootQuestIds.Count): $($rootQuestIds -join ', ')" }
 $queue = [Collections.Generic.Queue[string]]::new()
-foreach ($questId in $questIds) { if ($inDegree[$questId] -eq 0) { $queue.Enqueue($questId) } }
+foreach ($questId in $rootQuestIds) { $queue.Enqueue($questId) }
 $visitedQuestIds = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
 while ($queue.Count -gt 0) {
     $questId = $queue.Dequeue()
@@ -829,6 +860,7 @@ $report = [ordered]@{
     duplicateRewardIds = $duplicateRewardIds.Count
     unsafeSignedIds = $unsafeIds.Count
     unresolvedDependencies = $missingDependencies.Count
+    rootQuestIds = @($rootQuestIds)
     cyclicOrUnreachableQuests = $cyclicOrUnreachable.Count
     referencedItemIds = $itemIds.Count
     chapters = @($chapterCounts)
@@ -846,10 +878,14 @@ $report = [ordered]@{
 [IO.File]::WriteAllLines((Join-Path $projectRootResolved 'audit\questbook-item-ids.txt'), @($itemIds | Sort-Object), $utf8)
 
 $chapterDefaultMods = @{
-    welcome = 'guide'; first_days = 'minecraft'; homestead = 'farmersdelight + integrations'
+    welcome = 'guide'; roadmap = 'guide'; first_days = 'minecraft'; homestead = 'farmersdelight + integrations'
+    homestead_mastery = 'farmersdelight + sereneseasons + productivebees'
     create_basics = 'create + installed addons'
+    create_projects = 'create + installed addons'
     travel_storage = 'mixed storage'; new_horizons = 'mixed exploration'
+    dimension_campaigns = 'aether + twilightforest + deeperdarker + alexscaves + aquamirae + mowziesmobs'
     archaeology = 'betterarcheology + separate optional systems'; vehicles = 'mixed transport'
+    companions_communities = 'doggytalents + domesticationinnovation + aquaculture + village integrations'
     endgame = 'mixed adventure'
 }
 $questAuditRows = [Collections.Generic.List[object]]::new()

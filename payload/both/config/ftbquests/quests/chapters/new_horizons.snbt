@@ -5,7 +5,7 @@
 	group: "676547C5A87BA338"
 	icon: "explorerscompass:explorerscompass"
 	id: "1CDE54C53326DB2E"
-	order_index: 6
+	order_index: 9
 	progression_mode: "flexible"
 	quest_links: [ ]
 	title: "Exploration Without Getting Completely Lost"
@@ -326,7 +326,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["3A8709849D637D3D"]
+			dependencies: ["14EC247DD954A406"]
 			description: [
 				"Exposure cameras use film and preserve in-world moments. Start with a camera and black-and-white film, then learn the viewfinder controls."
 				"Exposure follows a complete film workflow: load compatible film, take exposures, remove the exposed roll, develop it in the Lightroom, then organise or copy the resulting photographs. Practise every step at home first."
@@ -357,7 +357,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["3A8709849D637D3D"]
+			dependencies: ["14EC247DD954A406"]
 			description: [
 				"Naturalist animals have behaviours worth observing. Use a Bug Net and camera rather than killing unfamiliar creatures for no reason."
 				"Naturalist, Alex's Mobs, Critters and Companions, aquatic mods, and Friends and Foes reward observation. Watch movement and sound, consult an animal dictionary when available, and avoid killing an unfamiliar creature merely to identify it."
@@ -416,7 +416,7 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["5FCB22913E016C22"]
+			dependencies: ["1CA7ED993BDE8D70"]
 			description: [
 				"The expanded wildlife belongs to ecosystems rather than a universal list of targets. Predators, scavengers, pollinators and strange cave species communicate through movement and sound long before they drop an item."
 				"A naturalist asks where a creature lives, what it eats and what threatens it. A careless hunter asks only what it drops and eventually discovers an empty habitat."

@@ -31,7 +31,7 @@ Every result below remains **NOT RUN** until two people perform and record it.
 1. **NOT RUN** — On both PCs, create fresh disposable Prism test application roots and import the LAN-test ZIP. Do not reuse the working player instance.
 2. **NOT RUN** — Launch both imported instances and confirm Packwiz downloads the candidate from the exact LAN URL printed by the start script.
 3. **NOT RUN** — Connect both authenticated clients to the printed disposable address on port `25566`.
-4. **NOT RUN** — Open FTB Quests on both clients; confirm all 9 chapters and 118 quests are visible, readable, and free of broken characters.
+4. **NOT RUN** — Open FTB Quests on both clients; confirm all 14 chapters and 200 quests are visible, readable, and free of broken characters.
 5. **NOT RUN** — Complete one manual checkmark quest and confirm it completes only after the click.
 6. **NOT RUN** — Complete one inexpensive automatic item-detection quest and confirm holding the correct item is detected.
 7. **NOT RUN** — Claim one reward and confirm the received item/XP matches the displayed reward.
@@ -43,5 +43,7 @@ Every result below remains **NOT RUN** until two people perform and record it.
 13. **NOT RUN** — Confirm neither login automatically forces a player into a global server team.
 14. **NOT RUN** — Inspect every chapter page for overlapping quest icons, unreadable dependency lines, or unreachable required quests.
 15. **NOT RUN** — Search visible titles/descriptions for Tinkers' Construct, Botany Pots/Trees, Fossils Revival, Prehistoric Fauna, and KubeJS; confirm no visible quest tells players to craft or find absent content.
+16. **NOT RUN** — Inspect the roadmap, Homestead Mastery, Create Projects, Expedition Campaigns and Companions chapters; confirm their branch lines stem from the intended lesson and do not overlap icons.
+17. **NOT RUN** — Verify one Create Ponder/JEI lesson, one Productive Bees lesson and one dimension-campaign lesson against the actual installed UI before marking the wording approved.
 
 Do not mark this candidate release-ready from automated startup alone. Attach screenshots or short notes for every completed line and retain the disposable logs.

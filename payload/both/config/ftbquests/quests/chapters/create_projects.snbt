@@ -1,0 +1,474 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "create_projects"
+	group: "455989FDDDEB7EAA"
+	icon: "create:mechanical_arm"
+	id: "656E76FAECBEFE8D"
+	order_index: 7
+	progression_mode: "flexible"
+	quest_links: [ ]
+	title: "Create Projects: Workshop to Railway"
+	quests: [
+		{
+			dependencies: ["4EAA9A43A9020901"]
+			description: [
+				"WHAT IS THIS? This chapter turns Create 6.0.8 and the exact installed addons into projects with inputs, outputs, controls and maintenance paths."
+				"DO THIS: Complete the first production line and diagnostic lessons, then choose one project whose output the group actually needs."
+				"WHY DO I CARE? Create becomes approachable when every machine has a reason to exist and a player can explain the material flow."
+				"COMMON FUCK-UP: Do not copy a showcase block-for-block until you compare its Minecraft, Create and addon versions with this pack."
+			]
+			id: "0B9BA6881B25E26D"
+			rewards: [{
+				id: "51E1E181581B9F86"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "78214D0D9950081D"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Build Outcomes, Not Machine Collections"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0B9BA6881B25E26D"]
+			description: [
+				"WHAT IS THIS? Engineer's Goggles expose speed, stress impact and stress capacity. These measurements tell you whether a design can accept another machine."
+				"DO THIS: Inspect a running network at the source and at its busiest machine. Write down RPM, used stress and available capacity before changing ratios."
+				"WHY DO I CARE? A measured baseline makes overstress and backwards rotation quick to diagnose."
+				"COMMON FUCK-UP: Increasing RPM can increase a machine's stress use. If the network stops, restore the known working ratio before adding more generators."
+			]
+			id: "012874F9C3DFCEA0"
+			rewards: [{
+				id: "53E2F573C3960FC5"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "7EEA0AC3C7C5B2E7"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Measure Rotation Before Expanding"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["012874F9C3DFCEA0"]
+			description: [
+				"WHAT IS THIS? Water, wind and steam are different Create power projects. A serviceable power room exposes the source, main shaft, gauges and shutoff instead of burying them inside decoration."
+				"DO THIS: Ponder the chosen source, reserve maintenance access and connect one labelled main line with spare stress capacity."
+				"WHY DO I CARE? Shared factories survive updates and player mistakes when the power source can be understood without dismantling the wall."
+				"COMMON FUCK-UP: Do not upgrade to steam merely because it is later in progression. Use the smallest stable source that meets measured demand."
+			]
+			id: "6E0DD96DC831FFF7"
+			rewards: [{
+				id: "4812AB25EDE78232"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "5C20C11A3B48E0E7"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Design a Serviceable Power Room"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6E0DD96DC831FFF7"]
+			description: [
+				"WHAT IS THIS? A machine contract states accepted inputs, promised outputs, power source, overflow behaviour and safe shutdown."
+				"DO THIS: Put signs or a book beside one line naming those five facts. Then test an invalid input, full output and loss of power."
+				"WHY DO I CARE? The contract lets another player operate or repair the line without asking its builder to log in."
+				"COMMON FUCK-UP: A filter is not overflow protection. Provide somewhere for rejected and excess items to go."
+			]
+			id: "37E135DD266BF9AB"
+			rewards: [{
+				id: "0A7801B21E270AA8"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "5C1E0C0C88823609"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Every Machine Needs a Contract"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB"]
+			description: [
+				"WHAT IS THIS? Presses, Crushing Wheels and Encased Fans can form ore-processing chains whose exact yields are defined by installed JEI recipes."
+				"DO THIS: Choose one common material, compare the available recipes, then build the shortest line that produces a useful improvement and captures secondary outputs."
+				"WHY DO I CARE? A focused ore line supplies the workshop without turning every mined item into an opaque mega-factory."
+				"COMMON FUCK-UP: Fan processing needs correct air direction and space. Test one item on a Depot or Belt before enclosing the stream."
+			]
+			id: "27807E4E2044E0C3"
+			rewards: [{
+				id: "4D178B0833672B4B"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "4E066A85090F681B"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Project: Wash or Crush One Ore Stream"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB"]
+			description: [
+				"WHAT IS THIS? Mechanical Saws on a bearing, piston, gantry or other contraption can harvest trees and deliver logs to storage."
+				"DO THIS: Start with one tree type, a bounded planting area, collection, overflow and a manual stop. Ponder every moving component before assembly."
+				"WHY DO I CARE? Renewable wood supports building, charcoal, packages and rail infrastructure."
+				"COMMON FUCK-UP: Super Glue and chassis include exactly the blocks you selected. Preview the contraption and keep it away from homes, Waystones and other players' builds."
+			]
+			id: "64B605112FF7DD08"
+			rewards: [{
+				id: "548AD8B5476D44DA"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "42062FDD8B1DA11A"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Project: A Tree Farm You Can Stop"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB"]
+			description: [
+				"WHAT IS THIS? Central Kitchen and Slice and Dice allow Create motion to prepare compatible Farmer's Delight recipes while the manual kitchen remains useful."
+				"DO THIS: Automate one repetitive cutting or mixing step, pull from a limited ingredient buffer and return the result to the pantry."
+				"WHY DO I CARE? The kitchen gains convenience without surrendering every crop to a permanently running factory."
+				"COMMON FUCK-UP: Never connect the seed reserve or the entire Tom's network as an unrestricted input. Filter exact ingredients and cap the batch."
+			]
+			id: "3B2441703B392B4D"
+			rewards: [{
+				id: "22B65BA5BBCAF5B5"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "28020860533575FC"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Project: Connect the Kitchen Carefully"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB"]
+			description: [
+				"WHAT IS THIS? Bearings, Mechanical Pistons, Gantries and Minecart Assemblies turn a selection of blocks into a moving contraption with its own collision and storage behaviour."
+				"DO THIS: Build a disposable test rig, mark its travel envelope, move it once empty and once loaded, then disassemble it with the Wrench."
+				"WHY DO I CARE? Understanding assembly and disassembly prevents a clever door or harvester from becoming a lost machine."
+				"COMMON FUCK-UP: A contraption can grab more blocks than expected or stop on an obstruction. Keep backups, use deliberate glue selection and never test through irreplaceable builds."
+			]
+			id: "1B0AFC1161BEB7D1"
+			rewards: [{
+				id: "08861EDA564F8745"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "51371A3ACE70B5CE"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Moving Contraptions Need Boundaries"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1B0AFC1161BEB7D1"]
+			description: [
+				"WHAT IS THIS? Super Glue joins selected blocks, while chassis can collect blocks according to their configured range and orientation."
+				"DO THIS: Wear Goggles, practise gluing a visible three-block assembly and use the Wrench or controls to inspect the selected area."
+				"WHY DO I CARE? Precise selection makes harvesters, doors and elevators predictable and cheap to repair."
+				"COMMON FUCK-UP: Hidden glue and excessive chassis range are hard to diagnose. Build the first frame in contrasting blocks and test away from storage networks."
+			]
+			id: "597055F2C4E8DEA0"
+			rewards: [{
+				id: "370F6B60E03EC43E"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "6B9DFD10C1AD55BC"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Chassis and Super Glue Define the Machine"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["597055F2C4E8DEA0"]
+			description: [
+				"WHAT IS THIS? Gantry Shafts provide controlled linear travel. Create's elevator components provide named floors and repeatable vertical transport when built as shown by Ponder."
+				"DO THIS: Choose either a two-stop freight lift or a short gantry carriage, then Ponder every required block and add physical guards around the travel path."
+				"WHY DO I CARE? Controlled movement is useful infrastructure and a safer learning target than a roaming quarry."
+				"COMMON FUCK-UP: Reversing rotation, missing contacts or obstructed shafts can strand a platform. Include an accessible manual recovery route."
+			]
+			id: "174CF487FF7C3467"
+			rewards: [{
+				id: "2B3FDA538947881D"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "17B490056AA87AA3"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Gantry and Elevator Projects"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB", "6C2795B621514EE3"]
+			description: [
+				"WHAT IS THIS? A Mechanical Arm transfers items among selected inputs and outputs, while Funnels, Chutes and Filters define what can enter each route."
+				"DO THIS: Bind one input Depot and two labelled outputs, apply a simple filter and test with cheap items before connecting machine storage."
+				"WHY DO I CARE? Arms make compact readable routing when each destination has one purpose."
+				"COMMON FUCK-UP: Overlapping valid outputs can make behaviour look random. Start with exclusive filters and confirm the Arm's selected points."
+			]
+			id: "76BECD762F36D0C1"
+			rewards: [{
+				id: "25367859C10B85AF"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "08A68510F46AD3CE"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Mechanical Arms Need Clear Destinations"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB", "0AD1A0CD97148618"]
+			description: [
+				"WHAT IS THIS? Create 6 Packagers, Stock Links and Stock Tickers advertise inventory, form packages and fulfil requests through a physical delivery route."
+				"DO THIS: Ponder the three blocks in order, attach a Packager to a test chest, bind a Stock Link and request a cheap item at a clearly labelled destination."
+				"WHY DO I CARE? A stock network is a multiplayer warehouse project: searchable demand becomes visible parcels that belts or trains can move."
+				"COMMON FUCK-UP: The network can find stock without having a valid path for the package. Separate lookup, packaging, transport and unpacking when diagnosing failure."
+			]
+			id: "09CAEB4B14628764"
+			rewards: [{
+				id: "4D93066AB0A41A35"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "4ED95E91C239E294"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Packagers Turn Stock into Deliveries"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB"]
+			description: [
+				"WHAT IS THIS? Create: Connected and Create: Components and Additions extend the familiar kinetic language with blocks such as the Brake, Centrifugal Clutch, Brass Gearbox, inverted controls and adjustable brass chain gearshift."
+				"DO THIS: Search each installed addon in JEI, Ponder supported blocks, and test one control block on an isolated shaft with a visible input and output."
+				"WHY DO I CARE? These parts can simplify control rooms without introducing an unrelated energy system."
+				"COMMON FUCK-UP: A block name from a newer showcase may not exist in the installed 1.20.1 release. Use the current JEI list and tooltip namespace as the boundary."
+			]
+			id: "561476D3915268E5"
+			rewards: [{
+				id: "1A0C561D5AA716C3"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "6526C41E993470F2"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Connected and Components Add Control Blocks"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB"]
+			description: [
+				"WHAT IS THIS? Copycats+, Create Deco and Rechiseled: Create add shapes, railings, catwalks and material variants that visually match Create machinery."
+				"DO THIS: Finish one machine room with safe walkways, guards and readable colour coding while leaving shafts, gauges and shutoffs accessible."
+				"WHY DO I CARE? Decoration can teach flow and safety instead of hiding how the factory works."
+				"COMMON FUCK-UP: Do not cover moving or interactive faces before maintenance testing. Function first, finish layer second."
+			]
+			id: "088F741A5CDAB99B"
+			rewards: [{
+				id: "20A9F6357E91CEB2"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "111268C87B13D27C"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Copycats, Deco and Rechiseled Are the Finish Layer"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB"]
+			description: [
+				"WHAT IS THIS? Create: Aquatic Ambitions adds Create-style processing around prismarine, nautilus materials and the Conduit Cage. Installed items include Prismarine Alloy, rods and Nautilus Shards."
+				"DO THIS: Filter JEI by Aquatic Ambitions, trace one material recipe backwards and collect only enough resources for a small dry-land test rig."
+				"WHY DO I CARE? The addon creates an ocean-engineering branch that connects exploration rewards to useful Create processing."
+				"COMMON FUCK-UP: Do not assume ordinary Create alloy recipes or a video's datapack matches this build. Pin the exact installed sequence."
+			]
+			id: "00C8FC2E6DD4F79F"
+			rewards: [{
+				id: "1488D8E232773EFF"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "71F30D43EF89242B"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Aquatic Ambitions Starts with Prismarine Materials"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["00C8FC2E6DD4F79F"]
+			description: [
+				"WHAT IS THIS? The installed Aquatic Ambitions guide describes pumping fluid into the bottom of a Conduit Cage and using an Encased Fan through an awakened cage to create a channeling stream."
+				"DO THIS: Read the installed Ponder or project guide, awaken a Conduit correctly, build the cage with guarded fluid handling and test one listed processing recipe."
+				"WHY DO I CARE? The stream can provide Conduit Power in water and perform installed channeling processes such as prismarine work, copper ageing or coral revival."
+				"COMMON FUCK-UP: An unawakened Conduit, wrong fan direction or missing fluid makes a convincing-looking build do nothing. Verify each state separately."
+			]
+			id: "4891D4C52FFF59E0"
+			rewards: [{
+				id: "3B2878617BFEF36C"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "61D75C9D8BBBE116"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "The Conduit Cage Is an Environmental Processor"
+			x: 6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB"]
+			description: [
+				"WHAT IS THIS? Create: Enchantment Industry 1.4.1 adds liquid experience and hyper experience processing through its installed machines, including the Disenchanter, Experience Rotor and transformed Blaze Enchanter."
+				"DO THIS: Inspect the installed Ponder scenes and JEI categories. Build a contained test with a tank, explicit input, explicit output and no exposed player trap."
+				"WHY DO I CARE? Experience becomes a material stream that can be stored and used deliberately instead of scattered as orbs."
+				"COMMON FUCK-UP: This legacy 1.20.1 build does not contain every machine shown in newer CEI videos. It also can emit XP orbs from an open pipe, so guard outlets and avoid entity buildup."
+			]
+			id: "1D5C83E1EE00670C"
+			rewards: [{
+				id: "34EF7BB7B7E66A3F"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "6103EE179520BC63"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Enchantment Industry: Handle Liquid Experience"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["1D5C83E1EE00670C"]
+			description: [
+				"WHAT IS THIS? The installed CEI path uses the Disenchanter, Enchanting Guide, Blaze Enchanter and Printer to move enchantment information and results through Create-style processing."
+				"DO THIS: Choose a cheap disposable item, follow its exact JEI/Ponder sequence, and confirm every fluid, guide and output requirement before using treasured equipment."
+				"WHY DO I CARE? A documented small test teaches the addon without gambling the group's best gear."
+				"COMMON FUCK-UP: Do not look for the newer Blaze Forger, Experience Hatch or other features absent from CEI 1.4.1. If JEI cannot find the block, it is not part of this pack."
+			]
+			id: "53047E8BC66C7B25"
+			rewards: [{
+				id: "737FD25349FF1AB9"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "16B877E968465266"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Disenchant, Guide, Enchant and Print"
+			x: 10.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB", "579F2C00A9B13FE7"]
+			description: [
+				"WHAT IS THIS? Tracks and carriages become a useful railway only when stations, signals, schedules, safe platforms and cargo handling work together."
+				"DO THIS: Build two named stations, assemble an empty test train, complete a round trip, then add one schedule and one signalled conflict point. Use Steam 'n' Rails parts only where JEI confirms them."
+				"WHY DO I CARE? A reliable shared route moves players and bulk cargo while creating a reason to connect distant builds."
+				"COMMON FUCK-UP: Long unsignalled lines and unnamed stations are difficult to recover. Prove the route near home before extending into newly generated terrain."
+			]
+			id: "1A6A991626D30C95"
+			rewards: [{
+				id: "4FACFF489D900BC6"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "20F86DBA128F519C"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Project: A Railway Is a Service"
+			x: 10.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["27807E4E2044E0C3", "64B605112FF7DD08", "3B2441703B392B4D", "174CF487FF7C3467", "76BECD762F36D0C1", "09CAEB4B14628764", "561476D3915268E5", "088F741A5CDAB99B", "4891D4C52FFF59E0", "53047E8BC66C7B25", "1A6A991626D30C95"]
+			description: [
+				"WHAT IS THIS? The branch endpoints merge here. A shared workshop is finished when players who did not build it can understand the production, contraption, logistics, control, decoration, aquatic, experience and railway services from their documentation."
+				"DO THIS: Ask teammates to operate and stop one representative system from each completed branch without voice instructions. Fix every unclear label, inaccessible component, unsafe edge and unhandled overflow they find."
+				"WHY DO I CARE? The audit converts a collection of personal machines into durable server infrastructure and proves the separate branches work together without hiding their boundaries."
+				"COMMON FUCK-UP: Passing one successful batch is not the same as safe operation. Test full output, empty input, chunk reload, controlled shutdown and recovery by someone other than the builder."
+			]
+			id: "088F8B0F6B66F3F4"
+			rewards: [{
+				id: "61FA2E192BF3BEAF"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "0254DBF5218EAABD"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Graduation: Audit the Shared Workshop"
+			x: 8.0d
+			y: 6.0d
+		}
+	]
+}

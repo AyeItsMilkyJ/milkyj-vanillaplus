@@ -1,0 +1,290 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "companions_communities"
+	group: "455989FDDDEB7EAA"
+	icon: "minecraft:lead"
+	id: "3EDDE01784B7FFE8"
+	order_index: 13
+	progression_mode: "flexible"
+	quest_links: [ ]
+	title: "Companions, Fishing and Settlements"
+	quests: [
+		{
+			dependencies: ["341C28816B831FA9"]
+			description: [
+				"WHAT IS THIS? Pets, fishing and village projects form a parallel progression lane for players who prefer caring, collecting, trading or building to machinery and bosses."
+				"DO THIS: Choose one public project and place it near the settlement without crowding the busiest loaded chunk."
+				"WHY DO I CARE? A good multiplayer pack needs useful goals for different play styles and a reason to return home after expeditions."
+				"COMMON FUCK-UP: Decorative entity collections can become a performance problem. Start small and give every animal, villager or display a purpose."
+			]
+			id: "4140AE220632B573"
+			rewards: [{
+				id: "5200D8D0A4445A57"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "4ADCEC7339D27669"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "A Peaceful Progression Lane"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4140AE220632B573"]
+			description: [
+				"WHAT IS THIS? Doggy Talents Next turns a tamed wolf into a trainable dog with its own menu, levels, modes and care items."
+				"DO THIS: Read the installed Doggy Talents guide, use the required Training Treat on one wolf, open its menu and set a safe mode before travelling."
+				"WHY DO I CARE? One understood companion is safer and more useful than a pack of unmanaged pets."
+				"COMMON FUCK-UP: Do not test combat modes beside villagers, machines or portals. Name the dog, establish a bed or home area and learn recall controls first."
+			]
+			id: "7854567FDEDC4832"
+			rewards: [{
+				id: "64AA64D29FB99165"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "566B8A95B39BAE48"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Doggy Talents: Train One Companion"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7854567FDEDC4832"]
+			description: [
+				"WHAT IS THIS? Dog modes control behaviour while talent points specialise the companion. Commands and recall tools matter more than raw level."
+				"DO THIS: Spend one earned talent point, test sit or passive behaviour, then test recall and follow at home before an expedition."
+				"WHY DO I CARE? Predictable behaviour prevents pets from chasing bosses, entering portals or becoming lost in unloaded terrain."
+				"COMMON FUCK-UP: Keybinds and command items can differ by version. Check Controls and the installed guide rather than copying a newer tutorial's keys."
+			]
+			id: "696A64A6CBA2CD6C"
+			rewards: [{
+				id: "7CCB392A88938FB2"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "48716A3425C559FA"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Modes, Talents and Recall"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["696A64A6CBA2CD6C"]
+			description: [
+				"WHAT IS THIS? Domestication Innovation adds pet beds, collar tags, enchantments and group-control tools for supported tameable animals. It complements Doggy Talents but is not the same progression system."
+				"DO THIS: Inspect collar and bed recipes in JEI, apply only a cheap tested enchantment, and verify respawn or command behaviour with a safe vanilla tameable first."
+				"WHY DO I CARE? Keeping the systems conceptually separate prevents a guide for one mod from damaging or misconfiguring a pet from the other."
+				"COMMON FUCK-UP: Do not stack every collar enchantment or assume both bed systems are interchangeable. Back up valuables and test the exact pet interaction manually."
+			]
+			id: "33CFADBE0C37F7F3"
+			rewards: [{
+				id: "651C41AE04B30DD6"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "757D812011EE2727"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Domestication Innovation Is a Separate Layer"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["33CFADBE0C37F7F3"]
+			description: [
+				"WHAT IS THIS? Animal Feeding Trough and ordinary breeding tools reduce repetitive feeding, but loaded animals still consume space and server time."
+				"DO THIS: Build one secure pen, test the trough with the exact accepted food, keep breeding stock bounded and provide a gate players cannot accidentally leave open."
+				"WHY DO I CARE? A small reliable herd supplies food and materials without turning the base into an entity farm."
+				"COMMON FUCK-UP: Automatic feeding can create more animals than expected. Count the herd, limit food supply and separate decorative pets from breeding pens."
+			]
+			id: "1695AAEBE615E73F"
+			rewards: [{
+				id: "6CB46663F82EEC76"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "51AE876F9BB3A96A"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Feed Troughs and Bounded Animal Care"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4140AE220632B573"]
+			description: [
+				"WHAT IS THIS? Vanilla fishing remains the baseline, while Aquaculture expands catches, tackle and materials. Water biome and installed loot rules determine what appears."
+				"DO THIS: Make a safe fishing point, catch several ordinary samples and use JEI to inspect every unfamiliar fish before cooking or displaying it."
+				"WHY DO I CARE? Fishing supplies food, collection goals and a low-risk reason to explore rivers, coasts and oceans."
+				"COMMON FUCK-UP: A fish item is not automatically placeable or accepted by every recipe. Read its namespace and uses before emptying the whole catch into the kitchen."
+			]
+			id: "2AFB8B52531EE006"
+			rewards: [{
+				id: "64BEADBD8420C33F"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "0F609DA35937A1E1"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Fishing Is an Expedition Tool"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2AFB8B52531EE006"]
+			description: [
+				"WHAT IS THIS? Aquaculture adds fish, equipment and processing choices whose exact recipes and loot vary with the installed version."
+				"DO THIS: Choose one rod or tackle improvement visible in JEI, fish in a known biome and label the resulting food, material and trophy catches separately."
+				"WHY DO I CARE? A documented catch table helps the group decide what to cook, keep, trade or display."
+				"COMMON FUCK-UP: Do not trust a generic fishing chart from another modpack. Confirm every item and biome claim against this client's JEI and actual catches."
+			]
+			id: "5FF54C17DDA90897"
+			rewards: [{
+				id: "03263A30BAAE0030"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "3D1C4F748BEE0DF2"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Aquaculture: Tackle and Useful Catches"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5FF54C17DDA90897"]
+			description: [
+				"WHAT IS THIS? Better Fishtanks and Fish Display provide ways to exhibit aquatic finds, but item fish, bucketed fish and living entities are not automatically interchangeable."
+				"DO THIS: Pick one display system, follow its installed recipe and add a single common specimen before building a public aquarium."
+				"WHY DO I CARE? A curated exhibit turns exploration into shared world history without requiring a huge entity collection."
+				"COMMON FUCK-UP: Do not release dozens of fish into a decorative tank and assume the block manages them. Test containment and performance with one specimen."
+			]
+			id: "422FDAA56D69D9A6"
+			rewards: [{
+				id: "2025472CEB6D2B43"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "44F5F3A8FA7A572B"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Aquariums Are Small Curated Displays"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4140AE220632B573"]
+			description: [
+				"WHAT IS THIS? Guard Villagers helps defend settlements, but walls, lighting, safe beds and controlled entrances still matter."
+				"DO THIS: Survey paths, roofs and dark corners, close obvious gaps and learn the installed guard conversion or recruitment method before adding more villagers."
+				"WHY DO I CARE? Physical safety protects trades and reduces chaotic fights in the centre of the shared base."
+				"COMMON FUCK-UP: More guards do not fix an open ravine or permanent spawnable roof. Repair the settlement first and keep defenders away from contraption paths."
+			]
+			id: "49F93AAD1D0B97EE"
+			rewards: [{
+				id: "6D1F20821A8A8420"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "794546C3A8200A01"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Guard Villagers: Secure Before Expanding"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["49F93AAD1D0B97EE"]
+			description: [
+				"WHAT IS THIS? More Villagers adds specialist professions and workstations. Each workstation belongs to a specific installed trade path, not just decoration."
+				"DO THIS: Search the mod in JEI, choose one profession whose trades solve a current need, place its workstation in a safe accessible area and verify the first trade tier."
+				"WHY DO I CARE? Purposeful specialists make a settlement useful without creating a packed hall of redundant entities."
+				"COMMON FUCK-UP: Villagers can claim the wrong workstation across walls or floors. Isolate the first test and label the profession before expanding."
+			]
+			id: "6C4AA8F030979202"
+			rewards: [{
+				id: "7F5874DA45B0FF35"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "3391C7DA13892E53"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "More Villagers: Add Trades with Purpose"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6C4AA8F030979202"]
+			description: [
+				"WHAT IS THIS? Trading Post gathers nearby villager trade access into one interface, while Bountiful boards offer separate objectives and rewards. Neither system creates good trades by itself."
+				"DO THIS: Build each in a public safe area, inspect its range or board rules, and complete one low-risk interaction without moving rare villagers or bounty items."
+				"WHY DO I CARE? Central access reduces wandering through private houses and gives new players clear settlement tasks."
+				"COMMON FUCK-UP: A bounty item, villager trade and archaeology artifact may share a theme but are not interchangeable. Always check the owning namespace."
+			]
+			id: "4F1BCDAEDC6ACA1B"
+			rewards: [{
+				id: "359CCD5D0B4521DF"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "3800EF7B872C632D"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Trading Post and Bountiful Solve Different Jobs"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1695AAEBE615E73F", "422FDAA56D69D9A6", "4F1BCDAEDC6ACA1B"]
+			description: [
+				"WHAT IS THIS? The town-square project combines one pet-care point, one fish or museum display, safe trade access, a bounty board and clear paths without concentrating excessive entities."
+				"DO THIS: Build readable zones, count loaded animals and villagers, provide lighting and signs, then ask a new player to find food, trades and the return route unaided."
+				"WHY DO I CARE? The result is a welcoming social hub that still runs well on your friends' weaker PCs."
+				"COMMON FUCK-UP: Do not add entities until frame time drops. Improve layout with blocks, signs and curated exhibits first; spread heavy farms away from the social centre."
+			]
+			id: "7FE264C3B2EB601E"
+			rewards: [{
+				id: "447E144A4A4615FF"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "5812A35671715826"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Project: A Useful Low-Lag Town Square"
+			x: 0.0d
+			y: 2.0d
+		}
+	]
+}

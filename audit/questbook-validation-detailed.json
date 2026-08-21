@@ -1,17 +1,21 @@
 {
-  "validatedAt": "2026-08-22T04:22:58.605752+10:00",
+  "validatedAt": "2026-08-22T05:20:53.937646+10:00",
   "questRoot": "payload/both/config/ftbquests/quests",
   "modsDirectory": "build/end-to-end/client/mods",
   "jarCountScanned": 240,
-  "chapterCount": 9,
-  "questCount": 118,
-  "taskIdCount": 165,
-  "rewardIdCount": 134,
-  "uniqueQuestIds": 118,
-  "uniqueTaskIds": 165,
-  "uniqueRewardIds": 134,
-  "graphVisitedQuests": 118,
-  "referencedItemAndIconIds": 100,
+  "chapterCount": 14,
+  "questCount": 200,
+  "taskIdCount": 247,
+  "rewardIdCount": 216,
+  "uniqueQuestIds": 200,
+  "uniqueTaskIds": 247,
+  "uniqueRewardIds": 216,
+  "rootQuestIds": [
+    "7DA1925406767A08"
+  ],
+  "rootReachableQuests": 200,
+  "graphVisitedQuests": 200,
+  "referencedItemAndIconIds": 102,
   "unresolvedItems": [],
   "referencedTags": [],
   "unresolvedTags": [],
@@ -24,10 +28,28 @@
       "questCount": 10
     },
     {
+      "file": "companions_communities.snbt",
+      "title": "Companions, Fishing and Settlements",
+      "icon": "minecraft:lead",
+      "questCount": 12
+    },
+    {
       "file": "create_basics.snbt",
       "title": "Create Without Having a Brain Aneurysm",
       "icon": "create:large_cogwheel",
       "questCount": 22
+    },
+    {
+      "file": "create_projects.snbt",
+      "title": "Create Projects: Workshop to Railway",
+      "icon": "create:mechanical_arm",
+      "questCount": 20
+    },
+    {
+      "file": "dimension_campaigns.snbt",
+      "title": "Expedition Campaigns: Aether, Twilight and Beyond",
+      "icon": "aether:bronze_dungeon_key",
+      "questCount": 24
     },
     {
       "file": "endgame.snbt",
@@ -48,10 +70,22 @@
       "questCount": 13
     },
     {
+      "file": "homestead_mastery.snbt",
+      "title": "Homestead Mastery: Farm, Kitchen and Apiary",
+      "icon": "farmersdelight:cooking_pot",
+      "questCount": 18
+    },
+    {
       "file": "new_horizons.snbt",
       "title": "Exploration Without Getting Completely Lost",
       "icon": "explorerscompass:explorerscompass",
       "questCount": 15
+    },
+    {
+      "file": "roadmap.snbt",
+      "title": "What Leads Into What?",
+      "icon": "minecraft:compass",
+      "questCount": 8
     },
     {
       "file": "travel_storage.snbt",

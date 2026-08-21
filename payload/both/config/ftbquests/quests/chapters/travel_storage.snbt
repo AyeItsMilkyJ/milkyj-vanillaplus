@@ -5,7 +5,7 @@
 	group: "455989FDDDEB7EAA"
 	icon: "toms_storage:ts.storage_terminal"
 	id: "204FAE13146E5459"
-	order_index: 5
+	order_index: 8
 	progression_mode: "flexible"
 	quest_links: [ ]
 	title: "Stop Living Out of 46 Chests"
@@ -95,6 +95,28 @@
 		{
 			dependencies: ["74ACDA0161CB4F07"]
 			description: [
+				"Begin with an Inventory Connector touching a small group of chests or barrels and attach a Storage Terminal where the network can see it. Confirm every container appears before extending the layout with cables."
+				"A Crafting Terminal can request ingredients from connected storage, but recipe conflicts still belong to Polymorph or the recipe viewer. If an item disappears from the terminal, trace cables and connectors back to the core."
+				"Keep the network inside reliably loaded base chunks, avoid circular or duplicate connections to the same inventory, and label physical storage anyway. Search is an interface, not a backup or an explanation of topology."
+			]
+			id: "2D0F242D77ABDD04"
+			rewards: [{
+				id: "2E5E90101E4A127F"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "4157BB8B75D1CDA9"
+				title: "I read this field lesson and tried its method"
+				type: "checkmark"
+			}]
+			title: "Storage Lab: The Tom's Network Core"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2D0F242D77ABDD04"]
+			description: [
 				"A crafting terminal can pull ingredients from connected storage. Label physical sections anyway so the system remains understandable when something disconnects."
 				"Tom's Simple Storage needs one understandable network core: inventories touch a connector or connect through cables, and terminals expose what the core can see. When items vanish from view, trace continuity back to that connector."
 				"Storage should have layers: backpack for the road, drawers for bulk, ordinary labelled containers for unique objects, and a searchable terminal across the room. One giant unsorted network only hides disorder behind a search bar."
@@ -119,11 +141,11 @@
 				}
 			]
 			title: "Craft from the Network"
-			x: 6.0d
+			x: 8.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["5630715FB28AA469"]
+			dependencies: ["74ACDA0161CB4F07"]
 			description: [
 				"Use a backpack for the road, drawers for large quantities of repeated materials, and Tom's Storage for searchable access across many containers. Each tool solves a different storage problem."
 				"Do not build the final warehouse on day one. Start with labelled zones, watch what actually accumulates, and expand the system around real needs."
@@ -142,11 +164,11 @@
 				type: "checkmark"
 			}]
 			title: "The Storage Ladder"
-			x: 8.0d
+			x: 10.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7471D65394B8D846"]
+			dependencies: ["34B78045A3F1DA78"]
 			description: [
 				"Open the backpack's upgrade tab and give the pack a clear role such as building blocks, food, tools, or cave loot. A tier upgrade expands the same backpack, so its identity and contents can remain consistent."
 				"Pickup, magnet, refill, filter, compacting, and void upgrades each solve a different problem. Start with a whitelist and a few ordinary blocks; advanced upgrades can match items, mods, tags, NBT, damage, or existing contents."
@@ -165,32 +187,10 @@
 			}]
 			title: "Backpack Lab: Filters Before Automation"
 			x: 10.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["28ED3EBB122D102D"]
-			description: [
-				"Begin with an Inventory Connector touching a small group of chests or barrels and attach a Storage Terminal where the network can see it. Confirm every container appears before extending the layout with cables."
-				"A Crafting Terminal can request ingredients from connected storage, but recipe conflicts still belong to Polymorph or the recipe viewer. If an item disappears from the terminal, trace cables and connectors back to the core."
-				"Keep the network inside reliably loaded base chunks, avoid circular or duplicate connections to the same inventory, and label physical storage anyway. Search is an interface, not a backup or an explanation of topology."
-			]
-			id: "2D0F242D77ABDD04"
-			rewards: [{
-				id: "2E5E90101E4A127F"
-				type: "xp"
-				xp: 10
-			}]
-			tasks: [{
-				id: "4157BB8B75D1CDA9"
-				title: "I read this field lesson and tried its method"
-				type: "checkmark"
-			}]
-			title: "Storage Lab: The Tom's Network Core"
-			x: 10.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["2D0F242D77ABDD04"]
+			dependencies: ["74ACDA0161CB4F07"]
 			description: [
 				"Build a locked drawer bank for stone, wood, crops, ingots, and other repeated materials. A Controller provides one inventory face for the entire connected bank, making it a clean bridge to Tom's Storage or Create."
 				"Use the Drawer Key before an empty drawer is exposed to automation. Capacity upgrades multiply storage, while Compacting Drawers expose valid material forms from one shared quantity."
@@ -235,7 +235,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["145EE14BCE66ADC0"]
+			dependencies: ["74ACDA0161CB4F07", "1A354ABA1BE5171F"]
 			description: [
 				"What this is: Item Vaults combine into larger multiblock inventories. They are accessed through funnels, chutes, belts, hoppers, or other transfer blocks rather than opened like a chest."
 				"Why it matters: a vault is excellent high-throughput input or output storage for a Create line, but it is a poor replacement for a searchable personal storeroom."
@@ -258,7 +258,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["53936E41E9A7CAF9"]
+			dependencies: ["53936E41E9A7CAF9", "3C8A246AFBC5BCB3", "7B0C1910CB444EA6"]
 			description: [
 				"What this is: a Packager attaches to an inventory and makes or opens packages. A Stock Link advertises linked stock, and a Stock Ticker lets a seated mob or Blaze Burner act as a keeper who accepts requests."
 				"Why it matters: this is Create 6 logistics already inside the core Create mod; no Crafts and Additions mod is required. The network finds items, but physical packages still need a safe route."

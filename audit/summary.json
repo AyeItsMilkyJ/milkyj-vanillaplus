@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T04:06:32.6284269+10:00",
+  "generatedAt": "2026-08-22T05:15:48.8477281+10:00",
   "minecraft": "1.20.1",
   "forge": "47.4.10",
   "clientMods": 240,
@@ -9,7 +9,7 @@
     "client": 36,
     "server": 2
   },
-  "managedPayloadFiles": 470,
+  "managedPayloadFiles": 475,
   "excludedFiles": 38,
   "shaderpacksManaged": false,
   "note": "Shader archives and settings are deliberately outside automatic management."

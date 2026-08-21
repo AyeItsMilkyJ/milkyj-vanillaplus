@@ -5,7 +5,7 @@
 	group: "1C7D7A0940131874"
 	icon: "farmersdelight:cooking_pot"
 	id: "7D7B970A3302D699"
-	order_index: 3
+	order_index: 4
 	progression_mode: "flexible"
 	quest_links: [ ]
 	title: "Food That Isn't Raw Chicken"
@@ -317,7 +317,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["7F45F36FB147AD0A"]
+			dependencies: ["60435D16835B3DCE"]
 			description: [
 				"HerbalBrews adds tea plants to suitable biomes. Gather leaves and blossoms responsibly, then replant near the homestead."
 				"JEI shows which leaves become each drink and which blocks are used for drying."
@@ -348,7 +348,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["7F45F36FB147AD0A"]
+			dependencies: ["000927068CCE0DB0"]
 			description: [
 				"Plant flowers near a normal hive and learn to harvest safely. A lit campfire beneath the hive calms its residents; leave space so smoke can reach it."
 				"Productive Bees distinguishes vanilla hive bees from solitary bees that live in nests. Use the in-game bee guide and JEI to identify housing, food, breeding parents, and product processing for the species you want."
@@ -392,7 +392,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["7F45F36FB147AD0A"]
+			dependencies: ["71BB70B3127ECE00"]
 			description: [
 				"Bee Cages move bees without leads or boats. Use one on a bee and release it inside a prepared enclosure. Sturdy cages are reusable."
 				"Catch bees with the intended cages instead of killing or dragging them blindly. Keep cages labelled, move one species at a time, and prepare the correct nest, hive, or flower before releasing it."

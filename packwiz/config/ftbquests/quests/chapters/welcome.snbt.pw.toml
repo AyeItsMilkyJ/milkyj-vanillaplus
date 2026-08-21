@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/welcome.snbt"
 hash-format = "sha256"
-hash = "e898703409660c1661aa2df3223ce30f2e9c58dc272ca81aad4308a15f44021d"
+hash = "4be7bf704dc59fd1619bfcc2d5a4e6f0522618dc1891fd3ddf17e701a6731990"

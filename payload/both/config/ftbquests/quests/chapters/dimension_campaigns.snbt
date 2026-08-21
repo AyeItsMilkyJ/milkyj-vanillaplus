@@ -1,0 +1,566 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "dimension_campaigns"
+	group: "676547C5A87BA338"
+	icon: "aether:bronze_dungeon_key"
+	id: "21C9510BB900DB8C"
+	order_index: 10
+	progression_mode: "flexible"
+	quest_links: [ ]
+	title: "Expedition Campaigns: Aether, Twilight and Beyond"
+	quests: [
+		{
+			dependencies: ["3A8709849D637D3D"]
+			description: [
+				"WHAT IS THIS? A campaign is a connected expedition with a marked entrance, local shelter, shared supplies, recovery plan and known progression target."
+				"DO THIS: Before entering any major adventure, carry food, blocks, spare tools, a map or waypoint method and materials for a secure outpost. Agree how the group will retreat."
+				"WHY DO I CARE? The installed dimensions and boss systems reward preparation and can separate players from ordinary Overworld recovery routes."
+				"COMMON FUCK-UP: Never assume a Waystone, bed or portal behaves identically in every modded dimension. Test the return path before carrying unique loot deeper."
+			]
+			id: "4C2CC01A2E38A3EC"
+			rewards: [{
+				id: "52F08EED296C3762"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "118CD20DDB1C9DEF"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Campaign Rules: Portal, Outpost, Return"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4C2CC01A2E38A3EC"]
+			description: [
+				"WHAT IS THIS? The Aether is a sky dimension reached through its glowstone-and-water portal. Its materials, gravity hazards and dungeon order form a self-contained adventure path."
+				"DO THIS: Build the portal in a protected public room, mark both sides, carry blocks and a recovery chest, then enter with ordinary replaceable equipment."
+				"WHY DO I CARE? A safe gate turns repeated falls or deaths into recoverable trips and gives the group a stable campaign base."
+				"COMMON FUCK-UP: The Aether is not the Nether with different colours. Watch edges, carry fall recovery and do not move the only return portal without testing a replacement."
+			]
+			id: "1C25B0A4AA8D4DE8"
+			rewards: [{
+				id: "1744F182F45A64EE"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "16DB0E106A3594A0"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Aether: Build and Mark the Sky Gate"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1C25B0A4AA8D4DE8"]
+			description: [
+				"WHAT IS THIS? Skyroot and Holystone are the local starter materials. The Book of Lore identifies Aether items and is the installed reference for unfamiliar drops."
+				"DO THIS: Establish a lit shelter around the arrival point, gather renewable basic materials and read several discoveries in the Book of Lore before roaming between islands."
+				"WHY DO I CARE? Local tools and knowledge reduce the cost of failure and prepare the workstation progression."
+				"COMMON FUCK-UP: Do not discard unfamiliar drops because their use is unclear. Read the Lore entry and JEI uses first; dungeon keys and materials can be progression-critical."
+			]
+			id: "7BE1EF6ACE46B590"
+			rewards: [{
+				id: "4B487E7D8174CD60"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "7F328550EB7F611E"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Aether: Skyroot, Holystone and the Book of Lore"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7BE1EF6ACE46B590"]
+			description: [
+				"WHAT IS THIS? The exact dungeon chain uses Zanite -> Altar -> Enchanted Gravitite. The Freezer is a sibling workstation branch from the Altar stage, while the Incubator belongs to the separate Blue Aercloud -> Moa Egg -> incubation branch."
+				"DO THIS: Build the Altar and test its Enchanted Gravitite path first. Then use JEI and the Book of Lore to explore one Freezer recipe and the Moa Incubator branch as separate side systems."
+				"WHY DO I CARE? The Altar prepares dungeon progression, while cold processing and Moa mounts add useful optional goals without pretending all three stations are one linear gate."
+				"COMMON FUCK-UP: Building a Freezer or Incubator does not replace the Altar milestone. Confirm each station's fuel, input, output and advancement parent rather than treating them like interchangeable furnaces."
+			]
+			id: "483EB70ED25313EC"
+			rewards: [{
+				id: "25ECB95568D2A705"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "2CB5C0B36773E2B4"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Aether: Altar Path and Side Workstations"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["483EB70ED25313EC"]
+			description: [
+				"WHAT IS THIS? In the installed advancement chain, crafting an Altar leads to Enchanted Gravitite, which then leads to the Bronze Dungeon. The Bronze boss is the Slider."
+				"DO THIS: Enchant Gravitite at the Altar and test the resulting equipment, then find a Bronze Dungeon, establish a nearby recovery point and enter with food, blocks and spare gear."
+				"WHY DO I CARE? This follows the exact 1.5.2 advancement order and makes the Slider the group's first dungeon threshold before Silver and Gold progression."
+				"COMMON FUCK-UP: Do not skip the Enchanted Gravitite milestone or lose dungeon loot casually. Keep the party together and preserve a clear route back to the entrance."
+			]
+			id: "7FCCAB2F5AB5B6FF"
+			rewards: [{
+				id: "1C10E810F4DA407B"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "613207723A874256"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Aether: Enchanted Gravitite and the Bronze Dungeon"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7FCCAB2F5AB5B6FF"]
+			description: [
+				"WHAT IS THIS? After the Bronze Dungeon and its intermediate Lance milestone, the installed advancement chain leads to the Silver Dungeon and Valkyrie Queen."
+				"DO THIS: Secure the Bronze rewards, locate the Silver Dungeon and prepare for the Valkyrie challenge using the Book of Lore and observed mechanics."
+				"WHY DO I CARE? This tier supplies the mobility and combat confidence needed for the final dungeon campaign."
+				"COMMON FUCK-UP: Strong gear does not replace understanding the challenge. Store spare equipment outside and avoid carrying every dungeon reward into the next attempt."
+			]
+			id: "346D2C8405590BA7"
+			rewards: [{
+				id: "7CFA11F9817EB0F8"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "7717B7288D095CEA"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Aether: Silver Dungeon and the Valkyrie Queen"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["346D2C8405590BA7"]
+			description: [
+				"WHAT IS THIS? The Gold Dungeon and Sun Spirit are the final major Aether dungeon tier in the installed advancement chain, after the Silver path and Regen Stone milestone."
+				"DO THIS: Verify the current advancement state, prepare heat-resistant supplies and fight as a coordinated group. Return unique loot to the outpost before further exploration."
+				"WHY DO I CARE? Completing the tier gives the campaign a clear ending without requiring the group to strip every island or structure."
+				"COMMON FUCK-UP: Do not treat a boss win as permission to abandon the portal route. Restock the outpost and confirm everyone can return to the Overworld."
+			]
+			id: "6663CF618582AD61"
+			rewards: [{
+				id: "352755E0AFD79CC6"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "14B7FF74E7869372"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Aether: Gold Dungeon and a Safe Return"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4C2CC01A2E38A3EC"]
+			description: [
+				"WHAT IS THIS? Twilight Forest uses an advancement-enforced boss progression. A Magic Map helps identify major landmarks and a marked portal camp anchors the campaign."
+				"DO THIS: Create the portal, secure both sides, obtain the Magic Map materials shown in JEI and reveal nearby structures before choosing a direction."
+				"WHY DO I CARE? Progression protection and dense landmarks make a map-led expedition much safer than wandering until a biome rejects you."
+				"COMMON FUCK-UP: A structure visible on the horizon may still be locked by earlier progression. Read the Twilight advancement tab instead of forcing entry."
+			]
+			id: "5D81351E2C261CD3"
+			rewards: [{
+				id: "5B106440FCB7A239"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "538BC520DC56880A"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Twilight Forest: Portal, Magic Map, First Camp"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5D81351E2C261CD3"]
+			description: [
+				"WHAT IS THIS? The installed advancement chain places the Naga as the first major Twilight boss and the first trophy needed for later progression."
+				"DO THIS: Locate the hedge arena with the Magic Map, clear the approach, establish a recovery chest and defeat the Naga without leaving teammates outside the fight."
+				"WHY DO I CARE? The Naga trophy opens the route to the Lich and teaches the dimension's arena style."
+				"COMMON FUCK-UP: Keep the trophy and scales labelled. Progression items are not generic decoration until the group has used them where required."
+			]
+			id: "7A7D53F3497EDD53"
+			rewards: [{
+				id: "4A93B375F33C8E5F"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "2A5A993AE7BA15F0"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Twilight Forest: Naga First"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7A7D53F3497EDD53"]
+			description: [
+				"WHAT IS THIS? The Lich follows the Naga. After that victory the installed progression divides toward the swamp, dark forest and snowy forest branches."
+				"DO THIS: Prepare ranged and melee options, climb the Lich Tower together, learn the shield phase and store the trophy after the fight."
+				"WHY DO I CARE? Defeating the Lich is the branch point for most of the dimension's middle campaign."
+				"COMMON FUCK-UP: Hitting visual decoys or ignoring reflected projectiles wastes supplies. Observe the phase change and use the arena rather than panic-breaking the tower."
+			]
+			id: "4DE0E11CA87F0090"
+			rewards: [{
+				id: "12EA908E380FB7BA"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "21AF45DEC2DCD114"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Twilight Forest: Lich and the Three Branches"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4DE0E11CA87F0090"]
+			description: [
+				"WHAT IS THIS? The swamp branch uses Meef Stroganoff and Labyrinth progression before opening the Fire Swamp and Hydra encounter."
+				"DO THIS: Map the Labyrinth, mark exits, defeat the Minoshroom, keep the required food milestone and then prepare ranged damage and fire safety for the Hydra."
+				"WHY DO I CARE? The branch supplies one of the three boss completions required for the later progression merge."
+				"COMMON FUCK-UP: Mazes destroy unplanned groups. Use shared markers, leave breadcrumbs that cannot be confused with natural blocks and retreat before food or inventory space runs out."
+			]
+			id: "09A4108CD26FE8ED"
+			rewards: [{
+				id: "2E825EC742443126"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "7F56FADEDA2BFBE1"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Twilight Branch: Labyrinth, Minoshroom, Hydra"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4DE0E11CA87F0090"]
+			description: [
+				"WHAT IS THIS? The dark forest branch moves from trophy access to the Knight Stronghold, Knight Phantoms, Dark Tower traps and the Ur-Ghast."
+				"DO THIS: Bring the required trophy, map stronghold junctions, complete the Knight encounter, then learn the tower's ghast-trap tools before the rooftop fight."
+				"WHY DO I CARE? Ur-Ghast completion is the second major requirement for the final branch merge."
+				"COMMON FUCK-UP: Rushing vertically through the Dark Tower strands teammates and skips recovery routes. Secure each section and understand a trap before relying on it."
+			]
+			id: "2ADEB61CE870B65E"
+			rewards: [{
+				id: "37A2BDB029CBD8CA"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "0EA2439EDA2E5DCB"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Twilight Branch: Knights and Ur-Ghast"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4DE0E11CA87F0090"]
+			description: [
+				"WHAT IS THIS? The snowy branch progresses through the Yeti Lair and Alpha Yeti before the Aurora Palace and Snow Queen."
+				"DO THIS: Pack cold-region navigation supplies, defeat the Alpha Yeti, preserve its progression loot and then map a safe route through the palace."
+				"WHY DO I CARE? Snow Queen completion is the third boss requirement in the installed progression merge."
+				"COMMON FUCK-UP: Bright palace blocks and vertical rooms make regrouping difficult. Agree on one staircase or marker pattern and do not split the party across floors."
+			]
+			id: "7408BCE6BB3B7A9F"
+			rewards: [{
+				id: "7E0034CC64BAA8B1"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "07DA84217B684919"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Twilight Branch: Alpha Yeti and Snow Queen"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["09A4108CD26FE8ED", "2ADEB61CE870B65E", "7408BCE6BB3B7A9F"]
+			description: [
+				"WHAT IS THIS? Installed advancement data requires Hydra, Ur-Ghast and Snow Queen progress before the troll caves, giants and Final Plateau route."
+				"DO THIS: Confirm all three branch advancements, regroup at the portal camp, restock, then follow the highlands progression without pretending the unfinished Final Castle has a completed boss."
+				"WHY DO I CARE? The merge gives the whole server a clear shared milestone even if different teams handled each middle branch."
+				"COMMON FUCK-UP: Do not claim the mod has a finished final boss because an old showcase implies one. Treat the plateau and castle as exploration after the verified progression chain."
+			]
+			id: "389D8AB926EA6678"
+			rewards: [{
+				id: "608C457295864714"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "033B3AA2B1CFA97A"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Twilight Forest: Merge at the Highlands"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4C2CC01A2E38A3EC"]
+			description: [
+				"WHAT IS THIS? Deeper and Darker begins through Ancient City and Warden progression in the Overworld before entry to the Otherside becomes available."
+				"DO THIS: Practise wool placement, vibration control and retreat routes. Locate a city, mark a safe staging point outside the Deep Dark and carry only replaceable gear on the first survey."
+				"WHY DO I CARE? The portal campaign is deliberately later and more dangerous than ordinary cave exploration."
+				"COMMON FUCK-UP: Opening containers, sprinting or fighting ordinary mobs can create vibrations. Plan for stealth first and combat only when the objective requires it."
+			]
+			id: "47E2CB92B038163B"
+			rewards: [{
+				id: "7BBBFFFD32DF2312"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "164D20BFF1DC11D9"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Otherside: Ancient City Before the Portal"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["47E2CB92B038163B"]
+			description: [
+				"WHAT IS THIS? The installed Deeper and Darker advancement path requires defeating a Warden before entering the Otherside path, with the Heart of the Deep tied to portal activation."
+				"DO THIS: Treat the Warden as a group boss objective, build a remote recovery route and bank spare supplies. A non-creative player consumes the Heart when the portal is created, so activate it only when the site and whole group are ready."
+				"WHY DO I CARE? This is the explicit difficulty gate between Ancient City exploration and the new dimension."
+				"COMMON FUCK-UP: Do not test the Heart casually or assume it will be returned. The installed 1.3.3 item code consumes the held stack for a non-creative player after spawning the portal."
+			]
+			id: "1C77C9CAAD94A1D1"
+			rewards: [{
+				id: "71D41FEE59B460A4"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "2DA00C24BEA2E3EF"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Otherside: Warden and Heart of the Deep"
+			x: 6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["1C77C9CAAD94A1D1"]
+			description: [
+				"WHAT IS THIS? The Otherside is a separate Deeper and Darker dimension with its own biomes, mobs, Echo Wood, Resonarium and later temple content."
+				"DO THIS: Enter as a group, secure and mark the portal, create a small outpost and test the return journey before exploring beyond sight of the entrance."
+				"WHY DO I CARE? A working arrival zone makes deaths and dimension transitions recoverable."
+				"COMMON FUCK-UP: Do not move or decorate the portal before confirming how it relights. Keep spare blocks, food and ordinary tools on both sides."
+			]
+			id: "3EBCF6D433B07C99"
+			rewards: [{
+				id: "3D2E357C5198D2B0"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "0265471DAB4EFF7C"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Otherside: Secure the Arrival Zone"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["3EBCF6D433B07C99"]
+			description: [
+				"WHAT IS THIS? Echo Wood, Resonarium, sculk creatures and biome discoveries form the middle Otherside progression; the exact installed uses appear in JEI and advancements."
+				"DO THIS: Choose one biome target, collect a small labelled sample, observe one local mob safely and return to the outpost to research uses."
+				"WHY DO I CARE? Targeted trips reduce needless generation and teach the dimension without turning every expedition into an inventory dump."
+				"COMMON FUCK-UP: Unfamiliar sculk blocks may react to sound or be progression materials. Do not mine an entire structure until you understand its triggers and uses."
+			]
+			id: "705635A66FA5497B"
+			rewards: [{
+				id: "2B4C9CF04A5D69CB"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "6FEF4942EB1228D1"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Otherside: Learn the Biomes and Materials"
+			x: 10.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["705635A66FA5497B"]
+			description: [
+				"WHAT IS THIS? The installed advancements split here: Ancient Temple discovery leads to the Sculk Transmitter; entering the Otherside leads toward the Sonorous Staff; killing the Warden leads through Reinforced Echo Shards toward Warden equipment."
+				"DO THIS: Read the advancement tab as three parallel projects. Establish a Temple recovery point for its branch, research the Staff from the entry branch, and inspect Reinforced Echo recipes before spending Warden drops."
+				"WHY DO I CARE? The three branches provide distinct exploration, utility and equipment goals without inventing one false linear prerequisite chain."
+				"COMMON FUCK-UP: Temple completion does not unlock every late item. Do not carry every Heart, shard and resonarium component into one expedition; bank rare materials between branches."
+			]
+			id: "77D0DCA61DE34213"
+			rewards: [{
+				id: "200FBF88A2CD9704"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "0314A3E04025C6ED"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Otherside: Three Late-Game Branches"
+			x: 10.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4C2CC01A2E38A3EC"]
+			description: [
+				"WHAT IS THIS? The installed main advancement path is Cave Tablet -> Cave Codex -> Cave Map -> six biome discoveries. The Cave Book is a sibling reference branch directly from the Tablet, not an alternative prerequisite for Maps."
+				"DO THIS: Find the Tablet in an Underground Cabin, follow the Codex path to craft one targeted Cave Map, and obtain or read the Cave Book separately as the mod's reference manual."
+				"WHY DO I CARE? The Codex and Maps drive discovery, while the Book explains systems; keeping those roles separate prevents random digging across new chunks."
+				"COMMON FUCK-UP: Do not expect the Cave Book alone to satisfy the Codex/Map advancement path, and do not expect one Map to reveal every cave biome."
+			]
+			id: "45BE7EB8CB136A50"
+			rewards: [{
+				id: "5EBB533E4502DFE0"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "25FDE622FAAC6CD3"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Alex's Caves: Tablet, Codex, Book and Maps"
+			x: 8.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["45BE7EB8CB136A50"]
+			description: [
+				"WHAT IS THIS? Primordial Caves, Toxic Caves, Abyssal Chasm, Candy Cavity, Forlorn Hollows and Magnetic Caves are parallel discoveries with biome-local resources and threats."
+				"DO THIS: Pick one map, research its hazards in the Cave Book, prepare a matching kit, mark the entry and return with a small documented sample."
+				"WHY DO I CARE? Parallel goals let the group explore at its own pace and avoid forcing all six rare biomes before other progression."
+				"COMMON FUCK-UP: Armour and tactics that work in one cave may fail badly in another. Never treat a compilation video as universal preparation."
+			]
+			id: "6589B4867407EDD3"
+			rewards: [{
+				id: "5DEAC625046F09C6"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "3786ED2944790F48"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Alex's Caves: Six Parallel Expeditions"
+			x: 6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4C2CC01A2E38A3EC"]
+			description: [
+				"WHAT IS THIS? Aquamirae is an overworld Deep Frozen Ocean campaign, not a separate dimension. Installed advancements begin around the Ice Maze and branch through fins, esca, Shell Horn, Frozen Key and equipment tiers."
+				"DO THIS: Use a ship, map and cold-ocean supplies to locate the region, establish a shoreline or vessel recovery point and follow one advancement branch at a time."
+				"WHY DO I CARE? It gives sea travel a dangerous destination and connects exploration to distinctive equipment without blocking other campaigns."
+				"COMMON FUCK-UP: Do not call every icy structure the same dungeon or assume a key opens the first door you see. Read the item namespace and advancement clue."
+			]
+			id: "0AF13E72B17FFB63"
+			rewards: [{
+				id: "6E209AFC1BE4A9B4"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "72AFF19FB2279599"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Frozen Sea Campaign: Ice Maze and Ship Graveyard"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4C2CC01A2E38A3EC"]
+			description: [
+				"WHAT IS THIS? Wroughtnaut, Frostmaw, Umvuthi, Naga and other Mowzie encounters have their own mechanics and rewards. Installed advancements treat the main encounters as parallel, not one mandatory boss ladder."
+				"DO THIS: Choose one discovered encounter, observe it from safety, research its cues and establish a recovery chest before committing to the fight."
+				"WHY DO I CARE? Each fight becomes a memorable optional expedition instead of an arbitrary gate between dimensions."
+				"COMMON FUCK-UP: Do not invent a universal boss order or attack a sleeping creature because it resembles a vanilla mob. Learn the arena and reward branch first."
+			]
+			id: "757C31372896FEAF"
+			rewards: [{
+				id: "53AE0DE86AE47CD9"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "4BF679562CE6F4E2"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Mowzie's Mobs: Independent Encounters"
+			x: 2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6663CF618582AD61", "389D8AB926EA6678", "77D0DCA61DE34213", "6589B4867407EDD3", "0AF13E72B17FFB63", "757C31372896FEAF"]
+			description: [
+				"WHAT IS THIS? A campaign is complete when its route, hazards, progression items and useful discoveries are documented for the next group."
+				"DO THIS: Return unique loot, restock the outpost, update maps or signs and record the next verified milestone. Keep trophies and keys in labelled shared storage."
+				"WHY DO I CARE? Future players can join the story instead of repeating every mistake or losing progression items in private chests."
+				"COMMON FUCK-UP: Do not tear down portals or empty outposts after a boss win. The world remains multiplayer infrastructure after your personal advancement fires."
+			]
+			id: "7D2295E4D51AA761"
+			rewards: [{
+				id: "639105C382274F43"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "384418FCF38B95D8"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Campaign Debrief: Bring Knowledge Home"
+			x: 0.0d
+			y: 6.0d
+		}
+	]
+}

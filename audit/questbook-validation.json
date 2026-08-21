@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-22T03:36:06.8254115+10:00",
+  "generatedAt": "2026-08-22T05:15:43.8011145+10:00",
   "source": "audit/questbook-legacy-1.8.0",
-  "chapterCount": 9,
-  "questCount": 118,
-  "taskIdCount": 165,
-  "rewardIdCount": 134,
-  "manualCheckmarkQuests": 61,
+  "chapterCount": 14,
+  "questCount": 200,
+  "taskIdCount": 247,
+  "rewardIdCount": 216,
+  "manualCheckmarkQuests": 143,
   "automaticDetectionQuests": 57,
   "existingQuestBlocksRetained": 109,
   "legacyQuestBlocksRemovedFromVisibleGuide": 287,
@@ -20,6 +20,9 @@
   "duplicateRewardIds": 0,
   "unsafeSignedIds": 0,
   "unresolvedDependencies": 0,
+  "rootQuestIds": [
+    "7DA1925406767A08"
+  ],
   "cyclicOrUnreachableQuests": 0,
   "referencedItemIds": 98,
   "chapters": [
@@ -27,6 +30,11 @@
       "Chapter": "WHERE THE FUCK DO I START?",
       "File": "welcome.snbt",
       "Quests": 14
+    },
+    {
+      "Chapter": "What Leads Into What?",
+      "File": "roadmap.snbt",
+      "Quests": 8
     },
     {
       "Chapter": "Surviving the First Night",
@@ -39,9 +47,19 @@
       "Quests": 13
     },
     {
+      "Chapter": "Homestead Mastery: Farm, Kitchen and Apiary",
+      "File": "homestead_mastery.snbt",
+      "Quests": 18
+    },
+    {
       "Chapter": "Create Without Having a Brain Aneurysm",
       "File": "create_basics.snbt",
       "Quests": 22
+    },
+    {
+      "Chapter": "Create Projects: Workshop to Railway",
+      "File": "create_projects.snbt",
+      "Quests": 20
     },
     {
       "Chapter": "Stop Living Out of 46 Chests",
@@ -54,6 +72,11 @@
       "Quests": 15
     },
     {
+      "Chapter": "Expedition Campaigns: Aether, Twilight and Beyond",
+      "File": "dimension_campaigns.snbt",
+      "Quests": 24
+    },
+    {
       "Chapter": "Fossils, Archaeology and Dinosaurs",
       "File": "archaeology.snbt",
       "Quests": 10
@@ -62,6 +85,11 @@
       "Chapter": "Vehicles and Transport",
       "File": "vehicles.snbt",
       "Quests": 9
+    },
+    {
+      "Chapter": "Companions, Fishing and Settlements",
+      "File": "companions_communities.snbt",
+      "Quests": 12
     },
     {
       "Chapter": "Dangerous Shit and Endgame",

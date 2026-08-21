@@ -184,7 +184,7 @@ try {
         $process.StandardInput.WriteLine('stop'); $process.StandardInput.Flush()
         $serverProcessExited = $process.WaitForExit(300000)
         $savedAllDimensions = [bool](Select-String -LiteralPath $latestLog -SimpleMatch 'ThreadedAnvilChunkStorage: All dimensions are saved' -Quiet)
-        $questParserLoaded = [bool](Select-String -LiteralPath $latestLog -Pattern 'Loaded 4 chapter groups, 9 chapters, 118 quests, 0 reward tables' -Quiet)
+        $questParserLoaded = [bool](Select-String -LiteralPath $latestLog -Pattern 'Loaded 4 chapter groups, 14 chapters, 200 quests, 0 reward tables' -Quiet)
         if (-not $serverProcessExited) {
             $process.Kill()
             $process.WaitForExit()
@@ -193,7 +193,7 @@ try {
         [IO.File]::WriteAllText((Join-Path $testRoot 'server.stdout.log'), $stdoutTask.Result)
         [IO.File]::WriteAllText((Join-Path $testRoot 'server.stderr.log'), $stderrTask.Result)
         if ($serverProcessExited -and $process.ExitCode -ne 0) { throw "Disposable Forge server exited with code $($process.ExitCode)." }
-        if (-not $questParserLoaded) { throw 'FTB Quests did not report the expected 9 chapters and 118 quests.' }
+        if (-not $questParserLoaded) { throw 'FTB Quests did not report the expected 14 chapters and 200 quests.' }
         if (-not $savedAllDimensions) { throw 'Disposable server did not confirm that all loaded dimensions were saved.' }
         $finalLog = Get-Content -LiteralPath $latestLog -Raw
         $candidateAutomaticallyEnabled = $finalLog.Contains('Found new data pack file/milkyj-compat-fixes, loading it automatically')

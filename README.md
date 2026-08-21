@@ -29,7 +29,7 @@ Detailed day-to-day publishing, player installation, server updating, backups, a
 
 The Prism quoting repair is documented in [docs/PRISM-BOOTSTRAP-REPAIR.md](docs/PRISM-BOOTSTRAP-REPAIR.md). The opt-in, not-yet-deployed 24/7 Windows supervisor, cold backups, scheduled tasks, status, update, and rollback tooling are documented in [docs/SERVER-24-7-OPERATIONS.md](docs/SERVER-24-7-OPERATIONS.md).
 
-The current beginner progression contains 118 pack-specific quests across 9 chapters. Its exact chapter counts, progress-preservation audit, installed-system boundaries, and verification checklist are in [docs/QUEST-PROGRESSION.md](docs/QUEST-PROGRESSION.md).
+The current beginner progression contains 200 pack-specific quests across 14 chapters. Its connected branch map, exact chapter counts, progress-preservation audit, installed-system boundaries, research sources, and verification checklist are in [docs/QUEST-PROGRESSION.md](docs/QUEST-PROGRESSION.md).
 
 The optional creator replay/cinematic evaluation, current fail-closed status and future enablement gates are in [docs/CREATOR-CAPTURE.md](docs/CREATOR-CAPTURE.md). Prophet's immutable replay-media boundary is in [docs/CREATOR-REPLAY-INTEGRATION.md](docs/CREATOR-REPLAY-INTEGRATION.md).
 

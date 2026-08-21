@@ -1,0 +1,8 @@
+name = "Managed config: ftbquests/quests/chapters/homestead_mastery.snbt"
+filename = "homestead_mastery.snbt"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/homestead_mastery.snbt"
+hash-format = "sha256"
+hash = "b5973c0e45a108b59ebfb53f5eeaa3995ab71e333a661a6e37c2c3f708c6d3a7"

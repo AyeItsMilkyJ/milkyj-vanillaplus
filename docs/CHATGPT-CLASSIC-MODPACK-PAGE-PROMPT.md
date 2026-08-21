@@ -19,7 +19,7 @@ Deliver these sections:
 2. A 120–180 word short description.
 3. A full page with clear headings for the core vision, exploration/dimensions, Create/transport, homesteading/food, building/decor, creatures/companions, multiplayer/QoL, quest guide, visuals/shaders, performance, installation/updates and server notes.
 4. A concise “Why play this pack?” bullet list.
-5. A factual technical block containing Minecraft 1.20.1, Forge 47.4.10, 240 client JARs, 206 server JARs, 118 quests, recommended 8 GB maximum allocation for typical players, and Prism + Packwiz automatic updates.
+5. A factual technical block containing Minecraft 1.20.1, Forge 47.4.10, 240 client JARs, 206 server JARs, 200 quests across 14 chapters, recommended 8 GB maximum allocation for typical players, and Prism + Packwiz automatic updates.
 6. A short first-launch guide: import the supplied Prism ZIP once, sign in, press Play, allow the first download to finish, then use the same instance thereafter.
 7. A compact current-update changelog covering the compatibility, performance, quest, shader/resource and server-reliability work.
 8. Five alternative titles/taglines suitable for a banner or project listing.

@@ -1,0 +1,428 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "homestead_mastery"
+	group: "455989FDDDEB7EAA"
+	icon: "farmersdelight:cooking_pot"
+	id: "3DE8DA0F3834D67A"
+	order_index: 5
+	progression_mode: "flexible"
+	quest_links: [ ]
+	title: "Homestead Mastery: Farm, Kitchen and Apiary"
+	quests: [
+		{
+			dependencies: ["3C9A949E21E73BD7"]
+			description: [
+				"WHAT IS THIS? A mature homestead has three linked loops: fields supply the kitchen, the kitchen supplies players, and bees or machines turn surplus into useful materials."
+				"DO THIS: Walk from crop storage to cooking stations and back. Decide where raw ingredients, prepared meals, compostable waste and bee products belong before automating anything."
+				"WHY DO I CARE? Short, labelled routes are easier for new players to understand and much easier to connect to Create later."
+				"COMMON FUCK-UP: One giant chest for every ingredient becomes unusable quickly. Separate seed reserve, harvest buffer, pantry and finished meals."
+			]
+			id: "0F5C0AE2E2539C09"
+			rewards: [{
+				id: "0DE4DB97FD7C81AF"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "6343C3181F60CF4A"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Three Homestead Loops"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0F5C0AE2E2539C09"]
+			description: [
+				"WHAT IS THIS? Serene Seasons changes crop fertility through the year in the Overworld. Season HUD reports the current season, while JEI and crop tooltips help identify what is worth planting."
+				"DO THIS: Check the current season, plant a short labelled test row, and compare its growth with a crop known to be fertile now."
+				"WHY DO I CARE? Seasonal planning prevents players from blaming lag or a broken farm when an out-of-season crop is simply growing slowly."
+				"COMMON FUCK-UP: A planted crop is not proof that it is fertile. Observe growth over time and keep more than one food source instead of betting the pantry on a single field."
+			]
+			id: "4D51231CEEAE0057"
+			rewards: [{
+				id: "7807619F33E84787"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "233DA75E9D45ED8B"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Read the Season Before Planting"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4D51231CEEAE0057"]
+			description: [
+				"WHAT IS THIS? Crop rotation means growing different seasonal staples and keeping seed stock so the farm can change without another exploration trip."
+				"DO THIS: Divide the farm into labelled plots, store at least one replanting batch, and add a protected fallback plot. The installed configuration also gives underground Overworld farms a useful fallback at low Y levels."
+				"WHY DO I CARE? Several small dependable plots feed a server better than one enormous field that stalls for part of the year."
+				"COMMON FUCK-UP: Glass cover, underground placement and dimension rules are version-sensitive. Test a few plants in the actual build before enclosing hundreds of crop blocks."
+			]
+			id: "4FD0E91CC974DE62"
+			rewards: [{
+				id: "1FE6974D43D1711C"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "33374F586D7DAFB4"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Build Fields That Survive the Calendar"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4FD0E91CC974DE62"]
+			description: [
+				"WHAT IS THIS? Cooking for Blockheads connects compatible kitchen inventories and workstations around a Cooking Table so ingredients can be used without opening every cabinet."
+				"DO THIS: Build a compact table, oven, fridge and storage arrangement. Put one recipe's ingredients in the network and confirm the table can see them before decorating the room."
+				"WHY DO I CARE? The network makes a shared kitchen readable and keeps ingredients close to the station that consumes them."
+				"COMMON FUCK-UP: Blocks that only look connected may not share inventory. Test recipe visibility after every expansion and keep the exact installed layout guide or JEI open."
+			]
+			id: "2914A1154A421301"
+			rewards: [{
+				id: "16F6738E3985AC64"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "6636401CF89AE820"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Cooking for Blockheads Is a Kitchen Network"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2914A1154A421301"]
+			description: [
+				"WHAT IS THIS? The Knife, Cutting Board, Stove, Cooking Pot, Skillet and Basket solve different preparation, cooking and collection jobs. They are a workflow, not six copies of a crafting table."
+				"DO THIS: Search Farmer's Delight in JEI, inspect uses for each station, and choose one meal that demonstrates cutting plus cooking."
+				"WHY DO I CARE? Learning the station roles makes every installed Delight addon easier because their recipes reuse the same kitchen language."
+				"COMMON FUCK-UP: Right-click interactions on a Cutting Board differ from ordinary crafting. Place the ingredient, use the required tool, and leave room for the output."
+			]
+			id: "3D9E92F6B622F37A"
+			rewards: [{
+				id: "11019CAD1749CEA6"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "05C826DD80478B65"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "The Farmer's Delight Toolkit"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3D9E92F6B622F37A"]
+			description: [
+				"WHAT IS THIS? Cutting Board recipes convert a placed ingredient with a specified tool and may return portions or secondary products that ordinary crafting does not."
+				"DO THIS: Pin one installed recipe in JEI, place the ingredient on the board, use the displayed tool and route every output to a labelled pantry slot."
+				"WHY DO I CARE? A clean preparation stage is the bridge between harvest storage and both manual cooking and Slice and Dice automation."
+				"COMMON FUCK-UP: A similarly named knife or ingredient from another namespace may not match. Use the exact JEI input and check the mod name in the tooltip."
+			]
+			id: "6CC6E43A2F4873C6"
+			rewards: [{
+				id: "7DE18CC026199482"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "013A4D627819538C"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Prep Ingredients on the Cutting Board"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6CC6E43A2F4873C6"]
+			description: [
+				"WHAT IS THIS? A Cooking Pot combines ingredients over heat and stores the result until it is served into the correct container."
+				"DO THIS: Choose a meal with renewable local ingredients, place the pot over a valid heat source, provide bowls or the shown container, and cook enough for one group trip."
+				"WHY DO I CARE? Repeatable food is more valuable than a chest of random high-quality dishes nobody knows how to replace."
+				"COMMON FUCK-UP: Missing heat, container or one exact ingredient can make a correct-looking pot do nothing. Recheck the full JEI recipe instead of throwing in substitutes."
+			]
+			id: "339A912B4286B1AD"
+			rewards: [{
+				id: "53F50335B91BCB0D"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "7AC45C9D0BC7A633"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Cook a Repeatable Team Meal"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["339A912B4286B1AD"]
+			description: [
+				"WHAT IS THIS? A pantry rotation keeps a small ready supply of meals while raw and rare ingredients remain available for future recipes."
+				"DO THIS: Label seed reserve, fresh harvest, dry staples, containers and ready meals. Set a minimum stock for the group's everyday food."
+				"WHY DO I CARE? Players can take expedition food without accidentally consuming every seed, bowl or rare ingredient."
+				"COMMON FUCK-UP: Automating all harvest into cooked food can starve breeding, planting and quest recipes. Preserve raw stock and provide overflow."
+			]
+			id: "0DDB86BC1BAE3C6D"
+			rewards: [{
+				id: "76BEC70E88F67FAD"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "3915B18A17EC4165"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Run a Pantry, Not a Dump Chest"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0DDB86BC1BAE3C6D"]
+			description: [
+				"WHAT IS THIS? The installed Slice and Dice Slicer brings Farmer's Delight cutting recipes into a Create-powered line."
+				"DO THIS: Ponder or inspect the Slicer, confirm its JEI recipe category, and automate one cheap ingredient from input buffer to collected output."
+				"WHY DO I CARE? It removes repetitive preparation without replacing the kitchen or inventing a separate food system."
+				"COMMON FUCK-UP: Build direction, held tool and recipe can all matter. Prove one item at low speed before feeding a whole crop harvest into the machine."
+			]
+			id: "490BECED560C2CBB"
+			rewards: [{
+				id: "01BDB234301B8A8A"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "07381445FE0D3D65"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Slice and Dice: Automate the Cutting Board"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["490BECED560C2CBB"]
+			description: [
+				"WHAT IS THIS? Slice and Dice also provides a Sprinkler block plus liquid Fertilizer for crop support. Their exact installed recipes, fluid handling and valid inputs are shown in JEI."
+				"DO THIS: Test the Sprinkler over a small plot, supply only the installed liquid Fertilizer recipe shown in JEI, and measure whether it helps before expanding."
+				"WHY DO I CARE? A bounded test separates useful farm support from a resource-hungry machine running across unloaded or out-of-season crops."
+				"COMMON FUCK-UP: Do not assume every fluid, crop or season is accepted. Use the installed recipe category and keep a shutoff for the supply line."
+			]
+			id: "30E0E9CB591566C9"
+			rewards: [{
+				id: "1677065F72A9641A"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "063688AC652E9DF9"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Sprinklers and Fertilizer Need Limits"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["30E0E9CB591566C9"]
+			description: [
+				"WHAT IS THIS? Create: Central Kitchen connects Create processing with Farmer's Delight, including the Blaze Stove, Cooking Guide and installed fluid-food integrations."
+				"DO THIS: Search Central Kitchen in JEI and inspect the Blaze Stove and Cooking Guide. Choose one recipe already supported by your farm rather than designing around a video's mod list."
+				"WHY DO I CARE? It turns a working manual kitchen into a factory branch while keeping the food recognisably Minecraft-like."
+				"COMMON FUCK-UP: Old showcases may contain recipes or addons not installed here. The current JEI page is the authority for heat, fluid amount, container and output."
+			]
+			id: "13829BF6355D8FAC"
+			rewards: [{
+				id: "51B02BD0528660FB"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "1E023360DB36B1B9"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Central Kitchen: Heat and Compatibility"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["13829BF6355D8FAC"]
+			description: [
+				"WHAT IS THIS? This project joins harvest, preparation, cooking, storage and safe shutdown into one understandable production chain."
+				"DO THIS: Pick one team meal. Draw its inputs, automate only the repetitive steps, preserve seed stock, provide overflow and label the manual recovery point."
+				"WHY DO I CARE? A small reliable meal line teaches every factory habit needed for larger Create projects."
+				"COMMON FUCK-UP: A line that works only while watched is unfinished. Fill the output, remove an ingredient and stop the power to prove it fails safely."
+			]
+			id: "4470883A69E1BC65"
+			rewards: [{
+				id: "0280DEB2CA88E7F5"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "201555971951D9FD"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Project: One Meal from Field to Crate"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0F5C0AE2E2539C09"]
+			description: [
+				"WHAT IS THIS? Vanilla bees establish the basic rules: flowers support bees, hives store honey, and a lit campfire beneath a hive allows safer harvesting."
+				"DO THIS: Build a small enclosed apiary away from busy doors, provide flowers, shelter the bees and collect one honey product without angering the colony."
+				"WHY DO I CARE? Productive Bees extends these ideas; it does not make careless hive placement or bee loss harmless."
+				"COMMON FUCK-UP: Open apiaries near chunk borders, portals or machinery lose bees. Keep the first colony compact and avoid hundreds of free-flying entities."
+			]
+			id: "4EC84C1E569D6AC0"
+			rewards: [{
+				id: "71983000182EC798"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "7F94AFD19FD61500"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Beekeeping Starts with Vanilla Safety"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4EC84C1E569D6AC0"]
+			description: [
+				"WHAT IS THIS? Productive Bees has solitary bees that live in natural nests and hive bees that work in Advanced Hives. Solitary bees are discovery and breeding stock; they do not produce resource combs in an Advanced Hive."
+				"DO THIS: Use the Nest Locator, JEI and the installed bees guide to find one suitable nest. Catch carefully with a Bee Cage and record the bee's required flower or breeding use."
+				"WHY DO I CARE? Knowing the two roles prevents hours spent waiting for the wrong bee to make combs."
+				"COMMON FUCK-UP: Do not break every nest or release rare bees beside an open portal. Preserve habitat and carry spare cages."
+			]
+			id: "069B444CF7840537"
+			rewards: [{
+				id: "72C8B7274E5A0018"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "149889C377A7A2F3"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Productive Bees: Nests, Cages and Roles"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["069B444CF7840537"]
+			description: [
+				"WHAT IS THIS? An Advanced Beehive can receive an expansion box and house productive hive bees, but each bee still needs its configured flowering block."
+				"DO THIS: Build one Advanced Oak Beehive with an Expansion Box, place the exact JEI-listed flower nearby, add one proven hive bee and observe a complete work cycle."
+				"WHY DO I CARE? A single verified hive is the foundation for comb processing, breeding and upgrades."
+				"COMMON FUCK-UP: A bee inside a hive is not proof the setup works. Check weather, access, flowering block and hive output before adding more bees."
+			]
+			id: "2DA958214FC07C0B"
+			rewards: [{
+				id: "090740C663519C4E"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "7AC1CF43B2597899"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Advanced Hives Need the Right Flower"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["2DA958214FC07C0B"]
+			description: [
+				"WHAT IS THIS? Honey Treats, the Feeding Slab and Breeding Chamber support controlled Productive Bees progression. Genetics and upgrades are deeper tools, not a requirement for the first working hive."
+				"DO THIS: Choose one useful offspring shown in JEI, obtain both parents, provide the specified breeding item and document the resulting bee's flower."
+				"WHY DO I CARE? One deliberate breeding target teaches the system without filling the base with mystery cages."
+				"COMMON FUCK-UP: Similar bee names can have different roles or parents. Pin the exact installed recipe and label cages before starting."
+			]
+			id: "347C1FEFFA63275C"
+			rewards: [{
+				id: "177468CDF82AA3A4"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "01A9D5A9502A4A0A"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Breed One Useful Bee Deliberately"
+			x: 6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["347C1FEFFA63275C"]
+			description: [
+				"WHAT IS THIS? The Centrifuge processes resource combs into their outputs, while the Bottler handles compatible fluids and containers. JEI shows the installed result chances and container rules."
+				"DO THIS: Process one batch manually, identify every output, then route solids and fluids to separate labelled storage with overflow."
+				"WHY DO I CARE? The useful product is not the comb itself; a tidy processing stage makes the apiary part of the shared supply chain."
+				"COMMON FUCK-UP: Random outputs and full containers can jam automation. Test the worst case and never let loose items pile up beside a constantly loaded apiary."
+			]
+			id: "2A307A4BE06391EB"
+			rewards: [{
+				id: "783F2BD55066D24F"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "7ECD79534249B7FF"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Turn Combs into Stored Resources"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["2A307A4BE06391EB"]
+			description: [
+				"WHAT IS THIS? A responsible apiary produces one chosen resource, keeps bee counts bounded and stores every output without littering entities or items."
+				"DO THIS: Build one shared Advanced Hive line, a safe cage cabinet, one Centrifuge route, locked bulk storage and a visible off switch. Add upgrades only after the base loop works."
+				"WHY DO I CARE? Compact hives are friendlier to weak PCs and easier for the whole server to maintain than many scattered experimental colonies."
+				"COMMON FUCK-UP: Simulator and productivity upgrades are not excuses for uncontrolled scaling. Watch output demand, loaded chunks and storage before duplicating the setup."
+			]
+			id: "315365C6389CA4C1"
+			rewards: [{
+				id: "5A7705E383C4D306"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "44C85F5A80E3D73E"
+				title: "I read this lesson and checked the installed pack"
+				type: "checkmark"
+			}]
+			title: "Project: A Compact Responsible Apiary"
+			x: 10.0d
+			y: 4.0d
+		}
+	]
+}
