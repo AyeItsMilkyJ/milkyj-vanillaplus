@@ -190,4 +190,4 @@ Automated validation now checks:
 - personal-setting preservation during update and rollback;
 - dedicated-server FTB parsing, normal save and JVM exit.
 
-Automated parsing is not release approval. Before publication, two clean authenticated disposable clients must open the book, inspect all pages and dependency lines, complete a checkmark and automatic task, claim a reward, verify same-team/outside-team behaviour, and manually test representative Matrix enchanting, Create, apiary and dimension lessons. No live world or live Prism instance is used for this work.
+Automated parsing does not verify live UI interaction. Before promoting this pre-release to final, or claiming those interactions are verified, two clean authenticated disposable clients must open the book, inspect all pages and dependency lines, complete a checkmark and automatic task, claim a reward, verify same-team/outside-team behaviour, and manually test representative Matrix enchanting, Create, apiary and dimension lessons. No live world or live Prism instance is used for this work.

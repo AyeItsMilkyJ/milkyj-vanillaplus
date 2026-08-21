@@ -35,9 +35,9 @@ Primary evidence:
 
 No enchanting mod JAR was added, removed or updated by this change.
 
-## Manual release check
+## Outstanding manual interaction check
 
-Automated validation can prove the configuration parses, the quest graph is valid and Forge starts, but it cannot click the Matrix grid. Before publishing:
+Automated validation can prove the configuration parses, the quest graph is valid and Forge starts, but it cannot click the Matrix grid. Complete this checklist before promoting the pre-release to a final release or claiming the interaction itself is verified:
 
 1. open a disposable authenticated client against the disposable server;
 2. place a fresh Enchanting Table with fifteen clear bookshelves;

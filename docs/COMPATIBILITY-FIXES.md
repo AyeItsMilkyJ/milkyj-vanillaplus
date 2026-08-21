@@ -1,6 +1,6 @@
 # Integrated compatibility fixes
 
-Status: the original fixes remain integrated, and the Aquatic Ambitions repair is validated locally on `feature/create-and-content-expansion` for `1.9.0-rc2`. The expansion has not been published, pushed, merged or deployed.
+Status: the original fixes and Aquatic Ambitions repair are integrated into the `1.9.0-rc2` pre-release. The exact overrides passed static checks, clean Packwiz installation and disposable Forge startup/reload validation.
 
 ## Release-candidate overrides
 

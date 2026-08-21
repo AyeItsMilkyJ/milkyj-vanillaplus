@@ -14,7 +14,7 @@
 			dependencies: ["54C781F3CD01DB25"]
 			description: [
 				"WHAT IS THIS? Quark Matrix Enchanting is enabled and automatically converts the normal Enchanting Table into a piece-based interface. Easy Magic remains installed, but Quark owns this Matrix screen; Enchantment Descriptions explains unfamiliar results in item tooltips."
-				"DO THIS: Build the Enchanting Table and fifteen accessible bookshelves with a clear air gap. Open it with a disposable iron item and confirm the Matrix piece grid appears before spending valuable levels."
+				"DO THIS: Build the Enchanting Table and fifteen accessible bookshelves with a usable one-block gap. Air and water work, and this pack also permits very short blocks such as carpet. Open it with a disposable iron item and confirm the Matrix piece grid appears before spending valuable levels."
 				"WHY DO I CARE? Fifteen shelves unlock the full ordinary enchanting-power range, while the visible Matrix makes the outcome a decision instead of a blind three-option gamble."
 				"COMMON FUCK-UP: Full-height blocks or a bad shelf gap can block enchanting power; this pack allows short blocks such as carpet in the gap. The Easy Magic reroll button is not expected inside Quark's replacement Matrix screen; do not diagnose its absence as a missing mod."
 			]

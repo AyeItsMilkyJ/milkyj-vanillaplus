@@ -2,9 +2,9 @@
 
 Candidate: `1.9.0-rc2`
 
-Branch: `feature/create-and-content-expansion`
+Source branch: `feature/create-and-content-expansion`
 
-Status: validated locally; not published, pushed, merged or deployed
+Status: integrated into the `1.9.0-rc2` pre-release. Automated validation is complete; the interaction checks listed below remain explicitly outstanding.
 
 ## What was added
 
@@ -62,9 +62,9 @@ Static validation pins both exact JAR hashes, proves all four broken IDs are abs
 
 Existing known-safe warnings remain: Central Kitchen's absent vegan-patty integration recipe, the Aether shield override parsing warnings, the Relics talisman-slot warning, and longstanding third-party mixin metadata warnings. Backported Fixes adds one accepted packaging warning: its mixin config requests `create_6_0_8_backported_fixes.mixins.json.refmap.json`, while the JAR ships an empty `create_6_0_8_backported_fixes.refmap.json`. Both required mixins prepared without an application failure, the server reached `Done`, and the client reached the main menu. This is noisy but non-functional; unlike Extended Wrenches, it has a valid mixin `minVersion` and retains worthwhile targeted fixes.
 
-## Manual play checks before release
+## Outstanding manual interaction checks
 
-Automated launch/data tests cannot prove every interaction. Before publishing `1.9.0-rc2`, use a disposable or backed-up test world to:
+Automated launch/data tests cannot prove every interaction. Complete these checks before promoting the pre-release to final or claiming the interactions themselves are verified:
 
 1. build and Ponder each new Components and Additions block;
 2. assemble/disassemble a contraption carrying representative Quark and existing storage containers;
@@ -73,4 +73,4 @@ Automated launch/data tests cannot prove every interaction. Before publishing `1
 5. confirm SeasonHUD placement does not cover the preferred Xaero layout; and
 6. join the real server with two matching clients for movement, inventory and reconnect sanity.
 
-Nothing in this branch has changed the live server, live world or live Prism instance. Publishing and deployment remain separate, explicit operations.
+The automated evidence in this document used disposable clients and servers. Publication and live deployment use the separate guarded release, cold-backup and server-update workflows.

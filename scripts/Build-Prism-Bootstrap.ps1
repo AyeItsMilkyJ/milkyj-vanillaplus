@@ -51,6 +51,11 @@ $instanceTemplate = [regex]::Replace(
     '(?m)^PreLaunchCommand=.*$',
     ('PreLaunchCommand=\"$INST_JAVA\" -jar packwiz-installer-bootstrap.jar ' + $PackUrl)
 )
+$instanceTemplate = [regex]::Replace(
+    $instanceTemplate,
+    '(?m)^ExportVersion=.*$',
+    ('ExportVersion=' + [string]$settings.packVersion)
+)
 [IO.File]::WriteAllText((Join-Path $buildRoot 'instance.cfg'), $instanceTemplate, [Text.UTF8Encoding]::new($false))
 
 $bootstrapJar = & (Join-Path $PSScriptRoot 'Get-PackwizInstaller.ps1') -ProjectRoot $projectRootResolved -PassThru
@@ -91,6 +96,10 @@ try {
     }
     if ($preLaunch -match '(?i)(?:javaw?\.exe|\$INST_JAVA)-jar') {
         throw "Generated Prism pre-launch command concatenates Java and -jar: $preLaunch"
+    }
+    $exportVersion = [regex]::Match($generatedInstance, '(?m)^ExportVersion=(.*)$').Groups[1].Value
+    if ($exportVersion -ne [string]$settings.packVersion) {
+        throw "Generated Prism export version '$exportVersion' does not match project version '$($settings.packVersion)'."
     }
 } finally {
     $archive.Dispose()

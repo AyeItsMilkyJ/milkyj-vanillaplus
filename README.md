@@ -9,7 +9,7 @@ Current locked platform:
 - Minecraft `1.20.1`
 - Forge `47.4.10`
 - Established previous pack version `1.8.1-packwiz.1`
-- Current Packwiz release `1.9.0-rc1`
+- Current Packwiz release `1.9.0-rc2`
 
 Permanent public update feed:
 
@@ -27,7 +27,7 @@ The live world is not part of this repository and no update script is allowed to
 
 Detailed day-to-day publishing, player installation, server updating, backups, and rollback are in [docs/OPERATIONS.md](docs/OPERATIONS.md).
 
-The Prism quoting repair is documented in [docs/PRISM-BOOTSTRAP-REPAIR.md](docs/PRISM-BOOTSTRAP-REPAIR.md). The opt-in, not-yet-deployed 24/7 Windows supervisor, cold backups, scheduled tasks, status, update, and rollback tooling are documented in [docs/SERVER-24-7-OPERATIONS.md](docs/SERVER-24-7-OPERATIONS.md).
+The Prism quoting repair is documented in [docs/PRISM-BOOTSTRAP-REPAIR.md](docs/PRISM-BOOTSTRAP-REPAIR.md). The deployed Windows supervisor, cold backups, scheduled restarts, status, update, and rollback tooling are documented in [docs/SERVER-24-7-OPERATIONS.md](docs/SERVER-24-7-OPERATIONS.md).
 
 The current beginner progression contains 210 pack-specific quests across 15 chapters. Its connected branch map, exact chapter counts, progress-preservation audit, installed-system boundaries, research sources, and verification checklist are in [docs/QUEST-PROGRESSION.md](docs/QUEST-PROGRESSION.md). The tuned Quark Matrix, Easy Anvils and Create: Enchantment Industry route is documented in [docs/ENCHANTING.md](docs/ENCHANTING.md).
 

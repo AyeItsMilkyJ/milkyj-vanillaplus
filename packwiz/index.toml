@@ -1228,7 +1228,7 @@ metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create_basics.snbt.pw.toml"
-hash = "b0dfb3f2dfec5d4e47d7be3b97df863e6cff5930ef7942389807455d3e63d992"
+hash = "f9754fbd3c0bf70fe5eca9b1cb1f10a72a876b04fe973e6106ab101cb0fc521e"
 metafile = true
 
 [[files]]
@@ -1243,7 +1243,7 @@ metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/enchanting_gear.snbt.pw.toml"
-hash = "151b3f96421d146afe3b77e6fa82a6ae1e7ff83efdc8b61f2905ecca22bd30b0"
+hash = "35bae25b1df8994918cd11b4a865be29d81052d30cc818748e0d74d1372222cb"
 metafile = true
 
 [[files]]
@@ -1704,7 +1704,7 @@ preserve = true
 
 [[files]]
 file = "config/quark-common.toml.pw.toml"
-hash = "a143bdc4a21a03682c34c7b6c9002bee403c9f54964d4121df941ea61e10b292"
+hash = "f07e25cc70a9e26805ff65e4300560d40d1ff19cdbc4db7e944ca55078a06478"
 metafile = true
 
 [[files]]

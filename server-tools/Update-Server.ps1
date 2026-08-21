@@ -38,22 +38,34 @@ $updateRecord = Join-Path $managementRoot ("update-{0}.json" -f (Get-Date -Forma
 Write-JsonAtomic $updateRecord $before
 
 $bootstrapVersion = 'v0.0.3'
-$expectedSha256 = 'a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c'
+$bootstrapExpectedSha256 = 'a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c'
 $bootstrapUrl = "https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/$bootstrapVersion/packwiz-installer-bootstrap.jar"
 $bootstrap = Join-Path $serverRootResolved 'packwiz-installer-bootstrap.jar'
-if (-not (Test-Path -LiteralPath $bootstrap) -or (Get-FileHash -LiteralPath $bootstrap -Algorithm SHA256).Hash.ToLowerInvariant() -ne $expectedSha256) {
+if (-not (Test-Path -LiteralPath $bootstrap) -or (Get-FileHash -LiteralPath $bootstrap -Algorithm SHA256).Hash.ToLowerInvariant() -ne $bootstrapExpectedSha256) {
     $temporary = "$bootstrap.download"
     Invoke-WebRequest -Uri $bootstrapUrl -OutFile $temporary -UseBasicParsing
     $actual = (Get-FileHash -LiteralPath $temporary -Algorithm SHA256).Hash.ToLowerInvariant()
-    if ($actual -ne $expectedSha256) { Remove-Item -LiteralPath $temporary -Force; throw 'Packwiz bootstrap SHA-256 validation failed.' }
+    if ($actual -ne $bootstrapExpectedSha256) { Remove-Item -LiteralPath $temporary -Force; throw 'Packwiz bootstrap SHA-256 validation failed.' }
     Move-Item -LiteralPath $temporary -Destination $bootstrap -Force
+}
+
+$installerVersion = 'v0.5.14'
+$installerExpectedSha256 = 'c9f646908d340d84773948a9a7d98bc1dae250d35e1016dc6e2b8459760b5598'
+$installerUrl = "https://github.com/packwiz/packwiz-installer/releases/download/$installerVersion/packwiz-installer.jar"
+$installer = Join-Path $serverRootResolved 'packwiz-installer.jar'
+if (-not (Test-Path -LiteralPath $installer) -or (Get-FileHash -LiteralPath $installer -Algorithm SHA256).Hash.ToLowerInvariant() -ne $installerExpectedSha256) {
+    $temporary = "$installer.download"
+    Invoke-WebRequest -Uri $installerUrl -OutFile $temporary -UseBasicParsing
+    $actual = (Get-FileHash -LiteralPath $temporary -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($actual -ne $installerExpectedSha256) { Remove-Item -LiteralPath $temporary -Force; throw 'Packwiz installer SHA-256 validation failed.' }
+    Move-Item -LiteralPath $temporary -Destination $installer -Force
 }
 
 Write-Host "Applying operator-approved Packwiz server update from $PackUrl"
 $exitCode = -1
 Push-Location $serverRootResolved
 try {
-    & $java -jar $bootstrap -g -s server $PackUrl 2>&1 | ForEach-Object { Write-Host $_ }
+    & $java -jar $bootstrap --bootstrap-no-update --bootstrap-main-jar 'packwiz-installer.jar' -g -s server $PackUrl 2>&1 | ForEach-Object { Write-Host $_ }
     $exitCode = $LASTEXITCODE
 } finally { Pop-Location }
 

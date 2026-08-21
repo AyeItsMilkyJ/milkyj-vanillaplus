@@ -256,7 +256,7 @@ $titleOverrides = @{
 $descriptionOverrides = @{
     '56791EFEB7941CF8' = @(
         'WHAT IS THIS? Quark Matrix Enchanting is enabled and automatically converts the normal Enchanting Table into a piece-based interface. Easy Magic remains installed, but Quark owns this Matrix screen; Enchantment Descriptions explains unfamiliar results in item tooltips.',
-        'DO THIS: Build the Enchanting Table and fifteen accessible bookshelves with a clear air gap. Open it with a disposable iron item and confirm the Matrix piece grid appears before spending valuable levels.',
+        'DO THIS: Build the Enchanting Table and fifteen accessible bookshelves with a usable one-block gap. Air and water work, and this pack also permits very short blocks such as carpet. Open it with a disposable iron item and confirm the Matrix piece grid appears before spending valuable levels.',
         'WHY DO I CARE? Fifteen shelves unlock the full ordinary enchanting-power range, while the visible Matrix makes the outcome a decision instead of a blind three-option gamble.',
         'COMMON FUCK-UP: Full-height blocks or a bad shelf gap can block enchanting power; this pack allows short blocks such as carpet in the gap. The Easy Magic reroll button is not expected inside Quark''s replacement Matrix screen; do not diagnose its absence as a missing mod.'
     )
@@ -400,7 +400,7 @@ $descriptionOverrides = @{
     )
     '5A53AAEC0E3B4B96' = @(
         'WHAT IS THIS? Create: Enchantment Industry turns experience into a fluid that can be collected, stored and used by its installed machines. The Disenchanter can separate unwanted enchantment work from gear.',
-        'DO THIS: Inspect every machine recipe in JEI, build a tiny labelled experience line, and test with disposable low-value gear. Provide an Experience Hatch or other documented player access point.',
+        'DO THIS: Inspect every machine recipe in JEI and build a tiny labelled experience line. Test the installed player loop with only a few levels: the Disenchanter can draw experience from a player standing on it, while a guarded open-ended Fluid Pipe can return stored experience as XP orbs.',
         'WHY DO I CARE? Stored experience makes enchanting and salvage a shared workshop service instead of levels stranded on one player.',
         'COMMON FUCK-UP: Feeding named, borrowed or irreplaceable gear into an untested machine can destroy the wrong item. Lock and label inputs before automation.'
     )

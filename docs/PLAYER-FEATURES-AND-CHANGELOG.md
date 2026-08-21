@@ -1,6 +1,6 @@
 # MilkyCraft Vanilla+ — player features and evolution
 
-This document describes only systems confirmed in the current `1.9.0-rc2` Forge 1.20.1 candidate. Library mods are not advertised as gameplay features, and removed or rejected additions are not presented as installed.
+This document describes only systems confirmed in the current `1.9.0-rc2` Forge 1.20.1 pre-release. Library mods are not advertised as gameplay features, and removed or rejected additions are not presented as installed.
 
 ## The short version
 

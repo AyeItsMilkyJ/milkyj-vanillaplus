@@ -565,7 +565,7 @@
 			dependencies: ["3C8A246AFBC5BCB3"]
 			description: [
 				"WHAT IS THIS? Create: Enchantment Industry turns experience into a fluid that can be collected, stored and used by its installed machines. The Disenchanter can separate unwanted enchantment work from gear."
-				"DO THIS: Inspect every machine recipe in JEI, build a tiny labelled experience line, and test with disposable low-value gear. Provide an Experience Hatch or other documented player access point."
+				"DO THIS: Inspect every machine recipe in JEI and build a tiny labelled experience line. Test the installed player loop with only a few levels: the Disenchanter can draw experience from a player standing on it, while a guarded open-ended Fluid Pipe can return stored experience as XP orbs."
 				"WHY DO I CARE? Stored experience makes enchanting and salvage a shared workshop service instead of levels stranded on one player."
 				"COMMON FUCK-UP: Feeding named, borrowed or irreplaceable gear into an untested machine can destroy the wrong item. Lock and label inputs before automation."
 			]
