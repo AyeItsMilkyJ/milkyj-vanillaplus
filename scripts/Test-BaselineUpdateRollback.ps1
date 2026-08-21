@@ -6,8 +6,8 @@ param(
 $ErrorActionPreference = 'Stop'
 if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
-$testRoot = Join-Path $projectRootResolved 'build\baseline-update-rollback'
-$expectedTestRoot = [IO.Path]::GetFullPath((Join-Path $projectRootResolved 'build\baseline-update-rollback'))
+$testRoot = Join-Path $projectRootResolved 'build\rollback'
+$expectedTestRoot = [IO.Path]::GetFullPath((Join-Path $projectRootResolved 'build\rollback'))
 if (-not ([IO.Path]::GetFullPath($testRoot)).Equals($expectedTestRoot, [StringComparison]::OrdinalIgnoreCase)) {
     throw "Unsafe validation path: $testRoot"
 }
@@ -67,7 +67,9 @@ try {
     . (Join-Path $projectRootResolved 'server-tools\Common.ps1')
     $java = Find-Java17 $null
     $bootstrap = & (Join-Path $PSScriptRoot 'Get-PackwizInstaller.ps1') -ProjectRoot $projectRootResolved -PassThru
+    $mainInstaller = & (Join-Path $PSScriptRoot 'Get-PackwizInstaller.ps1') -ProjectRoot $projectRootResolved -MainJarPassThru
     Copy-Item -LiteralPath $bootstrap -Destination (Join-Path $clientRoot 'packwiz-installer-bootstrap.jar')
+    Copy-Item -LiteralPath $mainInstaller -Destination (Join-Path $clientRoot 'packwiz-installer.jar')
 
     $sentinels = [ordered]@{
         'options.txt' = 'options-and-keybindings-sentinel'
@@ -84,7 +86,7 @@ try {
 
     function Invoke-Install([string]$PackUrl) {
         Push-Location $clientRoot
-        try { & $java -jar 'packwiz-installer-bootstrap.jar' -g -s client $PackUrl; $exitCode = $LASTEXITCODE }
+        try { & $java -jar 'packwiz-installer-bootstrap.jar' --bootstrap-no-update --bootstrap-main-jar 'packwiz-installer.jar' -g -s client $PackUrl; $exitCode = $LASTEXITCODE }
         finally { Pop-Location }
         if ($exitCode -ne 0) { throw "Packwiz install failed with exit code $exitCode for $PackUrl" }
     }
@@ -111,14 +113,16 @@ try {
     if ($rcInstalledHash -ne $rcExpectedHash -or $rcInstalledHash -eq $baselineInstalledHash) { throw 'The RC quest payload was not applied over v1.0.0.' }
     $obsoleteInstalled = Test-Path -LiteralPath (Join-Path $clientRoot 'config\ftbquests\quests\rc-obsolete-validation-sentinel.txt')
     if (-not $obsoleteInstalled) { throw 'Host-only RC managed sentinel was not installed.' }
+    $rcBothRoot = Join-Path $rcRoot 'payload\both'
+    $baselineBothRoot = Join-Path $baselineRoot 'payload\both'
+    $compatibilityRoot = Join-Path $rcBothRoot 'moonlight-global-datapacks\milkyj-compat-fixes'
     $compatibilityFiles = @(
-        'moonlight-global-datapacks\milkyj-compat-fixes\data\domesticationinnovation\loot_modifiers\blazing_enchanted_book.json',
-        'moonlight-global-datapacks\milkyj-compat-fixes\data\nethersdelight\loot_modifiers\chopping_leather.json',
-        'moonlight-global-datapacks\milkyj-compat-fixes\data\nethersdelight\loot_modifiers\chopping_string.json',
-        'moonlight-global-datapacks\milkyj-compat-fixes\data\beautify\advancements\progression\candelabra.json',
-        'moonlight-global-datapacks\milkyj-compat-fixes\data\tf_dnv\loot_tables\chests\dungeon_barrel.json',
-        'moonlight-global-datapacks\milkyj-compat-fixes\data\tf_dnv\loot_tables\chests\dungeon_shroom_barrel.json'
+        Get-ChildItem -LiteralPath $compatibilityRoot -Recurse -File |
+            ForEach-Object { $_.FullName.Substring($rcBothRoot.Length).TrimStart('\') } |
+            Where-Object { -not (Test-Path -LiteralPath (Join-Path $baselineBothRoot $_) -PathType Leaf) } |
+            Sort-Object
     )
+    if ($compatibilityFiles.Count -ne 11) { throw "Expected 11 candidate-only compatibility resources; found $($compatibilityFiles.Count)." }
     foreach ($relative in $compatibilityFiles) {
         if (-not (Test-Path -LiteralPath (Join-Path $clientRoot $relative) -PathType Leaf)) {
             throw "Integrated compatibility file was not installed by the candidate: $relative"
@@ -143,11 +147,12 @@ try {
     $report = [ordered]@{
         testedAt = (Get-Date).ToString('o')
         baselineTag = 'v1.0.0'
-        releaseCandidate = '1.9.0-rc1'
+        releaseCandidate = '1.9.0-rc2'
         baselineQuestHash = $baselineExpectedHash
         releaseCandidateQuestHash = $rcExpectedHash
         releaseCandidateApplied = $true
         compatibilityFilesInstalledByCandidate = $true
+        compatibilityFileCount = $compatibilityFiles.Count
         rollbackRestoredBaseline = $true
         compatibilityFilesRemovedByRollback = $compatibilityFilesRemoved
         obsoleteManagedFileInstalledForTest = $obsoleteInstalled

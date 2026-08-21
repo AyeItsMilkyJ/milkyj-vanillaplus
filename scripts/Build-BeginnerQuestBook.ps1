@@ -375,10 +375,10 @@ $descriptionOverrides = @{
         'COMMON FUCK-UP: Feeding named, borrowed or irreplaceable gear into an untested machine can destroy the wrong item. Lock and label inputs before automation.'
     )
     '71CEDD5D336CCB38' = @(
-        'WHAT IS THIS? The installed Create family is core Create 6.0.8 plus Steam ''n'' Rails, Enchantment Industry, Slice & Dice, Central Kitchen, Create Connected, Create Deco, Rechiseled Create and Create Ultimine. Each addon serves a different job.',
-        'DO THIS: Use JEI''s at-sign mod filter to inspect one addon at a time. Use Connected and Deco for factory building, the food addons in a kitchen line, Enchantment Industry for experience and Steam ''n'' Rails for rail work.',
+        'WHAT IS THIS? The installed Create family is core Create 6.0.8 plus Steam ''n'' Rails, Enchantment Industry, Slice & Dice, Central Kitchen, Connected, Deco, Copycats, Rechiseled Create, Aquatic Ambitions, Compatible Storage, Components and Additions and Create Ultimine. Each addon serves a different job.',
+        'DO THIS: Use JEI''s at-sign mod filter to inspect one addon at a time. Ponder unfamiliar blocks. Aquatic Ambitions handles focused ocean processing; Compatible Storage lets supported modded containers behave correctly on contraptions; Components and Additions provides compact kinetic controls.',
         'WHY DO I CARE? Knowing the owner mod tells you which manual, Ponder scene, recipe namespace and troubleshooting path applies.',
-        'COMMON FUCK-UP: Tutorials for Crafts & Additions, Diesel Generators, Bells & Whistles, Contraption Terminals or Immersive Engineering describe mods not installed here. If JEI cannot find the item, stop following that tutorial.'
+        'COMMON FUCK-UP: Tutorials for Crafts & Additions, Diesel Generators, Bells & Whistles, Contraption Terminals or Immersive Engineering still describe mods not installed here. Similar names do not mean the same recipe; if JEI cannot find the item, stop following that tutorial.'
     )
     '702A4062FE9B512F' = @(
         'What this is: Better Archeology is the only installed mod in this pack that provides a fossil and archaeology crafting progression. It adds brushes, fossiliferous dirt, artifact shards, unidentified artifacts, and the Archeology Table.',

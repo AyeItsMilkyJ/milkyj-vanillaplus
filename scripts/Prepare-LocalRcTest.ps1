@@ -25,15 +25,15 @@ foreach ($metadata in Get-ChildItem -LiteralPath (Join-Path $hostRoot 'packwiz')
 & (Join-Path $PSScriptRoot 'Update-PackMetadata.ps1') -ProjectRoot $hostRoot
 & (Join-Path $PSScriptRoot 'Validate-Pack.ps1') -ProjectRoot $hostRoot -AllowPlaceholder
 
-$output = Join-Path $projectRootResolved 'dist\MilkyJ-VanillaPlus-1.9.0-rc1-LOCAL-TEST-Prism.zip'
+$output = Join-Path $projectRootResolved 'dist\MilkyJ-VanillaPlus-1.9.0-rc2-LOCAL-TEST-Prism.zip'
 & (Join-Path $PSScriptRoot 'Build-Prism-Bootstrap.ps1') -ProjectRoot $projectRootResolved -PackUrl "$localBase/packwiz/pack.toml" -OutputPath $output
 
 $result = [ordered]@{
     preparedAt = (Get-Date).ToString('o')
-    releaseCandidate = '1.9.0-rc1'
+    releaseCandidate = '1.9.0-rc2'
     hostDirectory = 'build/rc-local-host'
     packUrl = "$localBase/packwiz/pack.toml"
-    bootstrap = 'dist/MilkyJ-VanillaPlus-1.9.0-rc1-LOCAL-TEST-Prism.zip'
+    bootstrap = 'dist/MilkyJ-VanillaPlus-1.9.0-rc2-LOCAL-TEST-Prism.zip'
     bootstrapSha256 = (Get-FileHash -LiteralPath $output -Algorithm SHA256).Hash.ToLowerInvariant()
     serverCommand = "python scripts\limited_http_server.py --port $Port --directory build\rc-local-host --workers 24"
     productionFilesTouched = $false

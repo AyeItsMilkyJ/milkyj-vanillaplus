@@ -1,0 +1,8 @@
+name = "Managed moonlight-global-datapacks: milkyj-compat-fixes/data/create_aquatic_ambitions/recipes/channeling/upgrade_aquatic/prismarine_coral_fan.json"
+filename = "prismarine_coral_fan.json"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/moonlight-global-datapacks/milkyj-compat-fixes/data/create_aquatic_ambitions/recipes/channeling/upgrade_aquatic/prismarine_coral_fan.json"
+hash-format = "sha256"
+hash = "c33468792ed0f072d9ca2b09963d5b1e2cd74e595fbd86249e4126da96fdd5db"

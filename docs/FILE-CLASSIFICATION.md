@@ -11,14 +11,14 @@ The authoritative machine-readable reports are:
 
 | Class | Mod JARs |
 |---|---:|
-| Both client and server | 201 |
-| Client only | 35 |
+| Both client and server | 204 |
+| Client only | 36 |
 | Dedicated server only | 2 |
-| Total unique JARs | 238 |
+| Total unique JARs | 242 |
 
-Side classification is based on actual presence and exact hashes in the working Prism instance and dedicated server. No client/server shared filename had a hash mismatch.
+Side classification is based on the Packwiz manifests, declared exact hashes, and clean disposable client/server installs. The `1.9.0-rc2` tests resolved 240 client JARs and 206 server JARs with no shared filename/hash mismatch; no live Prism instance or server was changed for this expansion.
 
-All 201 shared JARs are enumerated in `audit/mods.csv`. The shorter exceptional lists follow.
+All 204 shared JARs are enumerated in `audit/mods.csv`. The shorter exceptional lists follow.
 
 ## Client-only mods
 
@@ -30,7 +30,6 @@ All 201 shared JARs are enumerated in `audit/mods.csv`. The shorter exceptional 
 - `BetterThirdPerson-Forge-1.20-1.9.0.jar`
 - `chat_heads-0.15.6-forge-1.20.jar`
 - `Controlling-forge-1.20.1-12.0.2.jar`
-- `cwb-forge-3.0.0+mc1.20.jar`
 - `eatinganimation-1.20.1-5.1.0.jar`
 - `embeddium-0.3.31+mc1.20.1.jar`
 - `EnchantmentDescriptions-Forge-1.20.1-17.1.21.jar`
@@ -39,6 +38,7 @@ All 201 shared JARs are enumerated in `audit/mods.csv`. The shorter exceptional 
 - `entityculling-forge-1.10.5-mc1.20.1.jar`
 - `EquipmentCompare-1.20.1-forge-1.3.7.jar`
 - `fallingleaves-1.20.1-2.1.2.jar`
+- `fusion-1.3.12-forge-mc1.20.1.jar`
 - `ImmediatelyFast-Forge-1.5.5+1.20.4.jar`
 - `JustEnoughProfessions-forge-1.20.1-3.0.1.jar`
 - `JustEnoughResources-1.20.1-1.4.0.247.jar`
@@ -51,6 +51,7 @@ All 201 shared JARs are enumerated in `audit/mods.csv`. The shorter exceptional 
 - `PickUpNotifier-v8.0.0-1.20.1-Forge.jar`
 - `Presence Footsteps [FORGE] 1.0.0.jar`
 - `Searchables-forge-1.20.1-1.0.3.jar`
+- `seasonhud-forge-1.20.1-2.0.8.jar`
 - `shulkerboxtooltip-forge-4.0.4+1.20.1.jar`
 - `skinlayers3d-forge-1.11.2-mc1.20.1.jar`
 - `statisticsplus-1.0.0.jar`
@@ -65,22 +66,22 @@ All 201 shared JARs are enumerated in `audit/mods.csv`. The shorter exceptional 
 
 ## Non-mod files
 
-The Packwiz index contains 687 unique destinations in total:
+The Packwiz index contains 718 unique destinations in total:
 
 | Destination category | Entries |
 |---|---:|
-| Mods | 238 |
-| Config | 407 |
+| Mods | 242 |
+| Config | 403 |
 | Default configs | 7 |
-| Moonlight global datapacks | 2 |
-| Resource packs | 33 |
+| Moonlight global datapacks | 13 |
+| Resource packs | 53 |
 
-Across all 684 destinations, 507 are `both`, 162 are `client`, and 15 are `server`. Internal files are represented by side-aware `.pw.toml` metadata and repository-hosted payloads, rather than unconditionally copied internal files. The count reflects the 9-chapter repaired guide plus removal of the two generated private/cache files; no mod JAR was removed.
+Across all 718 destinations, 520 are `both`, 183 are `client`, and 15 are `server`. Internal files are represented by side-aware `.pw.toml` metadata and repository-hosted payloads, rather than unconditionally copied internal files. The count reflects the 9-chapter guide, current compatibility datapack, curated resource-pack defaults, and exact client/server classification.
 
 The migration left 38 observed files unmanaged. These are itemised in `audit/excluded-files.csv`; they include JEI bookmarks/history, renderer/Distant Horizons/Oculus/shader choices, generated Chunky state, sound settings, stale Bumblezone/Connector/Continuity configs, and config conflicts for which no safe canonical value was inferred.
 
 ## Confidence and unresolved classification
 
-No installed mod JAR remains unclassified: every exact JAR was observed on one or both working sides and has a verified upstream download hash. This is a preservation classification, not a claim that every shared utility technically requires installation on both sides.
+No managed mod JAR remains unclassified: every exact JAR has a Packwiz side, declared upstream source/hash, and was resolved in the appropriate disposable install. This is a preservation classification, not a claim that every shared utility technically requires installation on both sides.
 
 The uncertain items are non-JAR config remnants, not mods. They are intentionally excluded and left untouched. Shader packs are also intentionally outside Packwiz management so broken/experimental shaders and personal shader settings cannot be forced back onto clients.

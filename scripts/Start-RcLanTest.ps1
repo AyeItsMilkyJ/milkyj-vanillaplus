@@ -66,7 +66,7 @@ foreach ($metadata in Get-ChildItem -LiteralPath (Join-Path $hostRoot 'packwiz')
 & (Join-Path $PSScriptRoot 'Update-PackMetadata.ps1') -ProjectRoot $hostRoot
 & (Join-Path $PSScriptRoot 'Validate-Pack.ps1') -ProjectRoot $hostRoot -AllowPlaceholder -AllowPrivateLan
 
-$zip = Join-Path $root 'dist\MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-r3-Prism.zip'
+$zip = Join-Path $root 'dist\MilkyJ-VanillaPlus-1.9.0-rc2-LAN-TEST-Prism.zip'
 & (Join-Path $PSScriptRoot 'Build-Prism-Bootstrap.ps1') -ProjectRoot $root -PackUrl $packUrl -OutputPath $zip -AllowPrivateLan
 
 . (Join-Path $root 'server-tools\Common.ps1')
@@ -90,7 +90,7 @@ try {
     try { & $java -jar 'packwiz-installer-bootstrap.jar' -g -s server $packUrl; $installExit = $LASTEXITCODE } finally { Pop-Location }
     if ($installExit -ne 0) { throw "Disposable server Packwiz install failed with exit code $installExit." }
     $serverJars = @(Get-ChildItem -LiteralPath (Join-Path $serverRoot 'mods') -File -Filter '*.jar').Count
-    if ($serverJars -ne 202) { throw "Expected 202 server JARs; found $serverJars." }
+    if ($serverJars -ne 206) { throw "Expected 206 server JARs; found $serverJars." }
 
     if (-not $ForgeLibrariesPath) { $ForgeLibrariesPath = Join-Path $root '.tools\forge-libraries' }
     $forge = [IO.Path]::GetFullPath($ForgeLibrariesPath)
@@ -100,7 +100,7 @@ try {
     [IO.File]::WriteAllText((Join-Path $serverRoot 'user_jvm_args.txt'), "-Xms1G`r`n-Xmx4G`r`n", [Text.UTF8Encoding]::new($false))
     $properties = @(
         'allow-flight=true', 'difficulty=normal', 'enable-command-block=false', 'gamemode=survival',
-        'level-name=rc_lan_test_world', 'max-players=4', 'motd=MilkyJ 1.9.0 RC LAN TEST',
+        'level-name=rc_lan_test_world', 'max-players=4', 'motd=MilkyCraft Vanilla+ 1.9.0-rc2 LAN TEST',
         'online-mode=true', "server-ip=$LanAddress", "server-port=$MinecraftPort", 'simulation-distance=4',
         'spawn-protection=0', 'view-distance=6', 'white-list=false'
     ) -join "`r`n"

@@ -166,6 +166,85 @@ $packText = $indexPattern.Replace(
 )
 [IO.File]::WriteAllText($packFile, $packText, $utf8)
 
+# Keep the repository's machine-readable mod and count audits aligned with the
+# Packwiz manifests. Disposable host copies do not contain an audit directory,
+# so their metadata refresh remains isolated from repository evidence.
+$auditRoot = Join-Path $projectRootResolved 'audit'
+if (Test-Path -LiteralPath $auditRoot -PathType Container) {
+    function Get-RequiredTomlValue([string]$Text, [string]$Key, [string]$SourcePath) {
+        $match = [regex]::Match($Text, "(?m)^$([regex]::Escape($Key))\s*=\s*`"([^`"]+)`"\s*$")
+        if (-not $match.Success) { throw "Missing $Key in $SourcePath" }
+        return $match.Groups[1].Value
+    }
+
+    $modRows = @()
+    $modSideCounts = [ordered]@{ both = 0; client = 0; server = 0 }
+    foreach ($metadataFile in Get-ChildItem -LiteralPath (Join-Path $packRoot 'mods') -File -Filter '*.pw.toml') {
+        $text = [IO.File]::ReadAllText($metadataFile.FullName)
+        $side = Get-RequiredTomlValue $text 'side' $metadataFile.FullName
+        if (-not $modSideCounts.Contains($side)) { throw "Invalid mod side '$side' in $($metadataFile.FullName)" }
+        $hashFormat = Get-RequiredTomlValue $text 'hash-format' $metadataFile.FullName
+        if ($hashFormat -ne 'sha512') { throw "Mod audit requires SHA-512 metadata: $($metadataFile.FullName)" }
+        $modSideCounts[$side]++
+        $modRows += [pscustomobject][ordered]@{
+            Filename = Get-RequiredTomlValue $text 'filename' $metadataFile.FullName
+            Name = Get-RequiredTomlValue $text 'name' $metadataFile.FullName
+            Side = $side
+            Sha512 = Get-RequiredTomlValue $text 'hash' $metadataFile.FullName
+            Source = Get-RequiredTomlValue $text 'url' $metadataFile.FullName
+            Confidence = 'manifest: Packwiz side and declared exact hash; see validation audits for runtime proof'
+        }
+    }
+    $modCsv = @($modRows | Sort-Object Filename | ConvertTo-Csv -NoTypeInformation)
+    [IO.File]::WriteAllLines((Join-Path $auditRoot 'mods.csv'), $modCsv, $utf8)
+
+    $managedRows = @()
+    foreach ($metadataFile in Get-ChildItem -LiteralPath $packRoot -Recurse -File -Filter '*.pw.toml') {
+        $relativeMetadata = (Get-RelativePath $packRoot $metadataFile.FullName).Replace('\', '/')
+        if ($relativeMetadata.StartsWith('mods/', [StringComparison]::OrdinalIgnoreCase)) { continue }
+        $text = [IO.File]::ReadAllText($metadataFile.FullName)
+        $directory = [IO.Path]::GetDirectoryName($relativeMetadata).Replace('\', '/')
+        $filename = Get-RequiredTomlValue $text 'filename' $metadataFile.FullName
+        $destination = if ($directory) { "$directory/$filename" } else { $filename }
+        $hashFormat = Get-RequiredTomlValue $text 'hash-format' $metadataFile.FullName
+        $hash = Get-RequiredTomlValue $text 'hash' $metadataFile.FullName
+        $source = Get-RequiredTomlValue $text 'url' $metadataFile.FullName
+        $isHostedPayload = $source -match '/payload/'
+        $managedRows += [pscustomobject][ordered]@{
+            Path = $destination
+            Side = Get-RequiredTomlValue $text 'side' $metadataFile.FullName
+            Source = $source
+            Sha256 = if ($hashFormat -eq 'sha256') { $hash } else { "see $hashFormat metadata" }
+            Reason = if ($isHostedPayload) {
+                'Packwiz-managed repository payload; side and exact hash declared in metadata.'
+            } else {
+                'Packwiz-managed external download; side and exact hash declared in metadata.'
+            }
+        }
+    }
+    $managedCsv = @($managedRows | Sort-Object Path | ConvertTo-Csv -NoTypeInformation)
+    [IO.File]::WriteAllLines((Join-Path $auditRoot 'managed-files.csv'), $managedCsv, $utf8)
+
+    $minecraftMatch = [regex]::Match($packText, '(?m)^minecraft\s*=\s*"([^"]+)"\s*$')
+    $forgeMatch = [regex]::Match($packText, '(?m)^forge\s*=\s*"([^"]+)"\s*$')
+    if (-not $minecraftMatch.Success -or -not $forgeMatch.Success) { throw 'Could not read Minecraft/Forge versions for audit summary.' }
+    $excludedPath = Join-Path $auditRoot 'excluded-files.csv'
+    $excludedCount = if (Test-Path -LiteralPath $excludedPath -PathType Leaf) { @(Import-Csv -LiteralPath $excludedPath).Count } else { 0 }
+    $summary = [ordered]@{
+        generatedAt = (Get-Date).ToString('o')
+        minecraft = $minecraftMatch.Groups[1].Value
+        forge = $forgeMatch.Groups[1].Value
+        clientMods = $modSideCounts.both + $modSideCounts.client
+        serverMods = $modSideCounts.both + $modSideCounts.server
+        modSides = $modSideCounts
+        managedPayloadFiles = @(Get-ChildItem -LiteralPath $payloadRoot -Recurse -File).Count
+        excludedFiles = $excludedCount
+        shaderpacksManaged = $false
+        note = 'Shader archives and settings are deliberately outside automatic management.'
+    }
+    [IO.File]::WriteAllText((Join-Path $auditRoot 'summary.json'), (($summary | ConvertTo-Json -Depth 10) + "`r`n"), $utf8)
+}
+
 Write-Host "Refreshed $($entries.Count) Packwiz index entries."
 Write-Host "Preserving $(@($entries | Where-Object Preserve).Count) client setting files after first install."
 Write-Host "index.toml SHA-256: $indexHash"

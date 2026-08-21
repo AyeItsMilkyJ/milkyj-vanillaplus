@@ -1,0 +1,149 @@
+{
+  "validatedAt": "2026-08-22T04:24:59+10:00",
+  "status": "PASS",
+  "branch": "feature/create-and-content-expansion",
+  "baseCommit": "68d445aaf206781384b11922d6f1eaff013c4732",
+  "pack": {
+    "name": "MilkyCraft Vanilla+",
+    "version": "1.9.0-rc2",
+    "minecraft": "1.20.1",
+    "forge": "47.4.10",
+    "indexEntries": 718,
+    "modDefinitions": 242,
+    "clientJars": 240,
+    "serverJars": 206
+  },
+  "added": [
+    {
+      "name": "Create 6.0.8 Backported Fixes",
+      "version": "1.1.0",
+      "side": "both",
+      "modrinthVersionId": "9OnlwTg9"
+    },
+    {
+      "name": "Create: Aquatic Ambitions",
+      "version": "1.20.1-2.0.2",
+      "side": "both",
+      "modrinthVersionId": "jIvpBfZr"
+    },
+    {
+      "name": "Create: Compatible Storage",
+      "version": "2.13.0",
+      "side": "both",
+      "modrinthVersionId": "XvfwEd3J"
+    },
+    {
+      "name": "Create: Components and Additions",
+      "version": "2.2",
+      "side": "both",
+      "modrinthVersionId": "U8okwTMH"
+    },
+    {
+      "name": "SeasonHUD",
+      "version": "2.0.8",
+      "side": "client",
+      "modrinthVersionId": "ocbnwoWo"
+    }
+  ],
+  "updated": [
+    {
+      "name": "Create: Enchantment Industry",
+      "from": "1.4.0",
+      "to": "1.4.1",
+      "side": "both",
+      "modrinthVersionId": "caLmFTZ1"
+    }
+  ],
+  "heldOrRejected": [
+    {
+      "name": "Create: Extended Wrenches",
+      "version": "2.0.0",
+      "decision": "removed-from-candidate",
+      "reason": "avoidable mixin metadata error and missing refmap warning"
+    },
+    {
+      "name": "Create: Copycats+",
+      "version": "3.0.8",
+      "decision": "held-at-3.0.7",
+      "reason": "artifact predates upstream revert for encased-fan airflow regression"
+    }
+  ],
+  "aquaticCompatibility": {
+    "resources": 4,
+    "onlyIngredientIdsChanged": true,
+    "correctedPrefix": "upgrade_aquatic:elder_prismarine_",
+    "outputsAndChancesPreserved": true,
+    "startupRecipeErrorsBefore": 4,
+    "reloadRecipeErrorsBefore": 4,
+    "startupRecipeErrorsAfter": 0,
+    "reloadRecipeErrorsAfter": 0,
+    "finalDatapackPriority": true
+  },
+  "questInvariants": {
+    "chapters": 9,
+    "quests": 118,
+    "taskIds": 165,
+    "rewardIds": 134,
+    "duplicateIds": 0,
+    "missingDependencies": 0,
+    "cycles": 0
+  },
+  "clientSmoke": {
+    "disposable": true,
+    "offline": true,
+    "mainMenuReached": true,
+    "startupSeconds": 80.745,
+    "seasonHudSereneSeasonsCompatLoaded": true,
+    "seasonHudXaeroCompatLoaded": true,
+    "targetedErrors": 0,
+    "crashReports": 0,
+    "normalClose": true
+  },
+  "dedicatedServer": {
+    "disposable": true,
+    "reachedDone": true,
+    "startupSeconds": 39.440,
+    "reloadCompleted": true,
+    "loadedDimensionsSaved": 7,
+    "jvmExitCode": 0,
+    "newAddonErrors": 0
+  },
+  "supervisor": {
+    "disposablePort": 25578,
+    "directJavaOwnership": true,
+    "reachedDone": true,
+    "normalStop": true,
+    "allDimensionsSaved": true,
+    "jvmExited": true,
+    "portReleased": true,
+    "productionPortTouched": false
+  },
+  "performance": {
+    "disposablePort": 25579,
+    "serverJars": 206,
+    "startupSeconds": 83.07,
+    "scenariosAt20Tps": 4,
+    "peakWorkingSetMiB": 4971.5,
+    "peakUsedHeapMiB": 3632.5,
+    "fullGarbageCollections": 0,
+    "saveSeconds": 0.52,
+    "shutdownSeconds": 1.36,
+    "allDimensionsSaved": true,
+    "distantHorizonsShutdownComplete": true,
+    "jvmExitCode": 0,
+    "productionPortTouched": false
+  },
+  "personalDataPreserved": true,
+  "acceptedWarnings": [
+    {
+      "component": "Create 6.0.8 Backported Fixes 1.1.0",
+      "warning": "Mixin config requests create_6_0_8_backported_fixes.mixins.json.refmap.json while the JAR ships an empty create_6_0_8_backported_fixes.refmap.json",
+      "runtimeImpact": "none observed; both required mixins prepared, server reached Done, and client reached main menu"
+    }
+  ],
+  "liveServerTouched": false,
+  "liveWorldTouched": false,
+  "livePrismTouched": false,
+  "published": false,
+  "deployed": false
+}

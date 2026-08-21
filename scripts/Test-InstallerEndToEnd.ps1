@@ -91,14 +91,14 @@ try {
     if ((Get-Content -LiteralPath $preservedClientPath -Raw) -ne $personalSettingSentinel) { throw 'Packwiz reset a preserved mod-specific client setting.' }
     if ((Get-Content -LiteralPath $managedClientPath -Raw) -ne $managedV2) { throw 'Packwiz failed to update an ordinary managed client resource.' }
     $clientJars = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter *.jar)
-    if ($clientJars.Count -ne 235) { throw "Expected 235 client JARs; installed $($clientJars.Count)." }
+    if ($clientJars.Count -ne 240) { throw "Expected 240 client JARs; installed $($clientJars.Count)." }
 
     Copy-Item -LiteralPath $bootstrap -Destination (Join-Path $serverRoot 'packwiz-installer-bootstrap.jar')
     Push-Location $serverRoot
     try { & $java -jar 'packwiz-installer-bootstrap.jar' -g -s server $localPackUrl; $serverExit = $LASTEXITCODE } finally { Pop-Location }
     if ($serverExit -ne 0) { throw "Server Packwiz installation failed with exit code $serverExit" }
     $serverJars = @(Get-ChildItem -LiteralPath (Join-Path $serverRoot 'mods') -File -Filter *.jar)
-    if ($serverJars.Count -ne 202) { throw "Expected 202 server JARs; installed $($serverJars.Count)." }
+    if ($serverJars.Count -ne 206) { throw "Expected 206 server JARs; installed $($serverJars.Count)." }
     $compatibilityStatic = & $python (Join-Path $PSScriptRoot 'validate_integrated_compatibility.py') --project-root $projectRootResolved --mods-dir (Join-Path $serverRoot 'mods')
     if ($LASTEXITCODE -ne 0) { throw 'Integrated compatibility static validation failed.' }
     [IO.File]::WriteAllText((Join-Path $testRoot 'compatibility-static.json'), (($compatibilityStatic -join "`n") + "`n"), [Text.UTF8Encoding]::new($false))
@@ -207,6 +207,7 @@ try {
             nethersDelightString = $finalLog.Contains("nethersdelight:chopping_string - error: Unknown type 'minecraft:alternative'")
             tfDnvShroomPath = $finalLog.Contains('Unknown loot table called tf_dnv:dungeon_shroom')
             beautifyCandelabra = $finalLog.Contains("unknown string 'beautify:lamp_candleabra'")
+            aquaticAmbitionsRecipes = [regex]::IsMatch($finalLog, 'Parsing error loading recipe create_aquatic_ambitions:')
         }
         $globalLootModifierDecodeErrors = @([regex]::Matches($finalLog, 'Could not decode GlobalLootModifier')).Count
         $advancementParseErrors = @([regex]::Matches($finalLog, 'Parsing error loading custom advancement')).Count
@@ -223,6 +224,10 @@ try {
         if (-not $onlyKnownLootWarnings) { throw 'Found an unexpected loot-table warning outside the intentionally tolerated tf_dnv casket finding.' }
     }
 
+    $destinationCount = @([regex]::Matches(
+        [IO.File]::ReadAllText((Join-Path $hostRoot 'packwiz\index.toml')),
+        '(?m)^\[\[files\]\]$'
+    )).Count
     $report = [ordered]@{
         testedAt = (Get-Date).ToString('o')
         packUrl = $localPackUrl
@@ -236,7 +241,7 @@ try {
         personalShaderSettingsPreserved = $true
         modSpecificClientSettingsPreserved = $true
         managedClientResourcesStillUpdate = $true
-        packwizDestinationCount = 709
+        packwizDestinationCount = $destinationCount
         serverReachedDone = (-not $SkipServerLaunch)
         questParserLoaded = if ($SkipServerLaunch) { $null } else { $questParserLoaded }
         compatibilityStaticValidation = $true

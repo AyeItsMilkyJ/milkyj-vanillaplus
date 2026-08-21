@@ -1,85 +1,85 @@
 {
-    "generatedAt":  "2026-08-12T13:15:57.4034592+10:00",
-    "source":  "audit/questbook-legacy-1.8.0",
-    "chapterCount":  9,
-    "questCount":  118,
-    "taskIdCount":  165,
-    "rewardIdCount":  134,
-    "manualCheckmarkQuests":  61,
-    "automaticDetectionQuests":  57,
-    "existingQuestBlocksRetained":  109,
-    "legacyQuestBlocksRemovedFromVisibleGuide":  287,
-    "baselineIdComparison":  "compared with local v1.0.0 tag",
-    "baselineDefinitionIdsFound":  429,
-    "baselineDefinitionIdsPreserved":  420,
-    "intentionallyRemovedBaselineIds":  9,
-    "unexpectedMissingBaselineIds":  0,
-    "duplicateIds":  0,
-    "duplicateQuestIds":  0,
-    "duplicateTaskIds":  0,
-    "duplicateRewardIds":  0,
-    "unsafeSignedIds":  0,
-    "unresolvedDependencies":  0,
-    "cyclicOrUnreachableQuests":  0,
-    "referencedItemIds":  98,
-    "chapters":  [
-                     {
-                         "Chapter":  "WHERE THE FUCK DO I START?",
-                         "File":  "welcome.snbt",
-                         "Quests":  14
-                     },
-                     {
-                         "Chapter":  "Surviving the First Night",
-                         "File":  "first_days.snbt",
-                         "Quests":  10
-                     },
-                     {
-                         "Chapter":  "Food That Isn\u0027t Raw Chicken",
-                         "File":  "homestead.snbt",
-                         "Quests":  13
-                     },
-                     {
-                         "Chapter":  "Create Without Having a Brain Aneurysm",
-                         "File":  "create_basics.snbt",
-                         "Quests":  22
-                     },
-                     {
-                         "Chapter":  "Stop Living Out of 46 Chests",
-                         "File":  "travel_storage.snbt",
-                         "Quests":  11
-                     },
-                     {
-                         "Chapter":  "Exploration Without Getting Completely Lost",
-                         "File":  "new_horizons.snbt",
-                         "Quests":  15
-                     },
-                     {
-                         "Chapter":  "Fossils, Archaeology and Dinosaurs",
-                         "File":  "archaeology.snbt",
-                         "Quests":  10
-                     },
-                     {
-                         "Chapter":  "Vehicles and Transport",
-                         "File":  "vehicles.snbt",
-                         "Quests":  9
-                     },
-                     {
-                         "Chapter":  "Dangerous Shit and Endgame",
-                         "File":  "endgame.snbt",
-                         "Quests":  14
-                     }
-                 ],
-    "absentModTutorialContentRemoved":  [
-                                            "Botany Pots",
-                                            "Botany Trees",
-                                            "Tinkers\u0027 Construct"
-                                        ],
-    "explicitlyNotAdded":  [
-                               "Immersive Engineering",
-                               "Create Crafts \u0026 Additions",
-                               "Create Diesel Generators",
-                               "Create Tinkers\u0027 Compat",
-                               "Create Contraption Terminals",
-                               "Bells \u0026 Whistles"
-                           ]
+  "generatedAt": "2026-08-22T03:36:06.8254115+10:00",
+  "source": "audit/questbook-legacy-1.8.0",
+  "chapterCount": 9,
+  "questCount": 118,
+  "taskIdCount": 165,
+  "rewardIdCount": 134,
+  "manualCheckmarkQuests": 61,
+  "automaticDetectionQuests": 57,
+  "existingQuestBlocksRetained": 109,
+  "legacyQuestBlocksRemovedFromVisibleGuide": 287,
+  "baselineIdComparison": "compared with local v1.0.0 tag",
+  "baselineDefinitionIdsFound": 429,
+  "baselineDefinitionIdsPreserved": 420,
+  "intentionallyRemovedBaselineIds": 9,
+  "unexpectedMissingBaselineIds": 0,
+  "duplicateIds": 0,
+  "duplicateQuestIds": 0,
+  "duplicateTaskIds": 0,
+  "duplicateRewardIds": 0,
+  "unsafeSignedIds": 0,
+  "unresolvedDependencies": 0,
+  "cyclicOrUnreachableQuests": 0,
+  "referencedItemIds": 98,
+  "chapters": [
+    {
+      "Chapter": "WHERE THE FUCK DO I START?",
+      "File": "welcome.snbt",
+      "Quests": 14
+    },
+    {
+      "Chapter": "Surviving the First Night",
+      "File": "first_days.snbt",
+      "Quests": 10
+    },
+    {
+      "Chapter": "Food That Isn't Raw Chicken",
+      "File": "homestead.snbt",
+      "Quests": 13
+    },
+    {
+      "Chapter": "Create Without Having a Brain Aneurysm",
+      "File": "create_basics.snbt",
+      "Quests": 22
+    },
+    {
+      "Chapter": "Stop Living Out of 46 Chests",
+      "File": "travel_storage.snbt",
+      "Quests": 11
+    },
+    {
+      "Chapter": "Exploration Without Getting Completely Lost",
+      "File": "new_horizons.snbt",
+      "Quests": 15
+    },
+    {
+      "Chapter": "Fossils, Archaeology and Dinosaurs",
+      "File": "archaeology.snbt",
+      "Quests": 10
+    },
+    {
+      "Chapter": "Vehicles and Transport",
+      "File": "vehicles.snbt",
+      "Quests": 9
+    },
+    {
+      "Chapter": "Dangerous Shit and Endgame",
+      "File": "endgame.snbt",
+      "Quests": 14
+    }
+  ],
+  "absentModTutorialContentRemoved": [
+    "Botany Pots",
+    "Botany Trees",
+    "Tinkers' Construct"
+  ],
+  "explicitlyNotAdded": [
+    "Immersive Engineering",
+    "Create Crafts & Additions",
+    "Create Diesel Generators",
+    "Create Tinkers' Compat",
+    "Create Contraption Terminals",
+    "Bells & Whistles"
+  ]
 }

@@ -1,6 +1,6 @@
 # MilkyCraft Vanilla+ — player features and evolution
 
-This document describes only systems confirmed in the current `1.9.0-rc1` Forge 1.20.1 pack. Library mods are not advertised as gameplay features, and removed or rejected additions are not presented as installed.
+This document describes only systems confirmed in the current `1.9.0-rc2` Forge 1.20.1 candidate. Library mods are not advertised as gameplay features, and removed or rejected additions are not presented as installed.
 
 ## The short version
 
@@ -9,7 +9,7 @@ MilkyCraft Vanilla+ is a multiplayer-friendly adventure and homestead pack built
 Current foundation:
 
 - Minecraft 1.20.1 with Forge 47.4.10.
-- 235 client JARs and 202 dedicated-server JARs after side classification.
+- 240 client JARs and 206 dedicated-server JARs after side classification.
 - 118 original pack quests across 9 chapters.
 - Seven managed resource-pack choices plus ten optional shader choices in the mate installer.
 - Dedicated-server view distance 12 and simulation distance 6.
@@ -46,13 +46,13 @@ Doggy Talents Next, Domestication Innovation, Naturalist, Alex's Mobs, Critters 
 
 ### 4. Engineering and transport
 
-Create 6 is supported by Create: Steam 'n' Rails, Enchantment Industry, Central Kitchen, Slice & Dice, Connected, Copycats+, Deco, Rechiseled: Create and Create Ultimine. Players can build mechanical processing lines, farms, logistics, trains and experience automation.
+Create 6 is supported by Create: Steam 'n' Rails, Enchantment Industry, Central Kitchen, Slice & Dice, Connected, Copycats+, Deco, Rechiseled: Create and Create Ultimine. The rc2 expansion adds Aquatic Ambitions for focused ocean processing, Components and Additions for compact kinetic controls, and Compatible Storage so supported containers from the existing mod stack behave correctly on moving contraptions. A small exact-version backport also repairs Create 6.0.8's placard Schematicannon requirement and Xaero train-map scaling bugs.
 
 Travel also includes Small Ships and upgrades, Immersive Aircraft and AstikorCarts. Waystones, Nature's Compass, Explorer's Compass, Xaero's minimap/world map and Distant Horizons make long expeditions practical without removing survival preparation.
 
 ### 5. Storage and multiplayer quality of life
 
-Sophisticated Backpacks, Tom's Simple Storage, Storage Drawers, labels, shulker previews, Carry On and inventory/crafting helpers reduce chest-wall chaos. Corpse provides recoverable death storage. Jade explains blocks and entities, JEI remains the recipe authority, Polymorph resolves recipe collisions, and Create Ponder teaches machine layouts.
+Sophisticated Backpacks, Tom's Simple Storage, Storage Drawers, labels, shulker previews, Carry On and inventory/crafting helpers reduce chest-wall chaos. Corpse provides recoverable death storage. Jade explains blocks and entities, JEI remains the recipe authority, Polymorph resolves recipe collisions, and Create Ponder teaches machine layouts. SeasonHUD is client-only and makes the already-installed Serene Seasons cycle visible without adding server tick work.
 
 Other quality-of-life features include Ultimine/VeinMiner-style excavation, falling trees, comfort items, easier anvils and enchanting, visual workbenches, equipment comparison, enchantment descriptions, advancement plaques, third-person improvements, zoom, controller/search helpers and clearer HUD information. Simple Voice Chat was removed because the group uses Discord.
 
@@ -106,6 +106,8 @@ Compatibility work has repaired:
 - Beautify's misspelled candelabra advancement item.
 - Twilight Forest Dungeons & Villages loot-table paths.
 - Doggy Talents/Farmer's Delight rice tags.
+- Aquatic Ambitions' four invalid Upgrade Aquatic prismarine-coral inputs.
+- Enchantment Industry/Clumps merged-XP handling through the 1.4.1 maintenance release.
 - stale JEI, Guard Villagers and Quark configuration keys.
 - missing Decorative Blocks and hanging-flower-pot models.
 - exact Chimes, Naturalist, Alex's Caves and Supplementaries sound paths.

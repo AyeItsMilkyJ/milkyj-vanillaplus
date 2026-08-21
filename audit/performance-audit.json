@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
-  "auditedAt": "2026-08-13T01:24:15.8135424+10:00",
-  "branch": "integration/v1.9.0-rc1-final",
-  "scope": "read-only live configuration inspection plus disposable clean-world benchmark",
+  "auditedAt": "2026-08-22T04:18:36.9623132+10:00",
+  "branch": "feature/create-and-content-expansion",
+  "scope": "retained host/configuration facts from the read-only 2026-08-13 RC1 inspection plus the current RC2 disposable clean-world benchmark; live state was not reread",
   "liveServerWorldOrPrismTouched": false,
   "productionPortTouched": false,
   "performanceConfigurationChanged": false,
   "environment": {
+    "evidenceDate": "2026-08-13",
     "os": "Microsoft Windows 11 Pro 10.0.26200",
     "cpu": "12th Gen Intel(R) Core(TM) i7-12700KF",
     "physicalCores": 12,
@@ -16,7 +17,7 @@
     "java": "Temurin OpenJDK 17.0.19+10",
     "minecraft": "1.20.1",
     "forge": "47.4.10",
-    "serverJarCount": 203
+    "serverJarCount": 206
   },
   "currentJVM": {
     "arguments": [
@@ -44,16 +45,15 @@
     "source": "audit/performance-benchmark.json",
     "testPort": 25579,
     "status": "PASS",
-    "startupSecondsProcessToDone": 98.77,
-    "startupSecondsMinecraftDonePhase": 56.829,
+    "startupSecondsProcessToDone": 83.07,
     "freshChunkyChunks": 289,
-    "freshChunkySeconds": 21,
-    "freshChunkyApproxChunksPerSecond": 13.8,
-    "saveSeconds": 0.51,
-    "shutdownSeconds": 1.46,
+    "freshChunkySeconds": 28,
+    "freshChunkyApproxChunksPerSecond": 10.3,
+    "saveSeconds": 0.52,
+    "shutdownSeconds": 1.36,
     "fullGcCountAcrossMeasuredScenarios": 0,
-    "maximumSampledHeapUsedMiB": 3616.9,
-    "maximumSampledWorkingSetMiB": 4955.8,
+    "maximumSampledHeapUsedMiB": 3632.5,
+    "maximumSampledWorkingSetMiB": 4971.5,
     "allScenariosHeld20Tps": true,
     "allSevenLoadedDimensionsSaved": true,
     "distantHorizonsClosed": true,
@@ -63,9 +63,9 @@
   },
   "stressBoundary": {
     "status": "FAIL_AS_DESIGNED_AND_REPLACED",
-    "workload": "Eight back-to-back far-region 4x4 chunk forceload commands during modded world generation.",
+    "workload": "Eight far single-chunk /forceload requests queued every five seconds during modded world generation.",
     "result": "A single tick exceeded 60 seconds and the disposable server watchdog stopped the JVM.",
-    "authoritativeHarnessChange": "Spaced eight single-chunk requests; final run passed.",
+    "authoritativeHarnessChange": "Wait for each Marked chunk completion, then allow a ten-second cooldown before requesting the next chunk; final run passed.",
     "productionImpact": "None; disposable world and port only."
   },
   "optimizationMods": [
@@ -80,7 +80,7 @@
     {"name": "Embeddium", "side": "client", "assessment": "KEEP; correctly client-only JAR"},
     {"name": "Entity Culling", "side": "client", "assessment": "KEEP; correctly client-only JAR"},
     {"name": "ImmediatelyFast", "side": "client", "assessment": "KEEP; correctly client-only JAR"},
-    {"name": "Distant Horizons", "side": "both", "assessment": "KEEP FOR RC1; active server LOD value, TEST FIRST tuning"}
+    {"name": "Distant Horizons", "side": "both", "assessment": "KEEP FOR RC2; active server LOD value, TEST FIRST tuning"}
   ],
   "unnecessaryServerConfigs": [
     "config/embeddium-fingerprint.json",

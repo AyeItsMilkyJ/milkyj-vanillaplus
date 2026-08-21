@@ -33,12 +33,12 @@ $stopped = [ordered]@{
 }
 [IO.File]::WriteAllText((Join-Path $testRoot 'stop-result.json'), (($stopped | ConvertTo-Json) + "`r`n"), [Text.UTF8Encoding]::new($false))
 $audit = [ordered]@{
-    testedAt = $stopped.stoppedAt; candidate = '1.9.0-rc1'; lanAddress = $state.lanAddress
+    testedAt = $stopped.stoppedAt; candidate = '1.9.0-rc2'; lanAddress = $state.lanAddress
     packHttpPort = $state.packHttpPort; minecraftPort = $state.minecraftPort
     productionPortTouched = $false; serverJarCount = $state.serverJarCount
     serverReachedDone = $reachedDone; questParserLoaded = $questsLoaded; chapterCount = 9; questCount = 118
     allLoadedDimensionsSaved = $saved; supervisorStopped = $stopped.supervisorStopped; httpStopped = $stopped.httpStopped
-    zip = 'dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-r3-Prism.zip'
+    zip = 'dist/MilkyJ-VanillaPlus-1.9.0-rc2-LAN-TEST-Prism.zip'
     zipSha256 = (Get-FileHash -LiteralPath $state.zip -Algorithm SHA256).Hash.ToLowerInvariant()
     twoClientManualInteractionResult = 'NOT RUN'
     firewallOrRouterChanged = $false; liveServerWorldOrPrismTouched = $false

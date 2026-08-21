@@ -167,6 +167,6 @@ The focused one-console harness at port 25579 also passed inline supervisor owne
 
 The supervisor-resilience harness at port 25581 injected the exact historical broken-pipe `HostException`, rejected a live unrelated recycled PID, force-ended a disposable supervisor while its fake Minecraft child remained online, and then ended the child. It confirmed no escaped console exception, continued file logging, cleared terminal process identities, reported the orphan as **RUNNING / UNMANAGED** and update-unsafe, blocked a duplicate start, reconciled state only after every real process/listener was gone, and completed a clean recovery launch/save/exit. It never used port 25565 or a live path.
 
-The real Forge integration at port 25578 used a read-only clone of the current 202-mod server payload while excluding the world and private server files. It passed direct Java ownership, reached `Done` in 100.169 seconds, accepted `save-all flush` and the normal `stop` command, saved all loaded dimensions, exited the JVM, and released the port.
+The latest real Forge integration at port 25578 used the clean disposable 206-JAR Packwiz server installation; it did not read a live server path, world or private server file. It passed direct Java ownership, reached `Done` in 93.28 seconds, accepted the normal `stop` command, saved all loaded dimensions, exited the JVM, and released the port.
 
 Evidence: `audit/server-infrastructure-tests.json`, `audit/visible-server-console.json`, `audit/server-supervisor-resilience.json`, and `audit/forge-supervisor-integration.json`.

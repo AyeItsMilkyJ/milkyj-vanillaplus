@@ -223,7 +223,7 @@ The Packwiz index and repository ignore rules exclude `options.txt`, keybinding 
 
 Exact managed/excluded file and side reports are in `audit\mods.csv`, `audit\managed-files.csv`, and `audit\excluded-files.csv`.
 
-## Optional 1.9.0-rc1 multiplayer interaction gate
+## Optional release-candidate multiplayer interaction gate
 
 The automated manifest, clean-install, dedicated-server startup, save, and shutdown checks are required before publishing. The following manual multiplayer checks remain useful when quest or team behaviour changes; run them in disposable installations rather than using the live world.
 

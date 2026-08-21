@@ -1,26 +1,30 @@
 # Runtime health audit — 22 August 2026
 
-The current MilkyCraft Vanilla+ candidate has no missing mandatory Forge dependency, duplicate top-level mod ID, duplicate JAR payload, JAR hash mismatch, or client/server payload drift. The verified managed totals are 237 mod entries, 235 client JARs, and 202 dedicated-server JARs.
+The current MilkyCraft Vanilla+ `1.9.0-rc2` candidate has no missing mandatory Forge dependency, duplicate top-level mod ID, duplicate JAR payload, JAR hash mismatch, or client/server payload drift. The verified managed totals are 242 mod definitions, 240 client JARs, and 206 dedicated-server JARs.
 
-## Repairs made
+This document combines the earlier RC1 runtime-maintenance history with the current disposable RC2 revalidation. The RC2 expansion evidence is `audit/create-expansion-validation.json`; `audit/runtime-health-20260822.json` and the live-deployment section below describe the preceding RC1 maintenance pass. RC2 has not been deployed to the live server or Prism instance.
 
-- Fusion 1.3.12 is now client-only. Rechiseled's Fusion dependency is client-only, Modrinth marks the server environment unsupported, and no server mod requires it. This keeps all 235 client JARs and removes one unnecessary dedicated-server JAR without changing a mod version.
+## Earlier runtime repairs retained
+
+- Fusion 1.3.12 remains client-only. Rechiseled's Fusion dependency is client-only, Modrinth marks the server environment unsupported, and no server mod requires it. This continues to exclude one unnecessary dedicated-server JAR without changing Fusion's version.
 - Every affected PowerShell maintenance script now resolves its default project root after parameter binding. Running the scripts normally with `powershell.exe -File` no longer produces an empty-path error.
 - The selected local Prism instance's Packwiz pre-launch command was restored from the repository's tested template. A timestamped copy of the previous `instance.cfg` was saved first. No `options.txt`, controls, shader selection, saves, screenshots, accounts, or other personal Minecraft data was changed.
 - The visible server supervisor now contains the exact historical Windows broken-console failure. Console rendering is optional, file/state logging remains authoritative, process identity uses more than a PID, stale state cannot impersonate a running server, and an orphaned Java process is reported as **RUNNING / UNMANAGED** and remains update-unsafe.
 - The compatibility end-to-end test now accepts the improved result of zero loot-table warnings while still failing on any unexpected warning.
 
-## Validation result
+## RC2 disposable validation result
 
-A clean Packwiz update installed 235 client JARs and 202 server JARs. It preserved personal options, the keybinding container, screenshots, saves, shader settings, custom shaderpacks, and preserved mod-specific client preferences. Fusion was present on the client and absent on the server.
+A clean Packwiz update installed 240 client JARs and 206 server JARs. It preserved personal options, the keybinding container, screenshots, saves, shader settings, custom shaderpacks, and preserved mod-specific client preferences. Fusion and SeasonHUD were present on the client and absent from the server as classified.
 
-The fresh 202-JAR Forge server reached `Done`, loaded all 118 quests and the compatibility datapack at final priority, reloaded data successfully, produced no targeted Domestication Innovation, Nether's Delight, Beautify, TF D&V, or rice compatibility error, saved all seven loaded dimensions, exited with code 0, and released its port. The same 202-JAR payload also passed the real supervisor integration: direct Java ownership, `Done`, normal save/stop, JVM exit, and port release.
+The fresh 206-JAR Forge server reached `Done`, loaded all 118 quests and the compatibility datapack at final priority, reloaded data successfully, produced no targeted Domestication Innovation, Nether's Delight, Beautify, TF D&V, rice, or Aquatic Ambitions compatibility error, saved all seven loaded dimensions, exited with code 0, and released its port. The same 206-JAR payload also passed the real supervisor integration: direct Java ownership, `Done`, normal save/stop, JVM exit, and port release.
+
+## Existing launcher and supervisor evidence
 
 The launcher suites passed scheduled restart, visible one-console command forwarding, no second shell, exact `0xE9` broken-pipe injection, recycled-PID rejection, textual diagnostic false-positive rejection, unmanaged-process protection, stale-state reconciliation, duplicate-start/update blocking, clean recovery launch, and normal saved shutdown. No disposable test used production port 25565.
 
-## Live deployment safety
+## Historical RC1 live deployment safety
 
-The live server was confirmed stopped before changes. A new cold backup including the world was created and validated. The live Fusion JAR was moved to a timestamped recoverable quarantine, not deleted. The hardened management tools and root launchers were installed with previous copies preserved in deployment backups. The world was not opened or modified, and the final status is **STOPPED**, port 25565 is not listening, and updates are reported safe.
+During the earlier RC1 runtime-maintenance pass, the live server was confirmed stopped before changes. A new cold backup including the world was created and validated. The live Fusion JAR was moved to a timestamped recoverable quarantine, not deleted. The hardened management tools and root launchers were installed with previous copies preserved in deployment backups. The world was not opened or modified, and the final status was **STOPPED**, port 25565 was not listening, and updates were reported safe. None of those live operations was repeated for RC2.
 
 ## Known upstream limitations left intact
 

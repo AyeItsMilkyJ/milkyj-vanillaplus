@@ -1,6 +1,6 @@
 # MilkyCraft Vanilla+ quest progression
 
-Release candidate: `1.9.0-rc1`
+Release candidate: `1.9.0-rc2`
 Minecraft: `1.20.1`
 Forge: `47.4.10`
 
@@ -61,7 +61,7 @@ Create is the largest chapter because it is the pack's deepest connected system.
 19. tracks, stations, carriage assembly, driving and Steam 'n' Rails;
 20. schedules, signals and useful train service;
 21. Create: Enchantment Industry and safe experience handling;
-22. the installed-addon map, including Create Connected, Deco, Rechiseled Create and Create Ultimine.
+22. the installed-addon map, including Connected, Deco, Copycats, Rechiseled Create, Aquatic Ambitions, Compatible Storage, Components and Additions and Create Ultimine.
 
 Every Create lesson tells the player to verify the installed recipe or use Ponder. It never assumes content from Crafts & Additions, Diesel Generators, Bells & Whistles, Contraption Terminals, Immersive Engineering or another uninstalled expansion.
 

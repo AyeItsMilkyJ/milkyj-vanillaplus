@@ -55,7 +55,7 @@ All tests use disposable installations and a non-production server address that 
 
 | Area | Required proof | Current result |
 |---|---|---|
-| Normal client | Packwiz update succeeds and Forge reaches the main menu with creator tooling omitted | Fresh disposable Packwiz client install passed with 235 managed JARs and personal settings preserved. Interactive main-menu retest was not run because the isolated Prism root had no authenticated owned-game account. |
+| Normal client | Packwiz update succeeds and Forge reaches the main menu with creator tooling omitted | Fresh disposable Packwiz client install passed with 240 managed JARs and personal settings preserved. An isolated offline Prism profile reached the main menu and closed normally; no account data or live Prism files were copied. |
 | Creator client | Packwiz option installs the creator JAR and Forge reaches the main menu | Blocked: Recordium fails module-layer resolution before mod construction. |
 | Free Camera client | Forge reaches the main menu with the legacy Free Camera JAR | Blocked: artifact requires JavaFML 62 while the pack supplies 47. |
 | Dedicated server | Clean server reaches `Done`, saves all dimensions, stops normally and has no creator JAR | Revalidated separately; creator candidates are absent from Packwiz production metadata. |

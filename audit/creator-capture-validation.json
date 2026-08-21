@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-21T16:35:02.574262+00:00",
+  "checkedAt": "2026-08-21T18:21:59.313963+00:00",
   "result": "PASS",
   "pack": {
     "publicName": "MilkyCraft Vanilla+",
     "minecraft": "1.20.1",
     "forge": "47.4.10",
-    "packwizVersion": "1.9.0-rc1"
+    "packwizVersion": "1.9.0-rc2"
   },
   "production": {
     "payloadChanged": false,
-    "modMetafiles": 237,
+    "modMetafiles": 242,
     "sideCounts": {
-      "both": 200,
-      "client": 35,
+      "both": 204,
+      "client": 36,
       "server": 2
     },
-    "cleanManagedClientJarCount": 235,
-    "cleanManagedServerJarCount": 202,
+    "cleanManagedClientJarCount": 240,
+    "cleanManagedServerJarCount": 206,
     "creatorJarLeakage": false
   },
   "candidates": [
@@ -101,17 +101,17 @@
     {
       "name": "production side classification",
       "result": "PASS",
-      "detail": "side counts: {'both': 200, 'client': 35, 'server': 2}"
+      "detail": "side counts: {'both': 204, 'client': 36, 'server': 2}"
     },
     {
       "name": "clean managed client JAR count",
       "result": "PASS",
-      "detail": "observed 235, expected 235"
+      "detail": "observed 240, expected 240"
     },
     {
       "name": "clean managed server JAR count",
       "result": "PASS",
-      "detail": "observed 202, expected 202"
+      "detail": "observed 206, expected 206"
     },
     {
       "name": "no creator artifact in source tree",
@@ -205,12 +205,12 @@
     }
   ],
   "runtimeMatrix": {
-    "packwizUpdate": "PASS - disposable client/server installs resolved 235/202 JARs and preserved personal client settings",
-    "normalClientFreshInteractiveLaunch": "NOT RUN - disposable Prism requires an authenticated owned-game account; no account data was copied",
+    "packwizUpdate": "PASS - disposable client/server installs resolved 240/206 JARs and preserved personal client settings",
+    "normalClientFreshInteractiveLaunch": "PASS - isolated offline Prism profile reached the main menu and closed normally; no account or live Prism files were copied",
     "creatorClientLaunch": "BLOCKED AT LOADER - Recordium module conflict; Free Camera JavaFML requirement mismatch",
     "multiplayerReplayCreateDhShaderDimensionsLongSession": "NOT RUN - no candidate passed the loader gate",
     "render": "NOT RUN - no candidate passed the loader gate",
-    "dedicatedServerBaseline": "PASS - disposable 202-JAR server reached Done; normal stop saved all seven loaded dimensions; JVM exited 0"
+    "dedicatedServerBaseline": "PASS - disposable 206-JAR server reached Done; normal stop saved all seven loaded dimensions; JVM exited 0"
   },
   "errors": []
 }

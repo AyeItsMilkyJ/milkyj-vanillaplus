@@ -12,7 +12,12 @@ $root = [IO.Path]::GetFullPath($ProjectRoot)
 $sourceDescription = 'clean disposable RC installation'
 if ($SourceServerRoot) {
     $source = [IO.Path]::GetFullPath($SourceServerRoot)
-    $sourceDescription = 'read-only current server payload clone (world and private server files excluded)'
+    $buildPrefix = [IO.Path]::GetFullPath((Join-Path $root 'build')).TrimEnd('\') + '\'
+    $sourceDescription = if ($source.StartsWith($buildPrefix, [StringComparison]::OrdinalIgnoreCase)) {
+        'clean disposable Packwiz server installation'
+    } else {
+        'read-only stopped server payload clone (world and private server files excluded)'
+    }
 } else {
     $source = Join-Path $root 'build\rc-lan-test\server'
 }
@@ -27,7 +32,7 @@ if ($SourceServerRoot) {
     $sourceJava = @(Get-CimInstance Win32_Process -Filter "Name='java.exe' OR Name='javaw.exe'" -ErrorAction SilentlyContinue |
         Where-Object { $_.CommandLine -and $_.CommandLine -match [regex]::Escape($source) })
     if ($sourceJava.Count -gt 0 -or (Get-NetTCPConnection -LocalPort $sourcePort -State Listen -ErrorAction SilentlyContinue)) {
-        throw 'Current server payload source is active; read-only cloning was refused until it is fully stopped.'
+        throw 'Selected server payload source is active; read-only cloning was refused until it is fully stopped.'
     }
 }
 if (Get-NetTCPConnection -LocalPort $TestPort -State Listen -ErrorAction SilentlyContinue) { throw "Test port $TestPort is already listening." }

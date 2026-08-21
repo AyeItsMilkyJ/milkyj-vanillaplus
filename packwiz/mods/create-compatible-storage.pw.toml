@@ -1,0 +1,12 @@
+name = "Create: Compatible Storage"
+filename = "create_compatible_storage-2.13.0-mc1.20.1-forge-all.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/5ofroZ5W/versions/XvfwEd3J/create_compatible_storage-2.13.0-mc1.20.1-forge-all.jar"
+hash-format = "sha512"
+hash = "13c6b4c77a73eba4ee181bf5a266a244628c96169ea3d9e62ed43e1cbd2584a21fd3ff294f2b4d8ed110bc9e8593a7f87c64830046823f6db28dc89f897aa549"
+
+[update.modrinth]
+mod-id = "5ofroZ5W"
+version = "XvfwEd3J"

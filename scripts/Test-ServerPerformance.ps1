@@ -27,8 +27,8 @@ if (-not $source.StartsWith(($project.TrimEnd('\') + '\'), [StringComparison]::O
 if (-not (Test-Path -LiteralPath (Join-Path $source 'mods') -PathType Container)) {
     throw "Disposable installed server source is missing: $source"
 }
-if (@(Get-ChildItem -LiteralPath (Join-Path $source 'mods') -File -Filter '*.jar').Count -ne 202) {
-    throw 'The disposable installed server source must contain exactly 202 mod JARs.'
+if (@(Get-ChildItem -LiteralPath (Join-Path $source 'mods') -File -Filter '*.jar').Count -ne 206) {
+    throw 'The disposable installed server source must contain exactly 206 mod JARs.'
 }
 $occupied = Get-NetTCPConnection -State Listen -LocalPort $TestPort -ErrorAction SilentlyContinue
 if ($occupied) { throw "Disposable benchmark port $TestPort is already in use." }
@@ -261,8 +261,19 @@ try {
         @(8192, 0), @(-8192, 0), @(0, 8192), @(0, -8192)
     )) {
         $x = $coordinate[0]; $z = $coordinate[1]
+        $commandStart = (Get-LogText $latestLog).Length
         Send-Command $process "execute in minecraft:overworld run forceload add $x $z"
-        Start-Sleep -Seconds 5
+        $commandCompleted = $false
+        $commandDeadline = (Get-Date).AddSeconds(50)
+        do {
+            Start-Sleep -Seconds 1
+            if ($process.HasExited) { throw 'Server exited while generating a spaced exploration chunk.' }
+            $commandCompleted = (Get-NewLogText $latestLog $commandStart) -match 'Marked chunk'
+        } while (-not $commandCompleted -and (Get-Date) -lt $commandDeadline)
+        if (-not $commandCompleted) { throw "Exploration forceload did not complete within 50 seconds at $x,$z." }
+        # Do not queue synthetic far-region generation like eight players
+        # teleporting simultaneously; allow each isolated load to settle first.
+        Start-Sleep -Seconds 10
     }
     $exploration = Measure-Resources $process $ExplorationSeconds $latestLog
     $exploration.tick = Get-TickSnapshot $process $latestLog
@@ -318,7 +329,7 @@ try {
         testPort = $TestPort
         minecraft = '1.20.1'
         forge = '47.4.10'
-        serverJarCount = 202
+        serverJarCount = 206
         java = [ordered]@{ executable = 'java.exe (absolute host path intentionally omitted)'; versionOutput = $javaVersion }
         jvmArguments = @('-Xmx8G', '-Xms2G', '-XX:+UseG1GC', '-XX:+ParallelRefProcEnabled', '-XX:MaxGCPauseMillis=150', '-XX:+DisableExplicitGC')
         serverSettings = [ordered]@{ viewDistance = 12; simulationDistance = 6; entityBroadcastRangePercentage = 80; syncChunkWrites = $false }

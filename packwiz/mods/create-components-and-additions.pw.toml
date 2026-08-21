@@ -1,0 +1,12 @@
+name = "Create: Components and Additions"
+filename = "create_ca-2.2 - 1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/exLPXAoq/versions/U8okwTMH/create_ca-2.2%20-%201.20.1.jar"
+hash-format = "sha512"
+hash = "ec145dc4c5812354103505f7196797a9922aad1a54e38948e171125154c517b0148fb3783d45a454f79db450adb3b85e679677c3ceebf6d6e601d5ce5a62ba62"
+
+[update.modrinth]
+mod-id = "exLPXAoq"
+version = "U8okwTMH"

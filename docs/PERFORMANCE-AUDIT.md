@@ -1,6 +1,6 @@
-# 1.9.0-rc1 performance audit
+# 1.9.0-rc2 performance audit
 
-Audit date: 13 August 2026. Scope: read-only inspection of the current Windows server configuration plus disposable testing under `build/performance-audit`. No live configuration, mod selection, server, world, Prism instance, port 25565, recipe, quest, or gameplay rule was changed.
+Audit updated: 22 August 2026. Scope: retained host/configuration facts from the read-only 13 August RC1 inspection plus a current RC2 disposable test under `build/performance-audit`. The benchmark did not reread or change the live installation, server, world, Prism instance, port 25565, recipe, quest, or gameplay rule.
 
 ## Outcome
 
@@ -8,12 +8,12 @@ The current configuration is healthy enough to continue RC testing. The repeatab
 
 These results do **not** measure the production world, real player concurrency, a developed Create base, or active trains. A stopped copied-world test remains mandatory.
 
-## Host and current runtime
+## Retained host and runtime context
 
 | Item | Audited value | Finding |
 |---|---:|---|
 | CPU | Intel Core i7-12700KF, 12 cores / 20 logical processors | Strong single-thread performance; enough background capacity, but Minecraft's main tick remains the bottleneck |
-| RAM | 31.8 GiB usable; about 19.2 GiB free at inspection | Suitable for hosting and playing on the same PC with the current server cap |
+| RAM | 31.8 GiB usable; about 19.2 GiB free at the 13 August inspection | Suitable for hosting and playing on the same PC with the current server cap; the free-memory figure is historical, not a current reading |
 | Java | Temurin OpenJDK 17.0.19+10, 64-bit HotSpot | Correct major version for Forge 1.20.1 |
 | Forge launch | `@user_jvm_args.txt @libraries/net/minecraftforge/forge/1.20.1-47.4.10/win_args.txt nogui` | Correct argument-file launch; no shell-concatenation issue |
 | Heap | `-Xms2G -Xmx8G` | Appropriate for this host and current measurements; leaves room for the local client |
@@ -50,21 +50,21 @@ Recommendation: **DO NOT CHANGE** simulation distance 6, the 80% broadcast range
 
 ## Disposable benchmark
 
-The repeatable harness is `scripts/Test-ServerPerformance.ps1`. It rebuilds only `build/performance-audit`, refuses port 25565, binds Minecraft to 25579, requires Java 17 and exactly 202 server JARs, and performs a normal save/stop. The authoritative machine output is `audit/performance-benchmark.json`.
+The repeatable harness is `scripts/Test-ServerPerformance.ps1`. It rebuilds only `build/performance-audit`, refuses port 25565, binds Minecraft to 25579, requires Java 17 and the current 206-server-JAR payload, and performs a normal save/stop. The table below is the authoritative `1.9.0-rc2` benchmark from `audit/performance-benchmark.json`.
 
 | Scenario | Duration | Average / peak working set | Average / peak used heap | End snapshot | Entities | GC during sample |
 |---|---:|---:|---:|---:|---:|---:|
-| Clean idle | 31.32 s | 4,912 / 4,956 MiB | 3,170 / 3,515 MiB | 4.470 MSPT, 20 TPS | 182 | 6 young, 0 full |
-| Fresh Chunky generation | 25.80 s | 4,921 / 4,943 MiB | 3,076 / 3,401 MiB | 5.811 MSPT, 20 TPS | 178 | 16 young, 0 full |
-| Spaced far exploration | 46.19 s | 4,931 / 4,947 MiB | 3,104 / 3,478 MiB | 5.239 MSPT, 20 TPS | 278 | 24 young, 0 full |
-| Synthetic loaded base | 46.20 s | 4,955 / 4,956 MiB | 3,253 / 3,617 MiB | 11.513 MSPT, 20 TPS | 251 | 5 young, 0 full |
+| Clean idle | 31.80 s | 4,940 / 4,955 MiB | 2,807 / 3,385 MiB | 6.353 MSPT, 20 TPS | 221 | 4 young, 0 full |
+| Fresh Chunky generation | 31.15 s | 4,944 / 4,967 MiB | 2,904 / 3,531 MiB | 8.650 MSPT, 20 TPS | 204 | 17 young, 0 full |
+| Completion-gated far exploration | 46.35 s | 4,962 / 4,962 MiB | 3,217 / 3,616 MiB | 5.603 MSPT, 20 TPS | 281 | 2 young, 0 full |
+| Synthetic loaded base | 46.36 s | 4,971 / 4,972 MiB | 3,213 / 3,633 MiB | 7.026 MSPT, 20 TPS | 265 | 2 young, 0 full |
 
 Additional results:
 
-- process start to `Done`: 98.77 seconds; Minecraft's internal `Done` phase reported 56.829 seconds;
-- Chunky generated 289 fresh Overworld chunks at a far center in 21 seconds (about 13.8 chunks/second overall);
-- explicit `save-all flush`: 0.51 seconds to completion marker;
-- shutdown: 1.46 seconds;
+- process start to `Done`: 83.07 seconds;
+- Chunky generated 289 fresh Overworld chunks at a far center in 28 seconds (about 10.3 chunks/second overall);
+- explicit `save-all flush`: 0.52 seconds to completion marker;
+- shutdown: 1.36 seconds;
 - Overworld, Nether, End, Aether, Twilight Forest, Otherside, and Past all saved;
 - Distant Horizons closed its server world, worldgen pools, and seven SQLite connections;
 - JVM exit code 0; and
@@ -72,7 +72,7 @@ Additional results:
 
 Forge's TPS output was sampled immediately after each workload and is cumulative rather than a per-tick profiler. The synthetic base requested 24 villagers, 32 cows, and 16 bees in a 12×12 forced area. It is a bounded scheduler/entity test, not a claim about a real base or Create machinery.
 
-The failed exploratory stress attempt is also useful evidence: forcing eight far 4×4-chunk regions back-to-back blocked a single worldgen tick for 60 seconds and the normal watchdog stopped the disposable server. The final harness instead spaces eight single-chunk requests and passes. Operational consequence: run one bounded Chunky job during maintenance; do not stack Chunky, mass `/forceload`, Distant Horizons generation, and active players.
+The failed exploratory stress attempt is also useful evidence: queuing eight far `/forceload` requests every five seconds blocked a single worldgen tick for 60 seconds and the normal watchdog stopped the disposable server. Its crash report named vanilla `ForceLoadCommand`/chunk loading and identified no suspected mod. The final harness waits for each `Marked chunk` completion and then allows a ten-second cooldown before requesting the next chunk; that run passed. Operational consequence: run one bounded Chunky job during maintenance; do not stack Chunky, mass `/forceload`, Distant Horizons generation, and active players.
 
 ## Distant Horizons
 
@@ -90,7 +90,7 @@ Installed: Distant Horizons 3.2.0-b, side `both`. Its dedicated-server component
 
 The official DH FAQ says clients can operate alone, but then must explore ordinary chunks to build/save their own LODs. With the mod on both Forge server and client, LODs can be generated/sent automatically and real-time distant updates are available. See the [official multiplayer FAQ](https://gitlab.com/distant-horizons-team/distant-horizons/-/wikis/1-user-guide/1-frequently-asked-questions/1-general/General) and [server-owner guidance](https://gitlab.com/distant-horizons-team/distant-horizons/-/wikis/1-user-guide/1-frequently-asked-questions/5-server-owners/Server-Owners).
 
-Recommendation: **TEST FIRST; retain it on the server for RC1**. Its current `both` classification is correct for the desired shared long-distance experience. Removing only the server JAR would not stop DH clients rendering their own previously/explored LODs, but it would remove server-provided distant generation, synchronization, and real-time updates. The prior lingering-JVM symptom was not reproduced: the clean compatibility run and performance run both exited normally, with the performance run explicitly proving DH closure. Because it is intermittent, monitor rather than declare it fixed.
+Recommendation: **TEST FIRST; retain it on the server for RC2**. Its current `both` classification is correct for the desired shared long-distance experience. Removing only the server JAR would not stop DH clients rendering their own previously/explored LODs, but it would remove server-provided distant generation, synchronization, and real-time updates. The prior lingering-JVM symptom was not reproduced: the clean compatibility run and performance run both exited normally, with the performance run explicitly proving DH closure. Because it is intermittent, monitor rather than declare it fixed.
 
 First DH experiments for a separate performance branch:
 

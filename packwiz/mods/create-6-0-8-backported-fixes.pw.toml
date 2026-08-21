@@ -1,0 +1,12 @@
+name = "Create 6.0.8 Backported Fixes"
+filename = "create_6_0_8_backported_fixes-1.1.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Wnfo63gL/versions/9OnlwTg9/create_6_0_8_backported_fixes-1.1.0.jar"
+hash-format = "sha512"
+hash = "cd98999593ac3970010bac8eeb44f1552306cfe1c2da5247ad510314fb03f8124ebeb00edbb7d3fca644d241a119a8cefc157984ffb1ae9796d8777fc3b2c57a"
+
+[update.modrinth]
+mod-id = "Wnfo63gL"
+version = "9OnlwTg9"

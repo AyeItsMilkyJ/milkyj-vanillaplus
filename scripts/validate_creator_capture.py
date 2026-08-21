@@ -27,12 +27,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--baseline-server-pass",
         action="store_true",
-        help="Record that the operator separately observed the disposable 202-JAR baseline reach Done and stop cleanly.",
+        help="Record that the operator separately observed the disposable 206-JAR baseline reach Done and stop cleanly.",
     )
     parser.add_argument(
         "--packwiz-e2e-pass",
         action="store_true",
         help="Record that the operator separately observed the disposable Packwiz client/server installation and preservation checks pass.",
+    )
+    parser.add_argument(
+        "--normal-client-main-menu-pass",
+        action="store_true",
+        help="Record that the operator separately observed an isolated offline Prism profile reach the main menu and close normally.",
     )
     parser.add_argument("--write-report", action="store_true")
     parser.add_argument("--report", type=Path, default=Path("audit/creator-capture-validation.json"))
@@ -121,8 +126,8 @@ def main() -> int:
         production_mod_text.append((metafile, metafile.read_text(encoding="utf-8").lower()))
 
     check("production side classification", not any("invalid side" in e for e in errors), f"side counts: {side_counts}")
-    check("clean managed client JAR count", len(client_jar_names) == 235, f"observed {len(client_jar_names)}, expected 235")
-    check("clean managed server JAR count", len(server_jar_names) == 202, f"observed {len(server_jar_names)}, expected 202")
+    check("clean managed client JAR count", len(client_jar_names) == 240, f"observed {len(client_jar_names)}, expected 240")
+    check("clean managed server JAR count", len(server_jar_names) == 206, f"observed {len(server_jar_names)}, expected 206")
 
     tracked = tracked_files(root)
     tracked_creator_jars = [path for path in tracked if path.startswith("creator-capture/") and path.lower().endswith(".jar")]
@@ -236,16 +241,20 @@ def main() -> int:
         "checks": checks,
         "runtimeMatrix": {
             "packwizUpdate": (
-                "PASS - disposable client/server installs resolved 235/202 JARs and preserved personal client settings"
+                "PASS - disposable client/server installs resolved 240/206 JARs and preserved personal client settings"
                 if args.packwiz_e2e_pass
                 else "NOT RUN IN THIS INVOCATION - use --packwiz-e2e-pass only after directly observing the disposable E2E run"
             ),
-            "normalClientFreshInteractiveLaunch": "NOT RUN - disposable Prism requires an authenticated owned-game account; no account data was copied",
+            "normalClientFreshInteractiveLaunch": (
+                "PASS - isolated offline Prism profile reached the main menu and closed normally; no account or live Prism files were copied"
+                if args.normal_client_main_menu_pass
+                else "NOT RUN IN THIS INVOCATION - use --normal-client-main-menu-pass only after directly observing the isolated offline Prism launch"
+            ),
             "creatorClientLaunch": "BLOCKED AT LOADER - Recordium module conflict; Free Camera JavaFML requirement mismatch",
             "multiplayerReplayCreateDhShaderDimensionsLongSession": "NOT RUN - no candidate passed the loader gate",
             "render": "NOT RUN - no candidate passed the loader gate",
             "dedicatedServerBaseline": (
-                "PASS - disposable 202-JAR server reached Done; normal stop saved all seven loaded dimensions; JVM exited 0"
+                "PASS - disposable 206-JAR server reached Done; normal stop saved all seven loaded dimensions; JVM exited 0"
                 if args.baseline_server_pass
                 else "NOT RUN IN THIS INVOCATION - use --baseline-server-pass only after directly observing the disposable run"
             )

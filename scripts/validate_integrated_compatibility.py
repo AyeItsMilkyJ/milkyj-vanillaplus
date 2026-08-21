@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the exact RC1 compatibility resources against the installed mod JARs."""
+"""Validate the exact compatibility resources against the installed mod JARs."""
 
 from __future__ import annotations
 
@@ -20,6 +20,8 @@ JAR_HASHES = {
     "aether-1.20.1-1.5.2-neoforge.jar": "b6b586eb6fdc9ce4b3645cab43642ba87817c5deadef4d87ab884e4fe20ef282",
     "tf_dnv-1.2.3.jar": "f6c4780c214c098a20b5d666f8ef0b8d6e92fa67a36f68f8259de1d9a12ed6f8",
     "DoggyTalentsNext-1.20.1-1.19.0.jar": "0992997355626d46077d62b29a63fa0ab83bcfac177dd34911ee53d18d30dbea",
+    "create_aquatic_ambitions-1.20.1-6.0.8-2.0.2.jar": "09c234982c5933ff6b1847b25ddf729835e8353ba9f0a75d9a5643c677e5b440",
+    "upgrade_aquatic-1.20.1-6.0.3.jar": "f710dee89a146936b0a126bb429f4f741efb4f7374d8ed1d9db5d0bab172e24c",
 }
 
 FIXED_RESOURCES = {
@@ -29,6 +31,10 @@ FIXED_RESOURCES = {
     "data/nethersdelight/loot_modifiers/chopping_string.json": "aa08932d7e997a595bf0dcfc285a3768e5d94e562bd9445c97b7d041e9fda586",
     "data/tf_dnv/loot_tables/chests/dungeon_shroom_barrel.json": "aed53ece9f961c5c86e859739ba0feb44e1ebee65a507a23b1005fd41af1ba56",
     "data/forge/tags/items/crops/rice.json": "c2cc5482b5b96ab57ec2c15ff6ba1de879b6eac46f7fdfbd607f0a8001792321",
+    "data/create_aquatic_ambitions/recipes/channeling/upgrade_aquatic/prismarine_coral.json": "fd4a3a3e8064a1401a5440ee5d861562e417d1619b90c24256f5f83d6aaa2f36",
+    "data/create_aquatic_ambitions/recipes/channeling/upgrade_aquatic/prismarine_coral_block.json": "125e899f1542b992b79c02ae07339c838ea27d0493eed645f1df74475b97ad46",
+    "data/create_aquatic_ambitions/recipes/channeling/upgrade_aquatic/prismarine_coral_fan.json": "c33468792ed0f072d9ca2b09963d5b1e2cd74e595fbd86249e4126da96fdd5db",
+    "data/create_aquatic_ambitions/recipes/channeling/upgrade_aquatic/prismarine_coral_shower.json": "a29e08fb6f9a3e47fac8bc56a47063d0c9e5ddef54439ea34160aa2d3c8dcc43",
 }
 
 
@@ -151,6 +157,24 @@ def main() -> int:
     require(jar_has(doggy, "assets/doggytalents/models/item/rice_grains.json"), "Doggy Talents rice_grains item is not installed")
     require(jar_has(doggy, "assets/doggytalents/models/item/uncooked_rice.json"), "Doggy Talents uncooked_rice item is not installed")
 
+    aquatic_ambitions = jars["create_aquatic_ambitions-1.20.1-6.0.8-2.0.2.jar"]
+    upgrade_aquatic = jars["upgrade_aquatic-1.20.1-6.0.3.jar"]
+    aquatic_repairs = {}
+    for stem in ("prismarine_coral", "prismarine_coral_block", "prismarine_coral_fan", "prismarine_coral_shower"):
+        relative = f"data/create_aquatic_ambitions/recipes/channeling/upgrade_aquatic/{stem}.json"
+        bad_item = f"upgrade_aquatic:dead_{stem}"
+        corrected_item = f"upgrade_aquatic:elder_{stem}"
+        original = jar_json(aquatic_ambitions, relative)
+        repaired = load_json(datapack / relative)
+        require(original["ingredients"] == [{"item": bad_item}], f"unexpected Aquatic Ambitions input: {stem}")
+        expected = json.loads(json.dumps(original))
+        expected["ingredients"][0]["item"] = corrected_item
+        require(repaired == expected, f"Aquatic Ambitions override changes more than the broken input: {stem}")
+        require(not jar_has(upgrade_aquatic, f"assets/upgrade_aquatic/models/item/dead_{stem}.json"), f"formerly broken Upgrade Aquatic item now exists: {stem}")
+        require(jar_has(upgrade_aquatic, f"assets/upgrade_aquatic/models/item/elder_{stem}.json"), f"corrected Upgrade Aquatic item is not installed: {stem}")
+        aquatic_repairs[stem] = {"from": bad_item, "to": corrected_item, "results": repaired["results"]}
+    require(not (datapack / "data/create_aquatic_ambitions/recipes/channeling/upgrade_aquatic/prismarine_coral_wall_fan.json").exists(), "an itemless wall-fan recipe override must not be added")
+
     for forbidden in ("create_central_kitchen", "aether", "relics"):
         require(not (datapack / "data" / forbidden).exists(), f"IGNORE SAFELY namespace was integrated: {forbidden}")
 
@@ -165,6 +189,7 @@ def main() -> int:
         "beautifyOnlyTypoChanged": True,
         "tfDnvShroomOnlyPathChanged": True,
         "doggyTalentsRiceAcceptedByForgeCropRecipes": True,
+        "aquaticAmbitionsOnlyIngredientsChanged": aquatic_repairs,
         "ignoredFindingsIntegrated": False,
     }
     print(json.dumps(report, indent=2))
