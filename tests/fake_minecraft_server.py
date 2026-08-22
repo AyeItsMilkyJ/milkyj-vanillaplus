@@ -42,6 +42,15 @@ def main() -> int:
     listener.listen(4)
     listener.settimeout(0.2)
     try:
+        if (root / "self-stop-clean.flag").exists():
+            # Simulates Minecraft's Swing-window close handler: the server owns
+            # the shutdown rather than receiving `stop` from the supervisor.
+            time.sleep(3)
+            append_log(latest, "[Server thread/INFO] [minecraft/MinecraftServer]: Stopping server")
+            append_log(latest, "[Server thread/INFO] [minecraft/MinecraftServer]: Saving players")
+            append_log(latest, "[Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds")
+            append_log(latest, "[Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved")
+            return 0
         for line in sys.stdin:
             command = line.strip()
             append_log(command_log, command)

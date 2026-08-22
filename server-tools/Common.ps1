@@ -249,9 +249,10 @@ function Get-ServerActivity([string]$ServerRoot) {
     $recordedSupervisorStale = $false
     $recordedServerStale = $false
     $lockHeld = Test-SupervisorLockHeld $serverRootResolved
-    # The background mode runs Server-Supervisor.ps1 in its own PowerShell
-    # process. The visible mode runs it inline from Start-Server.ps1 so Java can
-    # share that one console. Both command lines represent the same supervisor.
+    # Headless and Minecraft-GUI modes run Server-Supervisor.ps1 in their own
+    # hidden PowerShell process. Raw troubleshooting mode runs it inline from
+    # Start-Server.ps1 so Java can share that one console. All command lines
+    # represent the same supervisor identity.
     $supervisorIdentityPattern = '(?:Server-Supervisor|Start-Server)\.ps1'
     $backgroundSupervisorLaunchPattern = '(?i)(?:^|\s)-File\s+(?:"[^"]*[\\/]Server-Supervisor\.ps1"|[^\s"]*[\\/]Server-Supervisor\.ps1)(?:\s|$)'
     $escapedRoot = [regex]::Escape($serverRootResolved)
@@ -432,7 +433,7 @@ function Quote-WindowsArgument([string]$Value) {
     return '"' + ([regex]::Replace($Value, '(\\*)"', '$1$1\"') -replace '(\\+)$', '$1$1') + '"'
 }
 
-function Get-LaunchSpec([string]$ServerRoot, $Settings) {
+function Get-LaunchSpec([string]$ServerRoot, $Settings, [switch]$ServerGui) {
     if ([string]$Settings.launchExecutable) {
         $executable = [IO.Path]::GetFullPath([string]$Settings.launchExecutable)
         if (-not (Test-Path -LiteralPath $executable -PathType Leaf)) { throw "Configured server executable not found: $executable" }
@@ -449,5 +450,10 @@ function Get-LaunchSpec([string]$ServerRoot, $Settings) {
     if (-not (Test-Path -LiteralPath $jvmArgs -PathType Leaf)) { throw "Forge user_jvm_args.txt not found: $jvmArgs" }
     # Launch Java directly so this supervisor owns stdin and the true JVM PID. This
     # deliberately avoids legacy run.bat wrappers that may start another watchdog.
-    return [pscustomobject]@{ Executable=$java; Arguments=(('@user_jvm_args.txt', ('@' + $relativeArgs), 'nogui') -join ' ') }
+    # Forge/Minecraft creates its Swing server window only when `nogui` is absent.
+    # Keep headless mode as the safe default for Task Scheduler and unattended
+    # sessions; the operator-facing run.bat opts into the real server GUI.
+    $arguments = @('@user_jvm_args.txt', ('@' + $relativeArgs))
+    if (-not $ServerGui) { $arguments += 'nogui' }
+    return [pscustomobject]@{ Executable=$java; Arguments=($arguments -join ' ') }
 }

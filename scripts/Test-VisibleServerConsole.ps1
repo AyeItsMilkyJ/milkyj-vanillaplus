@@ -144,17 +144,22 @@ try {
     $results.rawJavaStdout = 'PASS'
     $results.rawJavaStderr = 'PASS'
 
+    $wrapperText = Get-Content -LiteralPath (Join-Path $tools 'RUN SERVER CONSOLE.bat') -Raw
+    if ($wrapperText -notmatch '(?i)-Interactive' -or $wrapperText -match '(?i)-ServerGui') {
+        throw 'RUN SERVER CONSOLE.bat does not use the raw one-window interactive path.'
+    }
     foreach ($wrapper in @('START SERVER.bat', 'Start-Server.bat')) {
-        $wrapperText = Get-Content -LiteralPath (Join-Path $tools $wrapper) -Raw
-        if ($wrapperText -notmatch '(?i)-Interactive' -or $wrapperText -match '(?im)^\s*start\s+') {
-            throw "$wrapper does not use the one-window interactive path."
+        $guiWrapperText = Get-Content -LiteralPath (Join-Path $tools $wrapper) -Raw
+        if ($guiWrapperText -notmatch '(?i)Launch-ServerGui\.vbs' -or $guiWrapperText -match '(?i)-Interactive') {
+            throw "$wrapper is not routed to the detached Minecraft GUI launcher."
         }
     }
     $interactiveBlock = Get-Content -LiteralPath $launchScript -Raw
     if ($interactiveBlock -notmatch '\$Interactive' -or $interactiveBlock -notmatch '& \$supervisor @supervisorParameters') {
         throw 'Start-Server.ps1 does not invoke the interactive supervisor inline.'
     }
-    $results.wrapperOneWindowPath = 'PASS'
+    $results.rawConsoleWrapper = 'PASS'
+    $results.guiWrappersSeparated = 'PASS'
 
     & (Join-Path $tools 'Stop-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath -TimeoutSeconds 15
     Wait-Until { $hostProcess.Refresh(); $hostProcess.HasExited } 10 'Interactive PowerShell host remained after a clean server stop.'
@@ -179,7 +184,7 @@ try {
     }
     $results.productionPortTouched = $false
     $results.liveServerWorldOrPrismTouched = $false
-    $results.manualAcceptanceStillRequired = 'Double-click live run.bat, observe one titled console, run list, then stop.'
+    $results.manualAcceptanceStillRequired = 'Use RUN SERVER CONSOLE.bat only when raw terminal troubleshooting is required.'
     $results.status = 'PASS'
 } finally {
     if ($hostProcess) {

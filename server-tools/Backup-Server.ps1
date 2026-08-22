@@ -10,6 +10,8 @@ param(
 . (Join-Path $PSScriptRoot 'Common.ps1')
 $serverRootResolved = Assert-ValidServerRoot (Resolve-ServerRoot $ServerRoot)
 $settings = Get-ServerSettings -ServerRoot $serverRootResolved -SettingsPath $SettingsPath
+$priorState = Get-ServerState $serverRootResolved
+$restartWithServerGui = [bool]($priorState -and $priorState.PSObject.Properties['serverGui'] -and $priorState.serverGui)
 $wasRunning = (Get-ServerActivity $serverRootResolved).Running
 if ($wasRunning -and -not $RestartIfRunning) {
     throw 'Cold backup refused while the server is active. Use -RestartIfRunning for a controlled stop, backup, and restart.'
@@ -99,7 +101,7 @@ try {
 } finally {
     if ($wasRunning) {
         if ($backupSucceeded) {
-            & (Join-Path $PSScriptRoot 'Start-Server.ps1') -ServerRoot $serverRootResolved -SettingsPath $SettingsPath
+            & (Join-Path $PSScriptRoot 'Start-Server.ps1') -ServerRoot $serverRootResolved -SettingsPath $SettingsPath -ServerGui:$restartWithServerGui
         } else {
             Write-Warning 'Backup failed after a controlled stop. The server was left stopped so the failure can be investigated safely.'
         }

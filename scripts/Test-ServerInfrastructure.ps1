@@ -83,6 +83,15 @@ function Wait-Until([scriptblock]$Condition, [int]$Seconds, [string]$Failure) {
     do { if (& $Condition) { return }; Start-Sleep -Milliseconds 250 } while ((Get-Date) -lt $deadline)
     throw $Failure
 }
+function Read-TestState([int]$Seconds = 5) {
+    $statePath = Join-Path $serverRoot 'server-management\state.json'
+    $deadline = (Get-Date).AddSeconds($Seconds)
+    do {
+        try { return (Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json) } catch [IO.IOException] { }
+        Start-Sleep -Milliseconds 100
+    } while ((Get-Date) -lt $deadline)
+    throw 'Disposable supervisor state remained unreadable.'
+}
 function Stop-DisposableProcess([int]$ProcessId) {
     $candidate = Get-CimInstance Win32_Process -Filter "ProcessId=$ProcessId" -ErrorAction SilentlyContinue
     if ($candidate -and $candidate.CommandLine -match 'fake_minecraft_server\.py' -and $candidate.CommandLine -match 'server-infrastructure-test') {
@@ -123,17 +132,34 @@ try {
     if (-not (Select-String -LiteralPath (Join-Path $serverRoot 'logs\latest.log') -SimpleMatch 'All dimensions are saved' -Quiet)) { throw 'Graceful stop did not record world save.' }
     $results.gracefulStop = 'PASS'
 
+    Remove-Item -LiteralPath (Join-Path $serverRoot 'logs\latest.log') -Force
+    New-Item -ItemType File -Path (Join-Path $serverRoot 'self-stop-clean.flag') -Force | Out-Null
+    & (Join-Path $tools 'Start-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath -ServerGui
+    Wait-Until {
+        $state = Read-TestState
+        $state.status -eq 'stopped' -and -not $state.serverPid -and -not $state.supervisorPid -and
+            $state.latestCrashOrRestartEvent -match 'Intentional Minecraft GUI shutdown' -and
+            -not (Get-NetTCPConnection -LocalPort $TestPort -State Listen -ErrorAction SilentlyContinue)
+    } 15 'A clean Minecraft-GUI-owned shutdown was treated as a crash or restarted.'
+    $cleanGuiState = Read-TestState
+    if (-not $cleanGuiState.serverGui -or [int]$cleanGuiState.restartCount -ne 0) {
+        throw 'Clean GUI shutdown state lost its launch mode or recorded a recovery restart.'
+    }
+    Remove-Item -LiteralPath (Join-Path $serverRoot 'self-stop-clean.flag') -Force
+    $results.cleanGuiShutdownRecognized = 'PASS'
+    $results.cleanGuiShutdownDidNotRestart = 'PASS'
+
     & (Join-Path $tools 'Start-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath
-    $beforeRestartState = Get-Content -LiteralPath (Join-Path $serverRoot 'server-management\state.json') -Raw | ConvertFrom-Json
+    $beforeRestartState = Read-TestState
     $beforeRestart = $beforeRestartState.serverPid
     & (Join-Path $tools 'Restart-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath
-    $afterRestart = (Get-Content -LiteralPath (Join-Path $serverRoot 'server-management\state.json') -Raw | ConvertFrom-Json).serverPid
+    $afterRestart = (Read-TestState).serverPid
     if ($beforeRestart -eq $afterRestart) { throw 'Restart did not produce a new launch PID.' }
     $results.restart = 'PASS'
 
     $crashPid = [int]$afterRestart
     Stop-DisposableProcess $crashPid
-    Wait-Until { $state=Get-Content -LiteralPath (Join-Path $serverRoot 'server-management\state.json') -Raw | ConvertFrom-Json; $state.restartCount -ge 1 -and $state.serverPid -and [int]$state.serverPid -ne $crashPid -and (Get-NetTCPConnection -LocalPort $TestPort -State Listen -ErrorAction SilentlyContinue) } 15 'Watchdog did not restart after simulated crash.'
+    Wait-Until { $state=Read-TestState; $state.restartCount -ge 1 -and $state.serverPid -and [int]$state.serverPid -ne $crashPid -and (Get-NetTCPConnection -LocalPort $TestPort -State Listen -ErrorAction SilentlyContinue) } 15 'Watchdog did not restart after simulated crash.'
     $results.simulatedCrash = 'PASS'
     $results.watchdogRestart = 'PASS'
     $results.restartBackoff = 'PASS'
@@ -141,7 +167,7 @@ try {
 
     New-Item -ItemType File -Path (Join-Path $serverRoot 'fail-always.flag') -Force | Out-Null
     try { & (Join-Path $tools 'Start-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath } catch { }
-    Wait-Until { $state=Get-Content -LiteralPath (Join-Path $serverRoot 'server-management\state.json') -Raw | ConvertFrom-Json; $state.status -eq 'failed-repeatedly' } 20 'Repeated-failure protection did not trip.'
+    Wait-Until { $state=Read-TestState; $state.status -eq 'failed-repeatedly' } 20 'Repeated-failure protection did not trip.'
     Remove-Item -LiteralPath (Join-Path $serverRoot 'fail-always.flag') -Force
     $results.repeatedFailureProtection = 'PASS'
 
@@ -171,7 +197,7 @@ try {
     New-Item -ItemType File -Path (Join-Path $serverRoot 'linger-on-stop.flag') -Force | Out-Null
     & (Join-Path $tools 'Start-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath
     try { & (Join-Path $tools 'Stop-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath -TimeoutSeconds 7 } catch { }
-    $lingerState = Get-Content -LiteralPath (Join-Path $serverRoot 'server-management\state.json') -Raw | ConvertFrom-Json
+    $lingerState = Read-TestState
     if (-not $lingerState.manualInterventionRequired -or -not (Get-Process -Id $lingerState.serverPid -ErrorAction SilentlyContinue)) { throw 'Lingering JVM safety behaviour was not observed.' }
     Stop-DisposableProcess ([int]$lingerState.serverPid)
     Remove-Item -LiteralPath (Join-Path $serverRoot 'linger-on-stop.flag') -Force
@@ -200,7 +226,7 @@ try {
 } finally {
     $statePath = Join-Path $serverRoot 'server-management\state.json'
     if (Test-Path -LiteralPath $statePath) {
-        $state = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
+        $state = Read-TestState
         if ($state.serverPid) { Stop-DisposableProcess ([int]$state.serverPid) }
         if ($state.supervisorPid) {
             $supervisor = Get-CimInstance Win32_Process -Filter "ProcessId=$([int]$state.supervisorPid)" -ErrorAction SilentlyContinue

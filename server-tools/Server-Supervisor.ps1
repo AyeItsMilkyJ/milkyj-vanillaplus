@@ -2,10 +2,12 @@
 param(
     [Parameter(Mandatory)][string]$ServerRoot,
     [string]$SettingsPath,
-    [switch]$Interactive
+    [switch]$Interactive,
+    [switch]$ServerGui
 )
 
 $ErrorActionPreference = 'Stop'
+if ($Interactive -and $ServerGui) { throw '-Interactive and -ServerGui are separate launch modes; choose only one.' }
 . (Join-Path $PSScriptRoot 'Common.ps1')
 . (Join-Path $PSScriptRoot 'Discord-Notifications.ps1')
 $serverRootResolved = Assert-ValidServerRoot $ServerRoot
@@ -138,6 +140,7 @@ $state = [ordered]@{
     scheduledRestartMinutes = $scheduledRestartMinutes
     interactiveConsole = [bool]$Interactive
     interactiveConsoleOutputAvailable = [bool]$Interactive
+    serverGui = [bool]$ServerGui
     restartCount = 0
     rapidFailureCount = 0
     supervisorLog = $supervisorLog
@@ -161,8 +164,9 @@ try {
     }
     if (Test-Path -LiteralPath $stopRequest) { Remove-Item -LiteralPath $stopRequest -Force }
     $crashTimes = [Collections.Generic.List[datetime]]::new()
-    $launchSpec = Get-LaunchSpec $serverRootResolved $settings
-    Write-SupervisorLog "Supervisor started as PID $PID. Port=$($state.port). Executable=$($launchSpec.Executable)"
+    $launchSpec = Get-LaunchSpec $serverRootResolved $settings -ServerGui:$ServerGui
+    $launchMode = if ($ServerGui) { 'minecraft-gui' } elseif ($Interactive) { 'raw-console' } else { 'headless' }
+    Write-SupervisorLog "Supervisor started as PID $PID. Port=$($state.port). Mode=$launchMode. Executable=$($launchSpec.Executable)"
     if ($Interactive) {
         try { [Console]::Title = 'MilkyCraft Vanilla+ Server - Java Console' } catch { }
         Write-InteractiveHostSafe ''
@@ -332,6 +336,43 @@ try {
         # Persist terminal process identity immediately. Notifications and
         # console/log output happen later and must never leave a live-looking PID.
         Save-State
+
+        # Commands entered in Minecraft's Swing GUI bypass the supervisor's stdin
+        # command reader. Treat the GUI's own `stop` command or close button as an
+        # intentional shutdown only when the exact session exited successfully and
+        # the log proves Minecraft completed its normal full save. An unsaved or
+        # non-zero GUI exit still follows the normal crash-recovery path.
+        $cleanGuiShutdown = $false
+        if ($ServerGui -and -not $intentionalStop -and -not $plannedRestart -and $exitCode -eq 0) {
+            $latestLog = Join-Path $serverRootResolved 'logs\latest.log'
+            if (Test-Path -LiteralPath $latestLog -PathType Leaf) {
+                $latestLogItem = Get-Item -LiteralPath $latestLog
+                if ($latestLogItem.LastWriteTime -ge $startAt) {
+                    $normalStopLogged = [bool](Select-String -LiteralPath $latestLog -SimpleMatch 'Stopping server' -Quiet)
+                    $allDimensionsSaved = [bool](Select-String -LiteralPath $latestLog -SimpleMatch 'ThreadedAnvilChunkStorage: All dimensions are saved' -Quiet)
+                    $cleanGuiShutdown = $normalStopLogged -and $allDimensionsSaved
+                }
+            }
+        }
+
+        if ($cleanGuiShutdown) {
+            $portDeadline = (Get-Date).AddSeconds(30)
+            while ((Get-NetTCPConnection -LocalPort $state.port -State Listen -ErrorAction SilentlyContinue) -and (Get-Date) -lt $portDeadline) {
+                Start-Sleep -Milliseconds 250
+            }
+            if (Get-NetTCPConnection -LocalPort $state.port -State Listen -ErrorAction SilentlyContinue) {
+                $state.status = 'manual-intervention-required'
+                $state.manualInterventionRequired = $true
+                Set-Event "Minecraft GUI exited cleanly but port $($state.port) is still listening. No process was killed; manual intervention is required."
+                break
+            }
+            $state.status = 'stopped'
+            Set-Event "Intentional Minecraft GUI shutdown completed with exit code $exitCode; all dimensions saved and port $($state.port) released."
+            Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event offline `
+                -Description 'The server was stopped cleanly from the Minecraft server GUI and all dimensions were saved.' `
+                -Fields @{ 'Exit code' = $exitCode }
+            break
+        }
 
         if ($intentionalStop -or $plannedRestart) {
             $portDeadline = (Get-Date).AddSeconds(30)

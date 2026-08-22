@@ -4,7 +4,8 @@ param(
     [string]$PackUrl,
     [string]$JavaPath,
     [string]$SettingsPath,
-    [int]$StartupTimeoutSeconds = 0
+    [int]$StartupTimeoutSeconds = 0,
+    [switch]$ServerGui
 )
 
 $ErrorActionPreference = 'Stop'
@@ -15,7 +16,7 @@ if ($StartupTimeoutSeconds -le 0) { $StartupTimeoutSeconds = [int]$settings.star
 $operationStarted = Get-Date
 $backup = & (Join-Path $PSScriptRoot 'Update-Server.ps1') -ServerRoot $serverRootResolved -PackUrl $PackUrl -JavaPath $JavaPath -SettingsPath $SettingsPath
 try {
-    & (Join-Path $PSScriptRoot 'Start-Server.ps1') -ServerRoot $serverRootResolved -SettingsPath $SettingsPath -StartupTimeoutSeconds $StartupTimeoutSeconds
+    & (Join-Path $PSScriptRoot 'Start-Server.ps1') -ServerRoot $serverRootResolved -SettingsPath $SettingsPath -StartupTimeoutSeconds $StartupTimeoutSeconds -ServerGui:$ServerGui
     $latest = Join-Path $serverRootResolved 'logs\latest.log'
     $deadline = (Get-Date).AddSeconds($StartupTimeoutSeconds)
     $done = $false

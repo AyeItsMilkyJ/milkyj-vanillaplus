@@ -93,7 +93,7 @@ The server supervisor:
 - can post secure Discord online, offline, restart, crash and attention alerts through an optional local webhook;
 - runs `save-all flush` and performs a normal stop;
 - restarts every 180 minutes after the server reaches `Done`; and
-- keeps the Java process in the supervisor console rather than opening a separate GUI window.
+- opens Minecraft's real server GUI for manual desktop launches while keeping its restart supervisor hidden; unattended Task Scheduler launches remain headless-safe.
 
 ### 9. Permanent updates and compatibility repairs
 

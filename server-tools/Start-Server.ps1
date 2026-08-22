@@ -3,7 +3,8 @@ param(
     [string]$ServerRoot,
     [string]$SettingsPath,
     [int]$StartupTimeoutSeconds = 0,
-    [switch]$Interactive
+    [switch]$Interactive,
+    [switch]$ServerGui
 )
 
 . (Join-Path $PSScriptRoot 'Common.ps1')
@@ -19,6 +20,7 @@ function Write-LauncherHostSafe([string]$Message, [string]$ForegroundColor = '')
 }
 
 $serverRootResolved = Assert-ValidServerRoot (Resolve-ServerRoot $ServerRoot)
+if ($Interactive -and $ServerGui) { throw '-Interactive and -ServerGui are separate launch modes; choose only one.' }
 $settings = Get-ServerSettings -ServerRoot $serverRootResolved -SettingsPath $SettingsPath
 if ($StartupTimeoutSeconds -le 0) { $StartupTimeoutSeconds = [int]$settings.startupTimeoutSeconds }
 Assert-ServerStopped $serverRootResolved
@@ -46,6 +48,7 @@ $arguments = @(
     '-File', ('"' + $supervisor + '"'), '-ServerRoot', ('"' + $serverRootResolved + '"')
 )
 if ($SettingsPath) { $arguments += @('-SettingsPath', ('"' + [IO.Path]::GetFullPath($SettingsPath) + '"')) }
+if ($ServerGui) { $arguments += '-ServerGui' }
 $process = Start-Process -FilePath 'powershell.exe' -ArgumentList $arguments -WorkingDirectory $serverRootResolved -WindowStyle Hidden -PassThru
 
 $deadline = (Get-Date).AddSeconds($StartupTimeoutSeconds)

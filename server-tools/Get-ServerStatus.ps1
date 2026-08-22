@@ -28,7 +28,13 @@ $result = [ordered]@{
     staleRecordedSupervisorPid = [bool]$activity.RecordedSupervisorStale
     staleRecordedServerPid = [bool]$activity.RecordedServerStale
     unmanaged = [bool]$activity.Unmanaged
-    supervisorConsole = if ($state -and $state.PSObject.Properties['interactiveConsole'] -and $state.interactiveConsole) { 'VISIBLE / INTERACTIVE' } else { 'BACKGROUND' }
+    supervisorConsole = if ($state -and $state.PSObject.Properties['serverGui'] -and $state.serverGui) {
+        'MINECRAFT SERVER GUI'
+    } elseif ($state -and $state.PSObject.Properties['interactiveConsole'] -and $state.interactiveConsole) {
+        'RAW TERMINAL / INTERACTIVE'
+    } else {
+        'BACKGROUND / HEADLESS'
+    }
     nextScheduledRestart = if ($managedActivity -and $state -and $state.PSObject.Properties['nextScheduledRestart'] -and $state.nextScheduledRestart) { [string]$state.nextScheduledRestart } else { 'not currently scheduled' }
     scheduledRestartMinutes = if ($state -and $state.PSObject.Properties['scheduledRestartMinutes']) { [double]$state.scheduledRestartMinutes } else { [double]$settings.scheduledRestartMinutes }
     currentPackVersion = Get-CurrentPackVersion $serverRootResolved
