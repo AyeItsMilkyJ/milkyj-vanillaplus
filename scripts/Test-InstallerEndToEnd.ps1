@@ -17,6 +17,26 @@ if (Test-Path -LiteralPath $testRoot) { Remove-Item -LiteralPath $testRoot -Recu
 $hostRoot = Join-Path $testRoot 'host'
 $clientRoot = Join-Path $testRoot 'client'
 $serverRoot = Join-Path $testRoot 'server'
+$clientOnlyPreferences = @(
+    'config\MouseTweaks.cfg',
+    'config\entity_texture_features.json',
+    'config\entityculling.json',
+    'config\etf_warnings.json',
+    'config\justzoom\config.txt',
+    'config\make_bubbles_pop.json',
+    'config\notenoughanimations.json',
+    'config\particlerain\config.json',
+    'config\presencefootsteps\updater.json',
+    'config\presencefootsteps\userconfig.json',
+    'config\skinlayers.json'
+)
+$recommendedControlTools = @(
+    'scripts\milkycraft-controls\Apply-RecommendedControls.ps1',
+    'scripts\milkycraft-controls\APPLY RECOMMENDED CONTROLS.bat',
+    'scripts\milkycraft-controls\recommended-controls.json',
+    'scripts\milkycraft-controls\README.txt',
+    'scripts\milkycraft-controls\RESTORE PREVIOUS CONTROLS.bat'
+)
 New-Item -ItemType Directory -Path $hostRoot, $clientRoot, $serverRoot -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $projectRootResolved 'packwiz') -Destination (Join-Path $hostRoot 'packwiz') -Recurse
 Copy-Item -LiteralPath (Join-Path $projectRootResolved 'payload') -Destination (Join-Path $hostRoot 'payload') -Recurse
@@ -30,6 +50,14 @@ foreach ($metadata in Get-ChildItem -LiteralPath (Join-Path $hostRoot 'packwiz')
     if ($text -notmatch '(?m)^url\s*=\s*"https?://[^\"]+/payload/') { continue }
     $newText = [regex]::Replace($text, '(?m)^(url\s*=\s*")https?://[^\"]+(/payload/)', ('$1' + $localBase + '$2'))
     [IO.File]::WriteAllText($metadata.FullName, $newText, [Text.UTF8Encoding]::new($false))
+}
+# Begin with the previous both-side classification so the same disposable
+# installations exercise the real update to client-only, preserve=true files.
+foreach ($relativePath in $clientOnlyPreferences) {
+    $metadataPath = Join-Path $hostRoot ("packwiz\{0}.pw.toml" -f $relativePath)
+    $metadataText = [IO.File]::ReadAllText($metadataPath)
+    $metadataText = [regex]::Replace($metadataText, '(?m)^side\s*=\s*"client"$', 'side = "both"')
+    [IO.File]::WriteAllText($metadataPath, $metadataText, [Text.UTF8Encoding]::new($false))
 }
 & (Join-Path $PSScriptRoot 'Update-PackMetadata.ps1') -ProjectRoot $hostRoot
 & (Join-Path $PSScriptRoot 'Validate-Pack.ps1') -ProjectRoot $hostRoot -AllowPlaceholder
@@ -50,7 +78,6 @@ try {
     $java = Find-Java17 $null
     $bootstrap = & (Join-Path $PSScriptRoot 'Get-PackwizInstaller.ps1') -ProjectRoot $projectRootResolved -PassThru
     $mainInstaller = & (Join-Path $PSScriptRoot 'Get-PackwizInstaller.ps1') -ProjectRoot $projectRootResolved -MainJarPassThru
-
     [IO.File]::WriteAllText((Join-Path $clientRoot 'options.txt'), 'personal-sentinel=true', [Text.UTF8Encoding]::new($false))
     [IO.File]::WriteAllText((Join-Path $clientRoot 'optionsshaders.txt'), 'shader-settings-sentinel=true', [Text.UTF8Encoding]::new($false))
     New-Item -ItemType Directory -Path (Join-Path $clientRoot 'screenshots'), (Join-Path $clientRoot 'saves\personal-world'), (Join-Path $clientRoot 'shaderpacks') -Force | Out-Null
@@ -67,12 +94,33 @@ try {
     if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'screenshots\personal-sentinel.txt'))) { throw 'Packwiz removed a personal screenshot sentinel.' }
     if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'saves\personal-world\level.dat'))) { throw 'Packwiz removed a personal save sentinel.' }
     if (-not (Test-Path -LiteralPath (Join-Path $clientRoot 'shaderpacks\personal-sentinel.txt'))) { throw 'Packwiz removed a personal shaderpack sentinel.' }
+    foreach ($relativePath in @($clientOnlyPreferences + $recommendedControlTools)) {
+        if (-not (Test-Path -LiteralPath (Join-Path $clientRoot $relativePath) -PathType Leaf)) {
+            throw "Fresh client install omitted client-only payload: $relativePath"
+        }
+    }
     $preservedSetting = 'config\xaero\minimap\client.cfg'
     $preservedClientPath = Join-Path $clientRoot $preservedSetting
     $preservedHostPath = Join-Path (Join-Path $hostRoot 'payload\client') $preservedSetting
     if (-not (Test-Path -LiteralPath $preservedClientPath -PathType Leaf)) { throw "Fresh install omitted preserved default: $preservedSetting" }
     if ((Get-FileHash -LiteralPath $preservedClientPath -Algorithm SHA256).Hash -ne (Get-FileHash -LiteralPath $preservedHostPath -Algorithm SHA256).Hash) {
         throw "Fresh install did not receive the supplied default for $preservedSetting"
+    }
+
+    Copy-Item -LiteralPath $bootstrap -Destination (Join-Path $serverRoot 'packwiz-installer-bootstrap.jar')
+    Copy-Item -LiteralPath $mainInstaller -Destination (Join-Path $serverRoot 'packwiz-installer.jar')
+    Push-Location $serverRoot
+    try { & $java -jar 'packwiz-installer-bootstrap.jar' --bootstrap-no-update --bootstrap-main-jar 'packwiz-installer.jar' -g -s server $localPackUrl; $baselineServerExit = $LASTEXITCODE } finally { Pop-Location }
+    if ($baselineServerExit -ne 0) { throw "Baseline server Packwiz installation failed with exit code $baselineServerExit" }
+    foreach ($relativePath in $clientOnlyPreferences) {
+        if (-not (Test-Path -LiteralPath (Join-Path $serverRoot $relativePath) -PathType Leaf)) {
+            throw "The simulated previous both-side install omitted: $relativePath"
+        }
+    }
+    foreach ($relativePath in $recommendedControlTools) {
+        if (Test-Path -LiteralPath (Join-Path $serverRoot $relativePath)) {
+            throw "Control tooling leaked into the baseline server install: $relativePath"
+        }
     }
 
     # Exercise a real manifest change: a preserved client setting must keep the
@@ -86,22 +134,40 @@ try {
     $managedV2 = '{"pack":{"pack_format":15,"description":"Packwiz preservation test v2"}}'
     [IO.File]::WriteAllText($managedClientPath, '{"player":"edit"}', [Text.UTF8Encoding]::new($false))
     [IO.File]::WriteAllText($managedHostPath, $managedV2, [Text.UTF8Encoding]::new($false))
+    $customPreferenceHashes = @{}
+    foreach ($relativePath in $clientOnlyPreferences) {
+        $clientPreferencePath = Join-Path $clientRoot $relativePath
+        [IO.File]::AppendAllText($clientPreferencePath, "`n", [Text.UTF8Encoding]::new($false))
+        $customPreferenceHashes[$relativePath] = (Get-FileHash -LiteralPath $clientPreferencePath -Algorithm SHA256).Hash
+        $metadataPath = Join-Path $hostRoot ("packwiz\{0}.pw.toml" -f $relativePath)
+        $metadataText = [IO.File]::ReadAllText($metadataPath)
+        $metadataText = [regex]::Replace($metadataText, '(?m)^side\s*=\s*"both"$', 'side = "client"')
+        [IO.File]::WriteAllText($metadataPath, $metadataText, [Text.UTF8Encoding]::new($false))
+    }
     & (Join-Path $PSScriptRoot 'Update-PackMetadata.ps1') -ProjectRoot $hostRoot
     Push-Location $clientRoot
     try { & $java -jar 'packwiz-installer-bootstrap.jar' --bootstrap-no-update --bootstrap-main-jar 'packwiz-installer.jar' -g -s client $localPackUrl; $settingsUpdateExit = $LASTEXITCODE } finally { Pop-Location }
     if ($settingsUpdateExit -ne 0) { throw "Client Packwiz settings-update test failed with exit code $settingsUpdateExit" }
     if ((Get-Content -LiteralPath $preservedClientPath -Raw) -ne $personalSettingSentinel) { throw 'Packwiz reset a preserved mod-specific client setting.' }
     if ((Get-Content -LiteralPath $managedClientPath -Raw) -ne $managedV2) { throw 'Packwiz failed to update an ordinary managed client resource.' }
+    foreach ($relativePath in $clientOnlyPreferences) {
+        if ((Get-FileHash -LiteralPath (Join-Path $clientRoot $relativePath) -Algorithm SHA256).Hash -ne $customPreferenceHashes[$relativePath]) {
+            throw "The both-to-client update reset a customised client preference: $relativePath"
+        }
+    }
     $clientJars = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter *.jar)
     if ($clientJars.Count -ne 240) { throw "Expected 240 client JARs; installed $($clientJars.Count)." }
 
-    Copy-Item -LiteralPath $bootstrap -Destination (Join-Path $serverRoot 'packwiz-installer-bootstrap.jar')
-    Copy-Item -LiteralPath $mainInstaller -Destination (Join-Path $serverRoot 'packwiz-installer.jar')
     Push-Location $serverRoot
     try { & $java -jar 'packwiz-installer-bootstrap.jar' --bootstrap-no-update --bootstrap-main-jar 'packwiz-installer.jar' -g -s server $localPackUrl; $serverExit = $LASTEXITCODE } finally { Pop-Location }
     if ($serverExit -ne 0) { throw "Server Packwiz installation failed with exit code $serverExit" }
     $serverJars = @(Get-ChildItem -LiteralPath (Join-Path $serverRoot 'mods') -File -Filter *.jar)
     if ($serverJars.Count -ne 206) { throw "Expected 206 server JARs; installed $($serverJars.Count)." }
+    foreach ($relativePath in @($clientOnlyPreferences + $recommendedControlTools)) {
+        if (Test-Path -LiteralPath (Join-Path $serverRoot $relativePath)) {
+            throw "Client-only payload leaked into the server install: $relativePath"
+        }
+    }
     $compatibilityStatic = & $python (Join-Path $PSScriptRoot 'validate_integrated_compatibility.py') --project-root $projectRootResolved --mods-dir (Join-Path $serverRoot 'mods')
     if ($LASTEXITCODE -ne 0) { throw 'Integrated compatibility static validation failed.' }
     [IO.File]::WriteAllText((Join-Path $testRoot 'compatibility-static.json'), (($compatibilityStatic -join "`n") + "`n"), [Text.UTF8Encoding]::new($false))
@@ -181,9 +247,25 @@ try {
             if ($process.HasExited -and -not $reloadCompleted) { break }
         } while (-not $reloadCompleted -and (Get-Date) -lt $reloadDeadline)
         if (-not $reloadCompleted) { throw 'Disposable Forge server datapack reload did not complete.' }
+        $enabledPackPattern = 'There are \d+ data pack\(s\) enabled:'
+        $barrierCountBefore = @([regex]::Matches((Get-Content -LiteralPath $latestLog -Raw), $enabledPackPattern)).Count
         $process.StandardInput.WriteLine('datapack list enabled')
         $process.StandardInput.Flush()
-        Start-Sleep -Seconds 2
+        $barrierDeadline = (Get-Date).AddSeconds(30)
+        $postReloadBarrierCompleted = $false
+        do {
+            Start-Sleep -Seconds 1
+            $barrierCountAfter = @([regex]::Matches((Get-Content -LiteralPath $latestLog -Raw), $enabledPackPattern)).Count
+            $postReloadBarrierCompleted = $barrierCountAfter -gt $barrierCountBefore
+            if ($process.HasExited -and -not $postReloadBarrierCompleted) { break }
+        } while (-not $postReloadBarrierCompleted -and (Get-Date) -lt $barrierDeadline)
+        if (-not $postReloadBarrierCompleted) { throw 'Disposable server did not answer the post-reload datapack barrier.' }
+        # A large modded /reload can leave follow-up resource tasks settling for
+        # several seconds after the advancement-complete line. Stopping in that
+        # narrow window produced one non-reproducible delayed JVM exit, while a
+        # 30-second settle period and ordinary production stops exit normally.
+        $postReloadCooldownSeconds = 30
+        Start-Sleep -Seconds $postReloadCooldownSeconds
         $process.StandardInput.WriteLine('stop'); $process.StandardInput.Flush()
         $serverProcessExited = $process.WaitForExit(300000)
         $savedAllDimensions = [bool](Select-String -LiteralPath $latestLog -SimpleMatch 'ThreadedAnvilChunkStorage: All dimensions are saved' -Quiet)
@@ -244,11 +326,19 @@ try {
         personalShaderSettingsPreserved = $true
         modSpecificClientSettingsPreserved = $true
         managedClientResourcesStillUpdate = $true
+        clientOnlyPreferencesDelivered = $true
+        clientOnlyPreferencesAbsentFromServer = $true
+        clientPreferenceTransitionPreserved = $true
+        obsoleteBothSidePreferencesRemovedFromServer = $true
+        recommendedControlToolsDelivered = $true
+        recommendedControlToolsAbsentFromServer = $true
         packwizDestinationCount = $destinationCount
         serverReachedDone = (-not $SkipServerLaunch)
         questParserLoaded = if ($SkipServerLaunch) { $null } else { $questParserLoaded }
         compatibilityStaticValidation = $true
         compatibilityDatapackReloaded = if ($SkipServerLaunch) { $null } else { $reloadCompleted }
+        postReloadBarrierCompleted = if ($SkipServerLaunch) { $null } else { $postReloadBarrierCompleted }
+        postReloadCooldownSeconds = if ($SkipServerLaunch) { $null } else { $postReloadCooldownSeconds }
         compatibilityDatapackAutomaticallyEnabled = if ($SkipServerLaunch) { $null } else { $candidateAutomaticallyEnabled }
         compatibilityDatapackFinalPriority = if ($SkipServerLaunch) { $null } else { $candidateHasFinalPriority }
         beautifyAdvancementLoaded = if ($SkipServerLaunch) { $null } else { $beautifyAdvancementLoaded }
@@ -265,5 +355,20 @@ try {
     $report | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $testRoot 'result.json') -Encoding utf8
     Write-Host "End-to-end Packwiz validation passed. Report: $(Join-Path $testRoot 'result.json')"
 } finally {
+    if ($process -and -not $process.HasExited) {
+        try {
+            $process.StandardInput.WriteLine('stop')
+            $process.StandardInput.Flush()
+            if (-not $process.WaitForExit(120000)) {
+                $process.Kill()
+                $process.WaitForExit()
+            }
+        } catch {
+            if (-not $process.HasExited) {
+                $process.Kill()
+                $process.WaitForExit()
+            }
+        }
+    }
     if ($httpProcess -and -not $httpProcess.HasExited) { Stop-Process -Id $httpProcess.Id -Force }
 }

@@ -29,7 +29,7 @@ if (-not $AllowPlaceholder -and $PackUrl -match 'REPLACE_WITH_') {
     throw 'Set the real repository URL with Set-PackUrl.ps1 before building the player bootstrap.'
 }
 if (-not $OutputPath) {
-    $OutputPath = Join-Path $projectRootResolved 'dist\MilkyJ-VanillaPlus-AutoUpdating-Prism.zip'
+    $OutputPath = Join-Path $projectRootResolved 'dist\MilkyCraft-VanillaPlus-AutoUpdating-Prism.zip'
 }
 $outputResolved = [IO.Path]::GetFullPath($OutputPath)
 $buildRoot = Join-Path $projectRootResolved 'build\prism-bootstrap'

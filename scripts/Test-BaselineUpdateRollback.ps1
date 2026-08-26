@@ -144,10 +144,11 @@ try {
     $clientJarCount = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter '*.jar').Count
     if ($clientJarCount -ne 236) { throw "Expected 236 baseline client JARs after rollback; found $clientJarCount." }
 
+    $settings = Get-Content -LiteralPath (Join-Path $projectRootResolved 'project-settings.json') -Raw | ConvertFrom-Json
     $report = [ordered]@{
         testedAt = (Get-Date).ToString('o')
         baselineTag = 'v1.0.0'
-        releaseCandidate = '1.9.0-rc2'
+        releaseCandidate = [string]$settings.packVersion
         baselineQuestHash = $baselineExpectedHash
         releaseCandidateQuestHash = $rcExpectedHash
         releaseCandidateApplied = $true

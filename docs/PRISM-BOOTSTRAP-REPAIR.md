@@ -39,7 +39,7 @@ The executable and `-jar` remain distinct arguments, and the quoted executable w
 
 Result: **PASS**. Evidence is in `audit/prism-bootstrap-regression.json`.
 
-The production `MilkyJ-VanillaPlus-AutoUpdating-Prism.zip` and LAN bootstrap are both produced by `Build-Prism-Bootstrap.ps1`, so they share the correction. `Set-PackUrl.ps1` also preserves the correct escaped template when the final public URL is configured.
+The production `MilkyCraft-VanillaPlus-AutoUpdating-Prism.zip` and LAN bootstrap are both produced by `Build-Prism-Bootstrap.ps1`, so they share the correction. `Set-PackUrl.ps1` also preserves the correct escaped template when the final public URL is configured.
 
 ## Replacement LAN bootstrap
 
@@ -51,7 +51,7 @@ SHA-256 3eac0a7fce9029d023182e276dea5da1695ad34b817c4f0582ea88d3fe34a907
 Its generated command was inspected directly and contains:
 
 ```ini
-PreLaunchCommand=\"$INST_JAVA\" -jar packwiz-installer-bootstrap.jar http://192.168.0.159:8765/packwiz/pack.toml
+PreLaunchCommand=\"$INST_JAVA\" -jar packwiz-installer-bootstrap.jar http://<PRIVATE_LAN_ADDRESS>:8765/packwiz/pack.toml
 ```
 
 The R2 ZIP itself still needs an ordinary manual import/title-screen/join check when the RC gate resumes. It was not imported into the user's Prism application root during this repair.

@@ -1,7 +1,7 @@
 {
     "testedAt":  "2026-08-12T17:05:27.7160277+10:00",
     "candidate":  "1.9.0-rc1",
-    "lanAddress":  "192.168.0.159",
+    "lanAddress":  "<PRIVATE_LAN_ADDRESS>",
     "packHttpPort":  8765,
     "minecraftPort":  25566,
     "productionPortTouched":  false,

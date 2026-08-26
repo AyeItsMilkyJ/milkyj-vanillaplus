@@ -43,6 +43,7 @@ server-runtime/
 # Minecraft/player data and credentials
 **/options.txt
 **/optionsof.txt
+**/milkycraft-control-backups/
 **/servers.dat
 **/launcher_accounts.json
 **/accounts.json

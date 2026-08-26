@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-22T06:04:00.5177129+10:00",
-  "minecraft": "1.20.1",
-  "forge": "47.4.10",
-  "clientMods": 240,
-  "serverMods": 206,
-  "modSides": {
-    "both": 204,
-    "client": 36,
-    "server": 2
-  },
-  "managedPayloadFiles": 476,
-  "excludedFiles": 38,
-  "shaderpacksManaged": false,
-  "note": "Shader archives and settings are deliberately outside automatic management."
+    "generatedAt":  "2026-08-26T22:22:48.4889188+10:00",
+    "minecraft":  "1.20.1",
+    "forge":  "47.4.10",
+    "clientMods":  240,
+    "serverMods":  206,
+    "modSides":  {
+                     "both":  204,
+                     "client":  36,
+                     "server":  2
+                 },
+    "managedPayloadFiles":  481,
+    "excludedFiles":  38,
+    "shaderpacksManaged":  false,
+    "note":  "Shader archives and settings are deliberately outside automatic management."
 }

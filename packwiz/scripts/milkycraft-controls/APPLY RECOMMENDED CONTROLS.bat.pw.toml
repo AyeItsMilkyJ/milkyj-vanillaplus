@@ -1,0 +1,8 @@
+name = "Managed scripts: milkycraft-controls/APPLY RECOMMENDED CONTROLS.bat"
+filename = "APPLY RECOMMENDED CONTROLS.bat"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/scripts/milkycraft-controls/APPLY%20RECOMMENDED%20CONTROLS.bat"
+hash-format = "sha256"
+hash = "6cfed26e31d40f756ae9998118bc3130a114ab3bc4aff5dd96abf64662a45ca9"

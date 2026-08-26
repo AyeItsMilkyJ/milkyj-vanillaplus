@@ -1,4 +1,4 @@
-# 1.9.0-rc2 two-client LAN test
+# 1.9.0-rc3 two-client LAN test
 
 Overall result: **NOT RUN — MANUAL INTERACTION REQUIRED**.
 
@@ -14,7 +14,7 @@ From the project root, run:
 
 The command prints the exact LAN Packwiz URL and Minecraft address, starts the disposable server, and creates:
 
-`dist/MilkyJ-VanillaPlus-1.9.0-rc2-LAN-TEST-Prism.zip`
+`dist/MilkyCraft-VanillaPlus-1.9.0-rc3-LAN-TEST-Prism.zip`
 
 When the interaction checks are finished, stop only the disposable processes with:
 

@@ -14,6 +14,7 @@ if ($MinecraftPort -eq $PackHttpPort) { throw 'The Packwiz HTTP and Minecraft po
 if ($PackHttpPort -lt 1024 -or $PackHttpPort -gt 65535 -or $MinecraftPort -lt 1024 -or $MinecraftPort -gt 65535) { throw 'Test ports must be between 1024 and 65535.' }
 
 $root = [IO.Path]::GetFullPath($ProjectRoot)
+$settings = Get-Content -LiteralPath (Join-Path $root 'project-settings.json') -Raw | ConvertFrom-Json
 $testRoot = [IO.Path]::GetFullPath((Join-Path $root 'build\rc-lan-test'))
 $expectedRoot = [IO.Path]::GetFullPath((Join-Path $root 'build\rc-lan-test'))
 if (-not $testRoot.Equals($expectedRoot, [StringComparison]::OrdinalIgnoreCase)) { throw "Unsafe RC test path: $testRoot" }
@@ -66,7 +67,7 @@ foreach ($metadata in Get-ChildItem -LiteralPath (Join-Path $hostRoot 'packwiz')
 & (Join-Path $PSScriptRoot 'Update-PackMetadata.ps1') -ProjectRoot $hostRoot
 & (Join-Path $PSScriptRoot 'Validate-Pack.ps1') -ProjectRoot $hostRoot -AllowPlaceholder -AllowPrivateLan
 
-$zip = Join-Path $root 'dist\MilkyJ-VanillaPlus-1.9.0-rc2-LAN-TEST-Prism.zip'
+$zip = Join-Path $root ("dist\MilkyCraft-VanillaPlus-{0}-LAN-TEST-Prism.zip" -f $settings.packVersion)
 & (Join-Path $PSScriptRoot 'Build-Prism-Bootstrap.ps1') -ProjectRoot $root -PackUrl $packUrl -OutputPath $zip -AllowPrivateLan
 
 . (Join-Path $root 'server-tools\Common.ps1')
@@ -100,7 +101,7 @@ try {
     [IO.File]::WriteAllText((Join-Path $serverRoot 'user_jvm_args.txt'), "-Xms1G`r`n-Xmx4G`r`n", [Text.UTF8Encoding]::new($false))
     $properties = @(
         'allow-flight=true', 'difficulty=normal', 'enable-command-block=false', 'gamemode=survival',
-        'level-name=rc_lan_test_world', 'max-players=4', 'motd=MilkyCraft Vanilla+ 1.9.0-rc2 LAN TEST',
+        'level-name=rc_lan_test_world', 'max-players=4', ("motd=MilkyCraft Vanilla+ {0} LAN TEST" -f $settings.packVersion),
         'online-mode=true', "server-ip=$LanAddress", "server-port=$MinecraftPort", 'simulation-distance=4',
         'spawn-protection=0', 'view-distance=6', 'white-list=false'
     ) -join "`r`n"
@@ -121,7 +122,8 @@ try {
         lanAddress = $LanAddress; packHttpPort = $PackHttpPort; minecraftPort = $MinecraftPort
         packUrl = $packUrl; minecraftAddress = "${LanAddress}:$MinecraftPort"
         httpProcessId = $httpProcess.Id; supervisorProcessId = $supervisor.Id
-        stopFile = $stopFile; zip = $zip; serverJarCount = $serverJars; productionPortUsed = $false
+        stopFile = $stopFile; zip = $zip; packVersion = [string]$settings.packVersion
+        serverJarCount = $serverJars; productionPortUsed = $false
     }
     [IO.File]::WriteAllText($statePath, (($state | ConvertTo-Json -Depth 4) + "`r`n"), [Text.UTF8Encoding]::new($false))
     $latest = Join-Path $serverRoot 'logs\latest.log'

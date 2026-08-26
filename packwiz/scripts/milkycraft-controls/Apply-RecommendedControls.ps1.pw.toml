@@ -1,0 +1,8 @@
+name = "Managed scripts: milkycraft-controls/Apply-RecommendedControls.ps1"
+filename = "Apply-RecommendedControls.ps1"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/scripts/milkycraft-controls/Apply-RecommendedControls.ps1"
+hash-format = "sha256"
+hash = "bae1f06fc12c2602cd0056c067fdb1130cac808b0fb481c29d5269b989a4a47c"

@@ -1,0 +1,8 @@
+name = "Managed scripts: milkycraft-controls/README.txt"
+filename = "README.txt"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/scripts/milkycraft-controls/README.txt"
+hash-format = "sha256"
+hash = "b47040b77bb59d029a0cee79f3ae69c3bdf4bee2a7cb73729a85e1798f725923"

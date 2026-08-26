@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "profileVersion": "1.0.0",
+  "pack": "MilkyCraft Vanilla+",
+  "packVersion": "1.9.0-rc3",
+  "minecraft": "1.20.1",
+  "description": "Optional conflict-reduced controls. Only untouched defaults are changed; player-customised bindings are preserved.",
+  "bindings": [
+    {
+      "id": "key_key.ftbquests.quests",
+      "from": "key.keyboard.unknown",
+      "to": "key.keyboard.j",
+      "action": "Open quest book",
+      "reason": "Makes the progression guide easy to find."
+    },
+    {
+      "id": "key_key.ftbteams.open_gui",
+      "from": "key.keyboard.unknown",
+      "to": "key.keyboard.j:CONTROL",
+      "action": "Open teams",
+      "reason": "Keeps team management beside the quest key."
+    },
+    {
+      "id": "key_iris.keybind.reload",
+      "from": "key.keyboard.r",
+      "to": "key.keyboard.f6",
+      "action": "Reload shaders",
+      "reason": "Leaves R to JEI and contextual vehicle controls."
+    },
+    {
+      "id": "key_iris.keybind.shaderPackSelection",
+      "from": "key.keyboard.o",
+      "to": "key.keyboard.f7",
+      "action": "Open shader packs",
+      "reason": "Groups all shader controls on F6-F8."
+    },
+    {
+      "id": "key_iris.keybind.toggleShaders",
+      "from": "key.keyboard.k",
+      "to": "key.keyboard.f8",
+      "action": "Toggle shaders",
+      "reason": "Avoids the K collision with crafting and Quark controls."
+    },
+    {
+      "id": "key_gui.xaero_new_waypoint",
+      "from": "key.keyboard.b",
+      "to": "key.keyboard.b:CONTROL",
+      "action": "Create waypoint",
+      "reason": "Keeps plain B dedicated to the backpack."
+    },
+    {
+      "id": "key_gui.xaero_enlarge_map",
+      "from": "key.keyboard.z",
+      "to": "key.keyboard.m:CONTROL",
+      "action": "Enlarge minimap",
+      "reason": "Keeps plain Z dedicated to zoom."
+    },
+    {
+      "id": "key_gui.xaero_open_settings",
+      "from": "key.keyboard.right.bracket",
+      "to": "key.keyboard.m:ALT",
+      "action": "Open world-map settings",
+      "reason": "Removes the collision with storage transfer."
+    },
+    {
+      "id": "key_key.toms_storage.open_terminal",
+      "from": "key.keyboard.b",
+      "to": "key.keyboard.n",
+      "action": "Open wireless storage terminal",
+      "reason": "Keeps plain B dedicated to the backpack."
+    },
+    {
+      "id": "key_key.corpse.death_history",
+      "from": "key.keyboard.u",
+      "to": "key.keyboard.u:CONTROL",
+      "action": "Open death history",
+      "reason": "Keeps plain U dedicated to JEI uses."
+    },
+    {
+      "id": "key_key.more_villargers.guide_gui",
+      "from": "key.keyboard.g",
+      "to": "key.keyboard.g:CONTROL",
+      "action": "Open villager guide",
+      "reason": "Keeps plain G available for active abilities."
+    },
+    {
+      "id": "key_key.curios.open.desc",
+      "from": "key.keyboard.g",
+      "to": "key.keyboard.i:ALT",
+      "action": "Open Curios inventory",
+      "reason": "Groups equipment screens around I."
+    },
+    {
+      "id": "key_key.relics.ability_list",
+      "from": "key.keyboard.left.alt",
+      "to": "key.keyboard.i:CONTROL",
+      "action": "Select Relics ability",
+      "reason": "Stops Relics from consuming the Create tool-menu modifier and mouse wheel."
+    },
+    {
+      "id": "key_key.astikorcartsredux.slow",
+      "from": "key.keyboard.z",
+      "to": "key.keyboard.z:CONTROL",
+      "action": "Slow cart",
+      "reason": "Keeps plain Z dedicated to zoom while avoiding Shift, which may dismount."
+    },
+    {
+      "id": "key_quark.keybind.change_hotbar",
+      "from": "key.keyboard.z",
+      "to": "key.keyboard.h:ALT",
+      "action": "Quark change hotbar",
+      "reason": "Keeps plain Z dedicated to zoom."
+    },
+    {
+      "id": "key_key.immersive_aircraft.boost",
+      "from": "key.keyboard.b",
+      "to": "key.keyboard.b:ALT",
+      "action": "Aircraft boost",
+      "reason": "Prevents the backpack opening when boosting."
+    },
+    {
+      "id": "key_key.deeperdarker.boost",
+      "from": "key.keyboard.b",
+      "to": "key.keyboard.b:SHIFT",
+      "action": "Deeper and Darker boost",
+      "reason": "Prevents the backpack opening with the ability."
+    },
+    {
+      "id": "key_key.trashslot.toggle",
+      "from": "key.keyboard.t",
+      "to": "key.keyboard.t:ALT",
+      "action": "Toggle trash slot",
+      "reason": "Plain T remains chat and accidental trash toggles are less likely."
+    },
+    {
+      "id": "key_key.aether.invisibility_toggle.desc",
+      "from": "key.keyboard.v",
+      "to": "key.keyboard.v:ALT",
+      "action": "Aether invisibility",
+      "reason": "Keeps plain V for the quiver."
+    },
+    {
+      "id": "key_key.deeperdarker.transmit",
+      "from": "key.keyboard.v",
+      "to": "key.keyboard.v:CONTROL",
+      "action": "Deeper and Darker transmit",
+      "reason": "Keeps plain V for the quiver."
+    },
+    {
+      "id": "key_quark.keybind.variant_selector",
+      "from": "key.keyboard.r",
+      "to": "key.keyboard.unknown",
+      "action": "Quark variant selector",
+      "reason": "The shipped Quark config disables this experimental feature."
+    },
+    {
+      "id": "key_key.fetzisdisplays.switch_item_mode",
+      "from": "key.keyboard.period",
+      "to": "key.keyboard.unknown",
+      "action": "Fetzi's Displays item mode",
+      "reason": "The installed build registers this optional mapping too late and cannot be relied on."
+    },
+    {
+      "id": "key_key.fetzisdisplays.switch_gui_pos",
+      "from": "key.keyboard.comma",
+      "to": "key.keyboard.unknown",
+      "action": "Fetzi's Displays GUI position",
+      "reason": "The installed build registers this optional mapping too late and cannot be relied on."
+    },
+    {
+      "id": "key_key.fetzisdisplays.toggle_xz_split",
+      "from": "key.keyboard.right.alt",
+      "to": "key.keyboard.unknown",
+      "action": "Fetzi's Displays X/Z split",
+      "reason": "The installed build registers this optional mapping too late and cannot be relied on."
+    }
+  ]
+}

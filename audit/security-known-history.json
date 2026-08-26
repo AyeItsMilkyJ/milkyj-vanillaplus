@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Reviewed legacy privacy metadata that remains in already-published reachable history. New occurrences are never added automatically.",
+  "entries": [
+    { "object": "b62b9536162191b6e6216428e57a3e8af6bcb6a5", "path": "audit/questbook-validation.json", "reason": "literal absolute Windows user-profile path" },
+    { "object": "47ddee2cf26dca757031eacc6774a2fcfc5176c0", "path": "audit/server-infrastructure-tests.json", "reason": "literal absolute Windows user-profile path" },
+    { "object": "deccf4886057dc3263c1a65e717b507ba0cdffdb", "path": "audit/server-infrastructure-tests.json", "reason": "literal absolute Windows user-profile path" },
+    { "object": "520504e2b73d358bb14cd49e611a4e1f010dbeec", "path": "docs/SECURITY-SANITIZATION.md", "reason": "literal absolute Windows user-profile path" },
+    { "object": "5eabed16299bb90302dcdfb4fe333dbc89007b9b", "path": "docs/SECURITY-SANITIZATION.md", "reason": "literal absolute Windows user-profile path" },
+    { "object": "49ee6a79d1f87a16a29d63a81ee7bcd8a4f65867", "path": "scripts/Build-BeginnerQuestBook.ps1", "reason": "literal absolute Windows user-profile path" },
+    { "object": "1f8b0cf867b3485f8b49f1d47251e0652dd2b8c8", "path": "audit/prism-bootstrap-lan-r3.json", "reason": "literal private LAN address" },
+    { "object": "12e08daa929fc9fce18035dd33bdd3e33dd981eb", "path": "audit/rc-lan-harness.json", "reason": "literal private LAN address" },
+    { "object": "8fe09978dd58ddc65b199385f46a3b0a3e21be73", "path": "audit/rc-lan-harness.json", "reason": "literal private LAN address" },
+    { "object": "76ae07b8022a304b5d211bea352e920200725779", "path": "docs/PRISM-BOOTSTRAP-REPAIR.md", "reason": "literal private LAN address" },
+    { "object": "a31b3da235becaec141145c87203d676970fc0f6", "path": "docs/RC1-INTEGRATION-REPORT.md", "reason": "literal private LAN address" },
+    { "object": "6bd096b9f58d6b0962c70812ef38fb33b1df098d", "path": "docs/RELEASE-GATE-REPAIR.md", "reason": "literal private LAN address" },
+    { "object": "cf1a068fe8c7b4d4b93922f50b3e2f5dca0f2b29", "path": "docs/RELEASE-GATE-REPAIR.md", "reason": "literal private LAN address" }
+  ]
+}

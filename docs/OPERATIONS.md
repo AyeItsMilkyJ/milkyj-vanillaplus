@@ -14,7 +14,7 @@ Build the one-time Prism import with:
    .\scripts\Build-Prism-Bootstrap.ps1
    ```
 
-The player ZIP appears in `dist\MilkyJ-VanillaPlus-AutoUpdating-Prism.zip`. `dist` is ignored by Git because it is a generated release artefact.
+The player ZIP appears in `dist\MilkyCraft-VanillaPlus-AutoUpdating-Prism.zip`. `dist` is ignored by Git because it is a generated release artefact.
 
 The final pack URL is:
 
@@ -28,7 +28,7 @@ Do not make the repository private unless you replace GitHub raw hosting with an
 
 1. Install Prism Launcher and Java 17.
 2. In Prism select **Add Instance → Import → ZIP**.
-3. Select `MilkyJ-VanillaPlus-AutoUpdating-Prism.zip`.
+3. Select `MilkyCraft-VanillaPlus-AutoUpdating-Prism.zip`.
 4. Sign into Minecraft in Prism and press **Play**.
 
 That ZIP is imported only once. The configured pre-launch command runs `packwiz-installer-bootstrap.jar` before Minecraft. On first launch it downloads the pack; later launches download only changes and delete only obsolete files that Packwiz previously managed.

@@ -1,6 +1,6 @@
 # Security and privacy sanitization
 
-Status: **PASS** for the sanitized implementation commit and its reachable publication refs. Final manual release gates remain separate.
+Status: **PASS** for the current publishable tree, secret/path rules, and prevention of new historical privacy leaks. Thirteen reviewed legacy privacy-metadata blobs remain reachable in already-published history and are reported explicitly rather than hidden.
 
 No secret value or full third-party identity record is reproduced in this document.
 
@@ -27,12 +27,14 @@ The task did not inspect or change the live production server. Therefore product
 
 The original unpublished history was saved outside the publishable repository before ref replacement:
 
-`C:\Users\MilkyJ\Documents\Codex\2026-07-19\ar\MilkyJ-Packwiz-private-pre-sanitization-20260812.bundle`
+`<PRIVATE_OFFLINE_LOCATION>\MilkyJ-Packwiz-private-pre-sanitization-20260812.bundle`
 
 - Size: `1,067,004` bytes
 - SHA-256: `593af57ca53dd4da5f072712f630921b454c6d0ecbc1f4b691f15f3bc82f59fa`
 - `git bundle verify`: complete history, verified OK
 
-This bundle is a private offline recovery artifact and must not be published. The local recovery baseline `main`/`v1.0.0` was replaced with a valid sanitized `1.8.1-packwiz.1` snapshot. The old feature ref was removed, the repair commit attached to that sanitized baseline, reflogs expired, and unreachable objects pruned. `scripts/security_history_scan.py` then checked every reachable branch/tag and publishable worktree file.
+This bundle is a private offline recovery artifact and must not be published. The local recovery baseline `main`/`v1.0.0` was replaced with a valid sanitized `1.8.1-packwiz.1` snapshot. The old feature ref was removed, the repair commit attached to that sanitized baseline, reflogs expired, and unreachable objects pruned. Later release-audit documents nevertheless introduced several literal private-LAN and local user-profile-path values into already-published commits. Their current versions are redacted. Because rewriting published Git history is disruptive and was not authorised, the old blob objects remain reachable.
 
-The machine-readable result is `audit/security-history-scan.json`: 3 refs, 1,449 reachable blobs, zero findings. It reports only paths/object IDs and never secret values or cached identity contents.
+`scripts/security_history_scan.py` now checks those location patterns in every current file and every reachable blob. The immutable reviewed baseline is `audit/security-known-history.json`; it contains only object IDs, paths and reason categories for the 13 known legacy blobs. The scan fails on any new occurrence, every current-tree occurrence, every secret-like value, and every forbidden runtime/identity path. Secrets and forbidden paths can never be baselined.
+
+The machine-readable result is `audit/security-history-scan.json`. It separately reports zero blocking findings and the 13 known legacy privacy findings without reproducing any address, username, secret value or identity record.

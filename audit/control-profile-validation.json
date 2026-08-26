@@ -1,0 +1,20 @@
+{
+    "testedAt":  "2026-08-26T22:20:13.1367707+10:00",
+    "status":  "PASS",
+    "profileVersion":  "1.0.0",
+    "declaredBindings":  24,
+    "changedUntouchedDefaults":  23,
+    "preservedCustomBindings":  1,
+    "missingBindings":  0,
+    "nonKeySettingsByteStable":  true,
+    "crlfPreserved":  true,
+    "utf8BomAndLfPreserved":  true,
+    "missingBindingSkipped":  true,
+    "forwardSlashGameDirGuard":  true,
+    "exactBackupVerified":  true,
+    "idempotentSecondRun":  true,
+    "exactRestoreVerified":  true,
+    "restoreSafetyBackupVerified":  true,
+    "optionsPackwizManaged":  false,
+    "testInstallation":  "disposable"
+}

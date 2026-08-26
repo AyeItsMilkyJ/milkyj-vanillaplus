@@ -22,6 +22,12 @@ SECRET_CONTENT = (
     re.compile(rb'["\']pass' + rb'word["\']\s*:\s*["\'][^"\']+["\']', re.I),
     re.compile(rb'["\'](?:access_token|refresh_token|client_secret)["\']\s*:\s*["\'][^"\']+["\']', re.I),
 )
+PRIVATE_LAN_CONTENT = re.compile(
+    rb"(?<!\d)(?:10(?:\.\d{1,3}){3}|192\.168(?:\.\d{1,3}){2}|172\.(?:1[6-9]|2\d|3[01])(?:\.\d{1,3}){2})(?!\d)"
+)
+ABSOLUTE_WINDOWS_USER_PATH = re.compile(
+    rb"(?i)\b[A-Z]:[\\/]+Users[\\/]+(?![<%])[^\\/\s]+[\\/]"
+)
 
 
 def git(root: Path, *args: str, check: bool = True) -> subprocess.CompletedProcess[bytes]:
@@ -42,6 +48,17 @@ def contains_secret(data: bytes) -> bool:
     return any(pattern.search(data) for pattern in SECRET_CONTENT)
 
 
+def private_location_reason(data: bytes) -> str | None:
+    """Reject current-tree location leaks without reproducing their values."""
+    if b"\x00" in data or len(data) > 5 * 1024 * 1024:
+        return None
+    if PRIVATE_LAN_CONTENT.search(data):
+        return "literal private LAN address"
+    if ABSOLUTE_WINDOWS_USER_PATH.search(data):
+        return "literal absolute Windows user-profile path"
+    return None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("project_root", nargs="?", type=Path, default=Path(__file__).resolve().parents[1])
@@ -49,6 +66,29 @@ def main() -> int:
     args = parser.parse_args()
     root = args.project_root.resolve()
     findings: list[dict[str, str]] = []
+    known_history: list[dict[str, str]] = []
+
+    baseline_path = root / "audit" / "security-known-history.json"
+    known_baseline: set[tuple[str, str]] = set()
+    if not baseline_path.is_file():
+        findings.append({"scope": "history-baseline", "path": str(baseline_path), "reason": "reviewed history baseline is missing"})
+    else:
+        try:
+            baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
+            for entry in baseline.get("entries", []):
+                object_id = str(entry.get("object", ""))
+                reason = str(entry.get("reason", ""))
+                if not re.fullmatch(r"[0-9a-f]{40}", object_id) or reason not in {
+                    "literal private LAN address",
+                    "literal absolute Windows user-profile path",
+                }:
+                    raise ValueError("invalid reviewed history entry")
+                key = (object_id, reason)
+                if key in known_baseline:
+                    raise ValueError("duplicate reviewed history entry")
+                known_baseline.add(key)
+        except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
+            findings.append({"scope": "history-baseline", "path": "audit/security-known-history.json", "reason": f"invalid reviewed history baseline: {exc}"})
 
     listed = git(root, "ls-files", "-co", "--exclude-standard").stdout.decode("utf-8", "replace").splitlines()
     for relative in sorted(set(listed)):
@@ -65,6 +105,9 @@ def main() -> int:
                 continue
             if contains_secret(data):
                 findings.append({"scope": "worktree", "path": relative, "reason": "non-empty secret-like value"})
+            location_reason = private_location_reason(data)
+            if location_reason:
+                findings.append({"scope": "worktree", "path": relative, "reason": location_reason})
 
     refs_raw = git(root, "for-each-ref", "--format=%(refname)", "refs/heads", "refs/tags").stdout
     refs = sorted(refs_raw.decode("utf-8", "replace").splitlines())
@@ -109,6 +152,18 @@ def main() -> int:
                 "object": object_id,
                 "reason": "non-empty secret-like value",
             })
+        location_reason = private_location_reason(data)
+        if location_reason:
+            location_finding = {
+                "scope": "history",
+                "path": object_paths.get(object_id) or "<path unavailable>",
+                "object": object_id,
+                "reason": location_reason,
+            }
+            if (object_id, location_reason) in known_baseline:
+                known_history.append(location_finding)
+            else:
+                findings.append(location_finding)
 
     unique = []
     seen = set()
@@ -117,6 +172,18 @@ def main() -> int:
         if key not in seen:
             seen.add(key)
             unique.append(finding)
+    known_unique = []
+    known_seen = set()
+    for finding in known_history:
+        key = tuple(sorted(finding.items()))
+        if key not in known_seen:
+            known_seen.add(key)
+            known_unique.append(finding)
+    observed_baseline = {(entry["object"], entry["reason"]) for entry in known_unique}
+    baselineEntriesNotReachable = [
+        {"object": object_id, "reason": reason}
+        for object_id, reason in sorted(known_baseline - observed_baseline)
+    ]
     result = {
         "scannedAt": datetime.now().astimezone().isoformat(),
         "status": "PASS" if not unique else "FAIL",
@@ -125,7 +192,10 @@ def main() -> int:
         "reachableBlobsScanned": len(checked_blobs),
         "findingCount": len(unique),
         "findings": unique,
-        "note": "Findings report paths and object IDs only; secret values and identity records are never emitted.",
+        "knownHistoricalPrivacyFindingCount": len(known_unique),
+        "knownHistoricalPrivacyFindings": known_unique,
+        "baselineEntriesNotReachable": baselineEntriesNotReachable,
+        "note": "Blocking findings and reviewed legacy privacy metadata report paths/object IDs only; values and identity records are never emitted. Secret-content and forbidden-path findings can never be baselined.",
     }
     report = root / "audit/security-history-scan.json"
     if not args.no_write:

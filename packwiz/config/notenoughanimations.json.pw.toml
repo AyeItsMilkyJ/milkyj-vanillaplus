@@ -1,8 +1,8 @@
 name = "Managed config: notenoughanimations.json"
 filename = "notenoughanimations.json"
-side = "both"
+side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/notenoughanimations.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/notenoughanimations.json"
 hash-format = "sha256"
 hash = "45121987f8bbbb948bd5096ffb02b1361c762b3e34836b3f9097a9a4ef7222d4"

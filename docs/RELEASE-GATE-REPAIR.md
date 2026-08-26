@@ -100,7 +100,7 @@ Final quest book:
 - Disposable server: reached `Done` in 46.672 seconds; FTB loaded 4 groups, 9 chapters, 118 quests; all loaded dimensions saved; JVM exited normally.
 - Generated Resourceful Config omission: startup **PASS**, local regeneration **PASS**, web disabled.
 - Patron cache omission: startup **PASS**, cache remained unnecessary.
-- LAN harness: `192.168.0.159:8765` Packwiz and `192.168.0.159:25566` Minecraft reached `Done`, loaded 9/118, saved, and stopped both owned processes. Production port `25565` was refused/untouched.
+- LAN harness: `<PRIVATE_LAN_ADDRESS>:8765` Packwiz and `<PRIVATE_LAN_ADDRESS>:25566` Minecraft reached `Done`, loaded 9/118, saved, and stopped both owned processes. Production port `25565` was refused/untouched.
 - LAN-test ZIP: `dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-Prism.zip`, SHA-256 `988553f8a88d420300811114d1cfa8461463b59607f956bfd91ce978e9533b4f`.
 
 The server log still contains previously known non-fatal third-party recipe/advancement/config warnings. They did not block startup, quest loading, save, or exit and were not expanded into unrelated mod/content work in this release-blocker-only task.

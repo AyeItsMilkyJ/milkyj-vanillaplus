@@ -1,6 +1,6 @@
 # MilkyCraft Vanilla+ quest progression
 
-Release candidate: `1.9.0-rc2`
+Release candidate: `1.9.0-rc3`
 
 Minecraft: `1.20.1`
 

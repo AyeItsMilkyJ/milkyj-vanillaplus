@@ -1,6 +1,6 @@
 # MilkyCraft Vanilla+ — player features and evolution
 
-This document describes only systems confirmed in the current `1.9.0-rc2` Forge 1.20.1 pre-release. Library mods are not advertised as gameplay features, and removed or rejected additions are not presented as installed.
+This document describes only systems confirmed in the current `1.9.0-rc3` Forge 1.20.1 pre-release. Library mods are not advertised as gameplay features, and removed or rejected additions are not presented as installed.
 
 ## The short version
 
@@ -63,6 +63,8 @@ The old shallow quest list became a 210-quest field guide designed for players n
 ### 7. Visual choices and distant terrain
 
 Managed resource-pack choices are Bare Bones, Faithful 32x, FPBR, Fresh Animations, Fresh Compats, Shable's Tweaks and the custom MilkyJ Stability Fixes layer. The stability layer repairs exact missing model, texture, sound and atlas paths without replacing unrelated art.
+
+RC3 adds an optional, reversible recommended-control profile. It gives quests a visible `J` key, groups shader controls on `F6`–`F8`, separates backpack/storage/map actions, keeps Create's Left Alt tool modifier clear of Relics, and leaves every pre-customised binding untouched. The updater distributes the tool but never manages `options.txt`.
 
 The mate installer contains ten optional shaders:
 

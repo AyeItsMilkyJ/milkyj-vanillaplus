@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [string]$ProjectRoot,
-    [string]$ShaderSourceDirectory = "$env:APPDATA\PrismLauncher\instances\Premium Modpack DEV\minecraft\shaderpacks",
+    [string]$ShaderSourceDirectory,
     [Parameter(Mandatory = $true)]
     [string]$ServerAddress,
     [ValidateRange(1, 65535)]
@@ -16,7 +16,7 @@ if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $root = [IO.Path]::GetFullPath($ProjectRoot)
 $settings = Get-Content -LiteralPath (Join-Path $root 'project-settings.json') -Raw | ConvertFrom-Json
 if (-not $OutputPath) {
-    $OutputPath = Join-Path $root ("dist\MilkyJ-VanillaPlus-{0}-MATES-AUTO-UPDATING.zip" -f $settings.packVersion)
+    $OutputPath = Join-Path $root ("dist\MilkyCraft-VanillaPlus-{0}-MATES-AUTO-UPDATING.zip" -f $settings.packVersion)
 }
 $output = [IO.Path]::GetFullPath($OutputPath)
 $buildRoot = Join-Path $root 'build\mate-distribution'
@@ -33,17 +33,6 @@ if (Test-Path -LiteralPath $buildRoot) {
 }
 New-Item -ItemType Directory -Path $stage, $shaderDestination, (Split-Path -Parent $output) -Force | Out-Null
 
-& (Join-Path $PSScriptRoot 'Build-Prism-Bootstrap.ps1') `
-    -ProjectRoot $root `
-    -OutputPath $temporaryBootstrap
-if (-not (Test-Path -LiteralPath $temporaryBootstrap -PathType Leaf)) {
-    throw 'The base Prism bootstrap build did not create its output ZIP.'
-}
-
-Add-Type -AssemblyName System.IO.Compression.FileSystem
-Add-Type -AssemblyName System.IO.Compression
-[IO.Compression.ZipFile]::ExtractToDirectory($temporaryBootstrap, $stage)
-
 $shaderNames = @(
     'Bloop-1.8.0-Alpha-3.zip',
     'BSL_v10.1.3.zip',
@@ -56,6 +45,46 @@ $shaderNames = @(
     'Solas Shader V3.7.zip',
     'TAA 3.7.6.zip'
 )
+
+if (-not $ShaderSourceDirectory) {
+    $instancesRoot = Join-Path $env:APPDATA 'PrismLauncher\instances'
+    $matchingInstances = @()
+    if (Test-Path -LiteralPath $instancesRoot -PathType Container) {
+        foreach ($instanceDirectory in Get-ChildItem -LiteralPath $instancesRoot -Directory) {
+            $instanceConfig = Join-Path $instanceDirectory.FullName 'instance.cfg'
+            $shaderCandidate = Join-Path $instanceDirectory.FullName 'minecraft\shaderpacks'
+            if (-not (Test-Path -LiteralPath $instanceConfig -PathType Leaf) -or
+                -not (Test-Path -LiteralPath $shaderCandidate -PathType Container)) { continue }
+            $instanceText = [IO.File]::ReadAllText($instanceConfig)
+            $hasRequiredShaders = @($shaderNames | Where-Object {
+                -not (Test-Path -LiteralPath (Join-Path $shaderCandidate $_) -PathType Leaf)
+            }).Count -eq 0
+            if ($instanceText.Contains([string]$settings.packUrl) -and $hasRequiredShaders) {
+                $matchingInstances += $shaderCandidate
+            }
+        }
+    }
+    if ($matchingInstances.Count -ne 1) {
+        throw "Could not identify exactly one Prism instance using the stable Packwiz URL and containing all ten required shaders. Pass -ShaderSourceDirectory explicitly. Matches: $($matchingInstances.Count)"
+    }
+    $ShaderSourceDirectory = $matchingInstances[0]
+}
+$ShaderSourceDirectory = [IO.Path]::GetFullPath($ShaderSourceDirectory)
+if (-not (Test-Path -LiteralPath $ShaderSourceDirectory -PathType Container)) {
+    throw "Shader source directory does not exist: $ShaderSourceDirectory"
+}
+
+& (Join-Path $PSScriptRoot 'Build-Prism-Bootstrap.ps1') `
+    -ProjectRoot $root `
+    -OutputPath $temporaryBootstrap
+if (-not (Test-Path -LiteralPath $temporaryBootstrap -PathType Leaf)) {
+    throw 'The base Prism bootstrap build did not create its output ZIP.'
+}
+
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+Add-Type -AssemblyName System.IO.Compression
+[IO.Compression.ZipFile]::ExtractToDirectory($temporaryBootstrap, $stage)
+
 foreach ($name in $shaderNames) {
     $source = Join-Path $ShaderSourceDirectory $name
     if (-not (Test-Path -LiteralPath $source -PathType Leaf)) {
@@ -71,7 +100,7 @@ foreach ($name in $shaderNames) {
 
 $restartHours = [math]::Round($RestartIntervalMinutes / 60, 2)
 $serverInfo = @"
-MILKYJ VANILLA+ — MATE SETUP
+MILKYCRAFT VANILLA+ — MATE SETUP
 
 Minecraft: $($settings.minecraftVersion)
 Forge: $($settings.forgeVersion)
@@ -99,21 +128,32 @@ Low-cost choices: MakeUp Ultra Fast, HyShaders Vanilla Lite, Sildur's Enhanced D
 Balanced/showcase choice: BSL. Distant-Horizons-focused choice: TAA.
 If a shader misbehaves on a particular GPU, switch shaders before changing pack files.
 
+RESOURCE PACK ORDER (TOP TO BOTTOM)
+MilkyJ Stability Fixes, Fresh Compats, Fresh Animations, optional Shable's Tweaks,
+then ONE base pack: Faithful 32x, Bare Bones, or high-cost FPBR.
+
+OPTIONAL RECOMMENDED CONTROLS
+After the first successful launch, close Minecraft and run:
+minecraft\scripts\milkycraft-controls\APPLY RECOMMENDED CONTROLS.bat
+It backs up options.txt and skips any binding the player already customised.
+
 MEMORY
 The shared instance allows 4–8 GB. Do not allocate nearly all of the computer's RAM.
 
 The installer does not contain accounts, tokens, worlds, saves, screenshots, logs, keybinds, or personal shader selection/settings. Those stay local to each player's existing instance.
 "@
 [IO.File]::WriteAllText(
-    (Join-Path $minecraft 'README-MILKYJ-MATES.txt'),
+    (Join-Path $minecraft 'README-MILKYCRAFT-MATES.txt'),
     $serverInfo,
     [Text.UTF8Encoding]::new($false)
 )
 $serverInfoOutput = Join-Path (Split-Path -Parent $output) 'SERVER-INFO-FOR-MATES.txt'
 [IO.File]::WriteAllText($serverInfoOutput, $serverInfo, [Text.UTF8Encoding]::new($false))
 Copy-Item -LiteralPath (Join-Path $root 'docs\PLAYER-FEATURES-AND-CHANGELOG.md') `
-    -Destination (Join-Path $minecraft 'MILKYJ-FEATURES-AND-UPDATES.md')
-$featuresOutput = Join-Path (Split-Path -Parent $output) 'MILKYJ-FEATURES-AND-UPDATES.md'
+    -Destination (Join-Path $minecraft 'MILKYCRAFT-FEATURES-AND-UPDATES.md')
+Copy-Item -LiteralPath (Join-Path $root 'docs\RESOURCE-PACKS.md') `
+    -Destination (Join-Path $minecraft 'MILKYCRAFT-RESOURCE-PACKS.md')
+$featuresOutput = Join-Path (Split-Path -Parent $output) 'MILKYCRAFT-FEATURES-AND-UPDATES.md'
 $promptOutput = Join-Path (Split-Path -Parent $output) 'CHATGPT-CLASSIC-MODPACK-PAGE-PROMPT.md'
 Copy-Item -LiteralPath (Join-Path $root 'docs\PLAYER-FEATURES-AND-CHANGELOG.md') -Destination $featuresOutput -Force
 Copy-Item -LiteralPath (Join-Path $root 'docs\CHATGPT-CLASSIC-MODPACK-PAGE-PROMPT.md') -Destination $promptOutput -Force
@@ -144,8 +184,9 @@ try {
         'instance.cfg',
         'mmc-pack.json',
         'minecraft/packwiz-installer-bootstrap.jar',
-        'minecraft/README-MILKYJ-MATES.txt',
-        'minecraft/MILKYJ-FEATURES-AND-UPDATES.md'
+        'minecraft/README-MILKYCRAFT-MATES.txt',
+        'minecraft/MILKYCRAFT-FEATURES-AND-UPDATES.md',
+        'minecraft/MILKYCRAFT-RESOURCE-PACKS.md'
     )) {
         if ($required -notin $entries) { throw "Mate ZIP is missing $required" }
     }

@@ -10,6 +10,8 @@ if (-not $testRoot.Equals($expected, [StringComparison]::OrdinalIgnoreCase)) { t
 $statePath = Join-Path $testRoot 'state.json'
 if (-not (Test-Path -LiteralPath $statePath -PathType Leaf)) { throw 'No RC LAN test state file exists.' }
 $state = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
+$settings = Get-Content -LiteralPath (Join-Path $root 'project-settings.json') -Raw | ConvertFrom-Json
+$candidateVersion = if ($state.packVersion) { [string]$state.packVersion } else { [string]$settings.packVersion }
 if ($state.minecraftPort -eq 25565 -or $state.packHttpPort -eq 25565 -or $state.productionPortUsed) { throw 'State safety check failed: production port is referenced.' }
 if (-not ([IO.Path]::GetFullPath($state.serverRoot)).StartsWith(($testRoot.TrimEnd('\') + '\'), [StringComparison]::OrdinalIgnoreCase)) { throw 'State safety check failed: server root is outside the disposable test directory.' }
 
@@ -33,12 +35,12 @@ $stopped = [ordered]@{
 }
 [IO.File]::WriteAllText((Join-Path $testRoot 'stop-result.json'), (($stopped | ConvertTo-Json) + "`r`n"), [Text.UTF8Encoding]::new($false))
 $audit = [ordered]@{
-    testedAt = $stopped.stoppedAt; candidate = '1.9.0-rc2'; lanAddress = $state.lanAddress
+    testedAt = $stopped.stoppedAt; candidate = $candidateVersion; lanAddress = $state.lanAddress
     packHttpPort = $state.packHttpPort; minecraftPort = $state.minecraftPort
     productionPortTouched = $false; serverJarCount = $state.serverJarCount
     serverReachedDone = $reachedDone; questParserLoaded = $questsLoaded; chapterCount = 15; questCount = 210
     allLoadedDimensionsSaved = $saved; supervisorStopped = $stopped.supervisorStopped; httpStopped = $stopped.httpStopped
-    zip = 'dist/MilkyJ-VanillaPlus-1.9.0-rc2-LAN-TEST-Prism.zip'
+    zip = "dist/$([IO.Path]::GetFileName([string]$state.zip))"
     zipSha256 = (Get-FileHash -LiteralPath $state.zip -Algorithm SHA256).Hash.ToLowerInvariant()
     twoClientManualInteractionResult = 'NOT RUN'
     firewallOrRouterChanged = $false; liveServerWorldOrPrismTouched = $false

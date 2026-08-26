@@ -1,8 +1,8 @@
 name = "Managed config: particlerain/config.json"
 filename = "config.json"
-side = "both"
+side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/particlerain/config.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/particlerain/config.json"
 hash-format = "sha256"
 hash = "bd8abf7000e1cd681b090d8425b808f196297b6af473826405321d037e6fdd3a"

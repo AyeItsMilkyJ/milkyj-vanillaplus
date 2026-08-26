@@ -1,0 +1,8 @@
+name = "Managed scripts: milkycraft-controls/recommended-controls.json"
+filename = "recommended-controls.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/scripts/milkycraft-controls/recommended-controls.json"
+hash-format = "sha256"
+hash = "3423504fe14a29efedcb4c23fda0560e1581e3cab3110face868ea0a5ff48865"

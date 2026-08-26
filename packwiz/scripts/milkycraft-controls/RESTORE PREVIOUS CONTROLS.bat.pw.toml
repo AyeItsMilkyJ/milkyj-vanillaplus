@@ -1,0 +1,8 @@
+name = "Managed scripts: milkycraft-controls/RESTORE PREVIOUS CONTROLS.bat"
+filename = "RESTORE PREVIOUS CONTROLS.bat"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/scripts/milkycraft-controls/RESTORE%20PREVIOUS%20CONTROLS.bat"
+hash-format = "sha256"
+hash = "2a0575bab46d9f73be736ab9a4dcc0bc3f2a2a55d1fcace3aa2b4d22dbb8d838"

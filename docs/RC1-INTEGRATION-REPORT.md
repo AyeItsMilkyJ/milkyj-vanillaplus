@@ -112,8 +112,8 @@ Retain Distant Horizons on both client and dedicated server for RC1, then **TEST
 - File: `dist/MilkyJ-VanillaPlus-1.9.0-rc1-LAN-TEST-r3-Prism.zip`
 - SHA-256: `725b1562e116cd505d993432d784012822c01de378165240aae9ba1f6bcb30c3`
 - Bytes: 91,704
-- Pack URL: `http://192.168.0.159:8765/packwiz/pack.toml`
-- Pre-launch value: `\"$INST_JAVA\" -jar packwiz-installer-bootstrap.jar http://192.168.0.159:8765/packwiz/pack.toml`
+- Pack URL: `http://<PRIVATE_LAN_ADDRESS>:8765/packwiz/pack.toml`
+- Pre-launch value: `\"$INST_JAVA\" -jar packwiz-installer-bootstrap.jar http://<PRIVATE_LAN_ADDRESS>:8765/packwiz/pack.toml`
 
 Archive inspection and the process-level Java-path-with-spaces regression passed. There is no placeholder GitHub URL in R3. The LAN host was not started and manual Prism import was not claimed. R2 remains unchanged at SHA-256 `3eac0a7fce9029d023182e276dea5da1695ad34b817c4f0582ea88d3fe34a907`.
 
@@ -151,7 +151,7 @@ Documentation/audit additions and updates:
 2. Run the full two-account quest/team test in `docs/MANUAL-RC-TEST.md`, including team membership, shared and per-player quest behaviour, rewards, relog, restart, and rollback.
 3. Stop the live server and take a timestamped backup before copying the world to a disposable test root.
 4. Test the copied world with the real player count, developed bases, Create contraptions/trains, bees/pets/storage, major dimensions, exploration, save, restart, and rollback.
-5. Confirm the LAN address is still `192.168.0.159` before using R3; rebuild R3 if DHCP changed it.
+5. Confirm the host's current private LAN address before using R3; rebuild R3 if DHCP changed it.
 6. Configure and validate a real stable HTTPS Packwiz URL only after the manual gates pass.
 
 No publication, push, merge, deployment, live-world change, live-server start, production port binding, or normal Prism change is authorized by this report.

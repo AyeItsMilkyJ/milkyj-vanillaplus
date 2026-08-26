@@ -9,7 +9,7 @@ Current locked platform:
 - Minecraft `1.20.1`
 - Forge `47.4.10`
 - Established previous pack version `1.8.1-packwiz.1`
-- Current Packwiz release `1.9.0-rc2`
+- Current Packwiz release `1.9.0-rc3`
 
 Permanent public update feed:
 
@@ -21,7 +21,7 @@ The live world is not part of this repository and no update script is allowed to
 
 ## Player setup
 
-1. Build or download `MilkyJ-VanillaPlus-AutoUpdating-Prism.zip`.
+1. Build or download `MilkyCraft-VanillaPlus-AutoUpdating-Prism.zip`.
 2. Import it into Prism Launcher once.
 3. Press **Play** normally. Packwiz checks this repository and downloads only changed managed files before Minecraft starts.
 
@@ -30,6 +30,10 @@ Detailed day-to-day publishing, player installation, server updating, backups, a
 The Prism quoting repair is documented in [docs/PRISM-BOOTSTRAP-REPAIR.md](docs/PRISM-BOOTSTRAP-REPAIR.md). The deployed Windows supervisor, cold backups, scheduled restarts, status, update, and rollback tooling are documented in [docs/SERVER-24-7-OPERATIONS.md](docs/SERVER-24-7-OPERATIONS.md).
 
 The current beginner progression contains 210 pack-specific quests across 15 chapters. Its connected branch map, exact chapter counts, progress-preservation audit, installed-system boundaries, research sources, and verification checklist are in [docs/QUEST-PROGRESSION.md](docs/QUEST-PROGRESSION.md). The tuned Quark Matrix, Easy Anvils and Create: Enchantment Industry route is documented in [docs/ENCHANTING.md](docs/ENCHANTING.md).
+
+The optional, conflict-reduced and reversible player key layout is documented in [docs/CONTROLS.md](docs/CONTROLS.md). Packwiz distributes the patcher but never manages or silently rewrites `options.txt`.
+
+The recommended resource-pack priority and minimal visual troubleshooting stack are in [docs/RESOURCE-PACKS.md](docs/RESOURCE-PACKS.md). Selection remains a player preference and is never forced by the updater.
 
 The optional creator replay/cinematic evaluation, current fail-closed status and future enablement gates are in [docs/CREATOR-CAPTURE.md](docs/CREATOR-CAPTURE.md). Prophet's immutable replay-media boundary is in [docs/CREATOR-REPLAY-INTEGRATION.md](docs/CREATOR-REPLAY-INTEGRATION.md).
 

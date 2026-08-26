@@ -1,8 +1,8 @@
-# Runtime health audit — 22 August 2026
+# Runtime health audit — updated 26 August 2026
 
-The current MilkyCraft Vanilla+ `1.9.0-rc2` candidate has no missing mandatory Forge dependency, duplicate top-level mod ID, duplicate JAR payload, JAR hash mismatch, or client/server payload drift. The verified managed totals are 242 mod definitions, 240 client JARs, and 206 dedicated-server JARs.
+The current MilkyCraft Vanilla+ `1.9.0-rc3` candidate has no missing mandatory Forge dependency, duplicate top-level mod ID, duplicate JAR payload, JAR hash mismatch, or client/server payload drift. The verified managed totals are 242 mod definitions, 240 client JARs, and 206 dedicated-server JARs.
 
-This document combines the earlier RC1 runtime-maintenance history with the current disposable RC2 revalidation. The RC2 expansion evidence is `audit/create-expansion-validation.json`; `audit/runtime-health-20260822.json` and the live-deployment section below describe the preceding RC1 maintenance pass. RC2 has not been deployed to the live server or Prism instance.
+This document combines the earlier RC1/RC2 runtime-maintenance history with the current disposable RC3 revalidation. The expansion evidence is `audit/create-expansion-validation.json`; `audit/runtime-health-20260822.json` and the live-deployment section below describe the preceding maintenance pass. RC2 is deployed on the stopped live dedicated server. The primary Prism instance uses the stable Packwiz feed and will receive RC3 on its next launch after publication; its newest retained client runtime log predates this candidate.
 
 ## Earlier runtime repairs retained
 
@@ -12,11 +12,13 @@ This document combines the earlier RC1 runtime-maintenance history with the curr
 - The visible server supervisor now contains the exact historical Windows broken-console failure. Console rendering is optional, file/state logging remains authoritative, process identity uses more than a PID, stale state cannot impersonate a running server, and an orphaned Java process is reported as **RUNNING / UNMANAGED** and remains update-unsafe.
 - The compatibility end-to-end test now accepts the improved result of zero loot-table warnings while still failing on any unexpected warning.
 
-## RC2 disposable validation result
+## RC3 disposable validation result
 
-A clean Packwiz update installed 240 client JARs and 206 server JARs. It preserved personal options, the keybinding container, screenshots, saves, shader settings, custom shaderpacks, and preserved mod-specific client preferences. Fusion and SeasonHUD were present on the client and absent from the server as classified.
+A clean 729-entry Packwiz update installed 240 client JARs and 206 server JARs. It preserved personal options, the keybinding container, screenshots, saves, shader settings, custom shaderpacks, and mod-specific client preferences. The same run simulated the real RC2-to-RC3 side transition: all eleven customised preferences survived their change from managed-both to preserved-client, their obsolete copies were removed from the existing disposable server, and the five optional control-tool files were delivered only to the client. Fusion and SeasonHUD remained client-only.
 
-The fresh 206-JAR Forge server reached `Done`, loaded all 118 quests and the compatibility datapack at final priority, reloaded data successfully, produced no targeted Domestication Innovation, Nether's Delight, Beautify, TF D&V, rice, or Aquatic Ambitions compatibility error, saved all seven loaded dimensions, exited with code 0, and released its port. The same 206-JAR payload also passed the real supervisor integration: direct Java ownership, `Done`, normal save/stop, JVM exit, and port release.
+The fresh 206-JAR Forge server reached `Done`, loaded all 210 quests and the compatibility datapack at final priority, reloaded data successfully, answered a post-reload command barrier, produced no targeted Domestication Innovation, Nether's Delight, Beautify, TF D&V, rice, or Aquatic Ambitions compatibility error, saved all seven loaded dimensions, exited with code 0, and released its port. The same 206-JAR payload also passed the real supervisor integration: direct Java ownership, `Done`, normal save/stop, JVM exit, and port release.
+
+All seven live Forge starts retained on 22 August reached `Done`. Four scheduled three-hour restarts completed cleanly. The final GUI session stopped intentionally with exit code 0 after saving the Overworld, Nether, End, Aether, Twilight Forest, Otherside and Graveyard Past; Distant Horizons closed all seven databases with zero incomplete tasks. There was no fatal error, crash report, OOM, watchdog event or runtime tick-behind warning.
 
 ## Existing launcher and supervisor evidence
 
@@ -32,7 +34,8 @@ During the earlier RC1 runtime-maintenance pass, the live server was confirmed s
 - Smarter Farmers logs that it could not add every modded food to the villager food-point map. Its installed config has no isolated custom-food toggle or repair; changing the JAR or mod selection was avoided.
 - Bloop 1.8.0 Alpha 3 loads but needs many Oculus compatibility patches. Treat it as an optional shader and switch to a known-good pack if it produces visual corruption.
 - EMF can deliberately stop rebuilding a few Relics/cape models after reaching its safety cap; affected cosmetics may fall back rather than destabilising the client.
-- The collision-heavy `R`, `B`, `Z`, `K`, `G`, `U`, `V`, and `T` bindings remain personal. Controlling's conflict screen should be used to choose them; the updater must not reset player controls.
+- The updater still never resets player controls. It now distributes an optional, backed-up control patcher that changes only untouched defaults and leaves intentional context-only overlaps alone; see `docs/CONTROLS.md`.
 - Routine mixin metadata, version-check timeout, Distant Horizons GC-preference, and transient entity-sync warnings remain non-fatal. No OOM, current JVM crash, missing dependency, mixin-apply failure, shader compile failure, or framebuffer failure was found in the latest usable client/server sessions.
+- Do not issue `stop` or trigger a supervised restart immediately after `/reload`. One disposable run stopped about six seconds after the advancement marker, saved every dimension, but left the reload lifecycle alive beyond five minutes. Waiting for a command-response barrier and then 30 seconds produced a normal code-0 exit in two controlled reproductions and the final end-to-end gate. Routine production stops never showed this race.
 
 The local repository changes are not published automatically. Friends receive them only after the normal reviewed publish step updates the stable Packwiz URL.

@@ -1,8 +1,8 @@
 name = "Managed config: presencefootsteps/userconfig.json"
 filename = "userconfig.json"
-side = "both"
+side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/presencefootsteps/userconfig.json"
+url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/config/presencefootsteps/userconfig.json"
 hash-format = "sha256"
 hash = "8cf6192eda81b3a27737440cfdedc05c40a8c1b552583114c1aa6fb2673ca907"
