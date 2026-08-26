@@ -1,0 +1,32 @@
+{
+    "testedAt":  "2026-08-26T22:49:52.0619799+10:00",
+    "powershellVersion":  "5.1.26100.9168",
+    "status":  "PASS",
+    "loopbackPort":  54775,
+    "events":  [
+                   "crashed",
+                   "failed",
+                   "offline",
+                   "online",
+                   "restarting",
+                   "rolledback",
+                   "rollingback",
+                   "starting",
+                   "test",
+                   "updated",
+                   "updating",
+                   "warning"
+               ],
+    "requestCount":  14,
+    "retrySequence":  [
+                          "429",
+                          "500",
+                          "200"
+                      ],
+    "deliveryConfirmationRequested":  true,
+    "mentionsDisabled":  true,
+    "durableAuditRecords":  12,
+    "realDiscordContacted":  false,
+    "productionPortTouched":  false,
+    "liveServerTouched":  false
+}

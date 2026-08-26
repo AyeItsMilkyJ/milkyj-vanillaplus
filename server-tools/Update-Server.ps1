@@ -8,6 +8,7 @@ param(
 )
 
 . (Join-Path $PSScriptRoot 'Common.ps1')
+. (Join-Path $PSScriptRoot 'Discord-Notifications.ps1')
 $serverRootResolved = Assert-ValidServerRoot (Resolve-ServerRoot $ServerRoot)
 Assert-ServerStopped $serverRootResolved
 $settings = Get-ServerSettings -ServerRoot $serverRootResolved -SettingsPath $SettingsPath -PackUrl $PackUrl
@@ -23,13 +24,14 @@ if (-not $backupPath) {
 $backupPath = [IO.Path]::GetFullPath($backupPath)
 $backupValidation = & (Join-Path $PSScriptRoot 'Test-ServerBackup.ps1') -BackupPath $backupPath -PassThru
 if (-not $backupValidation.valid) { throw 'A complete, verified cold backup is required before updating.' }
+$priorVersion = Get-CurrentPackVersion $serverRootResolved
 
 $managementRoot = Get-ManagementRoot $serverRootResolved
 New-Item -ItemType Directory -Path $managementRoot -Force | Out-Null
 $before = [ordered]@{
     recordedAt = (Get-Date).ToString('o')
     packUrl = $PackUrl
-    priorVersion = Get-CurrentPackVersion $serverRootResolved
+    priorVersion = $priorVersion
     priorPackwizStateSha256 = if (Test-Path -LiteralPath (Join-Path $serverRootResolved 'packwiz.json')) { (Get-FileHash -LiteralPath (Join-Path $serverRootResolved 'packwiz.json') -Algorithm SHA256).Hash.ToLowerInvariant() } else { $null }
     rollbackBackup = $backupPath
     status = 'update-starting'
@@ -37,6 +39,11 @@ $before = [ordered]@{
 $updateRecord = Join-Path $managementRoot ("update-{0}.json" -f (Get-Date -Format 'yyyyMMdd-HHmmss'))
 Write-JsonAtomic $updateRecord $before
 
+Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event updating `
+    -Description 'A protected Packwiz server update has started. Minecraft is stopped and a verified cold backup exists.' `
+    -Fields @{ 'Previous version' = $priorVersion }
+
+try {
 $bootstrapVersion = 'v0.0.3'
 $bootstrapExpectedSha256 = 'a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c'
 $bootstrapUrl = "https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/$bootstrapVersion/packwiz-installer-bootstrap.jar"
@@ -97,4 +104,21 @@ $before.installedVersion = $version
 $before.completedAt = (Get-Date).ToString('o')
 Write-JsonAtomic $updateRecord $before
 Write-Host "Server update installed and structurally validated. Version=$version. Backup retained: $backupPath"
+Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event updated `
+    -Description 'The managed server files were updated and structurally validated. Runtime verification occurs when the server next reaches Done.' `
+    -Fields @{ 'Previous version' = $priorVersion; 'Installed version' = $version }
 return $backupPath
+} catch {
+    $failure = $_
+    $stage = if ($before.status) { [string]$before.status } else { 'unknown' }
+    if ($stage -eq 'update-starting') { $before.status = 'update-failed' }
+    elseif ($stage -eq 'installed-not-yet-start-verified') { $before.status = 'post-install-validation-failed' }
+    $before.failedAt = (Get-Date).ToString('o')
+    $before.failureType = $failure.Exception.GetType().Name
+    try { Write-JsonAtomic $updateRecord $before } catch { }
+    $terminalStage = if ($before.status) { [string]$before.status } else { $stage }
+    Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event failed `
+        -Description 'The protected server update did not complete. Check the local update record and retained verified backup before retrying.' `
+        -Fields @{ 'Previous version' = $priorVersion; Stage = $terminalStage }
+    throw $failure
+}

@@ -1,0 +1,19 @@
+{
+    "testedAt":  "2026-08-26T22:49:54.5133165+10:00",
+    "powershellVersion":  "5.1.26100.9168",
+    "status":  "PASS",
+    "failedTestPreservedPreviousSecret":  true,
+    "failedTestAttempts":  3,
+    "invalidSavedValueDetected":  true,
+    "successfulTestSavedReplacement":  true,
+    "webhookAclInheritanceDisabled":  true,
+    "webhookAclExactAllowedSids":  true,
+    "noPlaintextTemporaryFileRemained":  true,
+    "latestDeliveryExposedByStatus":  true,
+    "unreadableWebhookWasNonFatal":  true,
+    "malformedRetrySettingWasNonFatal":  true,
+    "retiredRuntimeFilesQuarantined":  true,
+    "secretsPrintedOrRecorded":  false,
+    "realDiscordContacted":  false,
+    "liveServerTouched":  false
+}

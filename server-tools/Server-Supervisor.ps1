@@ -154,6 +154,29 @@ function Set-Event([string]$Message) {
     Write-SupervisorLog $Message
 }
 
+function Mark-CurrentUpdateStartupVerified {
+    try {
+        $currentVersionPath = Join-Path $managementRoot 'current-version.json'
+        $currentVersion = Read-JsonFile $currentVersionPath
+        if (-not $currentVersion) { return }
+        $updateRecordPath = [string](Get-OptionalPropertyValue $currentVersion 'updateRecord')
+        if (-not $updateRecordPath) { return }
+        $updateRecordPath = [IO.Path]::GetFullPath($updateRecordPath)
+        $managementPrefix = $managementRoot.TrimEnd('\') + '\'
+        if (-not $updateRecordPath.StartsWith($managementPrefix, [StringComparison]::OrdinalIgnoreCase)) {
+            throw 'Current update record points outside server-management.'
+        }
+        $updateRecord = Read-JsonFile $updateRecordPath
+        if (-not $updateRecord -or [string](Get-OptionalPropertyValue $updateRecord 'status') -ne 'installed-not-yet-start-verified') { return }
+        Set-OptionalPropertyValue $updateRecord 'status' 'startup-verified'
+        Set-OptionalPropertyValue $updateRecord 'startupVerifiedAt' (Get-Date).ToString('o')
+        Write-JsonAtomic $updateRecordPath $updateRecord
+        Write-SupervisorLog "Marked Packwiz update startup verification complete: $([string](Get-OptionalPropertyValue $currentVersion 'version'))."
+    } catch {
+        Write-SupervisorLog "Could not update Packwiz startup-verification bookkeeping: $($_.Exception.Message)"
+    }
+}
+
 $lock = $null
 $child = $null
 try {
@@ -226,6 +249,9 @@ try {
         $state.manualInterventionRequired = $false
         Save-State
         Write-SupervisorLog "Minecraft launch process started as PID $($child.Id)."
+        Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event starting `
+            -Description 'The Minecraft process launched and is loading. An online message will follow only after the server reaches Done.' `
+            -Fields @{ Port = $state.port; 'Server PID' = $child.Id }
         $onlineNotified = $false
         $scheduledRestartAt = $null
         $warningsSent = @{}
@@ -251,6 +277,7 @@ try {
                         $state.nextScheduledRestart = $scheduledRestartAt.ToString('o')
                     }
                     Save-State
+                    Mark-CurrentUpdateStartupVerified
                     Send-DiscordServerNotification -ServerRoot $serverRootResolved -Settings $settings -Event online `
                         -Description 'The server finished starting and is accepting players.' `
                         -Fields @{ Port = $state.port; 'Server PID' = $child.Id }

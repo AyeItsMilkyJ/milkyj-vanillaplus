@@ -44,6 +44,7 @@ server-runtime/
 **/options.txt
 **/optionsof.txt
 **/milkycraft-control-backups/
+**/.discord-webhook-*.tmp
 **/servers.dat
 **/launcher_accounts.json
 **/accounts.json

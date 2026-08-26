@@ -57,12 +57,61 @@ function Get-DiscordWebhookUrl {
     return $candidate
 }
 
+function Protect-DiscordWebhookFile {
+    param([Parameter(Mandatory)][string]$Path)
+
+    if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) { throw 'Discord webhook file does not exist.' }
+    if ([Environment]::OSVersion.Platform -ne [PlatformID]::Win32NT) { return }
+
+    $currentSid = [Security.Principal.WindowsIdentity]::GetCurrent().User
+    $systemSid = [Security.Principal.SecurityIdentifier]::new('S-1-5-18')
+    $administratorsSid = [Security.Principal.SecurityIdentifier]::new('S-1-5-32-544')
+    $acl = [Security.AccessControl.FileSecurity]::new()
+    $acl.SetOwner($currentSid)
+    $acl.SetAccessRuleProtection($true, $false)
+    foreach ($sid in @($currentSid, $systemSid, $administratorsSid)) {
+        $rule = [Security.AccessControl.FileSystemAccessRule]::new(
+            $sid,
+            [Security.AccessControl.FileSystemRights]::FullControl,
+            [Security.AccessControl.AccessControlType]::Allow
+        )
+        $null = $acl.AddAccessRule($rule)
+    }
+    Set-Acl -LiteralPath $Path -AclObject $acl -ErrorAction Stop
+}
+
+function Write-DiscordNotificationAudit {
+    param(
+        [Parameter(Mandatory)][string]$ServerRoot,
+        [Parameter(Mandatory)][string]$Event,
+        [Parameter(Mandatory)][bool]$Succeeded,
+        [Parameter(Mandatory)][int]$Attempts,
+        [string]$Result
+    )
+
+    try {
+        $managementRoot = Join-Path ([IO.Path]::GetFullPath($ServerRoot)) 'server-management'
+        [IO.Directory]::CreateDirectory($managementRoot) | Out-Null
+        $record = [ordered]@{
+            recordedAt = [DateTimeOffset]::Now.ToString('o')
+            event = $Event
+            succeeded = $Succeeded
+            attempts = $Attempts
+            result = if ($Result) { $Result } else { if ($Succeeded) { 'delivered' } else { 'failed' } }
+        }
+        $line = ($record | ConvertTo-Json -Compress) + "`r`n"
+        [IO.File]::AppendAllText((Join-Path $managementRoot 'discord-notifications.jsonl'), $line, [Text.UTF8Encoding]::new($false))
+    } catch {
+        # Discord reporting must never destabilise server lifecycle handling.
+    }
+}
+
 function Send-DiscordServerNotification {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)][string]$ServerRoot,
         [Parameter(Mandatory)]
-        [ValidateSet('online', 'offline', 'starting', 'restarting', 'crashed', 'failed', 'warning', 'test')]
+        [ValidateSet('online', 'offline', 'starting', 'restarting', 'updating', 'updated', 'rollingback', 'rolledback', 'crashed', 'failed', 'warning', 'test')]
         [string]$Event,
         [Parameter(Mandatory)][string]$Description,
         $Settings,
@@ -72,18 +121,33 @@ function Send-DiscordServerNotification {
         [switch]$PassThru
     )
 
-    $url = Get-DiscordWebhookUrl -ServerRoot $ServerRoot -Settings $Settings -WebhookUrl $WebhookUrl
+    try {
+        $url = Get-DiscordWebhookUrl -ServerRoot $ServerRoot -Settings $Settings -WebhookUrl $WebhookUrl
+    } catch {
+        $safeReason = $_.Exception.GetType().Name
+        Write-DiscordNotificationAudit -ServerRoot $ServerRoot -Event $Event -Succeeded $false -Attempts 0 -Result $safeReason
+        $safeMessage = "Discord notification '$Event' preflight failed: $safeReason. The webhook URL was not printed."
+        if ($ThrowOnFailure) { throw $safeMessage }
+        try { Write-Warning $safeMessage } catch { }
+        if ($PassThru) { return $false }
+        return
+    }
     if (-not $url) {
         if ($ThrowOnFailure) { throw 'Discord webhook is not configured.' }
         if ($PassThru) { return $false }
         return
     }
 
+    try {
     $eventStyle = @{
         online     = @{ Emoji = [char]::ConvertFromUtf32(0x1F7E2); Label = 'Online'; Color = 0x57F287 }
         offline    = @{ Emoji = [char]::ConvertFromUtf32(0x1F534); Label = 'Offline'; Color = 0xED4245 }
         starting   = @{ Emoji = [char]::ConvertFromUtf32(0x1F535); Label = 'Starting'; Color = 0x5865F2 }
         restarting = @{ Emoji = [char]::ConvertFromUtf32(0x1F7E0); Label = 'Restarting'; Color = 0xFEE75C }
+        updating   = @{ Emoji = [char]::ConvertFromUtf32(0x1F6E0); Label = 'Updating'; Color = 0x5865F2 }
+        updated    = @{ Emoji = [char]::ConvertFromUtf32(0x1F4E6); Label = 'Update installed'; Color = 0x57F287 }
+        rollingback = @{ Emoji = [char]::ConvertFromUtf32(0x23EA); Label = 'Rolling back'; Color = 0xFEE75C }
+        rolledback = @{ Emoji = [char]::ConvertFromUtf32(0x2705); Label = 'Rollback complete'; Color = 0x57F287 }
         crashed    = @{ Emoji = [char]::ConvertFromUtf32(0x1F6A8); Label = 'Crashed'; Color = 0xED4245 }
         failed     = @{ Emoji = [char]::ConvertFromUtf32(0x26D4); Label = 'Needs attention'; Color = 0x992D22 }
         warning    = @{ Emoji = [char]::ConvertFromUtf32(0x26A0); Label = 'Warning'; Color = 0xFEE75C }
@@ -123,14 +187,55 @@ function Send-DiscordServerNotification {
     # ANSI-compatible encoding, which turns emoji into question marks.
     $bodyBytes = [Text.UTF8Encoding]::new($false).GetBytes($json)
 
-    try {
-        $null = Invoke-RestMethod -Method Post -Uri $endpoint -ContentType 'application/json; charset=utf-8' `
-            -Body $bodyBytes -TimeoutSec 10
-        if ($PassThru) { return $true }
+    $maxAttempts = [Math]::Max(1, [Math]::Min(5, [int](Get-DiscordSettingValue $Settings 'discordMaxAttempts' 3)))
+    $retryBaseMilliseconds = [Math]::Max(100, [Math]::Min(5000, [int](Get-DiscordSettingValue $Settings 'discordRetryBaseMilliseconds' 500)))
     } catch {
-        $safeMessage = "Discord notification '$Event' failed: $($_.Exception.Message)"
+        $safeReason = $_.Exception.GetType().Name
+        Write-DiscordNotificationAudit -ServerRoot $ServerRoot -Event $Event -Succeeded $false -Attempts 0 -Result $safeReason
+        $safeMessage = "Discord notification '$Event' payload preflight failed: $safeReason. The webhook URL was not printed."
         if ($ThrowOnFailure) { throw $safeMessage }
         try { Write-Warning $safeMessage } catch { }
         if ($PassThru) { return $false }
+        return
     }
+    $lastSafeReason = 'delivery failed'
+    $attemptsUsed = 0
+
+    for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
+        $attemptsUsed = $attempt
+        try {
+            $null = Invoke-RestMethod -Method Post -Uri $endpoint -ContentType 'application/json; charset=utf-8' `
+                -Body $bodyBytes -TimeoutSec 10 -ErrorAction Stop
+            Write-DiscordNotificationAudit -ServerRoot $ServerRoot -Event $Event -Succeeded $true -Attempts $attempt
+            if ($PassThru) { return $true }
+            return
+        } catch {
+            $response = $null
+            $statusCode = $null
+            try { $response = $_.Exception.Response } catch { }
+            try { $statusCode = [int]$response.StatusCode } catch { }
+            $lastSafeReason = if ($null -ne $statusCode) { "HTTP $statusCode" } else { $_.Exception.GetType().Name }
+            $retryable = ($null -eq $statusCode) -or $statusCode -eq 408 -or $statusCode -eq 429 -or $statusCode -ge 500
+            if (-not $retryable -or $attempt -ge $maxAttempts) { break }
+
+            $delayMilliseconds = [int]($retryBaseMilliseconds * [Math]::Pow(2, $attempt - 1))
+            if ($statusCode -eq 429 -and $response) {
+                try {
+                    $retryAfter = [string]$response.Headers['Retry-After']
+                    $retrySeconds = 0.0
+                    if ([double]::TryParse($retryAfter, [Globalization.NumberStyles]::Float, [Globalization.CultureInfo]::InvariantCulture, [ref]$retrySeconds)) {
+                        $delayMilliseconds = [int][Math]::Ceiling($retrySeconds * 1000)
+                    }
+                } catch { }
+            }
+            $delayMilliseconds = [Math]::Max(100, [Math]::Min(5000, $delayMilliseconds))
+            Start-Sleep -Milliseconds $delayMilliseconds
+        }
+    }
+
+    Write-DiscordNotificationAudit -ServerRoot $ServerRoot -Event $Event -Succeeded $false -Attempts $attemptsUsed -Result $lastSafeReason
+    $safeMessage = "Discord notification '$Event' failed after $attemptsUsed attempt(s): $lastSafeReason. The webhook URL was not printed."
+    if ($ThrowOnFailure) { throw $safeMessage }
+    try { Write-Warning $safeMessage } catch { }
+    if ($PassThru) { return $false }
 }

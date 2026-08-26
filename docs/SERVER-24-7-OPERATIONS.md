@@ -35,15 +35,18 @@ For raw Forge stdout/stderr or supervisor command forwarding, use `RUN SERVER CO
 
 ## Discord status notifications
 
-Discord incoming-webhook notifications are optional and require no bot account. When configured, the supervisor posts colour-coded messages for:
+Discord incoming-webhook notifications are optional and require no bot account. When configured, the tools post colour-coded messages for:
 
+- process starting, followed by online only after a fresh `Done` line;
 - server online after a fresh `Done` line;
 - clean offline shutdown;
 - operator or scheduled restart;
+- protected Packwiz update start and successful installation;
+- operator-approved rollback start and completion;
 - unexpected crash plus recovery delay; and
-- repeated failures or supervisor errors that need attention.
+- update/startup failure, repeated failures or supervisor errors that need attention.
 
-The webhook is a secret. It is stored only in `discord-webhook.txt` at the dedicated-server root, is covered by `.gitignore`, is never printed by the setup script, and is not part of a Packwiz update or backup. Notification delivery failure only emits a warning and cannot stop Minecraft or its restart supervisor.
+The webhook is a secret. It is stored only in `discord-webhook.txt` at the dedicated-server root, is covered by `.gitignore`, is never printed by the setup script, and is not part of a Packwiz update or backup. Setup tests a replacement before saving it and restricts the Windows file ACL. Delivery uses bounded retry/backoff, writes a secret-free audit line to `server-management\discord-notifications.jsonl`, and cannot stop Minecraft or its restart supervisor.
 
 To configure it:
 
@@ -144,7 +147,7 @@ World restoration remains a separate high-impact option in `Restore-ServerBackup
 
 ## Status output
 
-`SERVER STATUS.bat` reports running/stopped/unmanaged state, listener/Minecraft PID, verified recorded launch PID, port, supervisor state/PID, stale-state reconciliation time, `MINECRAFT SERVER GUI`, `RAW TERMINAL / INTERACTIVE`, or `BACKGROUND / HEADLESS` mode, next scheduled restart, restart interval, current recorded pack version, latest verified backup, last start, latest crash/restart event, latest Minecraft log, whether Discord notifications are configured, and whether an update is safe. It never prints the webhook URL.
+`SERVER STATUS.bat` reports running/stopped/unmanaged state, listener/Minecraft PID, verified recorded launch PID, port, supervisor state/PID, stale-state reconciliation time, `MINECRAFT SERVER GUI`, `RAW TERMINAL / INTERACTIVE`, or `BACKGROUND / HEADLESS` mode, next scheduled restart, restart interval, current recorded pack version, latest verified backup, last start, latest crash/restart event, latest Minecraft log, whether the saved Discord value is valid, the last notification event/delivery result, and whether an update is safe. It never prints the webhook URL.
 
 ## Disposable test evidence
 

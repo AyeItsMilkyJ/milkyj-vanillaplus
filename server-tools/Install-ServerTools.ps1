@@ -89,7 +89,32 @@ exit /b %SERVER_RC%
     [IO.File]::WriteAllText((Join-Path $serverRootResolved 'STOP SERVER.bat'), $stopLauncher.TrimStart() + "`r`n", $encoding)
     [IO.File]::WriteAllText((Join-Path $serverRootResolved 'SERVER STATUS.bat'), $statusLauncher.TrimStart() + "`r`n", $encoding)
 
+    $legacyRuntimePaths = @('server-supervisor.ps1', 'server-supervisor.stop', 'logs\supervisor-status.json')
+    $legacyRuntimeMoved = @()
+    foreach ($relativeLegacyPath in $legacyRuntimePaths) {
+        $legacySource = [IO.Path]::GetFullPath((Join-Path $serverRootResolved $relativeLegacyPath))
+        $serverPrefix = $serverRootResolved.TrimEnd('\') + '\'
+        if (-not $legacySource.StartsWith($serverPrefix, [StringComparison]::OrdinalIgnoreCase)) {
+            throw "Unsafe legacy runtime source path: $legacySource"
+        }
+        if (-not (Test-Path -LiteralPath $legacySource -PathType Leaf)) { continue }
+        if (-not $deploymentBackupRoot) {
+            $deploymentBackupRoot = Join-Path $serverRootResolved ("server-management\deployment-backups\{0}" -f (Get-Date -Format 'yyyyMMdd-HHmmss'))
+        }
+        $legacyDestination = [IO.Path]::GetFullPath((Join-Path (Join-Path $deploymentBackupRoot 'legacy-runtime') $relativeLegacyPath))
+        $backupPrefix = [IO.Path]::GetFullPath($deploymentBackupRoot).TrimEnd('\') + '\'
+        if (-not $legacyDestination.StartsWith($backupPrefix, [StringComparison]::OrdinalIgnoreCase)) {
+            throw "Unsafe legacy runtime backup path: $legacyDestination"
+        }
+        New-Item -ItemType Directory -Path (Split-Path -Parent $legacyDestination) -Force | Out-Null
+        Move-Item -LiteralPath $legacySource -Destination $legacyDestination -Force
+        $legacyRuntimeMoved += $relativeLegacyPath
+    }
+
     Write-Host 'Installed root run/stop/status launchers. run.bat now opens the real Minecraft server GUI; RUN SERVER CONSOLE.bat is the raw troubleshooting terminal.'
+    if ($legacyRuntimeMoved.Count -gt 0) {
+        Write-Host "Quarantined retired runtime status files: $($legacyRuntimeMoved -join ', ')"
+    }
     if ($deploymentBackupRoot -and (Test-Path -LiteralPath $deploymentBackupRoot)) {
         Write-Host "Previous management tools and root launchers were preserved at: $deploymentBackupRoot"
     }

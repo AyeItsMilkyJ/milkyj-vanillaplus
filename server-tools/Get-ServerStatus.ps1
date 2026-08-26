@@ -10,6 +10,27 @@ $state = $activity.State
 $latestBackup = Get-LatestBackup $serverRootResolved $settings
 $latestLog = Join-Path $serverRootResolved 'logs\latest.log'
 $discordWebhookFile = Get-DiscordWebhookFilePath -ServerRoot $serverRootResolved -Settings $settings
+$discordEnvironmentUrl = [Environment]::GetEnvironmentVariable('MILKYJ_DISCORD_WEBHOOK_URL')
+$discordAllowLocal = [bool](Get-DiscordSettingValue $settings 'discordAllowInsecureLocalTest' $false)
+$discordConfiguration = 'NOT CONFIGURED'
+if ($discordEnvironmentUrl) {
+    $discordConfiguration = if (Test-DiscordWebhookUrl -WebhookUrl $discordEnvironmentUrl -AllowLocalTest:$discordAllowLocal) { 'CONFIGURED (ENVIRONMENT)' } else { 'INVALID ENVIRONMENT VALUE' }
+} elseif (Test-Path -LiteralPath $discordWebhookFile -PathType Leaf) {
+    try {
+        $discordSavedUrl = [IO.File]::ReadAllText($discordWebhookFile).Trim()
+        $discordConfiguration = if (Test-DiscordWebhookUrl -WebhookUrl $discordSavedUrl -AllowLocalTest:$discordAllowLocal) { 'CONFIGURED' } else { 'INVALID SAVED VALUE' }
+    } catch {
+        $discordConfiguration = 'UNREADABLE'
+    }
+}
+$discordAuditPath = Join-Path (Get-ManagementRoot $serverRootResolved) 'discord-notifications.jsonl'
+$lastDiscordAudit = $null
+if (Test-Path -LiteralPath $discordAuditPath -PathType Leaf) {
+    try {
+        $lastDiscordLine = Get-Content -LiteralPath $discordAuditPath -Tail 1 -ErrorAction Stop
+        if ($lastDiscordLine) { $lastDiscordAudit = $lastDiscordLine | ConvertFrom-Json -ErrorAction Stop }
+    } catch { }
+}
 $minecraftActivity = ($activity.Listeners.Count -gt 0 -or $activity.ServerProcesses.Count -gt 0)
 $managedActivity = ($activity.Supervisors.Count -gt 0 -or $activity.SupervisorLockHeld)
 $serverStatus = if ($minecraftActivity -and $activity.Unmanaged) { 'RUNNING / UNMANAGED' } elseif ($minecraftActivity) { 'RUNNING' } else { 'STOPPED' }
@@ -42,7 +63,10 @@ $result = [ordered]@{
     latestServerStartTime = if ($state -and $state.latestServerStartAt) { [string]$state.latestServerStartAt } else { 'unknown' }
     latestCrashOrRestartEvent = if ($state -and $state.latestCrashOrRestartEvent) { [string]$state.latestCrashOrRestartEvent } else { 'none recorded' }
     latestMinecraftLog = if (Test-Path -LiteralPath $latestLog) { $latestLog } else { 'none' }
-    discordNotifications = if (Test-Path -LiteralPath $discordWebhookFile -PathType Leaf) { 'CONFIGURED' } else { 'NOT CONFIGURED' }
+    discordNotifications = $discordConfiguration
+    discordLastEvent = if ($lastDiscordAudit) { [string]$lastDiscordAudit.event } else { 'none recorded' }
+    discordLastDelivery = if ($lastDiscordAudit) { if ([bool]$lastDiscordAudit.succeeded) { 'DELIVERED' } else { 'FAILED' } } else { 'none recorded' }
+    discordLastAttemptAt = if ($lastDiscordAudit) { [string]$lastDiscordAudit.recordedAt } else { 'none recorded' }
     updateSafe = -not $activity.Running
 }
 if ($AsJson) { $result | ConvertTo-Json -Depth 6 } else { [pscustomobject]$result | Format-List }

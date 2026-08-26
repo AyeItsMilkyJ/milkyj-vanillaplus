@@ -49,7 +49,8 @@ do {
     } catch { Start-Sleep -Milliseconds 100 }
 } while (-not $webhookReady -and (Get-Date) -lt $webhookReadyDeadline)
 if (-not $webhookReady) { throw 'Disposable Discord webhook did not start.' }
-[IO.File]::WriteAllText((Join-Path $serverRoot 'discord-webhook.txt'), "http://127.0.0.1:$webhookPort/webhook`r`n", [Text.UTF8Encoding]::new($false))
+$webhookFile = Join-Path $serverRoot 'discord-webhook.txt'
+[IO.File]::WriteAllText($webhookFile, "http://127.0.0.1:$webhookPort/webhook`r`n", [Text.UTF8Encoding]::new($false))
 $settingsPath = Join-Path $testRoot 'test-settings.json'
 $settings = [ordered]@{
     packUrl = 'https://example.invalid/packwiz/pack.toml'
@@ -75,8 +76,13 @@ $settings = [ordered]@{
     launchArguments = @($fake, '--server-root', $serverRoot, '--port', "$TestPort")
 }
 [IO.File]::WriteAllText($settingsPath, (($settings | ConvertTo-Json -Depth 8) + "`r`n"), [Text.UTF8Encoding]::new($false))
+$managementRoot = Join-Path $serverRoot 'server-management'
+New-Item -ItemType Directory -Path $managementRoot -Force | Out-Null
+$pendingUpdateRecord = Join-Path $managementRoot 'update-disposable.json'
+[IO.File]::WriteAllText($pendingUpdateRecord, (([ordered]@{ status='installed-not-yet-start-verified'; installedVersion='test-rc' } | ConvertTo-Json) + "`r`n"), [Text.UTF8Encoding]::new($false))
+[IO.File]::WriteAllText((Join-Path $managementRoot 'current-version.json'), (([ordered]@{ version='test-rc'; updateRecord=$pendingUpdateRecord } | ConvertTo-Json) + "`r`n"), [Text.UTF8Encoding]::new($false))
 $tools = Join-Path $root 'server-tools'
-$results = [ordered]@{ testedAt=(Get-Date).ToString('o'); testRoot='build/server-infrastructure-test'; testPort=$TestPort; productionPort=25565 }
+$results = [ordered]@{ testedAt=(Get-Date).ToString('o'); powershellVersion=$PSVersionTable.PSVersion.ToString(); testRoot='build/server-infrastructure-test'; testPort=$TestPort; productionPort=25565 }
 
 function Wait-Until([scriptblock]$Condition, [int]$Seconds, [string]$Failure) {
     $deadline = (Get-Date).AddSeconds($Seconds)
@@ -99,12 +105,21 @@ function Stop-DisposableProcess([int]$ProcessId) {
     }
 }
 
+$webhookLock = $null
 try {
+    $webhookLock = [IO.File]::Open($webhookFile, [IO.FileMode]::Open, [IO.FileAccess]::Read, [IO.FileShare]::None)
     & (Join-Path $tools 'Start-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath
     $results.firstStart = 'PASS'
     $runningStatus = & (Join-Path $tools 'Get-ServerStatus.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath -AsJson | ConvertFrom-Json
-    if ($runningStatus.server -ne 'RUNNING' -or $runningStatus.updateSafe) { throw 'Running status report is incorrect.' }
+    if ($runningStatus.server -ne 'RUNNING' -or $runningStatus.updateSafe -or $runningStatus.discordNotifications -ne 'UNREADABLE') { throw 'Running status report is incorrect.' }
     $results.runningStatus = 'PASS'
+    Wait-Until { try { (Get-Content -LiteralPath $pendingUpdateRecord -Raw | ConvertFrom-Json).status -eq 'startup-verified' } catch { $false } } 5 `
+        'A server reaching Done did not mark the pending Packwiz update startup-verified.'
+    $startupVerifiedRecord = Get-Content -LiteralPath $pendingUpdateRecord -Raw | ConvertFrom-Json
+    if ($startupVerifiedRecord.status -ne 'startup-verified' -or -not $startupVerifiedRecord.startupVerifiedAt) {
+        throw 'A server reaching Done did not mark the pending Packwiz update startup-verified.'
+    }
+    $results.updateStartupVerification = 'PASS'
 
     try {
         & (Join-Path $tools 'Start-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath
@@ -130,7 +145,10 @@ try {
 
     & (Join-Path $tools 'Stop-Server.ps1') -ServerRoot $serverRoot -SettingsPath $settingsPath -TimeoutSeconds 12
     if (-not (Select-String -LiteralPath (Join-Path $serverRoot 'logs\latest.log') -SimpleMatch 'All dimensions are saved' -Quiet)) { throw 'Graceful stop did not record world save.' }
+    $webhookLock.Dispose()
+    $webhookLock = $null
     $results.gracefulStop = 'PASS'
+    $results.unreadableWebhookDidNotBreakLifecycle = 'PASS'
 
     Remove-Item -LiteralPath (Join-Path $serverRoot 'logs\latest.log') -Force
     New-Item -ItemType File -Path (Join-Path $serverRoot 'self-stop-clean.flag') -Force | Out-Null
@@ -177,9 +195,13 @@ try {
     $results.backupCreation = 'PASS'
     $results.backupVerification = 'PASS'
     [IO.File]::WriteAllText((Join-Path $serverRoot 'config\managed-test.txt'), 'broken-update', [Text.UTF8Encoding]::new($false))
+    [IO.File]::WriteAllText((Join-Path $managementRoot 'current-version.json'), (([ordered]@{ version='broken-new-version'; updateRecord=$pendingUpdateRecord } | ConvertTo-Json) + "`r`n"), [Text.UTF8Encoding]::new($false))
     & (Join-Path $tools 'Restore-ServerBackup.ps1') -BackupPath $backup -ServerRoot $serverRoot -SettingsPath $settingsPath -Confirm:$false
     if ((Get-Content -LiteralPath (Join-Path $serverRoot 'config\managed-test.txt') -Raw) -ne 'known-good') { throw 'Managed rollback preparation test failed.' }
+    $restoredVersion = (Get-Content -LiteralPath (Join-Path $managementRoot 'current-version.json') -Raw | ConvertFrom-Json).version
+    if ($restoredVersion -ne 'test-rc') { throw 'Managed rollback did not restore the pre-update pack version record.' }
     $results.rollbackPreparation = 'PASS'
+    $results.rollbackVersionRecordRestored = 'PASS'
 
     $taskPreview = Join-Path $testRoot 'task-preview'
     $taskNamesBefore = @(Get-ScheduledTask -TaskName "$($settings.taskNamePrefix)*" -ErrorAction SilentlyContinue).Count
@@ -208,7 +230,7 @@ try {
     $discordEvents = @($discordRecords | ForEach-Object {
         [regex]::Match([string]$_.body.embeds[0].footer.text, 'event=([a-z]+)').Groups[1].Value
     })
-    foreach ($expectedEvent in @('online', 'offline', 'restarting', 'crashed', 'failed')) {
+    foreach ($expectedEvent in @('starting', 'online', 'offline', 'restarting', 'crashed', 'failed')) {
         if ($expectedEvent -notin $discordEvents) { throw "Lifecycle Discord notification was not observed: $expectedEvent" }
     }
     $results.discordLifecycleNotifications = 'PASS'
@@ -224,6 +246,7 @@ try {
     $results.liveServerWorldOrPrismTouched = $false
     $results.status = 'PASS'
 } finally {
+    if ($webhookLock) { try { $webhookLock.Dispose() } catch { } }
     $statePath = Join-Path $serverRoot 'server-management\state.json'
     if (Test-Path -LiteralPath $statePath) {
         $state = Read-TestState

@@ -29,6 +29,8 @@
     "discordServerName":  "MilkyCraft Vanilla+",
     "discordWebhookUsername":  "MilkyCraft Server Status",
     "discordAllowInsecureLocalTest":  false,
+    "discordMaxAttempts":  3,
+    "discordRetryBaseMilliseconds":  500,
     "launchExecutable":  "",
     "launchArguments":  [
 

@@ -90,6 +90,8 @@ function Get-ServerSettings {
         discordServerName = 'MilkyCraft Vanilla+'
         discordWebhookUsername = 'MilkyCraft Server Status'
         discordAllowInsecureLocalTest = $false
+        discordMaxAttempts = 3
+        discordRetryBaseMilliseconds = 500
         launchExecutable = ''
         launchArguments = @()
     }
@@ -404,7 +406,8 @@ function Get-BackupItems([string]$ServerRoot) {
 
 function Get-ManagedUpdateItems {
     return @('mods', 'config', 'defaultconfigs', 'kubejs', 'scripts', 'resourcepacks',
-        'moonlight-global-datapacks', '.packwiz-installer', '.packwiz-installer-cache', 'packwiz.json')
+        'moonlight-global-datapacks', '.packwiz-installer', '.packwiz-installer-cache', 'packwiz.json',
+        'server-management\current-version.json')
 }
 
 function Assert-SafeChildPath([string]$Root, [string]$Path) {
