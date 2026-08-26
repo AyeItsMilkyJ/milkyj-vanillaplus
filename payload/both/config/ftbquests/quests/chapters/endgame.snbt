@@ -8,7 +8,7 @@
 	order_index: 15
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Dangerous Shit and Endgame"
+	title: "Dangerous Shit, Bigger Consequences"
 	quests: [
 		{
 			dependencies: ["18C0AF7F5C17CAB7"]
@@ -380,6 +380,54 @@
 			}]
 			title: "Memories with Weight"
 			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["731E73362B4E623D"]
+			description: [
+				"WHAT IS THIS? Long campaigns consume armour, weapons, tools, shields and food even when the group wins every individual fight."
+				"DO THIS: Repair the important equipment, carry one humble spare tool and confirm the return kit before crossing the boss threshold."
+				"WHY DO I CARE? Ten seconds at the armoury prevents the legendary endgame strategy of punching the final phase with a nearly broken pickaxe."
+				"COMMON FUCK-UP: The green durability bar was never a legally binding promise. Read the actual remaining durability before the portal."
+			]
+			id: "0F4ACB97C803BD86"
+			rewards: [{
+				id: "5338FB82CD06535D"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "6D393439DA2D9FB2"
+				title: "I checked durability before it became a group problem"
+				type: "checkmark"
+			}]
+			title: "Durability Check: The Least Sexy Lifesaver"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["2D3D21E8896371A7"]
+			description: [
+				"WHAT IS THIS? A recovery chest near a safe portal or outpost holds ordinary food, blocks, light and replaceable tools for the trip back to a failed expedition."
+				"DO THIS: Stock and label one kit, keep it outside the immediate boss arena and tell the team that it is emergency equipment rather than complimentary snacks."
+				"WHY DO I CARE? Recovery supplies shorten corpse runs and stop one death from consuming the group's remaining good gear."
+				"COMMON FUCK-UP: If the recovery chest travels into the fight with you, it has misunderstood its only job."
+			]
+			id: "6E327D3B63D2B48D"
+			rewards: [{
+				id: "3ABFE19630E13B55"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "5A53EE9DA168B0B5"
+				title: "I prepared for failure without manifesting it"
+				type: "checkmark"
+			}]
+			title: "The Oh-Shit Chest"
+			x: 6.0d
 			y: 4.0d
 		}
 	]

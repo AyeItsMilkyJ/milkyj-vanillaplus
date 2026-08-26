@@ -8,7 +8,7 @@
 	order_index: 10
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Exploration Without Getting Completely Lost"
+	title: "Leave Home Without Losing Home"
 	quests: [
 		{
 			dependencies: ["18C0AF7F5C17CAB7"]
@@ -437,6 +437,78 @@
 			}]
 			title: "The Wild Concord"
 			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4F7A5E294B48D343"]
+			description: [
+				"WHAT IS THIS? Lootr gives each player an individual inventory from supported world-generated containers, so one person opening a chest does not consume everybody's copy."
+				"DO THIS: Let two teammates open the same Lootr container and compare what each sees. Leave unsupported ordinary containers alone until the group agrees how to share them."
+				"WHY DO I CARE? Individual loot lets the party explore together without appointing a courtroom every time a dungeon contains one shiny object."
+				"COMMON FUCK-UP: A previously opened Lootr chest may look different for you, and a normal chest is still normal. Read Jade before declaring theft."
+			]
+			id: "01C8D7B4D23503E6"
+			rewards: [{
+				id: "16675C955AF1468B"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "3332CB3AF9C18E3E"
+				title: "I inspected my own loot before accusing a friend"
+				type: "checkmark"
+			}]
+			title: "That Chest Is Yours; Stop Fighting"
+			x: 6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["133E40031AC9FB97"]
+			description: [
+				"WHAT IS THIS? Public Waystones are shared navigation infrastructure. Their names need to distinguish place, dimension and purpose."
+				"DO THIS: Rename or document one ambiguous destination using a stable format such as dimension, settlement and landmark. Keep the arrival area lit and unobstructed."
+				"WHY DO I CARE? A clear list prevents expensive travel to the wrong Home and helps new players understand the world without memorising everybody's personal geography."
+				"COMMON FUCK-UP: Funny names are welcome after the useful location is present. The Arse End of Nowhere should still say which dimension contains it."
+			]
+			id: "1C1934734BDA5731"
+			rewards: [{
+				id: "24490AAC4F6F7E75"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "600BAC715C7C79DE"
+				title: "My Waystone name now helps someone besides me"
+				type: "checkmark"
+			}]
+			title: "Home Is Not a Useful Waystone Name"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["14EC247DD954A406"]
+			description: [
+				"WHAT IS THIS? Distant Horizons renders lightweight terrain already known to the client. It does not make the dedicated server simulate or instantly generate every distant chunk."
+				"DO THIS: Explore in one planned direction, let terrain settle before sprinting farther and avoid sending several players into opposite fresh regions while heavy factories or boss fights are active."
+				"WHY DO I CARE? Sensible exploration keeps the view spectacular for weaker PCs without turning world generation into the evening's main boss."
+				"COMMON FUCK-UP: Raising a client distance slider does not grant the server more CPU. LODs, render distance and simulation distance solve different problems."
+			]
+			id: "1EB35AB64944D868"
+			rewards: [{
+				id: "32FBBCDCF81533F5"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "73E7CA1560CC145A"
+				title: "I learned that chunks must exist before I can admire them"
+				type: "checkmark"
+			}]
+			title: "Distant Horizons Is Not Free Real Estate"
+			x: 10.0d
 			y: 4.0d
 		}
 	]

@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/client/scripts/milkycraft-controls/recommended-controls.json"
 hash-format = "sha256"
-hash = "3423504fe14a29efedcb4c23fda0560e1581e3cab3110face868ea0a5ff48865"
+hash = "caecd9a6558d16ac705834d9d783e7885ebee8a6594566df1c186de3b4ac3508"

@@ -8,7 +8,7 @@
 	order_index: 6
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Homestead Mastery: Farm, Kitchen and Apiary"
+	title: "Farm, Kitchen, Bees: Feed the Damn Server"
 	quests: [
 		{
 			dependencies: ["3C9A949E21E73BD7"]
@@ -423,6 +423,78 @@
 			title: "Project: A Compact Responsible Apiary"
 			x: 10.0d
 			y: 4.0d
+		}
+		{
+			dependencies: ["60435D16835B3DCE"]
+			description: [
+				"WHAT IS THIS? Farmer's Delight food rice is planted in shallow water as a paddy crop. Other installed mods may also expose similarly named rice or pet-treat ingredients."
+				"DO THIS: Confirm the namespace in JEI, obtain the Farmer's Delight rice item, prepare the waterlogged planting layout shown by its installed recipe or advancement and harvest one mature test patch."
+				"WHY DO I CARE? Separating names by namespace keeps the kitchen crop and the pet-treat ingredient from becoming the server's longest-running conspiracy theory."
+				"COMMON FUCK-UP: Dry farmland is not a rice paddy. If the crop refuses placement, inspect its mod name and required block or water state before accusing the recipe."
+			]
+			id: "7A1CF3436F8631A0"
+			rewards: [{
+				id: "65734CDDCC83ABD1"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "7F9D97ED63FDA441"
+				title: "I checked which bloody rice I was holding"
+				type: "checkmark"
+			}]
+			title: "Rice Is Wet, Not Broken"
+			x: 10.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4FD0E91CC974DE62"]
+			description: [
+				"WHAT IS THIS? Serene Seasons makes reliable reserves more important than one enormous field that only thrives during part of the calendar."
+				"DO THIS: Store seed stock separately, preserve at least two dependable meals and write the current seasonal plan where the group can see it."
+				"WHY DO I CARE? A pantry turns slow winter growth into atmosphere instead of an emergency expedition for bread."
+				"COMMON FUCK-UP: Eating the seed reserve because it was in the food chest proves why the seed reserve needed its own labelled container."
+			]
+			id: "3F18FD6E9FFA3E12"
+			rewards: [{
+				id: "774A8A00C1C0295C"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "52CF88542606393D"
+				title: "I stored food before becoming surprised by winter"
+				type: "checkmark"
+			}]
+			title: "Winter Is Coming; Your Pantry Is Empty"
+			x: 8.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["069B444CF7840537"]
+			description: [
+				"WHAT IS THIS? Productive Bees species can require different nests, flowers, breeding partners and processing plans. Cages make those individuals easy to confuse."
+				"DO THIS: Label each active breeding or production area with the species, required flower and intended resource. Keep quarantine space for an unknown or newly bred bee."
+				"WHY DO I CARE? A readable apiary lets new players help without releasing six mystery bees into the kitchen."
+				"COMMON FUCK-UP: A cage tooltip is evidence, not interior decoration. Read it before opening the cage and verify the enclosure is closed."
+			]
+			id: "49FCE6D80C866284"
+			rewards: [{
+				id: "0BE37823B0C17AC8"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "78BB34DFB43C11E6"
+				title: "I know which bee is in the bee box"
+				type: "checkmark"
+			}]
+			title: "Label the Bee or Enjoy Mystery Insects"
+			x: 6.0d
+			y: 6.0d
 		}
 	]
 }

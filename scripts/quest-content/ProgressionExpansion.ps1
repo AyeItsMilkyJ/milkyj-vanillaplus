@@ -3,7 +3,7 @@
 # validation remain in the generator. Parent names refer to stable lesson keys in
 # the same chapter unless a published 16-character quest ID is supplied.
 
-$roadmapChapter = Chapter 'roadmap' 'What Leads Into What?' 'minecraft:compass' 'start' $null @(
+$roadmapChapter = Chapter 'roadmap' 'Pick a Lane Before You Craft Everything' 'minecraft:compass' 'start' $null @(
     (NewLesson 'route_map' 'The Pack Is a Web, Not a Checklist' @(
         'WHAT IS THIS? This chapter is the route map for MilkyCraft Vanilla+. The large chapters are parallel projects, not a single compulsory campaign, and recipes remain available even when a lesson is locked.',
         'DO THIS: Pick one immediate need: survive, feed the group, organise storage, learn Create, improve a settlement, or prepare an expedition. Open that chapter and read its first lesson before spending rare materials.',
@@ -60,7 +60,7 @@ $roadmapChapter = Chapter 'roadmap' 'What Leads Into What?' 'minecraft:compass' 
     ))
 )
 
-$enchantingGearChapter = Chapter 'enchanting_gear' 'Enchanting and the Public Armoury' 'minecraft:enchanted_book' 'systems' $null @(
+$enchantingGearChapter = Chapter 'enchanting_gear' 'Wizard Shit Without Wasting 47 Levels' 'minecraft:enchanted_book' 'systems' $null @(
     (Existing '56791EFEB7941CF8' $false @('54C781F3CD01DB25')),
     (NewLesson 'matrix_first_pieces' 'Matrix Enchanting: Generate and Place Pieces' @(
         'WHAT IS THIS? Quark''s Matrix Enchanting is the pack''s primary Enchanting Table interface. Lapis and experience generate enchantment pieces, and the player chooses which compatible pieces to place on the item''s grid.',
@@ -107,7 +107,7 @@ $enchantingGearChapter = Chapter 'enchanting_gear' 'Enchanting and the Public Ar
     ) $true 5 @('armoury_recovery', '5A53AAEC0E3B4B96'))
 )
 
-$homesteadMasteryChapter = Chapter 'homestead_mastery' 'Homestead Mastery: Farm, Kitchen and Apiary' 'farmersdelight:cooking_pot' 'systems' $null @(
+$homesteadMasteryChapter = Chapter 'homestead_mastery' 'Farm, Kitchen, Bees: Feed the Damn Server' 'farmersdelight:cooking_pot' 'systems' $null @(
     (NewLesson 'home_mastery_map' 'Three Homestead Loops' @(
         'WHAT IS THIS? A mature homestead has three linked loops: fields supply the kitchen, the kitchen supplies players, and bees or machines turn surplus into useful materials.',
         'DO THIS: Walk from crop storage to cooking stations and back. Decide where raw ingredients, prepared meals, compostable waste and bee products belong before automating anything.',
@@ -218,7 +218,7 @@ $homesteadMasteryChapter = Chapter 'homestead_mastery' 'Homestead Mastery: Farm,
     ))
 )
 
-$createProjectsChapter = Chapter 'create_projects' 'Create Projects: Workshop to Railway' 'create:mechanical_arm' 'systems' $null @(
+$createProjectsChapter = Chapter 'create_projects' 'Create: Build Machines With a Point' 'create:mechanical_arm' 'systems' $null @(
     (NewLesson 'project_map' 'Build Outcomes, Not Machine Collections' @(
         'WHAT IS THIS? This chapter turns Create 6.0.8 and the exact installed addons into projects with inputs, outputs, controls and maintenance paths.',
         'DO THIS: Complete the first production line and diagnostic lessons, then choose one project whose output the group actually needs.',
@@ -341,7 +341,7 @@ $createProjectsChapter = Chapter 'create_projects' 'Create Projects: Workshop to
     ) -Parents @('ore_line', 'tree_farm', 'food_line', 'gantry_elevator', 'arm_logistics', 'stock_network', 'connected_controls', 'copycat_finish', 'conduit_cage', 'cei_printing', 'railway_service'))
 )
 
-$dimensionCampaignsChapter = Chapter 'dimension_campaigns' 'Expedition Campaigns: Aether, Twilight and Beyond' 'aether:bronze_dungeon_key' 'adventure' $null @(
+$dimensionCampaignsChapter = Chapter 'dimension_campaigns' 'Portals, Bosses and Poor Decisions' 'aether:bronze_dungeon_key' 'adventure' $null @(
     (NewLesson 'campaign_map' 'Campaign Rules: Portal, Outpost, Return' @(
         'WHAT IS THIS? A campaign is a connected expedition with a marked entrance, local shelter, shared supplies, recovery plan and known progression target.',
         'DO THIS: Before entering any major adventure, carry food, blocks, spare tools, a map or waypoint method and materials for a secure outpost. Agree how the group will retreat.',
@@ -488,7 +488,7 @@ $dimensionCampaignsChapter = Chapter 'dimension_campaigns' 'Expedition Campaigns
     ) -Parents @('aether_gold', 'twilight_highlands', 'otherside_temple', 'alex_targeted_expeditions', 'aquamirae_ice_maze', 'mowzie_encounters'))
 )
 
-$companionsCommunitiesChapter = Chapter 'companions_communities' 'Companions, Fishing and Settlements' 'minecraft:lead' 'systems' $null @(
+$companionsCommunitiesChapter = Chapter 'companions_communities' 'Pets, Fish and Villagers With Jobs' 'minecraft:lead' 'systems' $null @(
     (NewLesson 'community_map' 'A Peaceful Progression Lane' @(
         'WHAT IS THIS? Pets, fishing and village projects form a parallel progression lane for players who prefer caring, collecting, trading or building to machinery and bosses.',
         'DO THIS: Choose one public project and place it near the settlement without crowding the busiest loaded chunk.',

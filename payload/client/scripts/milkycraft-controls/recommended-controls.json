@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "profileVersion": "1.0.0",
   "pack": "MilkyCraft Vanilla+",
-  "packVersion": "1.9.0-rc3",
+  "packVersion": "1.9.0-rc4",
   "minecraft": "1.20.1",
   "description": "Optional conflict-reduced controls. Only untouched defaults are changed; player-customised bindings are preserved.",
   "bindings": [

@@ -8,7 +8,7 @@
 	order_index: 2
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "What Leads Into What?"
+	title: "Pick a Lane Before You Craft Everything"
 	quests: [
 		{
 			dependencies: ["18C0AF7F5C17CAB7"]

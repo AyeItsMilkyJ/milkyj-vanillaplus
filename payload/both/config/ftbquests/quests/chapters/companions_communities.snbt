@@ -8,7 +8,7 @@
 	order_index: 14
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Companions, Fishing and Settlements"
+	title: "Pets, Fish and Villagers With Jobs"
 	quests: [
 		{
 			dependencies: ["341C28816B831FA9"]
@@ -285,6 +285,54 @@
 			title: "Project: A Useful Low-Lag Town Square"
 			x: 0.0d
 			y: 2.0d
+		}
+		{
+			dependencies: ["422FDAA56D69D9A6"]
+			description: [
+				"WHAT IS THIS? Better Fish Tanks, fish displays and the installed aquatic mods let a settlement keep curated exhibits without filling one loaded room with every creature ever discovered."
+				"DO THIS: Choose a small theme, verify tank requirements, keep only purposeful specimens and move surplus catches into food, release or separate storage according to the owning mod."
+				"WHY DO I CARE? A readable exhibit looks better, teaches more and runs better than forty entities clipping through one another behind glass."
+				"COMMON FUCK-UP: More fish does not automatically mean more aquarium. Stop when the display communicates its idea and the client remains smooth."
+			]
+			id: "469FC1B3985FB7C8"
+			rewards: [{
+				id: "5B2DBB43A26C56D2"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "5DC41D9A6D70FF33"
+				title: "I built an exhibit, not a wet CPU benchmark"
+				type: "checkmark"
+			}]
+			title: "The Aquarium Is Not a Mob Farm"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4F1BCDAEDC6ACA1B"]
+			description: [
+				"WHAT IS THIS? Villagers, guards, pets and ambient creatures all tick while their chunks are active. Useful roles matter more than raw population."
+				"DO THIS: Count the settlement's jobs, remove duplicate or unsafe workstations, secure paths and beds, then add only the trader, guard or service the town currently lacks."
+				"WHY DO I CARE? A compact purposeful town welcomes new players and protects weaker computers from the traditional villager convention inside one house."
+				"COMMON FUCK-UP: Breeding more villagers will not fix bad pathfinding, inaccessible beds or an unlit gate. Repair the town before increasing its population."
+			]
+			id: "1D926A7159BCD078"
+			rewards: [{
+				id: "7A446EEC40E360C5"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "5F106C84DE2C16A3"
+				title: "Our town has jobs instead of an unexplained crowd"
+				type: "checkmark"
+			}]
+			title: "This Is a Town, Not a CPU Benchmark"
+			x: 2.0d
+			y: 4.0d
 		}
 	]
 }

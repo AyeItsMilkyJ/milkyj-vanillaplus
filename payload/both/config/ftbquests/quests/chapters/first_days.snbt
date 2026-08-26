@@ -8,7 +8,7 @@
 	order_index: 3
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Surviving the First Night"
+	title: "Day One: Bed, Bread, Don't Die"
 	quests: [
 		{
 			dependencies: ["18C0AF7F5C17CAB7"]
@@ -291,6 +291,102 @@
 			title: "Block Families with Rechiseled"
 			x: 4.0d
 			y: 2.0d
+		}
+		{
+			dependencies: ["2E34979BCE044BF5"]
+			description: [
+				"WHAT IS THIS? Corpse preserves the dead player's inventory at the death location. Recovery is still a journey, especially when the corpse is in lava, a dungeon or another dimension."
+				"DO THIS: Mark the location, bring food, blocks, light and disposable equipment, then secure the route before opening the corpse. Ask for help when the danger that killed you is still standing there looking pleased."
+				"WHY DO I CARE? A prepared recovery avoids donating a second inventory to the same hole and makes death a setback rather than a rage quit."
+				"COMMON FUCK-UP: Sprinting back naked with no blocks is not a strategy merely because it occasionally works. Recover deliberately and confirm everything returned before leaving."
+			]
+			id: "412CFFA41438F5DF"
+			rewards: [{
+				id: "51424F4152870D23"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "29F98FC8417BC03B"
+				title: "I resolved one disaster before scheduling its sequel"
+				type: "checkmark"
+			}]
+			title: "Congratulations, You Made a Corpse"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["341C28816B831FA9"]
+			description: [
+				"WHAT IS THIS? Signs, item frames, labels, chalk and notice boards turn private knowledge into shared infrastructure."
+				"DO THIS: Label one public chest, one dangerous route and one machine input or shutdown. Use names that still make sense to someone who was not present when you built it."
+				"WHY DO I CARE? Your friends cannot read your beautiful mind, and they should not need Discord archaeology to discover where the iron went."
+				"COMMON FUCK-UP: A sign reading Stuff communicates only that the author surrendered. Name the contents, owner or purpose."
+			]
+			id: "3A0359D5C6505953"
+			rewards: [{
+				id: "5A2FC1FAB82AD9CF"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "28775144DB2FA813"
+				title: "I labelled something before making six more chests"
+				type: "checkmark"
+			}]
+			title: "Signs: Cheaper Than Telepathy"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["46CFCE08506A17DA"]
+			description: [
+				"WHAT IS THIS? Amendments and Supplementaries add contextual placement variants. A lantern placed against a wall can become a supported hanging form while remaining part of the same familiar building language."
+				"DO THIS: Read the Jade panel and item tooltip, test the block on floor, ceiling and wall, then use the Wrench or normal interaction shown by the installed mod if you need another state."
+				"WHY DO I CARE? Contextual blocks provide nicer builds without requiring a separate decorative item for every orientation."
+				"COMMON FUCK-UP: Breaking and replacing the lantern from the identical angle will keep producing the identical result. Change the support face or inspect the owning mod's controls."
+			]
+			id: "288920C21D0E1C03"
+			rewards: [{
+				id: "59DC97845E4A5CAE"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "5CC2E8AD754C780F"
+				title: "I accepted that the lantern was not personally attacking me"
+				type: "checkmark"
+			}]
+			title: "Why Is My Lantern Doing That?"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["46CFCE08506A17DA", "213BA8647E82F355"]
+			description: [
+				"WHAT IS THIS? Rechiseled, Handcrafted, Macaw's building sets, FramedBlocks and the smaller decoration mods provide many compatible shapes and material families."
+				"DO THIS: Make a small sample wall with the intended foundation, wall, trim, roof, light and furniture before committing to the full build."
+				"WHY DO I CARE? A palette proves that textures, connected models and resource packs agree while the cost of changing your mind is still six blocks rather than six thousand."
+				"COMMON FUCK-UP: Crafting one stack of every decorative block is not design; it is an exceptionally expensive scrolling problem."
+			]
+			id: "3AE4267A37DE1B7E"
+			rewards: [{
+				id: "6E88362FBEF902AE"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "1EC1250363C8FD2D"
+				title: "I built a sample wall instead of flattening another biome"
+				type: "checkmark"
+			}]
+			title: "Build a Palette Before a Palace"
+			x: 2.0d
+			y: 4.0d
 		}
 	]
 }

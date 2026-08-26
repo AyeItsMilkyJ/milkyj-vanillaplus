@@ -1216,17 +1216,17 @@ metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapter_groups.snbt.pw.toml"
-hash = "61d0ed320b5e3132bbb47dcd3fd33c7a04e97a32c8573319b5f7ec96a81b19eb"
+hash = "e04812fd0ed7db80b4d983ba9ba0bcc9e48606c079f8a242dc76c87ae0d73f4a"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/archaeology.snbt.pw.toml"
-hash = "267938b046096478917d811ed51c617047e94e77826c22577a80e09a649b2a6e"
+hash = "66fc9bcd33dcf768f761472b0d513a575244c99f3e9aa31297a658239351cb6a"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/companions_communities.snbt.pw.toml"
-hash = "44f73dabdccb178ad32bf326a692390b26b831e9526c4ec7a63d09da38d38b8e"
+hash = "ff41d0da4fefdb171d8a4a270a162300c27176e8d715cc61e870e46aac0a7fee"
 metafile = true
 
 [[files]]
@@ -1236,62 +1236,62 @@ metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create_projects.snbt.pw.toml"
-hash = "6b557b37b4e6750d2b3f8bbb502d1eb08a1f419878a224d9fe3aa5ffa114e401"
+hash = "30752ded6333648a0b3d0c5b0eca7109fb122db91d83f80c6cbaddb11a075eee"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/dimension_campaigns.snbt.pw.toml"
-hash = "6386f6332c223e391d3611736820ae4a5633ca350da8bd01fe1d8f9dc9e142a6"
+hash = "3b272d77400a249d6886a9dc60a85f0ea563ec04f8fcb8ab0d0c3764ad27f4bf"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/enchanting_gear.snbt.pw.toml"
-hash = "35bae25b1df8994918cd11b4a865be29d81052d30cc818748e0d74d1372222cb"
+hash = "398c9cd9cc9b1f5fa7612a5cf67d5d166eb41583345ec7ca06f9c058baddc965"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/endgame.snbt.pw.toml"
-hash = "5c53215b759769286faaec50739bb23724eec546518f05c2fb76b1169b0922d7"
+hash = "a9e7191f5a980ea6673721dad864fe525d37199eb3a08b2c82d83f9136cc1c03"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_days.snbt.pw.toml"
-hash = "ab7cac9e70a869000549b5f2e525c0d833aa27d21337bba2a0c40ea4053b156a"
+hash = "4b61196c455a2d2cc5f33838823e390d3fa4deec60e877da65535204408d0a24"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/homestead.snbt.pw.toml"
-hash = "b880267ee442cca86ad9f638d505dfada9ec17ae47f75ab1cd421c30c49ad7e6"
+hash = "61054633e5cb259cb2e8257c433600c03ed485be6ac8643882bb4d1d70bcd804"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/homestead_mastery.snbt.pw.toml"
-hash = "c1a049643adc13385ff4788de7f56d64c3bd6b08391b7b06c0ecf8342d200120"
+hash = "585ac06dc249951136f5ea73af506ca4d00693a7c526e0950643c498b51cc051"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/new_horizons.snbt.pw.toml"
-hash = "db407f0819e407c0aab64040e61cd503493055ba95d1c93a5ace7adec8f6de71"
+hash = "612149ead8f18d926c45d0530a700413c408ae2ffb8d4cec4c7e60e931161b69"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/roadmap.snbt.pw.toml"
-hash = "1694a4333d4eb1babb431ce580ffcfc72fdb640f39a55fcb26695097688130d4"
+hash = "7654a9f228abf0d8961d108825bc9ee517fd76bbf9272fffcb248339b7c2de26"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/travel_storage.snbt.pw.toml"
-hash = "eb45b14e46d8676d013c3321798181a283719c9fbdd21903bd45b2ad586491a2"
+hash = "91c7781fc581c1946373614c8c2397560a8511c859597a3ac0bc15aa7d9fd500"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/vehicles.snbt.pw.toml"
-hash = "2efab74ba081c197124285e01344c08fa9064746bf87e90bd5789a95f638a013"
+hash = "0c43d32558f4ddd71acc086368c7f8e8de5bd0e6bfc3635c738e714820235571"
 metafile = true
 
 [[files]]
 file = "config/ftbquests/quests/chapters/welcome.snbt.pw.toml"
-hash = "8b632255bd983508e25a553a5146d76760fa7ddc08a70650638fe8be9408e83d"
+hash = "9e48d94adf2a428110b9d568934b03340486781a223daf4172bb642c03750197"
 metafile = true
 
 [[files]]
@@ -3736,7 +3736,7 @@ metafile = true
 
 [[files]]
 file = "scripts/milkycraft-controls/recommended-controls.json.pw.toml"
-hash = "c7888f4b238b1a39cddbd096baab9e56454bcfa82c2d5ecaa908f0c053a501f1"
+hash = "2fceb8d69162bc42fefbcca4a196f58ed5a68c10ec06c98c292740e14d3e62ed"
 metafile = true
 
 [[files]]

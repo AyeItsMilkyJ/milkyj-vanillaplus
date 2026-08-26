@@ -8,7 +8,7 @@
 	order_index: 1
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "WHERE THE FUCK DO I START?"
+	title: "START HERE, YOU BEAUTIFUL NOOB"
 	quests: [
 		{
 			description: [
@@ -363,6 +363,102 @@
 			}]
 			title: "Foreword: A World of Many Ages"
 			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["18C0AF7F5C17CAB7"]
+			description: [
+				"WHAT IS THIS? MilkyCraft includes overlapping maps, storage, shaders, quests and Create controls. The recommended profile gives the quest book a visible J key, keeps shader actions together on F6 to F8 and separates common backpack and map actions."
+				"DO THIS: Open Controls, search by key and confirm that every red conflict is either intentional or resolved. Test the quest book, backpack, map, shader toggle and Create Ponder while standing somewhere safe."
+				"WHY DO I CARE? Five calm minutes in Controls prevents three hours of announcing that a mod is broken because another screen quietly stole its key."
+				"COMMON FUCK-UP: Do not press Reset All. The updater deliberately preserves personal controls, so change one binding at a time or use the optional recommended-controls tool with its automatic backup."
+			]
+			id: "6554DB3F8E866BFC"
+			rewards: [{
+				id: "6D96CC02F24DF7C3"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "585AF9A272E58D46"
+				title: "I checked my keys instead of blaming Java"
+				type: "checkmark"
+			}]
+			title: "Your Keyboard Has Been Civilised"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["381BFADC40CC9BDC"]
+			description: [
+				"WHAT IS THIS? Several installed mods can register recipes with the same ingredients. Polymorph adds a small output selector when more than one valid result exists."
+				"DO THIS: If a crafting result looks wrong, inspect the result slot for the selector, cycle to the intended item and confirm its namespace before taking it."
+				"WHY DO I CARE? This keeps compatible recipes available without deleting one mod's item just because another mod had the same idea."
+				"COMMON FUCK-UP: Recrafting the same ingredients twelve times will produce the same confusion. Use the selector and JEI instead of performing an increasingly angry science experiment."
+			]
+			id: "5593696477FD01AA"
+			rewards: [{
+				id: "6EC10EFC7F3DF080"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "15EBA71600FF15BC"
+				title: "I found the tiny recipe button with my own eyes"
+				type: "checkmark"
+			}]
+			title: "Right Ingredients, Wrong Output?"
+			x: 6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6554DB3F8E866BFC"]
+			description: [
+				"WHAT IS THIS? Shaders replace major parts of Minecraft's rendering pipeline. A black, mirrored or flashing sky usually means the selected shader or its settings disagree with Oculus, Embeddium, Distant Horizons or the current graphics options."
+				"DO THIS: Disable shaders first, confirm the world is normal, then test one known-good pack with default settings. Change one option at a time and keep Distant Horizons rendering modest during diagnosis."
+				"WHY DO I CARE? A controlled fallback proves whether the world, resource pack or shader is responsible without corrupting anything or reinstalling the pack."
+				"COMMON FUCK-UP: Do not enable ten shaders at once, stack random resource packs and call the combined hallucination a server bug. Only one shader pack is active at a time."
+			]
+			id: "4602D792753C8542"
+			rewards: [{
+				id: "6EEDC80CD12BAB8A"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "6684557471067343"
+				title: "I turned the cursed shader off before taking a screenshot"
+				type: "checkmark"
+			}]
+			title: "If the Sky Becomes the Void, Stop"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["11A22EDB82B37413"]
+			description: [
+				"WHAT IS THIS? The dedicated server performs a controlled restart every three hours while it is running. Discord reports starting, online, restarting, offline, crashes and update events."
+				"DO THIS: When the warning appears, finish the dangerous interaction, leave machines in a safe state and wait for the Online message before reconnecting."
+				"WHY DO I CARE? Controlled restarts save every loaded dimension, release memory and are much kinder than discovering the server stopped during a boss fight."
+				"COMMON FUCK-UP: Connection refused during the restart means the server is not listening yet. Spamming Join does not motivate Java; wait for the status message."
+			]
+			id: "242F1BFEAD6A76BB"
+			rewards: [{
+				id: "4376A47A2B2EE1E4"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "1AD8D56A9997C175"
+				title: "I can survive several minutes without pressing Refresh"
+				type: "checkmark"
+			}]
+			title: "The Three-Hour Bell Tolls for Thee"
+			x: 10.0d
 			y: 4.0d
 		}
 	]

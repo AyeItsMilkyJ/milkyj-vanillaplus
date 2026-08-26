@@ -1,14 +1,33 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot
+    [string]$ProjectRoot,
+    [ValidateNotNullOrEmpty()]
+    [string]$BaselineRef = 'v1.0.0',
+    [string]$ReportPath
 )
 
 $ErrorActionPreference = 'Stop'
 if (-not $ProjectRoot) { $ProjectRoot = Split-Path -Parent $PSScriptRoot }
 $projectRootResolved = [IO.Path]::GetFullPath($ProjectRoot)
-$testRoot = Join-Path $projectRootResolved 'build\rollback'
-$expectedTestRoot = [IO.Path]::GetFullPath((Join-Path $projectRootResolved 'build\rollback'))
-if (-not ([IO.Path]::GetFullPath($testRoot)).Equals($expectedTestRoot, [StringComparison]::OrdinalIgnoreCase)) {
+$baselineCommit = @(& git -C $projectRootResolved rev-parse --verify "$BaselineRef^{commit}" 2>$null) | Select-Object -Last 1
+if ($LASTEXITCODE -ne 0 -or -not $baselineCommit) { throw "Could not resolve local baseline ref '$BaselineRef' to a commit." }
+$baselineCommit = ([string]$baselineCommit).Trim()
+if (-not $ReportPath) { $ReportPath = Join-Path $projectRootResolved 'audit\packwiz-update-rollback.json' }
+$reportPathResolved = if ([IO.Path]::IsPathRooted($ReportPath)) {
+    [IO.Path]::GetFullPath($ReportPath)
+}
+else {
+    [IO.Path]::GetFullPath((Join-Path $projectRootResolved $ReportPath))
+}
+$projectPathPrefix = $projectRootResolved.TrimEnd('\') + '\'
+if (-not $reportPathResolved.StartsWith($projectPathPrefix, [StringComparison]::OrdinalIgnoreCase)) {
+    throw "Rollback validation reports must remain inside the disposable project workspace: $reportPathResolved"
+}
+$temporaryRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd('\')
+$testRoot = [IO.Path]::GetFullPath((Join-Path $temporaryRoot "milkycraft-packwiz-rollback-$PID"))
+$temporaryPathPrefix = $temporaryRoot + '\'
+if (-not $testRoot.StartsWith($temporaryPathPrefix, [StringComparison]::OrdinalIgnoreCase) -or
+    (Split-Path -Leaf $testRoot) -ne "milkycraft-packwiz-rollback-$PID") {
     throw "Unsafe validation path: $testRoot"
 }
 if (Test-Path -LiteralPath $testRoot) { Remove-Item -LiteralPath $testRoot -Recurse -Force }
@@ -18,10 +37,11 @@ $rcRoot = Join-Path $hostRoot 'rc'
 $clientRoot = Join-Path $testRoot 'client'
 New-Item -ItemType Directory -Path $hostRoot, $baselineRoot, $rcRoot, $clientRoot -Force | Out-Null
 
-$baselineArchive = Join-Path $testRoot 'v1.0.0.zip'
-& git -C $projectRootResolved archive --format=zip --output=$baselineArchive v1.0.0 -- packwiz payload
-if ($LASTEXITCODE -ne 0) { throw 'Could not materialise the local v1.0.0 baseline tag.' }
-Expand-Archive -LiteralPath $baselineArchive -DestinationPath $baselineRoot
+$baselineArchive = Join-Path $testRoot 'baseline.zip'
+& git -C $projectRootResolved archive --format=zip --output=$baselineArchive $baselineCommit -- packwiz payload project-settings.json
+if ($LASTEXITCODE -ne 0) { throw "Could not materialise local baseline '$BaselineRef' ($baselineCommit)." }
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+[IO.Compression.ZipFile]::ExtractToDirectory($baselineArchive, $baselineRoot)
 Copy-Item -LiteralPath (Join-Path $projectRootResolved 'packwiz') -Destination (Join-Path $rcRoot 'packwiz') -Recurse
 Copy-Item -LiteralPath (Join-Path $projectRootResolved 'payload') -Destination (Join-Path $rcRoot 'payload') -Recurse
 Copy-Item -LiteralPath (Join-Path $projectRootResolved 'project-settings.json') -Destination (Join-Path $rcRoot 'project-settings.json')
@@ -99,18 +119,55 @@ try {
         }
     }
 
-    $questRelative = 'config\ftbquests\quests\chapters\create_basics.snbt'
+    # This title is new in the rc4 quest expansion and is absent from rc3. The
+    # file also exists in rc3, so the exact rc3 -> rc4 run proves a changed
+    # managed quest is installed and then byte-for-byte restored.
+    $questRelative = 'config\ftbquests\quests\chapters\create_projects.snbt'
+    $candidateQuestProbe = 'title: "Put an Off Switch on the Damn Thing"'
+    $baselineHostedQuestPath = Join-Path $baselineRoot "payload\both\$questRelative"
+    $candidateHostedQuestPath = Join-Path $rcRoot "payload\both\$questRelative"
+    $baselineQuestPresent = Test-Path -LiteralPath $baselineHostedQuestPath -PathType Leaf
+    $baselineExpectedHash = if ($baselineQuestPresent) {
+        (Get-FileHash -LiteralPath $baselineHostedQuestPath -Algorithm SHA256).Hash.ToLowerInvariant()
+    }
+    else {
+        $null
+    }
+    if ($baselineQuestPresent -and [IO.File]::ReadAllText($baselineHostedQuestPath).Contains($candidateQuestProbe)) {
+        throw "Baseline '$BaselineRef' already contains the rc4 quest probe; choose an older baseline or update the probe."
+    }
+    if (-not (Test-Path -LiteralPath $candidateHostedQuestPath -PathType Leaf)) {
+        throw "Candidate quest probe file is missing: $questRelative"
+    }
+    if (-not [IO.File]::ReadAllText($candidateHostedQuestPath).Contains($candidateQuestProbe)) {
+        throw "Candidate quest probe was not found in $questRelative"
+    }
+    $rcExpectedHash = (Get-FileHash -LiteralPath $candidateHostedQuestPath -Algorithm SHA256).Hash.ToLowerInvariant()
+
     Invoke-Install $baselineUrl
     Assert-PersonalFiles
-    $baselineInstalledHash = (Get-FileHash -LiteralPath (Join-Path $clientRoot $questRelative) -Algorithm SHA256).Hash.ToLowerInvariant()
-    $baselineExpectedHash = (Get-FileHash -LiteralPath (Join-Path $baselineRoot "payload\both\$questRelative") -Algorithm SHA256).Hash.ToLowerInvariant()
-    if ($baselineInstalledHash -ne $baselineExpectedHash) { throw 'Initial v1.0.0 quest payload does not match its baseline host.' }
+    $installedQuestPath = Join-Path $clientRoot $questRelative
+    if ($baselineQuestPresent) {
+        if (-not (Test-Path -LiteralPath $installedQuestPath -PathType Leaf)) { throw "Initial '$BaselineRef' quest probe file was not installed." }
+        $baselineInstalledHash = (Get-FileHash -LiteralPath $installedQuestPath -Algorithm SHA256).Hash.ToLowerInvariant()
+        if ($baselineInstalledHash -ne $baselineExpectedHash) { throw "Initial '$BaselineRef' quest payload does not match its baseline host." }
+    }
+    else {
+        $baselineInstalledHash = $null
+        if (Test-Path -LiteralPath $installedQuestPath) { throw "Initial '$BaselineRef' unexpectedly installed the candidate quest probe file." }
+    }
+    $baselineClientJarCount = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter '*.jar').Count
 
     Invoke-Install $rcUrl
     Assert-PersonalFiles
-    $rcInstalledHash = (Get-FileHash -LiteralPath (Join-Path $clientRoot $questRelative) -Algorithm SHA256).Hash.ToLowerInvariant()
-    $rcExpectedHash = (Get-FileHash -LiteralPath (Join-Path $rcRoot "payload\both\$questRelative") -Algorithm SHA256).Hash.ToLowerInvariant()
-    if ($rcInstalledHash -ne $rcExpectedHash -or $rcInstalledHash -eq $baselineInstalledHash) { throw 'The RC quest payload was not applied over v1.0.0.' }
+    if (-not (Test-Path -LiteralPath $installedQuestPath -PathType Leaf)) { throw 'The candidate quest probe file was not installed.' }
+    $rcInstalledHash = (Get-FileHash -LiteralPath $installedQuestPath -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($rcInstalledHash -ne $rcExpectedHash -or ($baselineQuestPresent -and $rcInstalledHash -eq $baselineInstalledHash)) {
+        throw "The candidate quest payload was not applied over '$BaselineRef'."
+    }
+    $candidateQuestProbeApplied = [IO.File]::ReadAllText($installedQuestPath).Contains($candidateQuestProbe)
+    if (-not $candidateQuestProbeApplied) { throw 'The rc4 quest-content probe was not present after the candidate update.' }
+    $candidateClientJarCount = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter '*.jar').Count
     $obsoleteInstalled = Test-Path -LiteralPath (Join-Path $clientRoot 'config\ftbquests\quests\rc-obsolete-validation-sentinel.txt')
     if (-not $obsoleteInstalled) { throw 'Host-only RC managed sentinel was not installed.' }
     $rcBothRoot = Join-Path $rcRoot 'payload\both'
@@ -122,7 +179,6 @@ try {
             Where-Object { -not (Test-Path -LiteralPath (Join-Path $baselineBothRoot $_) -PathType Leaf) } |
             Sort-Object
     )
-    if ($compatibilityFiles.Count -ne 11) { throw "Expected 11 candidate-only compatibility resources; found $($compatibilityFiles.Count)." }
     foreach ($relative in $compatibilityFiles) {
         if (-not (Test-Path -LiteralPath (Join-Path $clientRoot $relative) -PathType Leaf)) {
             throw "Integrated compatibility file was not installed by the candidate: $relative"
@@ -131,9 +187,19 @@ try {
 
     Invoke-Install $baselineUrl
     Assert-PersonalFiles
-    $rollbackHash = (Get-FileHash -LiteralPath (Join-Path $clientRoot $questRelative) -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($baselineQuestPresent) {
+        if (-not (Test-Path -LiteralPath $installedQuestPath -PathType Leaf)) { throw "Rollback removed the '$BaselineRef' quest probe file instead of restoring it." }
+        $rollbackHash = (Get-FileHash -LiteralPath $installedQuestPath -Algorithm SHA256).Hash.ToLowerInvariant()
+        if ($rollbackHash -ne $baselineExpectedHash) { throw "Rollback did not restore the '$BaselineRef' managed quest payload." }
+    }
+    else {
+        $rollbackHash = $null
+        if (Test-Path -LiteralPath $installedQuestPath) { throw "Rollback did not remove the candidate-only quest probe file for '$BaselineRef'." }
+    }
+    $candidateQuestProbeRemoved = -not (Test-Path -LiteralPath $installedQuestPath -PathType Leaf) -or
+        -not [IO.File]::ReadAllText($installedQuestPath).Contains($candidateQuestProbe)
+    if (-not $candidateQuestProbeRemoved) { throw 'Rollback left the rc4 quest-content probe installed.' }
     $obsoleteRemoved = -not (Test-Path -LiteralPath (Join-Path $clientRoot 'config\ftbquests\quests\rc-obsolete-validation-sentinel.txt'))
-    if ($rollbackHash -ne $baselineExpectedHash) { throw 'Rollback did not restore the v1.0.0 managed quest payload.' }
     if (-not $obsoleteRemoved) { throw 'Rollback did not remove an obsolete Packwiz-managed file.' }
     $compatibilityFilesRemoved = $true
     foreach ($relative in $compatibilityFiles) {
@@ -141,17 +207,29 @@ try {
     }
     if (-not $compatibilityFilesRemoved) { throw 'Rollback did not remove all candidate-only compatibility resources.' }
 
-    $clientJarCount = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter '*.jar').Count
-    if ($clientJarCount -ne 236) { throw "Expected 236 baseline client JARs after rollback; found $clientJarCount." }
+    $rollbackClientJarCount = @(Get-ChildItem -LiteralPath (Join-Path $clientRoot 'mods') -File -Filter '*.jar').Count
+    if ($rollbackClientJarCount -ne $baselineClientJarCount) {
+        throw "Rollback client JAR count $rollbackClientJarCount does not match the dynamically measured '$BaselineRef' count $baselineClientJarCount."
+    }
 
     $settings = Get-Content -LiteralPath (Join-Path $projectRootResolved 'project-settings.json') -Raw | ConvertFrom-Json
+    $baselinePackText = [IO.File]::ReadAllText((Join-Path $baselineRoot 'packwiz\pack.toml'))
+    $baselineVersionMatch = [regex]::Match($baselinePackText, '(?m)^version\s*=\s*"([^"]+)"')
+    $baselineVersion = if ($baselineVersionMatch.Success) { $baselineVersionMatch.Groups[1].Value } else { 'unknown' }
     $report = [ordered]@{
         testedAt = (Get-Date).ToString('o')
-        baselineTag = 'v1.0.0'
+        baselineRef = $BaselineRef
+        baselineCommit = $baselineCommit
+        baselineVersion = $baselineVersion
         releaseCandidate = [string]$settings.packVersion
+        questProbeFile = $questRelative.Replace('\', '/')
+        questProbeText = $candidateQuestProbe
+        baselineQuestPresent = $baselineQuestPresent
         baselineQuestHash = $baselineExpectedHash
         releaseCandidateQuestHash = $rcExpectedHash
         releaseCandidateApplied = $true
+        candidateQuestProbeApplied = $candidateQuestProbeApplied
+        candidateQuestProbeRemovedByRollback = $candidateQuestProbeRemoved
         compatibilityFilesInstalledByCandidate = $true
         compatibilityFileCount = $compatibilityFiles.Count
         rollbackRestoredBaseline = $true
@@ -163,10 +241,14 @@ try {
         personalSavesPreserved = $true
         personalShaderSettingsPreserved = $true
         personalShaderpacksPreserved = $true
-        clientJarCount = $clientJarCount
+        baselineClientJarCount = $baselineClientJarCount
+        candidateClientJarCount = $candidateClientJarCount
+        rollbackClientJarCount = $rollbackClientJarCount
         liveFilesReadOrWritten = $false
+        transport = 'local loopback HTTP only'
     }
-    [IO.File]::WriteAllText((Join-Path $projectRootResolved 'audit\packwiz-update-rollback.json'), (($report | ConvertTo-Json -Depth 5) + "`r`n"), [Text.UTF8Encoding]::new($false))
+    New-Item -ItemType Directory -Path (Split-Path -Parent $reportPathResolved) -Force | Out-Null
+    [IO.File]::WriteAllText($reportPathResolved, (($report | ConvertTo-Json -Depth 5) + "`r`n"), [Text.UTF8Encoding]::new($false))
     $report | ConvertTo-Json -Depth 5
 }
 finally {

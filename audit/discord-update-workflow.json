@@ -1,7 +1,9 @@
 {
-    "testedAt":  "2026-08-26T22:50:00.1590391+10:00",
+    "testedAt":  "2026-08-26T23:29:48.4247533+10:00",
     "powershellVersion":  "5.1.26100.9168",
     "status":  "PASS",
+    "candidateVersion":  "1.9.0-rc4",
+    "priorVersionSentinel":  "test-prior-version",
     "events":  [
                    "updating",
                    "failed",
@@ -15,8 +17,13 @@
     "successfulUpdatePendingRuntimeVerification":  true,
     "rollbackRestoredPriorVersion":  true,
     "durableDeliveries":  6,
-    "realPackwizFeedContacted":  true,
+    "localCandidatePackwizFeedContacted":  true,
+    "publicPackwizFeedContacted":  false,
     "realDiscordContacted":  false,
+    "productionUpdaterUnchanged":  true,
+    "disposableUpdaterLoopbackException":  true,
+    "localPackHostStopped":  true,
+    "localWebhookStopped":  true,
     "productionPortTouched":  false,
     "liveServerTouched":  false
 }

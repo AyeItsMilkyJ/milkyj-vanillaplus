@@ -1,6 +1,6 @@
 # MilkyCraft Vanilla+ quest progression
 
-Release candidate: `1.9.0-rc3`
+Release candidate: `1.9.0-rc4`
 
 Minecraft: `1.20.1`
 
@@ -8,7 +8,7 @@ Forge: `47.4.10`
 
 ## Player experience
 
-The Beginner Field Guide contains **210 pack-specific quests across 15 chapters**. It is written for people who have barely touched modded Minecraft, but it remains useful as a project map for an established multiplayer world.
+The Beginner Field Guide contains **234 pack-specific quests across 15 chapters**. It is written for people who have barely touched modded Minecraft, but it remains useful as a project map for an established multiplayer world.
 
 The guide explains the systems already installed. It does not lock recipes, block dimensions, force a class, require every side branch or demand that an existing player rebuild completed work. A player can choose survival, homestead, Create, storage, community or adventure routes in parallel.
 
@@ -25,22 +25,30 @@ JEI is the exact recipe authority, Jade identifies the block or entity in front 
 
 | Chapter | Quests | Purpose |
 |---|---:|---|
-| WHERE THE FUCK DO I START? | 14 | Quest UI, JEI, Jade, recovery, backpack, Waystones, manuals, Ponder, maps and FTB Teams |
-| What Leads Into What? | 9 | A route map connecting survival, enchanting, homestead, Create, storage, exploration and community branches |
-| Surviving the First Night | 10 | Shelter, iron, sleep, portable supplies, landmarks and a healthy first base |
-| Enchanting and the Public Armoury | 9 | Matrix pieces, candle steering, books, Easy Anvils, recovery and a shared armoury |
-| Food That Isn't Raw Chicken | 13 | Farmer's Delight basics, a working kitchen, seasons, tea and first bees |
-| Homestead Mastery: Farm, Kitchen and Apiary | 18 | Seasonal fields, Cooking for Blockheads, Slice & Dice, Central Kitchen and Productive Bees |
+| START HERE, YOU BEAUTIFUL NOOB | 18 | Quest UI, JEI, Jade, Polymorph, controls, shader recovery, server restarts, backpacks, Waystones, maps and teams |
+| Pick a Lane Before You Craft Everything | 9 | A route map connecting survival, enchanting, homestead, Create, storage, exploration and community branches |
+| Day One: Bed, Bread, Don't Die | 14 | Shelter, iron, sleep, corpse recovery, signage, contextual decoration and a healthy first base |
+| Wizard Shit Without Wasting 47 Levels | 9 | Matrix pieces, candle steering, books, Easy Anvils, recovery and a shared armoury |
+| Cook Something That Isn't Raw Chicken | 13 | Farmer's Delight basics, a working kitchen, seasons, tea and first bees |
+| Farm, Kitchen, Bees: Feed the Damn Server | 21 | Seasonal fields, rice, pantry planning, Cooking for Blockheads, Create food addons and Productive Bees |
 | Create Without Having a Brain Aneurysm | 22 | Ponder, rotation, stress, core machines, logistics, brass, trains and installed-addon orientation |
-| Create Projects: Workshop to Railway | 20 | Power rooms, maintainable production lines, contraptions, stock logistics, addons, CEI and rail service |
-| Stop Living Out of 46 Chests | 11 | Backpacks, Tom's Storage, drawers, Create Vaults and stock logistics as parallel storage jobs |
-| Exploration Without Getting Completely Lost | 15 | Compasses, Waystones, Lootr, preparation, structures, wildlife, relics and boss readiness |
-| Expedition Campaigns: Aether, Twilight and Beyond | 24 | Verified Aether, Twilight, Otherside, Alex's Caves, Aquamirae and Mowzie progression |
-| Fossils, Archaeology and Dinosaurs | 10 | Vanilla archaeology, Better Archeology and strict namespace separation |
-| Vehicles and Transport | 9 | Astikor carts, Small Ships, Immersive Aircraft and Create trains |
-| Companions, Fishing and Settlements | 12 | Doggy Talents, Domestication Innovation, fishing, aquariums, guards, trades and bounties |
-| Dangerous Shit and Endgame | 14 | Nether travel, End Remastered eyes, End safety, dragon progression and optional lore |
-| **Total** | **210** | **151 manual/tutorial quests and 59 automatic-detection quests** |
+| Create: Build Machines With a Point | 23 | Power rooms, safe shutdowns, contraption clearance, maintainable production, stock logistics, CEI and rail service |
+| Your 46-Chest Intervention | 13 | Backpacks, safe filters, shulker previews, Tom's Storage, drawers, Create Vaults and stock logistics |
+| Leave Home Without Losing Home | 18 | Compasses, clearly named Waystones, Lootr, Distant Horizons etiquette, wildlife, relics and boss readiness |
+| Portals, Bosses and Poor Decisions | 25 | Verified Aether, Twilight, Otherside, Alex's Caves, Aquamirae and Mowzie progression plus return-trip safety |
+| Brush First, Break Nothing | 10 | Vanilla archaeology, Better Archeology and strict namespace separation |
+| Carts, Boats, Planes and OSHA Violations | 9 | Astikor carts, Small Ships, Immersive Aircraft and Create trains |
+| Pets, Fish and Villagers With Jobs | 14 | Doggy Talents, Domestication Innovation, fishing, bounded aquariums, guards, trades and low-lag settlements |
+| Dangerous Shit, Bigger Consequences | 16 | Equipment checks, recovery supplies, Nether travel, End Remastered, End safety and dragon progression |
+| **Total** | **234** | **175 manual/tutorial quests and 59 automatic-detection quests** |
+
+The three display groups are **Start Here Before You Cause an Incident**, **Build Useful Shit That Actually Works**, and **Go Outside, Find Cool Shit, Come Back Alive**. Only their visible titles changed; their stable group IDs and every chapter ID remain unchanged.
+
+## Optional practical-comedy layer
+
+RC4 adds 24 optional side quests. They explain controls, Polymorph recipe selection, shader first aid, three-hour restart etiquette, Corpse recovery, useful signage, contextual lantern placement, building palettes, safe void filters, shulker previews, Create shutdowns and contraption clearance, useful station names, rice paddies, winter pantry planning, bee labels, Lootr behaviour, Waystone naming, Distant Horizons and chunk etiquette, portal return tests, bounded aquariums and villages, equipment durability and expedition recovery chests.
+
+Each addition has a fresh deterministic quest, task and reward ID, a manual checkmark and a three-XP reward. They form optional side branches attached to existing milestones: no existing quest depends on them, so they cannot block established progression. Existing completion and claimed rewards remain attached to their original IDs.
 
 ## How branches connect
 
@@ -50,12 +58,12 @@ The six added chapters start from meaningful existing milestones:
 
 | New chapter | Unlock milestone | Reason |
 |---|---|---|
-| What Leads Into What? | How to Read the Field Guide | lets the player choose a route immediately |
-| Enchanting and the Public Armoury | An Iron Foundation | starts with ordinary table, shelf, lapis and anvil materials |
-| Homestead Mastery | Build a Working Kitchen | assumes the basic knife, board, garden and pot loop exists |
-| Create Projects | Diagnosing a Silent Machine | assumes one complete line and basic troubleshooting |
-| Expedition Campaigns | The Boss Threshold | assumes the group can travel, recover and share Lootr rewards |
-| Companions, Fishing and Settlements | Build for a Healthy World | assumes a secure permanent settlement exists |
+| Pick a Lane Before You Craft Everything | How to Read the Field Guide | lets the player choose a route immediately |
+| Wizard Shit Without Wasting 47 Levels | An Iron Foundation | starts with ordinary table, shelf, lapis and anvil materials |
+| Farm, Kitchen, Bees: Feed the Damn Server | Build a Working Kitchen | assumes the basic knife, board, garden and pot loop exists |
+| Create: Build Machines With a Point | Diagnosing a Silent Machine | assumes one complete line and basic troubleshooting |
+| Portals, Bosses and Poor Decisions | The Boss Threshold | assumes the group can travel, recover and share Lootr rewards |
+| Pets, Fish and Villagers With Jobs | Build for a Healthy World | assumes a secure permanent settlement exists |
 
 Within the new chapters, explicit dependency forks show what actually stems from what:
 
@@ -108,7 +116,7 @@ The apiary path explicitly distinguishes solitary bees from productive hive bees
 
 The original 22-lesson Create Basics chapter remains the component course. It covers Ponder, Andesite Alloy, Goggles/Wrench, water/wind/steam power, shafts and ratios, RPM and stress, Press, Fan, Mixer/Basin, food integration, Crushing Wheels, Saw/Drill, belts and filters, a first complete line, diagnostics, brass, Mechanical Crafters, trains, Enchantment Industry and the addon map.
 
-The 20-lesson Create Projects chapter has a four-lesson shared foundation—choose an outcome, measure the network, build a serviceable power room, then document the machine contract. It then forks instead of forcing unrelated addons into one serial tutorial:
+The Create Projects chapter has a 20-lesson engineering core plus three optional RC4 field checks, for 23 quests total. Its four-lesson shared foundation—choose an outcome, measure the network, build a serviceable power room, then document the machine contract—still forks instead of forcing unrelated addons into one serial tutorial. The optional checks ask players to prove a shutdown control, test contraption clearance and give railway stations useful names.
 
 | Branch | Dependency flow |
 |---|---|
@@ -147,14 +155,14 @@ Exact installed versions, primary sources, supplemental showcase links, confiden
 
 Manual checkmarks are used for reading, UI lessons, explanations, troubleshooting and subjective project tests. Stable inexpensive item tasks remain where holding an item is reliable proof. Existing advancement, dimension and kill checks remain only where the installed trigger already represented the activity reliably.
 
-The generator retains all **111 selected existing quest blocks** with their quest, task and reward IDs, including two restored legacy enchanting foundations. It also preserves the previously published deterministic IDs already present in the 118-quest guide. The maintained expansion now contains 90 authored lessons with deterministic seeds and modest XP rewards. No existing item reward or XP definition changed meaning.
+The generator retains all **111 selected existing quest blocks** with their quest, task and reward IDs, including two restored legacy enchanting foundations. It also preserves every previously published deterministic ID. The maintained progression expansion contains 90 authored lessons, while the separate RC4 comedy/help layer contributes 24 optional side quests with fresh deterministic seeds and modest three-XP rewards. No existing item reward or XP definition changed meaning.
 
 The current generated totals are:
 
-- 210 unique quest IDs;
-- 258 unique task IDs;
-- 227 unique reward IDs;
-- 151 manual/checkmark quests;
+- 234 unique quest IDs;
+- 282 unique task IDs;
+- 251 unique reward IDs;
+- 175 manual/checkmark quests;
 - 59 automatic-detection quests;
 - zero duplicate, signed-unsafe or missing IDs;
 - zero missing dependencies or graph cycles.
@@ -171,15 +179,15 @@ Existing rewards retain their exact IDs and definitions. New lessons give modest
 
 The managed definitions live at `payload/both/config/ftbquests/quests/`; matching Packwiz metadata is under `packwiz/config/ftbquests/quests/` with `side = "both"`.
 
-`scripts/Build-BeginnerQuestBook.ps1` loads authored expansion data from `scripts/quest-content/ProgressionExpansion.ps1`, preserves selected legacy blocks, generates deterministic IDs and validates the whole graph before deployment. Never change a published seed or ID. Add a new stable seed for a genuinely new lesson.
+`scripts/Build-BeginnerQuestBook.ps1` loads authored progression from `scripts/quest-content/ProgressionExpansion.ps1` and optional RC4 leaves from `scripts/quest-content/ComedyExpansion.ps1`, preserves selected legacy blocks, generates deterministic IDs and validates the whole graph before deployment. Never change a published seed or ID. Add a new stable seed for a genuinely new lesson.
 
-`audit/quests.csv` is the 210-row release ledger. Each row records chapter, quest ID, title, system, task type and target, dependencies, optional state, reward summary and verification status.
+`audit/quests.csv` is the 234-row release ledger. Each row records chapter, quest ID, title, system, task type and target, dependencies, optional state, reward summary and verification status.
 
 ## Validation gates
 
 Automated validation now checks:
 
-- 15 non-empty chapter files and exactly 210 quests;
+- 15 non-empty chapter files and exactly 234 quests;
 - unique quest/task/reward IDs and FTB-safe signed values;
 - all dependency targets, exactly one guide root, full root reachability and acyclicity;
 - installed item/icon and tag evidence against the 240-JAR disposable client;

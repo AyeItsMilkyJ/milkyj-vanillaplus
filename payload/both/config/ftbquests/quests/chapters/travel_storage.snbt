@@ -8,7 +8,7 @@
 	order_index: 9
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Stop Living Out of 46 Chests"
+	title: "Your 46-Chest Intervention"
 	quests: [
 		{
 			dependencies: ["18C0AF7F5C17CAB7"]
@@ -279,6 +279,54 @@
 			title: "Packages, Stock Links and Stock Tickers"
 			x: 2.0d
 			y: 2.0d
+		}
+		{
+			dependencies: ["28ED3EBB122D102D"]
+			description: [
+				"WHAT IS THIS? Storage upgrades that delete overflow are useful only when their filters are exact and their limits have been proven."
+				"DO THIS: Disconnect valuable storage, configure the filter with cheap junk, fill the test inventory deliberately and confirm exactly which items disappear before reconnecting anything important."
+				"WHY DO I CARE? A tested void route prevents cobblestone floods. An untested one converts the group's rare loot into a short educational memory."
+				"COMMON FUCK-UP: Whitelists and blacklists are opposites. Read the screen, test both accepted and rejected items and never use the main warehouse as the first experiment."
+			]
+			id: "164E82813679E36C"
+			rewards: [{
+				id: "77C46136B9430DD9"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "37B8C8FA3974F77A"
+				title: "I tested deletion with rubbish, not the dragon egg"
+				type: "checkmark"
+			}]
+			title: "The Void Upgrade Is Not a Personality Test"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7471D65394B8D846"]
+			description: [
+				"WHAT IS THIS? Shulker Box Tooltip lets you inspect portable storage without placing and reopening every box."
+				"DO THIS: Hover a filled shulker, use the configured preview control and give important boxes distinct names or colours before an expedition."
+				"WHY DO I CARE? A quick preview keeps the building blocks, food and emergency gear visible while reducing box clutter around shared paths."
+				"COMMON FUCK-UP: Eight identical unnamed purple boxes are not an organisation system. They are a memory test nobody volunteered for."
+			]
+			id: "2BDD203DE1F76EBD"
+			rewards: [{
+				id: "518A0F8DDF1E283A"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "3499A1F2A01495FC"
+				title: "I named the box before forgetting what was inside"
+				type: "checkmark"
+			}]
+			title: "Peek Before You Place"
+			x: 0.0d
+			y: 4.0d
 		}
 	]
 }

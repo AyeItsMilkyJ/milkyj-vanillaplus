@@ -1,6 +1,6 @@
 # Quest research and installed-version boundaries
 
-This file records the evidence used for the MilkyCraft Vanilla+ 210-quest progression guide. It exists so future quest edits do not quietly copy mechanics from a different Minecraft or mod version.
+This file records the evidence used for the MilkyCraft Vanilla+ 234-quest progression guide. It exists so future quest edits do not quietly copy mechanics from a different Minecraft or mod version. The 24 RC4 additions are optional field-guide leaves; operational guidance such as controls, updater preservation and restart behaviour is checked against this repository's current tools and documentation rather than inferred from unrelated mod showcases.
 
 ## Evidence order
 

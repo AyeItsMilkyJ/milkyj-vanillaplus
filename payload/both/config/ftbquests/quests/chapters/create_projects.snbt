@@ -8,7 +8,7 @@
 	order_index: 8
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Create Projects: Workshop to Railway"
+	title: "Create: Build Machines With a Point"
 	quests: [
 		{
 			dependencies: ["4EAA9A43A9020901"]
@@ -468,6 +468,78 @@
 			}]
 			title: "Graduation: Audit the Shared Workshop"
 			x: 8.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["37E135DD266BF9AB"]
+			description: [
+				"WHAT IS THIS? A clutch, gearshift or other installed control can disconnect or redirect rotational power without dismantling the machine."
+				"DO THIS: Add one clearly labelled shutdown control, stop the line under normal load and full-output conditions, then show another player how to use it."
+				"WHY DO I CARE? A machine that cannot be stopped safely is not automation; it is a future Discord message with screenshots."
+				"COMMON FUCK-UP: Cutting power may leave items inside Basins, Belts or contraptions. Define a safe stopped state and a restart procedure instead of slapping a lever on the nearest wall."
+			]
+			id: "220E3009357C8E56"
+			rewards: [{
+				id: "34398594347DD97B"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "69CC8124BE67CAAF"
+				title: "My machine now has a button labelled STOP"
+				type: "checkmark"
+			}]
+			title: "Put an Off Switch on the Damn Thing"
+			x: 6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1B0AFC1161BEB7D1"]
+			description: [
+				"WHAT IS THIS? Bearings, pistons, gantries and glued assemblies occupy a moving envelope larger than the block that powers them."
+				"DO THIS: Mark the complete travel area, test the contraption empty at low speed and inspect every glued or chassis-selected block before allowing it near storage or buildings."
+				"WHY DO I CARE? Clearance testing prevents a clever door, harvester or elevator from becoming a mobile demolition review."
+				"COMMON FUCK-UP: The fact that it assembled successfully does not mean you selected the intended blocks. Goggles, visible glue and a disposable test frame exist for a reason."
+			]
+			id: "6A1CF99503DE384B"
+			rewards: [{
+				id: "2CDEE904C94265DF"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "52A515766EE1B6E3"
+				title: "I checked what was glued before pressing go"
+				type: "checkmark"
+			}]
+			title: "It Spun, Therefore It Ate the Wall"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1A6A991626D30C95"]
+			description: [
+				"WHAT IS THIS? Create stations and schedules identify destinations by name. Shared rail service also needs safe platforms, signs and a clear route owner."
+				"DO THIS: Give every station a unique place-and-purpose name, complete an empty round trip and verify the schedule from another player's perspective."
+				"WHY DO I CARE? Home, Home 2 and New Home become performance art once the network reaches four settlements."
+				"COMMON FUCK-UP: Renaming a live station can invalidate a schedule expectation. Park the train safely, update the route and retest before announcing that rail service exists."
+			]
+			id: "60A8CCA97C2FB67A"
+			rewards: [{
+				id: "5833932BD410A305"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "0A553D4F6A74C8D7"
+				title: "My stations are no longer called Station"
+				type: "checkmark"
+			}]
+			title: "Name the Station Something Useful"
+			x: 2.0d
 			y: 6.0d
 		}
 	]

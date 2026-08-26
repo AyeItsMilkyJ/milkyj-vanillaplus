@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/enchanting_gear.snbt"
 hash-format = "sha256"
-hash = "ab68c1ef8ab8af0f5a8b9051a4056fe840978c5f39dea6d76c07cadcf81a661b"
+hash = "1182b78f1288f4bd8405bb5e1db8f77e3322c782c0fd2ff77fafc062ce862a9f"

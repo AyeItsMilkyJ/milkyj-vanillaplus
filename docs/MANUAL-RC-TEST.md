@@ -1,4 +1,4 @@
-# 1.9.0-rc3 two-client LAN test
+# 1.9.0-rc4 two-client LAN test
 
 Overall result: **NOT RUN — MANUAL INTERACTION REQUIRED**.
 
@@ -14,7 +14,7 @@ From the project root, run:
 
 The command prints the exact LAN Packwiz URL and Minecraft address, starts the disposable server, and creates:
 
-`dist/MilkyCraft-VanillaPlus-1.9.0-rc3-LAN-TEST-Prism.zip`
+`dist/MilkyCraft-VanillaPlus-1.9.0-rc4-LAN-TEST-Prism.zip`
 
 When the interaction checks are finished, stop only the disposable processes with:
 
@@ -31,7 +31,7 @@ Every result below remains **NOT RUN** until two people perform and record it.
 1. **NOT RUN** — On both PCs, create fresh disposable Prism test application roots and import the LAN-test ZIP. Do not reuse the working player instance.
 2. **NOT RUN** — Launch both imported instances and confirm Packwiz downloads the candidate from the exact LAN URL printed by the start script.
 3. **NOT RUN** — Connect both authenticated clients to the printed disposable address on port `25566`.
-4. **NOT RUN** — Open FTB Quests on both clients; confirm all 15 chapters and 210 quests are visible, readable, and free of broken characters. In particular, run the disposable Matrix/Anvil checks in `docs/ENCHANTING.md`.
+4. **NOT RUN** — Open FTB Quests on both clients; confirm all 15 chapters and 234 quests are visible, readable, and free of broken characters. In particular, run the disposable Matrix/Anvil checks in `docs/ENCHANTING.md`.
 5. **NOT RUN** — Complete one manual checkmark quest and confirm it completes only after the click.
 6. **NOT RUN** — Complete one inexpensive automatic item-detection quest and confirm holding the correct item is detected.
 7. **NOT RUN** — Claim one reward and confirm the received item/XP matches the displayed reward.
@@ -43,7 +43,10 @@ Every result below remains **NOT RUN** until two people perform and record it.
 13. **NOT RUN** — Confirm neither login automatically forces a player into a global server team.
 14. **NOT RUN** — Inspect every chapter page for overlapping quest icons, unreadable dependency lines, or unreachable required quests.
 15. **NOT RUN** — Search visible titles/descriptions for Tinkers' Construct, Botany Pots/Trees, Fossils Revival, Prehistoric Fauna, and KubeJS; confirm no visible quest tells players to craft or find absent content.
-16. **NOT RUN** — Inspect the roadmap, Homestead Mastery, Create Projects, Expedition Campaigns and Companions chapters; confirm their branch lines stem from the intended lesson and do not overlap icons.
+16. **NOT RUN** — Inspect **Pick a Lane Before You Craft Everything**, **Farm, Kitchen, Bees: Feed the Damn Server**, **Create: Build Machines With a Point**, **Portals, Bosses and Poor Decisions** and **Pets, Fish and Villagers With Jobs**; confirm their branch lines stem from the intended lesson and do not overlap icons.
 17. **NOT RUN** — Verify one Create Ponder/JEI lesson, one Productive Bees lesson and one dimension-campaign lesson against the actual installed UI before marking the wording approved.
+18. **NOT RUN** — Open all 24 new optional side quests, confirm their `[OPTIONAL SIDE QUEST]` subtitle and three-XP reward, and verify none is a prerequisite for an existing quest.
+19. **NOT RUN** — Update a disposable client that already has customised controls, video options, resource-pack order and shader settings; confirm Packwiz installs the RC4 guide without resetting any of those preferences.
+20. **NOT RUN** — Start from a disposable copy of prior quest progress and confirm old completions and claimed rewards remain attached to the same IDs while every new optional leaf begins incomplete.
 
 Do not mark this candidate release-ready from automated startup alone. Attach screenshots or short notes for every completed line and retain the disposable logs.

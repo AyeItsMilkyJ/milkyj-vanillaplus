@@ -8,7 +8,7 @@
 	order_index: 11
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Expedition Campaigns: Aether, Twilight and Beyond"
+	title: "Portals, Bosses and Poor Decisions"
 	quests: [
 		{
 			dependencies: ["3A8709849D637D3D"]
@@ -561,6 +561,30 @@
 			title: "Campaign Debrief: Bring Knowledge Home"
 			x: 0.0d
 			y: 6.0d
+		}
+		{
+			dependencies: ["4C2CC01A2E38A3EC"]
+			description: [
+				"WHAT IS THIS? Every dimension campaign needs a proven route home before the party carries unique loot or pushes past the safe arrival zone."
+				"DO THIS: Enter with replaceable equipment, secure and mark both sides, return once successfully, then restock before beginning the real expedition."
+				"WHY DO I CARE? A tested retreat turns a wipe into a recoverable story instead of four people discovering simultaneously that nobody marked the portal."
+				"COMMON FUCK-UP: Seeing the portal behind you is not the same as proving it remains safe, loaded, reachable and correctly linked after exploration."
+			]
+			id: "44F7145709C1E318"
+			rewards: [{
+				id: "78C35B089A1C31A3"
+				type: "xp"
+				xp: 3
+			}]
+			subtitle: "[OPTIONAL SIDE QUEST]"
+			tasks: [{
+				id: "685F622AD3D7FDB2"
+				title: "We returned once before pretending to be heroes"
+				type: "checkmark"
+			}]
+			title: "Test the Return Trip Before Acting Brave"
+			x: 0.0d
+			y: 8.0d
 		}
 	]
 }

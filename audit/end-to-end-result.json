@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-08-26T22:13:46.7774689+10:00",
+  "testedAt": "2026-08-26T23:23:41.9771298+10:00",
   "packUrl": "local disposable loopback host",
   "clientJarCount": 240,
   "serverJarCount": 206,
@@ -20,7 +20,7 @@
   "packwizDestinationCount": 729,
   "serverReachedDone": true,
   "questParserLoaded": true,
-  "questParserResult": "Loaded 4 chapter groups, 15 chapters, 210 quests, 0 reward tables",
+  "questParserResult": "Loaded 4 chapter groups, 15 chapters, 234 quests, 0 reward tables",
   "compatibilityStaticValidation": true,
   "compatibilityDatapackReloaded": true,
   "postReloadBarrierCompleted": true,

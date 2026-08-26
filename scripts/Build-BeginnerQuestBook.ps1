@@ -35,9 +35,9 @@ function Existing([string]$Id, [bool]$Optional = $false, [string[]]$Parents = @(
     return [pscustomobject]@{ Kind = 'existing'; Id = $Id; Optional = $Optional; Parents = @($Parents) }
 }
 
-function NewLesson([string]$Key, [string]$Title, [string[]]$Description, [bool]$Optional = $false, [int]$Xp = 5, [string[]]$Parents = @()) {
+function NewLesson([string]$Key, [string]$Title, [string[]]$Description, [bool]$Optional = $false, [int]$Xp = 5, [string[]]$Parents = @(), [string]$TaskTitle = 'I read this lesson and checked the installed pack') {
     return [pscustomobject]@{
-        Kind = 'new'; Key = $Key; Title = $Title; Description = @($Description); Optional = $Optional; Xp = $Xp; Parents = @($Parents)
+        Kind = 'new'; Key = $Key; Title = $Title; Description = @($Description); Optional = $Optional; Xp = $Xp; Parents = @($Parents); TaskTitle = $TaskTitle
     }
 }
 
@@ -54,9 +54,9 @@ function Chapter([string]$Key, [string]$Title, [string]$Icon, [string]$Group, [s
 }
 
 $groups = @(
-    [pscustomobject]@{ Key = 'start'; Title = 'Learn the Pack' },
-    [pscustomobject]@{ Key = 'systems'; Title = 'Build Useful Systems' },
-    [pscustomobject]@{ Key = 'adventure'; Title = 'Explore and Survive' }
+    [pscustomobject]@{ Key = 'start'; Title = 'Start Here Before You Cause an Incident' },
+    [pscustomobject]@{ Key = 'systems'; Title = 'Build Useful Shit That Actually Works' },
+    [pscustomobject]@{ Key = 'adventure'; Title = 'Go Outside, Find Cool Shit, Come Back Alive' }
 )
 
 $progressionContent = Join-Path $PSScriptRoot 'quest-content\ProgressionExpansion.ps1'
@@ -69,7 +69,7 @@ if (-not (Test-Path -LiteralPath $progressionContent -PathType Leaf)) {
 # quest/task/reward IDs. The generator also compares every generated ID with the
 # local v1.0.0 Git tag, so it never needs to read the production world.
 $chapters = @(
-    (Chapter 'welcome' 'WHERE THE FUCK DO I START?' 'minecraft:writable_book' 'start' 'welcome' @(
+    (Chapter 'welcome' 'START HERE, YOU BEAUTIFUL NOOB' 'minecraft:writable_book' 'start' 'welcome' @(
         (Existing '7DA1925406767A08'),
         (Existing '381BFADC40CC9BDC'),
         (Existing '4B260074BFD1BB0C'),
@@ -86,7 +86,7 @@ $chapters = @(
         (Existing '1885CF9658AB663D' $true)
     )),
     $roadmapChapter,
-    (Chapter 'first_days' 'Surviving the First Night' 'minecraft:campfire' 'start' 'first_days' @(
+    (Chapter 'first_days' 'Day One: Bed, Bread, Don''t Die' 'minecraft:campfire' 'start' 'first_days' @(
         (Existing '3BC686C3FBF1D35F'),
         (Existing '54C781F3CD01DB25'),
         (Existing '472E57FDA26EA8F4'),
@@ -99,7 +99,7 @@ $chapters = @(
         (Existing '213BA8647E82F355' $true)
     )),
     $enchantingGearChapter,
-    (Chapter 'homestead' "Food That Isn't Raw Chicken" 'farmersdelight:cooking_pot' 'start' 'homestead' @(
+    (Chapter 'homestead' "Cook Something That Isn't Raw Chicken" 'farmersdelight:cooking_pot' 'start' 'homestead' @(
         (Existing '1725341D3243AFDD'),
         (Existing '4CE08428A26650E2'),
         (Existing '60435D16835B3DCE'),
@@ -150,7 +150,7 @@ $chapters = @(
         (Existing '71CEDD5D336CCB38' $true @('4EAA9A43A9020901'))
     )),
     $createProjectsChapter,
-    (Chapter 'travel_storage' 'Stop Living Out of 46 Chests' 'toms_storage:ts.storage_terminal' 'systems' 'travel_storage' @(
+    (Chapter 'travel_storage' 'Your 46-Chest Intervention' 'toms_storage:ts.storage_terminal' 'systems' 'travel_storage' @(
         (Existing '2993B4E786D1E3C6'),
         (Existing '34B78045A3F1DA78'),
         (Existing '74ACDA0161CB4F07'),
@@ -173,7 +173,7 @@ $chapters = @(
             'What comes next: add package addresses, filters, overflow storage, and a clearly labelled delivery point only after the one-chest test works.'
         ) -Parents @('create_vaults', '3C8A246AFBC5BCB3', '7B0C1910CB444EA6'))
     )),
-    (Chapter 'new_horizons' 'Exploration Without Getting Completely Lost' 'explorerscompass:explorerscompass' 'adventure' 'new_horizons' @(
+    (Chapter 'new_horizons' 'Leave Home Without Losing Home' 'explorerscompass:explorerscompass' 'adventure' 'new_horizons' @(
         (Existing '6851604085D9D68D'),
         (Existing '133E40031AC9FB97'),
         (Existing '41EBD1EB56456B34'),
@@ -191,7 +191,7 @@ $chapters = @(
         (Existing '53986E1D3385AA38' $true @('1CA7ED993BDE8D70'))
     )),
     $dimensionCampaignsChapter,
-    (Chapter 'archaeology' 'Fossils, Archaeology and Dinosaurs' 'betterarcheology:archeology_table' 'adventure' 'archaeology' @(
+    (Chapter 'archaeology' 'Brush First, Break Nothing' 'betterarcheology:archeology_table' 'adventure' 'archaeology' @(
         (Existing '03AC335757DE4153'),
         (Existing '702A4062FE9B512F'),
         (Existing '2ECFF275EF74DA42'),
@@ -203,7 +203,7 @@ $chapters = @(
         (Existing '196B3D194E777B25'),
         (Existing '6ECE72BD1001A433')
     )),
-    (Chapter 'vehicles' 'Vehicles and Transport' 'immersive_aircraft:biplane' 'adventure' 'creative_expeditions' @(
+    (Chapter 'vehicles' 'Carts, Boats, Planes and OSHA Violations' 'immersive_aircraft:biplane' 'adventure' 'creative_expeditions' @(
         (NewLesson 'hand_cart' 'Hand Carts and Supply Carts' @(
             'What this is: AstikorCarts Redux adds wood-specific Hand Carts that a player pulls and Supply Carts that attach to a mount and carry much more cargo.',
             'Why it matters: these are early overland storage vehicles with no fuel system. They are useful for building runs and farm hauling before aircraft or rail infrastructure exists.',
@@ -230,7 +230,7 @@ $chapters = @(
         ) $true 5 @('farm_carts', '579F2C00A9B13FE7'))
     )),
     $companionsCommunitiesChapter,
-    (Chapter 'endgame' 'Dangerous Shit and Endgame' 'minecraft:dragon_egg' 'adventure' 'nether_end' @(
+    (Chapter 'endgame' 'Dangerous Shit, Bigger Consequences' 'minecraft:dragon_egg' 'adventure' 'nether_end' @(
         (Existing '731E73362B4E623D'),
         (Existing '2FF22EE22B1363FC'),
         (Existing '13E186E1D8309D38'),
@@ -247,6 +247,17 @@ $chapters = @(
         (Existing '668CB4B502BECE63' $true @('6416430518B427C3'))
     ))
 )
+
+$comedyContent = Join-Path $PSScriptRoot 'quest-content\ComedyExpansion.ps1'
+if (-not (Test-Path -LiteralPath $comedyContent -PathType Leaf)) {
+    throw "Missing comedy quest content: $comedyContent"
+}
+. $comedyContent
+foreach ($chapter in $chapters) {
+    if ($funnyQuestAdditions.ContainsKey($chapter.Key)) {
+        $chapter.Entries = @($chapter.Entries) + @($funnyQuestAdditions[$chapter.Key])
+    }
+}
 
 $titleOverrides = @{
     '1885CF9658AB663D' = 'Power Beyond the First Water Wheel'
@@ -536,7 +547,7 @@ function New-LessonBlock([string]$ChapterKey, [object]$Lesson, [string[]]$Depend
     if ($Lesson.Optional) { $lines.Add("`t`t`tsubtitle: `"[OPTIONAL SIDE QUEST]`"") }
     $lines.Add("`t`t`ttasks: [{")
     $lines.Add("`t`t`t`tid: `"$taskId`"")
-    $lines.Add("`t`t`t`ttitle: `"I read this lesson and checked the installed pack`"")
+    $lines.Add("`t`t`t`ttitle: `"$(Escape-Snbt $Lesson.TaskTitle)`"")
     $lines.Add("`t`t`t`ttype: `"checkmark`"")
     $lines.Add("`t`t`t}]")
     $lines.Add("`t`t`ttitle: `"$(Escape-Snbt $Lesson.Title)`"")
@@ -766,7 +777,7 @@ $unsafeIds = @($allIds | Where-Object { $_ -match '^[89A-F]' })
 $missingDependencies = @($dependencies | Where-Object { -not $questIds.Contains($_) } | Select-Object -Unique)
 $chapterFiles = @(Get-ChildItem -LiteralPath $chapterRoot -File -Filter '*.snbt')
 if ($chapterFiles.Count -ne 15) { throw "Expected 15 chapters, found $($chapterFiles.Count)." }
-if ($questIds.Count -ne 210) { throw "Expected 210 quests, found $($questIds.Count)." }
+if ($questIds.Count -ne 234) { throw "Expected 234 quests, found $($questIds.Count)." }
 if ($duplicateIds.Count -gt 0) { throw "Duplicate IDs: $($duplicateIds.Name -join ', ')" }
 if ($duplicateQuestIds.Count -gt 0) { throw "Duplicate quest IDs: $($duplicateQuestIds.Name -join ', ')" }
 if ($duplicateTaskIds.Count -gt 0) { throw "Duplicate task IDs: $($duplicateTaskIds.Name -join ', ')" }

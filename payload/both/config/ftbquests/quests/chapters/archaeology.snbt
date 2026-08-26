@@ -8,7 +8,7 @@
 	order_index: 12
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Fossils, Archaeology and Dinosaurs"
+	title: "Brush First, Break Nothing"
 	quests: [
 		{
 			dependencies: ["18C0AF7F5C17CAB7"]

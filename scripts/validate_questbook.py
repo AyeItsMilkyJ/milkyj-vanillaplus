@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import re
 import sys
@@ -21,7 +22,7 @@ ALL_ID_RE = re.compile(r'^\s*id:\s*"([0-9A-F]{16})"', re.MULTILINE)
 ITEM_RE = re.compile(r'^\s*item:\s*"([a-z0-9_.-]+:[a-z0-9_./-]+)"', re.MULTILINE)
 TAG_RE = re.compile(r'^\s*tag:\s*"#?([a-z0-9_.-]+:[a-z0-9_./-]+)"', re.MULTILINE)
 EXPECTED_CHAPTERS = 15
-EXPECTED_QUESTS = 210
+EXPECTED_QUESTS = 234
 BEGINNER_FORMAT_CHAPTERS = {
     "roadmap",
     "enchanting_gear",
@@ -30,6 +31,30 @@ BEGINNER_FORMAT_CHAPTERS = {
     "create_projects",
     "dimension_campaigns",
     "companions_communities",
+}
+COMEDY_QUEST_KEYS = {
+    "welcome": {"controls_survival", "polymorph_choice", "shader_first_aid", "restart_etiquette"},
+    "first_days": {"corpse_recovery", "signage", "lantern_context", "palette_project"},
+    "travel_storage": {"void_filter", "shulker_peek"},
+    "create_projects": {"off_switch", "contraption_clearance", "station_names"},
+    "homestead_mastery": {"rice_paddy", "winter_pantry", "bee_labels"},
+    "new_horizons": {"lootr_peace", "waystone_names", "chunk_budget"},
+    "dimension_campaigns": {"return_trip"},
+    "companions_communities": {"aquarium_limits", "village_budget"},
+    "endgame": {"durability_check", "recovery_chest"},
+}
+
+
+def stable_quest_id(chapter: str, key: str) -> str:
+    digest = bytearray(hashlib.sha256(f"milkyj-beginner-guide-v1|{chapter}|{key}|quest".encode()).digest())
+    digest[0] &= 0x7F
+    return digest.hex()[:16].upper()
+
+
+COMEDY_QUEST_IDS = {
+    stable_quest_id(chapter, key)
+    for chapter, keys in COMEDY_QUEST_KEYS.items()
+    for key in keys
 }
 
 
@@ -167,7 +192,7 @@ def main() -> int:
             item_references.update(ITEM_RE.findall(block))
             tag_references.update(TAG_RE.findall(block))
 
-            if chapter_file.stem in BEGINNER_FORMAT_CHAPTERS:
+            if chapter_file.stem in BEGINNER_FORMAT_CHAPTERS or quest_id in COMEDY_QUEST_IDS:
                 required = ("WHAT IS THIS?", "DO THIS:", "WHY DO I CARE?", "COMMON FUCK-UP:")
                 if not all(label in description for label in required):
                     create_format_failures.append(quest_id)
@@ -235,6 +260,9 @@ def main() -> int:
 
     if len(quest_ids) != EXPECTED_QUESTS:
         errors.append(f"expected {EXPECTED_QUESTS} quests, found {len(quest_ids)}")
+    missing_comedy_quests = sorted(COMEDY_QUEST_IDS - set(quest_ids))
+    if missing_comedy_quests:
+        errors.append(f"missing comedy expansion quests: {', '.join(missing_comedy_quests)}")
     if create_format_failures:
         errors.append(f"beginner-format quests missing required sections: {', '.join(create_format_failures)}")
 

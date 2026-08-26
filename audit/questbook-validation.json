@@ -1,118 +1,118 @@
 {
-  "generatedAt": "2026-08-22T06:03:55.6959181+10:00",
-  "source": "audit/questbook-legacy-1.8.0",
-  "chapterCount": 15,
-  "questCount": 210,
-  "taskIdCount": 258,
-  "rewardIdCount": 227,
-  "manualCheckmarkQuests": 151,
-  "automaticDetectionQuests": 59,
-  "existingQuestBlocksRetained": 111,
-  "legacyQuestBlocksRemovedFromVisibleGuide": 285,
-  "baselineIdComparison": "compared with local v1.0.0 tag",
-  "baselineDefinitionIdsFound": 429,
-  "baselineDefinitionIdsPreserved": 420,
-  "intentionallyRemovedBaselineIds": 9,
-  "unexpectedMissingBaselineIds": 0,
-  "duplicateIds": 0,
-  "duplicateQuestIds": 0,
-  "duplicateTaskIds": 0,
-  "duplicateRewardIds": 0,
-  "unsafeSignedIds": 0,
-  "unresolvedDependencies": 0,
-  "rootQuestIds": [
-    "7DA1925406767A08"
-  ],
-  "cyclicOrUnreachableQuests": 0,
-  "referencedItemIds": 102,
-  "chapters": [
-    {
-      "Chapter": "WHERE THE FUCK DO I START?",
-      "File": "welcome.snbt",
-      "Quests": 14
-    },
-    {
-      "Chapter": "What Leads Into What?",
-      "File": "roadmap.snbt",
-      "Quests": 9
-    },
-    {
-      "Chapter": "Surviving the First Night",
-      "File": "first_days.snbt",
-      "Quests": 10
-    },
-    {
-      "Chapter": "Enchanting and the Public Armoury",
-      "File": "enchanting_gear.snbt",
-      "Quests": 9
-    },
-    {
-      "Chapter": "Food That Isn't Raw Chicken",
-      "File": "homestead.snbt",
-      "Quests": 13
-    },
-    {
-      "Chapter": "Homestead Mastery: Farm, Kitchen and Apiary",
-      "File": "homestead_mastery.snbt",
-      "Quests": 18
-    },
-    {
-      "Chapter": "Create Without Having a Brain Aneurysm",
-      "File": "create_basics.snbt",
-      "Quests": 22
-    },
-    {
-      "Chapter": "Create Projects: Workshop to Railway",
-      "File": "create_projects.snbt",
-      "Quests": 20
-    },
-    {
-      "Chapter": "Stop Living Out of 46 Chests",
-      "File": "travel_storage.snbt",
-      "Quests": 11
-    },
-    {
-      "Chapter": "Exploration Without Getting Completely Lost",
-      "File": "new_horizons.snbt",
-      "Quests": 15
-    },
-    {
-      "Chapter": "Expedition Campaigns: Aether, Twilight and Beyond",
-      "File": "dimension_campaigns.snbt",
-      "Quests": 24
-    },
-    {
-      "Chapter": "Fossils, Archaeology and Dinosaurs",
-      "File": "archaeology.snbt",
-      "Quests": 10
-    },
-    {
-      "Chapter": "Vehicles and Transport",
-      "File": "vehicles.snbt",
-      "Quests": 9
-    },
-    {
-      "Chapter": "Companions, Fishing and Settlements",
-      "File": "companions_communities.snbt",
-      "Quests": 12
-    },
-    {
-      "Chapter": "Dangerous Shit and Endgame",
-      "File": "endgame.snbt",
-      "Quests": 14
-    }
-  ],
-  "absentModTutorialContentRemoved": [
-    "Botany Pots",
-    "Botany Trees",
-    "Tinkers' Construct"
-  ],
-  "explicitlyNotAdded": [
-    "Immersive Engineering",
-    "Create Crafts & Additions",
-    "Create Diesel Generators",
-    "Create Tinkers' Compat",
-    "Create Contraption Terminals",
-    "Bells & Whistles"
-  ]
+    "generatedAt":  "2026-08-26T23:18:25.8259037+10:00",
+    "source":  "audit/questbook-legacy-1.8.0",
+    "chapterCount":  15,
+    "questCount":  234,
+    "taskIdCount":  282,
+    "rewardIdCount":  251,
+    "manualCheckmarkQuests":  175,
+    "automaticDetectionQuests":  59,
+    "existingQuestBlocksRetained":  111,
+    "legacyQuestBlocksRemovedFromVisibleGuide":  285,
+    "baselineIdComparison":  "compared with local v1.0.0 tag",
+    "baselineDefinitionIdsFound":  429,
+    "baselineDefinitionIdsPreserved":  420,
+    "intentionallyRemovedBaselineIds":  9,
+    "unexpectedMissingBaselineIds":  0,
+    "duplicateIds":  0,
+    "duplicateQuestIds":  0,
+    "duplicateTaskIds":  0,
+    "duplicateRewardIds":  0,
+    "unsafeSignedIds":  0,
+    "unresolvedDependencies":  0,
+    "rootQuestIds":  [
+                         "7DA1925406767A08"
+                     ],
+    "cyclicOrUnreachableQuests":  0,
+    "referencedItemIds":  102,
+    "chapters":  [
+                     {
+                         "Chapter":  "START HERE, YOU BEAUTIFUL NOOB",
+                         "File":  "welcome.snbt",
+                         "Quests":  18
+                     },
+                     {
+                         "Chapter":  "Pick a Lane Before You Craft Everything",
+                         "File":  "roadmap.snbt",
+                         "Quests":  9
+                     },
+                     {
+                         "Chapter":  "Day One: Bed, Bread, Don\u0027t Die",
+                         "File":  "first_days.snbt",
+                         "Quests":  14
+                     },
+                     {
+                         "Chapter":  "Wizard Shit Without Wasting 47 Levels",
+                         "File":  "enchanting_gear.snbt",
+                         "Quests":  9
+                     },
+                     {
+                         "Chapter":  "Cook Something That Isn\u0027t Raw Chicken",
+                         "File":  "homestead.snbt",
+                         "Quests":  13
+                     },
+                     {
+                         "Chapter":  "Farm, Kitchen, Bees: Feed the Damn Server",
+                         "File":  "homestead_mastery.snbt",
+                         "Quests":  21
+                     },
+                     {
+                         "Chapter":  "Create Without Having a Brain Aneurysm",
+                         "File":  "create_basics.snbt",
+                         "Quests":  22
+                     },
+                     {
+                         "Chapter":  "Create: Build Machines With a Point",
+                         "File":  "create_projects.snbt",
+                         "Quests":  23
+                     },
+                     {
+                         "Chapter":  "Your 46-Chest Intervention",
+                         "File":  "travel_storage.snbt",
+                         "Quests":  13
+                     },
+                     {
+                         "Chapter":  "Leave Home Without Losing Home",
+                         "File":  "new_horizons.snbt",
+                         "Quests":  18
+                     },
+                     {
+                         "Chapter":  "Portals, Bosses and Poor Decisions",
+                         "File":  "dimension_campaigns.snbt",
+                         "Quests":  25
+                     },
+                     {
+                         "Chapter":  "Brush First, Break Nothing",
+                         "File":  "archaeology.snbt",
+                         "Quests":  10
+                     },
+                     {
+                         "Chapter":  "Carts, Boats, Planes and OSHA Violations",
+                         "File":  "vehicles.snbt",
+                         "Quests":  9
+                     },
+                     {
+                         "Chapter":  "Pets, Fish and Villagers With Jobs",
+                         "File":  "companions_communities.snbt",
+                         "Quests":  14
+                     },
+                     {
+                         "Chapter":  "Dangerous Shit, Bigger Consequences",
+                         "File":  "endgame.snbt",
+                         "Quests":  16
+                     }
+                 ],
+    "absentModTutorialContentRemoved":  [
+                                            "Botany Pots",
+                                            "Botany Trees",
+                                            "Tinkers\u0027 Construct"
+                                        ],
+    "explicitlyNotAdded":  [
+                               "Immersive Engineering",
+                               "Create Crafts \u0026 Additions",
+                               "Create Diesel Generators",
+                               "Create Tinkers\u0027 Compat",
+                               "Create Contraption Terminals",
+                               "Bells \u0026 Whistles"
+                           ]
 }

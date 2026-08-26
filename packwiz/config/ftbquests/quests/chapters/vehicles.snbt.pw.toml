@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/AyeItsMilkyJ/milkyj-vanillaplus/main/payload/both/config/ftbquests/quests/chapters/vehicles.snbt"
 hash-format = "sha256"
-hash = "c0b20f60c2227c6ac327ddfc648cf56ed4f78ec81ac5a118762ebc394743560b"
+hash = "d60c79095777f89286ead02d8875276b60e000ce97613e9ad6f4b4659e63ba9c"

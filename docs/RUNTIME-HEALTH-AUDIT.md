@@ -1,8 +1,8 @@
 # Runtime health audit — updated 26 August 2026
 
-The current MilkyCraft Vanilla+ `1.9.0-rc3` candidate has no missing mandatory Forge dependency, duplicate top-level mod ID, duplicate JAR payload, JAR hash mismatch, or client/server payload drift. The verified managed totals are 242 mod definitions, 240 client JARs, and 206 dedicated-server JARs.
+The current MilkyCraft Vanilla+ `1.9.0-rc4` candidate has no missing mandatory Forge dependency, duplicate top-level mod ID, duplicate JAR payload, JAR hash mismatch, or client/server payload drift. The verified managed totals are 242 mod definitions, 240 client JARs, and 206 dedicated-server JARs.
 
-This document combines the earlier RC1/RC2 runtime-maintenance history with the current disposable RC3 revalidation. The expansion evidence is `audit/create-expansion-validation.json`; `audit/runtime-health-20260822.json` and the live-deployment section below describe the preceding maintenance pass. RC2 is deployed on the stopped live dedicated server. The primary Prism instance uses the stable Packwiz feed and will receive RC3 on its next launch after publication; its newest retained client runtime log predates this candidate.
+This document combines the earlier RC1–RC3 runtime-maintenance history with the current disposable RC4 revalidation. The expansion evidence is `audit/create-expansion-validation.json`; `audit/runtime-health-20260822.json` and the live-deployment section below describe the preceding maintenance pass. RC3 is deployed on the stopped live dedicated server. The primary Prism instance uses the stable Packwiz feed and will receive RC4 on its next launch after publication; its newest retained client runtime log predates this candidate.
 
 ## Earlier runtime repairs retained
 
@@ -12,11 +12,13 @@ This document combines the earlier RC1/RC2 runtime-maintenance history with the 
 - The visible server supervisor now contains the exact historical Windows broken-console failure. Console rendering is optional, file/state logging remains authoritative, process identity uses more than a PID, stale state cannot impersonate a running server, and an orphaned Java process is reported as **RUNNING / UNMANAGED** and remains update-unsafe.
 - The compatibility end-to-end test now accepts the improved result of zero loot-table warnings while still failing on any unexpected warning.
 
-## RC3 disposable validation result
+## RC4 disposable validation result
 
-A clean 729-entry Packwiz update installed 240 client JARs and 206 server JARs. It preserved personal options, the keybinding container, screenshots, saves, shader settings, custom shaderpacks, and mod-specific client preferences. The same run simulated the real RC2-to-RC3 side transition: all eleven customised preferences survived their change from managed-both to preserved-client, their obsolete copies were removed from the existing disposable server, and the five optional control-tool files were delivered only to the client. Fusion and SeasonHUD remained client-only.
+A clean 729-entry Packwiz update installed 240 client JARs and 206 server JARs. It preserved personal options, the keybinding container, screenshots, saves, shader settings, custom shaderpacks, and mod-specific client preferences. The same run retained the RC2-to-RC3 side-transition regression gate: all eleven customised preferences survived their change from managed-both to preserved-client, their obsolete copies were removed from the existing disposable server, and the five optional control-tool files were delivered only to the client. Fusion and SeasonHUD remained client-only.
 
-The fresh 206-JAR Forge server reached `Done`, loaded all 210 quests and the compatibility datapack at final priority, reloaded data successfully, answered a post-reload command barrier, produced no targeted Domestication Innovation, Nether's Delight, Beautify, TF D&V, rice, or Aquatic Ambitions compatibility error, saved all seven loaded dimensions, exited with code 0, and released its port. The same 206-JAR payload also passed the real supervisor integration: direct Java ownership, `Done`, normal save/stop, JVM exit, and port release.
+The fresh 206-JAR Forge server reached `Done`, loaded all 234 quests and the compatibility datapack at final priority, reloaded data successfully, answered a post-reload command barrier, produced no targeted Domestication Innovation, Nether's Delight, Beautify, TF D&V, rice, or Aquatic Ambitions compatibility error, saved all seven loaded dimensions, exited with code 0, and released its port. The same 206-JAR payload also retains the earlier real-supervisor evidence: direct Java ownership, `Done`, normal save/stop, JVM exit, and port release.
+
+An exact disposable `v1.9.0-rc3` to `1.9.0-rc4` loopback update installed the changed Create Projects quest definition, kept the client JAR count at 240, preserved options, keybindings, screenshots, saves, shader settings and personal shaderpacks, and removed an injected obsolete managed file. Rolling back restored the rc3 quest bytes and removed the rc4-only probe. No live path or public feed was used.
 
 All seven live Forge starts retained on 22 August reached `Done`. Four scheduled three-hour restarts completed cleanly. The final GUI session stopped intentionally with exit code 0 after saving the Overworld, Nether, End, Aether, Twilight Forest, Otherside and Graveyard Past; Distant Horizons closed all seven databases with zero incomplete tasks. There was no fatal error, crash report, OOM, watchdog event or runtime tick-behind warning.
 

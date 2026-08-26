@@ -8,7 +8,7 @@
 	order_index: 4
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Enchanting and the Public Armoury"
+	title: "Wizard Shit Without Wasting 47 Levels"
 	quests: [
 		{
 			dependencies: ["54C781F3CD01DB25"]

@@ -8,7 +8,7 @@
 	order_index: 13
 	progression_mode: "flexible"
 	quest_links: [ ]
-	title: "Vehicles and Transport"
+	title: "Carts, Boats, Planes and OSHA Violations"
 	quests: [
 		{
 			dependencies: ["18C0AF7F5C17CAB7"]

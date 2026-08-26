@@ -1,20 +1,20 @@
 {
-  "validatedAt": "2026-08-26T22:21:10.884855+10:00",
+  "validatedAt": "2026-08-26T23:18:50.215396+10:00",
   "questRoot": "payload/both/config/ftbquests/quests",
   "modsDirectory": "build/end-to-end/server/mods",
   "jarCountScanned": 206,
   "chapterCount": 15,
-  "questCount": 210,
-  "taskIdCount": 258,
-  "rewardIdCount": 227,
-  "uniqueQuestIds": 210,
-  "uniqueTaskIds": 258,
-  "uniqueRewardIds": 227,
+  "questCount": 234,
+  "taskIdCount": 282,
+  "rewardIdCount": 251,
+  "uniqueQuestIds": 234,
+  "uniqueTaskIds": 282,
+  "uniqueRewardIds": 251,
   "rootQuestIds": [
     "7DA1925406767A08"
   ],
-  "rootReachableQuests": 210,
-  "graphVisitedQuests": 210,
+  "rootReachableQuests": 234,
+  "graphVisitedQuests": 234,
   "referencedItemAndIconIds": 107,
   "unresolvedItems": [],
   "referencedTags": [],
@@ -23,15 +23,15 @@
   "chapters": [
     {
       "file": "archaeology.snbt",
-      "title": "Fossils, Archaeology and Dinosaurs",
+      "title": "Brush First, Break Nothing",
       "icon": "betterarcheology:archeology_table",
       "questCount": 10
     },
     {
       "file": "companions_communities.snbt",
-      "title": "Companions, Fishing and Settlements",
+      "title": "Pets, Fish and Villagers With Jobs",
       "icon": "minecraft:lead",
-      "questCount": 12
+      "questCount": 14
     },
     {
       "file": "create_basics.snbt",
@@ -41,75 +41,75 @@
     },
     {
       "file": "create_projects.snbt",
-      "title": "Create Projects: Workshop to Railway",
+      "title": "Create: Build Machines With a Point",
       "icon": "create:mechanical_arm",
-      "questCount": 20
+      "questCount": 23
     },
     {
       "file": "dimension_campaigns.snbt",
-      "title": "Expedition Campaigns: Aether, Twilight and Beyond",
+      "title": "Portals, Bosses and Poor Decisions",
       "icon": "aether:bronze_dungeon_key",
-      "questCount": 24
+      "questCount": 25
     },
     {
       "file": "enchanting_gear.snbt",
-      "title": "Enchanting and the Public Armoury",
+      "title": "Wizard Shit Without Wasting 47 Levels",
       "icon": "minecraft:enchanted_book",
       "questCount": 9
     },
     {
       "file": "endgame.snbt",
-      "title": "Dangerous Shit and Endgame",
+      "title": "Dangerous Shit, Bigger Consequences",
       "icon": "minecraft:dragon_egg",
-      "questCount": 14
+      "questCount": 16
     },
     {
       "file": "first_days.snbt",
-      "title": "Surviving the First Night",
+      "title": "Day One: Bed, Bread, Don't Die",
       "icon": "minecraft:campfire",
-      "questCount": 10
+      "questCount": 14
     },
     {
       "file": "homestead.snbt",
-      "title": "Food That Isn't Raw Chicken",
+      "title": "Cook Something That Isn't Raw Chicken",
       "icon": "farmersdelight:cooking_pot",
       "questCount": 13
     },
     {
       "file": "homestead_mastery.snbt",
-      "title": "Homestead Mastery: Farm, Kitchen and Apiary",
+      "title": "Farm, Kitchen, Bees: Feed the Damn Server",
       "icon": "farmersdelight:cooking_pot",
-      "questCount": 18
+      "questCount": 21
     },
     {
       "file": "new_horizons.snbt",
-      "title": "Exploration Without Getting Completely Lost",
+      "title": "Leave Home Without Losing Home",
       "icon": "explorerscompass:explorerscompass",
-      "questCount": 15
+      "questCount": 18
     },
     {
       "file": "roadmap.snbt",
-      "title": "What Leads Into What?",
+      "title": "Pick a Lane Before You Craft Everything",
       "icon": "minecraft:compass",
       "questCount": 9
     },
     {
       "file": "travel_storage.snbt",
-      "title": "Stop Living Out of 46 Chests",
+      "title": "Your 46-Chest Intervention",
       "icon": "toms_storage:ts.storage_terminal",
-      "questCount": 11
+      "questCount": 13
     },
     {
       "file": "vehicles.snbt",
-      "title": "Vehicles and Transport",
+      "title": "Carts, Boats, Planes and OSHA Violations",
       "icon": "immersive_aircraft:biplane",
       "questCount": 9
     },
     {
       "file": "welcome.snbt",
-      "title": "WHERE THE FUCK DO I START?",
+      "title": "START HERE, YOU BEAUTIFUL NOOB",
       "icon": "minecraft:writable_book",
-      "questCount": 14
+      "questCount": 18
     }
   ],
   "warnings": [],

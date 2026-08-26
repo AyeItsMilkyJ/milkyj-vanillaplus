@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-08-12T13:41:54.737097+10:00",
+  "testedAt": "2026-08-26T23:18:51.073259+10:00",
   "syntheticMigrationResult": "PASS",
   "fixture": "tests/fixtures/synthetic-progress-baseline.json",
   "fixtureScope": "Synthetic logical ID/team compatibility model; not a production FTB Quests file-format fixture.",
@@ -27,12 +27,12 @@
     {
       "name": "new quest starts incomplete",
       "status": "PASS",
-      "evidence": "2 new quest IDs"
+      "evidence": "24 new quest IDs"
     },
     {
       "name": "new reward starts unclaimed",
       "status": "PASS",
-      "evidence": "2 new reward IDs"
+      "evidence": "24 new reward IDs"
     },
     {
       "name": "synthetic team progress representation retained",

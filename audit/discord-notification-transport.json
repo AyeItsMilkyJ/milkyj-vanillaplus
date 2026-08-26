@@ -1,8 +1,8 @@
 {
-    "testedAt":  "2026-08-26T22:49:52.0619799+10:00",
+    "testedAt":  "2026-08-26T23:26:14.1869397+10:00",
     "powershellVersion":  "5.1.26100.9168",
     "status":  "PASS",
-    "loopbackPort":  54775,
+    "loopbackPort":  52089,
     "events":  [
                    "crashed",
                    "failed",

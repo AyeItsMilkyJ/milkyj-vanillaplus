@@ -1,6 +1,6 @@
 # MilkyCraft Vanilla+ — player features and evolution
 
-This document describes only systems confirmed in the current `1.9.0-rc3` Forge 1.20.1 pre-release. Library mods are not advertised as gameplay features, and removed or rejected additions are not presented as installed.
+This document describes only systems confirmed in the current `1.9.0-rc4` Forge 1.20.1 pre-release. Library mods are not advertised as gameplay features, and removed or rejected additions are not presented as installed.
 
 ## The short version
 
@@ -10,7 +10,7 @@ Current foundation:
 
 - Minecraft 1.20.1 with Forge 47.4.10.
 - 240 client JARs and 206 dedicated-server JARs after side classification.
-- 210 connected beginner-guide quests across 15 chapters.
+- 234 connected beginner-guide quests across 15 chapters: 175 manual/tutorial checks and 59 automatic detections.
 - Seven managed resource-pack choices plus ten optional shader choices in the mate installer.
 - Dedicated-server view distance 12 and simulation distance 6.
 - Packwiz checks for managed updates before each Prism launch.
@@ -58,13 +58,15 @@ Other quality-of-life features include Ultimine/VeinMiner-style excavation, fall
 
 ### 6. A real beginner field guide
 
-The old shallow quest list became a 210-quest field guide designed for players new to mods. Its 15 chapters now include an explicit route map, first-night survival, a nine-quest enchanting/public-armoury course, food basics, homestead mastery, Create fundamentals, 20 practical Create projects, storage, exploration, 24 verified adventure-campaign lessons, archaeology, vehicles, companions/fishing/settlements and endgame. The guide explains what leads into what, gives a small test, explains why it matters and warns about the most likely failure. Quests teach and suggest experiments; they do not lock recipes or force established players to rebuild their base.
+The old shallow quest list became a 234-quest field guide designed for players new to mods. Its 15 chapters include an explicit route map, first-night survival, a nine-quest enchanting/public-armoury course, food basics, homestead mastery, Create fundamentals and projects, storage, exploration, 25 verified adventure-campaign lessons, archaeology, vehicles, companions/fishing/settlements and endgame. RC4 adds 24 optional side quests with the pack's irreverent voice: practical help for controls, Polymorph, shader recovery, server restarts, Corpse recovery, decoration quirks, storage safety, Create shutdowns, rice, seasons, bees, Lootr, Waystones, Distant Horizons, portals and low-lag settlements. They add guidance without changing any existing quest ID, reward or completion path.
 
 ### 7. Visual choices and distant terrain
 
 Managed resource-pack choices are Bare Bones, Faithful 32x, FPBR, Fresh Animations, Fresh Compats, Shable's Tweaks and the custom MilkyJ Stability Fixes layer. The stability layer repairs exact missing model, texture, sound and atlas paths without replacing unrelated art.
 
 RC3 adds an optional, reversible recommended-control profile. It gives quests a visible `J` key, groups shader controls on `F6`–`F8`, separates backpack/storage/map actions, keeps Create's Left Alt tool modifier clear of Relics, and leaves every pre-customised binding untouched. The updater distributes the tool but never manages `options.txt`.
+
+RC4 keeps that preservation contract. Quest definitions update automatically, while personal controls, video options, resource-pack order, shader selection and per-shader settings remain the player's own data.
 
 The mate installer contains ten optional shaders:
 
