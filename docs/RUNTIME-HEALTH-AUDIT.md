@@ -2,7 +2,7 @@
 
 The current MilkyCraft Vanilla+ `1.9.0-rc4` candidate has no missing mandatory Forge dependency, duplicate top-level mod ID, duplicate JAR payload, JAR hash mismatch, or client/server payload drift. The verified managed totals are 242 mod definitions, 240 client JARs, and 206 dedicated-server JARs.
 
-This document combines the earlier RC1–RC3 runtime-maintenance history with the current disposable RC4 revalidation. The expansion evidence is `audit/create-expansion-validation.json`; `audit/runtime-health-20260822.json` and the live-deployment section below describe the preceding maintenance pass. RC3 is deployed on the stopped live dedicated server. The primary Prism instance uses the stable Packwiz feed and will receive RC4 on its next launch after publication; its newest retained client runtime log predates this candidate.
+This document combines the earlier RC1–RC3 runtime-maintenance history with the disposable and live RC4 revalidation. The expansion evidence is `audit/create-expansion-validation.json`; `audit/runtime-health-20260822.json` describes the preceding maintenance pass. RC4 is deployed on the live dedicated server and the primary Prism instance is synchronized to the stable Packwiz feed.
 
 ## Earlier runtime repairs retained
 
@@ -34,10 +34,10 @@ During the earlier RC1 runtime-maintenance pass, the live server was confirmed s
 
 - JER may omit Supplementaries-modified cartographer trades from its display because Supplementaries' quill conversion receives JER's dummy trader. Actual villager trades are unaffected. Disabling the quill gameplay feature merely to silence a display warning was not justified.
 - Smarter Farmers logs that it could not add every modded food to the villager food-point map. Its installed config has no isolated custom-food toggle or repair; changing the JAR or mod selection was avoided.
-- Bloop 1.8.0 Alpha 3 loads but needs many Oculus compatibility patches. Treat it as an optional shader and switch to a known-good pack if it produces visual corruption.
+- Bloop 1.8.0 Alpha 3 reaches shader initialization but produces repeatable Oculus parser faults for unsupported option expressions. It is quarantined from the primary client and excluded from future mate distributions; no server or managed Packwiz payload change is required because shader archives are intentionally personal/unmanaged files.
 - EMF can deliberately stop rebuilding a few Relics/cape models after reaching its safety cap; affected cosmetics may fall back rather than destabilising the client.
 - The updater still never resets player controls. It now distributes an optional, backed-up control patcher that changes only untouched defaults and leaves intentional context-only overlaps alone; see `docs/CONTROLS.md`.
 - Routine mixin metadata, version-check timeout, Distant Horizons GC-preference, and transient entity-sync warnings remain non-fatal. No OOM, current JVM crash, missing dependency, mixin-apply failure, shader compile failure, or framebuffer failure was found in the latest usable client/server sessions.
 - Do not issue `stop` or trigger a supervised restart immediately after `/reload`. One disposable run stopped about six seconds after the advancement marker, saved every dimension, but left the reload lifecycle alive beyond five minutes. Waiting for a command-response barrier and then 30 seconds produced a normal code-0 exit in two controlled reproductions and the final end-to-end gate. Routine production stops never showed this race.
 
-The local repository changes are not published automatically. Friends receive them only after the normal reviewed publish step updates the stable Packwiz URL.
+Friends receive managed RC4 content automatically from the stable Packwiz URL. A rebuilt mate installer is needed only for a brand-new player and now excludes the quarantined Bloop shader.

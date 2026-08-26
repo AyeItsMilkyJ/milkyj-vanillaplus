@@ -34,7 +34,6 @@ if (Test-Path -LiteralPath $buildRoot) {
 New-Item -ItemType Directory -Path $stage, $shaderDestination, (Split-Path -Parent $output) -Force | Out-Null
 
 $shaderNames = @(
-    'Bloop-1.8.0-Alpha-3.zip',
     'BSL_v10.1.3.zip',
     'daybreak_0.2 .zip',
     'HyShaders Vanilla Lite 3.0.zip',
@@ -65,7 +64,7 @@ if (-not $ShaderSourceDirectory) {
         }
     }
     if ($matchingInstances.Count -ne 1) {
-        throw "Could not identify exactly one Prism instance using the stable Packwiz URL and containing all ten required shaders. Pass -ShaderSourceDirectory explicitly. Matches: $($matchingInstances.Count)"
+        throw "Could not identify exactly one Prism instance using the stable Packwiz URL and containing all nine validated shaders. Pass -ShaderSourceDirectory explicitly. Matches: $($matchingInstances.Count)"
     }
     $ShaderSourceDirectory = $matchingInstances[0]
 }
@@ -91,11 +90,6 @@ foreach ($name in $shaderNames) {
         throw "Required shader archive is missing: $source"
     }
     Copy-Item -LiteralPath $source -Destination (Join-Path $shaderDestination $name)
-
-    $settingsSidecar = "$source.txt"
-    if (Test-Path -LiteralPath $settingsSidecar -PathType Leaf) {
-        Copy-Item -LiteralPath $settingsSidecar -Destination (Join-Path $shaderDestination "$name.txt")
-    }
 }
 
 $restartHours = [math]::Round($RestartIntervalMinutes / 60, 2)
@@ -123,10 +117,11 @@ The server restarts cleanly every $RestartIntervalMinutes minutes ($restartHours
 Warnings appear in chat before a restart. Wait about a minute, then reconnect.
 
 SHADERS
-Ten shader choices are included but none is forced. Open Options > Video Settings > Shader Packs.
+Nine shader choices are included but none is forced. Open Options > Video Settings > Shader Packs.
 Low-cost choices: MakeUp Ultra Fast, HyShaders Vanilla Lite, Sildur's Enhanced Default.
 Balanced/showcase choice: BSL. Distant-Horizons-focused choice: TAA.
 If a shader misbehaves on a particular GPU, switch shaders before changing pack files.
+Bloop is intentionally excluded because its 1.20.1 build produces repeatable Oculus parser errors.
 
 RESOURCE PACK ORDER (TOP TO BOTTOM)
 MilkyJ Stability Fixes, Fresh Compats, Fresh Animations, optional Shable's Tweaks,
@@ -191,7 +186,13 @@ try {
         if ($required -notin $entries) { throw "Mate ZIP is missing $required" }
     }
     $shaderCount = @($entries | Where-Object { $_ -match '^minecraft/shaderpacks/.+\.zip$' }).Count
-    if ($shaderCount -ne 10) { throw "Expected 10 shader archives; packaged $shaderCount." }
+    if ($shaderCount -ne 9) { throw "Expected 9 validated shader archives; packaged $shaderCount." }
+    $unexpectedShaderFiles = @($entries | Where-Object {
+        $_ -match '^minecraft/shaderpacks/.+' -and $_ -notmatch '\.zip$'
+    })
+    if ($unexpectedShaderFiles.Count -gt 0) {
+        throw "Shader settings or unexpected shader files entered the mate ZIP: $($unexpectedShaderFiles -join ', ')"
+    }
     $forbidden = @($entries | Where-Object {
         $_ -match '(?i)(^|/)(options(?:shaders)?\.txt|servers\.dat|accounts\.json|saves|screenshots|logs|crash-reports)(/|$)'
     })
@@ -214,7 +215,8 @@ $result = [ordered]@{
     packUrl = $settings.packUrl
     server = "${ServerAddress}:$ServerPort"
     restartIntervalMinutes = $RestartIntervalMinutes
-    shaderArchives = 10
+    shaderArchives = 9
+    shaderSettingsIncluded = $false
     personalFilesIncluded = $false
 }
 $result | ConvertTo-Json -Depth 4

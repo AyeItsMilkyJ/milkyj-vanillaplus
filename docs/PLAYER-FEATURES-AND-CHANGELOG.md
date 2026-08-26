@@ -11,7 +11,7 @@ Current foundation:
 - Minecraft 1.20.1 with Forge 47.4.10.
 - 240 client JARs and 206 dedicated-server JARs after side classification.
 - 234 connected beginner-guide quests across 15 chapters: 175 manual/tutorial checks and 59 automatic detections.
-- Seven managed resource-pack choices plus ten optional shader choices in the mate installer.
+- Seven managed resource-pack choices plus nine optional shader choices in the mate installer.
 - Dedicated-server view distance 12 and simulation distance 6.
 - Packwiz checks for managed updates before each Prism launch.
 - The Windows server supervisor saves and restarts cleanly every three hours.
@@ -68,20 +68,21 @@ RC3 adds an optional, reversible recommended-control profile. It gives quests a 
 
 RC4 keeps that preservation contract. Quest definitions update automatically, while personal controls, video options, resource-pack order, shader selection and per-shader settings remain the player's own data.
 
-The mate installer contains ten optional shaders:
+The mate installer contains nine optional shaders:
 
 1. HyShaders Vanilla Lite
 2. MakeUp Ultra Fast
 3. Sildur's Enhanced Default
 4. BSL
 5. TAA — Distant Horizons Port
-6. Bloop
-7. Daybreak
-8. Neon Skylines
-9. Hysteria
-10. Solas
+6. Daybreak
+7. Neon Skylines
+8. Hysteria
+9. Solas
 
 No shader is forced. MakeUp, HyShaders and Sildur's are the safer low-cost choices; BSL is the balanced showcase option tested with the current Oculus/Distant Horizons stack. Shader behaviour still varies by GPU and driver.
+
+Bloop 1.8.0 Alpha 3 was removed from the mate installer after repeatable Oculus option-parser failures in a retained real-client test. It remains recoverable in the pack owner's local shader quarantine, but is no longer presented to players as a working choice.
 
 ### 8. Performance and server reliability
 
