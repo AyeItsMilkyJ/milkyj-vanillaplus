@@ -105,6 +105,12 @@ try {
     }
 
     . (Join-Path $root 'server-tools\Discord-Notifications.ps1')
+    Protect-DiscordWebhookFile -Path $webhookFile
+    Protect-DiscordWebhookFile -Path $webhookFile
+    $repeatAcl = Get-Acl -LiteralPath $webhookFile
+    if (-not $repeatAcl.AreAccessRulesProtected -or @($repeatAcl.Access).Count -ne 3) {
+        throw 'Webhook ACL protection was not idempotent.'
+    }
     $settingsObject = Get-Content -LiteralPath $settingsPath -Raw | ConvertFrom-Json
     $webhookLock = [IO.File]::Open($webhookFile, [IO.FileMode]::Open, [IO.FileAccess]::Read, [IO.FileShare]::None)
     try {
@@ -162,6 +168,7 @@ try {
         successfulTestSavedReplacement = $true
         webhookAclInheritanceDisabled = $true
         webhookAclExactAllowedSids = $true
+        webhookAclProtectionIdempotent = $true
         noPlaintextTemporaryFileRemained = $true
         latestDeliveryExposedByStatus = $true
         unreadableWebhookWasNonFatal = $true

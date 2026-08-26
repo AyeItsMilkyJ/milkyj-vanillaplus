@@ -66,8 +66,38 @@ function Protect-DiscordWebhookFile {
     $currentSid = [Security.Principal.WindowsIdentity]::GetCurrent().User
     $systemSid = [Security.Principal.SecurityIdentifier]::new('S-1-5-18')
     $administratorsSid = [Security.Principal.SecurityIdentifier]::new('S-1-5-32-544')
+    $existingAcl = Get-Acl -LiteralPath $Path -ErrorAction Stop
+    $ownerSid = $null
+    try {
+        $ownerSid = ([Security.Principal.NTAccount]$existingAcl.Owner).Translate(
+            [Security.Principal.SecurityIdentifier]
+        )
+    } catch { }
+
+    $expectedSidValues = @($currentSid.Value, $systemSid.Value, $administratorsSid.Value) | Sort-Object -Unique
+    $existingRules = @($existingAcl.Access)
+    $existingSidValues = @($existingRules | ForEach-Object {
+        try { $_.IdentityReference.Translate([Security.Principal.SecurityIdentifier]).Value } catch { '' }
+    } | Sort-Object -Unique)
+    $rulesAlreadyExact = $existingAcl.AreAccessRulesProtected -and
+        $ownerSid -and $ownerSid.Value -eq $currentSid.Value -and
+        $existingRules.Count -eq $expectedSidValues.Count -and
+        @(Compare-Object $expectedSidValues $existingSidValues).Count -eq 0 -and
+        @($existingRules | Where-Object {
+            $_.AccessControlType -ne [Security.AccessControl.AccessControlType]::Allow -or
+            $_.FileSystemRights -ne [Security.AccessControl.FileSystemRights]::FullControl -or
+            $_.IsInherited
+        }).Count -eq 0
+    if ($rulesAlreadyExact) { return }
+
+    # Apply a DACL-only descriptor when the file already belongs to the current
+    # user.  Reapplying a descriptor that contains owner/SACL metadata can make
+    # Set-Acl request SeSecurityPrivilege on a second run even though no privileged
+    # change is needed.
     $acl = [Security.AccessControl.FileSecurity]::new()
-    $acl.SetOwner($currentSid)
+    if (-not $ownerSid -or $ownerSid.Value -ne $currentSid.Value) {
+        $acl.SetOwner($currentSid)
+    }
     $acl.SetAccessRuleProtection($true, $false)
     foreach ($sid in @($currentSid, $systemSid, $administratorsSid)) {
         $rule = [Security.AccessControl.FileSystemAccessRule]::new(
